@@ -1,0 +1,1002 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0054)http://www.codeproject.com/dialog/dlgtoolstatusbar.asp -->
+<HTML><HEAD><TITLE>The Code Project - Toolbar & StatusBar on Dialog - Dialog and Windows</TITLE>
+<META content="text/html; charset=utf-8" http-equiv=Content-Type>
+<META content=mailto:webmaster@codeproject.com http-equiv=Reply-to>
+<META content="Free source code and tutorials for Windows developers." 
+name=Description>
+<META 
+content="Free source code, Dialog and Windows, Visual C++, MFC, Windows, Dialog , Toolbar , Statusbar" 
+name=keywords>
+<META 
+content="Article content copyright Barretto VN, 2002, everthing else Copyright © CodeProject, 1999-2004, All Rights Reserved." 
+name=Copyright><LINK 
+href="http://www.codeproject.com/webservices/articlerss.aspx?cat=1" 
+rel=alternate title="CodeProject Latest articles - All topics" 
+type=application/rss+xml><LINK 
+href="http://www.codeproject.com/webservices/articlerss.aspx?cat=2" 
+rel=alternate title="CodeProject Latest articles - MFC / C++" 
+type=application/rss+xml><LINK 
+href="http://www.codeproject.com/webservices/articlerss.aspx?cat=3" 
+rel=alternate title="CodeProject Latest articles - C#" 
+type=application/rss+xml><LINK 
+href="http://www.codeproject.com/webservices/articlerss.aspx?cat=4" 
+rel=alternate title="CodeProject Latest articles - ASP.NET" 
+type=application/rss+xml><LINK 
+href="http://www.codeproject.com/webservices/articlerss.aspx?cat=5" 
+rel=alternate title="CodeProject Latest articles - .NET" 
+type=application/rss+xml><LINK href="/favicon.ico" rel=icon type=image/ico><LINK 
+href="/favicon.ico" rel="SHORTCUT ICON"><LINK 
+href="dlgtoolstatusbar_files/global.css" rel=stylesheet type=text/css>
+<SCRIPT language=javascript src="dlgtoolstatusbar_files/oncopy.js"></SCRIPT>
+
+<META content="MSHTML 5.00.2920.0" name=GENERATOR></HEAD>
+<BODY aLink=red bgColor=white leftMargin=3 link=blue oncopy="return copyCode();" 
+text=black topMargin=3 vLink=purple>
+<TABLE bgColor=#ff9900 border=0 cellPadding=0 cellSpacing=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD width="100%">
+      <TABLE bgColor=#ff9900 border=0 cellPadding=0 cellSpacing=1 
+        width="100%"><TBODY>
+        <TR>
+          <TD vAlign=top><A href="http://www.codeproject.com/"><IMG 
+            alt="The Code Project" border=0 height=72 
+            src="dlgtoolstatusbar_files/logo225x72.gif" width=225></A></TD>
+          <TD align=right><SPAN id=AdBanner4><A 
+            href="http://www.codeproject.com/script/admentor/ads.asp"><IMG 
+            alt="View our advertisers" border=1 height=60 
+            src="dlgtoolstatusbar_files/sponsors.gif" width=20></A>
+            <SCRIPT language=javascript>document.write("<a href=\"/script/admentor/admentorredir.asp?id=883&way=ban\" target=_blank><img src=\"/script/admentor/include/ServeAd.aspx?File=%2Fscript%2Fadmentor%2Fimages%2FDundasGauge%5FBannertweek1%2Egif&C=False&id=883\" alt=\"\" border=0 width=468 height=60></a>");</SCRIPT>
+            <A href="http://www.codeproject.com/info/mediakit"><IMG 
+            alt="Advertise on the CodeProject" border=1 height=60 
+            src="dlgtoolstatusbar_files/advertise.gif" 
+width=20></A></SPAN></TD></TR>
+        <TR>
+          <TD bgColor=#fbedbb colSpan=2>
+            <TABLE bgColor=#fbedbb border=0 cellPadding=3 width="100%">
+              <TBODY>
+              <TR vAlign=top>
+                <TD width="100%"><FONT style="FONT-SIZE: 8pt"><A 
+                  href="http://www.codeproject.com/?cat=1">All Topics</A>, <A 
+                  href="http://www.codeproject.com/?cat=2">MFC / C++</A> 
+                  &gt;&gt; <A href="http://www.codeproject.com/dialog/">Dialog 
+                  and Windows</A> &gt;&gt; <A 
+                  href="http://www.codeproject.com/dialog/#Dialogs">Dialogs</A></FONT><BR><BR><B><FONT 
+                  size=4 style="FONT-SIZE: 16pt">Toolbar &amp; StatusBar on 
+                  Dialog</FONT></B><BR><B>By <A 
+                  href="http://www.codeproject.com/script/profile/whos_who.asp?id=43422">Barretto 
+                  VN</A> </B><BR><BR><FONT style="FONT-SIZE: 9pt">Toolbar / 
+                  Statusbar on Dialog Window&nbsp;</FONT> </TD>
+                <TD align=right vAlign=top>
+                  <TABLE border=0 cellPadding=1 cellSpacing=0 width=200>
+                    <TBODY>
+                    <TR vAlign=top>
+                      <TD>&nbsp;</TD>
+                      <TD class=SmallText>C++ (VC7, VC6)<BR>Windows (WinXP, 
+                        Win2K, Win95, Win98, WinME)<BR>MFC, Win32, 
+                    VS<BR>Dev</TD></TR>
+                    <TR>
+                      <TD>&nbsp;</TD>
+                      <TD class=SmallText noWrap>Posted 3 Aug 2002</TD></TR>
+                    <TR>
+                      <TD>&nbsp;</TD>
+                      <TD class=SmallText>Updated 8 Aug 2002</TD></TR>
+                    <TR vAlign=top>
+                      <TD><IMG height=16 src="dlgtoolstatusbar_files/hlp.gif" 
+                        width=16></TD>
+                      <TD class=SmallText noWrap><A 
+                        href="http://www.codeproject.com/script/Articles/list_articles.asp?userid=43422">Articles 
+                        by this author</A></TD></TR>
+                    <TR vAlign=top>
+                      <TD></TD>
+                      <TD class=SmallText noWrap><B>30,716</B> 
+                    views</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD colSpan=2>
+            <TABLE border=0 cellPadding=1 cellSpacing=0 id=tblSiteToolbar 
+            width="100%">
+              <TBODY>
+              <TR>
+                <FORM action=/info/search.asp method=post name=Search>
+                <TD align=left vAlign=top width="100%">
+                  <TABLE border=0 cellPadding=1 cellSpacing=0>
+                    <TBODY>
+                    <TR vAlign=center>
+                      <TD class=smallText><B><FONT 
+                        color=white>Search:</FONT></B></TD>
+                      <TD class=navbar noWrap><INPUT class=smallText 
+                        maxLength=255 name=target size=18></TD>
+                      <TD vAlign=top><SELECT class=smallText name=st> 
+                          <OPTION selected value=kw>Articles</OPTION> <OPTION 
+                          value=au>Authors</OPTION></SELECT></TD>
+                      <TD><INPUT class=formButton type=submit value=Go></TD></TR></TBODY></TABLE></TD></FORM>
+                <TD>
+                  <DIV id=MenuPos 
+                  style="HEIGHT: 20px; POSITION: relative; WIDTH: 380px">
+                  <TABLE cellPadding=2 cellSpacing=0 height=20 width=375>
+                    <TBODY>
+                    <TR>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/info/faq.asp">Help!</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/info/latest.asp">Articles</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/script/comments/forums.asp">Message 
+                        Boards</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/store/">StoreFront</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/lounge.asp">Lounge</A></TD></TR></TBODY></TABLE></DIV></TD></TR></TBODY></TABLE>
+            <SCRIPT type=text/javascript>function Go(){return}</SCRIPT>
+
+            <SCRIPT src="dlgtoolstatusbar_files/cpmenu_var.js" 
+            type=text/javascript></SCRIPT>
+
+            <SCRIPT src="dlgtoolstatusbar_files/menu10_com.js" 
+            type=text/javascript></SCRIPT>
+          </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<TABLE border=0 cellPadding=1 cellSpacing=0>
+  <TBODY>
+  <TR vAlign=top>
+    <TD bgColor=#fbedbb rowSpan=2 vAlign=top>
+      <TABLE border=0 cellPadding=0 cellSpacing=0>
+        <SCRIPT language=javascript>
+function ErrorHandle() {}
+window.onerror = ErrorHandle;
+
+function OnNLSubmit(option)
+{
+	if (option=="up")
+		document.subForm.action = "/script/profile/modify.asp?ct=%2Fdialog%2Fdlgtoolstatusbar%2Easp";
+	else if (option=="in")
+		document.subForm.action = "/script/profile/process_logon.asp?ct=%2Fdialog%2Fdlgtoolstatusbar%2Easp";
+	document.subForm.submit();
+	return true;
+}
+</SCRIPT>
+
+        <TBODY>
+        <TR>
+          <TD>
+            <TABLE cellPadding=0 cellSpacing=3>
+              <TBODY>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD class=InfoBarHeader>Toolbox</TD></TR>
+              <TR>
+                <TD bgColor=black colSpan=2><IMG height=1 
+                  src="dlgtoolstatusbar_files/space.gif" width=1></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="dlgtoolstatusbar_files/sitebuild_icon.gif" width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/submit/ReportProblem.asp?GUID=DlgToolStatusBar%2Fdialog8%2F3%2F2002">Broken 
+                  Article?</A></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="dlgtoolstatusbar_files/support_icon.gif" width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/store/"><B>VS.NET 2003 from 
+                  $899</B></A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="dlgtoolstatusbar_files/support_icon.gif" width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/store/"><B>MSDN Univ. from 
+                  $1950</B></A></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="dlgtoolstatusbar_files/print.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/dialog/dlgtoolstatusbar.asp?print=true" 
+                  target=_print>Print version</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="dlgtoolstatusbar_files/link.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/add_bookmark.asp?t=0&amp;ct=%2Fdialog%2Fdlgtoolstatusbar%2Easp&amp;guid=DlgToolStatusBar%2Fdialog8%2F3%2F2002">Bookmark 
+                  this</A></TD></TR></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="dlgtoolstatusbar_files/mail.gif" 
+                  width=16></TD>
+                <TD class=SmallText><A 
+                  href="http://www.codeproject.com/script/recommend/form.asp?guid=DlgToolStatusBar%2Fdialog8%2F3%2F2002">Send 
+                  to a friend</A></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD class=InfoBarHeader>My Profile</TD></TR>
+              <TR>
+                <TD bgColor=black colSpan=2><IMG height=1 
+                  src="dlgtoolstatusbar_files/space.gif" width=1></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="dlgtoolstatusbar_files/profile_small.gif" width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/modify.asp?ct=/dialog/dlgtoolstatusbar.asp">My 
+                  Settings</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="dlgtoolstatusbar_files/submit_small.gif" width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/articles/list_articles.asp?userid=649009">My 
+                  Articles</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="dlgtoolstatusbar_files/bookmarks.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/bookmark_list.asp">My 
+                  Bookmarks</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="dlgtoolstatusbar_files/logoff_small.gif" width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/logoff.asp?ct=/dialog/dlgtoolstatusbar.asp">Sign 
+                  out</A></TD></TR>
+              <TR>
+                <TD bgColor=black colSpan=2><IMG height=1 
+                  src="dlgtoolstatusbar_files/space.gif" 
+            width=1></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD>&nbsp;</TD></TR>
+        <TR>
+          <TD>
+            <CENTER>
+            <SCRIPT language=javascript>document.write("<a href=\"/script/admentor/admentorredir.asp?id=171&way=ban\" target=_blank><img src=\"/script/admentor/include/ServeAd.aspx?File=%2Fscript%2Fadmentor%2Fimages%2Fmsdnnewmar%2Egif&C=False&id=171\" alt=\"MSDN Magazine - Your guide to Microsoft tools, development environments, and technologies for Windows and the Web.\" border=0 width=120 height=600></a>");</SCRIPT>
+            <BR></CENTER><BR></TD></TR></TBODY></TABLE></TD>
+    <TD rowSpan=2 width=5><IMG height=1 src="dlgtoolstatusbar_files/space.gif" 
+      width=5> </TD>
+    <TD align=right bgColor=white width="100%">
+      <TABLE width="100%">
+        <TBODY>
+        <TR vAlign=top>
+          <TD class=smallText noWrap vAlign=top></TD>
+          <TD align=right noWrap><A name=__top></A>
+            <TABLE>
+              <TBODY>
+              <TR>
+                <TD align=right class=smallText>16 members have rated this 
+                  article. Result:</TD>
+                <TD>
+                  <TABLE border=2 cellPadding=0 cellSpacing=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG border=0 height=5 
+                        src="dlgtoolstatusbar_files/red.gif" width=20></TD>
+                      <TD><IMG border=0 height=5 
+                        src="dlgtoolstatusbar_files/red.gif" width=20></TD>
+                      <TD><IMG border=0 height=5 
+                        src="dlgtoolstatusbar_files/red.gif" width=5><IMG 
+                        border=0 height=5 src="dlgtoolstatusbar_files/white.gif" 
+                        width=15></TD>
+                      <TD><IMG border=0 height=5 
+                        src="dlgtoolstatusbar_files/white.gif" width=20></TD>
+                      <TD><IMG border=0 height=5 
+                        src="dlgtoolstatusbar_files/white.gif" 
+                    width=20></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD align=right class=smallText colSpan=2><A 
+                  href="http://www.codeproject.com/script/articles/top_articles.asp?st=2" 
+                  title="Calculated as rating x Log10(# votes)">Popularity: 
+                  2.7</A>. Rating: <B>2.24</B> out of 
+        5.</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD vAlign=top width="100%">
+      <DIV id=contentdiv><!-- Article Starts -->
+      <UL class=download>
+        <LI><A 
+        href="http://www.codeproject.com/dialog/DlgToolStatusBar/DlgToolStatusBar.zip">Download 
+        source files - 27 Kb</A> </LI></UL>
+      <P><IMG alt="Sample Image - DlgToolStatusBar.gif" height=369 
+      src="dlgtoolstatusbar_files/DlgToolStatusBar.gif" width=486></P>
+      <H2>What's New</H2>
+      <P>Carried out some changes as suggested by Russ Freeman. The Changes are 
+      as follows</P>
+      <UL>
+        <LI>Moved all string in code to String Table 
+        <LI>Delete unwanted sub-class files <CODE>CStatusBar </CODE>
+        <LI>Added menu to generate 3 types of ToolBars 
+        <LI>Retained Old Toolbar as is 
+        <LI>New Toolbars use Arrays 
+        <LI>Added Date &amp; Time on the Statusbar 
+        <LI>Added message Maps for new Toolbars </LI></UL>
+      <H2>Introduction</H2>
+      <P>This Article demonstrates the technique of creating Toolbar and 
+      StatusBar on a Dialog Window. 
+      <P>To acheive the goal you create a Dialog-based project from the New 
+      Project Wizard, a blank form with Ok and Cancel buttons is created by 
+      default.</P>
+      <P>Delete the buttons since you will most probably be making the project 
+      menu-driven.</P><PRE><SPAN class=cpp-comment>//</SPAN>
+<SPAN class=cpp-comment>//  First we create the ImageList for use with the ToolBar</SPAN>
+<SPAN class=cpp-comment>//  in following manner</SPAN>
+CWinApp* pApp = AfxGetApp();
+mImageList-&gt;Create(<SPAN class=cpp-literal>24</SPAN>, <SPAN class=cpp-literal>24</SPAN>, ILC_COLOR8 | ILC_MASK,  <SPAN class=cpp-literal>9</SPAN>, <SPAN class=cpp-literal>9</SPAN>);
+mImageList-&gt;Add(pApp-&gt;LoadIcon(IDI_HELP));
+mImageList-&gt;Add(pApp-&gt;LoadIcon(IDI_BOLD));
+mImageList-&gt;Add(pApp-&gt;LoadIcon(IDI_DRAWING));
+mImageList-&gt;Add(pApp-&gt;LoadIcon(IDI_STRIKEOUT));
+<SPAN class=cpp-comment>//</SPAN>
+<SPAN class=cpp-comment>// next we create the Toolbar</SPAN>
+<SPAN class=cpp-comment>//</SPAN>
+
+TBBUTTON tb;
+
+m_ToolBar.Create(WS_CHILD|WS_VISIBLE|WS_BORDER|TBSTYLE_FLAT, 
+    CRect(<SPAN class=cpp-literal>0</SPAN>,<SPAN class=cpp-literal>0</SPAN>,<SPAN class=cpp-literal>0</SPAN>,<SPAN class=cpp-literal>0</SPAN>), <SPAN class=cpp-keyword>this</SPAN>, <SPAN class=cpp-literal>0</SPAN>);
+
+m_ToolBar.SetImageList(&amp;m_pImageList); 
+   <SPAN class=cpp-comment>// Set ImageList for this Toolbar created </SPAN>
+   <SPAN class=cpp-comment>// in the previous section</SPAN>
+tb.iBitmap = <SPAN class=cpp-literal>0</SPAN>;
+tb.iString = NULL;
+tb.fsState = TBSTATE_ENABLED;
+tb.fsStyle = TBSTYLE_BUTTON;
+tb.idCommand = ID_HELP_ABOUT;
+
+m_ToolBar.AddButtons(<SPAN class=cpp-literal>1</SPAN>, &amp;tb);
+tb.iBitmap = <SPAN class=cpp-literal>1</SPAN>;
+tb.idCommand = ID_BOLD;
+m_ToolBar.AddButtons(<SPAN class=cpp-literal>1</SPAN>, &amp;tb);
+tb.iBitmap = <SPAN class=cpp-literal>2</SPAN>;
+tb.idCommand = ID_DRAWING;
+m_ToolBar.AddButtons(<SPAN class=cpp-literal>1</SPAN>, &amp;tb);
+
+TBBUTTON tb1;
+tb1.fsStyle = TBSTYLE_SEP;
+m_ToolBar.AddButtons(<SPAN class=cpp-literal>1</SPAN>, &amp;tb1);
+
+tb.iBitmap = <SPAN class=cpp-literal>3</SPAN>;
+tb.idCommand = ID_STRIKEOUT;
+tb.iString = NULL;
+m_ToolBar.AddButtons(<SPAN class=cpp-literal>1</SPAN>, &amp;tb);
+
+<SPAN class=cpp-comment>//</SPAN>
+<SPAN class=cpp-comment>// We now Create the Statusbar as show below</SPAN>
+<SPAN class=cpp-comment>//</SPAN>
+
+ 
+m_StatusBar.Create(WS_CHILD|WS_VISIBLE|SBT_OWNERDRAW,
+    CRect(<SPAN class=cpp-literal>0</SPAN>,<SPAN class=cpp-literal>0</SPAN>,<SPAN class=cpp-literal>0</SPAN>,<SPAN class=cpp-literal>0</SPAN>), <SPAN class=cpp-keyword>this</SPAN>, <SPAN class=cpp-literal>0</SPAN>);
+
+<SPAN class=cpp-comment>// You can set the no. of parts of the StatusBar (4 in this case) </SPAN>
+<SPAN class=cpp-comment>// and the width of each part not -1 means remaining width</SPAN>
+
+<SPAN class=cpp-keyword>int</SPAN> strPartDim[<SPAN class=cpp-literal>4</SPAN>]= {<SPAN class=cpp-literal>180</SPAN>, <SPAN class=cpp-literal>260</SPAN>, <SPAN class=cpp-literal>340</SPAN>, -<SPAN class=cpp-literal>1</SPAN>};
+m_StatusBar.SetParts(<SPAN class=cpp-literal>4</SPAN>, strPartDim);
+
+m_StatusBar.SetText(_T(<SPAN class=cpp-string>"Dialog / StatusBar / Toolbar"</SPAN>),<SPAN class=cpp-literal>0</SPAN>,<SPAN class=cpp-literal>0</SPAN>);
+m_StatusBar.SetText(_T(<SPAN class=cpp-string>"Example"</SPAN>), <SPAN class=cpp-literal>1</SPAN>, <SPAN class=cpp-literal>0</SPAN>);
+    
+CString string;
+string.LoadString(IDS_MYCOMPUTER);
+m_StatusBar.SetText(string, <SPAN class=cpp-literal>3</SPAN> ,SBT_NOBORDERS   );
+m_StatusBar.SetIcon(<SPAN class=cpp-literal>3</SPAN>,     SetIcon(AfxGetApp()-&gt;LoadIcon(IDI_COMP), FALSE));</PRE><!-- Article Ends --></DIV>
+      <H2>About Barretto VN</H2>
+      <TABLE border=0 width="100%">
+        <TBODY>
+        <TR vAlign=top>
+          <TD class=smallText noWrap><BR></TD>
+          <TD class=smallText width="100%">Nothing to boast about
+            <P class=smallText>Click <A 
+            href="http://www.codeproject.com/script/profile/whos_who.asp?vt=arts&amp;id=43422">here</A> 
+            to view Barretto VN's online profile.</P></TD></TR></TBODY></TABLE><BR>
+      <TABLE border=0 cellPadding=4 width="100%">
+        <TBODY>
+        <TR vAlign=top>
+          <TD width="100%">
+            <H2>Other popular articles:</H2>
+            <UL>
+              <LI><A 
+              href="http://www.codeproject.com/dialog/quickwin.asp">QuickWin - 
+              Turn a console application into a Windows program</A><BR><SPAN 
+              class=smalltext>Redirect stdin, stdout and stderr into a 
+              window</SPAN>
+              <LI><A 
+              href="http://www.codeproject.com/dialog/dlgboxtricks.asp">Some 
+              handy dialog box tricks, tips and workarounds</A><BR><SPAN 
+              class=smalltext>Hidden modal dialogs, stealing focus, always on 
+              top dialogs, going full-screen, expanding and contracting dialogs, 
+              removing task bar icon, context sensitive help and many other 
+              useful tips and tricks.</SPAN>
+              <LI><A 
+              href="http://www.codeproject.com/dialog/slidabledialogbar.asp">3D 
+              Studio Max like Slidable DialogBar</A><BR><SPAN 
+              class=smalltext>Ever seen 3D Studio 2.5 Slidable DialogBar? Want 
+              to know how they did it?</SPAN>
+              <LI><A 
+              href="http://www.codeproject.com/dialog/winampwnd.asp">Nullsoft 
+              Winamp Plug-in With Bitmapped UI, Docking and Restrictive 
+              Resizing</A><BR><SPAN class=smalltext>An article discussing a 
+              Plug-in for Nullsoft Winamp which looks and behaves like the 
+              Winamp UI.</SPAN></LI></UL></TD>
+          <TD width=360>
+            <SCRIPT language=javascript>document.write("<IFRAME src=\"/script/admentor/include/ServeAdHTML.aspx?C=False&id=786\" border=0 frameborder=0 scrolling=no width=300 height=250></IFRAME>");</SCRIPT>
+          </TD></TR></TBODY></TABLE>
+      <FORM action=/script/rating/code/app/insert_vote.asp method=post><INPUT 
+      name=vote_name type=hidden value=DlgToolStatusBar/dialog8/3/2002> <INPUT 
+      name=goal type=hidden value=/dialog/dlgtoolstatusbar.asp> 
+      <TABLE bgColor=#ff9900 border=0 cellPadding=1 cellSpacing=0 
+        width="100%"><TBODY>
+        <TR>
+          <TD width="100%">
+            <TABLE bgColor=#fbedbb border=0 cellPadding=4 cellSpacing=0 
+            width="100%">
+              <TBODY>
+              <TR>
+                <TD class=smalltext vAlign=center>[<A 
+                  href="http://www.codeproject.com/dialog/dlgtoolstatusbar.asp#__top">Top</A>]</TD>
+                <TD align=right noWrap vAlign=center><I><B>Rate this Article 
+                  for us!</B></I>&nbsp;&nbsp;&nbsp;&nbsp; <I>Poor</I><INPUT 
+                  name=rate type=radio value=1><INPUT name=rate type=radio 
+                  value=2><INPUT name=rate type=radio value=3><INPUT name=rate 
+                  type=radio value=4><INPUT name=rate type=radio 
+                  value=5><I>Excellent</I>&nbsp;&nbsp;<INPUT class=FormButton type=submit value=Vote> 
+                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></FORM>
+      <TABLE border=0 cellPadding=0 cellSpacing=0 width="100%">
+        <TBODY>
+        <TR vAlign=top>
+          <TD vAlign=top>
+            <CENTER>
+            <SCRIPT language=javascript>document.write("<a href=\"/script/admentor/admentorredir.asp?id=544&way=ban\" target=_blank><img src=\"/script/admentor/include/ServeAd.aspx?File=%2Fscript%2Fadmentor%2Fimages%2Fdundas%5FbluelogoCP%2Egif&C=False&id=544\" alt=\"\" border=0 width=120 height=60></a>");</SCRIPT>
+            <BR><FONT size=1><A 
+            href="http://www.codeproject.com/info/MediaKit/">Premium 
+            Sponsor</A></FONT></CENTER><BR></TD>
+          <TD align=middle noWrap vAlign=top><SPAN id=AdBanner5>
+            <SCRIPT language=javascript>document.write("<a href=\"/script/admentor/admentorredir.asp?id=782&way=ban\" target=_blank><img src=\"/script/admentor/include/ServeAd.aspx?File=%2Fscript%2Fadmentor%2Fimages%2Fwholetomato%5Fxpect%5Fmore%2Egif&C=False&id=782\" alt=\"The intellisense upgrade for Visual Studio .NET - make your IDE as smart as you.\" border=0 width=468 height=60></a>");</SCRIPT>
+            </SPAN></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><A 
+name=__comments></A>
+<SCRIPT language=JavaScript>
+function MsgVoteForm(UserID, MsgID)
+{
+	document.write("Rate this message: ");
+	for (var i=1; i<=5;i++)
+		document.write("<a href='#xx" + MsgID.toString() + "xx' title='give this message a vote of " + i.toString() + "' onclick='RateMsg(" + UserID.toString() + ", " + MsgID.toString() + ", " + i.toString() + ")'><b>" + i.toString() + "</b></a> ");
+	document.write(" (out of 5)");
+}
+
+function RateMsg(userid, msgid, score) 
+{ 
+	open("/script/comments/vote.asp?js=1&user="+userid.toString()+"&msg="+msgid.toString()+"&score="+score.toString() ,"helpful","toolbar=no,resizable=yes,scrollbars=yes,directories=no,menubar=no,width=300,height=200");
+	return false;
+}
+</SCRIPT>
+
+<SCRIPT language=JavaScript>
+var Selected = "";
+var AdTime = new Date();
+document.writeln("<iframe name=AdFrame width=0 height=0 frameborder=0></IFRAME>");
+function SwitchMessage(elm)
+{
+
+	var now = new Date();
+	if (Number(now.getTime() - AdTime.getTime()) > Number(5000))
+	{
+		AdTime = now;
+		var loc = window.frames["AdFrame"];
+		if (loc) loc = loc.document;
+		if (loc) loc = loc.location;
+		if (loc) loc.replace('/script/comments/fetchAd.asp?cat=1');
+	}
+	
+	var elmref;
+	if (Selected != "")
+	{
+		elmref = eval("document.getElementById('" + Selected + "_h1')");
+		if (elmref) elmref.style.display = 'none';
+		elmref = eval("document.getElementById('" + Selected + "_h0')");
+		if (elmref) elmref.bgColor = '#FEF9E7';
+	}
+	if (Selected != elm.name) 
+	{
+		Selected = elm.name;
+		elmref = eval("document.getElementById('" + Selected + "_h1')");
+		if (elmref) 
+		{
+			if (elmref.style.display=='none') elmref.style.display='';
+			else elmref.style.display = 'none';
+		}
+		elmref = eval("document.getElementById('" + Selected + "_h0')");
+		if (elmref) 
+			elmref.bgColor = '#99CCFF';
+	}
+	else
+		Selected="";
+		
+	window.location = "#xx" + Selected + "xx";
+
+	return false;
+}
+
+</SCRIPT>
+
+<SCRIPT event=onclick for=DynMessLink language=javascript>
+return SwitchMessage(this);
+</SCRIPT>
+
+<TABLE bgColor=#ff9900 border=0 cellPadding=0 cellSpacing=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD width="100%">
+      <TABLE bgColor=#ff9900 border=0 cellPadding=0 cellSpacing=1 id=ForumTable 
+      width="100%">
+        <FORM 
+        action=/script/comments/app/do_filtermessages.asp?main=/dialog/dlgtoolstatusbar.asp&amp;df=100&amp;forumid=4458 
+        method=post>
+        <TBODY>
+        <TR>
+          <TD>
+            <TABLE bgColor=white border=0 cellPadding=3 cellSpacing=0 
+            width="100%">
+              <TBODY>
+              <TR bgColor=#fbedbb>
+                <TD class=smalltext noWrap><A 
+                  href="http://www.codeproject.com/script/comments/faq.asp"><IMG 
+                  align=absMiddle border=0 height=16 
+                  src="dlgtoolstatusbar_files/info.gif" width=16> 
+                <B>FAQ</B></A>&nbsp;</TD>
+                <TD align=right class=smalltext noWrap vAlign=top>Noise level 
+                  <SELECT class=smalltext name=noise size=1><OPTION 
+                    value=1>Very High</OPTION> <OPTION value=2>High</OPTION> 
+                    <OPTION selected value=3>Medium</OPTION> <OPTION 
+                    value=4>Low</OPTION> <OPTION value=5>Very 
+                  low</OPTION></SELECT>&nbsp;&nbsp;</TD>
+                <TD align=right class=smalltext colSpan=2 noWrap 
+                  vAlign=center><A 
+                  href="http://www.codeproject.com/script/comments/search_comments.asp?forumid=4458"><IMG 
+                  border=0 height=15 src="dlgtoolstatusbar_files/search.gif" 
+                  width=16> Search comments</A> &nbsp;</TD>
+                <TD align=right vAlign=top><INPUT class=FormButton name=submit type=submit value="Set Options"></TD></TR>
+              <TR bgColor=#ff9900>
+                <TD width="100%">&nbsp;</TD>
+                <TD align=right class=smalltext noWrap vAlign=top>View <SELECT 
+                  class=smalltext name=expand size=1><OPTION value=0>Normal 
+                    (slow)</OPTION> <OPTION value=2>Preview (slow)</OPTION> 
+                    <OPTION selected value=5>Message View</OPTION> <OPTION 
+                    value=6>Topic View</OPTION> <OPTION value=1>Thread 
+                    View</OPTION> <OPTION value=3>Expanded (Supporters 
+                    only)</OPTION></SELECT>&nbsp;&nbsp;</TD>
+                <TD class=smalltext noWrap vAlign=top>Per page <SELECT 
+                  class=smalltext name=perpage size=1><OPTION 
+                    value=10>10</OPTION> <OPTION selected value=25>25</OPTION> 
+                    <OPTION value=50>50</OPTION></SELECT></TD>
+                <TD colSpan=2>&nbsp;</TD></TR></TBODY></TABLE></TD></TR></FORM>
+        <TR bgColor=#fbedbb>
+          <TD><A name=xx0xx></A>
+            <TABLE bgColor=#fbedbb border=0 cellPadding=2 width="100%">
+              <TBODY>
+              <TR>
+                <TD class=messagetitle><A class=HoverLink 
+                  href="http://www.codeproject.com/script/comments/user_new.asp?main=/dialog/dlgtoolstatusbar.asp&amp;df=100&amp;forumid=4458" 
+                  name=HoverNL target=_top 
+                  title="Add a new message to the discussions"><B><IMG align=top 
+                  border=0 height=16 
+                  src="dlgtoolstatusbar_files/admin_modify.gif" width=16> New 
+                  thread</B></A></TD>
+                <TD class=messagetitle>Msgs 1 to 5 of 5 (Total: 7) (<A 
+                  href="http://www.codeproject.com/dialog/dlgtoolstatusbar.asp?df=100&amp;forumid=4458">Refresh</A>)</TD>
+                <TD align=right noWrap><FONT class=messagetitle><SPAN 
+                  class=HoverLink>First</SPAN> <SPAN class=HoverLink>Prev</SPAN> 
+                  <SPAN class=HoverLink>Next</SPAN> <SPAN 
+                  class=HoverLink>Last</SPAN> </FONT></TD></TR></TBODY></TABLE></TD></TR>
+        <TR bgColor=white>
+          <TD>
+            <TABLE border=0 cellPadding=0 cellSpacing=0 width="100%">
+              <TBODY>
+              <TR>
+                <TD width="100%">
+                  <TABLE bgColor=#fbedbb border=0 cellPadding=2 cellSpacing=0>
+                    <TBODY>
+                    <TR>
+                      <TD class=messagetitle width="100%">Subject&nbsp;</TD>
+                      <TD class=messagetitle noWrap width=140>Author&nbsp;</TD>
+                      <TD align=right noWrap style="WIDTH: 9em" 
+                        width=120><FONT 
+                    class=messagetitle>Date&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG border=0 height=5 src="dlgtoolstatusbar_files/t.gif" 
+                  width=1></TD></TR>
+              <TR bgColor=#fef9e7 id=785790_h0>
+                <TD width="100%">
+                  <TABLE border=0 cellPadding=0 cellSpacing=0 width="100%">
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx785790xx></A><IMG 
+                        align=absMiddle 
+                        src="dlgtoolstatusbar_files/news_unselected.gif">&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle 
+                        href="http://www.codeproject.com/dialog/dlgtoolstatusbar.asp?df=100&amp;forumid=4458&amp;select=785790#xx785790xx" 
+                        id=DynMessLink name=785790><B>Very helpful - but image 
+                        list wrong size</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=827809"><IMG 
+                        border=0 height=15 
+                        src="dlgtoolstatusbar_files/userinfo.gif" 
+                        title="Click for User Profile" width=14></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>rneville</B>&nbsp;</FONT></TD>
+                      <TD align=right noWrap style="WIDTH: 9em" 
+                        width=120><FONT class=messagetitle><B>8:09 7 Apr 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=785790_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE border=0 cellPadding=0 cellSpacing=0 width="100%">
+                    <TBODY>
+                    <TR>
+                      <TD><IMG align=absMiddle 
+                        src="dlgtoolstatusbar_files/news_none.gif">&nbsp;</TD>
+                      <TD bgColor=#d5eaff width="100%">
+                        <TABLE border=0 cellPadding=0 cellSpacing=5 
+width="100%">
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE border=0 cellPadding=0 cellSpacing=0 
+                              width="100%">
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>This 
+                                has helped me implement my tool pretty 
+                                quickly.<BR><BR>However in SetupImages in the 
+                                call to mImageList-&gt;Create the size of images 
+                                should be 16x16 to stop the truncation of the 
+                                images.<IMG align=absMiddle 
+                                src="dlgtoolstatusbar_files/smiley_smile.gif"> 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/dialog/dlgtoolstatusbar.asp&amp;df=100&amp;forumid=4458&amp;select=785790" 
+                                title="Reply to this current thread">Reply</A>][<A 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/dialog/dlgtoolstatusbar.asp&amp;df=100&amp;forumid=4458&amp;select=785790" 
+                                title="Email a reply to the author of this message">Email</A>][<A 
+                                href="http://www.codeproject.com/dialog/dlgtoolstatusbar.asp?df=100&amp;tid=785790&amp;forumid=4458&amp;select=785790#xx785790xx" 
+                                title="View only messages within this thread">View 
+                                Thread</A>][<A 
+                                href="http://www.codeproject.com/dialog/dlgtoolstatusbar.asp?msg=785790#xx785790xx" 
+                                title="Get the URL for this message">Get 
+                                Link</A>]</TD>
+                                <TD align=right class=messagetitle>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/dialog/dlgtoolstatusbar.asp&amp;df=100&amp;forumid=4458&amp;select=785790"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/dialog/dlgtoolstatusbar.asp&amp;df=100&amp;forumid=4458&amp;select=785790"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(827809,785790);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG border=0 height=6 src="dlgtoolstatusbar_files/t.gif" 
+                  width=1></TD></TR>
+              <TR bgColor=#fef9e7 id=787734_h0>
+                <TD width="100%">
+                  <TABLE border=0 cellPadding=0 cellSpacing=0 width="100%">
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx787734xx></A><IMG height=1 
+                        src="dlgtoolstatusbar_files/ind.gif" width=18><IMG 
+                        align=absMiddle 
+                        src="dlgtoolstatusbar_files/news_unselected.gif">&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle 
+                        href="http://www.codeproject.com/dialog/dlgtoolstatusbar.asp?df=100&amp;forumid=4458&amp;select=787734#xx787734xx" 
+                        id=DynMessLink name=787734>Re: Very helpful - but image 
+                        list wrong size</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=43422"><IMG 
+                        border=0 height=15 
+                        src="dlgtoolstatusbar_files/userinfo.gif" 
+                        title="Click for User Profile" width=14></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle>Barretto 
+                        VN&nbsp;</FONT></TD>
+                      <TD align=right noWrap style="WIDTH: 9em" 
+                        width=120><FONT class=messagetitle>5:49 9 Apr 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=787734_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE border=0 cellPadding=0 cellSpacing=0 width="100%">
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="dlgtoolstatusbar_files/ind.gif" 
+                        width=18><IMG align=absMiddle 
+                        src="dlgtoolstatusbar_files/news_none.gif">&nbsp;</TD>
+                      <TD bgColor=#d5eaff width="100%">
+                        <TABLE border=0 cellPadding=0 cellSpacing=5 
+width="100%">
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE border=0 cellPadding=0 cellSpacing=0 
+                              width="100%">
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Thanks 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/dialog/dlgtoolstatusbar.asp&amp;df=100&amp;forumid=4458&amp;select=787734" 
+                                title="Reply to this current thread">Reply</A>][<A 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/dialog/dlgtoolstatusbar.asp&amp;df=100&amp;forumid=4458&amp;select=787734" 
+                                title="Email a reply to the author of this message">Email</A>][<A 
+                                href="http://www.codeproject.com/dialog/dlgtoolstatusbar.asp?df=100&amp;tid=785790&amp;forumid=4458&amp;select=787734#xx787734xx" 
+                                title="View only messages within this thread">View 
+                                Thread</A>][<A 
+                                href="http://www.codeproject.com/dialog/dlgtoolstatusbar.asp?msg=787734#xx787734xx" 
+                                title="Get the URL for this message">Get 
+                                Link</A>]</TD>
+                                <TD align=right class=messagetitle>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/dialog/dlgtoolstatusbar.asp&amp;df=100&amp;forumid=4458&amp;select=787734"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/dialog/dlgtoolstatusbar.asp&amp;df=100&amp;forumid=4458&amp;select=787734"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(43422,787734);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG border=0 height=5 src="dlgtoolstatusbar_files/t.gif" 
+                  width=1></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="dlgtoolstatusbar_files/t.gif" width=1></TD></TR>
+              <TR bgColor=#fef9e7 id=689369_h0>
+                <TD width="100%">
+                  <TABLE border=0 cellPadding=0 cellSpacing=0 width="100%">
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx689369xx></A><IMG 
+                        align=absMiddle 
+                        src="dlgtoolstatusbar_files/news_unselected.gif">&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle 
+                        href="http://www.codeproject.com/dialog/dlgtoolstatusbar.asp?df=100&amp;forumid=4458&amp;select=689369#xx689369xx" 
+                        id=DynMessLink name=689369><B>Bug OnTimer</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=72061"><IMG 
+                        border=0 height=15 
+                        src="dlgtoolstatusbar_files/userinfo.gif" 
+                        title="Click for User Profile" width=14></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>TomBest</B>&nbsp;</FONT></TD>
+                      <TD align=right noWrap style="WIDTH: 9em" 
+                        width=120><FONT class=messagetitle><B>6:03 12 Dec 
+                        '03</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=689369_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE border=0 cellPadding=0 cellSpacing=0 width="100%">
+                    <TBODY>
+                    <TR>
+                      <TD><IMG align=absMiddle 
+                        src="dlgtoolstatusbar_files/news_none.gif">&nbsp;</TD>
+                      <TD bgColor=#d5eaff width="100%">
+                        <TABLE border=0 cellPadding=0 cellSpacing=5 
+width="100%">
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE border=0 cellPadding=0 cellSpacing=0 
+                              width="100%">
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent>Hi,<BR><BR>I found a bug in 
+                                <CODE>void CDlgToolStatusBarDlg::OnTimer(UINT 
+                                nIDEvent)</CODE>.<BR>Actual the sDate variable 
+                                is declared as <CODE>char 
+                                sDate[11]</CODE>.<BR>But this is not enough to 
+                                hold the date/time string.<BR><BR>I modify this 
+                                using CString:<BR><BR><PRE><CODE>void CDlgToolStatusBarDlg::OnTimer(UINT nIDEvent) <BR>{<BR>    time_t t;<BR>    struct tm *ptm;<BR>    time(&amp;t);<BR>    ptm = localtime(&amp;t);<BR>    CString strDate;<BR>    strDate.Format( "%.19s", asctime(ptm) );<BR>    m_StatusBar.SetText(strDate, 1, 0);<BR>    CDialog::OnTimer(nIDEvent);<BR>}</CODE></PRE><BR>Ciao<BR><BR>Thomas<BR><BR><BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/dialog/dlgtoolstatusbar.asp&amp;df=100&amp;forumid=4458&amp;select=689369" 
+                                title="Reply to this current thread">Reply</A>][<A 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/dialog/dlgtoolstatusbar.asp&amp;df=100&amp;forumid=4458&amp;select=689369" 
+                                title="Email a reply to the author of this message">Email</A>][<A 
+                                href="http://www.codeproject.com/dialog/dlgtoolstatusbar.asp?df=100&amp;tid=689369&amp;forumid=4458&amp;select=689369#xx689369xx" 
+                                title="View only messages within this thread">View 
+                                Thread</A>][<A 
+                                href="http://www.codeproject.com/dialog/dlgtoolstatusbar.asp?msg=689369#xx689369xx" 
+                                title="Get the URL for this message">Get 
+                                Link</A>]</TD>
+                                <TD align=right class=messagetitle>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/dialog/dlgtoolstatusbar.asp&amp;df=100&amp;forumid=4458&amp;select=689369"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/dialog/dlgtoolstatusbar.asp&amp;df=100&amp;forumid=4458&amp;select=689369"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(72061,689369);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG border=0 height=5 src="dlgtoolstatusbar_files/t.gif" 
+                  width=1></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="dlgtoolstatusbar_files/t.gif" width=1></TD></TR>
+              <TR bgColor=#fef9e7 id=444264_h0>
+                <TD width="100%">
+                  <TABLE border=0 cellPadding=0 cellSpacing=0 width="100%">
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx444264xx></A><IMG 
+                        align=absMiddle 
+                        src="dlgtoolstatusbar_files/news_unselected.gif">&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle 
+                        href="http://www.codeproject.com/dialog/dlgtoolstatusbar.asp?df=100&amp;forumid=4458&amp;select=444264#xx444264xx" 
+                        id=DynMessLink name=444264><B>The Menue</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=286806"><IMG 
+                        border=0 height=15 
+                        src="dlgtoolstatusbar_files/userinfo.gif" 
+                        title="Click for User Profile" width=14></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>joerghamster</B>&nbsp;</FONT></TD>
+                      <TD align=right noWrap style="WIDTH: 9em" 
+                        width=120><FONT class=messagetitle><B>7:30 14 Mar 
+                        '03</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=444264_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE border=0 cellPadding=0 cellSpacing=0 width="100%">
+                    <TBODY>
+                    <TR>
+                      <TD><IMG align=absMiddle 
+                        src="dlgtoolstatusbar_files/news_none.gif">&nbsp;</TD>
+                      <TD bgColor=#d5eaff width="100%">
+                        <TABLE border=0 cellPadding=0 cellSpacing=5 
+width="100%">
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE border=0 cellPadding=0 cellSpacing=0 
+                              width="100%">
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>I see 
+                                that you have got an Menue in the Dialog, can 
+                                you explain how you had done this 
+                                ??<BR><BR>Greetz Joerghamster 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/dialog/dlgtoolstatusbar.asp&amp;df=100&amp;forumid=4458&amp;select=444264" 
+                                title="Reply to this current thread">Reply</A>][<A 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/dialog/dlgtoolstatusbar.asp&amp;df=100&amp;forumid=4458&amp;select=444264" 
+                                title="Email a reply to the author of this message">Email</A>][<A 
+                                href="http://www.codeproject.com/dialog/dlgtoolstatusbar.asp?df=100&amp;tid=444264&amp;forumid=4458&amp;select=444264#xx444264xx" 
+                                title="View only messages within this thread">View 
+                                Thread</A>][<A 
+                                href="http://www.codeproject.com/dialog/dlgtoolstatusbar.asp?msg=444264#xx444264xx" 
+                                title="Get the URL for this message">Get 
+                                Link</A>]</TD>
+                                <TD align=right class=messagetitle>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/dialog/dlgtoolstatusbar.asp&amp;df=100&amp;forumid=4458&amp;select=444264"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/dialog/dlgtoolstatusbar.asp&amp;df=100&amp;forumid=4458&amp;select=444264"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(286806,444264);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG border=0 height=5 src="dlgtoolstatusbar_files/t.gif" 
+                  width=1></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="dlgtoolstatusbar_files/t.gif" width=1></TD></TR>
+              <TR bgColor=#fef9e7 id=254718_h0>
+                <TD width="100%">
+                  <TABLE border=0 cellPadding=0 cellSpacing=0 width="100%">
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx254718xx></A><IMG height=1 
+                        src="dlgtoolstatusbar_files/ind.gif" width=18><IMG 
+                        align=absMiddle 
+                        src="dlgtoolstatusbar_files/news_unselected.gif">&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle 
+                        href="http://www.codeproject.com/dialog/dlgtoolstatusbar.asp?df=100&amp;forumid=4458&amp;select=254718#xx254718xx" 
+                        id=DynMessLink name=254718>Re: Some bad habits and other 
+                        code comments.</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=6530"><IMG 
+                        border=0 height=15 
+                        src="dlgtoolstatusbar_files/userinfo.gif" 
+                        title="Click for User Profile" width=14></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>George&nbsp;</FONT></TD>
+                      <TD align=right noWrap style="WIDTH: 9em" 
+                        width=120><FONT class=messagetitle>22:17 8 Aug 
+                        '02&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=254718_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE border=0 cellPadding=0 cellSpacing=0 width="100%">
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="dlgtoolstatusbar_files/ind.gif" 
+                        width=18><IMG align=absMiddle 
+                        src="dlgtoolstatusbar_files/news_none.gif">&nbsp;</TD>
+                      <TD bgColor=#d5eaff width="100%">
+                        <TABLE border=0 cellPadding=0 cellSpacing=5 
+width="100%">
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE border=0 cellPadding=0 cellSpacing=0 
+                              width="100%">
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent><SMALL><B>Russ Freeman 
+                                wrote:</B></SMALL><BR><I>it makes no sense to 
+                                include a standard generated readme.txt...at 
+                                least modify it with your name in 
+                                it.</I><BR><BR>Actually I find it usefull to 
+                                keep the original readme.txt file to be able to 
+                                figure out what was generated by the wizard. 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/dialog/dlgtoolstatusbar.asp&amp;df=100&amp;forumid=4458&amp;select=254718" 
+                                title="Reply to this current thread">Reply</A>][<A 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/dialog/dlgtoolstatusbar.asp&amp;df=100&amp;forumid=4458&amp;select=254718" 
+                                title="Email a reply to the author of this message">Email</A>][<A 
+                                href="http://www.codeproject.com/dialog/dlgtoolstatusbar.asp?df=100&amp;tid=250145&amp;forumid=4458&amp;select=254718#xx254718xx" 
+                                title="View only messages within this thread">View 
+                                Thread</A>][<A 
+                                href="http://www.codeproject.com/dialog/dlgtoolstatusbar.asp?msg=254718#xx254718xx" 
+                                title="Get the URL for this message">Get 
+                                Link</A>]</TD>
+                                <TD align=right class=messagetitle>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/dialog/dlgtoolstatusbar.asp&amp;df=100&amp;forumid=4458&amp;select=254718"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/dialog/dlgtoolstatusbar.asp&amp;df=100&amp;forumid=4458&amp;select=254718"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(6530,254718);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG border=0 height=5 src="dlgtoolstatusbar_files/t.gif" 
+                  width=1></TD></TR></TBODY></TABLE></TD></TR>
+        <TR bgColor=#fbedbb>
+          <TD>
+            <TABLE cellPadding=2 width="100%">
+              <TBODY>
+              <TR>
+                <TD class=messagetitle>Last Visit: 20:54 Friday 12th November, 
+                  2004</TD>
+                <TD align=right noWrap><FONT class=messagetitle><SPAN 
+                  class=HoverLink>First</SPAN> <SPAN class=HoverLink>Prev</SPAN> 
+                  <SPAN class=HoverLink>Next</SPAN> <SPAN 
+                  class=HoverLink>Last</SPAN> 
+        </FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><BR>
+<TABLE cellSpacing=5 width="100%">
+  <TBODY>
+  <TR vAlign=top>
+    <TD><FONT size=1 style="FONT-SIZE: 7pt"><A 
+      href="http://www.codeproject.com/?cat=1">All Topics</A>, <A 
+      href="http://www.codeproject.com/?cat=2">MFC / C++</A> &gt;&gt; <A 
+      href="http://www.codeproject.com/dialog/">Dialog and Windows</A> &gt;&gt; 
+      <A href="http://www.codeproject.com/dialog/#Dialogs">Dialogs</A> 
+      <BR>Updated: 8 Aug 2002 </FONT></TD>
+    <TD align=right><FONT size=1 style="FONT-SIZE: 7pt">Article content 
+      copyright Barretto VN, 2002<BR>everything else Copyright © <A 
+      href="mailto:webmaster@codeproject.com">CodeProject</A>, 1999-2004</A>. 
+      <BR><A href="http://www.codeproject.com/info/MediaKit">Advertise on The 
+      Code Project</A> | <A 
+      href="http://www.codeproject.com/info/privacy.asp">Privacy</A> 
+  </FONT></TD></TR></TBODY></TABLE><BR>
+<CENTER>
+<TABLE border=0 cellPadding=0 cellSpacing=0 width="95%">
+  <TBODY>
+  <TR>
+    <TD bgColor=#ff9900 height=1><IMG height=1 
+      src="dlgtoolstatusbar_files/space.gif"></TD></TR>
+  <TR>
+    <TD align=middle><FONT size=1><A 
+      href="http://www.codeproject.com/redir.asp?id=235">MSDN Communities</A> | 
+      <A href="http://aspalliance.com/">ASPAlliance</A> • <A 
+      href="http://www.developerfusion.com/">Developer Fusion</A> • <A 
+      href="http://www.devguru.com/">DevGuru</A> • <A 
+      href="http://www.programmersheaven.com/">Programmers Heaven</A> • <A 
+      href="http://www.planet-source-code.com/">Planet Source Code</A> • <A 
+      href="http://www.resourceindex.com/">Resource Index</A> • <A 
+      href="http://www.tek-tips.com/">Tek-Tips Forums</A> • <A 
+      href="http://www.topxml.com/">What is XML?</A> • <A 
+      href="http://www.visualbuilder.com/">VisualBuilder</A> • <A 
+      href="http://www.zvon.org/">ZVON</A> • <A 
+      href="http://www.codeproject.com/redir.asp?id=169">Search Us!</A> 
+    </FONT></TD></TR></TBODY></TABLE></CENTER></BODY></HTML>

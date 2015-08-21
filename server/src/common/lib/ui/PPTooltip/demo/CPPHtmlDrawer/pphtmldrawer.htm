@@ -1,0 +1,2829 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<title>CPPHtmlDrawer v1.0</title>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<link href="global.css" rel="stylesheet" type="text/css">
+<base  target="_parent">
+<style type="text/css">
+<!--
+.style1 {color: #FF0000}
+-->
+</style>
+</head>
+
+<body>
+<!-------------------------------     STEP 3      --------------------------->
+<!--  Add the article text. Please use simple formatting (<h2>, <p> etc)   -->
+<h2>Contents</h2>
+<ul>
+  <li><a href="#Overview">How to integrate CPPHtmlDrawer in your application</a></li>
+  <li><a href="#ClassMembers">Class Members</a></li>
+  <li><a href="#Tags">Tags</a></li>
+  <ul>
+    <li><a href="#A_Tag">&lt;a&gt;</a> - Designates the start or destination of 
+      a hyperlink.</li>
+    <li><a href="#B_Tag">&lt;b&gt;</a> - Specifies that the text should be rendered 
+      in bold.</li>
+    <li><a href="#BASELINE_Tag">&lt;baseline&gt;</a> - Specifies alignment at 
+      the baseline of the current line's text.</li>
+    <li><a href="#BIG_Tag">&lt;big&gt;</a> - Specifies that the enclosed text 
+      should be displayed in a larger font than the current font.</li>
+    <li><a href="#BMP_Tag">&lt;bmp&gt;</a> - Draws a bitmap</li>
+    <li><a href="#BOTTOM_Tag">&lt;bottom&gt;</a> - Vertical align text and images 
+      to bottom edge.</li>
+    <li><a href="#BR_Tag">&lt;br&gt;</a> - Inserts a line break.</li>
+    <li><a href="#CENTER_Tag">&lt;center&gt;</a> - Centers subsequent text and 
+      images.</li>
+    <li><a href="#CODE_Tag">&lt;code&gt;</a> - Specifies a code sample.</li>
+    <li><a href="#EM_Tag">&lt;em&gt;</a> - Emphasizes text, usually by rendering 
+      it in italic. Similar <a href="#I_Tag">&lt;i&gt;</a> tag</li>
+    <li><a href="#FONT_Tag">&lt;font&gt;</a> - Specifies a new font, size, and 
+      color to be used for rendering the enclosed text.</li>
+    <li><a href="#Hn_Tag">&lt;h1&gt; - &lt;h6&gt;</a> - Renders text in heading 
+      style</li>
+    <li><a href="#HR_Tag">&lt;hr&gt;</a> - Draws a horizontal rule.</li>
+    <li><a href="#I_Tag">&lt;i&gt;</a> - Emphasizes text, usually by rendering 
+      it in italic.</li>
+    <li><a href="#ICON_Tag">&lt;icon&gt;</a> - Draws an icon</li>
+    <li><a href="#ILST_Tag">&lt;ilst&gt;</a> - Draws an image from the image list</li>
+    <li><a href="#LEFT_Tag">&lt;left&gt;</a> - Left align subsequent text and 
+      images.</li>
+    <li><a href="#MIDDLE_Tag">&lt;middle&gt;</a> - Vertical center text and images. 
+      Similar <a href="#VCENTER_Tag">&lt;vcenter&gt;</a> tag</li>
+    <li><a href="#PRE_Tag">&lt;pre&gt;</a> - Renders text in a fixed-width font.</li>
+    <li><a href="#RIGHT_Tag">&lt;right&gt;</a> - Aligns text and images to the 
+      right edge.</li>
+    <li><a href="#S_Tag">&lt;s&gt;</a> - Renders text in strike-through type. 
+      Look <a href="#STRIKE_Tag">&lt;strike&gt;</a> tag.</li>
+    <li><a href="#SMALL_Tag">&lt;small&gt;</a> - Specifies that the enclosed text 
+      should be displayed in a smaller font.</li>
+    <li><a href="#SPAN_Tag">&lt;span&gt;</a> - Specifies an inline text container.</li>
+    <li><a href="#STRIKE_Tag">&lt;strike&gt;</a> - Renders text in strike-through 
+      type.</li>
+    <li><a href="#STRING_Tag">&lt;string&gt;</a> - Outputs specified text string</li>
+    <li><a href="#SUB_Tag">&lt;sub&gt;</a> - Specifies that the enclosed text 
+      should be displayed in subscript, using a smaller font than the current 
+      font.</li>
+    <li><a href="#SUP_Tag">&lt;sup&gt;</a> - Specifies that the enclosed text 
+      should be displayed in superscript, using a smaller font than the current 
+      font.</li>
+    <li><a href="#T_Tag">&lt;t&gt;</a> - Inserts a tabulation.</li>
+    <li><a href="#TABLE_Tag">&lt;table&gt;</a> - Specifies that the contained 
+      content is organized into a table with rows and columns.</li>
+    <li><a href="#TD_Tag">&lt;td&gt;</a> - Specifies a cell in a table.</li>
+    <li><a href="#TOP_Tag">&lt;top&gt;</a> - Align text and images to the top 
+      edge.</li>
+    <li><a href="#TR_Tag">&lt;tr&gt;</a> - Specifies a row in a table.</li>
+    <li><a href="#VCENTER_Tag">&lt;vcenter&gt;</a> - Vertical center text and 
+      images. Similar <a href="#MIDDLE_Tag">&lt;middle&gt;</a> tag</li>
+  </ul>
+  <li><a href="#ColorList">Color Table</a> </li>
+  <li><a href="#CssStyles">CSS Styles Specification</a></li>
+  <li><a href="#CssLengthUnits">CSS Length Units</a>  </li>
+  <li><a href="#History">History</a></li>
+  <li><a href="#Contact">Contact Author</a></li>
+</ul>
+
+
+<h2><a name="Overview"></a>How to integrate CPPHtmlDrawer in your application</h2>
+<p>To integrate HTML drawer in your application you should add next files to your project:</p>
+<ul>
+  <li>PPHtmlDrawer.h</li>
+  <li>PPHtmlDrawer.cpp</li>
+  <li>PPDrawManager.h</li>
+  <li>PPDrawManager.cpp</li>
+  <li>CeXDib.h, CeXDib.cpp <span class="cpp-comment">thanks to Davide Pizzolato and Davide Calabro. This 
+    class use for extend background's effect.</span></li>
+</ul>
+<p>Extend background effects by Davide Pizzolato and Davide Calabro become available 
+if defined <code>USE_SHADE</code>:</p>
+<p>In PPDrawManager.h</p>
+<pre>#define USE_SHADE</pre>
+<h3>&nbsp;</h3>
+<h3>Create a CPPHtmlDrawer object</h3>
+<p> Include PPHtmlDrawer.h in the header file where you want to use the CPPHtmlDrawer 
+  and create a member variable:</p>
+<pre>CPPHtmlDrawer m_html_drawer;</pre>
+<h3>&nbsp;</h3>
+<h3>How to use  a CPPHtmlDrawer object</h3>
+<p> Creating a CPPHtmlDrawer object (look above) that's all you need to use a HTML drawer. </p>
+<ul>
+  <li>If you frequently use drawing same text then the better way to use preparation of the output (<a href="#PrepareOutput">PrepareOutput</a> method) and then to output the prepared text with <a href="#DrawPreparedOutput">DrawPreparedOutput</a> method. The same technique is convenient at usage of effects at drawing images and hyperlinks.    </li>
+  <li>If drawing speed is indifferent for you then better way to take advantage of <a href="#Draw">Draw</a> method for automatic text's preparation for output and output his.</li>
+  <li>If you do not accept styles of the output text by default take advantage of <a href="#SetCssStyles">SetCssStyles</a> method for change of them.    </li>
+  <li>If you use hyperlinks it is necessary to customize <a href="#OnLButtonDown">OnLButtonDown</a> and <a href="#OnSetCursor">OnSetCursor</a> handlers.</li>
+  <li> If you use effects in the HTML text then in the parent class is necessary to process the callback message setted by <a href="#SetCallbackRepaint">SetCallbackRepaint</a> method. And in this handler you must repaint a HTML text.</li>
+  <li>If you use the hyperlinks sending the message to the parent class (&lt;a msg =...&gt;) then in the parent class is necessary to process the callback message setted by <a href="#SetCallbackHyperlink">SetCallbackHyperlink</a> method</li>
+</ul>
+<p>&nbsp;</p>
+<h2><a name="ClassMembers"></a>Class Members</h2>
+<table width="100%" border="0">
+  <tr> 
+    <td width="25%" valign="top"><p><b>Construction</b></p></td>
+    <td width="75%">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td><a href="#CPPHtmlDrawer">CPPHtmlDrawer</a></td>
+    <td>Constructs a <code>CPPHtmlDrawer</code> object.</td>
+  </tr>
+  <tr> 
+    <td><p>&nbsp;</p>
+      <p><b>CSS Styles</b></p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td><a href="#SetCssStyles">SetCssStyles</a></td>
+    <td>Sets the <code>CSS</code> styles of the <code>HTML</code> text</td>
+  </tr>
+  <tr> 
+    <td><a href="#GetCssStyles">GetCssStyles</a></td>
+    <td>Retrieves information about the <css><code>CSS</code></css> styles of 
+      the <code>HTML</code> text</td>
+  </tr>
+  <tr> 
+    <td><p>&nbsp;</p>
+      <p><b>Drawing</b></p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td><a href="#PrepareOutput">PrepareOutput</a></td>
+    <td>Prepares a html string for output</td>
+  </tr>
+  <tr> 
+    <td><a href="#DrawPreparedOutput">DrawPreparedOutput</a></td>
+    <td>Draws a prepared for output html string.</td>
+  </tr>
+  <tr> 
+    <td><a href="#Draw">Draw</a></td>
+    <td>Prepares html string and then to draw it.</td>
+  </tr>
+  <tr>
+    <td><a href="#SetBorder">SetBorder</a></td>
+    <td>Customizes a tooltip border </td>
+  </tr>
+  <tr>
+    <td><a href="#HideBorder">HideBorder</a></td>
+    <td>Hides a tooltip border.</td>
+  </tr>
+  <tr> 
+    <td><p>&nbsp;</p>
+      <p><b>Hyperlink Cursor</b></p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td><a href="#SetHyperlinkCursor">SetHyperlinkCursor</a></td>
+    <td>Sets the cursor to be displayed when moving the mouse over a link. </td>
+  </tr>
+  <tr> 
+    <td><a href="#GetHyperlinkCursor">GetHyperlinkCursor</a></td>
+    <td>Returns the current link cursor. </td>
+  </tr>
+  <tr> 
+    <td><p>&nbsp;</p>
+      <p><b>Callbacks</b></p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td><a href="#SetCallbackHyperlink">SetCallbackHyperlink</a></td>
+    <td>Sets the callback message: &quot;User clicks a notifying link&quot;.</td>
+  </tr>
+  <tr> 
+    <td><a href="#SetCallbackRepaint">SetCallbackRepaint</a></td>
+    <td>Sets the callback message: &quot;Please repaint me&quot;.</td>
+  </tr>
+  <tr> 
+    <td><p>&nbsp;</p>
+      <p><b>Resource DLL</b></p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td><a href="#LoadResourceDll">LoadResourceDll</a></td>
+    <td>Sets the path to the resource's DLL</td>
+  </tr>
+  <tr> 
+    <td><a href="#SetResourceDll">SetResourceDll</a></td>
+    <td>Sets the handle of the loaded resource's DLL</td>
+  </tr>
+  <tr> 
+    <td><p>&nbsp;</p>
+      <p><b>Others</b></p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#SetImageList">SetImageList</a></td>
+    <td>Sets the image list.</td>
+  </tr>
+  <tr> 
+    <td><a href="#SetImageShadow">SetImageShadow</a></td>
+    <td>Customizes a shadow of the images.</td>
+  </tr>
+  <tr> 
+    <td><a href="#EnableEscapeSequences">EnableEscapeSequences</a></td>
+    <td>Enables the escape sequences ('\n' and '\t').</td>
+  </tr>
+  <tr> 
+    <td><a href="#OnLButtonDown">OnLButtonDown</a></td>
+    <td>The receiver of the mouse clicks.</td>
+  </tr>
+  <tr> 
+    <td><a href="#OnSetCursor">OnSetCursor</a></td>
+    <td>Controls the cursor changes (over link).</td>
+  </tr>
+  <tr> 
+    <td><p>&nbsp;</p>
+      <p><b>Version</b></p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td><a href="#GetVersionI">GetVersionI</a></td>
+    <td>Get CPPHtmlDrawer version</td>
+  </tr>
+  <tr> 
+    <td><a href="#GetVersionC">GetVersionC</a></td>
+    <td>Get CPPHtmlDrawer version</td>
+  </tr>
+</table>
+<h3>&nbsp;</h3>
+<h3><a name="CPPHtmlDrawer" id="CPPHtmlDrawer"></a>CPPHtmlDrawer::CPPHtmlDrawer</h3>
+<code>CPPHtmlDrawer ();</code> 
+<p><b>Remarks</b><br>
+  Constructs a CPPHtmlDrawer object.</p>
+<p><a href="#Overview">CPPHtmlDrawer Overview</a> | <a href="#ClassMembers">Class 
+  Members</a> | <a href="#Styles">Styles</a></p>
+<h3>&nbsp;</h3>
+<h3><a name="SetCssStyles" id="SetCssStyles"></a>CPPHtmlDrawer::SetCssStyles</h3>
+<code>void SetCssStyles(LPCTSTR lpszCssString /* = NULL */);</code><br>
+<code>void SetCssStyles(DWORD dwIdCssString, LPCTSTR lpszPathDll /* = NULL */);</code> 
+<p><b>Parameters</b></p>
+<ul>
+  <li><code>lpszCssString</code> - Pointer to the string with CSS styles or NULL if sets the default CSS styles (like <a href="http://www.codeproject.com">Codeproject</a>).</li>
+  <li><code>dwIdCssString</code> - 
+
+
+ ID of the string resource that contains the string with CSS styles.</li>
+  <li><code>lpszPathDll</code> - Pointer to the string that contains the path to the resource DLL. If NULL then a string will loaded from the resources of the application.</li>
+</ul>
+<p><b>Remarks</b><br>
+  Call this method to customize the CSS styles used on HTML page. 
+  Look the complete list of accessible styles <a href="#CssStyles">here</a>. For example following lines shows styles for <b>&lt;h2&gt;</b> and <b>&lt;a&gt;</b> tags:</p>
+<pre>h2 {font-size: 13pt; color:#ff9900; font-family:Verdana; font-weight:bold}
+a:link {text-decoration:none; color:blue}
+a:hover {text-decoration:underline; color:red}</pre>
+<p><a href="#Overview">CPPHtmlDrawer Overview</a> | <a href="#ClassMembers">Class 
+  Members</a> | <a href="#Styles">Styles</a></p>
+<h3>&nbsp;</h3>
+<h3><a name="GetCssStyles" id="GetCssStyles"></a>CPPHtmlDrawer::GetCssStyles</h3>
+<code>LPCTSTR GetCssStyles();</code>
+<p><b>Return Value</b></p>
+<p>A const pointer to the string that contains the CSS styles.</p>
+<p><b>Remarks</b><br>
+  Call this method to retrive the CSS styles used on HTML page. Look the complete list of accessible styles <a href="#CssStyles">here</a>. </p>
+<p><a href="#Overview">CPPHtmlDrawer Overview</a> | <a href="#ClassMembers">Class Members</a> | <a href="#Styles">Styles</a></p>
+<p>&nbsp;</p>
+<h3><a name="PrepareOutput" id="PrepareOutput"></a>CPPHtmlDrawer::PrepareOutput</h3>
+<code>CSize PrepareOutput(CDC * pDC, CString & strHtml);</code>
+<p><b>Parameters</b></p>
+<ul>
+  <li><code>pDC</code> - 
+
+
+ 
+
+
+ A pointer to the device context the HTML text is to be drawn. Actually this method does not output in a context. 
+ It is used only for obtaining the necessary data from the context</li>
+  <li><code>strHtml</code> - 
+
+
+ A reference to a CString object that contains a HTML text.</li>
+</ul>
+<p><b>Return Value</b></p>
+<p>  Size of the rectangle necessary for output of the HTML text.</p>
+<p><b>Remarks</b><br>
+  This method to prepare the output of the HTML text and to calculate the output area. For output of this text is necessary to specify a size of a rectangle <i>not less</i> a size returned by this method.</p>
+<p><a href="#Overview">CPPHtmlDrawer Overview</a> | <a href="#ClassMembers">Class Members</a> | <a href="#Styles">Styles</a></p>
+<p>&nbsp;</p>
+<h3><a name="DrawPreparedOutput" id="DrawPreparedOutput"></a>CPPHtmlDrawer::DrawPreparedOutput</h3>
+<code>void DrawPreparedOutput(CDC * pDC, CString & strHtml, CRect rect);</code>
+<p><b>Parameters</b></p>
+<ul>
+  <li><code>pDC</code> - A pointer to the device context the HTML text is to be drawn.</li>
+  <li><code>strHtml</code> - A reference to a CString object that contains a HTML text.</li>
+  <li><code>rect</code> - A bounding rectangle of the context area when will output the HTML text. A size of a rectangle <i>not less</i> a size returned from <a href="#PrepareOutput">PrepareOutput</a> method.</li>
+</ul>
+<p><b>Remarks</b><br>
+Call this method to output a HTML text on device context. <strong>Note</strong> do not call this method without preliminary preparation of output by a  <a href="#PrepareOutput">PrepareOutput</a> method.</p>
+<p><a href="#Overview">CPPHtmlDrawer Overview</a> | <a href="#ClassMembers">Class Members</a> | <a href="#Styles">Styles</a></p>
+<p>&nbsp;</p>
+<h3><a name="Draw" id="Draw"></a>CPPHtmlDrawer::Draw</h3>
+<code>void Draw(CDC * pDC, CString & strHtml, CPoint ptTopLeft);</code>
+<p><b>Parameters</b></p>
+<ul>
+  <li><code>pDC</code> - A pointer to the device context the HTML text is to be drawn.</li>
+  <li><code>strHtml</code> - A reference to a CString object that contains a HTML text.</li>
+  <li><code>ptTopLeft</code> - A coordinate of the top-left corner of the context area where will draw the HTML text.</li>
+</ul>
+<p><b>Remarks</b><br> 
+  Call this method to draw the HTML text without preliminary preparing of the output. It will be fulfilled inside this method independently.</p>
+<p><a href="#Overview">CPPHtmlDrawer Overview</a> | <a href="#ClassMembers">Class Members</a> | <a href="#Styles">Styles</a></p>
+<p>&nbsp;</p>
+<h3><a name="SetBorder" id="SetBorder"></a>CPPHtmlDrawer::SetBorder</h3>
+<code>void SetBorder(COLORREF color, int nWidth /* = 1 */, int nHeight /* = 1 */);</code><br>
+<code>void SetBorder(HBRUSH hbr, int nWidth /* = 1 */, int nHeight /* = 1 */);</code>
+<p><b>Parameters</b></p>
+<ul>
+  <li><code>color</code> - A color of the solid brush for the tooltip border.</li>
+  <li><code>hbr</code> - A handle of the brush for the tooltip border.</li>
+  <li><code>nWidth</code> - A width of the border.</li>
+  <li><code>nHeight</code> - A height of the border.</li>
+</ul>
+<p><b>Remarks</b><br>
+  Call this method to show and to customize a tooltip border.</p>
+<p><a href="#Overview">CPPHtmlDrawer Overview</a> | <a href="#ClassMembers">Class Members</a> | <a href="#Styles">Styles</a></p>
+<p>&nbsp;</p>
+<h3><a name="HideBorder" id="HideBorder"></a>CPPHtmlDrawer::HideBorder</h3>
+<code>void HideBorder();</code>
+<p><b>Remarks</b><br>
+Call this method to hide a tooltip border.</p>
+<p><a href="#Overview">CPPHtmlDrawer Overview</a> | <a href="#ClassMembers">Class Members</a> | <a href="#Styles">Styles</a></p>
+<p>&nbsp;</p>
+<h3><a name="SetHyperlinkCursor" id="SetHyperlinkCursor"></a>CPPHtmlDrawer::SetHyperlinkCursor</h3>
+<code>void SetHyperlinkCursor(HCURSOR hCursor /* = NULL */);</code>
+<p><b>Parameters</b></p>
+<ul>
+  <li><code>hCursor</code> - 
+
+
+ Handle to the cursor.
+
+
+
+
+ If this parameter is NULL, the HAND cursor is used.</li>
+</ul>
+<p><b>Remarks</b><br>
+ The cursor is set only if the new cursor is different from the previous cursor; otherwise, the function returns immediately. This cursor will show over the hyperlinks of the HTML text. </p>
+<p><a href="#Overview">CPPHtmlDrawer Overview</a> | <a href="#ClassMembers">Class Members</a> | <a href="#Styles">Styles</a></p>
+<p>&nbsp;</p>
+<h3><a name="GetHyperlinkCursor" id="GetHyperlinkCursor"></a>CPPHtmlDrawer::GetHyperlinkCursor</h3>
+<code>HCURSOR GetHyperlinkCursor() const;</code>
+<p><b>Return Value</b></p>
+<p> The return value is the handle to the current cursor of the HTML hyperlinks.</p>
+<p><b>Remarks</b><br>
+Call this member function to get the handle of the cursor, previously set with <a href="#SetHyperlinkCursor">SetHyperlinkCursor </a>, that is associated with HTML hyperlinks.</p>
+<p><a href="#Overview">CPPHtmlDrawer Overview</a> | <a href="#ClassMembers">Class Members</a> | <a href="#Styles">Styles</a></p>
+<p>&nbsp;</p>
+<h3><a name="SetImageList" id="SetImageList"></a>CPPHtmlDrawer::SetImageList</h3>
+<code>void SetImageList(UINT nIdBitmap, int cx, int cy, int nCount, COLORREF crMask /* = RGB(255, 0, 255) */);</code><br>
+<code>void SetImageList(HBITMAP hBitmap, int cx, int cy, int nCount, COLORREF crMask /* = RGB(255, 0, 255) */);</code>
+<p><b>Parameters</b></p>
+<ul>
+  <li><code>nIdBitmap</code> - 
+
+
+ Resource IDs of the bitmap to be associated with the image list.</li>
+  <li><code>hBitmap</code> - 
+
+
+ Handle of the bitmap to be associated with the image list.</li>
+  <li><code>cx</code> - 
+
+
+ Dimensions of each image, in pixels.</li>
+  <li><code>cy</code> - 
+
+
+ Dimensions of each image, in pixels.</li>
+  <li><code>nCount</code> - 
+
+
+ Number of images that the image list initially contains</li>
+  <li><code>crMask</code> - 
+
+
+ Color used to generate a mask. Each pixel of this color in the specified bitmap is changed to black, and the corresponding bit in the mask is set to one.</li>
+</ul>
+<p><b>Remarks</b><br>
+ Call this function to add one or more images or an icon to an image list. You can use the icons from imagelist in <a href="#ILST_Tag">&lt;ilst&gt;</a> tag.</p>
+<p><a href="#Overview">CPPHtmlDrawer Overview</a> | <a href="#ClassMembers">Class Members</a> | <a href="#Styles">Styles</a></p>
+<p>&nbsp;</p>
+<h3><a name="SetCallbackHyperlink" id="SetCallbackHyperlink"></a>CPPHtmlDrawer::SetCallbackHyperlink</h3>
+<code>void SetCallbackHyperlink(HWND hWnd, UINT nMessage, LPARAM lParam /* = 0 */);</code>
+<p><b>Parameters</b></p>
+<ul>
+  <li><code>hWnd</code> - 
+
+
+ Handle to the window whose window procedure will receive the message. <code>NULL</code> if the callback message must not send.</li>
+  <li><code>nMessage</code> - 
+
+
+ Specifies the message to be sent.</li>
+  <li><code>lParam</code> - 
+
+
+ Specifies additional user-defined information</li>
+</ul>
+<p><b>Remarks</b></p>
+<p>This method sets the callback messages from the control to the specified window if user clicks a hyperlink with <b>msg</b> parameter.
+<pre><i>Format a callback message</i>:
+  <code>Msg</code> - Specified ID message
+  <code>wParam</code> - Pointer to the string specified as <strong>msg</strong> parameter of the <a href="#A_Tag">&lt;a&gt;</a> tag.
+  <code>lParam</code> - Additional user-defined value</pre> 
+<p><a href="#Overview">CPPHtmlDrawer Overview</a> | <a href="#ClassMembers">Class Members</a> | <a href="#Styles">Styles</a></p>
+<p>&nbsp;</p>
+<h3><a name="SetCallbackRepaint" id="SetCallbackRepaint"></a>CPPHtmlDrawer::SetCallbackRepaint</h3>
+<code>void SetCallbackRepaint(HWND hWnd, UINT nMessage, LPARAM lParam /* = 0 */);</code>
+<p><b>Parameters</b></p>
+<ul>
+  <li><code>hWnd</code> - Handle to the window whose window procedure will receive the message. <code>NULL</code> if the callback message must not send.</li>
+  <li><code>nMessage</code> - Specifies the message to be sent.</li>
+  <li><code>lParam</code> - Specifies additional user-defined information</li>
+</ul>
+<p><b>Remarks</b><br>
+This method establishes the callback message sent to the specified window if necessary repainting. 
+It is necessary for correct drawn of the visual effects. 
+If you do not use these effects sets the window handle as <code>NULL</code>. 
+Underlining the hyperlink text if the cursor over it concerns to visual effects too.</p>
+<p><a href="#Overview">CPPHtmlDrawer Overview</a> | <a href="#ClassMembers">Class Members</a> | <a href="#Styles">Styles</a></p>
+<p>&nbsp;</p>
+<h3><a name="LoadResourceDll" id="LoadResourceDll"></a>CPPHtmlDrawer::LoadResourceDll</h3>
+<code>void LoadResourceDll(LPCTSTR lpszPathDll, DWORD dwFlags /* = 0 */);</code>
+<p><b>Parameters</b></p>
+<ul>
+  <li><code>lpszPathDll</code> - 
+
+
+ Pointer to a null-terminated string that names the resource DLL. NULL if resource DLL isn't available. </li>
+  <li><code>dwFlags</code> - 
+
+
+ Specifies the action to take when loading the module. Look <b>::LoadLibraryEx</b> API function for more information.</li>
+</ul>
+<p><b>Remarks</b><br>
+It is a method loads resource DLL for their use in tags <a href="#BMP_Tag">&lt;bmp&gt;</a>, <a href="#ICON_Tag">&lt;icon&gt;</a> and <a href="#STRING_Tag">&lt;string&gt;</a>.</p>
+<p><a href="#Overview">CPPHtmlDrawer Overview</a> | <a href="#ClassMembers">Class Members</a> | <a href="#Styles">Styles</a></p>
+<p>&nbsp;</p>
+<h3><a name="SetResourceDll" id="SetResourceDll"></a>CPPHtmlDrawer::SetResourceDll</h3>
+<code>void SetResourceDll(HINSTANCE hInstDll /* = NULL */);</code>
+<p><b>Parameters</b></p>
+<ul>
+  <li><code>hInstDll</code> - an instance of the resource DLL. NULL if resource DLL isn't available.</li>
+</ul>
+<p><b>Remarks</b><br>
+It is a method sets the resource DLL for their use in tags <a href="#BMP_Tag">&lt;bmp&gt;</a>, <a href="#ICON_Tag">&lt;icon&gt;</a> and <a href="#STRING_Tag">&lt;string&gt;</a>.</p>
+<p><a href="#Overview">CPPHtmlDrawer Overview</a> | <a href="#ClassMembers">Class Members</a> | <a href="#Styles">Styles</a></p>
+<p>&nbsp;</p>
+<h3><a name="SetImageShadow" id="SetImageShadow"></a>CPPHtmlDrawer::SetImageShadow</h3>
+<code>void SetImageShadow(int nTypeShadow /* = SHADOW_NONE */);</code><br>
+<code>void SetImageShadow(int nTypeShadow, COLORREF color);</code>
+<p><b>Parameters</b></p>
+<ul>
+  <li><code>nTypeShadow</code> - The type of the shadow. 
+
+
+ The values are as follows:
+
+    <br>
+    <b>SHADOW_NONE</b><br>
+    <b>SHADOW_NORMAL</b><br>
+    <b>SHADOW_GRADIENT</b></li>
+  <li><code>color</code> - Gray color for the darkness color of the shadow. <i>The brightness for the shadow = GetRValue() / 255</i> </li>
+</ul>
+<p><b>Remarks</b><br>
+ Call this function to display the shadow for an image. The shadow has the right and bottom images
+
+.</p>
+<p><a href="#Overview">CPPHtmlDrawer Overview</a> | <a href="#ClassMembers">Class Members</a> | <a href="#Styles">Styles</a></p>
+<p>&nbsp;</p>
+<h3><a name="EnableEscapeSequences" id="EnableEscapeSequences"></a>CPPHtmlDrawer::EnableEscapeSequences</h3>
+<code>void EnableEscapeSequences(BOOL bEnable /* = TRUE */);</code>
+<p><b>Parameters</b></p>
+<ul>
+  <li><code>bEnable</code> - If TRUE that word processor will process char symbols less then 0x20 code (For example: \n and \t  ). If FALSE then word processor will ignore it. </li>
+</ul>
+<p><b>Remarks</b><br>
+Call this method to customize usage of the escape sequences in the HTML text.</p>
+<p><a href="#Overview">CPPHtmlDrawer Overview</a> | <a href="#ClassMembers">Class Members</a> | <a href="#Styles">Styles</a></p>
+<p>&nbsp;</p>
+<h3><a name="OnLButtonDown" id="OnLButtonDown"></a>CPPHtmlDrawer::OnLButtonDown</h3>
+<code>void OnLButtonDown(CPoint & ptClient);</code>
+<p><b>Parameters</b></p>
+<ul>
+  <li><code>ptClient</code> - Specifies the x- and y-coordinate of the cursor. These coordinates must be relative to the upper-left corner of the parent window.</li>
+</ul>
+<p><b>Remarks</b><br>
+ The parent must calls this member function when the user presses the left mouse button. This method is intended for processing clicks on hyperlinks. 
+ If you do not use a hyperlink then you can't to call this method.<br>
+ The best place of call of this method is a handler <code>WM_LBUTTONDOWN</code> of the parent. <b> Note</b> in this handler the cursor's coordinates in screen coordinates and you must convert its to the client coordinates for passes to this method.
+<pre>void CParentOfHtmlDrawer::OnLButtonDown(UINT nFlags, CPoint point)
+{
+    CPoint ptClient = point;
+    ScreenToClient(&amp;ptClient);
+    m_html_drawer.OnLButtonDown(ptClient);
+    ...
+}</pre>
+ </p>
+<a href="#Overview">CPPHtmlDrawer Overview</a> | <a href="#ClassMembers">Class Members</a> | <a href="#Styles">Styles</a>
+<p>&nbsp;</p>
+<h3><a name="OnSetCursor" id="OnSetCursor"></a>CPPHtmlDrawer::OnSetCursor</h3>
+<code>BOOL OnSetCursor(CPoint & ptClient);</code>
+<p><b>Parameters</b></p>
+<ul>
+  <li><code>ptClient</code> - Specifies the x- and y-coordinate of the cursor. These coordinates must be relative to the upper-left corner of the parent window.</li>
+</ul>
+<p><b>Return Value</b></p>
+<p> Nonzero to halt further processing, or 0 to continue. </p>
+<p><b>Remarks</b><br>
+  Whether inside a method it is checked there is a cursor above a hyperlink or not. 
+  Suitably changing the cursor and sending the callback message for repaint of the HTML text.
+  If you do not use a hyperlink you can not use this method.<br>
+The best place of call of this method is a handler <code>WM_SETCURSOR</code> of the parent. <b> </b><b>Note</b> in this handler the cursor's coordinates in screen coordinates and you must convert its to the client coordinates for passes to this method.</p>
+<pre>BOOL CParentOfHtmlDrawer::OnSetCursor(CWnd* pWnd, UINT nHitTest, UINT message)
+{
+    CPoint ptClient;
+    ::GetCursorPos(&amp;ptClient);
+    ScreenToClient(&amp;ptClient);
+    if (m_html_drawer.OnSetCursor(ptClient))
+       return TRUE; //The cursor over the hyperlink
+
+    return CDialog::OnSetCursor(pWnd, nHitTest, message);
+}</pre>
+<p><a href="#Overview">CPPHtmlDrawer Overview</a> | <a href="#ClassMembers">Class Members</a> | <a href="#Styles">Styles</a></p>
+<p>&nbsp;</p>
+<h3><a name="GetVersionI" id="GetVersionI"></a>CPPHtmlDrawer::GetVersionI</h3>
+<p><code>short GetVersionI() </code></p>
+<p><b>Return Value </b></p>
+<p>Number version of CPPHtmlDrawer. </p>
+<p><b>Remarks </b></p>
+<p>Returns the CPPHtmlDrawer version as a short number. Divide by 10 to get actual version. </p>
+<p><a href="#Overview">CPPHtmlDrawer Overview</a> | <a href="#ClassMembers">Class Members</a> | <a href="#Styles">Styles</a></p>
+<p>&nbsp;</p>
+<h3><a name="GetVersionC" id="GetVersionC"></a>CPPHtmlDrawer::GetVersionC</h3>
+<p><code>LPCTSTR GetVersionC() </code></p>
+<p><b>Return Value </b></p>
+<p>Number version of CPPHtmlDrawer as string. </p>
+<p><b>Remarks </b></p>
+<p>Returns the CPPHtmlDrawer version as a string. </p>
+<p><a href="#Overview">CPPHtmlDrawer Overview</a> | <a href="#ClassMembers">Class Members</a> | <a href="#Styles">Styles</a></p>
+<p>&nbsp;</p>
+<h2><a name="Tags"></a>Tags Specifications</h2>
+<p>I have develop a simple text formatting language, similar to HTML. 
+  It consists of a small number of tags which allows to operate with text in
+tooltip.</p>
+<p>Here is a list of these tags with short description:</p>
+<table width="100%" border="0">
+  <tr valign="top" bgcolor="#999999"> 
+    <td width="15%" align="center" valign="middle" style="border-style: solid; border-width: 1"><div align="center"><b>Name</b></div></td>
+    <td width="5%" align="center" valign="middle" style="border-style: solid; border-width: 1"><b>/</b></td>
+    <td width="10%" align="center" valign="middle" style="border-style: solid; border-width: 1"><div align="center"><b>Attribute</b></div></td>
+    <td width="60%" align="center" valign="middle" style="border-style: solid; border-width: 1"><div align="center"><b>Description</b></div></td>
+    <td width="10%" align="center" valign="middle" style="border-style: solid; border-width: 1"><div align="center"><b>Default Value</b></div></td>
+  </tr>
+  <tr valign="top"> 
+    <td rowspan="3" align="center" valign="top" style="border-style: solid; border-width: 1"><div align="center"><font color="#FF0000"><b>
+      <a name="A_Tag"></a>&lt;A&gt;</b></font></div>
+    </td>
+    <td align="center" style="border-style: solid; border-width: 1"><b>+</b></td>
+    <td colspan="3" style="border-style: solid; border-width: 1">Designates the start or destination of a hyperlink.</td>
+  </tr>
+  <tr valign="top"> 
+    <td align="center" style="border-right-style: solid; border-right-width: 1; border-top-style: solid; border-top-width: 1; border-bottom-style: solid; border-bottom-width: 1"></td>
+    <td style="border-style: solid; border-width: 1"><font color="#FF0000"><b>href</b></font></td>
+    <td style="border-style: solid; border-width: 1">Sets the destination URL. <i><br>
+    Example:</i> <br>
+    <pre>&lt;a href=&quot;http://www.codeproject.com&quot;&gt;Press me&lt;/a&gt;</pre>
+    </td>
+    <td style="border-style: solid; border-width: 1">&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td align="center" style="border-right-style: solid; border-right-width: 1; border-top-style: solid; border-top-width: 1; border-bottom-style: solid; border-bottom-width: 1"></td>
+    <td style="border-style: solid; border-width: 1"><font color="#FF0000"><b>msg</b></font></td>
+    <td style="border-style: solid; border-width: 1">Sets the ID of the message to be sent by click. If user clicks by this 
+    link that a drawer will send a callback message to the specified window with 
+    specifies string as <code>WPARAM</code>. Look <a href="#SetCallbackHyperlink">
+    SetCallbackHyperlink</a> method for more information.<br>
+    <i>Example:</i>
+    <pre>&lt;a msg=&quot;1234567890&quot;&gt;Press me&lt;/a&gt;</pre></td>
+    <td style="border-style: solid; border-width: 1">&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td align="center" rowspan="2" valign="top" style="border-style: solid; border-width: 1"><div align="center"><font color="#FF0000"><b>
+      <a name="B_Tag"></a>&lt;B&gt;</b></font></div>
+    </td>
+    <td align="center" style="border-style: solid; border-width: 1"><b>+</b></td>
+    <td colspan="3" style="border-style: solid; border-width: 1">Specifies that the text should be rendered in bold.</td>
+  </tr>
+  <tr valign="top"> 
+    <td align="center" style="border-right-style: solid; border-right-width: 1; border-top-style: solid; border-top-width: 1; border-bottom-style: solid; border-bottom-width: 1"></td>
+    <td style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td style="border-style: solid; border-width: 1">
+    <i>Example:</i>
+    <pre>&lt;b&gt;Bold Text&lt;/b&gt;</pre></td>
+    <td style="border-style: solid; border-width: 1">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" valign="top" style="border-style: solid; border-width: 1" rowspan="2">
+    <font color="#FF0000"><b><a name="BASELINE_Tag"></a>&lt;BASELINE&gt;</b></font></td>
+    <td align="center" style="border-style: solid; border-width: 1">+</td>
+    <td valign="top" style="border-style: solid; border-width: 1" colspan="3">
+    Specifies alignment at the baseline of the current line's text.</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1">&nbsp;</td>
+	<td style="border-style: solid; border-width: 1">
+    <i>Example:</i>
+    <pre>&lt;baseline&gt;Text to the baseline of the string&lt;/baseline&gt;</pre>    <p></td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" valign="top" style="border-style: solid; border-width: 1" rowspan="2">
+    <font color="#FF0000"><b><a name="BIG_Tag"></a>&lt;BIG&gt;</b></font></td>
+    <td align="center" style="border-style: solid; border-width: 1">+</td>
+    <td valign="top" style="border-style: solid; border-width: 1" colspan="3">
+    Specifies that the enclosed text should be displayed in a larger font than 
+    the current font.</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1">&nbsp;</td>
+	<td style="border-style: solid; border-width: 1">
+    <i>Example:</i>
+    <pre>&lt;big&gt;Biggest Text&lt;/big&gt;</pre>    <p></td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" valign="top" style="border-style: solid; border-width: 1" rowspan="11">
+    <font color="#FF0000"><b><a name="BMP_Tag"></a>&lt;BMP&gt;</b></font></td>
+    <td align="center" style="border-style: solid; border-width: 1">-</td>
+    <td valign="top" style="border-style: solid; border-width: 1" colspan="3">
+    Draws a bitmap</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>idres</b></font></td>
+	<td style="border-style: solid; border-width: 1">ID of the application's 
+    bitmap resource<br>
+    <i>Example:</i>
+    <pre>&lt;bmp idres=&quot;139&quot;&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>handle</b></font></td>
+	<td style="border-style: solid; border-width: 1">Handle of the bitmap. <b>
+    Becareful, this attribute must be use for creating string in runtime ONLY!!!</b><br>
+    <i>Example:</i>
+    <pre>&lt;bmp handle=&quot;0xFC00D6&quot;&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>file</b></font></td>
+	<td style="border-style: solid; border-width: 1">Path to the bitmap's file<br>
+    <i>Example:</i>
+    <pre>&lt;bmp file=&quot;C:\Temp\apps.bmp&quot;&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1"><b>
+    <font color="#FF0000">iddll</font></b></td>
+	<td style="border-style: solid; border-width: 1">ID of the bitmap resource 
+    from the dll<br>
+    <i>Example:</i>
+    <pre>&lt;bmp iddll=&quot;145&quot;&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>srcdll</b></font></td>
+	<td style="border-style: solid; border-width: 1">Path to the resource DLL 
+    file<br>
+    <i>Example:</i>
+    <pre>&lt;bmp srcdll=&quot;C:\Temp\resources.dll&quot;&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>width</b></font></td>
+	<td style="border-style: solid; border-width: 1">The width of the bitmap<br>
+    <i>Example:</i>
+    <pre>&lt;bmp width=&quot;28&quot;&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>height</b></font></td>
+	<td style="border-style: solid; border-width: 1">The height of the bitmap<br>
+    <i>Example:</i>
+    <pre>&lt;bmp height=&quot;40&quot;&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1"><b>
+    <font color="#FF0000">mask</font></b></td>
+	<td style="border-style: solid; border-width: 1">Using a transparent color<table width="633" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" id="AutoNumber1">
+      <tr>
+        <td width="633">
+        <ul>
+          <li><font color="#FF0000">&quot;&quot;</font> - a default transparent color 
+          RGB(255, 0, 255)</li>
+          <li><font color="#FF0000">[color]</font> Full list 
+    of the color names or RGB values in the <a href="#ColorList">Color Table</a>.</li>
+        </ul>
+        </td>
+      </tr>
+      </table>
+     
+    <p>
+     
+    <i>Example:</i> </p>
+    <pre>&lt;bmp mask&gt;
+&lt;bmp mask=&quot;magenta&quot;&gt;</pre>
+    </td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>style</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets an inline style for 
+    the bitmap (without hover effect)<table width="633" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" id="AutoNumber1">
+      <tr>
+        <td width="633">
+        <ul>
+          <li><font color="#FF0000">d</font> - darken image</li>
+          <li><font color="#FF0000">g</font> - grayed image</li>
+          <li><font color="#FF0000">l</font> - lighten image.</li>
+          <li><font color="#FF0000">s</font> - image with shadow</li>
+        </ul>
+        </td>
+      </tr>
+      </table>
+     
+    <p>
+     
+    <i>Example:</i> </p>
+    <pre>&lt;bmp style=&quot;dg&quot;&gt;</pre>
+    </td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>hotstyle</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets an inline style for 
+    the bitmap (for hover effect. Look <a href="#A_Tag">&lt;a&gt;</a> tag)<table width="633" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" id="AutoNumber1">
+      <tr>
+        <td width="633">
+        <ul>
+          <li><font color="#FF0000">d</font> - darken image</li>
+          <li><font color="#FF0000">g</font> - grayed image</li>
+          <li><font color="#FF0000">l</font> - lighten image.</li>
+          <li><font color="#FF0000">s</font> - image with shadow</li>
+        </ul>
+        </td>
+      </tr>
+      </table>
+     
+    <p>
+     
+    <i>Example:</i> </p>
+    <pre>&lt;bmp hotstyle=&quot;ls&quot;&gt;
+&lt;a&gt;&lt;bmp style=&quot;g&quot; hotstyle=&quot;s&quot;&gt;&lt;/a&gt;</pre>
+    </td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" valign="top" style="border-style: solid; border-width: 1" rowspan="2">
+    <font color="#FF0000"><b><a name="BOTTOM_Tag"></a>&lt;BOTTOM&gt;</b></font></td>
+    <td align="center" style="border-style: solid; border-width: 1">+</td>
+    <td valign="top" style="border-style: solid; border-width: 1" colspan="3">
+    Vertical align text and images to bottom edge.</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1">&nbsp;</td>
+	<td style="border-style: solid; border-width: 1">
+    <i>Example:</i>
+    <pre>&lt;bottom&gt;Text to the bottom&lt;/bottom&gt;</pre>    <p></td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" valign="top" style="border-style: solid; border-width: 1" rowspan="2"><b><font color="#FF0000">
+    <a name="BR_Tag"></a>&lt;BR&gt;</font></b></td>
+    <td align="center" style="border-style: solid; border-width: 1"><b>-</b></td>
+    <td colspan="3" style="border-style: solid; border-width: 1">Inserts a line break.</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1"><b><font color="#FF0000">=</font></b></td>
+	<td style="border-style: solid; border-width: 1">Specifies how much line broken.<br>
+    <i>Example:</i>
+    <pre>&lt;br&gt;
+&lt;br=&quot;2&quot;&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1">1</td>
+  </tr>
+  <tr>
+    <td align="center" rowspan="2" valign="top" style="border-style: solid; border-width: 1"><font color="#FF0000"><b>
+    <a name="CENTER_Tag"></a>&lt;CENTER&gt;</b></font></td>
+    <td align="center" style="border-style: solid; border-width: 1"><b>+</b></td>
+    <td colspan="3" style="border-style: solid; border-width: 1">Centers subsequent text and images.</td>
+  </tr>
+  <tr valign="top"> 
+    <td align="center" style="border-right-style: solid; border-right-width: 1; border-top-style: solid; border-top-width: 1; border-bottom-style: solid; border-bottom-width: 1"></td>
+    <td style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td style="border-style: solid; border-width: 1">
+    <i>Example:</i>
+    <pre>&lt;center&gt;Centered Text&lt;/center&gt;</pre></td>
+    <td style="border-style: solid; border-width: 1">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" rowspan="2" valign="top" style="border-style: solid; border-width: 1"><font color="#FF0000"><b>
+    <a name="CODE_Tag"></a>&lt;CODE&gt;</b></font></td>
+    <td align="center" style="border-style: solid; border-width: 1"><b>+</b></td>
+    <td colspan="3" style="border-style: solid; border-width: 1">Specifies a code sample.</td>
+  </tr>
+  <tr valign="top"> 
+    <td align="center" style="border-right-style: solid; border-right-width: 1; border-top-style: solid; border-top-width: 1; border-bottom-style: solid; border-bottom-width: 1"></td>
+    <td style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td style="border-style: solid; border-width: 1">
+    <i>Example:</i>
+    <pre>&lt;code&gt;Code&lt;/code&gt;</pre></td>
+    <td style="border-style: solid; border-width: 1">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" valign="top" style="border-style: solid; border-width: 1"><b><font color="#FF0000">
+    <a name="EM_Tag"></a>&lt;EM&gt;</font></b></td>
+    <td align="center" style="border-style: solid; border-width: 1"><b>+</b></td>
+    <td valign="top" colspan="3" style="border-style: solid; border-width: 1">Emphasizes text, usually by rendering it in 
+    italic. Similar <a href="#I_Tag">&lt;i&gt;</a> tag</td>
+  </tr>
+  <tr>
+    <td align="center" valign="top" style="border-style: solid; border-width: 1" rowspan="7"><font color="#FF0000"><b>
+    <a name="FONT_Tag"></a>&lt;FONT&gt;</b></font></td>
+    <td align="center" style="border-style: solid; border-width: 1">+</td>
+    <td valign="top" colspan="3" style="border-style: solid; border-width: 1">Specifies a new font, size, and color to be 
+    used for rendering the enclosed text.</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1"><font color="#FF0000"><b>color</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets the font colors for all text contained by the font tag. Full list 
+    of the color names or RGB values in the <a href="#ColorList">Color Table</a>.<br>
+    <i>Example:</i>
+    <pre>&lt;font color=&quot;blue&quot;&gt;String&lt;/font&gt;
+&lt;font color=&quot;infotext&quot;&gt;String&lt;/font&gt;
+&lt;font color=#FF0000&gt;String&lt;/font&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1"><font color="#FF0000"><b>face</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets the current typeface 
+    family.<br>
+    <i>Example:</i>
+    <pre>&lt;font face=&quot;Times New Roman&quot;&gt;Text&lt;/font&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1"><font color="#FF0000"><b>size</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets the font size of the 
+    text.<br>
+    <i>Example:</i>
+    <pre>&lt;font size=&quot;16&quot;&gt;Text&lt;/font&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1"><font color="#FF0000"><b>style</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets an inline style for 
+    the <span replace="1">element:</span><table width="633" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" id="AutoNumber1">
+      <tr>
+        <td width="633">
+        <ul>
+          <li><font color="#FF0000">+</font> adds a style (<i><b>default</b></i>)</li>
+          <li><font color="#FF0000">-</font> removes a style</li>
+          <li><font color="#FF0000">b</font> - Bold</li>
+          <li><font color="#FF0000">s</font> - Strikeout</li>
+          <li><font color="#FF0000">u</font> - Underline</li>
+          <li><font color="#FF0000">o</font> - Overline</li>
+          <li><font color="#FF0000">i</font> - Italic</li>
+        </ul>
+        </td>
+      </tr>
+      </table>
+     
+    <i>Example:</i>  
+    <pre>&lt;font style=&quot;bo-i-s&quot;&gt;Text&lt;/font&gt;</pre>
+    </td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1"><font color="#FF0000"><b>bkgnd</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets the background color 
+    behind the text.<table width="633" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" id="AutoNumber1">
+      <tr>
+        <td width="633">
+        <ul>
+          <li><font color="#FF0000">transparent</font> - a background will not 
+          change behind the text (<i><b>default</b></i>)</li>
+          <li><font color="#FF0000">[color]</font> Full list 
+    of the color names or RGB values in the <a href="#ColorList">Color Table</a>.</li>
+        </ul>
+        </td>
+      </tr>
+      </table>
+     
+    <i>Example:</i>  
+    <pre>&lt;font bkgnd=&quot;transparent&quot;&gt;Text&lt;/font&gt;
+&lt;font bkgnd=&quot;red&quot;&gt;Text&lt;/font&gt;</pre>
+    </td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>weight</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets the weight of the 
+    characters that make up a <b>Font</b> object<table width="633" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" id="AutoNumber1">
+      <tr>
+        <td width="633">
+        <ul>
+          <li><font color="#FF0000">normal</font> </li>
+          <li><font color="#FF0000">bold</font> </li>
+          <li><font color="#FF0000">bolder</font></li>
+          <li><font color="#FF0000">lighter</font></li>
+          <li><font color="#FF0000">[numeric 100 - 1000]</font></li>
+        </ul>
+        </td>
+      </tr>
+      </table>
+     
+    <i>Example:</i>  
+    <pre>&lt;font weight=&quot;bold&quot;&gt;Text&lt;/font&gt;
+&lt;font weight=&quot;800&quot;&gt;Text&lt;/font&gt;</pre>
+    </td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" valign="top" style="border-style: solid; border-width: 1" rowspan="2">
+    <font color="#FF0000"><b><a name="Hn_Tag" id="Hn_Tag"></a>&lt;H1&gt;</b></font> - <b><font color="#FF0000">&lt;H6&gt;</font></b></td>
+    <td align="center" style="border-style: solid; border-width: 1">+</td>
+    <td valign="top" style="border-style: solid; border-width: 1" colspan="3">
+    Renders text in heading style</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1">&nbsp;</td>
+	<td style="border-style: solid; border-width: 1">
+    <i>Example:</i>
+    <pre>&lt;h2&gt;Header&lt;/h2&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" valign="top" style="border-style: solid; border-width: 1" rowspan="4">
+    <b><font color="#FF0000"><a name="HR_Tag"></a>&lt;HR&gt;</font></b></td>
+    <td align="center" style="border-style: solid; border-width: 1">-</td>
+    <td valign="top" style="border-style: solid; border-width: 1" colspan="3">
+    Draws a horizontal rule.</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1"><b>
+    <font color="#FF0000">color</font></b></td>
+	<td style="border-style: solid; border-width: 1">Sets the rule color. Full list 
+    of the color names or RGB values in the <a href="#ColorList">Color Table</a>.<br>
+    <i>Example:</i>
+    <pre>&lt;hr color=&quot;blue&quot;&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1"><b>
+    <font color="#FF0000">size</font></b></td>
+	<td style="border-style: solid; border-width: 1">Sets the 
+    height of the <b>hr</b> object. 
+    <i>Example:</i>  
+    <pre>&lt;hr size=&quot;4&quot;&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1">1</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1"><b>
+    <font color="#FF0000">width</font></b></td>
+	<td style="border-style: solid; border-width: 1">Sets the width of the <b>hr</b> object. 
+    <i>Example:</i>  
+    <pre>&lt;hr width=&quot;200&quot;&gt;
+&lt;hr width=&quot;100%&quot;&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1">100%</td>
+  </tr>
+  <tr>
+    <td align="center" valign="top" style="border-style: solid; border-width: 1" rowspan="2"><b><font color="#FF0000">
+    <a name="I_Tag"></a>&lt;I&gt;</font></b></td>
+    <td align="center" style="border-style: solid; border-width: 1"><b>+</b></td>
+    <td valign="top" colspan="3" style="border-style: solid; border-width: 1">Emphasizes text, usually by rendering it in 
+    italic.</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1">&nbsp;</td>
+	<td style="border-style: solid; border-width: 1"> 
+    <i>Example:</i>  
+    <pre>&lt;i&gt;Italic Text&lt;/i&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" valign="top" style="border-style: solid; border-width: 1" rowspan="10">
+    <font color="#FF0000"><b><a name="ICON_Tag"></a>&lt;ICON&gt;</b></font></td>
+    <td align="center" style="border-style: solid; border-width: 1">-</td>
+    <td valign="top" style="border-style: solid; border-width: 1" colspan="3">
+    Draws an icon</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>idres</b></font></td>
+	<td style="border-style: solid; border-width: 1">ID of the application's 
+    icon resource<br>
+    <i>Example:</i>
+    <pre>&lt;icon idres=&quot;139&quot;&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>handle</b></font></td>
+	<td style="border-style: solid; border-width: 1">Handle of the icon. <b>
+    Becareful, this attribute must be use for creating string in runtime ONLY!!!</b><br>
+    <i>Example:</i>
+    <pre>&lt;icon handle=&quot;0xFC00D6&quot;&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>file</b></font></td>
+	<td style="border-style: solid; border-width: 1">Path to the icon's file<br>
+    <i>Example:</i>
+    <pre>&lt;icon file=&quot;C:\Temp\apps.ico&quot;&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1"><b>
+    <font color="#FF0000">iddll</font></b></td>
+	<td style="border-style: solid; border-width: 1">ID of the icon resource 
+    from the dll<br>
+    <i>Example:</i>
+    <pre>&lt;icon iddll=&quot;145&quot;&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>srcdll</b></font></td>
+	<td style="border-style: solid; border-width: 1">Path to the resource DLL 
+    file<br>
+    <i>Example:</i>
+    <pre>&lt;icon srcdll=&quot;C:\Temp\resources.dll&quot;&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>width</b></font></td>
+	<td style="border-style: solid; border-width: 1">The width of the icon<br>
+    <i>Example:</i>
+    <pre>&lt;icon width=&quot;32&quot;&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1"><font COLOR="#a000a0">
+    SM_CXICON</font> </td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>height</b></font></td>
+	<td style="border-style: solid; border-width: 1">The height of the icon<br>
+    <i>Example:</i>
+    <pre>&lt;icon height=&quot;32&quot;&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1"><font COLOR="#a000a0">
+    SM_CYICON</font> </td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>style</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets an inline style for 
+    the icon (without hover effect)<table width="633" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" id="AutoNumber1">
+      <tr>
+        <td width="633">
+        <ul>
+          <li><font color="#FF0000">d</font> - darken image</li>
+          <li><font color="#FF0000">g</font> - grayed image</li>
+          <li><font color="#FF0000">l</font> - lighten image.</li>
+          <li><font color="#FF0000">s</font> - image with shadow</li>
+        </ul>
+        </td>
+      </tr>
+      </table>
+     
+    <p>
+     
+    <i>Example:</i> </p>
+    <pre>&lt;icon style=&quot;dg&quot;&gt;</pre>
+    </td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>hotstyle</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets an inline style for 
+    the icon (for hover effect. Look <a href="#A_Tag">&lt;a&gt;</a> tag)<table width="633" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" id="AutoNumber1">
+      <tr>
+        <td width="633">
+        <ul>
+          <li><font color="#FF0000">d</font> - darken image</li>
+          <li><font color="#FF0000">g</font> - grayed image</li>
+          <li><font color="#FF0000">l</font> - lighten image.</li>
+          <li><font color="#FF0000">s</font> - image with shadow</li>
+        </ul>
+        </td>
+      </tr>
+      </table>
+     
+    <p>
+     
+    <i>Example:</i> </p>
+    <pre>&lt;icon hotstyle=&quot;ls&quot;&gt;
+&lt;a&gt;&lt;icon style=&quot;g&quot; hotstyle=&quot;s&quot;&gt;&lt;/a&gt;</pre>
+    </td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" valign="top" style="border-style: solid; border-width: 1" rowspan="14">
+    <font color="#FF0000"><b><a name="ILST_Tag"></a>&lt;ILST&gt;</b></font></td>
+    <td align="center" style="border-style: solid; border-width: 1">-</td>
+    <td valign="top" style="border-style: solid; border-width: 1" colspan="3">
+    Draws an image from the image list</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>index</b></font></td>
+	<td style="border-style: solid; border-width: 1">Index of the image from 
+    imagelist bitmap<br>
+    <i>Example:</i>
+    <pre>&lt;ilst index=&quot;2&quot;&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>idres</b></font></td>
+	<td style="border-style: solid; border-width: 1">ID of the application's 
+    bitmap resource with images<br>
+    <i>Example:</i>
+    <pre>&lt;ilst idres=&quot;139&quot;&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>handle</b></font></td>
+	<td style="border-style: solid; border-width: 1">Handle of the bitmap 
+    resource with images. <b>
+    Becareful, this attribute must be use for creating string in runtime ONLY!!!</b><br>
+    <i>Example:</i>
+    <pre>&lt;ilst handle=&quot;0xFC00D6&quot;&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>file</b></font></td>
+	<td style="border-style: solid; border-width: 1">Path to the bitmap's file 
+    with images<br>
+    <i>Example:</i>
+    <pre>&lt;ilst file=&quot;C:\Temp\apps.bmp&quot;&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1"><b>
+    <font color="#FF0000">iddll</font></b></td>
+	<td style="border-style: solid; border-width: 1">ID of the bitmap resource 
+    from the dll<br>
+    <i>Example:</i>
+    <pre>&lt;ilst iddll=&quot;145&quot;&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>srcdll</b></font></td>
+	<td style="border-style: solid; border-width: 1">Path to the resource DLL 
+    file<br>
+    <i>Example:</i>
+    <pre>&lt;ilst srcdll=&quot;C:\Temp\resources.dll&quot;&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>cx</b></font></td>
+	<td style="border-style: solid; border-width: 1">The image width on the bitmap<br>
+    <i>Example:</i>
+    <pre>&lt;ilst cx=&quot;16&quot;&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>cy</b></font></td>
+	<td style="border-style: solid; border-width: 1">The image height on the bitmap<br>
+    <i>Example:</i>
+    <pre>&lt;ilst cy=&quot;16&quot;&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>width</b></font></td>
+	<td style="border-style: solid; border-width: 1">The drawing width of the 
+    image<br>
+    <i>Example:</i>
+    <pre>&lt;ilst width=&quot;28&quot;&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>height</b></font></td>
+	<td style="border-style: solid; border-width: 1">The drawing height of the bitmap<br>
+    <i>Example:</i>
+    <pre>&lt;ilst height=&quot;40&quot;&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1"><b>
+    <font color="#FF0000">mask</font></b></td>
+	<td style="border-style: solid; border-width: 1">Using a transparent color<table width="633" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" id="AutoNumber1">
+      <tr>
+        <td width="633">
+        <ul>
+          <li><font color="#FF0000">&quot;&quot;</font> - a default transparent color 
+          RGB(255, 0, 255)</li>
+          <li><font color="#FF0000">[color]</font> Full list 
+    of the color names or RGB values in the <a href="#ColorList">Color Table</a>.</li>
+        </ul>
+        </td>
+      </tr>
+      </table>
+     
+    <p>
+     
+    <i>Example:</i> </p>
+    <pre>&lt;ilst mask&gt;
+&lt;ilst mask=&quot;magenta&quot;&gt;</pre>
+    </td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>style</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets an inline style for 
+    the image (without hover effect)<table width="633" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" id="AutoNumber1">
+      <tr>
+        <td width="633">
+        <ul>
+          <li><font color="#FF0000">d</font> - darken image</li>
+          <li><font color="#FF0000">g</font> - grayed image</li>
+          <li><font color="#FF0000">l</font> - lighten image.</li>
+          <li><font color="#FF0000">s</font> - image with shadow</li>
+        </ul>
+        </td>
+      </tr>
+      </table>
+     
+    <p>
+     
+    <i>Example:</i> </p>
+    <pre>&lt;bmp style=&quot;dg&quot;&gt;</pre>
+    </td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>hotstyle</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets an inline style for 
+    the image (for hover effect. Look <a href="#A_Tag">&lt;a&gt;</a> tag)<table width="633" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" id="AutoNumber1">
+      <tr>
+        <td width="633">
+        <ul>
+          <li><font color="#FF0000">d</font> - darken image</li>
+          <li><font color="#FF0000">g</font> - grayed image</li>
+          <li><font color="#FF0000">l</font> - lighten image.</li>
+          <li><font color="#FF0000">s</font> - image with shadow</li>
+        </ul>
+        </td>
+      </tr>
+      </table>
+     
+    <p>
+     
+    <i>Example:</i> </p>
+    <pre>&lt;bmp hotstyle=&quot;ls&quot;&gt;
+&lt;a&gt;&lt;bmp style=&quot;g&quot; hotstyle=&quot;s&quot;&gt;&lt;/a&gt;</pre>
+    </td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" valign="top" style="border-style: solid; border-width: 1" rowspan="2">
+    <font color="#FF0000"><b><a name="LEFT_Tag"></a>&lt;LEFT&gt;</b></font></td>
+    <td align="center" style="border-style: solid; border-width: 1">+</td>
+    <td valign="top" style="border-style: solid; border-width: 1" colspan="3">
+    Left align subsequent text and images.</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1">&nbsp;</td>
+	<td style="border-style: solid; border-width: 1">
+    <i>Example:</i>
+    <pre>&lt;left&gt;Text to the left edge&lt;/left&gt;</pre>    <p></td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" valign="top" style="border-style: solid; border-width: 1" rowspan="2">
+    <font color="#FF0000"><b><a name="MIDDLE_Tag"></a>&lt;MIDDLE&gt;</b></font></td>
+    <td align="center" style="border-style: solid; border-width: 1">+</td>
+    <td valign="top" style="border-style: solid; border-width: 1" colspan="3">
+    Vertical center text and images. Similar <a href="#VCENTER_Tag">&lt;vcenter&gt;</a> tag</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1">&nbsp;</td>
+	<td style="border-style: solid; border-width: 1">
+    <i>Example:</i>
+    <pre>&lt;middle&gt;Vertical Centered Text&lt;/middle&gt;</pre>    <p></td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" rowspan="2" valign="top" style="border-style: solid; border-width: 1"><font color="#FF0000"><b>
+    <a name="PRE_Tag"></a>&lt;PRE&gt;</b></font></td>
+    <td align="center" style="border-style: solid; border-width: 1"><b>+</b></td>
+    <td colspan="3" style="border-style: solid; border-width: 1">Renders text in 
+    a fixed-width font.</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-right-style: solid; border-right-width: 1; border-top-style: solid; border-top-width: 1; border-bottom-style: solid; border-bottom-width: 1"></td>
+    <td style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td style="border-style: solid; border-width: 1">
+    <i>Example:</i>
+    <pre>&lt;pre&gt;Fixed-width text&lt;/pre&gt;</pre></td>
+    <td style="border-style: solid; border-width: 1">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" valign="top" style="border-style: solid; border-width: 1" rowspan="2">
+    <font color="#FF0000"><b><a name="RIGHT_Tag"></a>&lt;RIGHT&gt;</b></font></td>
+    <td align="center" style="border-style: solid; border-width: 1">+</td>
+    <td valign="top" style="border-style: solid; border-width: 1" colspan="3">
+    Aligns text and images to the right edge.</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1">&nbsp;</td>
+	<td style="border-style: solid; border-width: 1">
+    <i>Example:</i>
+    <pre>&lt;right&gt;Text to the right edge&lt;/right&gt;</pre>    <p></td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" valign="top" style="border-style: solid; border-width: 1"><div align="center"><font color="#FF0000"><b>
+      <a name="S_Tag"></a>&lt;S&gt;</b></font></div>
+    </td>
+    <td align="center" style="border-style: solid; border-width: 1"><b>+</b></td>
+    <td colspan="3" style="border-style: solid; border-width: 1">Renders text in 
+    strike-through type. Look <a href="#STRIKE_Tag">&lt;strike&gt;</a> tag.</td>
+  </tr>
+  <tr>
+    <td align="center" valign="top" style="border-style: solid; border-width: 1" rowspan="2">
+    <font color="#FF0000"><b><a name="SMALL_Tag"></a>&lt;SMALL&gt;</b></font></td>
+    <td align="center" style="border-style: solid; border-width: 1">+</td>
+    <td valign="top" style="border-style: solid; border-width: 1" colspan="3">
+    Specifies that the enclosed text should be displayed in a smaller font.</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td valign="top" style="border-style: solid; border-width: 1">&nbsp;
+    </td>
+	<td style="border-style: solid; border-width: 1"><i>Example:</i>
+    <pre>&lt;small&gt;Smaller Text&lt;/small&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" valign="top" style="border-style: solid; border-width: 1" rowspan="2">
+    <font color="#FF0000"><b><a name="SPAN_Tag"></a>&lt;SPAN&gt;</b></font></td>
+    <td align="center" style="border-style: solid; border-width: 1">+</td>
+    <td valign="top" style="border-style: solid; border-width: 1" colspan="3">
+    Specifies an inline text container.</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>class</b></font></td>
+	<td style="border-style: solid; border-width: 1">Specifies the class or 
+    style rule<i><br>
+    Example:</i>
+    <pre>&lt;span class=&quot;cpp-keyword&quot;&gt;Text&lt;/span&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" rowspan="2" valign="top" style="border-style: solid; border-width: 1"><div align="center"><font color="#FF0000"><b>
+      <a name="STRIKE_Tag"></a>&lt;STRIKE&gt;</b></font></div>
+    </td>
+    <td align="center" style="border-style: solid; border-width: 1"><b>+</b></td>
+    <td colspan="3" style="border-style: solid; border-width: 1">Renders text in 
+    strike-through type.</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-right-style: solid; border-right-width: 1; border-top-style: solid; border-top-width: 1; border-bottom-style: solid; border-bottom-width: 1"></td>
+    <td style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td style="border-style: solid; border-width: 1">
+    <i>Example:</i>
+    <pre>&lt;strike&gt;Strikeout Text&lt;/strike&gt;</pre></td>
+    <td style="border-style: solid; border-width: 1">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" valign="top" style="border-style: solid; border-width: 1" rowspan="4">
+    <font color="#FF0000"><b><a name="STRING_Tag"></a>&lt;STRING&gt;</b></font></td>
+    <td align="center" style="border-style: solid; border-width: 1">-</td>
+    <td valign="top" style="border-style: solid; border-width: 1" colspan="3"> 
+      Outputs specified text string</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>idres</b></font></td>
+	<td style="border-style: solid; border-width: 1">ID of the application's 
+    string resource<br>
+    <i>Example:</i>
+    <pre>&lt;string idres=&quot;220&quot;&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1"><b>
+    <font color="#FF0000">iddll</font></b></td>
+	<td style="border-style: solid; border-width: 1">ID of the string resource 
+    from the dll<br>
+    <i>Example:</i>
+    <pre>&lt;string iddll=&quot;145&quot;&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>srcdll</b></font></td>
+	<td style="border-style: solid; border-width: 1">Path to the resource DLL 
+    file<br>
+    <i>Example:</i>
+    <pre>&lt;string srcdll=&quot;C:\Temp\resources.dll&quot;&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" valign="top" style="border-style: solid; border-width: 1" rowspan="2">
+    <font color="#FF0000"><b><a name="SUB_Tag"></a>&lt;SUB&gt;</b></font></td>
+    <td align="center" style="border-style: solid; border-width: 1">+</td>
+    <td valign="top" style="border-style: solid; border-width: 1" colspan="3">
+    Specifies that the enclosed text should be displayed in subscript, using a 
+    smaller font than the current font.</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td valign="top" style="border-style: solid; border-width: 1">&nbsp;
+    </td>
+	<td style="border-style: solid; border-width: 1"><i>Example:</i>
+    <pre>&lt;sub&gt;Subscript Text&lt;/sub&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" valign="top" style="border-style: solid; border-width: 1" rowspan="2">
+    <font color="#FF0000"><b><a name="SUP_Tag"></a>&lt;SUP&gt;</b></font></td>
+    <td align="center" style="border-style: solid; border-width: 1">+</td>
+    <td valign="top" style="border-style: solid; border-width: 1" colspan="3">
+    Specifies that the enclosed text should be displayed in superscript, using a 
+    smaller font than the current font.</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td valign="top" style="border-style: solid; border-width: 1">&nbsp;
+    </td>
+	<td style="border-style: solid; border-width: 1"><i>Example:</i>
+    <pre>&lt;sup&gt;Superscript Text&lt;/sup&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" valign="top" style="border-style: solid; border-width: 1" rowspan="2"><b><font color="#FF0000">
+    <a name="T_Tag"></a>&lt;T&gt;</font></b></td>
+    <td align="center" style="border-style: solid; border-width: 1"><b>-</b></td>
+    <td colspan="3" style="border-style: solid; border-width: 1">Inserts a 
+    tabulation.</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1"><b><font color="#FF0000">=</font></b></td>
+	<td style="border-style: solid; border-width: 1">Specifies how much tab 
+    inserts.<br>
+    <i>Example:</i>
+    <pre>&lt;t&gt;
+&lt;t=&quot;2&quot;&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1">1</td>
+  </tr>
+  <tr>
+    <td align="center" valign="top" style="border-style: solid; border-width: 1" rowspan="15">
+    <font color="#FF0000"><b><a name="TABLE_Tag"></a>&lt;TABLE&gt;</b></font></td>
+    <td align="center" style="border-style: solid; border-width: 1">+</td>
+    <td valign="top" style="border-style: solid; border-width: 1" colspan="3">
+    Specifies that the contained content is organized into a table with rows and 
+    columns.</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>align</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets the table horizontal 
+    alignment<table width="633" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" id="AutoNumber1">
+      <tr>
+        <td width="633">
+        <ul>
+          <li><font color="#FF0000">left</font> - Aligns to the left edge of the 
+          available space</li>
+          <li><font color="#FF0000">center</font> - Aligns to the center of the 
+          available space</li>
+          <li><font color="#FF0000">right</font> - Aligns to the right edge of 
+          the available space.</li>
+        </ul>
+        </td>
+      </tr>
+      </table>
+     
+    <p><i>Example:</i> </p>
+    <pre>&lt;table align=&quot;center&quot;&gt;...&lt;/table&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1">left</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>background</b></font></td>
+	<td style="border-style: solid; border-width: 1">Specifies the source of the 
+    background picture<table width="633" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" id="AutoNumber1">
+      <tr>
+        <td width="633">
+        <ul>
+          <li><font color="#FF0000">idres</font> - ID bitmap from resource</li>
+          <li><font color="#FF0000">iddll</font> - ID bitmap from DLL</li>
+          <li><font color="#FF0000">file</font> - Path to the bitmap file.</li>
+        </ul>
+        </td>
+      </tr>
+      </table>
+     
+    <p><i>Example:</i> </p>
+    <pre>&lt;table background=&quot;file:felix.bmp&quot;&gt;...&lt;/table&gt;</pre>
+     
+    </td>
+	<td style="border-style: solid; border-width: 1">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>bgcolor</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets the background colors for 
+    solid filling or start color for the gradient filling. Full list 
+    of the color names or RGB values in the <a href="#ColorList">Color Table</a>.<br>
+    <i>Example:</i>
+    <pre>&lt;table bgcolor=&quot;silver&quot;&gt;...&lt;/table&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>bgeffect</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets the background effect<table width="633" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" id="AutoNumber1">
+      <tr>
+        <td width="633">
+        <ul>
+          <li><font color="#FF0000">solid</font> - solid filling</li>
+          <li><font color="#FF0000">hgradient</font> - horizontal gradient <b>(bgcolor 
+          -&gt; bgendcolor)</b></li>
+          <li><font color="#FF0000">vgradient</font> - vertical gradient <b>(bgcolor 
+          -&gt; bgendcolor)</b></li>
+          <li><font color="#FF0000">hcgradient</font> - horizontal gradient <b>(bgcolor 
+          -&gt; bgendcolor -&gt; bgcolor)</b></li>
+          <li><font color="#FF0000">vcgradient</font> - vertical gradient <b>(bgcolor 
+          -&gt; bgendcolor -&gt; bgcolor)</b></li>
+          <li><font color="#FF0000">3hgradient</font> - horizontal gradient <b>(bgcolor 
+          -&gt; bgmidcolor -&gt; bgendcolor)</b></li>
+          <li><font color="#FF0000">3vgradient</font> - vertical gradient <b>(bgcolor 
+          -&gt; bgmidcolor -&gt; bgendcolor)</b></li>
+          <li><b>noise, diagshade, hshade, vshade, hbump, vbump, softbump, 
+          hardbump, metal </b>available only with <b><font color="#FF0000">
+          CeXDib</font></b> from Davide Calabro and Davide Pizzolato</li>
+        </ul>
+        </td>
+      </tr>
+      </table>
+     
+    <p>
+    <i>Example:</i> </p>
+    <pre>&lt;table bgefect=&quot;softbump&quot;&gt;...&lt;/table&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>bgendcolor</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets the end color for the 
+    gradient filling. Full list 
+    of the color names or RGB values in the <a href="#ColorList">Color Table</a>.<br>
+    <i>Example:</i>
+    <pre>&lt;table bgendcolor=&quot;brown&quot;&gt;...&lt;/table&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>bgmidcolor</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets the middle color for 
+    the gradient filling. Full list 
+    of the color names or RGB values in the <a href="#ColorList">Color Table</a>.<br>
+    <i>Example:</i>
+    <pre>&lt;table bgmidcolor=&quot;yellow&quot;&gt;...&lt;/table&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>border</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets the width of the 
+    border to draw around the table<br>
+    <i>Example:</i>
+    <pre>&lt;table border=&quot;2&quot;&gt;...&lt;/table&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>bordercolor</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets the border color of 
+    the table.<i><br>
+    Example:</i>
+    <pre>&lt;table bordercolor=&quot;black&quot;&gt;...&lt;/table&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>bordercolordark</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets the color for one of 
+    the two colors used to draw the 3-D border of the table.<i><br>
+    Example:</i>
+    <pre>&lt;table bordercolordark=&quot;darkgray&quot;&gt;...&lt;/table&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>bordercolorlight</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets the color for one of 
+    the two colors used to draw the 3-D border of the table.<i><br>
+    Example:</i>
+    <pre>&lt;table bordercolorlight=&quot;lightgray&quot;&gt;...&lt;/table&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>borderstyle</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets the pen style for the 
+    border of the table.<table width="633" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" id="AutoNumber1">
+      <tr>
+        <td width="633">
+        <ul>
+          <li><font color="#FF0000">none</font> - no border</li>
+          <li><font color="#FF0000">solid</font> </li>
+          <li><font color="#FF0000">dotted</font></li>
+          <li><font color="#FF0000">dashed</font></li>
+          <li><font color="#FF0000">double</font></li>
+        </ul>
+        </td>
+      </tr>
+      </table>
+     
+    <p>
+    <i>Example:</i> </p>
+    <pre>&lt;table borderstyle=&quot;solid&quot;&gt;...&lt;/table&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1">none</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>cellpadding</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets the amount of space 
+    between the border of the cell and the content of the cell.<i><br>
+    Example:</i>
+    <pre>&lt;table cellpadding=&quot;3&quot;&gt;...&lt;/table&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>cellspacing</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets the amount of space 
+    between cells in a table<i>.<br>
+    Example:</i>
+    <pre>&lt;table cellspacing=&quot;2&quot;&gt;...&lt;/table&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>valign</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets the table vertical 
+    alignment<table width="633" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" id="AutoNumber1">
+      <tr>
+        <td width="633">
+        <ul>
+          <li><font color="#FF0000">top</font> - Aligns to the top edge of the 
+          available space</li>
+          <li><font color="#FF0000">middle</font> - Aligns to the center of the 
+          available space</li>
+          <li><font color="#FF0000">vcenter</font> - Aligns to the center of the 
+          available space</li>
+          <li><font color="#FF0000">bottom</font> - Aligns to the bottom edge of 
+          the available space.</li>
+        </ul>
+        </td>
+      </tr>
+      </table>
+     
+    <p><i>Example:</i> </p>
+    <pre>&lt;table valign=&quot;middle&quot;&gt;...&lt;/table&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1">top</td>
+  </tr>
+  <tr>
+    <td align="center" valign="top" style="border-style: solid; border-width: 1" rowspan="14">
+    <font color="#FF0000"><b><a name="TD_Tag"></a>&lt;TD&gt;</b></font></td>
+    <td align="center" style="border-style: solid; border-width: 1">+</td>
+    <td valign="top" style="border-style: solid; border-width: 1" colspan="3">
+    Specifies a cell in a table.</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>align</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets the table horizontal 
+    alignment<table width="633" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" id="AutoNumber1">
+      <tr>
+        <td width="633">
+        <ul>
+          <li><font color="#FF0000">left</font> - Aligns to the left edge of the 
+          available space</li>
+          <li><font color="#FF0000">center</font> - Aligns to the center of the 
+          available space</li>
+          <li><font color="#FF0000">right</font> - Aligns to the right edge of 
+          the available space.</li>
+        </ul>
+        </td>
+      </tr>
+      </table>
+     
+    <p><i>Example:</i> </p>
+    <pre>&lt;td align=&quot;center&quot;&gt;...&lt;/td&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1">left</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>bgcolor</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets the background colors for 
+    solid filling or start color for the gradient filling. Full list 
+    of the color names or RGB values in the <a href="#ColorList">Color Table</a>.<br>
+    <i>Example:</i>
+    <pre>&lt;td bgcolor=&quot;silver&quot;&gt;...&lt;/td&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>bgeffect</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets the background effect<table width="633" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" id="AutoNumber1">
+      <tr>
+        <td width="633">
+        <ul>
+          <li><font color="#FF0000">solid</font> - solid filling</li>
+          <li><font color="#FF0000">hgradient</font> - horizontal gradient <b>(bgcolor 
+          -&gt; bgendcolor)</b></li>
+          <li><font color="#FF0000">vgradient</font> - vertical gradient <b>(bgcolor 
+          -&gt; bgendcolor)</b></li>
+          <li><font color="#FF0000">hcgradient</font> - horizontal gradient <b>(bgcolor 
+          -&gt; bgendcolor -&gt; bgcolor)</b></li>
+          <li><font color="#FF0000">vcgradient</font> - vertical gradient <b>(bgcolor 
+          -&gt; bgendcolor -&gt; bgcolor)</b></li>
+          <li><font color="#FF0000">3hgradient</font> - horizontal gradient <b>(bgcolor 
+          -&gt; bgmidcolor -&gt; bgendcolor)</b></li>
+          <li><font color="#FF0000">3vgradient</font> - vertical gradient <b>(bgcolor 
+          -&gt; bgmidcolor -&gt; bgendcolor)</b></li>
+          <li><b>noise, diagshade, hshade, vshade, hbump, vbump, softbump, 
+          hardbump, metal </b>available only with <b><font color="#FF0000">
+          CeXDib</font></b> from Davide Calabro and Davide Pizzolato</li>
+        </ul>
+        </td>
+      </tr>
+      </table>
+     
+    <p>
+    <i>Example:</i> </p>
+    <pre>&lt;td bgefect=&quot;softbump&quot;&gt;...&lt;/td&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>bgendcolor</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets the end color for the 
+    gradient filling. Full list 
+    of the color names or RGB values in the <a href="#ColorList">Color Table</a>.<br>
+    <i>Example:</i>
+    <pre>&lt;td bgendcolor=&quot;brown&quot;&gt;...&lt;/td&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>bgmidcolor</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets the middle color for 
+    the gradient filling. Full list 
+    of the color names or RGB values in the <a href="#ColorList">Color Table</a>.<br>
+    <i>Example:</i>
+    <pre>&lt;table bgmidcolor=&quot;yellow&quot;&gt;...&lt;/table&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>border</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets the width of the 
+    border to draw around the table<br>
+    <i>Example:</i>
+    <pre>&lt;td border=&quot;2&quot;&gt;...&lt;/td&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>bordercolor</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets the border color of 
+    the table.<i><br>
+    Example:</i>
+    <pre>&lt;td bordercolor=&quot;black&quot;&gt;...&lt;/td&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>bordercolordark</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets the color for one of 
+    the two colors used to draw the 3-D border of the table.<i><br>
+    Example:</i>
+    <pre>&lt;table bordercolordark=&quot;darkgray&quot;&gt;...&lt;/table&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>bordercolorlight</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets the color for one of 
+    the two colors used to draw the 3-D border of the table.<i><br>
+    Example:</i>
+    <pre>&lt;td bordercolorlight=&quot;lightgray&quot;&gt;...&lt;/td&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>borderstyle</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets the pen style for the 
+    border of the table.<table width="633" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" id="AutoNumber1">
+      <tr>
+        <td width="633">
+        <ul>
+          <li><font color="#FF0000">none</font> - no border</li>
+          <li><font color="#FF0000">solid</font> </li>
+          <li><font color="#FF0000">dotted</font></li>
+          <li><font color="#FF0000">dashed</font></li>
+          <li><font color="#FF0000">double</font></li>
+        </ul>
+        </td>
+      </tr>
+      </table>
+     
+    <p>
+    <i>Example:</i> </p>
+    <pre>&lt;td borderstyle=&quot;solid&quot;&gt;...&lt;/td&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>cellpadding</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets the amount of space 
+    between the border of the cell and the content of the cell.<i><br>
+    Example:</i>
+    <pre>&lt;td cellpadding=&quot;3&quot;&gt;...&lt;/td&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>cellspacing</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets the amount of space 
+    between cells in a table<i>.<br>
+    Example:</i>
+    <pre>&lt;td cellspacing=&quot;2&quot;&gt;...&lt;/td&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>valign</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets the table vertical 
+    alignment<table width="633" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" id="AutoNumber1">
+      <tr>
+        <td width="633">
+        <ul>
+          <li><font color="#FF0000">top</font> - Aligns to the top edge of the 
+          available space</li>
+          <li><font color="#FF0000">middle</font> - Aligns to the center of the 
+          available space</li>
+          <li><font color="#FF0000">vcenter</font> - Aligns to the center of the 
+          available space</li>
+          <li><font color="#FF0000">bottom</font> - Aligns to the bottom edge of 
+          the available space.</li>
+        </ul>
+        </td>
+      </tr>
+      </table>
+     
+    <p><i>Example:</i> </p>
+    <pre>&lt;td valign=&quot;middle&quot;&gt;...&lt;/td&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1">top</td>
+  </tr>
+  <tr>
+    <td align="center" valign="top" style="border-style: solid; border-width: 1" rowspan="2">
+    <font color="#FF0000"><b><a name="TOP_Tag"></a>&lt;TOP&gt;</b></font></td>
+    <td align="center" style="border-style: solid; border-width: 1">+</td>
+    <td valign="top" style="border-style: solid; border-width: 1" colspan="3">
+    Align text and images to the top edge.</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1">&nbsp;</td>
+	<td style="border-style: solid; border-width: 1">
+    <i>Example:</i>
+    <pre>&lt;top&gt;Text to Top Edge&lt;/top&gt;</pre>    <p></td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" valign="top" style="border-style: solid; border-width: 1" rowspan="14">
+    <font color="#FF0000"><b><a name="TR_Tag"></a>&lt;TR&gt;</b></font></td>
+    <td align="center" style="border-style: solid; border-width: 1">+</td>
+    <td valign="top" style="border-style: solid; border-width: 1" colspan="3">
+    Specifies a row in a table.</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>align</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets the table horizontal 
+    alignment<table width="633" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" id="AutoNumber1">
+      <tr>
+        <td width="633">
+        <ul>
+          <li><font color="#FF0000">left</font> - Aligns to the left edge of the 
+          available space</li>
+          <li><font color="#FF0000">center</font> - Aligns to the center of the 
+          available space</li>
+          <li><font color="#FF0000">right</font> - Aligns to the right edge of 
+          the available space.</li>
+        </ul>
+        </td>
+      </tr>
+      </table>
+     
+    <p><i>Example:</i> </p>
+    <pre>&lt;tr align=&quot;center&quot;&gt;...&lt;/tr&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1">left</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>bgcolor</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets the background colors for 
+    solid filling or start color for the gradient filling. Full list 
+    of the color names or RGB values in the <a href="#ColorList">Color Table</a>.<br>
+    <i>Example:</i>
+    <pre>&lt;tr bgcolor=&quot;silver&quot;&gt;...&lt;/tr&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>bgeffect</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets the background effect<table width="633" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" id="AutoNumber1">
+      <tr>
+        <td width="633">
+        <ul>
+          <li><font color="#FF0000">solid</font> - solid filling</li>
+          <li><font color="#FF0000">hgradient</font> - horizontal gradient <b>(bgcolor 
+          -&gt; bgendcolor)</b></li>
+          <li><font color="#FF0000">vgradient</font> - vertical gradient <b>(bgcolor 
+          -&gt; bgendcolor)</b></li>
+          <li><font color="#FF0000">hcgradient</font> - horizontal gradient <b>(bgcolor 
+          -&gt; bgendcolor -&gt; bgcolor)</b></li>
+          <li><font color="#FF0000">vcgradient</font> - vertical gradient <b>(bgcolor 
+          -&gt; bgendcolor -&gt; bgcolor)</b></li>
+          <li><font color="#FF0000">3hgradient</font> - horizontal gradient <b>(bgcolor 
+          -&gt; bgmidcolor -&gt; bgendcolor)</b></li>
+          <li><font color="#FF0000">3vgradient</font> - vertical gradient <b>(bgcolor 
+          -&gt; bgmidcolor -&gt; bgendcolor)</b></li>
+          <li><b>noise, diagshade, hshade, vshade, hbump, vbump, softbump, 
+          hardbump, metal </b>available only with <b><font color="#FF0000">
+          CeXDib</font></b> from Davide Calabro and Davide Pizzolato</li>
+        </ul>
+        </td>
+      </tr>
+      </table>
+     
+    <p>
+    <i>Example:</i> </p>
+    <pre>&lt;tr bgefect=&quot;softbump&quot;&gt;...&lt;/tr&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>bgendcolor</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets the end color for the 
+    gradient filling. Full list 
+    of the color names or RGB values in the <a href="#ColorList">Color Table</a>.<br>
+    <i>Example:</i>
+    <pre>&lt;tr bgendcolor=&quot;brown&quot;&gt;...&lt;/tr&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>bgmidcolor</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets the middle color for 
+    the gradient filling. Full list 
+    of the color names or RGB values in the <a href="#ColorList">Color Table</a>.<br>
+    <i>Example:</i>
+    <pre>&lt;tr bgmidcolor=&quot;yellow&quot;&gt;...&lt;/tr&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>border</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets the width of the 
+    border to draw around the table<br>
+    <i>Example:</i>
+    <pre>&lt;tr border=&quot;2&quot;&gt;...&lt;/tr&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>bordercolor</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets the border color of 
+    the table.<i><br>
+    Example:</i>
+    <pre>&lt;tr bordercolor=&quot;black&quot;&gt;...&lt;/tr&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>bordercolordark</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets the color for one of 
+    the two colors used to draw the 3-D border of the table.<i><br>
+    Example:</i>
+    <pre>&lt;tr bordercolordark=&quot;darkgray&quot;&gt;...&lt;/tr&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>bordercolorlight</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets the color for one of 
+    the two colors used to draw the 3-D border of the table.<i><br>
+    Example:</i>
+    <pre>&lt;tr bordercolorlight=&quot;lightgray&quot;&gt;...&lt;/tr&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>borderstyle</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets the pen style for the 
+    border of the table.<table width="633" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" id="AutoNumber1">
+      <tr>
+        <td width="633">
+        <ul>
+          <li><font color="#FF0000">none</font> - no border</li>
+          <li><font color="#FF0000">solid</font> </li>
+          <li><font color="#FF0000">dotted</font></li>
+          <li><font color="#FF0000">dashed</font></li>
+          <li><font color="#FF0000">double</font></li>
+        </ul>
+        </td>
+      </tr>
+      </table>
+     
+    <p>
+    <i>Example:</i> </p>
+    <pre>&lt;tr borderstyle=&quot;solid&quot;&gt;...&lt;/tr&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>cellpadding</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets the amount of space 
+    between the border of the cell and the content of the cell.<i><br>
+    Example:</i>
+    <pre>&lt;tr cellpadding=&quot;3&quot;&gt;...&lt;/tr&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>cellspacing</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets the amount of space 
+    between cells in a table<i>.<br>
+    Example:</i>
+    <pre>&lt;tr cellspacing=&quot;2&quot;&gt;...&lt;/tr&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td valign="top" style="border-style: solid; border-width: 1">
+    <font color="#FF0000"><b>valign</b></font></td>
+	<td style="border-style: solid; border-width: 1">Sets the table vertical 
+    alignment<table width="633" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" id="AutoNumber1">
+      <tr>
+        <td width="633">
+        <ul>
+          <li><font color="#FF0000">top</font> - Aligns to the top edge of the 
+          available space</li>
+          <li><font color="#FF0000">middle</font> - Aligns to the center of the 
+          available space</li>
+          <li><font color="#FF0000">vcenter</font> - Aligns to the center of the 
+          available space</li>
+          <li><font color="#FF0000">bottom</font> - Aligns to the bottom edge of 
+          the available space.</li>
+        </ul>
+        </td>
+      </tr>
+      </table>
+     
+    <p><i>Example:</i> </p>
+    <pre>&lt;tr valign=&quot;middle&quot;&gt;...&lt;/tr&gt;</pre></td>
+	<td style="border-style: solid; border-width: 1">top</td>
+  </tr>
+  <tr>
+    <td align="center" valign="top" style="border-style: solid; border-width: 1" rowspan="2">
+    <font color="#FF0000"><b><a name="VCENTER_Tag"></a>&lt;VCENTER&gt;</b></font></td>
+    <td align="center" style="border-style: solid; border-width: 1">+</td>
+    <td valign="top" style="border-style: solid; border-width: 1" colspan="3">
+    Vertical center text and images. Similar <a href="#MIDDLE_Tag">&lt;middle&gt;</a> tag</td>
+  </tr>
+  <tr>
+    <td align="center" style="border-style: solid; border-width: 1"></td>
+    <td valign="top" style="border-style: solid; border-width: 1">&nbsp;</td>
+	<td style="border-style: solid; border-width: 1">
+    <i>Example:</i>
+    <pre>&lt;vcenter&gt;Vertical Centered Text&lt;/vcenter&gt;</pre>    <p></td>
+	<td style="border-style: solid; border-width: 1"></td>
+  </tr>
+  <tr>
+    <td align="center" valign="top" style="border-style: solid; border-width: 1">&nbsp;
+    </td>
+    <td align="center" style="border-style: solid; border-width: 1">&nbsp;</td>
+    <td valign="top" style="border-style: solid; border-width: 1">&nbsp;</td>
+	<td style="border-style: solid; border-width: 1">&nbsp;</td>
+	<td style="border-style: solid; border-width: 1">&nbsp;</td>
+  </tr>
+</table>
+    
+<h2><a name="ColorList"></a>Color Table</h2>
+<p>Colors can be specified in HTML in two ways—by using a color name, or by 
+using numbers to denote an RGB color value. An RGB color value consists of three 
+two-digit hexadecimal numbers specifying the intensity of the corresponding 
+color. </p>
+<p>For example, the color value #FF0000 is rendered red because the red number 
+is set to its highest value, FF (or 255 in decimal form).</p>
+<p>The following table lists the colors supported this class:</p>
+<table class="clsStd" cellSpacing="5" cellPadding="0" bgColor="gray" border="5">
+  <tr>
+    <td style="background: aliceblue" align="middle">aliceblue<br>
+    (#F0F8FF)</td>
+    <td style="background: antiquewhite" align="middle">antiquewhite<br>
+    (#FAEBD7)</td>
+    <td style="background: aqua" align="middle">aqua<br>
+    (#00FFFF)</td>
+    <td style="background: aquamarine" align="middle">aquamarine<br>
+    (#7FFFD4)</td>
+  </tr>
+  <tr>
+    <td style="background: azure" align="middle">azure<br>
+    (#F0FFFF)</td>
+    <td style="background: beige" align="middle">beige<br>
+    (#F5F5DC)</td>
+    <td style="background: bisque" align="middle">bisque<br>
+    (#FFE4C4)</td>
+    <td style="background: black" align="middle">black<br>
+    (#000000)</td>
+  </tr>
+  <tr>
+    <td style="background: blanchedalmond" align="middle">blanchedalmond<br>
+    (#FFEBCD)</td>
+    <td style="background: #0000ff" align="middle">blue<br>
+    (#0000FF)</td>
+    <td style="background: #8a2be2" align="middle">blueviolet<br>
+    (#8A2BE2)</td>
+    <td style="background: brown" align="middle">brown<br>
+    (#A52A2A)</td>
+  </tr>
+  <tr>
+    <td style="background: burlywood" align="middle">burlywood<br>
+    (#DEB887)</td>
+    <td style="background: cadetblue" align="middle">cadetblue<br>
+    (#5F9EA0)</td>
+    <td style="background: chartreuse" align="middle">chartreuse<br>
+    (#7FFF00)</td>
+    <td style="background: chocolate" align="middle">chocolate<br>
+    (#D2691E)</td>
+  </tr>
+  <tr>
+    <td style="background: coral" align="middle">coral<br>
+    (#FF7F50)</td>
+    <td style="background: #6495ed" align="middle">cornflowerblue<br>
+    (#6495ED)</td>
+    <td style="background: cornsilk" align="middle">cornsilk<br>
+    (#FFF8DC)</td>
+    <td style="background: crimson" align="middle">crimson<br>
+    (#DC143C)</td>
+  </tr>
+  <tr>
+    <td style="background: cyan" align="middle">cyan<br>
+    (#00FFFF)</td>
+    <td style="background: darkblue" align="middle">darkblue<br>
+    (#00008B)</td>
+    <td style="background: darkcyan" align="middle">darkcyan<br>
+    (#008B8B)</td>
+    <td style="background: darkgoldenrod" align="middle">darkgoldenrod<br>
+    (#B8860B)</td>
+  </tr>
+  <tr>
+    <td style="background: darkgray" align="middle">darkgray<br>
+    (#A9A9A9)</td>
+    <td style="background: darkgreen" align="middle">darkgreen<br>
+    (#006400)</td>
+    <td style="background: darkkhaki" align="middle">darkkhaki<br>
+    (#BDB76B)</td>
+    <td style="background: darkmagenta" align="middle">darkmagenta<br>
+    (#8B008B)</td>
+  </tr>
+  <tr>
+    <td style="background: darkolivegreen" align="middle">darkolivegreen<br>
+    (#556B2F)</td>
+    <td style="background: darkorange" align="middle">darkorange<br>
+    (#FF8C00)</td>
+    <td style="background: darkorchid" align="middle">darkorchid<br>
+    (#9932CC)</td>
+    <td style="background: darkred" align="middle">darkred<br>
+    (#8B0000)</td>
+  </tr>
+  <tr>
+    <td style="background: darksalmon" align="middle">darksalmon<br>
+    (#E9967A)</td>
+    <td style="background: darkseagreen" align="middle">darkseagreen<br>
+    (#8FBC8B)</td>
+    <td style="background: darkslateblue" align="middle">darkslateblue<br>
+    (#483D8B)</td>
+    <td style="background: darkslategray" align="middle">darkslategray<br>
+    (#2F4F4F)</td>
+  </tr>
+  <tr>
+    <td style="background: darkturquoise" align="middle">darkturquoise<br>
+    (#00CED1)</td>
+    <td style="background: darkviolet" align="middle">darkviolet<br>
+    (#9400D3)</td>
+    <td style="background: deeppink" align="middle">deeppink<br>
+    (#FF1493)</td>
+    <td style="background: deepskyblue" align="middle">deepskyblue<br>
+    (#00BFFF)</td>
+  </tr>
+  <tr>
+    <td style="background: dimgray" align="middle">dimgray<br>
+    (#696969)</td>
+    <td style="background: dodgerblue" align="middle">dodgerblue<br>
+    (#1E90FF)</td>
+    <td style="background: firebrick" align="middle">firebrick<br>
+    (#B22222)</td>
+    <td style="background: floralwhite" align="middle">floralwhite<br>
+    (#FFFAF0)</td>
+  </tr>
+  <tr>
+    <td style="background: forestgreen" align="middle">forestgreen<br>
+    (#228B22)</td>
+    <td style="background: #ff00ff" align="middle">fuchsia<br>
+    (#FF00FF)</td>
+    <td style="background: gainsboro" align="middle">gainsboro<br>
+    (#DCDCDC)</td>
+    <td style="background: ghostwhite" align="middle">ghostwhite<br>
+    (#F8F8FF)</td>
+  </tr>
+  <tr>
+    <td style="background: gold" align="middle">gold<br>
+    (#FFD700)</td>
+    <td style="background: goldenrod" align="middle">goldenrod<br>
+    (#DAA520)</td>
+    <td style="background: gray" align="middle">gray<br>
+    (#808080)</td>
+    <td style="background: green" align="middle">green<br>
+    (#008000)</td>
+  </tr>
+  <tr>
+    <td style="background: greenyellow" align="middle">greenyellow<br>
+    (#ADFF2F)</td>
+    <td style="background: honeydew" align="middle">honeydew<br>
+    (#F0FFF0)</td>
+    <td style="background: hotpink" align="middle">hotpink<br>
+    (#FF69B4)</td>
+    <td style="background: indianred" align="middle">indianred<br>
+    (#CD5C5C)</td>
+  </tr>
+  <tr>
+    <td style="background: indigo" align="middle">indigo<br>
+    (#4B0082)</td>
+    <td style="background: ivory" align="middle">ivory<br>
+    (#FFFFF0)</td>
+    <td style="background: khaki" align="middle">khaki<br>
+    (#F0E68C)</td>
+    <td style="background: lavender" align="middle">lavender<br>
+    (#E6E6FA)</td>
+  </tr>
+  <tr>
+    <td style="background: lavenderblush" align="middle">lavenderblush<br>
+    (#FFF0F5)</td>
+    <td style="background: lawngreen" align="middle">lawngreen<br>
+    (#7CFC00)</td>
+    <td style="background: lemonchiffon" align="middle">lemonchiffon<br>
+    (#FFFACD)</td>
+    <td style="background: lightblue" align="middle">lightblue<br>
+    (#ADD8E6)</td>
+  </tr>
+  <tr>
+    <td style="background: lightcoral" align="middle">lightcoral<br>
+    (#F08080)</td>
+    <td style="background: lightcyan" align="middle">lightcyan<br>
+    (#E0FFFF)</td>
+    <td style="background: lightgoldenrodyellow" align="middle">
+    lightgoldenrodyellow<br>
+    (#FAFAD2)</td>
+    <td style="background: lightgreen" align="middle">lightgreen<br>
+    (#90EE90)</td>
+  </tr>
+  <tr>
+    <td style="background: lightgrey" align="middle">lightgrey<br>
+    (#D3D3D3)</td>
+    <td style="background: lightpink" align="middle">lightpink<br>
+    (#FFB6C1)</td>
+    <td style="background: lightsalmon" align="middle">lightsalmon<br>
+    (#FFA07A)</td>
+    <td style="background: lightseagreen" align="middle">lightseagreen<br>
+    (#20B2AA)</td>
+  </tr>
+  <tr>
+    <td style="background: lightskyblue" align="middle">lightskyblue<br>
+    (#87CEFA)</td>
+    <td style="background: lightslategray" align="middle">lightslategray<br>
+    (#778899)</td>
+    <td style="background: lightsteelblue" align="middle">lightsteelblue<br>
+    (#B0C4DE)</td>
+    <td style="background: lightyellow" align="middle">lightyellow<br>
+    (#FFFFE0)</td>
+  </tr>
+  <tr>
+    <td style="background: lime" align="middle">lime<br>
+    (#00FF00)</td>
+    <td style="background: limegreen" align="middle">limegreen<br>
+    (#32CD32)</td>
+    <td style="background: linen" align="middle">linen<br>
+    (#FAF0E6)</td>
+    <td style="background: magenta" align="middle">magenta<br>
+    (#FF00FF)</td>
+  </tr>
+  <tr>
+    <td style="background: maroon" align="middle">maroon<br>
+    (#800000)</td>
+    <td style="background: mediumaquamarine" align="middle">mediumaquamarine<br>
+    (#66CDAA)</td>
+    <td style="background: mediumblue" align="middle">mediumblue<br>
+    (#0000CD)</td>
+    <td style="background: mediumorchid" align="middle">mediumorchid<br>
+    (#BA55D3)</td>
+  </tr>
+  <tr>
+    <td style="background: mediumpurple" align="middle">mediumpurple<br>
+    (#9370DB)</td>
+    <td style="background: mediumseagreen" align="middle">mediumseagreen<br>
+    (#3CB371)</td>
+    <td style="background: mediumslateblue" align="middle">mediumslateblue<br>
+    (#7B68EE)</td>
+    <td style="background: mediumspringgreen" align="middle">mediumspringgreen<br>
+    (#00FA9A)</td>
+  </tr>
+  <tr>
+    <td style="background: mediumturquoise" align="middle">mediumturquoise<br>
+    (#48D1CC)</td>
+    <td style="background: mediumvioletred" align="middle">mediumvioletred<br>
+    (#C71585)</td>
+    <td style="background: midnightblue" align="middle">midnightblue<br>
+    (#191970)</td>
+    <td style="background: mintcream" align="middle">mintcream<br>
+    (#F5FFFA)</td>
+  </tr>
+  <tr>
+    <td style="background: mistyrose" align="middle">mistyrose<br>
+    (#FFE4E1)</td>
+    <td style="background: moccasin" align="middle">moccasin<br>
+    (#FFE4B5)</td>
+    <td style="background: navajowhite" align="middle">navajowhite<br>
+    (#FFDEAD)</td>
+    <td style="background: navy" align="middle">navy<br>
+    (#000080)</td>
+  </tr>
+  <tr>
+    <td style="background: oldlace" align="middle">oldlace<br>
+    (#FDF5E6)</td>
+    <td style="background: olive" align="middle">olive<br>
+    (#808000)</td>
+    <td style="background: olivedrab" align="middle">olivedrab<br>
+    (#6B8E23)</td>
+    <td style="background: orange" align="middle">orange<br>
+    (#FFA500)</td>
+  </tr>
+  <tr>
+    <td style="background: orangered" align="middle">orangered<br>
+    (#FF4500)</td>
+    <td style="background: orchid" align="middle">orchid<br>
+    (#DA70D6)</td>
+    <td style="background: palegoldenrod" align="middle">palegoldenrod<br>
+    (#EEE8AA)</td>
+    <td style="background: palegreen" align="middle">palegreen<br>
+    (#98FB98)</td>
+  </tr>
+  <tr>
+    <td style="background: paleturquoise" align="middle">paleturquoise<br>
+    (#AFEEEE)</td>
+    <td style="background: palevioletred" align="middle">palevioletred<br>
+    (#DB7093)</td>
+    <td style="background: papayawhip" align="middle">papayawhip<br>
+    (#FFEFD5)</td>
+    <td style="background: peachpuff" align="middle">peachpuff<br>
+    (#FFDAB9)</td>
+  </tr>
+  <tr>
+    <td style="background: peru" align="middle">peru<br>
+    (#CD853F)</td>
+    <td style="background: pink" align="middle">pink<br>
+    (#FFC0CB)</td>
+    <td style="background: plum" align="middle">plum<br>
+    (#DDA0DD)</td>
+    <td style="background: powderblue" align="middle">powderblue<br>
+    (#B0E0E6)</td>
+  </tr>
+  <tr>
+    <td style="background: purple" align="middle">purple<br>
+    (#800080)</td>
+    <td style="background: red" align="middle">red<br>
+    (#FF0000)</td>
+    <td style="background: rosybrown" align="middle">rosybrown<br>
+    (#BC8F8F)</td>
+    <td style="background: royalblue" align="middle">royalblue<br>
+    (#4169E1)</td>
+  </tr>
+  <tr>
+    <td style="background: saddlebrown" align="middle">saddlebrown<br>
+    (#8B4513)</td>
+    <td style="background: salmon" align="middle">salmon<br>
+    (#FA8072)</td>
+    <td style="background: sandybrown" align="middle">sandybrown<br>
+    (#F4A460)</td>
+    <td style="background: seagreen" align="middle">seagreen<br>
+    (#2E8B57)</td>
+  </tr>
+  <tr>
+    <td style="background: seashell" align="middle">seashell<br>
+    (#FFF5EE)</td>
+    <td style="background: sienna" align="middle">sienna<br>
+    (#A0522D)</td>
+    <td style="background: silver" align="middle">silver<br>
+    (#C0C0C0)</td>
+    <td style="background: skyblue" align="middle">skyblue<br>
+    (#87CEEB)</td>
+  </tr>
+  <tr>
+    <td style="background: slateblue" align="middle">slateblue<br>
+    (#6A5ACD)</td>
+    <td style="background: slategray" align="middle">slategray<br>
+    (#708090)</td>
+    <td style="background: snow" align="middle">snow<br>
+    (#FFFAFA)</td>
+    <td style="background: springgreen" align="middle">springgreen<br>
+    (#00FF7F)</td>
+  </tr>
+  <tr>
+    <td style="background: steelblue" align="middle">steelblue<br>
+    (#4682B4)</td>
+    <td style="background: tan" align="middle">tan<br>
+    (#D2B48C)</td>
+    <td style="background: teal" align="middle">teal<br>
+    (#008080)</td>
+    <td style="background: thistle" align="middle">thistle<br>
+    (#D8BFD8)</td>
+  </tr>
+  <tr>
+    <td style="background: tomato" align="middle">tomato<br>
+    (#FF6347)</td>
+    <td style="background: turquoise" align="middle">turquoise<br>
+    (#40E0D0)</td>
+    <td style="background: violet" align="middle">violet<br>
+    (#EE82EE)</td>
+    <td style="background: wheat" align="middle">wheat<br>
+    (#F5DEB3)</td>
+  </tr>
+  <tr>
+    <td style="background: white" align="middle">white<br>
+    (#FFFFFF)</td>
+    <td style="background: whitesmoke" align="middle">whitesmoke<br>
+    (#F5F5F5)</td>
+    <td style="background: yellow" align="middle">yellow<br>
+    (#FFFF00)</td>
+    <td style="background: yellowgreen" align="middle">yellowgreen<br>
+    (#9ACD32)</td>
+  </tr>
+</table>
+<h3>User-Defined System Colors</h3>
+<p>Microsoft® Windows® maintains a set of system colors for painting various 
+parts of the display.</p>
+<p>Users can set system colors for future Windows sessions using the Windows 
+Control Panel. The following table illustrates the correspondence of these color 
+names with the colors defined in the Control Panel. </p>
+<pre><b>Note</b>&nbsp;&nbsp;The colors that do not correspond to any Control Panel colors can 
+      only be set programmatically using Windows APIs and cannot be defined by the 
+      user.</pre>
+<table class="clsStd" cellSpacing="5" cellPadding="5" bgColor="gray" border="5">
+  <tr>
+    <td style="background: activeborder" align="middle">activeborder</td>
+    <td style="background: activecaption" align="middle">activecaption</td>
+    <td style="background: appworkspace" align="middle">appworkspace</td>
+    <td style="background: background" align="middle">background</td>
+  </tr>
+  <tr>
+    <td style="background: buttonface" align="middle">buttonface</td>
+    <td style="background: buttonhighlight" align="middle">buttonhighlight</td>
+    <td style="background: buttonshadow" align="middle">buttonshadow</td>
+    <td style="background: buttontext" align="middle">buttontext</td>
+  </tr>
+  <tr>
+    <td style="background: captiontext" align="middle">captiontext</td>
+    <td style="background: graytext" align="middle">graytext</td>
+    <td style="background: highlight" align="middle">highlight</td>
+    <td style="background: highlighttext" align="middle">highlighttext</td>
+  </tr>
+  <tr>
+    <td style="background: inactiveborder" align="middle">inactiveborder</td>
+    <td style="background: inactivecaption" align="middle">inactivecaption</td>
+    <td style="background: inactivecaptiontext" align="middle">
+    inactivecaptiontext</td>
+    <td style="background: infobackground" align="middle">infobackground</td>
+  </tr>
+  <tr>
+    <td style="background: infotext" align="middle">infotext</td>
+    <td style="background: menu" align="middle">menu</td>
+    <td style="background: menutext" align="middle">menutext</td>
+    <td style="background: scrollbar" align="middle">scrollbar</td>
+  </tr>
+  <tr>
+    <td style="background: threeddarkshadow" align="middle">threeddarkshadow</td>
+    <td style="background: buttonface" align="middle">threedface</td>
+    <td style="background: buttonhighlight" align="middle">threedhighlight</td>
+    <td style="background: threedlightshadow" align="middle">threedlightshadow</td>
+  </tr>
+  <tr>
+    <td style="background: buttonshadow" align="middle">threedshadow</td>
+    <td style="background: window" align="middle">window</td>
+    <td style="background: windowframe" align="middle">windowframe</td>
+    <td style="background: windowtext" align="middle">windowtext</td>
+  </tr>
+</table>
+<h2>&nbsp;</h2>
+<h2><a name="CssStyles" id="CssStyles"></a>CSS Styles  Specifications</h2>
+<p>Style format:</p>
+<pre><i>name</i>:<i>extension</i> {<i>parameter</i>:<i>value</i>; ... }</pre>
+<p>where
+</p>
+<ul>
+  <li><code>name</code> - name of the style. Here the list of the predetermined names of styles: (body, p, h1, h2, h3, h4, h5, h6, code, pre, a, span, sub, sup, small, big);</li>
+  <li><code>extension</code> - now this value supported for <b>&lt;a&gt;</b> tag only (<b>link</b> and <b>hover</b>);</li>
+  <li><code>parameter</code> and <code>value</code>. 
+
+
+ Bellow the list of the Accessible parameters and appropriate values</li>
+</ul>
+<table width="100%"  border="1">
+  <tr bgcolor="#999999">
+    <td width="18%"><div align="center"><b>Parameter</b></div></td>
+    <td width="39%"><div align="center"><b>Value</b></div></td>
+    <td width="43%"><div align="center"><b>Description</b></div></td>
+  </tr>
+  <tr>
+    <td><span class="style1">font-size</span></td>
+    <td><span class="style1">see <a href="#CssLengthUnits">CSS Length Units </a>.</span></td>
+    <td> Sets the size of the font used for text.</td>
+  </tr>
+  <tr>
+    <td><span class="style1">font-family</span></td>
+    <td><span class="style1">Verdana, Tahoma etc. </span></td>
+    <td> Sets the name of the font used for text </td>
+  </tr>
+  <tr>
+    <td><span class="style1">font-style</span></td>
+    <td><span class="style1"> italic, normal,  oblique </span></td>
+    <td> Sets the font style</td>
+  </tr>
+  <tr>
+    <td><span class="style1">font-weight</span></td>
+    <td><span class="style1">normal, bold, bolder, lighter, (100 - 900) </span></td>
+    <td> Sets the weight of the font </td>
+  </tr>
+  <tr>
+    <td><span class="style1">text-align</span></td>
+    <td><span class="style1">left, right, center </span></td>
+    <td> Sets whether the text is left-aligned, right-aligned, centered </td>
+  </tr>
+  <tr>
+    <td><span class="style1">text-transform</span></td>
+    <td><span class="style1"> capitalize, uppercase, lowercase </span></td>
+    <td> Sets the rendering of the text </td>
+  </tr>
+  <tr>
+    <td><span class="style1">color</span></td>
+    <td><span class="style1">see <a href="#ColorList">Color Table</a> </span></td>
+    <td> Sets the value of the text color </td>
+  </tr>
+  <tr>
+    <td><span class="style1">background-color</span></td>
+    <td><span class="style1">see <a href="#ColorList">Color Table</a> or &quot;transparent&quot; </span></td>
+    <td> Sets the color behind the content </td>
+  </tr>
+  <tr>
+    <td><span class="style1">text-decoration</span></td>
+    <td><span class="style1">line-through, overline, underline</span></td>
+    <td> Sets whether the text in the object has line-through, overline, or underline decorations </td>
+  </tr>
+  <tr>
+    <td><span class="style1">vertical-align</span></td>
+    <td><span class="style1">top, bottom, middle (vcenter), baseline </span></td>
+    <td> Sets the vertical alignment of the object </td>
+  </tr>
+  <tr>
+    <td><span class="style1">border-color</span></td>
+    <td><span class="style1">see <a href="#ColorList">Color Table</a></span></td>
+    <td> Sets the border color of the table </td>
+  </tr>
+  <tr>
+    <td><span class="style1">border-width</span></td>
+    <td><span class="style1">thin, thick, medium or see <a href="#CssLengthUnits">CSS Length Units</a></span></td>
+    <td> Sets the width of the left, right, top, and bottom borders of the table</td>
+  </tr>
+  <tr>
+    <td><span class="style1">border-style</span></td>
+    <td><span class="style1">none, dotted, dashed, solid, double </span></td>
+    <td> Sets the style of the left, right, top, and bottom borders of the table </td>
+  </tr>
+  <tr>
+    <td><span class="style1">margin-left,<br>
+    margin-top,<br>
+    margin-right,<br>
+    margin-bottom</span></td>
+    <td><span class="style1">see <a href="#CssLengthUnits">CSS Length Units</a></span></td>
+    <td> Sets the width of the left, right, top, and bottom margin of the table </td>
+  </tr>
+  <tr>
+    <td><p class="style1">padding-left,<br>
+    padding-top,<br>
+    padding-right,<br>
+    padding-bottom</p>    </td>
+    <td><span class="style1">see <a href="#CssLengthUnits">CSS Length Units</a></span></td>
+    <td> Sets the amount of space to insert between the left, top, right and bottom borders of the table and the content. </td>
+  </tr>
+</table>
+<h2>&nbsp;</h2>
+<h2><a name="CssLengthUnits" id="CssLengthUnits"></a>CSS Length Units </h2>
+<p>This section defines the supported length unit.</p>
+<h3><a></a>CSS Length Unit Table </h3>
+<table>
+  <tr bgcolor="#999999"><td colspan="2">Relative length units</td>
+  </tr>
+  <tr>
+    <td width="39">em</td>
+    <td width="230">The height of the element's font. </td>
+  </tr>
+  <tr>
+    <td>ex </td>
+    <td>The height of the letter "x". </td>
+  </tr>
+  <tr>
+    <td>px </td>
+    <td>Pixels. </td>
+  </tr>
+  <tr>
+    <td>% </td>
+    <td>Percentage. </td>
+  </tr>
+  <tr bgcolor="#999999"><td colspan="2">Absolute length units</td>
+  </tr>
+  <tr>
+    <td>in </td>
+    <td>Inches (1 inch = 2.54 centimeters). </td>
+  </tr>
+  <tr>
+    <td>cm </td>
+    <td>Centimeters. </td>
+  </tr>
+  <tr>
+    <td>mm </td>
+    <td>Millimeters. </td>
+  </tr>
+  <tr>
+    <td>pt </td>
+    <td>Points (1 point = 1/72 inches). </td>
+  </tr>
+  <tr>
+    <td>pc </td>
+    <td>Picas (1 pica = 12 points). </td>
+  </tr>
+</table>
+  
+<h2>&nbsp;</h2>
+<h2><a name="History"></a>History</h2>
+<table width="100%" border="0">
+  <tr valign="top"> 
+    <td width="18%">&nbsp;14 Nov 2003</td>
+    <td width="82%">First release</td>
+  </tr>
+</table>
+<br>
+ 
+ 
+ 
+<h2><a name="Contact"></a>Contacting the Author</h2>
+    
+Please send any comments or bug reports to me via <a href="mailto:pustovoyt@mail.ru">email</a>. 
+  
+
+</body>
+</html>

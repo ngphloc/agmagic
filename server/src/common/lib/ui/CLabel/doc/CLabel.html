@@ -1,0 +1,2585 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0048)http://www.codeproject.com/staticctrl/clabel.asp -->
+<HTML><HEAD><TITLE>The Code Project - Extended Use of CStatic Class - CLabel 1.6 - Static Controls</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META http-equiv=Reply-to content=mailto:webmaster@codeproject.com>
+<META content="Free source code and tutorials for Windows developers." 
+name=Description>
+<META 
+content="Free source code, Static Controls, Visual C++, MFC, Windows, Owner draw" 
+name=keywords>
+<META 
+content="Article content copyright norm.net, 2000, everthing else Copyright © CodeProject, 1999-2004, All Rights Reserved." 
+name=Copyright><LINK href="/favicon.ico" type=image/ico rel=icon><LINK 
+href="/favicon.ico" rel="SHORTCUT ICON"><LINK href="CLabel_files/global.css" 
+type=text/css rel=stylesheet>
+<SCRIPT language=javascript src="CLabel_files/oncopy.js"></SCRIPT>
+
+<META content="MSHTML 6.00.3790.0" name=GENERATOR></HEAD>
+<BODY oncopy="return copyCode();" text=black vLink=purple aLink=red link=blue 
+bgColor=white leftMargin=3 topMargin=3>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#ff9900 border=0>
+  <TBODY>
+  <TR>
+    <TD width="100%">
+      <TABLE cellSpacing=1 cellPadding=0 width="100%" bgColor=#ff9900 
+        border=0><TBODY>
+        <TR>
+          <TD vAlign=top><A href="http://www.codeproject.com/"><IMG height=72 
+            alt="The Code Project" src="CLabel_files/logo225x72.gif" width=225 
+            border=0></A></TD>
+          <TD align=right><SPAN id=AdBanner4><A 
+            href="http://www.codeproject.com/script/admentor/ads.asp"><IMG 
+            height=60 alt="View our advertisers" src="CLabel_files/sponsors.gif" 
+            width=20 border=1></A>
+            <SCRIPT language=javascript>document.write("<a href=\"/script/admentor/admentorredir.asp?id=781&way=ban\" target=_blank><img src=\"/script/admentor/include/ServeAd.aspx?File=%2Fscript%2Fadmentor%2Fimages%2Fwholetomato%5Fxpect%5Fmore%2Egif&C=False&id=781\" alt=\"The intellisense upgrade for Visual Studio .NET - make your IDE as smart as you.\" border=0 width=468 height=60></a>");</SCRIPT>
+            <A href="http://www.codeproject.com/info/mediakit"><IMG height=60 
+            alt="Advertise on the CodeProject" src="CLabel_files/advertise.gif" 
+            width=20 border=1></A></SPAN></TD></TR>
+        <TR>
+          <TD bgColor=#fbedbb colSpan=2>
+            <TABLE cellPadding=3 width="100%" bgColor=#fbedbb border=0>
+              <TBODY>
+              <TR vAlign=top>
+                <TD width="100%"><FONT style="FONT-SIZE: 8pt"><A 
+                  href="http://www.codeproject.com/?cat=1">All Topics</A>, <A 
+                  href="http://www.codeproject.com/?cat=2">MFC / C++</A> 
+                  &gt;&gt; <A 
+                  href="http://www.codeproject.com/staticctrl/">Static 
+                  Controls</A> &gt;&gt; <A 
+                  href="http://www.codeproject.com/staticctrl/#General">General</A></FONT><BR><BR><B><FONT 
+                  style="FONT-SIZE: 16pt" size=4>Extended Use of CStatic Class - 
+                  CLabel 1.6</FONT></B><BR><B>By <A 
+                  href="http://www.codeproject.com/script/profile/whos_who.asp?id=164">norm.net</A> 
+                  </B><BR><BR><FONT style="FONT-SIZE: 9pt">A fully stocked owner 
+                  drawn CStatic class&nbsp;</FONT> </TD>
+                <TD vAlign=top align=right>
+                  <TABLE cellSpacing=0 cellPadding=1 width=200 border=0>
+                    <TBODY>
+                    <TR vAlign=top>
+                      <TD>&nbsp;</TD>
+                      <TD class=SmallText>C++ (VC6)<BR>Windows (Win95, Win98, 
+                        WinME, NT4)<BR>MFC, Win32, VS<BR>Dev</TD></TR>
+                    <TR>
+                      <TD>&nbsp;</TD>
+                      <TD class=SmallText noWrap>Posted 12 Jan 2000</TD></TR>
+                    <TR>
+                      <TD>&nbsp;</TD>
+                      <TD class=SmallText>Updated 3 Aug 2002</TD></TR>
+                    <TR vAlign=top>
+                      <TD><IMG height=16 src="CLabel_files/hlp.gif" 
+                      width=16></TD>
+                      <TD class=SmallText noWrap><A 
+                        href="http://www.codeproject.com/script/Articles/list_articles.asp?userid=164">Articles 
+                        by this author</A></TD></TR>
+                    <TR vAlign=top>
+                      <TD></TD>
+                      <TD class=SmallText noWrap><B>108,537</B> 
+                    views</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD colSpan=2>
+            <TABLE id=tblSiteToolbar cellSpacing=0 cellPadding=1 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <FORM name=Search action=/info/search.asp method=post>
+                <TD vAlign=top align=left width="100%">
+                  <TABLE cellSpacing=0 cellPadding=1 border=0>
+                    <TBODY>
+                    <TR vAlign=center>
+                      <TD class=smallText><B><FONT 
+                        color=white>Search:</FONT></B></TD>
+                      <TD class=navbar noWrap><INPUT class=smallText 
+                        maxLength=255 size=18 name=target></TD>
+                      <TD vAlign=top><SELECT class=smallText name=st> 
+                          <OPTION value=kw selected>Articles</OPTION> <OPTION 
+                          value=au>Authors</OPTION></SELECT></TD>
+                      <TD><INPUT class=formButton type=submit value=Go></TD></TR></TBODY></TABLE></TD></FORM>
+                <TD>
+                  <DIV id=MenuPos 
+                  style="WIDTH: 380px; POSITION: relative; HEIGHT: 20px">
+                  <TABLE height=20 cellSpacing=0 cellPadding=2 width=375>
+                    <TBODY>
+                    <TR>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/info/faq.asp">Help!</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/info/latest.asp">Articles</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/script/comments/forums.asp">Message 
+                        Boards</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/store/">StoreFront</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/lounge.asp">Lounge</A></TD></TR></TBODY></TABLE></DIV></TD></TR></TBODY></TABLE>
+            <SCRIPT type=text/javascript>function Go(){return}</SCRIPT>
+
+            <SCRIPT src="CLabel_files/cpmenu_var.js" 
+            type=text/javascript></SCRIPT>
+
+            <SCRIPT src="CLabel_files/menu10_com.js" 
+            type=text/javascript></SCRIPT>
+          </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=1 border=0>
+  <TBODY>
+  <TR vAlign=top>
+    <TD vAlign=top bgColor=#fbedbb rowSpan=2>
+      <TABLE cellSpacing=0 cellPadding=0 border=0>
+        <SCRIPT language=javascript>
+function ErrorHandle() {}
+window.onerror = ErrorHandle;
+
+function OnNLSubmit(option)
+{
+	if (option=="up")
+		document.subForm.action = "/script/profile/modify.asp?ct=%2Fstaticctrl%2Fclabel%2Easp";
+	else if (option=="in")
+		document.subForm.action = "/script/profile/process_logon.asp?ct=%2Fstaticctrl%2Fclabel%2Easp";
+	document.subForm.submit();
+	return true;
+}
+</SCRIPT>
+
+        <TBODY>
+        <TR>
+          <TD>
+            <TABLE cellSpacing=3 cellPadding=0>
+              <TBODY>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD class=InfoBarHeader>Toolbox</TD></TR>
+              <TR>
+                <TD bgColor=black colSpan=2><IMG height=1 
+                  src="CLabel_files/space.gif" width=1></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="CLabel_files/sitebuild_icon.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/submit/ReportProblem.asp?GUID=%2Fstaticctrl%2Fclabel%2Easp">Broken 
+                  Article?</A></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="CLabel_files/support_icon.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/store/"><B>VS.NET 2003 from 
+                  $899</B></A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="CLabel_files/support_icon.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/store/"><B>MSDN Univ. from 
+                  $1950</B></A></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="CLabel_files/print.gif" width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/staticctrl/clabel.asp?print=true" 
+                  target=_print>Print version</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="CLabel_files/link.gif" width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/add_bookmark.asp?t=0&amp;ct=%2Fstaticctrl%2Fclabel%2Easp&amp;guid=%2Fstaticctrl%2Fclabel%2Easp">Bookmark 
+                  this</A></TD></TR></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="CLabel_files/mail.gif" width=16></TD>
+                <TD class=SmallText><A 
+                  href="http://www.codeproject.com/script/recommend/form.asp?guid=%2Fstaticctrl%2Fclabel%2Easp">Send 
+                  to a friend</A></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD class=InfoBarHeader>My Profile</TD></TR>
+              <TR>
+                <TD bgColor=black colSpan=2><IMG height=1 
+                  src="CLabel_files/space.gif" width=1></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="CLabel_files/profile_small.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/modify.asp?ct=/staticctrl/clabel.asp">My 
+                  Settings</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="CLabel_files/submit_small.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/articles/list_articles.asp?userid=649009">My 
+                  Articles</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="CLabel_files/bookmarks.gif" 
+                width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/bookmark_list.asp">My 
+                  Bookmarks</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="CLabel_files/logoff_small.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/logoff.asp?ct=/staticctrl/clabel.asp">Sign 
+                  out</A></TD></TR>
+              <TR>
+                <TD bgColor=black colSpan=2><IMG height=1 
+                  src="CLabel_files/space.gif" 
+width=1></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD>&nbsp;</TD></TR>
+        <TR>
+          <TD>
+            <CENTER>
+            <SCRIPT language=javascript>document.write("<a href=\"/script/admentor/admentorredir.asp?id=858&way=ban\" target=_blank><img src=\"/script/admentor/include/ServeAd.aspx?File=%2Fscript%2Fadmentor%2Fimages%2FDundasChart41Sky%2Egif&C=False&id=858\" alt=\"\" border=0 width=120 height=600></a>");</SCRIPT>
+            <BR></CENTER><BR></TD></TR></TBODY></TABLE></TD>
+    <TD width=5 rowSpan=2><IMG height=1 src="CLabel_files/space.gif" width=5> 
+    </TD>
+    <TD align=right width="100%" bgColor=white>
+      <TABLE width="100%">
+        <TBODY>
+        <TR vAlign=top>
+          <TD class=smallText vAlign=top noWrap></TD>
+          <TD noWrap align=right><A name=__top></A>
+            <TABLE>
+              <TBODY>
+              <TR>
+                <TD class=smallText align=right>80 members have rated this 
+                  article. Result:</TD>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=0 border=2>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=5 src="CLabel_files/red.gif" width=20 
+                        border=0></TD>
+                      <TD><IMG height=5 src="CLabel_files/red.gif" width=20 
+                        border=0></TD>
+                      <TD><IMG height=5 src="CLabel_files/red.gif" width=20 
+                        border=0></TD>
+                      <TD><IMG height=5 src="CLabel_files/red.gif" width=20 
+                        border=0></TD>
+                      <TD><IMG height=5 src="CLabel_files/red.gif" width=13 
+                        border=0><IMG height=5 src="CLabel_files/white.gif" 
+                        width=7 border=0></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD class=smallText align=right colSpan=2><A 
+                  title="Calculated as rating x Log10(# votes)" 
+                  href="http://www.codeproject.com/script/articles/top_articles.asp?st=2">Popularity: 
+                  8.84</A>. Rating: <B>4.64</B> out of 
+        5.</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD vAlign=top width="100%">
+      <DIV id=contentdiv><!-- Article Starts -->
+      <UL class=download>
+        <LI class=download><A 
+        href="http://www.codeproject.com/staticctrl/CLabel/CLabel_demo.zip">Download 
+        demo executable and project - 52 Kb</A> (v1.6 Aug 2002) 
+        <LI class=download><A 
+        href="http://www.codeproject.com/staticctrl/CLabel/CLabel_src.zip">Download 
+        CLabel source - 8 Kb</A> (v1.6 Aug 2002)&nbsp; </LI></UL>
+      <P><IMG height=358 src="CLabel_files/clabel.jpg" width=550 border=0></P>
+      <H2>Introduction</H2>
+      <P>Ever wanted a static control that behaved like a Visual Basic label 
+      control? Well this could be just the thing you might be looking for. This 
+      version adds all the functionality of the label control, plus many other 
+      features. The control uses double buffering which gives fast painting. The 
+      real work in done in the <CODE>OnPaint</CODE> function.</P>
+      <P>I've called the class <CODE>CLabel</CODE> and its simple to use in 
+      dialog boxes, just follow this simple instructions. 
+      <OL>
+        <LI>Design the dialog box in the normal way. 
+        <LI>Create an <CODE>OnInitDialog</CODE> function using the class wizard. 
+
+        <LI>Add Label.cpp and Label.h to your project. 
+        <LI><CODE><SPAN class=cpp-preprocessor>#Include 
+        &lt;label.cpp&gt;</SPAN></CODE> in your dialog .cpp file. 
+        <LI>Delete the project '.clw' file and regenerate by opening the project 
+        and pressing Ctrl+W 
+        <LI>Any static controls that need enhancing, give each control a unique 
+        ID within the dialog editor. 
+        <LI>Assign each member controls (<CODE>CLabel</CODE>) to each ID using 
+        the class wizard. 
+        <LI>In <CODE>OnInitDialog</CODE> uses the <CODE>CLabel</CODE>API to 
+        change the appearance of the control. </LI></OL>
+      <H2>API of CLabel</H2>
+      <TABLE width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD noWrap width="50%"><CODE>CLabel&amp; SetBkColor(COLORREF 
+            crBkgnd,&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            COLORREF crBkgndHigh = <SPAN 
+            class=cpp-literal>0</SPAN>,&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            BackFillMode mode = Normal);<BR></CODE></TD>
+          <TD width="50%">Set the background colour of the control and allows 
+            an optional gradient fill.</TD></TR>
+        <TR>
+          <TD width="50%"><CODE>CLabel&amp; SetText(<SPAN 
+            class=cpp-keyword>const</SPAN> CString&amp; strText)</CODE></TD>
+          <TD width="50%">Sets the text of the controls</TD></TR>
+        <TR>
+          <TD width="50%"><CODE>CLabel&amp; SetTextColor(COLORREF 
+            crText)</CODE></TD>
+          <TD width="50%">Sets the text colour of the control</TD></TR>
+        <TR>
+          <TD width="50%"><CODE>CLabel&amp; SetFontBold(BOOL bBold)</CODE></TD>
+          <TD width="50%">Toggles the state of the bold attribute of the text 
+            in the control</TD></TR>
+        <TR>
+          <TD width="50%"><CODE>CLabel&amp; SetFontName(<SPAN 
+            class=cpp-keyword>const</SPAN> CString&amp; strFont)</CODE></TD>
+          <TD width="50%">The the fonts face name in the control</TD></TR>
+        <TR>
+          <TD width="50%"><CODE>CLabel&amp; SetFontUnderline(BOOL 
+          bSet)</CODE></TD>
+          <TD width="50%">Toggles the state of the underline font attribute of 
+            the control</TD></TR>
+        <TR>
+          <TD width="50%"><CODE>CLabel&amp; SetFontItalic(BOOL bSet)</CODE></TD>
+          <TD width="50%">Toggles the state of the italic font attribute of 
+            the control</TD></TR>
+        <TR>
+          <TD width="50%"><CODE>CLabel&amp; SetFontSize(<SPAN 
+            class=cpp-keyword>int</SPAN> nSize)</CODE></TD>
+          <TD width="50%">Sets the fonts size in points.</TD></TR>
+        <TR>
+          <TD width="50%"><CODE>CLabel&amp; SetSunken(BOOL bSet)</CODE></TD>
+          <TD width="50%">Toggles the state of the sunken attribue of the 
+            control</TD></TR>
+        <TR>
+          <TD width="50%"><CODE>CLabel&amp; SetBorder(BOOL bSet)</CODE></TD>
+          <TD width="50%">Toggles the state of the borders attribute</TD></TR>
+        <TR>
+          <TD width="50%"><CODE>CLabel&amp; FlashText(BOOL bSet)</CODE></TD>
+          <TD width="50%">Toggles the state of the text flashing 
+        attribute</TD></TR>
+        <TR>
+          <TD width="50%"><CODE>CLabel&amp; FlashBackground(BOOL 
+          bSet)</CODE></TD>
+          <TD width="50%">Toggles the state of the text flashing 
+        attribute</TD></TR>
+        <TR>
+          <TD width="50%"><CODE>CLabel&amp; SetLink(BOOL bLink)</CODE></TD>
+          <TD width="50%">Toggles the state of the link attribute (allows 
+            label to become internet link)</TD></TR>
+        <TR>
+          <TD width="50%"><CODE>CLabel&amp; SetLinkCursor(HCURSOR 
+            hCursor)</CODE></TD>
+          <TD width="50%">Sets the cursor for the link.</TD></TR>
+        <TR>
+          <TD width="50%"><CODE>CLabel&amp; SetTransparency(BOOL 
+            bTransparency)</CODE></TD>
+          <TD width="50%">Sets the transparency for the background.</TD></TR>
+        <TR>
+          <TD width="50%"><CODE>CLabel&amp; SetFont3D(BOOL bSet,Type3D 
+            type)</CODE></TD>
+          <TD width="50%">Sets 3D fonts</TD></TR>
+        <TR>
+          <TD width="50%"><CODE>CLabel&amp; SetRotationAngle(UINT nAngle,BOOL 
+            bRotation)</CODE></TD>
+          <TD width="50%">Sets rotation angle for font</TD></TR>
+        <TR>
+          <TD width="50%"><CODE>CLabel&amp; SetText3DHiliteColor(COLORREF 
+            cr3DHiliteColor)</CODE></TD>
+          <TD width="50%">Sets the hi-light colour for the text</TD></TR>
+        <TR>
+          <TD width="50%"><CODE>CLabel&amp; SetMailLink(BOOL bEnable, BOOL 
+            bNotifyParent)</CODE></TD>
+          <TD width="50%">Sets the hi-light colour for the 
+      text</TD></TR></TBODY></TABLE>
+      <H2>Example of use</H2><PRE> m_fname.SetFontName(<SPAN class=cpp-string>"System");
+ m_fsize.SetFontSize(14);
+ m_uline.SetFontUnderline(TRUE);
+ m_tcolor.SetTextColor(RGB(255,0,0));
+ m_bcolor.SetBkColor(RGB(0,255,255));
+ m_italics.SetFontItalic(TRUE);
+ m_bold.SetFontBold(TRUE);
+ m_border.SetBorder(TRUE);
+ m_sunken.SetSunken(TRUE);
+ m_lblGradient.SetBkColor(RGB(255,255,255),RGB(0,0,255), CLabel::Gradient);
+
+ m_monty.SetFontName("Arial"</SPAN>);
+ m_monty.SetFontSize(<SPAN class=cpp-literal>12</SPAN>);
+ m_monty.SetTextColor(RGB(<SPAN class=cpp-literal>255</SPAN>,<SPAN class=cpp-literal>255</SPAN>,<SPAN class=cpp-literal>0</SPAN>));
+ m_monty.SetFontUnderline(TRUE);
+ m_monty.SetBkColor(RGB(<SPAN class=cpp-literal>0</SPAN>,<SPAN class=cpp-literal>0</SPAN>,<SPAN class=cpp-literal>0</SPAN>));
+ m_monty.SetFontItalic(TRUE);
+ m_monty.SetFontBold(TRUE);
+ m_monty.SetBorder(TRUE);
+ m_monty.SetSunken(TRUE);
+ </PRE>
+      <H2>History</H2>
+      <H3>CLabel Version 1.6</H3>
+      <UL>
+        <LI>Jeroen Roosendaal - SetFont suggestion 
+        <LI>Laurent - Spotting SelectObject bugs 
+        <LI>Bernie - Fix PreCreateWindow bug 
+        <LI>Jignesh I. Patel - Added expanded tabs feature 
+        <LI>Jim Farmelant - Fix SetText crash 
+</LI></UL><!-- Article Ends --></DIV>
+      <H2>About norm.net</H2>
+      <TABLE width="100%" border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD class=smallText noWrap><IMG 
+            src="CLabel_files/{4A4AE558-CE0F-44E0-BFBC-87A575C67500}.gif"><BR></TD>
+          <TD class=smallText width="100%">I'm a Windows Senior Software 
+            Engineer.<BR><BR>I'm currently converting a large 'C' unix based 
+            applications over to the world of .net.<BR><BR><BR>
+            <P class=smallText>Click <A 
+            href="http://www.codeproject.com/script/profile/whos_who.asp?vt=arts&amp;id=164">here</A> 
+            to view norm.net's online profile.</P></TD></TR></TBODY></TABLE><BR>
+      <TABLE cellPadding=4 width="100%" border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD width="100%">
+            <H2>Other popular Static Controls articles:</H2>
+            <UL>
+              <LI><A 
+              href="http://www.codeproject.com/staticctrl/digistring.asp">Static 
+              LED control - CDigiStatic 1.3</A><BR><SPAN class=smalltext>A 
+              control to display text or numbers with a 14 or 7 segment 
+              display.</SPAN>
+              <LI><A 
+              href="http://www.codeproject.com/staticctrl/staticcounter.asp">An 
+              LED Style display control and bar control</A><BR><SPAN 
+              class=smalltext>A control to display time, floating point numbers 
+              or integers using an LED digital-style display</SPAN>
+              <LI><A 
+              href="http://www.codeproject.com/staticctrl/digidisplay.asp">Digital 
+              Display CStatic control</A><BR><SPAN class=smalltext>An article on 
+              the Digital Display Control</SPAN>
+              <LI><A 
+              href="http://www.codeproject.com/staticctrl/CBitmapSlider.asp">CBitmapSlider</A><BR><SPAN 
+              class=smalltext>A CStatic derived class that has slider functions. 
+              It is skinned using bitmaps.</SPAN></LI></UL></TD>
+          <TD width=360>
+            <SCRIPT language=javascript>document.write("<IFRAME src=\"/script/admentor/include/ServeAdHTML.aspx?C=False&id=786\" border=0 frameborder=0 scrolling=no width=300 height=250></IFRAME>");</SCRIPT>
+          </TD>
+          <FORM action=/script/rating/code/app/insert_vote.asp 
+          method=post><INPUT type=hidden value=/staticctrl/clabel.asp 
+          name=vote_name> <INPUT type=hidden value=/staticctrl/clabel.asp 
+          name=goal> </TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=1 width="100%" bgColor=#ff9900 
+        border=0><TBODY>
+        <TR>
+          <TD width="100%">
+            <TABLE cellSpacing=0 cellPadding=4 width="100%" bgColor=#fbedbb 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD class=smalltext vAlign=center>[<A 
+                  href="http://www.codeproject.com/staticctrl/clabel.asp#__top">Top</A>]</TD>
+                <TD vAlign=center noWrap align=right><I><B>Rate this Article 
+                  for us!</B></I>&nbsp;&nbsp;&nbsp;&nbsp; <I>Poor</I><INPUT 
+                  type=radio value=1 name=rate><INPUT type=radio value=2 
+                  name=rate><INPUT type=radio value=3 name=rate><INPUT 
+                  type=radio value=4 name=rate><INPUT type=radio value=5 
+                  name=rate><I>Excellent</I>&nbsp;&nbsp;<INPUT class=FormButton type=submit value=Vote> 
+                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></FORM>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD vAlign=top>
+            <CENTER>
+            <SCRIPT language=javascript>document.write("<a href=\"/script/admentor/admentorredir.asp?id=156&way=ban\" target=_blank><img src=\"/script/admentor/include/ServeAd.aspx?File=%2Fscript%2Fadmentor%2Fimages%2Fmsdn%5Fbutton%2Egif&C=False&id=156\" alt=\"MSDN Magazine - Your guide to Microsoft tools, development environments, and technologies for Windows and the Web.\" border=0 width=120 height=60></a>");</SCRIPT>
+            <BR><FONT size=1><A 
+            href="http://www.codeproject.com/info/MediaKit/">Premium 
+            Sponsor</A></FONT></CENTER><BR></TD>
+          <TD vAlign=top noWrap align=middle><SPAN id=AdBanner5>
+            <SCRIPT language=javascript>document.write("<a href=\"/script/admentor/admentorredir.asp?id=775&way=ban\" target=_blank><img src=\"/script/admentor/include/ServeAd.aspx?File=%2Fscript%2Fadmentor%2Fimages%2FElementoolCodeProjectBanner2%2EGIF&C=False&id=775\" alt=\"\" border=0 width=468 height=60></a>");</SCRIPT>
+            </SPAN></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><A 
+name=__comments></A>
+<SCRIPT language=JavaScript>
+function MsgVoteForm(UserID, MsgID)
+{
+	document.write("Rate this message: ");
+	for (var i=1; i<=5;i++)
+		document.write("<a href='#xx" + MsgID.toString() + "xx' title='give this message a vote of " + i.toString() + "' onclick='RateMsg(" + UserID.toString() + ", " + MsgID.toString() + ", " + i.toString() + ")'><b>" + i.toString() + "</b></a> ");
+	document.write(" (out of 5)");
+}
+
+function RateMsg(userid, msgid, score) 
+{ 
+	open("/script/comments/vote.asp?js=1&user="+userid.toString()+"&msg="+msgid.toString()+"&score="+score.toString() ,"helpful","toolbar=no,resizable=yes,scrollbars=yes,directories=no,menubar=no,width=300,height=200");
+	return false;
+}
+</SCRIPT>
+
+<SCRIPT language=JavaScript>
+var Selected = "";
+var AdTime = new Date();
+document.writeln("<iframe name=AdFrame width=0 height=0 frameborder=0></IFRAME>");
+function SwitchMessage(elm)
+{
+
+	var now = new Date();
+	if (Number(now.getTime() - AdTime.getTime()) > Number(5000))
+	{
+		AdTime = now;
+		var loc = window.frames["AdFrame"];
+		if (loc) loc = loc.document;
+		if (loc) loc = loc.location;
+		if (loc) loc.replace('/script/comments/fetchAd.asp?cat=2');
+	}
+	
+	var elmref;
+	if (Selected != "")
+	{
+		elmref = eval("document.getElementById('" + Selected + "_h1')");
+		if (elmref) elmref.style.display = 'none';
+		elmref = eval("document.getElementById('" + Selected + "_h0')");
+		if (elmref) elmref.bgColor = '#FEF9E7';
+	}
+	if (Selected != elm.name) 
+	{
+		Selected = elm.name;
+		elmref = eval("document.getElementById('" + Selected + "_h1')");
+		if (elmref) 
+		{
+			if (elmref.style.display=='none') elmref.style.display='';
+			else elmref.style.display = 'none';
+		}
+		elmref = eval("document.getElementById('" + Selected + "_h0')");
+		if (elmref) 
+			elmref.bgColor = '#99CCFF';
+	}
+	else
+		Selected="";
+		
+	window.location = "#xx" + Selected + "xx";
+
+	return false;
+}
+
+</SCRIPT>
+
+<SCRIPT language=javascript event=onclick for=DynMessLink>
+return SwitchMessage(this);
+</SCRIPT>
+
+<TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#ff9900 border=0>
+  <TBODY>
+  <TR>
+    <TD width="100%">
+      <TABLE id=ForumTable cellSpacing=1 cellPadding=0 width="100%" 
+      bgColor=#ff9900 border=0>
+        <FORM 
+        action=/script/comments/app/do_filtermessages.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217 
+        method=post>
+        <TBODY>
+        <TR>
+          <TD>
+            <TABLE cellSpacing=0 cellPadding=3 width="100%" bgColor=white 
+            border=0>
+              <TBODY>
+              <TR bgColor=#fbedbb>
+                <TD class=smalltext noWrap><A 
+                  href="http://www.codeproject.com/script/comments/faq.asp"><IMG 
+                  height=16 src="CLabel_files/info.gif" width=16 align=absMiddle 
+                  border=0> <B>FAQ</B></A>&nbsp;</TD>
+                <TD class=smalltext vAlign=top noWrap align=right>Noise level 
+                  <SELECT class=smalltext size=1 name=noise><OPTION 
+                    value=1>Very High</OPTION> <OPTION value=2>High</OPTION> 
+                    <OPTION value=3 selected>Medium</OPTION> <OPTION 
+                    value=4>Low</OPTION> <OPTION value=5>Very 
+                  low</OPTION></SELECT>&nbsp;&nbsp;</TD>
+                <TD class=smalltext vAlign=center noWrap align=right 
+                  colSpan=2><A 
+                  href="http://www.codeproject.com/script/comments/search_comments.asp?forumid=217"><IMG 
+                  height=15 src="CLabel_files/search.gif" width=16 border=0> 
+                  Search comments</A> &nbsp;</TD>
+                <TD vAlign=top align=right><INPUT class=FormButton type=submit value="Set Options" name=submit></TD></TR>
+              <TR bgColor=#ff9900>
+                <TD width="100%">&nbsp;</TD>
+                <TD class=smalltext vAlign=top noWrap align=right>View <SELECT 
+                  class=smalltext size=1 name=expand><OPTION value=0>Normal 
+                    (slow)</OPTION> <OPTION value=2>Preview (slow)</OPTION> 
+                    <OPTION value=5 selected>Message View</OPTION> <OPTION 
+                    value=6>Topic View</OPTION> <OPTION value=1>Thread 
+                    View</OPTION> <OPTION value=3>Expanded (Supporters 
+                    only)</OPTION></SELECT>&nbsp;&nbsp;</TD>
+                <TD class=smalltext vAlign=top noWrap>Per page <SELECT 
+                  class=smalltext size=1 name=perpage><OPTION 
+                    value=10>10</OPTION> <OPTION value=25 selected>25</OPTION> 
+                    <OPTION value=50>50</OPTION></SELECT></TD>
+                <TD colSpan=2>&nbsp;</TD></TR></TBODY></TABLE></TD></TR></FORM>
+        <TR bgColor=#fbedbb>
+          <TD><A name=xx0xx></A>
+            <TABLE cellPadding=2 width="100%" bgColor=#fbedbb border=0>
+              <TBODY>
+              <TR>
+                <TD class=messagetitle><A class=HoverLink 
+                  title="Add a new message to the discussions" 
+                  href="http://www.codeproject.com/script/comments/user_new.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217" 
+                  target=_top name=HoverNL><B><IMG height=16 
+                  src="CLabel_files/admin_modify.gif" width=16 align=top 
+                  border=0> New thread</B></A></TD>
+                <TD class=messagetitle>Msgs 1 to 25 of 84 (Total: 84) (<A 
+                  href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;forumid=217">Refresh</A>)</TD>
+                <TD noWrap align=right><FONT class=messagetitle><SPAN 
+                  class=HoverLink>First</SPAN> <SPAN class=HoverLink>Prev</SPAN> 
+                  <A class=HoverLink 
+                  href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;forumid=217&amp;fr=26" 
+                  name=HoverNL>Next</A> <A class=HoverLink 
+                  href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;forumid=217&amp;fr=76" 
+                  name=HoverNL>Last</A> </FONT></TD></TR></TBODY></TABLE></TD></TR>
+        <TR bgColor=white>
+          <TD>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=2 bgColor=#fbedbb border=0>
+                    <TBODY>
+                    <TR>
+                      <TD class=messagetitle width="100%">Subject&nbsp;</TD>
+                      <TD class=messagetitle noWrap width=140>Author&nbsp;</TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT 
+                    class=messagetitle>Date&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CLabel_files/t.gif" width=1 
+              border=0></TD></TR>
+              <TR id=813160_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx813160xx></A><IMG 
+                        src="CLabel_files/news_unselected.gif" 
+                      align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;forumid=217&amp;select=813160#xx813160xx" 
+                        name=813160><B>Flickerring?</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=54332"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CLabel_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>lily0lin</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>15:22 5 May 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=813160_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="CLabel_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Hello, 
+                                I am having the problem with screen flickerring 
+                                when the label is repeatly painted. I noticed 
+                                that the double buffer is only applied when 
+                                m_bTransparent = FALSE in the OnPaint() 
+                                function. How to avoid the flickerinf problem 
+                                for the transperent label?<BR><BR>Thank you very 
+                                much for your help. <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=813160">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=813160">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;tid=813160&amp;forumid=217&amp;select=813160#xx813160xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?msg=813160#xx813160xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=813160"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=813160"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(54332,813160);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CLabel_files/t.gif" width=1 
+              border=0></TD></TR>
+              <TR id=928567_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx928567xx></A><IMG height=1 
+                        src="CLabel_files/ind.gif" width=18><IMG 
+                        src="CLabel_files/news_unselected.gif" 
+                      align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;forumid=217&amp;select=928567#xx928567xx" 
+                        name=928567>Re: Flickerring?</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=433199"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CLabel_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>EastSeaBoy&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>1:49 20 Sep 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=928567_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="CLabel_files/ind.gif" 
+                        width=18><IMG src="CLabel_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>This 
+                                class is great!!! WOW~~! <IMG 
+                                src="CLabel_files/smiley_WTF.gif" 
+                                align=absMiddle><BR><BR>I had have the same 
+                                problem.<BR>I solved that like Following Code. 
+                                <IMG src="CLabel_files/smiley_smile.gif" 
+                                align=absMiddle><BR><BR>EastSeaBoy is my 
+                                nickname. <IMG 
+                                src="CLabel_files/smiley_laugh.gif" 
+                                align=absMiddle><BR>=========================================<BR><CODE>0. 
+                                ADD a Member Variable.<BR><B>CString 
+                                m_strText;</B> // Label Text // (Add) for 
+                                Protecting Flicker(EastSeaBoy)<BR><BR><BR>1. 
+                                void CLabel::OnPaint() <BR>{<BR>.....<BR>// 
+                                GetWindowText(strText); // (Del) for Protecting 
+                                Flicker(EastSeaBoy)<BR><B>strText = 
+                                m_strText;</B> // (Add) for Protecting 
+                                Flicker(EastSeaBoy)<BR>.....<BR>}<BR><BR>2. 
+                                CLabel&amp; CLabel::SetText(const CString&amp; 
+                                strText)<BR>{<BR>if(IsWindow(this-&gt;GetSafeHwnd())) 
+                                <BR>{<BR>//SetWindowText(strText); // (Del) for 
+                                Protecting Flicker(EastSeaBoy)<BR><B>m_strText = 
+                                strText;</B> // (Add) for Protecting 
+                                Flicker(EastSeaBoy)<BR>UpdateSurface();<BR>}<BR>return 
+                                *this;<BR>}</CODE><BR><BR>==========================================<BR>Right? 
+                                <BR><BR><BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=928567">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=928567">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;tid=813160&amp;forumid=217&amp;select=928567#xx928567xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?msg=928567#xx928567xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=928567"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=928567"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(433199,928567);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CLabel_files/t.gif" width=1 
+              border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 src="CLabel_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=811573_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx811573xx></A><IMG 
+                        src="CLabel_files/news_unselected.gif" 
+                      align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;forumid=217&amp;select=811573#xx811573xx" 
+                        name=811573><B>White flash with transperent 
+                      label</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=54332"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CLabel_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>lily0lin</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>14:00 4 May 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=811573_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="CLabel_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Hello, 
+                                I need to change the transparent label text 
+                                every 500MS with graphic background. It shows a 
+                                white flash sometimes when it is repainted. Any 
+                                idea to improve this?<BR><BR>Thank you very 
+                                much. <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=811573">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=811573">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;tid=811573&amp;forumid=217&amp;select=811573#xx811573xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?msg=811573#xx811573xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=811573"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=811573"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(54332,811573);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CLabel_files/t.gif" width=1 
+              border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 src="CLabel_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=777096_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx777096xx></A><IMG 
+                        src="CLabel_files/news_unselected.gif" 
+                      align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;forumid=217&amp;select=777096#xx777096xx" 
+                        name=777096><B>My only problem with this class 
+                        is...</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=191"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CLabel_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle><B>Ravi 
+                        Bhavnani</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>14:44 28 Mar 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=777096_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="CLabel_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>I can't 
+                                vote (5) for the article more than once! <IMG 
+                                src="CLabel_files/smiley_smile.gif" 
+                                align=absMiddle> &nbsp;Good job as usual, Norm! 
+                                <BR><BR>/ravi<BR><BR><SMALL>My new year's 
+                                resolution: 2048 x 1536<BR><A 
+                                href="http://www.ravib.com/"><U><FONT 
+                                color=blue>Home</FONT></U></A> | <A 
+                                href="http://www.codeproject.com/script/articles/list_articles.asp?userid=191"><U><FONT 
+                                color=blue>Articles</FONT></U></A> | <A 
+                                href="http://www.ravib.com/freeware.htm"><U><FONT 
+                                color=blue>Freeware</FONT></U></A></FONT> | <A 
+                                href="http://www.ravib.com/music"><U><FONT 
+                                color=blue>Music</FONT></U></A><BR>ravib@ravib.com</SMALL><BR>&nbsp;</TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=777096">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=777096">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;tid=777096&amp;forumid=217&amp;select=777096#xx777096xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?msg=777096#xx777096xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=777096"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=777096"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(191,777096);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CLabel_files/t.gif" width=1 
+              border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 src="CLabel_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=759019_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx759019xx></A><IMG 
+                        src="CLabel_files/news_unselected.gif" 
+                      align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;forumid=217&amp;select=759019#xx759019xx" 
+                        name=759019><B>Problems Setting Window State</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=285543"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CLabel_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>yofnik</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>16:10 8 Mar 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=759019_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="CLabel_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Has 
+                                anyone come up with a fix for setting the window 
+                                state ( EnableWindow(FALSE) ) in OnInitDialog? 
+                                <BR><BR>Yofnik <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=759019">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=759019">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;tid=759019&amp;forumid=217&amp;select=759019#xx759019xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?msg=759019#xx759019xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=759019"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=759019"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(285543,759019);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CLabel_files/t.gif" width=1 
+              border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 src="CLabel_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=745100_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx745100xx></A><IMG 
+                        src="CLabel_files/news_unselected.gif" 
+                      align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;forumid=217&amp;select=745100#xx745100xx" 
+                        name=745100><B>UNICODE</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=52353"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CLabel_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>ExtraLean</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>15:21 20 Feb 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=745100_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="CLabel_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Just an 
+                                FYI:<BR><BR>The line in Label.cpp with "mailto:" 
+                                breaks UNICODE compatibility. I see you've used 
+                                _T() with other literals, so that one probably 
+                                just slipped through... You may want to issue a 
+                                quick article update.<BR><BR><IMG 
+                                src="CLabel_files/smiley_cool.gif" 
+                                align=absMiddle> <BR><BR>--<BR>Edward 
+                                Livingston<BR>(aka ExtraLean)<BR>--<BR>"I still 
+                                maintain that seeing a nipple is far less 
+                                disturbing than seeing someone get their brains 
+                                blown out." -- Chris 
+                                Maunder<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=745100">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=745100">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;tid=745100&amp;forumid=217&amp;select=745100#xx745100xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?msg=745100#xx745100xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=745100"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=745100"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(52353,745100);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CLabel_files/t.gif" width=1 
+              border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 src="CLabel_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=667342_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx667342xx></A><IMG 
+                        src="CLabel_files/news_unselected.gif" 
+                      align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;forumid=217&amp;select=667342#xx667342xx" 
+                        name=667342><B>Transparency bug</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=46615"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CLabel_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>EPulse</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>1:22 16 Nov 
+                        '03</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=667342_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="CLabel_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Hi 
+                                guys,<BR><BR>Am trying to use CLabel in a 
+                                skinned dialog app. now the problem is sometimes 
+                                when I set the text of the control using 
+                                SetWindowText there is no transparency any 
+                                more.<BR><BR>e.g in 
+                                OnInitDialog<BR><BR><CODE>m_static.SetWindowText("Hello 
+                                world");<BR>m_static.SetTransparent(TRUE);<BR>m_static.SetWindowText("Wassup?");</CODE><BR><BR>this 
+                                works fine, but when i have something like this 
+                                in a button click handler 
+                                <BR><BR><CODE>m_static.SetWindowText("Testing 
+                                ");</CODE><BR><BR>the background appears and i 
+                                have to SetTransparent again for it to become 
+                                transparent.<BR><BR>I don't think this is the 
+                                way it should work..any suggestions? 
+                                thanx<BR><BR><BR><BR><BR><BR><BR><BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=667342">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=667342">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;tid=667342&amp;forumid=217&amp;select=667342#xx667342xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?msg=667342#xx667342xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=667342"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=667342"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(46615,667342);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CLabel_files/t.gif" width=1 
+              border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 src="CLabel_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=562545_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx562545xx></A><IMG 
+                        src="CLabel_files/news_unselected.gif" 
+                      align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;forumid=217&amp;select=562545#xx562545xx" 
+                        name=562545><B>Error loading IDC_HAND cursor</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=8122"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CLabel_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle><B>Marcus 
+                        Carey</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>1:46 25 Jul 
+                        '03</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=562545_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="CLabel_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent>'LoadCursorA' : cannot 
+                                convert parameter 2 from 'const int' to 'const 
+                                char 
+                                *'<BR><BR><BR>m_stcMail.SetMailLink(TRUE,FALSE)<BR>.SetTextColor(RGB(0,0,255))<BR>.SetFontUnderline(TRUE)<BR>.SetLinkCursor(LoadCursor(NULL,IDC_HAND));<BR><BR>m_link.SetLink(TRUE,FALSE)<BR>.SetTextColor(RGB(0,0,255))<BR>.SetFontUnderline(TRUE)<BR>.SetLinkCursor(LoadCursor(NULL, 
+                                IDC_HAND)); <BR><BR>Marcus 
+                                Carey<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=562545">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=562545">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;tid=562545&amp;forumid=217&amp;select=562545#xx562545xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?msg=562545#xx562545xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=562545"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=562545"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(8122,562545);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CLabel_files/t.gif" width=1 
+              border=0></TD></TR>
+              <TR id=569404_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx569404xx></A><IMG height=1 
+                        src="CLabel_files/ind.gif" width=18><IMG 
+                        src="CLabel_files/news_unselected.gif" 
+                      align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;forumid=217&amp;select=569404#xx569404xx" 
+                        name=569404>add #define IDC_HAND 
+                        MAKEINTRESOURCE(32649)</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=159824"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CLabel_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>uranium99&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>8:43 1 Aug 
+                        '03&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=569404_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="CLabel_files/ind.gif" 
+                        width=18><IMG src="CLabel_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>add 
+                                <BR><BR>#define IDC_HAND 
+                                MAKEINTRESOURCE(32649)<BR><BR><BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=569404">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=569404">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;tid=562545&amp;forumid=217&amp;select=569404#xx569404xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?msg=569404#xx569404xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=569404"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=569404"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(159824,569404);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CLabel_files/t.gif" width=1 
+              border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 src="CLabel_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=510291_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx510291xx></A><IMG 
+                        src="CLabel_files/news_unselected.gif" 
+                      align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;forumid=217&amp;select=510291#xx510291xx" 
+                        name=510291><B>font size isn't changing</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=417779"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CLabel_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>connorwr</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>0:02 30 May 
+                        '03</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=510291_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="CLabel_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>I am 
+                                creating a subclass of CWnd that I create 
+                                dynamically and add to a dialog. This class 
+                                contains several CLabels that I create and 
+                                position myself (no templates involved). So far 
+                                I have only tried using the SetFontSize and 
+                                SetTextColor functions, and the color changes 
+                                but not the font size. I tried calling the same 
+                                functions with a CLabel that I created on a 
+                                dialog with a template, and both worked 
+                                fine.<BR><BR>Here is the code in the Create 
+                                function of my CWnd 
+                                subclass:<BR><BR>m_sBP.Create("BP", 
+                                lStaticStyle, CRect(iDPSplit, iCol1Top, 
+                                iRightEdge, iCol2Top), 
+                                this);<BR>m_sBP.SetFontSize(14);<BR>m_sBP.SetTextColor(RGB(255,0,0));<BR><BR>where 
+                                m_sBP is a CLabel declared in the header 
+                                file.<BR><BR>Can anyone help me 
+                                out?<BR><BR>Thanks 
+                                <BR><BR>-=Connor=-<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=510291">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=510291">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;tid=510291&amp;forumid=217&amp;select=510291#xx510291xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?msg=510291#xx510291xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=510291"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=510291"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(417779,510291);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CLabel_files/t.gif" width=1 
+              border=0></TD></TR>
+              <TR id=510312_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx510312xx></A><IMG height=1 
+                        src="CLabel_files/ind.gif" width=18><IMG 
+                        src="CLabel_files/news_unselected.gif" 
+                      align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;forumid=217&amp;select=510312#xx510312xx" 
+                        name=510312>Re: font size isn't changing</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=417779"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CLabel_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>connorwr&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>0:33 30 May 
+                        '03&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=510312_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="CLabel_files/ind.gif" 
+                        width=18><IMG src="CLabel_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>I might 
+                                have just solved my own problem - I changed the 
+                                font and it seems to be working now. 
+                                <BR><BR>-=Connor=-<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=510312">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=510312">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;tid=510291&amp;forumid=217&amp;select=510312#xx510312xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?msg=510312#xx510312xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=510312"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=510312"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(417779,510312);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CLabel_files/t.gif" width=1 
+              border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 src="CLabel_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=484406_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx484406xx></A><IMG 
+                        src="CLabel_files/news_unselected.gif" 
+                      align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;forumid=217&amp;select=484406#xx484406xx" 
+                        name=484406><B>Memory Leak</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=36047"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CLabel_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>jimNLX</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>13:31 28 Apr 
+                        '03</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=484406_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="CLabel_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Has 
+                                anyone come up with a fix for this yet? If not, 
+                                does anybody know of another static class that 
+                                works and can change text 
+                                attributes?<BR><BR>Tired of my application 
+                                aborting all the time!!!! 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=484406">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=484406">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;tid=484406&amp;forumid=217&amp;select=484406#xx484406xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?msg=484406#xx484406xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=484406"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=484406"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(36047,484406);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CLabel_files/t.gif" width=1 
+              border=0></TD></TR>
+              <TR id=484487_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx484487xx></A><IMG height=1 
+                        src="CLabel_files/ind.gif" width=18><IMG 
+                        src="CLabel_files/news_unselected.gif" 
+                      align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;forumid=217&amp;select=484487#xx484487xx" 
+                        name=484487>Re: Memory Leak</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=164"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CLabel_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>SledgeHammer&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>14:53 28 Apr 
+                        '03&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=484487_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="CLabel_files/ind.gif" 
+                        width=18><IMG src="CLabel_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>What 
+                                leak? The tone of your message stinks, I suggest 
+                                buddy you FIX it. <BR><BR>To iterate is human, 
+                                to recurse is devine.<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=484487">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=484487">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;tid=484406&amp;forumid=217&amp;select=484487#xx484487xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?msg=484487#xx484487xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=484487"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=484487"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(164,484487);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CLabel_files/t.gif" width=1 
+              border=0></TD></TR>
+              <TR id=484541_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx484541xx></A><IMG height=1 
+                        src="CLabel_files/ind.gif" width=36><IMG 
+                        src="CLabel_files/news_unselected.gif" 
+                      align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;forumid=217&amp;select=484541#xx484541xx" 
+                        name=484541>Re: Memory Leak</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=36047"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CLabel_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>jimNLX&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>15:46 28 Apr 
+                        '03&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=484541_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="CLabel_files/ind.gif" 
+                        width=36><IMG src="CLabel_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>First 
+                                off I'm not your buddy. Second my tone was only 
+                                that of someone looking for a solution since 
+                                February. Sounds a bit defensive to me. 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=484541">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=484541">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;tid=484406&amp;forumid=217&amp;select=484541#xx484541xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?msg=484541#xx484541xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=484541"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=484541"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(36047,484541);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CLabel_files/t.gif" width=1 
+              border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 src="CLabel_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=419473_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx419473xx></A><IMG 
+                        src="CLabel_files/news_unselected.gif" 
+                      align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;forumid=217&amp;select=419473#xx419473xx" 
+                        name=419473><B>Text Wrapping</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=99654"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CLabel_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>zipo13</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>12:14 16 Feb 
+                        '03</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=419473_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="CLabel_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Does 
+                                anybody know how to implement text wrapping for 
+                                this control?<BR><BR>If I have a single word 
+                                that is longer than the width of the static it 
+                                is cut off. Word break style wont do the trick 
+                                since its a single wordthat is bigger than the 
+                                static.<BR><BR>Any Ideas<IMG 
+                                src="CLabel_files/smiley_confused.gif" 
+                                align=absMiddle> <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=419473">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=419473">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;tid=419473&amp;forumid=217&amp;select=419473#xx419473xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?msg=419473#xx419473xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=419473"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=419473"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(99654,419473);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CLabel_files/t.gif" width=1 
+              border=0></TD></TR>
+              <TR id=625468_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx625468xx></A><IMG height=1 
+                        src="CLabel_files/ind.gif" width=18><IMG 
+                        src="CLabel_files/news_unselected.gif" 
+                      align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;forumid=217&amp;select=625468#xx625468xx" 
+                        name=625468>Re: Text Wrapping</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=51704"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CLabel_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle>Chen-Cha 
+                        Hsu&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>21:39 30 Sep 
+                        '03&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=625468_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="CLabel_files/ind.gif" 
+                        width=18><IMG src="CLabel_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Quick 
+                                hack, at least work as my usage:)<BR><BR>change 
+                                the OnPaint() function in CLabel.cpp, from the 
+                                3D part to the end of the 
+                                function<BR><BR>//<BR>&nbsp;&nbsp;&nbsp;&nbsp;// 
+                                3333&nbsp;&nbsp; 
+                                DDDDD<BR>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp; 
+                                3&nbsp;&nbsp;D&nbsp;&nbsp;&nbsp;&nbsp;D<BR>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp; 
+                                33&nbsp;&nbsp; D&nbsp;&nbsp;&nbsp;&nbsp; 
+                                D&nbsp;&nbsp;&nbsp;&nbsp;E F X 
+                                <BR>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp; 
+                                3&nbsp;&nbsp;D&nbsp;&nbsp;&nbsp;&nbsp;D<BR>&nbsp;&nbsp;&nbsp;&nbsp;// 
+                                3333&nbsp;&nbsp; 
+                                DDDDD<BR>&nbsp;&nbsp;&nbsp;&nbsp;//<BR>&nbsp;&nbsp;&nbsp;&nbsp;//<BR>&nbsp;&nbsp;&nbsp;&nbsp;if 
+                                (m_bRotation)<BR>&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int 
+                                nAlign = pDCMem-&gt;SetTextAlign 
+                                (TA_BASELINE);<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CPoint 
+                                pt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GetViewportOrgEx 
+                                (pDCMem-&gt;m_hDC,&amp;pt) 
+                                ;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SetViewportOrgEx 
+                                (pDCMem-&gt;m_hDC,rc.Width() / 2, rc.Height() / 
+                                2, NULL) 
+                                ;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pDCMem-&gt;TextOut 
+                                (0, 0, strText) 
+                                ;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SetViewportOrgEx 
+                                (pDCMem-&gt;m_hDC,pt.x / 2, pt.y / 2, NULL) 
+                                ;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pDCMem-&gt;SetTextAlign 
+                                (nAlign);<BR>&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;else<BR>&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CRect 
+                                newRC;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TEXTMETRIC 
+                                tag;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CSize 
+                                sz;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CString 
+                                s = 
+                                (LPCTSTR)strText;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;::GetTextExtentPoint32(pDCMem-&gt;GetSafeHdc(), 
+                                strText, 
+                                <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strText.GetLength(), 
+                                &amp;sz);<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CStringArray 
+                                asText;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int 
+                                nLine = 
+                                1;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CString 
+                                s2;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int 
+                                nIdx, nX = 
+                                0;<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if 
+                                (sz.cx &gt; 
+                                rc.Width())<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s2.Empty();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 
+                                need 
+                                wrapping<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while 
+                                (s.GetLength() &gt; 
+                                0)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nIdx 
+                                = s.Find(' ', 
+                                0);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if 
+                                (nIdx != 
+                                -1)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;::GetTextExtentPoint32(pDCMem-&gt;GetSafeHdc(),<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s.Left(nIdx+1), 
+                                s.Left(nIdx+1).GetLength(), 
+                                &amp;sz);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if 
+                                (nX + sz.cx &gt; 
+                                rc.Width())<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nX 
+                                = 
+                                0;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nLine++;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;asText.SetAtGrow(nLine-1, 
+                                s2);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TRACE1("%s\n", 
+                                s2);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s2.Empty();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nX 
+                                += 
+                                sz.cx;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s2 
+                                += (LPCTSTR)s.Left(nIdx + 
+                                1);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s 
+                                = s.Right(s.GetLength() - nIdx 
+                                -1);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if 
+                                (s2.GetLength() &gt; 
+                                0)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nLine++;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;asText.SetAtGrow(nLine-1, 
+                                s2);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s2.Empty();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;::GetTextExtentPoint32(pDCMem-&gt;GetSafeHdc(),<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s, 
+                                s.GetLength(), 
+                                &amp;sz);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if 
+                                (sz.cx &lt; 
+                                rc.Width())<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nLine++;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;asText.SetAtGrow(nLine-1, 
+                                s);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TRACE1("%s\n", 
+                                s);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s.Empty();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else&nbsp;&nbsp;&nbsp;&nbsp;// 
+                                no space 
+                                inside<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for 
+                                (int i=0; i&lt;s.GetLength(); 
+                                i++)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;::GetTextExtentPoint32(pDCMem-&gt;GetSafeHdc(),<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s.Left(i), 
+                                i, 
+                                &amp;sz);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if 
+                                (sz.cx &gt; 
+                                rc.Width())<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nLine++;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;asText.SetAtGrow(nLine-1, 
+                                s.Left(i-1));<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s 
+                                = s.Right(s.GetLength() - 
+                                i);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;asText.SetAtGrow(0, 
+                                strText);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pDCMem-&gt;GetTextMetrics(&amp;tag);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LONG 
+                                nDiff = rc.bottom - rc.top - tag.tmHeight * 
+                                nLine - 
+                                2;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if 
+                                (nDiff &gt; 
+                                0)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newRC.left 
+                                = 
+                                rc.left;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newRC.top 
+                                = rc.top + 
+                                nDiff/2;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newRC.right 
+                                = 
+                                rc.right;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newRC.bottom 
+                                = newRC.top + tag.tmHeight + 
+                                1;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newRC 
+                                = 
+                                rc;<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CRect 
+                                newRC2;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for 
+                                (int i=0; i&lt;nLine; 
+                                i++)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newRC2.top 
+                                = newRC.top + tag.tmHeight * 
+                                i;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newRC2.left 
+                                = 
+                                newRC.left;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newRC2.right 
+                                = 
+                                newRC.right;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newRC2.bottom 
+                                = newRC2.top + 
+                                tag.tmHeight;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TRACE1("%s\n", 
+                                asText[i]);<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pDCMem-&gt;DrawText(asText[i],newRC2,dwFlags);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if 
+                                (m_bFont3d)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pDCMem-&gt;SetTextColor(m_cr3DHiliteColor);<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if 
+                                (m_3dType == 
+                                Raised)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newRC2.OffsetRect(-1,-1);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newRC2.OffsetRect(1,1);<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pDCMem-&gt;DrawText(asText[i],rc,dwFlags);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_3dType;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;}<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;// 
+                                Restore DC's 
+                                State<BR>&nbsp;&nbsp;&nbsp;&nbsp;pDCMem-&gt;SetBkMode(nMode);<BR>&nbsp;&nbsp;&nbsp;&nbsp;pDCMem-&gt;SelectObject(pOldFont);<BR>&nbsp;&nbsp;&nbsp;&nbsp;pDCMem-&gt;SetTextColor(crText);<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;if 
+                                (!m_bTransparent)<BR>&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dc.BitBlt(0,0,rc.Width(),rc.Height(),pDCMem,0,0,SRCCOPY);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 
+                                continue DC restore 
+                                <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pDCMem-&gt;SelectObject 
+                                ( pOldBitmap ) 
+                                ;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;delete 
+                                pDCMem;<BR>&nbsp;&nbsp;&nbsp;&nbsp;} 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=625468">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=625468">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;tid=419473&amp;forumid=217&amp;select=625468#xx625468xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?msg=625468#xx625468xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=625468"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=625468"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(51704,625468);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CLabel_files/t.gif" width=1 
+              border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 src="CLabel_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=408227_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx408227xx></A><IMG 
+                        src="CLabel_files/news_unselected.gif" 
+                      align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;forumid=217&amp;select=408227#xx408227xx" 
+                        name=408227><B>Memory Leak</B></A></TD>
+                      <TD vAlign=bottom><IMG height=13 
+                        alt="Unconfirmed/Anonymous posting" 
+                        src="CLabel_files/usersuss.gif" width=15></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>Anonymous</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>15:47 4 Feb 
+                        '03</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=408227_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="CLabel_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Has 
+                                anyone come up with a fix for the memory leak in 
+                                version 1.6? <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=408227">Reply</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;tid=408227&amp;forumid=217&amp;select=408227#xx408227xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?msg=408227#xx408227xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=408227"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=408227"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(0,408227);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CLabel_files/t.gif" width=1 
+              border=0></TD></TR>
+              <TR id=408260_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx408260xx></A><IMG height=1 
+                        src="CLabel_files/ind.gif" width=18><IMG 
+                        src="CLabel_files/news_unselected.gif" 
+                      align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;forumid=217&amp;select=408260#xx408260xx" 
+                        name=408260>Re: Memory Leak</A></TD>
+                      <TD vAlign=bottom><IMG height=13 
+                        alt="Unconfirmed/Anonymous posting" 
+                        src="CLabel_files/usersuss.gif" width=15></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>Anonymous&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>16:14 4 Feb 
+                        '03&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=408260_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="CLabel_files/ind.gif" 
+                        width=18><IMG src="CLabel_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>After 
+                                opening and closing a dialog a few times with 
+                                the CLabel control, the GDI Objects stop 
+                                decrementing. <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=408260">Reply</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;tid=408227&amp;forumid=217&amp;select=408260#xx408260xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?msg=408260#xx408260xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=408260"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=408260"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(0,408260);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CLabel_files/t.gif" width=1 
+              border=0></TD></TR>
+              <TR id=409143_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx409143xx></A><IMG height=1 
+                        src="CLabel_files/ind.gif" width=36><IMG 
+                        src="CLabel_files/news_unselected.gif" 
+                      align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;forumid=217&amp;select=409143#xx409143xx" 
+                        name=409143>Re: Memory Leak</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=164"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CLabel_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle>Norm 
+                        Almond&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>12:19 5 Feb 
+                        '03&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=409143_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="CLabel_files/ind.gif" 
+                        width=36><IMG src="CLabel_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>I'll 
+                                take a look and post a maintenace version 
+                                soon.<BR><BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=409143">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=409143">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;tid=408227&amp;forumid=217&amp;select=409143#xx409143xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?msg=409143#xx409143xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=409143"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=409143"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(164,409143);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CLabel_files/t.gif" width=1 
+              border=0></TD></TR>
+              <TR id=695906_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx695906xx></A><IMG height=1 
+                        src="CLabel_files/ind.gif" width=54><IMG 
+                        src="CLabel_files/news_unselected.gif" 
+                      align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;forumid=217&amp;select=695906#xx695906xx" 
+                        name=695906>Re: Memory Leak</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=54332"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CLabel_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>lily0lin&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>22:03 19 Dec 
+                        '03&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=695906_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="CLabel_files/ind.gif" 
+                        width=54><IMG src="CLabel_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Hi 
+                                Norm,<BR><BR>First of all, I want to thank you 
+                                for your great job. I use it in my project, very 
+                                helpful. I just found that there is system 
+                                resource leak under Window 98, I need to change 
+                                the label text every second, it becomes a big 
+                                issue for me. However, I didn't see the problem 
+                                with Window 2000/XP. Any idea? I appreciate your 
+                                any help.<BR><BR>Thanks a lot. 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=695906">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=695906">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;tid=408227&amp;forumid=217&amp;select=695906#xx695906xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?msg=695906#xx695906xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=695906"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=695906"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(54332,695906);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CLabel_files/t.gif" width=1 
+              border=0></TD></TR>
+              <TR id=668727_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx668727xx></A><IMG height=1 
+                        src="CLabel_files/ind.gif" width=36><IMG 
+                        src="CLabel_files/news_unselected.gif" 
+                      align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;forumid=217&amp;select=668727#xx668727xx" 
+                        name=668727>Re: Memory Leak</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=519360"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CLabel_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>_corey_&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>3:16 18 Nov 
+                        '03&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=668727_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="CLabel_files/ind.gif" 
+                        width=36><IMG src="CLabel_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent>Curious, I don't see the 
+                                HCURSOR object ever being deleted. 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=668727">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=668727">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;tid=408227&amp;forumid=217&amp;select=668727#xx668727xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?msg=668727#xx668727xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=668727"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=668727"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(519360,668727);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CLabel_files/t.gif" width=1 
+              border=0></TD></TR>
+              <TR id=730424_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx730424xx></A><IMG height=1 
+                        src="CLabel_files/ind.gif" width=54><IMG 
+                        src="CLabel_files/news_unselected.gif" 
+                      align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;forumid=217&amp;select=730424#xx730424xx" 
+                        name=730424>Re: Memory Leak</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=164"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CLabel_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle>Norm 
+                        Almond&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>6:30 3 Feb 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=730424_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="CLabel_files/ind.gif" 
+                        width=54><IMG src="CLabel_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>System 
+                                cursors don't get deleted <IMG 
+                                src="CLabel_files/smiley_confused.gif" 
+                                align=absMiddle> <BR><BR>
+                                <P align=center><FONT face=Arial color=#0000ff>I 
+                                am that is</FONT></P><BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=730424">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=730424">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;tid=408227&amp;forumid=217&amp;select=730424#xx730424xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?msg=730424#xx730424xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=730424"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=730424"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(164,730424);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CLabel_files/t.gif" width=1 
+              border=0></TD></TR>
+              <TR id=730475_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx730475xx></A><IMG height=1 
+                        src="CLabel_files/ind.gif" width=72><IMG 
+                        src="CLabel_files/news_unselected.gif" 
+                      align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;forumid=217&amp;select=730475#xx730475xx" 
+                        name=730475>Re: Memory Leak</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=164"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CLabel_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle>Norm 
+                        Almond&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>7:59 3 Feb 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=730475_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="CLabel_files/ind.gif" 
+                        width=72><IMG src="CLabel_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>test 
+                                <BR><BR>
+                                <P align=center><FONT face=Arial color=#0000ff>I 
+                                am that is</FONT></P><BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=730475">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=730475">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;tid=408227&amp;forumid=217&amp;select=730475#xx730475xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?msg=730475#xx730475xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=730475"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=730475"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(164,730475);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CLabel_files/t.gif" width=1 
+              border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 src="CLabel_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=369186_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx369186xx></A><IMG 
+                        src="CLabel_files/news_unselected.gif" 
+                      align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;forumid=217&amp;select=369186#xx369186xx" 
+                        name=369186><B>The underst line at the gradient fill 
+                        locks bad</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=135884"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CLabel_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>Nitromouse</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>11:59 18 Dec 
+                        '02</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=369186_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="CLabel_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>The 
+                                underst Line of the gradient fill looks bad, it 
+                                does not look how it should. In the example it 
+                                looks so bad too. It is just the underst line. 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=369186">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=369186">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;tid=369186&amp;forumid=217&amp;select=369186#xx369186xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?msg=369186#xx369186xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=369186"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=369186"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(135884,369186);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CLabel_files/t.gif" width=1 
+              border=0></TD></TR>
+              <TR id=369196_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx369196xx></A><IMG height=1 
+                        src="CLabel_files/ind.gif" width=18><IMG 
+                        src="CLabel_files/news_unselected.gif" 
+                      align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;forumid=217&amp;select=369196#xx369196xx" 
+                        name=369196>Re: The underst line at the gradient fill 
+                        locks bad</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=135884"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CLabel_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>Nitromouse&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>12:02 18 Dec 
+                        '02&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=369196_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="CLabel_files/ind.gif" 
+                        width=18><IMG src="CLabel_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>I have 
+                                fixed the error on my self, just add one pixel 
+                                to the bottom when drawing the rect. Here the 
+                                whole code for the BK 
+                                Function:<BR><BR><CODE><BR><BR>void 
+                                CLabel::DrawGradientFill(CDC* pDC, CRect* pRect, 
+                                COLORREF crStart, COLORREF crEnd, int 
+                                nSegments)<BR>{<BR>// Get the starting RGB 
+                                values and calculate the incremental<BR>// 
+                                changes to be applied.<BR><BR>COLORREF 
+                                cr;<BR>int nR = GetRValue(crStart);<BR>int nG = 
+                                GetGValue(crStart);<BR>int nB = 
+                                GetBValue(crStart);<BR><BR>int neB = 
+                                GetBValue(crEnd);<BR>int neG = 
+                                GetGValue(crEnd);<BR>int neR = 
+                                GetRValue(crEnd);<BR><BR>if(nSegments &gt; 
+                                pRect-&gt;Width())<BR>nSegments = 
+                                pRect-&gt;Width();<BR><BR>int nDiffR = (neR - 
+                                nR);<BR>int nDiffG = (neG - nG);<BR>int nDiffB = 
+                                (neB - nB);<BR><BR>int ndR = 256 * (nDiffR) / 
+                                (max(nSegments,1));<BR>int ndG = 256 * (nDiffG) 
+                                / (max(nSegments,1));<BR>int ndB = 256 * 
+                                (nDiffB) / (max(nSegments,1));<BR><BR>nR *= 
+                                256;<BR>nG *= 256;<BR>nB *= 256;<BR><BR>neR *= 
+                                256;<BR>neG *= 256;<BR>neB *= 256;<BR><BR>int 
+                                nCX = pRect-&gt;Width() / max(nSegments,1), 
+                                nLeft = pRect-&gt;left, 
+                                nRight;<BR>pDC-&gt;SelectStockObject(NULL_PEN);<BR><BR>for 
+                                (int i = 0; i &lt; nSegments; i++, nR += ndR, nG 
+                                += ndG, nB += ndB)<BR>{<BR>// Use special code 
+                                for the last segment to avoid any problems<BR>// 
+                                with integer division.<BR><BR>if (i == 
+                                (nSegments - 1))<BR>nRight = 
+                                pRect-&gt;right;<BR>else<BR>nRight = nLeft + 
+                                nCX;<BR><BR>cr = RGB(nR / 256, nG / 256, nB / 
+                                256);<BR><BR>{<BR>CBrush br(cr);<BR>CBrush* 
+                                pbrOld = 
+                                pDC-&gt;SelectObject(&amp;br);<BR>pDC-&gt;Rectangle(nLeft, 
+                                pRect-&gt;top, nRight + 1, 
+                                pRect-&gt;bottom+1);<BR>pDC-&gt;SelectObject(pbrOld);<BR>}<BR><BR>// 
+                                Reset the left side of the drawing 
+                                rectangle.<BR><BR>nLeft = 
+                                nRight;<BR>}<BR>}<BR></CODE><BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=369196">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=369196">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;tid=369186&amp;forumid=217&amp;select=369196#xx369196xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/clabel.asp?msg=369196#xx369196xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=369196"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/clabel.asp&amp;df=100&amp;forumid=217&amp;select=369196"><I>Delete</I></A>]<BR>Score: 
+                                2.0 (1 vote).
+                                <SCRIPT language=Javascript>MsgVoteForm(135884,369196);</SCRIPT>
+                                 
+                    </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CLabel_files/t.gif" width=1 
+              border=0></TD></TR></TBODY></TABLE></TD></TR>
+        <TR bgColor=#fbedbb>
+          <TD>
+            <TABLE cellPadding=2 width="100%">
+              <TBODY>
+              <TR>
+                <TD class=messagetitle>Last Visit: 23:44 Wednesday 22nd 
+                  September, 2004</TD>
+                <TD noWrap align=right><FONT class=messagetitle><SPAN 
+                  class=HoverLink>First</SPAN> <SPAN class=HoverLink>Prev</SPAN> 
+                  <A class=HoverLink 
+                  href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;forumid=217&amp;fr=26" 
+                  name=HoverNL>Next</A> <A class=HoverLink 
+                  href="http://www.codeproject.com/staticctrl/clabel.asp?df=100&amp;forumid=217&amp;fr=76" 
+                  name=HoverNL>Last</A> 
+      </FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><BR>
+<TABLE cellSpacing=5 width="100%">
+  <TBODY>
+  <TR vAlign=top>
+    <TD><FONT style="FONT-SIZE: 7pt" size=1><A 
+      href="http://www.codeproject.com/?cat=1">All Topics</A>, <A 
+      href="http://www.codeproject.com/?cat=2">MFC / C++</A> &gt;&gt; <A 
+      href="http://www.codeproject.com/staticctrl/">Static Controls</A> &gt;&gt; 
+      <A href="http://www.codeproject.com/staticctrl/#General">General</A> 
+      <BR>Updated: 3 Aug 2002 </FONT></TD>
+    <TD align=right><FONT style="FONT-SIZE: 7pt" size=1>Article content 
+      copyright norm.net, 2000<BR>everything else Copyright © <A 
+      href="mailto:webmaster@codeproject.com">CodeProject</A>, 1999-2004</A>. 
+      <BR><A href="http://www.codeproject.com/info/MediaKit">Advertise on The 
+      Code Project</A> | <A 
+      href="http://www.codeproject.com/info/privacy.asp">Privacy</A> 
+  </FONT></TD></TR></TBODY></TABLE><BR>
+<CENTER>
+<TABLE cellSpacing=0 cellPadding=0 width="95%" border=0>
+  <TBODY>
+  <TR>
+    <TD bgColor=#ff9900 height=1><IMG height=1 
+  src="CLabel_files/space.gif"></TD></TR>
+  <TR>
+    <TD align=middle><FONT size=1><A 
+      href="http://www.codeproject.com/redir.asp?id=235">MSDN Communities</A> | 
+      <A href="http://aspalliance.com/">ASPAlliance</A> • <A 
+      href="http://www.developerfusion.com/">Developer Fusion</A> • <A 
+      href="http://www.devguru.com/">DevGuru</A> • <A 
+      href="http://www.programmersheaven.com/">Programmers Heaven</A> • <A 
+      href="http://www.planet-source-code.com/">Planet Source Code</A> • <A 
+      href="http://www.resourceindex.com/">Resource Index</A> • <A 
+      href="http://www.tek-tips.com/">Tek-Tips Forums</A> • <A 
+      href="http://www.topxml.com/">What is XML?</A> • <A 
+      href="http://www.visualbuilder.com/">VisualBuilder</A> • <A 
+      href="http://www.zvon.org/">ZVON</A> • <A 
+      href="http://www.codeproject.com/redir.asp?id=169">Search Us!</A> 
+    </FONT></TD></TR></TBODY></TABLE></CENTER></BODY></HTML>

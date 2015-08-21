@@ -1,0 +1,84 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: mng - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSPE00D.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /D "_AFXDLL" /D "MNG_SUPPORT_DISPLAY" /D "MNG_SUPPORT_READ" /D "MNG_SUPPORT_WRITE" /D "MNG_ACCESS_CHUNKS" /D "MNG_STORE_CHUNKS" /FR"Debug/" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\sword\temp\agmagic\src\image\ip\lib\cximage\599c\windows\mng\libmng_callback_xs.c"
+"D:\sword\temp\agmagic\src\image\ip\lib\cximage\599c\windows\mng\libmng_chunk_io.c"
+"D:\sword\temp\agmagic\src\image\ip\lib\cximage\599c\windows\mng\libmng_chunk_prc.c"
+"D:\sword\temp\agmagic\src\image\ip\lib\cximage\599c\windows\mng\libmng_chunk_xs.c"
+"D:\sword\temp\agmagic\src\image\ip\lib\cximage\599c\windows\mng\libmng_cms.c"
+"D:\sword\temp\agmagic\src\image\ip\lib\cximage\599c\windows\mng\libmng_display.c"
+"D:\sword\temp\agmagic\src\image\ip\lib\cximage\599c\windows\mng\libmng_dither.c"
+"D:\sword\temp\agmagic\src\image\ip\lib\cximage\599c\windows\mng\libmng_error.c"
+"D:\sword\temp\agmagic\src\image\ip\lib\cximage\599c\windows\mng\libmng_filter.c"
+"D:\sword\temp\agmagic\src\image\ip\lib\cximage\599c\windows\mng\libmng_hlapi.c"
+"D:\sword\temp\agmagic\src\image\ip\lib\cximage\599c\windows\mng\libmng_jpeg.c"
+"D:\sword\temp\agmagic\src\image\ip\lib\cximage\599c\windows\mng\libmng_object_prc.c"
+"D:\sword\temp\agmagic\src\image\ip\lib\cximage\599c\windows\mng\libmng_pixels.c"
+"D:\sword\temp\agmagic\src\image\ip\lib\cximage\599c\windows\mng\libmng_prop_xs.c"
+"D:\sword\temp\agmagic\src\image\ip\lib\cximage\599c\windows\mng\libmng_read.c"
+"D:\sword\temp\agmagic\src\image\ip\lib\cximage\599c\windows\mng\libmng_trace.c"
+"D:\sword\temp\agmagic\src\image\ip\lib\cximage\599c\windows\mng\libmng_write.c"
+"D:\sword\temp\agmagic\src\image\ip\lib\cximage\599c\windows\mng\libmng_zlib.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSPE00D.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSPE00E.tmp" with contents
+[
+/nologo /out:"Debug\mng.lib" 
+.\Debug\libmng_callback_xs.obj
+.\Debug\libmng_chunk_io.obj
+.\Debug\libmng_chunk_prc.obj
+.\Debug\libmng_chunk_xs.obj
+.\Debug\libmng_cms.obj
+.\Debug\libmng_display.obj
+.\Debug\libmng_dither.obj
+.\Debug\libmng_error.obj
+.\Debug\libmng_filter.obj
+.\Debug\libmng_hlapi.obj
+.\Debug\libmng_jpeg.obj
+.\Debug\libmng_object_prc.obj
+.\Debug\libmng_pixels.obj
+.\Debug\libmng_prop_xs.obj
+.\Debug\libmng_read.obj
+.\Debug\libmng_trace.obj
+.\Debug\libmng_write.obj
+.\Debug\libmng_zlib.obj
+]
+Creating command line "link.exe -lib @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSPE00E.tmp"
+<h3>Output Window</h3>
+Compiling...
+libmng_callback_xs.c
+libmng_chunk_io.c
+libmng_chunk_prc.c
+libmng_chunk_xs.c
+libmng_cms.c
+libmng_display.c
+libmng_dither.c
+libmng_error.c
+libmng_filter.c
+libmng_hlapi.c
+libmng_jpeg.c
+libmng_object_prc.c
+libmng_pixels.c
+libmng_prop_xs.c
+libmng_read.c
+libmng_trace.c
+libmng_write.c
+libmng_zlib.c
+Generating Code...
+Creating library...
+
+
+
+<h3>Results</h3>
+mng.lib - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

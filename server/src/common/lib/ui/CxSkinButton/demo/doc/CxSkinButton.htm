@@ -1,0 +1,102 @@
+<!-- Article Starts -->
+<UL class=download>
+<LI><A href="http://www.codeproject.com/buttonctrl/CxSkinButton/CxSkinButton_src.zip">
+Download source files - 10 Kb</A> 
+<LI><A href="http://www.codeproject.com/buttonctrl/CxSkinButton/CxSkinButton_demo.zip">
+Download demo project - 92 Kb</A> </LI></UL>
+<P><IMG alt="Sample Image - sample.gif" src="sample.gif"></P>
+<!-- Main HTML starts here -->
+<P>With this class you can easily give a skin to your buttons in few steps: 
+<OL>
+<LI>Add "xSkinButton.cpp" and "xSkinButton.h" to the project.<BR>
+<LI>Include "xSkinButton.h" in the header file where the controls are defined<BR>
+<LI>Create (or edit) a member variable for each button you want to customize as 
+<CODE>CxSkinButton</CODE>. If the Class Wizard doesn't show the <CODE>CxSkinButton</CODE> 
+type, select <CODE>CButton</CODE> and then edit the code manually.<BR>
+<LI>Add the bitmap resource for the buttons: 
+<UL>
+<LI>NORMAL bitmap: default button image.
+<LI>DOWN bitmap: pushed button image.
+<LI>OVER bitmap:(optional) image to shown when the mouse is over the button. If NULL, NORMAL bitmap will be used.
+<LI>DISABLED bitmap: (optional) image for the disabled state. If NULL, NORMAL bitmap will be used.
+<LI>FOCUS bitmap: (optional) image for the focused state. If NULL, NORMAL bitmap will be used.
+<LI>MASK bitmap: (optional) clipping region. If you don't use the MASK, the button will be a rectangular owner-draw control. The default transparent color is RGB(255,255,255).</li>
+</UL>
+<LI>In the window initialization add the <CODE>CxSkinButton</CODE> methods:
+<PRE>BOOL CxSkinButtonDemoDlg::OnInitDialog()
+{
+<SPAN class=cpp-comment>//	...</SPAN>
+	m_btn1.SetTextColor(RGB(<SPAN class=cpp-literal>255</SPAN>,<SPAN class=cpp-literal>0</SPAN>,<SPAN class=cpp-literal>0</SPAN>));
+	m_btn1.SetToolTipText(<SPAN class=cpp-string>"Button1"</SPAN>);
+	m_btn1.SetSkin(IDB_B1NORM,IDB_B1DOWN,IDB_B1OVER,IDB_B1GRAY,<SPAN class=cpp-literal>0</SPAN>,IDB_B1MASK,<SPAN class=cpp-literal>0</SPAN>,<SPAN class=cpp-literal>0</SPAN>,<SPAN class=cpp-literal>0</SPAN>);
+<SPAN class=cpp-comment>//	...</SPAN>
+</PRE>
+<P>The <CODE>SetTextColor</CODE> and <CODE>SetToolTipText</CODE> are self explaining; 
+<CODE>SetSkin</CODE> is:<BR>
+<CODE><SPAN 
+  class=cpp-keyword>void</SPAN> CxSkinButton::SetSkin(UINT normal,UINT down,UINT 
+over,UINT disabled,UINT focus,UINT mask, <SPAN class=cpp-keyword>short</SPAN> drawmode, <SPAN class=cpp-keyword>short</SPAN> 
+border, <SPAN 
+  class=cpp-keyword>short</SPAN> margin)</CODE></P>
+<UL>
+<LI>normal, down, over, disabled, focus, mask = bitmap resource IDs 
+<LI>drawmode = if mask is not NULL, this should be 0 (normal); else you can try 
+1 (stretch) or 2 (tiled). 
+<LI>border = if mask is not NULL or is not rectangular, this should be 0; else 
+you can try 1 to draw the standard 3D border around the button. 
+<LI>margin = if mask is not NULL or is not rectangular, this should be 0; else 
+you can try to change this value to draw a dotted rectangle over the button when 
+the control has the focus. </LI>
+</UL>
+</LI>
+</OL>
+<H2>Remarks</H2>
+<UL>
+<LI>The BS_OWNERDRAW style is added automatically, you don't need to set the "Owner draw" property in the resource editor.
+<LI>only NORMAL and DOWN bitmaps are essential; OVER bitmap is a plus.
+<LI>DISABLED bitmap is not necessary if the button is always enabled. You can 
+also use the button text (automatically etched) to show the disabled state.
+<LI>MASK bitmap is not necessary if the button is rectangular.
+<LI>for rectangular buttons you should set the margin parameter greater than 0 
+(4 is a good choice), or use the FOCUS bitmap.
+<LI>for rectangular buttons you can use 'flat' bitmaps and set the border parameter 
+to 1. In this situation, NORMAL and DOWN bitmaps can also share the same resource.</LI>
+</UL>
+<H2>Release History</H2>
+<b>v1.00 - 15/03/2001</b><br>
+- basic implementation and interface.<br>
+<b>v1.10 - 28/03/2001</b><br>
+enhanced mouse tracking implementation (by Milan Gardian).<br>
+- SetCapture removed: accelerators now are dispatched.<br>
+- Double-click handling.<br>
+- Better behavior during "button-pressed" (mouse button down &amp; holding) phase<br>
+<b>v1.20 - 02/04/2001</b><br>
+- New CreateRgnFromBitmap() implementation. Mask bitmap now works in any display 
+color mode, any mask color depth and any mask size.<br>
+<b>v1.21 - 14/04/2001</b><br>
+- OnMouseLeave cast error fixed.<br>
+- Fixed FocusRect defect when OVER bitmap was NULL.<br>
+<b>v1.30 - 25/04/2001</b><br>
+- Fixed CreateRgnFromBitmap failure under WinNT4.0<br>
+<b>v1.40 - 24/06/2001</b><br>
+- check & radio button add on.<br>
+- added "focus" bitmap.<br>
+- fixed CreateRgnFromBitmap bug.<br>
+- fixed shortcut bug.<br>
+- fixed text drawing code.<br> 
+<b>v1.41 - 27/10/2001</b><br>
+- Fixed memory leakage in CreateRgnFromBitmap<br>
+<H2>Compatibility</H2>Win95,WinNT = Yes, requires IE3.0 or higher<BR>
+Win98, WinME, W2k, WinXP = Yes 
+<P>For any questions, e-mail to: <A 
+href="mailto:ing.davide.pizzolato@libero.it">ing.davide.pizzolato@libero.it</A></P>
+<P>Thanks to all the Code Project developers!<BR>
+  Special thanks to:<BR>
+  <a href="mailto:Milan.Gardian@LEIBINGER.com">Milan Gardian</a> for mouse and 
+  keyboard tracking code.<br>
+  <a href="mailto:Fable@aramszu.net">Fable@aramszu.net</a> for ExtCreateRegion 
+  replacement code.<br>
+  <a href="mailto:Rainer@Mangold.com">Rainer Mangold</a> for radio-button and 
+  check-box code.<br>
+  Andy Green and Cameron Epp for suggestions & debugging. </P>
+<!-- Article Ends -->

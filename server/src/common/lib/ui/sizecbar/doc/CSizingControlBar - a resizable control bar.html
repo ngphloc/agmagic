@@ -1,0 +1,2737 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0047)http://www.codeproject.com/docking/sizecbar.asp -->
+<HTML><HEAD><TITLE>The Code Project - CSizingControlBar - a resizable control bar - Toolbars / Docking Windows</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META http-equiv=Reply-to content=mailto:webmaster@codeproject.com>
+<META content="Free source code and tutorials for Windows developers." 
+name=Description>
+<META 
+content="Free source code, Toolbars / Docking Windows, Visual C++, MFC, Windows, GUI, MFC, docking" 
+name=keywords>
+<META 
+content="Article content copyright Cristi Posea, 1999, everthing else Copyright © CodeProject, 1999-2004, All Rights Reserved." 
+name=Copyright><LINK href="/favicon.ico" type=image/ico rel=icon><LINK 
+href="/favicon.ico" rel="SHORTCUT ICON"><LINK 
+href="CSizingControlBar - a resizable control bar_files/global.css" 
+type=text/css rel=stylesheet>
+<SCRIPT language=javascript 
+src="CSizingControlBar - a resizable control bar_files/oncopy.js"></SCRIPT>
+
+<META content="MSHTML 6.00.3790.0" name=GENERATOR></HEAD>
+<BODY oncopy="return copyCode();" text=black vLink=purple aLink=red link=blue 
+bgColor=white leftMargin=3 topMargin=3>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#ff9900 border=0>
+  <TBODY>
+  <TR>
+    <TD width="100%">
+      <TABLE cellSpacing=1 cellPadding=0 width="100%" bgColor=#ff9900 
+        border=0><TBODY>
+        <TR>
+          <TD vAlign=top><A href="http://www.codeproject.com/"><IMG height=72 
+            alt="The Code Project" 
+            src="CSizingControlBar - a resizable control bar_files/logo225x72.gif" 
+            width=225 border=0></A></TD>
+          <TD align=right><SPAN id=AdBanner4><A 
+            href="http://www.codeproject.com/script/admentor/ads.asp"><IMG 
+            height=60 alt="View our advertisers" 
+            src="CSizingControlBar - a resizable control bar_files/sponsors.gif" 
+            width=20 border=1></A>
+            <SCRIPT language=javascript>document.write("<a href=\"/script/admentor/admentorredir.asp?id=410&way=ban\" target=_blank><img src=\"/script/admentor/include/ServeAd.aspx?File=%2Fscript%2Fadmentor%2Fimages%2FSAMSBanner%2Egif&C=False&id=410\" alt=\"\" border=0 width=468 height=60></a>");</SCRIPT>
+            <A href="http://www.codeproject.com/info/mediakit"><IMG height=60 
+            alt="Advertise on the CodeProject" 
+            src="CSizingControlBar - a resizable control bar_files/advertise.gif" 
+            width=20 border=1></A></SPAN></TD></TR>
+        <TR>
+          <TD bgColor=#fbedbb colSpan=2>
+            <TABLE cellPadding=3 width="100%" bgColor=#fbedbb border=0>
+              <TBODY>
+              <TR vAlign=top>
+                <TD width="100%"><FONT style="FONT-SIZE: 8pt"><A 
+                  href="http://www.codeproject.com/?cat=1">All Topics</A>, <A 
+                  href="http://www.codeproject.com/?cat=2">MFC / C++</A> 
+                  &gt;&gt; <A 
+                  href="http://www.codeproject.com/docking/">Toolbars / Docking 
+                  Windows</A> &gt;&gt; <A 
+                  href="http://www.codeproject.com/docking/#Docking+Windows">Docking 
+                  Windows</A></FONT><BR><BR><B><FONT style="FONT-SIZE: 16pt" 
+                  size=4>CSizingControlBar - a resizable control 
+                  bar</FONT></B><BR><B>By <A 
+                  href="http://www.codeproject.com/script/profile/whos_who.asp?id=51">Cristi 
+                  Posea</A> </B><BR><BR><FONT 
+                  style="FONT-SIZE: 9pt">DevStudio-like docking 
+                  window&nbsp;</FONT> </TD>
+                <TD vAlign=top align=right>
+                  <TABLE cellSpacing=0 cellPadding=1 width=200 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD>&nbsp;</TD>
+                      <TD><FONT class=SmallText color=red 
+                        size=1><B>Advanced</B></FONT></TD></TR>
+                    <TR vAlign=top>
+                      <TD>&nbsp;</TD>
+                      <TD class=SmallText>C++ (VC5, VC6)<BR>Windows (NT4, 
+                        Win95, Win98, Win2K)<BR>MFC, Win32, VS<BR>Dev</TD></TR>
+                    <TR>
+                      <TD>&nbsp;</TD>
+                      <TD class=SmallText noWrap>Posted 17 Nov 1999</TD></TR>
+                    <TR>
+                      <TD>&nbsp;</TD>
+                      <TD class=SmallText>Updated 16 Aug 2000</TD></TR>
+                    <TR vAlign=top>
+                      <TD><IMG height=16 
+                        src="CSizingControlBar - a resizable control bar_files/hlp.gif" 
+                        width=16></TD>
+                      <TD class=SmallText noWrap><A 
+                        href="http://www.codeproject.com/script/Articles/list_articles.asp?userid=51">Articles 
+                        by this author</A></TD></TR>
+                    <TR vAlign=top>
+                      <TD></TD>
+                      <TD class=SmallText noWrap><B>217,079</B> 
+                    views</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD colSpan=2>
+            <TABLE id=tblSiteToolbar cellSpacing=0 cellPadding=1 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <FORM name=Search action=/info/search.asp method=post>
+                <TD vAlign=top align=left width="100%">
+                  <TABLE cellSpacing=0 cellPadding=1 border=0>
+                    <TBODY>
+                    <TR vAlign=center>
+                      <TD class=smallText><B><FONT 
+                        color=white>Search:</FONT></B></TD>
+                      <TD class=navbar noWrap><INPUT class=smallText 
+                        maxLength=255 size=18 name=target></TD>
+                      <TD vAlign=top><SELECT class=smallText name=st> 
+                          <OPTION value=kw selected>Articles</OPTION> <OPTION 
+                          value=au>Authors</OPTION></SELECT></TD>
+                      <TD><INPUT class=formButton type=submit value=Go></TD></TR></TBODY></TABLE></TD></FORM>
+                <TD>
+                  <DIV id=MenuPos 
+                  style="WIDTH: 380px; POSITION: relative; HEIGHT: 20px">
+                  <TABLE height=20 cellSpacing=0 cellPadding=2 width=375>
+                    <TBODY>
+                    <TR>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/info/faq.asp">Help!</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/info/latest.asp">Articles</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/script/comments/forums.asp">Message 
+                        Boards</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/store/">StoreFront</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/lounge.asp">Lounge</A></TD></TR></TBODY></TABLE></DIV></TD></TR></TBODY></TABLE>
+            <SCRIPT type=text/javascript>function Go(){return}</SCRIPT>
+
+            <SCRIPT 
+            src="CSizingControlBar - a resizable control bar_files/cpmenu_var.js" 
+            type=text/javascript></SCRIPT>
+
+            <SCRIPT 
+            src="CSizingControlBar - a resizable control bar_files/menu10_com.js" 
+            type=text/javascript></SCRIPT>
+          </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=1 border=0>
+  <TBODY>
+  <TR vAlign=top>
+    <TD vAlign=top bgColor=#fbedbb rowSpan=2>
+      <TABLE cellSpacing=0 cellPadding=0 border=0>
+        <SCRIPT language=javascript>
+function ErrorHandle() {}
+window.onerror = ErrorHandle;
+
+function OnNLSubmit(option)
+{
+	if (option=="up")
+		document.subForm.action = "/script/profile/modify.asp?ct=%2Fdocking%2Fsizecbar%2Easp";
+	else if (option=="in")
+		document.subForm.action = "/script/profile/process_logon.asp?ct=%2Fdocking%2Fsizecbar%2Easp";
+	document.subForm.submit();
+	return true;
+}
+</SCRIPT>
+
+        <TBODY>
+        <TR>
+          <TD>
+            <TABLE cellSpacing=3 cellPadding=0>
+              <TBODY>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD class=InfoBarHeader>Toolbox</TD></TR>
+              <TR>
+                <TD bgColor=black colSpan=2><IMG height=1 
+                  src="CSizingControlBar - a resizable control bar_files/space.gif" 
+                  width=1></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="CSizingControlBar - a resizable control bar_files/sitebuild_icon.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/submit/ReportProblem.asp?GUID=%2Fdocking%2Fsizecbar%2Easp">Broken 
+                  Article?</A></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="CSizingControlBar - a resizable control bar_files/support_icon.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/store/"><B>VS.NET 2003 from 
+                  $899</B></A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="CSizingControlBar - a resizable control bar_files/support_icon.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/store/"><B>MSDN Univ. from 
+                  $1950</B></A></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="CSizingControlBar - a resizable control bar_files/print.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/docking/sizecbar.asp?print=true" 
+                  target=_print>Print version</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="CSizingControlBar - a resizable control bar_files/link.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/add_bookmark.asp?t=0&amp;ct=%2Fdocking%2Fsizecbar%2Easp&amp;guid=%2Fdocking%2Fsizecbar%2Easp">Bookmark 
+                  this</A></TD></TR></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="CSizingControlBar - a resizable control bar_files/mail.gif" 
+                  width=16></TD>
+                <TD class=SmallText><A 
+                  href="http://www.codeproject.com/script/recommend/form.asp?guid=%2Fdocking%2Fsizecbar%2Easp">Send 
+                  to a friend</A></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD class=InfoBarHeader>My Profile</TD></TR>
+              <TR>
+                <TD bgColor=black colSpan=2><IMG height=1 
+                  src="CSizingControlBar - a resizable control bar_files/space.gif" 
+                  width=1></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="CSizingControlBar - a resizable control bar_files/profile_small.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/modify.asp?ct=/docking/sizecbar.asp">My 
+                  Settings</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="CSizingControlBar - a resizable control bar_files/submit_small.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/articles/list_articles.asp?userid=649009">My 
+                  Articles</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="CSizingControlBar - a resizable control bar_files/bookmarks.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/bookmark_list.asp">My 
+                  Bookmarks</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="CSizingControlBar - a resizable control bar_files/logoff_small.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/logoff.asp?ct=/docking/sizecbar.asp">Sign 
+                  out</A></TD></TR>
+              <TR>
+                <TD bgColor=black colSpan=2><IMG height=1 
+                  src="CSizingControlBar - a resizable control bar_files/space.gif" 
+                  width=1></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD>&nbsp;</TD></TR>
+        <TR>
+          <TD>
+            <CENTER>
+            <SCRIPT language=javascript>document.write("<IFRAME src=\"/script/admentor/include/ServeAdHTML.aspx?C=False&id=767\" border=0 frameborder=0 scrolling=no width=120 height=600></IFRAME>");</SCRIPT>
+            <BR></CENTER><BR></TD></TR></TBODY></TABLE></TD>
+    <TD width=5 rowSpan=2><IMG height=1 
+      src="CSizingControlBar - a resizable control bar_files/space.gif" width=5> 
+    </TD>
+    <TD align=right width="100%" bgColor=white>
+      <TABLE width="100%">
+        <TBODY>
+        <TR vAlign=top>
+          <TD class=smallText vAlign=top noWrap></TD>
+          <TD noWrap align=right><A name=__top></A>
+            <TABLE>
+              <TBODY>
+              <TR>
+                <TD class=smallText align=right>172 members have rated this 
+                  article. Result:</TD>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=0 border=2>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=5 
+                        src="CSizingControlBar - a resizable control bar_files/red.gif" 
+                        width=20 border=0></TD>
+                      <TD><IMG height=5 
+                        src="CSizingControlBar - a resizable control bar_files/red.gif" 
+                        width=20 border=0></TD>
+                      <TD><IMG height=5 
+                        src="CSizingControlBar - a resizable control bar_files/red.gif" 
+                        width=20 border=0></TD>
+                      <TD><IMG height=5 
+                        src="CSizingControlBar - a resizable control bar_files/red.gif" 
+                        width=20 border=0></TD>
+                      <TD><IMG height=5 
+                        src="CSizingControlBar - a resizable control bar_files/red.gif" 
+                        width=16 border=0><IMG height=5 
+                        src="CSizingControlBar - a resizable control bar_files/white.gif" 
+                        width=4 border=0></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD class=smallText align=right colSpan=2><A 
+                  title="Calculated as rating x Log10(# votes)" 
+                  href="http://www.codeproject.com/script/articles/top_articles.asp?st=2">Popularity: 
+                  10.74</A>. Rating: <B>4.8</B> out of 
+        5.</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD vAlign=top width="100%">
+      <DIV id=contentdiv><!-- Article Starts -->
+      <P>
+      <LI><FONT size=2><A 
+      href="http://www.codeproject.com/docking/sizecbar/sizecbar_src.zip">Download 
+      source - 65 Kb</A></FONT> 
+      <P></P>
+      <P><IMG alt="Sample Image" 
+      src="CSizingControlBar - a resizable control bar_files/sizecbar.gif"></P><!-- Article Starts -->
+      <H3>Features of CSizingControlBar 2.43</H3>
+      <UL>
+        <LI>Resizable control bar, that can be resized both when docked and when 
+        floating. 
+        <LI>Multiple sizing control bars can be docked on the same row/column. 
+        <LI>Full dynamic resizing, both when docked and floating, including 
+        diagonal resizing when floating. 
+        <LI>State persistence support (SaveState/LoadState). 
+        <LI>Gripper with "hide bar" flat button. 
+        <LI>Memory DC flickerless NC painting. 
+        <LI>Sample extension class with focus autosensing text caption. On 
+        Win98/Win2k, the caption is painted with gradient. 
+        <LI>No custom resources were used (bitmaps, cursors, strings, etc.), so 
+        the integration is easier and you have full control over the resources 
+        you eventually use in derived classes. 
+        <LI>Easy to use: use directly one of the CSizingControlBar* classes or 
+        derive your own control bar class, then add your child controls. 
+</LI></UL>
+      <H3>Instructions</H3>
+      <H4>Getting Started</H4>
+      <P>1. Include the following files in your project: </P><PRE>sizecbar.h
+sizecbar.cpp
+scbarg.h
+scbarg.cpp
+</PRE>
+      <P>2. Add these lines to your <CODE>stdafx.h</CODE> (if the files are in a 
+      different directory, include the path - see the <CODE>stdafx.h</CODE> file 
+      in the samples): </P><PRE><SPAN class=cpp-preprocessor>#include "sizecbar.h"</SPAN>
+<SPAN class=cpp-preprocessor>#include "scbarg.h"</SPAN>
+</PRE>
+      <P>3. Derive a class from <CODE>CSizingControlBarG</CODE> (you have an 
+      example in <CODE>mybar.*</CODE> files). 
+      <P>4. In <CODE>mainfrm.h</CODE>, include your class' header: </P><PRE><SPAN class=cpp-preprocessor>#include "mybar.h"</SPAN>
+</PRE>then add a member variable to <CODE>CMainFrame</CODE>: <PRE>CMyBar m_wndMyBar;
+</PRE>
+      <P>5. Create the bar in CMainFrame::OnCreate(). Then set bar styles, 
+      enable it to dock... like any control bar. </P><PRE><SPAN class=cpp-keyword>if</SPAN> (!m_wndMyBar.Create(_T(<SPAN class=cpp-string>"My Bar"</SPAN>), <SPAN class=cpp-keyword>this</SPAN>, <SPAN class=cpp-literal>123</SPAN>)
+{
+    TRACE0(<SPAN class=cpp-string>"Failed to create mybar\n"</SPAN>);
+    <SPAN class=cpp-keyword>return</SPAN> -<SPAN class=cpp-literal>1</SPAN>;
+    <SPAN class=cpp-comment>// fail to create</SPAN>
+}
+m_wndMyBar.SetBarStyle(m_wndMyBar.GetBarStyle() |
+    CBRS_TOOLTIPS | CBRS_FLYBY | CBRS_SIZE_DYNAMIC);
+
+m_wndMyBar.EnableDocking(CBRS_ALIGN_ANY);
+
+EnableDocking(CBRS_ALIGN_ANY);
+
+DockControlBar(&amp;m_wndMyBar, AFX_IDW_DOCKBAR_LEFT);
+</PRE>
+      <H4>Advanced Example</H4>
+      <P>The instructions above will make a docking bar with a DevStudio-like 
+      gripper (with 2 raised lines and a <I>hide</I> button) when docked, and 
+      with no gripper when floating. 
+      <P>Let's explore some advanced features. Now we will use the 
+      <CODE>CSizingControlBarCF</CODE> class as a base class, and will hide the 
+      miniframe caption, showing the gripper in the floating state too. That's 
+      possible, because <CODE>CSizingControlBarCF</CODE>'s gripper looks like a 
+      small caption. As a side effect of using a custom miniframe class, the 
+      resizing of the floating bar will be dynamic if "Show window contents 
+      while dragging" display property is enabled. 
+      <P>1. Add these files to your project too: </P><PRE>scbarcf.h
+scbarcf.cpp
+</PRE>
+      <P>2. Change the <CODE>stdafx.h</CODE> file to look like this: </P><PRE><SPAN class=cpp-preprocessor>#define _SCB_REPLACE_MINIFRAME</SPAN>
+<SPAN class=cpp-preprocessor>#include "sizecbar.h"</SPAN>
+<SPAN class=cpp-preprocessor>#include "scbarg.h"</SPAN>
+<SPAN class=cpp-preprocessor>#include "scbarcf.h"</SPAN>
+<SPAN class=cpp-preprocessor>#define baseCMyBar CSizingControlBarCF</SPAN>
+</PRE>
+      <P>3. Add these lines in <CODE>CMainFrame::OnCreate()</CODE>, <I>after</I> 
+      the <CODE>EnableDocking()</CODE> call </P><PRE><SPAN class=cpp-preprocessor>#ifdef _SCB_REPLACE_MINIFRAME</SPAN>
+    m_pFloatingFrameClass = RUNTIME_CLASS(CSCBMiniDockFrameWnd);
+<SPAN class=cpp-preprocessor>#endif //_SCB_REPLACE_MINIFRAME</SPAN>
+</PRE>
+      <H3>Remarks</H3>
+      <P>These classes are intended to be used as base classes. Do not simply 
+      add your code to the files - instead create a new class derived from 
+      <CODE>CSizingControlBarG</CODE> or <CODE>CSizingControlBarCF</CODE> and 
+      put there what you need. If you want to customize your gripper, or simply 
+      don't want a gripper, you can use <CODE>CSizingControlBar</CODE> as a base 
+      class. 
+      <P><B>Window IDs</B>: The usage of IDs in the range of 
+      <CODE>AFX_IDW_CONTROLBAR_FIRST + <SPAN class=cpp-literal>32</SPAN> .. 
+      AFX_IDW_CONTROLBAR_LAST</CODE> is required only if the bar will not be 
+      enabled for docking (that's is - it will stay fixed right under the 
+      frame's menu). But in this situation you won't be able to fully use the 
+      features of this class, so if you will enable it to dock (a reasonable 
+      guess :) then you can use any valid window ID.<BR>Another place where the 
+      IDs are important is the saving/loading of the bar's state. You must use 
+      different IDs for each control bar that is enabled to dock, and this 
+      includes the other bars too. For example, if you have two toolbars, you 
+      can create the first one with the default ID (which is 
+      <CODE>AFX_IDW_TOOLBAR = AFX_IDW_CONTROLBAR_FIRST</CODE>), but the second 
+      one must have a different ID. 
+      <P><B>OnUpdateCmdUI</B>: This member function is pure virtual in 
+      <CODE>CControlBar</CODE> (the base class of 
+      <CODE>CSizingControlBar</CODE>). Its purpose is to allow updating of 
+      controls at idle time (from here <CODE>CCmdUI::DoUpdate()</CODE> is called 
+      for the toolbars buttons, controls on dialog bars, panes of status bar, 
+      etc.).<BR>However, I found it very useful to update the look of the "x" 
+      flat button in <CODE>CSizingControlBarG</CODE> and the color of the 
+      caption in <CODE>CSizingControlBarCF</CODE> (no timers needed). So, if you 
+      will use this function, don't forget to call the base class' member (see 
+      <CODE>mybar.cpp</CODE>). 
+      <P><B>Dynamic resizing</B>: This feature allows redrawing of the bar 
+      during resizing. Also all the bars are repositioned and redrawn if 
+      necessary.<BR>The <CODE>SPI_GETDRAGFULLWINDOWS</CODE> system parameter is 
+      queried for this (it is enabled by the "Show window contents while 
+      dragging" checkbox in Display Properties). 
+      <P><B>CBRS_SIZE_DYNAMIC</B>: This bar style is required. Make sure you add 
+      it to the bar, otherwise the application will crash when the user floats a 
+      bar. You can add it using <CODE>SetBarStyle()</CODE> after 
+      <CODE>Create()</CODE>, or by changing the default style for 
+      <CODE>Create()</CODE> to something like: 
+      <CODE>WS_VISIBLE|WS_CHILD|CBRS_TOP|CBRS_SIZE_DYNAMIC</CODE>. 
+      <P><B>State persistence</B>: The common MFC control bars' docking state is 
+      saved using <CODE>CMainFrame::SaveBarState()</CODE>. In addition to the 
+      info saved by this function, the <CODE>CSizingControlBar</CODE> class 
+      needs to save 3 sizes. This is done in 
+      <CODE>CSizingControlBar::SaveState()</CODE> function, so a 
+      <CODE>m_wndMyBar.SaveState()</CODE> call is required. Please note that the 
+      state storing code must be placed in <CODE>CMainFrame</CODE>'s 
+      <CODE>OnClose()</CODE> or <CODE>DestroyWindow()</CODE>, not in 
+      <CODE>OnDestroy()</CODE>, because at the time the <CODE>WM_DESTROY</CODE> 
+      message is received, the floating bars are already destroyed. <BR>In 
+      <CODE>CMainFrame::OnCreate()</CODE>, the 
+      <CODE>m_wndMyBar.LoadState()</CODE> call must be placed before 
+      <CODE>LoadBarState()</CODE>. <BR>Alternatively, if you have more than one 
+      resizable bars, you can call once the static member 
+      <CODE>SizingControlBar::GlobalSaveState()</CODE> instead of calling each 
+      bar's <CODE>SaveState()</CODE>. The same for <CODE>LoadState()</CODE> - 
+      there is a <CODE>CSizingControlBar::GlobalLoadState()</CODE> function. See 
+      both samples here for more details.</P>
+      <P><B>Precompiler flags</B>: There are 2 symbols which can be defined to 
+      cause the floating bars to have different appearance and 
+functionality:</P>
+      <OL>
+        <LI><CODE>_SCB_REPLACE_MINIFRAME</CODE> can be used to plug in 
+        CSCBMiniDockFrameWnd, which is a custom miniframe class. The main gain 
+        of using this class is that the floating bars can be resized 
+        dynamically, like all other windows. The other advantage is that the 
+        miniframe caption can be turned off, allowing the bar to display its own 
+        gripper, for increased functionality and/or custom designs. <BR>If you 
+        use this flag, you have to change the <CODE>m_pFloatingFrameClass</CODE> 
+        member of the main frame (see the advanced example above). 
+        <LI><CODE>_SCB_MINIFRAME_CAPTION</CODE> can be defined only if the 
+        previous flag is also defined. It causes the custom miniframe to keep 
+        the tool window caption. <BR>Both <CODE>CSizingControlBarG</CODE> and 
+        <CODE>CSizingControlBarCF</CODE> classes do not display a gripper when 
+        floating if this flag is set. </LI></OL>
+      <P>See also <A 
+      href="http://www.datamekanix.com/">http://www.datamekanix.com/</A> for 
+      class reference, a full changelog, FAQ, a dedicated message board and 
+      more. </P><!-- Article Ends --></LI></DIV>
+      <H2>Cristi Posea</H2>
+      <TABLE width="100%" border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD class=smallText noWrap><BR></TD>
+          <TD class=smallText width="100%">
+            <P class=smallText>Click <A 
+            href="http://www.codeproject.com/script/profile/whos_who.asp?vt=arts&amp;id=51">here</A> 
+            to view Cristi Posea's online profile.</P></TD></TR></TBODY></TABLE><BR>
+      <TABLE cellPadding=4 width="100%" border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD width="100%">
+            <H2>Other popular Toolbars / Docking Windows articles:</H2>
+            <UL>
+              <LI><A 
+              href="http://www.codeproject.com/docking/chevrons.asp">Programming 
+              Toolbar Chevrons</A><BR><SPAN class=smalltext>An introduction to 
+              using the cool new toolbar chevrons</SPAN>
+              <LI><A 
+              href="http://www.codeproject.com/docking/toolbar_docking.asp">Docking 
+              Toolbars Side-By-Side</A><BR><SPAN class=smalltext>Demonstrates 
+              how to dock toolbars side-by-side</SPAN>
+              <LI><A 
+              href="http://www.codeproject.com/docking/sizablerebar.asp">A set 
+              of classes to create the IE-style GUI</A><BR><SPAN 
+              class=smalltext>The article gives a sample of how to implement 
+              Internet Explorer-style sizable re-bar and menu bar 
+              controls.</SPAN>
+              <LI><A href="http://www.codeproject.com/docking/IngoExpBar.asp">XP 
+              style Explorer Bar (Win32/MFC)</A><BR><SPAN 
+              class=smalltext>Implementation of a shellstyle.dll aware XP 
+              Windows Explorer Bar</SPAN></LI></UL></TD>
+          <TD width=360>
+            <SCRIPT language=javascript>document.write("<IFRAME src=\"/script/admentor/include/ServeAdHTML.aspx?C=False&id=786\" border=0 frameborder=0 scrolling=no width=300 height=250></IFRAME>");</SCRIPT>
+          </TD>
+          <FORM action=/script/rating/code/app/insert_vote.asp 
+          method=post><INPUT type=hidden value=/docking/sizecbar.asp 
+          name=vote_name> <INPUT type=hidden value=/docking/sizecbar.asp 
+          name=goal> </TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=1 width="100%" bgColor=#ff9900 
+        border=0><TBODY>
+        <TR>
+          <TD width="100%">
+            <TABLE cellSpacing=0 cellPadding=4 width="100%" bgColor=#fbedbb 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD class=smalltext vAlign=center>[<A 
+                  href="http://www.codeproject.com/docking/sizecbar.asp#__top">Top</A>]</TD>
+                <TD vAlign=center noWrap align=right><I><B>Rate this Article 
+                  for us!</B></I>&nbsp;&nbsp;&nbsp;&nbsp; <I>Poor</I><INPUT 
+                  type=radio value=1 name=rate><INPUT type=radio value=2 
+                  name=rate><INPUT type=radio value=3 name=rate><INPUT 
+                  type=radio value=4 name=rate><INPUT type=radio value=5 
+                  name=rate><I>Excellent</I>&nbsp;&nbsp;<INPUT class=FormButton type=submit value=Vote> 
+                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></FORM>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD vAlign=top>
+            <CENTER>
+            <SCRIPT language=javascript>document.write("<IFRAME src=\"/script/admentor/include/ServeAdHTML.aspx?C=False&id=800\" border=0 frameborder=0 scrolling=no width=120 height=60></IFRAME>");</SCRIPT>
+            <BR><FONT size=1><A 
+            href="http://www.codeproject.com/info/MediaKit/">Premium 
+            Sponsor</A></FONT></CENTER><BR></TD>
+          <TD vAlign=top noWrap align=middle><SPAN id=AdBanner5>
+            <SCRIPT language=javascript>document.write("<a href=\"/script/admentor/admentorredir.asp?id=457&way=ban\" target=_blank><img src=\"/script/admentor/include/ServeAd.aspx?File=%2Fscript%2Fadmentor%2Fimages%2FSQL468x60Sticker%28i%29%2Egif&C=False&id=457\" alt=\"Compare & Synchronize SQL Server database schema - 100 times faster!\" border=0 width=468 height=60></a>");</SCRIPT>
+            </SPAN></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><A 
+name=__comments></A>
+<SCRIPT language=JavaScript>
+function MsgVoteForm(UserID, MsgID)
+{
+	document.write("Rate this message: ");
+	for (var i=1; i<=5;i++)
+		document.write("<a href='#xx" + MsgID.toString() + "xx' title='give this message a vote of " + i.toString() + "' onclick='RateMsg(" + UserID.toString() + ", " + MsgID.toString() + ", " + i.toString() + ")'><b>" + i.toString() + "</b></a> ");
+	document.write(" (out of 5)");
+}
+
+function RateMsg(userid, msgid, score) 
+{ 
+	open("/script/comments/vote.asp?js=1&user="+userid.toString()+"&msg="+msgid.toString()+"&score="+score.toString() ,"helpful","toolbar=no,resizable=yes,scrollbars=yes,directories=no,menubar=no,width=300,height=200");
+	return false;
+}
+</SCRIPT>
+
+<SCRIPT language=JavaScript>
+var Selected = "";
+var AdTime = new Date();
+document.writeln("<iframe name=AdFrame width=0 height=0 frameborder=0></IFRAME>");
+function SwitchMessage(elm)
+{
+
+	var now = new Date();
+	if (Number(now.getTime() - AdTime.getTime()) > Number(5000))
+	{
+		AdTime = now;
+		var loc = window.frames["AdFrame"];
+		if (loc) loc = loc.document;
+		if (loc) loc = loc.location;
+		if (loc) loc.replace('/script/comments/fetchAd.asp?cat=2');
+	}
+	
+	var elmref;
+	if (Selected != "")
+	{
+		elmref = eval("document.getElementById('" + Selected + "_h1')");
+		if (elmref) elmref.style.display = 'none';
+		elmref = eval("document.getElementById('" + Selected + "_h0')");
+		if (elmref) elmref.bgColor = '#FEF9E7';
+	}
+	if (Selected != elm.name) 
+	{
+		Selected = elm.name;
+		elmref = eval("document.getElementById('" + Selected + "_h1')");
+		if (elmref) 
+		{
+			if (elmref.style.display=='none') elmref.style.display='';
+			else elmref.style.display = 'none';
+		}
+		elmref = eval("document.getElementById('" + Selected + "_h0')");
+		if (elmref) 
+			elmref.bgColor = '#99CCFF';
+	}
+	else
+		Selected="";
+		
+	window.location = "#xx" + Selected + "xx";
+
+	return false;
+}
+
+</SCRIPT>
+
+<SCRIPT language=javascript event=onclick for=DynMessLink>
+return SwitchMessage(this);
+</SCRIPT>
+
+<TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#ff9900 border=0>
+  <TBODY>
+  <TR>
+    <TD width="100%">
+      <TABLE id=ForumTable cellSpacing=1 cellPadding=0 width="100%" 
+      bgColor=#ff9900 border=0>
+        <FORM 
+        action=/script/comments/app/do_filtermessages.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103 
+        method=post>
+        <TBODY>
+        <TR>
+          <TD>
+            <TABLE cellSpacing=0 cellPadding=3 width="100%" bgColor=white 
+            border=0>
+              <TBODY>
+              <TR bgColor=#fbedbb>
+                <TD class=smalltext noWrap><A 
+                  href="http://www.codeproject.com/script/comments/faq.asp"><IMG 
+                  height=16 
+                  src="CSizingControlBar - a resizable control bar_files/info.gif" 
+                  width=16 align=absMiddle border=0> <B>FAQ</B></A>&nbsp;</TD>
+                <TD class=smalltext vAlign=top noWrap align=right>Noise level 
+                  <SELECT class=smalltext size=1 name=noise><OPTION 
+                    value=1>Very High</OPTION> <OPTION value=2>High</OPTION> 
+                    <OPTION value=3 selected>Medium</OPTION> <OPTION 
+                    value=4>Low</OPTION> <OPTION value=5>Very 
+                  low</OPTION></SELECT>&nbsp;&nbsp;</TD>
+                <TD class=smalltext vAlign=center noWrap align=right 
+                  colSpan=2><A 
+                  href="http://www.codeproject.com/script/comments/search_comments.asp?forumid=103"><IMG 
+                  height=15 
+                  src="CSizingControlBar - a resizable control bar_files/search.gif" 
+                  width=16 border=0> Search comments</A> &nbsp;</TD>
+                <TD vAlign=top align=right><INPUT class=FormButton type=submit value="Set Options" name=submit></TD></TR>
+              <TR bgColor=#ff9900>
+                <TD width="100%">&nbsp;</TD>
+                <TD class=smalltext vAlign=top noWrap align=right>View <SELECT 
+                  class=smalltext size=1 name=expand><OPTION value=0>Normal 
+                    (slow)</OPTION> <OPTION value=2>Preview (slow)</OPTION> 
+                    <OPTION value=5 selected>Message View</OPTION> <OPTION 
+                    value=6>Topic View</OPTION> <OPTION value=1>Thread 
+                    View</OPTION> <OPTION value=3>Expanded (Supporters 
+                    only)</OPTION></SELECT>&nbsp;&nbsp;</TD>
+                <TD class=smalltext vAlign=top noWrap>Per page <SELECT 
+                  class=smalltext size=1 name=perpage><OPTION 
+                    value=10>10</OPTION> <OPTION value=25 selected>25</OPTION> 
+                    <OPTION value=50>50</OPTION></SELECT></TD>
+                <TD colSpan=2>&nbsp;</TD></TR></TBODY></TABLE></TD></TR></FORM>
+        <TR bgColor=#fbedbb>
+          <TD><A name=xx0xx></A>
+            <TABLE cellPadding=2 width="100%" bgColor=#fbedbb border=0>
+              <TBODY>
+              <TR>
+                <TD class=messagetitle><A class=HoverLink 
+                  title="Add a new message to the discussions" 
+                  href="http://www.codeproject.com/script/comments/user_new.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103" 
+                  target=_top name=HoverNL><B><IMG height=16 
+                  src="CSizingControlBar - a resizable control bar_files/admin_modify.gif" 
+                  width=16 align=top border=0> New thread</B></A></TD>
+                <TD class=messagetitle>Msgs 1 to 25 of 162 (Total: 162) (<A 
+                  href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;forumid=103">Refresh</A>)</TD>
+                <TD noWrap align=right><FONT class=messagetitle><SPAN 
+                  class=HoverLink>First</SPAN> <SPAN class=HoverLink>Prev</SPAN> 
+                  <A class=HoverLink 
+                  href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;forumid=103&amp;fr=26" 
+                  name=HoverNL>Next</A> <A class=HoverLink 
+                  href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;forumid=103&amp;fr=151" 
+                  name=HoverNL>Last</A> </FONT></TD></TR></TBODY></TABLE></TD></TR>
+        <TR bgColor=white>
+          <TD>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=2 bgColor=#fbedbb border=0>
+                    <TBODY>
+                    <TR>
+                      <TD class=messagetitle width="100%">Subject&nbsp;</TD>
+                      <TD class=messagetitle noWrap width=140>Author&nbsp;</TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT 
+                    class=messagetitle>Date&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 
+                  src="CSizingControlBar - a resizable control bar_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=931184_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx931184xx></A><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;forumid=103&amp;select=931184#xx931184xx" 
+                        name=931184><B>Want to use this class. 
+                        But...</B></A><IMG height=12 
+                        src="CSizingControlBar - a resizable control bar_files/New.gif"></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=190886"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CSizingControlBar - a resizable control bar_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>LRNATH</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>4:32 23 Sep 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=931184_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent>Hello,<BR><BR>First of all, 
+                                let me appreciate the author for his great work. 
+                                This is exactly the one I am looking for. I 
+                                would like to use these classes in our project. 
+                                I am trying to get an OK from the author for the 
+                                usage. I sent two emails to him asking his 
+                                permission for me to use these clases. I dont 
+                                know whether he received them or not. Does 
+                                anybody know how to contact him?<BR><BR>Cristi, 
+                                If you see this, would you please permit me to 
+                                use in our project? Your help is greatly 
+                                aprreciated.<BR><BR>Thanks a lot,<BR>Ravi. 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=931184">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=931184">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;tid=931184&amp;forumid=103&amp;select=931184#xx931184xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?msg=931184#xx931184xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=931184"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=931184"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(190886,931184);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 
+                  src="CSizingControlBar - a resizable control bar_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=934154_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx934154xx></A><IMG height=1 
+                        src="CSizingControlBar - a resizable control bar_files/ind.gif" 
+                        width=18><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;forumid=103&amp;select=934154#xx934154xx" 
+                        name=934154>Re: Want to use this class. But...</A><IMG 
+                        height=12 
+                        src="CSizingControlBar - a resizable control bar_files/New.gif"></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=1393224"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CSizingControlBar - a resizable control bar_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>mnarayan&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>11:43 27 Sep 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=934154_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="CSizingControlBar - a resizable control bar_files/ind.gif" 
+                        width=18><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent>Ravi,<BR><BR>The author had 
+                                mentioned as initial comments in code that you 
+                                are welcome to use his classes provided you 
+                                acknowledge his work. I used it for our 
+                                application and have acknowledged author's work. 
+                                The 2 classes I used were scbarg.cpp and 
+                                sizecbar.cpp.<BR><BR>Good luck.<BR>Murali 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=934154">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=934154">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;tid=931184&amp;forumid=103&amp;select=934154#xx934154xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?msg=934154#xx934154xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=934154"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=934154"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(1393224,934154);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 
+                  src="CSizingControlBar - a resizable control bar_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=934179_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx934179xx></A><IMG height=1 
+                        src="CSizingControlBar - a resizable control bar_files/ind.gif" 
+                        width=36><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;forumid=103&amp;select=934179#xx934179xx" 
+                        name=934179>Re: Want to use this class. But...</A><IMG 
+                        height=12 
+                        src="CSizingControlBar - a resizable control bar_files/New.gif"></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=190886"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CSizingControlBar - a resizable control bar_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>LRNATH&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>12:04 27 Sep 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=934179_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="CSizingControlBar - a resizable control bar_files/ind.gif" 
+                        width=36><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Hi 
+                                Murali,<BR><BR>Thank you for your reply. But 
+                                look at the following excerpt from the copy 
+                                right section:<BR><BR>"<BR>//<BR>// This code is 
+                                free for personal and commercial use, providing 
+                                this <BR>// notice remains intact in the source 
+                                files and all eventual changes are<BR>// clearly 
+                                marked with comments.<BR>//<BR>// You must 
+                                obtain the author's consent before you can 
+                                include this code<BR>// in a software 
+                                library.<BR><BR>"<BR>The second para says, you 
+                                must obtain the author's consent. This is the 
+                                one I am worrying about. I would greatly 
+                                appreciate if you can share your insight in this 
+                                matter.<BR><BR>Once again, thanks a 
+                                lot.<BR>Ravi.<BR><BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=934179">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=934179">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;tid=931184&amp;forumid=103&amp;select=934179#xx934179xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?msg=934179#xx934179xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=934179"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=934179"><I>Delete</I></A>]<BR>Score: 
+                                2.0 (1 vote).
+                                <SCRIPT language=Javascript>MsgVoteForm(190886,934179);</SCRIPT>
+                                 
+                    </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 
+                  src="CSizingControlBar - a resizable control bar_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="CSizingControlBar - a resizable control bar_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=890781_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx890781xx></A><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;forumid=103&amp;select=890781#xx890781xx" 
+                        name=890781><B>CSizingControlBar Focus</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=763616"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CSizingControlBar - a resizable control bar_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>skinney46</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>12:27 5 Aug 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=890781_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>I am 
+                                developing an SDI application that contains 
+                                multiple dockable views and have used the work 
+                                done by Cristi Posea and Rob Finch as the 
+                                starting point. I have created the application 
+                                and the views can be undocked and re-sized, 
+                                which is great, however it would be nice if I 
+                                could click on the main application and it would 
+                                bring the main application window to the 
+                                foreground and push any floating 
+                                CSCBMiniDockFrameWnd windows containing the 
+                                views down the z order, so that the main 
+                                application window appears on the top. Does 
+                                anyone know of any way that this can be done 
+                                with the dockable CSizingControlBar 
+                                architecture?<BR><BR>Thanks in advance <IMG 
+                                src="CSizingControlBar - a resizable control bar_files/smiley_smile.gif" 
+                                align=absMiddle>, <BR><BR>Chris 
+                                Skinner.<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=890781">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=890781">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;tid=890781&amp;forumid=103&amp;select=890781#xx890781xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?msg=890781#xx890781xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=890781"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=890781"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(763616,890781);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 
+                  src="CSizingControlBar - a resizable control bar_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=928051_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx928051xx></A><IMG height=1 
+                        src="CSizingControlBar - a resizable control bar_files/ind.gif" 
+                        width=18><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;forumid=103&amp;select=928051#xx928051xx" 
+                        name=928051>Re: CSizingControlBar Focus</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=71107"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CSizingControlBar - a resizable control bar_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>m_harriss&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>1:38 19 Sep 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=928051_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="CSizingControlBar - a resizable control bar_files/ind.gif" 
+                        width=18><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>I'm 
+                                meeting this. a view in a Bar get all focus, and 
+                                the main view is out of control. and even the 
+                                project can't be destoried.<BR>when i solve it , 
+                                i'll put the solution out. 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=928051">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=928051">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;tid=890781&amp;forumid=103&amp;select=928051#xx928051xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?msg=928051#xx928051xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=928051"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=928051"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(71107,928051);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 
+                  src="CSizingControlBar - a resizable control bar_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=933147_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx933147xx></A><IMG height=1 
+                        src="CSizingControlBar - a resizable control bar_files/ind.gif" 
+                        width=36><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;forumid=103&amp;select=933147#xx933147xx" 
+                        name=933147>Re: CSizingControlBar Focus</A><IMG 
+                        height=12 
+                        src="CSizingControlBar - a resizable control bar_files/New.gif"></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=71107"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CSizingControlBar - a resizable control bar_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>m_harriss&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>15:41 25 Sep 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=933147_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="CSizingControlBar - a resizable control bar_files/ind.gif" 
+                        width=36><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>I 
+                                think, i find the key problem. a note in file 
+                                said that if a bar is floating, it would not be 
+                                the child window of a docking bar.<BR>Using spy, 
+                                i can see the answer. a floating bar is at the 
+                                same level to main frame. so when a application 
+                                is activatec, this toolbar will set focus to the 
+                                every focused view it containned.<BR>And, to Ms 
+                                IDE, it's same.<BR>How to solve this problem? 
+                                <BR>1st, manage massages again by using 
+                                PreTrans.........Msg function. but it's too 
+                                complex to a simple using. i gave it up.<BR>2nd, 
+                                don't use views but a self defined window, and 
+                                never give a message updateUI to any Toolbar. 
+                                for it will also lost focus. but , list views, 
+                                tree views etc, should be reconstructed. it's 
+                                also complex. <BR>ms IDE uses the 2nd 
+                                way.<BR>ok, qustion is here, no easy answer. 
+                                does anyone can solve it? i'm waiting... 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=933147">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=933147">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;tid=890781&amp;forumid=103&amp;select=933147#xx933147xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?msg=933147#xx933147xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=933147"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=933147"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(71107,933147);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 
+                  src="CSizingControlBar - a resizable control bar_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="CSizingControlBar - a resizable control bar_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=850286_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx850286xx></A><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;forumid=103&amp;select=850286#xx850286xx" 
+                        name=850286><B>How can I focus on one ViewBar after 
+                        OnCreate()??</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=238954"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CSizingControlBar - a resizable control bar_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>jarba</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>0:12 15 Jun 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=850286_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>I 
+                                create some ViewBar, but the focus is on the 
+                                View.<BR>I wanna set the focus on some ViewBar 
+                                and how can I set it??<BR>thanks <IMG 
+                                src="CSizingControlBar - a resizable control bar_files/smiley_smile.gif" 
+                                align=absMiddle><BR><BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=850286">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=850286">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;tid=850286&amp;forumid=103&amp;select=850286#xx850286xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?msg=850286#xx850286xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=850286"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=850286"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(238954,850286);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 
+                  src="CSizingControlBar - a resizable control bar_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="CSizingControlBar - a resizable control bar_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=825131_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx825131xx></A><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;forumid=103&amp;select=825131#xx825131xx" 
+                        name=825131><B>Application inside web browser</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=1105150"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CSizingControlBar - a resizable control bar_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle><B>Gabriel 
+                        Simoes</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>6:57 18 May 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=825131_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Hi, 
+                                <BR>I need to run some applications inside the 
+                                web browser area and I'm facing some problems 
+                                finding a way for doing this,...<BR>Some people 
+                                told me I can do this using activeX but I have 
+                                no idea about how to do this ... could you guys 
+                                help me ?<BR>Thanks<BR>Gabriel<BR>ps: if there's 
+                                an other way of doing this instead of activeX i 
+                                accept the same way =) 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=825131">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=825131">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;tid=825131&amp;forumid=103&amp;select=825131#xx825131xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?msg=825131#xx825131xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=825131"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=825131"><I>Delete</I></A>]<BR>Score: 
+                                1.0 (1 vote).
+                                <SCRIPT language=Javascript>MsgVoteForm(1105150,825131);</SCRIPT>
+                                 
+                    </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 
+                  src="CSizingControlBar - a resizable control bar_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="CSizingControlBar - a resizable control bar_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=820264_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx820264xx></A><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;forumid=103&amp;select=820264#xx820264xx" 
+                        name=820264><B>Wicked, just a 
+                      suggestion/question</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=26623"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CSizingControlBar - a resizable control bar_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>Hockey</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>2:59 13 May 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=820264_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent>Suggestion:<BR>I just spent 
+                                the last 6 hours or so reading countless 
+                                articles on CControlBar and peering inside your 
+                                classes trying to figure out a way to make the 
+                                bar a certain size<BR>(it's height was half the 
+                                entire client rect by default).<BR><BR>After 
+                                flipping through the CP message boards (and 
+                                noticing that this is probably the most common 
+                                question, about 6-7 requests) and looking at 
+                                some mods other had made I discovered the best 
+                                way to size your control to a certain size is to 
+                                set m_szHorz and m_szVert to another value 
+                                inside your derived classes constructor.<BR><BR><PRE><BR>COutputBar::COutputBar()<BR>{<BR>	m_szHorz=CSize(100,100);<BR>}<BR></PRE><BR><BR>This 
+                                really drove me nutts so hopefully this post 
+                                will help someone save some hair <IMG 
+                                src="CSizingControlBar - a resizable control bar_files/smiley_smile.gif" 
+                                align=absMiddle> <BR><BR>Perhaps you should 
+                                include this as a FAQ, becuz honestly it appeard 
+                                about 7 times in these message boards <IMG 
+                                src="CSizingControlBar - a resizable control bar_files/smiley_smile.gif" 
+                                align=absMiddle><BR><BR>Question: 
+                                <BR>LoadBarState() doesn't work?? It saves the 
+                                visibility, and float state and and position, 
+                                but the position is screen coordinates and not 
+                                relative to the client area where it resides. Is 
+                                this a bug or I guess the framework saves 
+                                coordinates as screen becuz when the bar is 
+                                floated it's position can be anywhere? <IMG 
+                                src="CSizingControlBar - a resizable control bar_files/smiley_smile.gif" 
+                                align=absMiddle><BR><BR>Why then, does the 
+                                vertical height not save when it's 
+                                docked?<BR><BR>Awesome peice of work <IMG 
+                                src="CSizingControlBar - a resizable control bar_files/smiley_smile.gif" 
+                                align=absMiddle><BR><BR>Cheers <IMG 
+                                src="CSizingControlBar - a resizable control bar_files/smiley_smile.gif" 
+                                align=absMiddle> <BR><BR>How do I print my voice 
+                                mail?<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=820264">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=820264">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;tid=820264&amp;forumid=103&amp;select=820264#xx820264xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?msg=820264#xx820264xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=820264"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=820264"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(26623,820264);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 
+                  src="CSizingControlBar - a resizable control bar_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="CSizingControlBar - a resizable control bar_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=778820_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx778820xx></A><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;forumid=103&amp;select=778820#xx778820xx" 
+                        name=778820><B>docking windows gets side by side on min, 
+                        and max. of main window</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=711202"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CSizingControlBar - a resizable control bar_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>suneetchandok</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>9:27 30 Mar 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=778820_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Hi<BR>I 
+                                have used CSizingControlBar<BR>I have created an 
+                                MDI application and i have docked 2 windows on 
+                                left side one below the other. if i am having 
+                                any other window opened in my MDI and minimize 
+                                and maximize my application the 2 windows which 
+                                are docked on left side(one below the other) 
+                                gets docked side by side<BR><BR>can any one help 
+                                me abt. this<BR><BR>Regards<BR>Suneet Chandok 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=778820">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=778820">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;tid=778820&amp;forumid=103&amp;select=778820#xx778820xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?msg=778820#xx778820xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=778820"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=778820"><I>Delete</I></A>]<BR>Score: 
+                                2.0 (1 vote).
+                                <SCRIPT language=Javascript>MsgVoteForm(711202,778820);</SCRIPT>
+                                 
+                    </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 
+                  src="CSizingControlBar - a resizable control bar_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="CSizingControlBar - a resizable control bar_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=778805_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx778805xx></A><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;forumid=103&amp;select=778805#xx778805xx" 
+                        name=778805><B>docking windows moving out of main window 
+                        area</B></A></TD>
+                      <TD vAlign=bottom><IMG height=13 
+                        alt="Unconfirmed/Anonymous posting" 
+                        src="CSizingControlBar - a resizable control bar_files/usersuss.gif" 
+                        width=15></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>suneetchandok</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>9:17 30 Mar 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=778805_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent>Hi<BR>CSizingControlBar is 
+                                a g8 work<BR><BR>I have a problem. When window 
+                                is floating and if i drag it it moves out of the 
+                                main window. Can't it be restrained some way 
+                                that it can't be dragged out of main 
+                                window<BR><BR>Regards<BR>Suneet 
+                                Chandok<BR><BR><BR><BR>"Anything left today is 
+                                going to be programmed in near 
+                                future"<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=778805">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=778805">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;tid=778805&amp;forumid=103&amp;select=778805#xx778805xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?msg=778805#xx778805xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=778805"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=778805"><I>Delete</I></A>]<BR>Score: 
+                                1.0 (1 vote).
+                                <SCRIPT language=Javascript>MsgVoteForm(0,778805);</SCRIPT>
+                                 
+                    </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 
+                  src="CSizingControlBar - a resizable control bar_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="CSizingControlBar - a resizable control bar_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=756690_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx756690xx></A><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;forumid=103&amp;select=756690#xx756690xx" 
+                        name=756690><B>Problem with Activex</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=183129"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CSizingControlBar - a resizable control bar_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>Angshuman</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>4:43 5 Mar 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=756690_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>I have 
+                                a dialog resource with an activex control on it, 
+                                which I want to place in the sizingcontrolbar. I 
+                                am getting an error "Unable to create empty 
+                                document" while running the application. Any 
+                                idea what could be the problem? I have 
+                                absolutely no problems in showing the dialog if 
+                                it does not contain any activex 
+                                control.<BR><BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=756690">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=756690">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;tid=756690&amp;forumid=103&amp;select=756690#xx756690xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?msg=756690#xx756690xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=756690"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=756690"><I>Delete</I></A>]<BR>Score: 
+                                1.5 (2 votes).
+                                <SCRIPT language=Javascript>MsgVoteForm(183129,756690);</SCRIPT>
+                                 
+                    </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 
+                  src="CSizingControlBar - a resizable control bar_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="CSizingControlBar - a resizable control bar_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=745816_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx745816xx></A><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle style="COLOR: #aa0000" 
+                        width="100%"><A class=messagetitle id=DynMessLink 
+                        style="COLOR: #aa0000" 
+                        href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;forumid=103&amp;select=745816#xx745816xx" 
+                        name=745816><B>Flickering problem</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=880507"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CSizingControlBar - a resizable control bar_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle 
+                        style="COLOR: #aa0000"><B>Alex99999</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle 
+                        style="COLOR: #aa0000"><B>22:50 21 Feb 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=745816_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Im 
+                                using version 2.44 and im getting a pretty bad 
+                                flickering when trying to resize a bar thats 
+                                docked on the bottom or on the right..Id really 
+                                appreciate if somebody could post a 
+                                solution.<BR>thanx<BR><BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=745816">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=745816">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;tid=745816&amp;forumid=103&amp;select=745816#xx745816xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?msg=745816#xx745816xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=745816"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=745816"><I>Delete</I></A>]<BR>Score: 
+                                5.0 (1 vote).
+                                <SCRIPT language=Javascript>MsgVoteForm(880507,745816);</SCRIPT>
+                                 
+                    </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 
+                  src="CSizingControlBar - a resizable control bar_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=932462_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx932462xx></A><IMG height=1 
+                        src="CSizingControlBar - a resizable control bar_files/ind.gif" 
+                        width=18><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;forumid=103&amp;select=932462#xx932462xx" 
+                        name=932462>Re: Flickering problem</A><IMG height=12 
+                        src="CSizingControlBar - a resizable control bar_files/New.gif"></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=190886"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CSizingControlBar - a resizable control bar_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>LRNATH&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>11:43 24 Sep 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=932462_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="CSizingControlBar - a resizable control bar_files/ind.gif" 
+                        width=18><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent>Hello,<BR><BR>It is an 
+                                off-track question. I am trying to use the same 
+                                classes for my project. Since you are already 
+                                using it, I was wondering whether you got the 
+                                author's permission to use it. The copy right 
+                                says it is required to get the authors consent 
+                                before using it. I am trying to reach him and 
+                                sent two emails about this. But did not get any 
+                                response. I am not even sure if those emails 
+                                reached him. I would greatly appreciate if you 
+                                could let me know how you could contact the 
+                                author.<BR><BR>Thanks in 
+                                advance,<BR>Ravi.<BR><BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=932462">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=932462">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;tid=745816&amp;forumid=103&amp;select=932462#xx932462xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?msg=932462#xx932462xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=932462"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=932462"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(190886,932462);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 
+                  src="CSizingControlBar - a resizable control bar_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="CSizingControlBar - a resizable control bar_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=744626_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx744626xx></A><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;forumid=103&amp;select=744626#xx744626xx" 
+                        name=744626><B>Form in CSizingControlBar</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=679846"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CSizingControlBar - a resizable control bar_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>_jaromir_</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>6:25 20 Feb 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=744626_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Can i 
+                                use CFormView or CDialog as child of 
+                                CSizingControlBar?<BR>How can i embed some 
+                                controls(buttons,edits )? 
+                                <BR><BR><BR>jarek<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=744626">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=744626">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;tid=744626&amp;forumid=103&amp;select=744626#xx744626xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?msg=744626#xx744626xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=744626"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=744626"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(679846,744626);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 
+                  src="CSizingControlBar - a resizable control bar_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=830338_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx830338xx></A><IMG height=1 
+                        src="CSizingControlBar - a resizable control bar_files/ind.gif" 
+                        width=18><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;forumid=103&amp;select=830338#xx830338xx" 
+                        name=830338>Re: Form in CSizingControlBar</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=984262"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CSizingControlBar - a resizable control bar_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>mtzlplyk&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>7:40 23 May 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=830338_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="CSizingControlBar - a resizable control bar_files/ind.gif" 
+                        width=18><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>I have 
+                                created an app that uses several CSizing Control 
+                                bars (A really useful class!<IMG 
+                                src="CSizingControlBar - a resizable control bar_files/smiley_smile.gif" 
+                                align=absMiddle>), they contain list views, form 
+                                views and edit views. I use the technique so 
+                                that my SDI app can produce multiple views of 
+                                its data without using splitter 
+                                windows.<BR><BR>THe easiest way to provide 
+                                FormView functionality using DevStudio is to use 
+                                Insert / NewClass .. to derive a class from 
+                                CForm View, be sure to give it the dialogue ID 
+                                of your form. In your CMainFrame susbstitute the 
+                                name of your FormView dreived class in the call 
+                                to create the CSizingControlBar as in 
+                                <CODE>m_wndMyFormViewSizeBar.Create(this, 
+                                RUNTIME_CLASS(MyFormView), ...</CODE><BR><BR>Use 
+                                Class WIzard to connect code to controls on your 
+                                form (dialog template) just as you would with a 
+                                normal dialog. <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=830338">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=830338">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;tid=744626&amp;forumid=103&amp;select=830338#xx830338xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?msg=830338#xx830338xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=830338"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=830338"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(984262,830338);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 
+                  src="CSizingControlBar - a resizable control bar_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=848925_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx848925xx></A><IMG height=1 
+                        src="CSizingControlBar - a resizable control bar_files/ind.gif" 
+                        width=36><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;forumid=103&amp;select=848925#xx848925xx" 
+                        name=848925>Re: Form in CSizingControlBar</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=72251"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CSizingControlBar - a resizable control bar_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>vjedlicka&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>15:42 13 Jun 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=848925_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="CSizingControlBar - a resizable control bar_files/ind.gif" 
+                        width=36><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Hi<BR>I 
+                                am trying to place a dialog into the control 
+                                bar. I do not understand the way you advice, 
+                                because the CSizingControlBar::Create() method 
+                                does not take class name as the second 
+                                parameter. It does not work for me. <BR>The 
+                                second param is a pointer to the parent 
+                                wnd.<BR><CODE><BR>virtual BOOL Create(LPCTSTR 
+                                lpszWindowName, CWnd* pParentWnd, UINT 
+                                nID,<BR>DWORD dwStyle = 
+                                WS_CHILD|WS_VISIBLE|CBRS_TOP);<BR></CODE><BR>Thanks<BR>Vaclav 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=848925">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=848925">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;tid=744626&amp;forumid=103&amp;select=848925#xx848925xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?msg=848925#xx848925xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=848925"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=848925"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(72251,848925);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 
+                  src="CSizingControlBar - a resizable control bar_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="CSizingControlBar - a resizable control bar_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=742673_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx742673xx></A><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;forumid=103&amp;select=742673#xx742673xx" 
+                        name=742673><B>How to make group of multiple docked 
+                        control bars with header control?</B></A></TD>
+                      <TD vAlign=bottom><IMG height=13 
+                        alt="Unconfirmed/Anonymous posting" 
+                        src="CSizingControlBar - a resizable control bar_files/usersuss.gif" 
+                        width=15></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>23W</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>7:13 18 Feb 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=742673_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>How to 
+                                make group of docked control bars with header 
+                                control, like in Microsoft .Net Dev. 
+                                Environment? It is possible to modify 
+                                CSizingControlBar library for the purpose of 
+                                addition bar groups with header 
+                                control?<BR>P.S.: Excuse me if grammar errors 
+                                exist. English is not my native 
+                                language.<BR><BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=742673">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=742673">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;tid=742673&amp;forumid=103&amp;select=742673#xx742673xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?msg=742673#xx742673xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=742673"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=742673"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(0,742673);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 
+                  src="CSizingControlBar - a resizable control bar_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="CSizingControlBar - a resizable control bar_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=719380_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx719380xx></A><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;forumid=103&amp;select=719380#xx719380xx" 
+                        name=719380><B>how to make a form based sizing control 
+                        bar</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=356592"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CSizingControlBar - a resizable control bar_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>jeromecoroyer@yahoo.fr</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>11:25 21 Jan 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=719380_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent>Hi,<BR><BR>I have been 
+                                using the sizing control bar as a text 
+                                container, just like what it is done in 
+                                mybar.h/cpp, and it is working great. 
+                                <BR><BR>Now I would like to have another sizing 
+                                control bar that could be "dialog based", I mean 
+                                to have controls (listbox, combo...) on it. I 
+                                usually had the habit to derive a view class 
+                                from a CEditView when building classic doc/view 
+                                apps, but with CSizingControlBar I dont know ho 
+                                to do it.<BR><BR>Does anyone have an idea? 
+                                sample code?<BR><BR>Regards<BR>Jerome 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=719380">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=719380">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;tid=719380&amp;forumid=103&amp;select=719380#xx719380xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?msg=719380#xx719380xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=719380"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=719380"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(356592,719380);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 
+                  src="CSizingControlBar - a resizable control bar_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="CSizingControlBar - a resizable control bar_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=706693_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx706693xx></A><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle style="COLOR: #aa0000" 
+                        width="100%"><A class=messagetitle id=DynMessLink 
+                        style="COLOR: #aa0000" 
+                        href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;forumid=103&amp;select=706693#xx706693xx" 
+                        name=706693><B>A little information to change size when 
+                        bar is docked</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=769349"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CSizingControlBar - a resizable control bar_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle 
+                        style="COLOR: #aa0000"><B>SamGw</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle 
+                        style="COLOR: #aa0000"><B>21:29 6 Jan 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=706693_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>I try 
+                                to find some information about change size when 
+                                bar docked.<BR>Because its default size is too 
+                                large for my app.<BR>I don't know if anybody 
+                                know how to change. I know I don't find the 
+                                information about this.<IMG 
+                                src="CSizingControlBar - a resizable control bar_files/smiley_doh.gif" 
+                                align=absMiddle><BR>So I saw the code myself. 
+                                And I found something.<IMG 
+                                src="CSizingControlBar - a resizable control bar_files/smiley_cool.gif" 
+                                align=absMiddle><BR><BR>You can just see those 
+                                values in CSizingControlBar's 
+                                constructor.<BR><CODE><BR>CSizingControlBar::CSizingControlBar()<BR>{<BR>m_szMinHorz 
+                                =CSize(33, 32); // HERE, min horizontal 
+                                size<BR>m_szMinVert =CSize(33, 32); // HERE, min 
+                                vertical size<BR>m_szMinFloat = CSize(37, 
+                                32);<BR>m_szHorz = CSize(200, 200); // HERE, 
+                                horizontal size<BR>m_szVert = CSize(200, 200); 
+                                // HERE, vertical size<BR>m_szFloat = CSize(200, 
+                                200);<BR>m_bTracking = FALSE;<BR>m_bKeepSize = 
+                                FALSE;<BR>m_bParentSizing = FALSE;<BR>m_cxEdge = 
+                                5;<BR>m_bDragShowContent = 
+                                FALSE;<BR>m_nDockBarID = 0;<BR>m_dwSCBStyle = 
+                                0;<BR>}<BR></CODE><BR><BR>Now I know,just change 
+                                my derived class's constructor.<IMG 
+                                src="CSizingControlBar - a resizable control bar_files/smiley_smile.gif" 
+                                align=absMiddle><BR><CODE><BR>CMyBar::CMyBar()<BR>{<BR>m_szHorz=CSize(100,130); 
+                                // HERE, your customize 
+                                size<BR>}<BR></CODE><BR><BR>And how can I change 
+                                size by code at run-time? See code 
+                                below<BR><CODE><BR>void 
+                                CMyBar::OnSomeButtonclicked (NMHDR* 
+                                pNotifyStruct,LRESULT* result) 
+                                {<BR>TRACE(_T("CLICKED")); 
+                                <BR>m_szHorz=CSize(200,200);<BR>CFrameWnd* 
+                                pParentFrame = 
+                                GetDockingFrame();<BR>pParentFrame-&gt;RecalcLayout(FALSE);<BR>}<BR></CODE><BR><BR>I 
+                                hope these information could help you. <IMG 
+                                src="CSizingControlBar - a resizable control bar_files/smiley_biggrin.gif" 
+                                align=absMiddle> <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=706693">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=706693">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;tid=706693&amp;forumid=103&amp;select=706693#xx706693xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?msg=706693#xx706693xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=706693"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=706693"><I>Delete</I></A>]<BR>Score: 
+                                5.0 (1 vote).
+                                <SCRIPT language=Javascript>MsgVoteForm(769349,706693);</SCRIPT>
+                                 
+                    </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 
+                  src="CSizingControlBar - a resizable control bar_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=722094_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx722094xx></A><IMG height=1 
+                        src="CSizingControlBar - a resizable control bar_files/ind.gif" 
+                        width=18><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;forumid=103&amp;select=722094#xx722094xx" 
+                        name=722094>Re: A little information to change size when 
+                        bar is docked</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=11981"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CSizingControlBar - a resizable control bar_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>pro&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>9:04 24 Jan 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=722094_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="CSizingControlBar - a resizable control bar_files/ind.gif" 
+                        width=18><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>thanks 
+                                man 
+                                <BR><BR>$feED.YoUR.HeaD$<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=722094">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=722094">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;tid=706693&amp;forumid=103&amp;select=722094#xx722094xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?msg=722094#xx722094xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=722094"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=722094"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(11981,722094);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 
+                  src="CSizingControlBar - a resizable control bar_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=820236_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx820236xx></A><IMG height=1 
+                        src="CSizingControlBar - a resizable control bar_files/ind.gif" 
+                        width=18><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;forumid=103&amp;select=820236#xx820236xx" 
+                        name=820236>Re: A little information to change size when 
+                        bar is docked</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=26623"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CSizingControlBar - a resizable control bar_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>Hockey&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>2:21 13 May 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=820236_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="CSizingControlBar - a resizable control bar_files/ind.gif" 
+                        width=18><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>If this 
+                                works...you'll be a real life saver... <IMG 
+                                src="CSizingControlBar - a resizable control bar_files/smiley_smile.gif" 
+                                align=absMiddle><BR><BR>Cheers <IMG 
+                                src="CSizingControlBar - a resizable control bar_files/smiley_smile.gif" 
+                                align=absMiddle> <BR><BR>How do I print my voice 
+                                mail?<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=820236">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=820236">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;tid=706693&amp;forumid=103&amp;select=820236#xx820236xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?msg=820236#xx820236xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=820236"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=820236"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(26623,820236);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 
+                  src="CSizingControlBar - a resizable control bar_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="CSizingControlBar - a resizable control bar_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=706547_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx706547xx></A><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;forumid=103&amp;select=706547#xx706547xx" 
+                        name=706547><B>Constraining window size</B></A></TD>
+                      <TD vAlign=bottom><IMG height=13 
+                        alt="Unconfirmed/Anonymous posting" 
+                        src="CSizingControlBar - a resizable control bar_files/usersuss.gif" 
+                        width=15></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>Anonymous</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>16:51 6 Jan 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=706547_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent>Hi,<BR><BR>I have two 
+                                docking control bars, one above the other, 
+                                attached to one side of a frame window.<BR><BR>I 
+                                would like to constrain the size of the docking 
+                                control bars (e.g. have one consume 25% of 
+                                vertical pixels, and the other 75%), so they 
+                                cannot be resized.<BR><BR>How would I go about 
+                                doing this?<BR><BR><BR>- 
+                                Anonymous<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=706547">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=706547">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;tid=706547&amp;forumid=103&amp;select=706547#xx706547xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?msg=706547#xx706547xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=706547"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=706547"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(0,706547);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 
+                  src="CSizingControlBar - a resizable control bar_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=932465_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx932465xx></A><IMG height=1 
+                        src="CSizingControlBar - a resizable control bar_files/ind.gif" 
+                        width=18><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;forumid=103&amp;select=932465#xx932465xx" 
+                        name=932465>Re: Constraining window size</A><IMG 
+                        height=12 
+                        src="CSizingControlBar - a resizable control bar_files/New.gif"></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=190886"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CSizingControlBar - a resizable control bar_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>LRNATH&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>11:46 24 Sep 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=932465_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="CSizingControlBar - a resizable control bar_files/ind.gif" 
+                        width=18><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent>Hey,<BR><BR>I am sorry, I 
+                                can't answer your question. But I hope you can 
+                                answer my question. I am trying to get the same 
+                                thing you do. Like stacking up the control bars 
+                                one above the other. How did you do this? Could 
+                                you please let me 
+                                know?<BR><BR>Thanks,<BR>R.<BR><BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=932465">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=932465">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;tid=706547&amp;forumid=103&amp;select=932465#xx932465xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?msg=932465#xx932465xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=932465"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=932465"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(190886,932465);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 
+                  src="CSizingControlBar - a resizable control bar_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="CSizingControlBar - a resizable control bar_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=705927_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx705927xx></A><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;forumid=103&amp;select=705927#xx705927xx" 
+                        name=705927><B>How to dock two windows on the 
+                        left?</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=79359"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CSizingControlBar - a resizable control bar_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle><B>Si 
+                        Willi</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>5:27 6 Jan 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=705927_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG 
+                        src="CSizingControlBar - a resizable control bar_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent>Hi,<BR><BR>I've create 2 
+                                dockable windows (I must say this class is 
+                                great), but I have a problem.<BR><BR>I want both 
+                                windows docked on the left by default (1 below 
+                                the other), how do I do this?<BR><BR>I dock the 
+                                first to the left, but if I do the same to the 
+                                second, they are placed side by side. I can drag 
+                                it to the possition I want by dropping bar two 
+                                onto bar 1, but how do I do this in inline 
+                                code???<BR><BR><BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=705927">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=705927">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;tid=705927&amp;forumid=103&amp;select=705927#xx705927xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/docking/sizecbar.asp?msg=705927#xx705927xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=705927"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/docking/sizecbar.asp&amp;df=100&amp;forumid=103&amp;select=705927"><I>Delete</I></A>]<BR>Score: 
+                                1.0 (1 vote).
+                                <SCRIPT language=Javascript>MsgVoteForm(79359,705927);</SCRIPT>
+                                 
+                    </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 
+                  src="CSizingControlBar - a resizable control bar_files/t.gif" 
+                  width=1 border=0></TD></TR></TBODY></TABLE></TD></TR>
+        <TR bgColor=#fbedbb>
+          <TD>
+            <TABLE cellPadding=2 width="100%">
+              <TBODY>
+              <TR>
+                <TD class=messagetitle>Last Visit: 2:59 Thursday 23rd 
+                  September, 2004</TD>
+                <TD noWrap align=right><FONT class=messagetitle><SPAN 
+                  class=HoverLink>First</SPAN> <SPAN class=HoverLink>Prev</SPAN> 
+                  <A class=HoverLink 
+                  href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;forumid=103&amp;fr=26" 
+                  name=HoverNL>Next</A> <A class=HoverLink 
+                  href="http://www.codeproject.com/docking/sizecbar.asp?df=100&amp;forumid=103&amp;fr=151" 
+                  name=HoverNL>Last</A> 
+      </FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><BR>
+<TABLE cellSpacing=5 width="100%">
+  <TBODY>
+  <TR vAlign=top>
+    <TD><FONT style="FONT-SIZE: 7pt" size=1><A 
+      href="http://www.codeproject.com/?cat=1">All Topics</A>, <A 
+      href="http://www.codeproject.com/?cat=2">MFC / C++</A> &gt;&gt; <A 
+      href="http://www.codeproject.com/docking/">Toolbars / Docking Windows</A> 
+      &gt;&gt; <A 
+      href="http://www.codeproject.com/docking/#Docking+Windows">Docking 
+      Windows</A> <BR>Updated: 16 Aug 2000 </FONT></TD>
+    <TD align=right><FONT style="FONT-SIZE: 7pt" size=1>Article content 
+      copyright Cristi Posea, 1999<BR>everything else Copyright © <A 
+      href="mailto:webmaster@codeproject.com">CodeProject</A>, 1999-2004</A>. 
+      <BR><A href="http://www.codeproject.com/info/MediaKit">Advertise on The 
+      Code Project</A> | <A 
+      href="http://www.codeproject.com/info/privacy.asp">Privacy</A> 
+  </FONT></TD></TR></TBODY></TABLE><BR>
+<CENTER>
+<TABLE cellSpacing=0 cellPadding=0 width="95%" border=0>
+  <TBODY>
+  <TR>
+    <TD bgColor=#ff9900 height=1><IMG height=1 
+      src="CSizingControlBar - a resizable control bar_files/space.gif"></TD></TR>
+  <TR>
+    <TD align=middle><FONT size=1><A 
+      href="http://www.codeproject.com/redir.asp?id=235">MSDN Communities</A> | 
+      <A href="http://aspalliance.com/">ASPAlliance</A> • <A 
+      href="http://www.developerfusion.com/">Developer Fusion</A> • <A 
+      href="http://www.devguru.com/">DevGuru</A> • <A 
+      href="http://www.programmersheaven.com/">Programmers Heaven</A> • <A 
+      href="http://www.planet-source-code.com/">Planet Source Code</A> • <A 
+      href="http://www.resourceindex.com/">Resource Index</A> • <A 
+      href="http://www.tek-tips.com/">Tek-Tips Forums</A> • <A 
+      href="http://www.topxml.com/">What is XML?</A> • <A 
+      href="http://www.visualbuilder.com/">VisualBuilder</A> • <A 
+      href="http://www.zvon.org/">ZVON</A> • <A 
+      href="http://www.codeproject.com/redir.asp?id=169">Search Us!</A> 
+    </FONT></TD></TR></TBODY></TABLE></CENTER></BODY></HTML>

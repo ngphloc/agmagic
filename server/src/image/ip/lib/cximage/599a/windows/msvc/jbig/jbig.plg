@@ -1,0 +1,33 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: jbig - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP8B.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_LIB" /D "_AFXDLL" /FR"Debug/" /Fp"Debug/jbig.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jbig\jbig.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jbig\jbig_tab.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP8B.tmp" 
+Creating command line "link.exe -lib /nologo /out:"Debug\jbig.lib"  ".\Debug\jbig.obj" ".\Debug\jbig_tab.obj" "
+<h3>Output Window</h3>
+Compiling...
+jbig.c
+d:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jbig\jbig.c(1497) : warning C4146: unary minus operator applied to unsigned type, result still unsigned
+jbig_tab.c
+Creating library...
+Creating command line "bscmake.exe /nologo /o"Debug/jbig.bsc"  ".\Debug\jbig.sbr" ".\Debug\jbig_tab.sbr""
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+jbig.lib - 0 error(s), 1 warning(s)
+</pre>
+</body>
+</html>

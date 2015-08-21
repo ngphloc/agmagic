@@ -1,0 +1,98 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AGmagicIP", "..\..\..\image\ip\project\windows\msvc\AGmagicIP_VC800.vcproj", "{86C29C85-66BD-4B04-B0F8-F0DCAADCC6C3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{000771EC-F9BC-416F-80DD-8F366644F41A} = {000771EC-F9BC-416F-80DD-8F366644F41A}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AGmagicIS", "..\..\..\image\is\project\windows\msvc\AGmagicIS_VC800.vcproj", "{51926635-44C7-4A6D-909A-11E72F2FE82C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{86C29C85-66BD-4B04-B0F8-F0DCAADCC6C3} = {86C29C85-66BD-4B04-B0F8-F0DCAADCC6C3}
+		{000771EC-F9BC-416F-80DD-8F366644F41A} = {000771EC-F9BC-416F-80DD-8F366644F41A}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AGmagicMuP", "..\..\..\music\mup\project\windows\msvc\AGmagicMuP_VC800.vcproj", "{BE6C2657-CEFA-4747-9A85-284E2DF49EA6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{000771EC-F9BC-416F-80DD-8F366644F41A} = {000771EC-F9BC-416F-80DD-8F366644F41A}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AGmagicSP", "..\..\..\sound\sp\project\windows\msvc\AGmagicSP_VC800.vcproj", "{56D7F3CA-0E18-42E4-955A-9A69D9A0F959}"
+	ProjectSection(ProjectDependencies) = postProject
+		{000771EC-F9BC-416F-80DD-8F366644F41A} = {000771EC-F9BC-416F-80DD-8F366644F41A}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AGmagicStorageTool", "..\..\..\common\util\AGmagicStorageTool\project\windows\msvc\AGmagicStorageTool_VC800.vcproj", "{6E427792-A36A-41C2-86A2-5586CDD1546D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{000771EC-F9BC-416F-80DD-8F366644F41A} = {000771EC-F9BC-416F-80DD-8F366644F41A}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AGmagicUtil", "..\..\..\common\lib\agutil\project\windows\msvc\AGmagicUtil_VC800.vcproj", "{000771EC-F9BC-416F-80DD-8F366644F41A}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AGmagicVP", "..\..\..\video\vp\project\windows\msvc\AGmagicVP_VC800.vcproj", "{3EEA5ADE-B11E-4F7A-B2BC-D9EDF8FE455E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{000771EC-F9BC-416F-80DD-8F366644F41A} = {000771EC-F9BC-416F-80DD-8F366644F41A}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AGmagicISDemo", "..\..\..\image\is\demo\isdemo\project\windows\msvc\AGmagicISDemo_VC800.vcproj", "{B621C148-08F4-4E2B-9948-76D974C7901A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{51926635-44C7-4A6D-909A-11E72F2FE82C} = {51926635-44C7-4A6D-909A-11E72F2FE82C}
+		{86C29C85-66BD-4B04-B0F8-F0DCAADCC6C3} = {86C29C85-66BD-4B04-B0F8-F0DCAADCC6C3}
+		{000771EC-F9BC-416F-80DD-8F366644F41A} = {000771EC-F9BC-416F-80DD-8F366644F41A}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{86C29C85-66BD-4B04-B0F8-F0DCAADCC6C3}.Debug.ActiveCfg = Debug|Win32
+		{86C29C85-66BD-4B04-B0F8-F0DCAADCC6C3}.Debug.Build.0 = Debug|Win32
+		{86C29C85-66BD-4B04-B0F8-F0DCAADCC6C3}.Release.ActiveCfg = Release|Win32
+		{86C29C85-66BD-4B04-B0F8-F0DCAADCC6C3}.Release.Build.0 = Release|Win32
+		{51926635-44C7-4A6D-909A-11E72F2FE82C}.Debug.ActiveCfg = Debug|Win32
+		{51926635-44C7-4A6D-909A-11E72F2FE82C}.Debug.Build.0 = Debug|Win32
+		{51926635-44C7-4A6D-909A-11E72F2FE82C}.Release.ActiveCfg = Release|Win32
+		{51926635-44C7-4A6D-909A-11E72F2FE82C}.Release.Build.0 = Release|Win32
+		{BE6C2657-CEFA-4747-9A85-284E2DF49EA6}.Debug.ActiveCfg = Debug|Win32
+		{BE6C2657-CEFA-4747-9A85-284E2DF49EA6}.Debug.Build.0 = Debug|Win32
+		{BE6C2657-CEFA-4747-9A85-284E2DF49EA6}.Release.ActiveCfg = Release|Win32
+		{BE6C2657-CEFA-4747-9A85-284E2DF49EA6}.Release.Build.0 = Release|Win32
+		{56D7F3CA-0E18-42E4-955A-9A69D9A0F959}.Debug.ActiveCfg = Debug|Win32
+		{56D7F3CA-0E18-42E4-955A-9A69D9A0F959}.Debug.Build.0 = Debug|Win32
+		{56D7F3CA-0E18-42E4-955A-9A69D9A0F959}.Release.ActiveCfg = Release|Win32
+		{56D7F3CA-0E18-42E4-955A-9A69D9A0F959}.Release.Build.0 = Release|Win32
+		{6E427792-A36A-41C2-86A2-5586CDD1546D}.Debug.ActiveCfg = Debug|Win32
+		{6E427792-A36A-41C2-86A2-5586CDD1546D}.Debug.Build.0 = Debug|Win32
+		{6E427792-A36A-41C2-86A2-5586CDD1546D}.Release.ActiveCfg = Release|Win32
+		{6E427792-A36A-41C2-86A2-5586CDD1546D}.Release.Build.0 = Release|Win32
+		{000771EC-F9BC-416F-80DD-8F366644F41A}.Debug.ActiveCfg = Debug|Win32
+		{000771EC-F9BC-416F-80DD-8F366644F41A}.Debug.Build.0 = Debug|Win32
+		{000771EC-F9BC-416F-80DD-8F366644F41A}.Release.ActiveCfg = Release|Win32
+		{000771EC-F9BC-416F-80DD-8F366644F41A}.Release.Build.0 = Release|Win32
+		{3EEA5ADE-B11E-4F7A-B2BC-D9EDF8FE455E}.Debug.ActiveCfg = Debug|Win32
+		{3EEA5ADE-B11E-4F7A-B2BC-D9EDF8FE455E}.Debug.Build.0 = Debug|Win32
+		{3EEA5ADE-B11E-4F7A-B2BC-D9EDF8FE455E}.Release.ActiveCfg = Release|Win32
+		{3EEA5ADE-B11E-4F7A-B2BC-D9EDF8FE455E}.Release.Build.0 = Release|Win32
+		{B621C148-08F4-4E2B-9948-76D974C7901A}.Debug.ActiveCfg = Debug|Win32
+		{B621C148-08F4-4E2B-9948-76D974C7901A}.Debug.Build.0 = Debug|Win32
+		{B621C148-08F4-4E2B-9948-76D974C7901A}.Release.ActiveCfg = Release|Win32
+		{B621C148-08F4-4E2B-9948-76D974C7901A}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionItems) = postSolution
+		..\..\..\common\include\AG_PRIVATE_DECREASE_DEFINED.h = ..\..\..\common\include\AG_PRIVATE_DECREASE_DEFINED.h
+		..\..\..\common\include\AG_PRIVATE_INCREASE_DEFINED.h = ..\..\..\common\include\AG_PRIVATE_INCREASE_DEFINED.h
+		..\..\..\common\include\AGBEGIN_INCLUDE_LIBRARY.h = ..\..\..\common\include\AGBEGIN_INCLUDE_LIBRARY.h
+		..\..\..\common\include\AGEND_INCLUDE_LIBRARY.h = ..\..\..\common\include\AGEND_INCLUDE_LIBRARY.h
+		..\..\..\common\include\AGmagicDB.h = ..\..\..\common\include\AGmagicDB.h
+		..\..\..\common\include\AGmagicDefs.h = ..\..\..\common\include\AGmagicDefs.h
+		..\..\..\common\include\AGmagicLib.h = ..\..\..\common\include\AGmagicLib.h
+		..\..\..\common\include\AGmagicOSVer.h = ..\..\..\common\include\AGmagicOSVer.h
+		..\..\..\common\include\AGmagicType.h = ..\..\..\common\include\AGmagicType.h
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

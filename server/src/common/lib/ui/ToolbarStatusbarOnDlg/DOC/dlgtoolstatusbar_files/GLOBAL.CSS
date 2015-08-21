@@ -1,0 +1,414 @@
+BODY {
+	COLOR: black; FONT-FAMILY: Verdana, Helvetica, Arial, sans-serif; FONT-SIZE: 10pt
+}
+P {
+	COLOR: black; FONT-FAMILY: Verdana, Helvetica, Arial, sans-serif; FONT-SIZE: 10pt
+}
+H1 {
+	COLOR: black; FONT-FAMILY: Verdana, Helvetica, Arial, sans-serif; FONT-SIZE: 10pt
+}
+H2 {
+	COLOR: black; FONT-FAMILY: Verdana, Helvetica, Arial, sans-serif; FONT-SIZE: 10pt
+}
+H3 {
+	COLOR: black; FONT-FAMILY: Verdana, Helvetica, Arial, sans-serif; FONT-SIZE: 10pt
+}
+H4 {
+	COLOR: black; FONT-FAMILY: Verdana, Helvetica, Arial, sans-serif; FONT-SIZE: 10pt
+}
+H5 {
+	COLOR: black; FONT-FAMILY: Verdana, Helvetica, Arial, sans-serif; FONT-SIZE: 10pt
+}
+H6 {
+	COLOR: black; FONT-FAMILY: Verdana, Helvetica, Arial, sans-serif; FONT-SIZE: 10pt
+}
+LI {
+	COLOR: black; FONT-FAMILY: Verdana, Helvetica, Arial, sans-serif; FONT-SIZE: 10pt
+}
+TD {
+	COLOR: black; FONT-FAMILY: Verdana, Helvetica, Arial, sans-serif; FONT-SIZE: 10pt
+}
+TH {
+	COLOR: black; FONT-FAMILY: Verdana, Helvetica, Arial, sans-serif; FONT-SIZE: 10pt
+}
+DD {
+	COLOR: black; FONT-FAMILY: Verdana, Helvetica, Arial, sans-serif; FONT-SIZE: 10pt
+}
+DT {
+	COLOR: black; FONT-FAMILY: Verdana, Helvetica, Arial, sans-serif; FONT-SIZE: 10pt
+}
+BODY {
+	BACKGROUND-COLOR: #ffffff; COLOR: #000000
+}
+LI {
+	LIST-STYLE: none
+}
+UL {
+	LIST-STYLE: none
+}
+OL {
+	LIST-STYLE: none
+}
+H1 {
+	FONT-WEIGHT: bold
+}
+H2 {
+	FONT-WEIGHT: bold
+}
+H3 {
+	FONT-WEIGHT: bold
+}
+H4 {
+	FONT-WEIGHT: bold
+}
+H5 {
+	FONT-WEIGHT: bold
+}
+TH {
+	FONT-WEIGHT: bold
+}
+H2 {
+	COLOR: #ff9900
+}
+H3 {
+	COLOR: #ff9900
+}
+H5 {
+	COLOR: #ff9900
+}
+H1 {
+	FONT-SIZE: 16pt
+}
+H2 {
+	FONT-SIZE: 13pt
+}
+H3 {
+	FONT-FAMILY: Arial, sans-serif; FONT-SIZE: 11pt
+}
+H4 {
+	FONT-SIZE: 10pt; MARGIN-BOTTOM: 2px
+}
+H5 {
+	FONT-SIZE: 9pt; MARGIN-BOTTOM: 2px
+}
+H6 {
+	COLOR: #626262; FONT-SIZE: 65%; FONT-WEIGHT: normal
+}
+DD {
+	MARGIN-LEFT: 20px
+}
+PRE {
+	BACKGROUND-COLOR: #fbedbb; BACKGROUND-IMAGE: url(/images/codebg.gif); FONT: 9pt "Courier New", Courier, mono; PADDING-BOTTOM: 7pt; PADDING-LEFT: 7pt; PADDING-RIGHT: 7pt; PADDING-TOP: 7pt; WHITE-SPACE: pre; WIDTH: 100%
+}
+CODE {
+	COLOR: #990000; FONT-FAMILY: "Courier New", Courier, mono
+}
+A:link {
+	TEXT-DECORATION: none
+}
+A:visited {
+	TEXT-DECORATION: none
+}
+A:active {
+	TEXT-DECORATION: underline
+}
+A:hover {
+	TEXT-DECORATION: underline
+}
+.top {
+	CURSOR: hand
+}
+.MenuGroup {
+	BACKGROUND-COLOR: #ffcc99; FONT-FAMILY: Tahoma, Arial, sans-serif; FONT-WEIGHT: normal; POSITION: relative; TOP: 0px; WIDTH: 124px
+}
+.MI {
+	BACKGROUND-COLOR: #ffcc99; COLOR: black; CURSOR: hand; FONT-FAMILY: Verdana, Arial, sans-serif; FONT-SIZE: 8pt; FONT-WEIGHT: normal; WIDTH: 118px
+}
+.MIs {
+	BACKGROUND-COLOR: #ffcc99; COLOR: black; CURSOR: hand; FONT-FAMILY: Verdana, Arial, sans-serif; FONT-SIZE: 8pt; FONT-WEIGHT: normal; WIDTH: 118px
+}
+.MIn {
+	BACKGROUND-COLOR: #ffcc99; COLOR: black; CURSOR: hand; FONT-FAMILY: Verdana, Arial, sans-serif; FONT-SIZE: 8pt; FONT-WEIGHT: normal; WIDTH: 118px
+}
+.MIsn {
+	BACKGROUND-COLOR: #ffcc99; COLOR: black; CURSOR: hand; FONT-FAMILY: Verdana, Arial, sans-serif; FONT-SIZE: 8pt; FONT-WEIGHT: normal; WIDTH: 118px
+}
+.MI {
+	TEXT-DECORATION: none
+}
+.MIn {
+	TEXT-DECORATION: none
+}
+.MI {
+	BORDER-BOTTOM: #ffcc99 1px solid; BORDER-LEFT: #ffcc99 1px solid; BORDER-RIGHT: #ffcc99 1px solid; BORDER-TOP: #ffcc99 1px solid; MARGIN-LEFT: 3pt; PADDING-LEFT: 3pt
+}
+.MIs {
+	BORDER-BOTTOM: #ffcc99 1px solid; BORDER-LEFT: #ffcc99 1px solid; BORDER-RIGHT: #ffcc99 1px solid; BORDER-TOP: #ffcc99 1px solid; MARGIN-LEFT: 3pt; PADDING-LEFT: 3pt
+}
+.MIn {
+	BORDER-BOTTOM: #ffcc99 1pt solid; BORDER-LEFT: #ffcc99 1pt solid; BORDER-RIGHT: #ffcc99 1pt solid; BORDER-TOP: #ffcc99 1pt solid
+}
+.MIn {
+	MARGIN-LEFT: 2px; PADDING-LEFT: 2px
+}
+.MIsn {
+	MARGIN-LEFT: 2px; PADDING-LEFT: 2px
+}
+.sidebar {
+	COLOR: #ffffff; FONT-SIZE: 9pt; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+.navbar {
+	COLOR: white; FONT-SIZE: 8pt; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+BUTTON.toolbar {
+	BACKGROUND-COLOR: white; BORDER-BOTTOM: white 1px solid; BORDER-LEFT: white 1px solid; BORDER-RIGHT: white 1px solid; BORDER-TOP: white 1px solid; FONT-FAMILY: Verdana, Arial, Tahoma, "MS Sans Serif", sans-serif; FONT-SIZE: 9pt
+}
+DIV.toolbar {
+	BACKGROUND-COLOR: white; BORDER-BOTTOM-COLOR: #ff9900; BORDER-LEFT-COLOR: #ff9900; BORDER-RIGHT-COLOR: #ff9900; BORDER-TOP-COLOR: #ff9900; PADDING-BOTTOM: 2px; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; PADDING-TOP: 1px
+}
+TEXTAREA#ContentText {
+	BEHAVIOR: url(/styles/lnkutils.htc)
+}
+.navbar:hover {
+	COLOR: blue
+}
+.navbar:active {
+	COLOR: red
+}
+.NavMenuItem {
+	COLOR: black; FONT-SIZE: 11px; FONT-WEIGHT: bold; PADDING-LEFT: 2px; PADDING-RIGHT: 8px; PADDING-TOP: 2px; POSITION: relative; TOP: 2px
+}
+.NavMenuItem:hover {
+	COLOR: blue
+}
+.NavMenuItem:active {
+	COLOR: red
+}
+.infobar {
+	FONT-SIZE: 8pt; MARGIN-LEFT: 0pt; TEXT-INDENT: 0pt
+}
+.infobarList {
+	FONT-SIZE: 8pt; MARGIN-LEFT: 1.5em; TEXT-INDENT: -1.5em
+}
+.InfobarHeader {
+	COLOR: #ab2600; FONT-SIZE: 9pt; FONT-WEIGHT: bold; MARGIN-BOTTOM: -10px
+}
+.HoverLink {
+	BACKGROUND-COLOR: #fbedbb; BORDER-BOTTOM: #fbedbb 1px solid; BORDER-LEFT: #fbedbb 1px solid; BORDER-RIGHT: #fbedbb 1px solid; BORDER-TOP: #fbedbb 1px solid; FONT-SIZE: 8pt; PADDING-BOTTOM: 1px; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; PADDING-TOP: 1px; TEXT-DECORATION: none
+}
+A.HoverLink {
+	COLOR: blue; CURSOR: hand; TEXT-DECORATION: none
+}
+A.HoverLink:hover {
+	BACKGROUND-COLOR: #ffcc99; BORDER-BOTTOM-COLOR: #ff9900; BORDER-LEFT-COLOR: #ff9900; BORDER-RIGHT-COLOR: #ff9900; BORDER-TOP-COLOR: #ff9900
+}
+A.HoverLink:active {
+	BACKGROUND-COLOR: #ffc082; BORDER-BOTTOM-COLOR: #ff9900; BORDER-LEFT-COLOR: #ff9900; BORDER-RIGHT-COLOR: #ff9900; BORDER-TOP-COLOR: #ff9900
+}
+TT.equation {
+	FONT-FAMILY: 'Times New Roman', serif; FONT-SIZE: 10pt; FONT-STYLE: italic; WHITE-SPACE: pre
+}
+UL.download {
+	MARGIN-LEFT: 1.5em
+}
+UL.download LI {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 9pt; LIST-STYLE: url(/images/download.gif); PADDING-LEFT: 0.5em
+}
+LI.download {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 9pt; LIST-STYLE: url(/images/download.gif); PADDING-LEFT: 0.5em
+}
+UL.delegate LI {
+	LIST-STYLE: url(/images/symbols/delegate.gif)
+}
+LI.delegate {
+	LIST-STYLE: url(/images/symbols/delegate.gif)
+}
+UL.enum LI {
+	LIST-STYLE: url(/images/symbols/Enum.GIF)
+}
+LI.enum {
+	LIST-STYLE: url(/images/symbols/Enum.GIF)
+}
+UL.event LI {
+	LIST-STYLE: url(/images/symbols/event.GIF)
+}
+LI.event {
+	LIST-STYLE: url(/images/symbols/event.GIF)
+}
+UL.interface LI {
+	LIST-STYLE: url(/images/symbols/interface.GIF)
+}
+LI.interface {
+	LIST-STYLE: url(/images/symbols/interface.GIF)
+}
+UL.literal LI {
+	LIST-STYLE: url(/images/symbols/literal.GIF)
+}
+LI.literal {
+	LIST-STYLE: url(/images/symbols/literal.GIF)
+}
+UL.method LI {
+	LIST-STYLE: url(/images/symbols/method.GIF)
+}
+LI.method {
+	LIST-STYLE: url(/images/symbols/method.GIF)
+}
+UL.namespace LI {
+	LIST-STYLE: url(/images/symbols/namespace.GIF)
+}
+LI.namespace {
+	LIST-STYLE: url(/images/symbols/namespace.GIF)
+}
+UL.property LI {
+	LIST-STYLE: url(/images/symbols/property.GIF)
+}
+LI.property {
+	LIST-STYLE: url(/images/symbols/property.GIF)
+}
+UL.struct LI {
+	LIST-STYLE: url(/images/symbols/struct.GIF)
+}
+LI.struct {
+	LIST-STYLE: url(/images/symbols/struct.GIF)
+}
+UL.compactlist LI {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 8pt; LIST-STYLE: url(/images/smallarrow.gif); MARGIN-BOTTOM: 0pt; MARGIN-LEFT: -1em
+}
+LI.compactlist {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 8pt; LIST-STYLE: url(/images/smallarrow.gif); MARGIN-BOTTOM: 0pt; MARGIN-LEFT: -1em
+}
+UL.compactlist {
+	MARGIN-BOTTOM: 5pt; MARGIN-TOP: 5pt
+}
+.MainHeader {
+	COLOR: black; FONT-FAMILY: Tahoma, Helvetica, Arial, sans-serif; FONT-SIZE: 155%; FONT-WEIGHT: bold
+}
+.formButton {
+	BACKGROUND-COLOR: #e08900; BORDER-BOTTOM-COLOR: #fbedbb; BORDER-LEFT-COLOR: #fbedbb; BORDER-RIGHT-COLOR: #fbedbb; BORDER-TOP-COLOR: #fbedbb; COLOR: white; FONT-SIZE: 90%; FONT-WEIGHT: 700
+}
+.SiteNewsHeading {
+	FONT-FAMILY: Verdana, Helvetica, Arial, sans-serif; FONT-WEIGHT: bold
+}
+.DevNewsHeading {
+	FONT-FAMILY: Verdana, Helvetica, Arial, sans-serif; FONT-WEIGHT: bold
+}
+.DevNewsHeading {
+	FONT-SIZE: 10.5pt
+}
+.links {
+	FONT-SIZE: 8pt
+}
+.messagetitle {
+	FONT-SIZE: 8pt
+}
+.SiteNews {
+	FONT-SIZE: 8pt
+}
+.SmallText {
+	FONT-SIZE: 8pt
+}
+.SiteNewsHeading {
+	FONT-SIZE: 8pt
+}
+.NewsFlash {
+	FONT-SIZE: 9pt; MARGIN-TOP: 5px
+}
+.DevNewsContent {
+	FONT-SIZE: 9pt
+}
+.messagecontent {
+	FONT: 9.5pt Verdana, "Courier New", Courier, mono
+}
+.Default {
+	FONT-FAMILY: Verdana, Helvetica, Arial, sans-serif
+}
+.forum_link:link {
+	COLOR: #e08900; TEXT-DECORATION: none
+}
+.forum_link:visited {
+	COLOR: #e08900; TEXT-DECORATION: none
+}
+.forum_link:active {
+	COLOR: #e08900; TEXT-DECORATION: none
+}
+.forum_link:hover {
+	COLOR: #e08900; TEXT-DECORATION: underline
+}
+.forum_hilite {
+	BACKGROUND-COLOR: yellow
+}
+.cpp-comment {
+	COLOR: green; FONT-STYLE: italic
+}
+.cs-comment {
+	COLOR: green; FONT-STYLE: italic
+}
+.vb-comment {
+	COLOR: green; FONT-STYLE: italic
+}
+.cpp-keyword {
+	COLOR: blue
+}
+.cs-keyword {
+	COLOR: blue
+}
+.vb-function {
+	COLOR: blue
+}
+.cpp-preprocessor {
+	COLOR: navy
+}
+.cs-preprocessor {
+	COLOR: navy
+}
+.cpp-string {
+	COLOR: purple
+}
+.cs-string {
+	COLOR: purple
+}
+.vb-string {
+	COLOR: purple
+}
+.cpp-literal {
+	COLOR: midnightblue
+}
+.cs-literal {
+	COLOR: midnightblue
+}
+.vb-literal {
+	COLOR: midnightblue
+}
+.vb-keyword {
+	COLOR: blue; FONT-WEIGHT: normal
+}
+.vb-statement {
+	COLOR: blue; FONT-WEIGHT: normal
+}
+TABLE#tblButtonBar {
+	MARGIN-TOP: 1px
+}
+.clsButton {
+	BACKGROUND-COLOR: #ff9900; BORDER-BOTTOM: #ff9900 1px solid; BORDER-LEFT: #ff9900 1px solid; BORDER-RIGHT: #ff9900 1px solid; BORDER-TOP: #ff9900 1px solid; COLOR: #333300; CURSOR: hand; FONT-SIZE: 8pt; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+TD.clsButtonBar TABLE.clsButton TD {
+	PADDING-BOTTOM: 1px; PADDING-LEFT: 1px; PADDING-RIGHT: 1px; PADDING-TOP: 1px
+}
+.clsButtonLnk {
+	COLOR: #333300; CURSOR: hand; FONT-SIZE: 8pt; FONT-WEIGHT: bold; PADDING-BOTTOM: 1px; PADDING-LEFT: 1px; PADDING-RIGHT: 1px; PADDING-TOP: 1px; TEXT-DECORATION: none
+}
+.clsButtonLnk:hover {
+	COLOR: blue
+}
+.FeatureBox {
+	BACKGROUND-COLOR: #a5c9ef; BORDER-BOTTOM: #6699cc 1px solid; BORDER-LEFT: #6699cc 1px solid; BORDER-RIGHT: #6699cc 1px solid; BORDER-TOP: #6699cc 1px solid; PADDING-BOTTOM: 2px; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; PADDING-TOP: 2px
+}
+.FeatureBoxHeader {
+	COLOR: #993300; FONT-FAMILY: Verdana; FONT-SIZE: 13pt; FONT-WEIGHT: bold; PADDING-BOTTOM: 2pt; PADDING-LEFT: 2pt
+}
+.FeatureBoxHeader A {
+	COLOR: #993300; FONT-FAMILY: Verdana; FONT-SIZE: 13pt; FONT-WEIGHT: bold; PADDING-BOTTOM: 2pt; PADDING-LEFT: 2pt
+}
+.FeatureBoxHeaderArrow {
+	BACKGROUND-COLOR: #6699cc
+}

@@ -1,0 +1,751 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0047)http://www.codeproject.com/dialog/LeoMsgBox.asp -->
+<HTML><HEAD><TITLE>The Code Project - Fancy Message Box - Dialog and Windows</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META http-equiv=Reply-to content=mailto:webmaster@codeproject.com>
+<META content="Free source code and tutorials for Windows developers." 
+name=Description>
+<META 
+content="Free source code, Dialog and Windows, Visual C++, MFC, Windows, MessageBox, MFC" 
+name=keywords>
+<META 
+content="Article content copyright DDLL, 2004, everthing else Copyright © CodeProject, 1999-2004, All Rights Reserved." 
+name=Copyright><LINK href="/favicon.ico" type=image/ico rel=icon><LINK 
+href="/favicon.ico" rel="SHORTCUT ICON"><LINK href="LeoMsgBox_files/global.css" 
+type=text/css rel=stylesheet>
+<SCRIPT language=javascript src="LeoMsgBox_files/oncopy.js"></SCRIPT>
+
+<META content="MSHTML 6.00.2600.0" name=GENERATOR></HEAD>
+<BODY oncopy="return copyCode();" text=black vLink=purple aLink=red link=blue 
+bgColor=white leftMargin=3 topMargin=3>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#ff9900 border=0>
+  <TBODY>
+  <TR>
+    <TD width="100%">
+      <TABLE cellSpacing=1 cellPadding=0 width="100%" bgColor=#ff9900 
+        border=0><TBODY>
+        <TR>
+          <TD vAlign=top><A href="http://www.codeproject.com/"><IMG height=72 
+            alt="The Code Project" src="LeoMsgBox_files/logo225x72.gif" 
+            width=225 border=0></A></TD>
+          <TD align=right><SPAN id=AdBanner4><A 
+            href="http://www.codeproject.com/script/admentor/ads.asp"><IMG 
+            height=60 alt="View our advertisers" 
+            src="LeoMsgBox_files/sponsors.gif" width=20 border=1></A>
+            <SCRIPT language=javascript>document.write("<a href=\"/script/admentor/admentorredir.asp?id=410&way=ban\" target=_blank><img src=\"/script/admentor/include/ServeAd.aspx?File=%2Fscript%2Fadmentor%2Fimages%2FSAMSBanner%2Egif&C=False&id=410\" alt=\"\" border=0 width=468 height=60></a>");</SCRIPT>
+            <A href="http://www.codeproject.com/info/mediakit"><IMG height=60 
+            alt="Advertise on the CodeProject" 
+            src="LeoMsgBox_files/advertise.gif" width=20 
+        border=1></A></SPAN></TD></TR>
+        <TR>
+          <TD bgColor=#fbedbb colSpan=2>
+            <TABLE cellPadding=3 width="100%" bgColor=#fbedbb border=0>
+              <TBODY>
+              <TR vAlign=top>
+                <TD width="100%"><FONT style="FONT-SIZE: 8pt"><A 
+                  href="http://www.codeproject.com/?cat=1">All Topics</A>, <A 
+                  href="http://www.codeproject.com/?cat=2">MFC / C++</A> 
+                  &gt;&gt; <A href="http://www.codeproject.com/dialog/">Dialog 
+                  and Windows</A> &gt;&gt; <A 
+                  href="http://www.codeproject.com/dialog/#General">General</A></FONT><BR><BR><B><FONT 
+                  style="FONT-SIZE: 16pt" size=4>Fancy Message 
+                  Box</FONT></B><BR><B>By <A 
+                  href="http://www.codeproject.com/script/profile/whos_who.asp?id=772501">DDLL</A> 
+                  </B><BR><BR><FONT style="FONT-SIZE: 9pt">Fancy Message Box for 
+                  use with MFC&nbsp;</FONT> </TD>
+                <TD vAlign=top align=right>
+                  <TABLE cellSpacing=0 cellPadding=1 width=200 border=0>
+                    <TBODY>
+                    <TR vAlign=top>
+                      <TD>&nbsp;</TD>
+                      <TD class=SmallText>C++ (VC6)<BR>Windows (WinXP)<BR>MFC, 
+                        Win32, VS<BR>Dev</TD></TR>
+                    <TR>
+                      <TD>&nbsp;</TD>
+                      <TD class=SmallText noWrap>Posted 25 May 2004</TD></TR>
+                    <TR vAlign=top>
+                      <TD><IMG height=16 src="LeoMsgBox_files/hlp.gif" 
+                        width=16></TD>
+                      <TD class=SmallText noWrap><A 
+                        href="http://www.codeproject.com/script/Articles/list_articles.asp?userid=772501">Articles 
+                        by this author</A></TD></TR>
+                    <TR vAlign=top>
+                      <TD></TD>
+                      <TD class=SmallText noWrap><B>4,815</B> 
+                    views</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD colSpan=2>
+            <TABLE id=tblSiteToolbar cellSpacing=0 cellPadding=1 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <FORM name=Search action=/info/search.asp method=post>
+                <TD vAlign=top align=left width="100%">
+                  <TABLE cellSpacing=0 cellPadding=1 border=0>
+                    <TBODY>
+                    <TR vAlign=center>
+                      <TD class=smallText><B><FONT 
+                        color=white>Search:</FONT></B></TD>
+                      <TD class=navbar noWrap><INPUT class=smallText 
+                        maxLength=255 size=18 name=target></TD>
+                      <TD vAlign=top><SELECT class=smallText name=st> 
+                          <OPTION value=kw selected>Articles</OPTION> <OPTION 
+                          value=au>Authors</OPTION></SELECT></TD>
+                      <TD><INPUT class=formButton type=submit value=Go></TD></TR></TBODY></TABLE></TD></FORM>
+                <TD>
+                  <DIV id=MenuPos 
+                  style="WIDTH: 380px; POSITION: relative; HEIGHT: 20px">
+                  <TABLE height=20 cellSpacing=0 cellPadding=2 width=375>
+                    <TBODY>
+                    <TR>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/info/faq.asp">Help!</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/info/latest.asp">Articles</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/script/comments/forums.asp">Message 
+                        Boards</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/store/">StoreFront</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/lounge.asp">Lounge</A></TD></TR></TBODY></TABLE></DIV></TD></TR></TBODY></TABLE>
+            <SCRIPT type=text/javascript>function Go(){return}</SCRIPT>
+
+            <SCRIPT src="LeoMsgBox_files/cpmenu_var.js" 
+            type=text/javascript></SCRIPT>
+
+            <SCRIPT src="LeoMsgBox_files/menu10_com.js" 
+            type=text/javascript></SCRIPT>
+          </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=1 border=0>
+  <TBODY>
+  <TR vAlign=top>
+    <TD vAlign=top bgColor=#fbedbb rowSpan=2>
+      <TABLE cellSpacing=0 cellPadding=0 border=0>
+        <SCRIPT language=javascript>
+function ErrorHandle() {}
+window.onerror = ErrorHandle;
+
+function OnNLSubmit(option)
+{
+	if (option=="up")
+		document.subForm.action = "/script/profile/modify.asp?ct=%2Fdialog%2FLeoMsgBox%2Easp";
+	else if (option=="in")
+		document.subForm.action = "/script/profile/process_logon.asp?ct=%2Fdialog%2FLeoMsgBox%2Easp";
+	document.subForm.submit();
+	return true;
+}
+</SCRIPT>
+
+        <TBODY>
+        <TR>
+          <TD>
+            <TABLE cellSpacing=3 cellPadding=0>
+              <TBODY>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD class=InfoBarHeader>Toolbox</TD></TR>
+              <TR>
+                <TD bgColor=black colSpan=2><IMG height=1 
+                  src="LeoMsgBox_files/space.gif" width=1></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="LeoMsgBox_files/sitebuild_icon.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/submit/ReportProblem.asp?GUID=LeoMsgBox%2Fdialog5%2F25%2F2004">Broken 
+                  Article?</A></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="LeoMsgBox_files/support_icon.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/store/"><B>VS.NET 2003 from 
+                  $899</B></A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="LeoMsgBox_files/support_icon.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/store/"><B>MSDN Univ. from 
+                  $1950</B></A></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="LeoMsgBox_files/print.gif" 
+width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/dialog/LeoMsgBox.asp?print=true" 
+                  target=_print>Print version</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="LeoMsgBox_files/link.gif" width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/add_bookmark.asp?t=0&amp;ct=%2Fdialog%2FLeoMsgBox%2Easp&amp;guid=LeoMsgBox%2Fdialog5%2F25%2F2004">Bookmark 
+                  this</A></TD></TR></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="LeoMsgBox_files/mail.gif" width=16></TD>
+                <TD class=SmallText><A 
+                  href="http://www.codeproject.com/script/recommend/form.asp?guid=LeoMsgBox%2Fdialog5%2F25%2F2004">Send 
+                  to a friend</A></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD class=InfoBarHeader>My Profile</TD></TR>
+              <TR>
+                <TD bgColor=black colSpan=2><IMG height=1 
+                  src="LeoMsgBox_files/space.gif" width=1></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="LeoMsgBox_files/profile_small.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/modify.asp?ct=/dialog/LeoMsgBox.asp">My 
+                  Settings</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="LeoMsgBox_files/submit_small.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/articles/list_articles.asp?userid=649009">My 
+                  Articles</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="LeoMsgBox_files/bookmarks.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/bookmark_list.asp">My 
+                  Bookmarks</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="LeoMsgBox_files/logoff_small.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/logoff.asp?ct=/dialog/LeoMsgBox.asp">Sign 
+                  out</A></TD></TR>
+              <TR>
+                <TD bgColor=black colSpan=2><IMG height=1 
+                  src="LeoMsgBox_files/space.gif" 
+        width=1></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD>&nbsp;</TD></TR>
+        <TR>
+          <TD>
+            <CENTER>
+            <SCRIPT language=javascript>document.write("<IFRAME src=\"/script/admentor/include/ServeAdHTML.aspx?C=False&id=766\" border=0 frameborder=0 scrolling=no width=120 height=600></IFRAME>");</SCRIPT>
+            <BR></CENTER><BR></TD></TR></TBODY></TABLE></TD>
+    <TD width=5 rowSpan=2><IMG height=1 src="LeoMsgBox_files/space.gif" 
+      width=5> </TD>
+    <TD align=right width="100%" bgColor=white>
+      <TABLE width="100%">
+        <TBODY>
+        <TR vAlign=top>
+          <TD class=smallText vAlign=top noWrap></TD>
+          <TD noWrap align=right><A name=__top></A>
+            <TABLE>
+              <TBODY>
+              <TR>
+                <TD class=smallText align=right>13 members have rated this 
+                  article. Result:</TD>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=0 border=2>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=5 src="LeoMsgBox_files/red.gif" width=20 
+                        border=0></TD>
+                      <TD><IMG height=5 src="LeoMsgBox_files/red.gif" width=20 
+                        border=0><IMG height=5 src="LeoMsgBox_files/white.gif" 
+                        width=0 border=0></TD>
+                      <TD><IMG height=5 src="LeoMsgBox_files/white.gif" 
+                        width=20 border=0></TD>
+                      <TD><IMG height=5 src="LeoMsgBox_files/white.gif" 
+                        width=20 border=0></TD>
+                      <TD><IMG height=5 src="LeoMsgBox_files/white.gif" 
+                        width=20 border=0></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD class=smallText align=right colSpan=2><A 
+                  title="Calculated as rating x Log10(# votes)" 
+                  href="http://www.codeproject.com/script/articles/top_articles.asp?st=2">Popularity: 
+                  2.2</A>. Rating: <B>1.98</B> out of 
+        5.</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD vAlign=top width="100%">
+      <DIV id=contentdiv><!-- Article Starts -->
+      <UL class=download>
+        <LI><A 
+        href="http://www.codeproject.com/dialog/LeoMsgBox/LeoMsgBoxTest.zip">Download 
+        demo project - 58.9 Kb </A></LI></UL>
+      <P><IMG height=218 src="LeoMsgBox_files/Shot.gif" width=382 border=0></P>
+      <H2>Introduction</H2>
+      <P>I always wanted to have some kind of replacement for the standard MFC 
+      Message Box available in VC++. So, the idea came up, and I created a 
+      simple COM based object which will display a message box you can see on 
+      the shot above. You can drag it and text will be scrolling up. Font size, 
+      color and scroll time are selectable. 
+      <H2>Background</H2>
+      <P>I have used some code for text scrolling ( despite that, had to fix 
+      some bugs with scroll timer settings) in the good sample I found here some 
+      time ago. Unfortunately cannot recall the author name. Sorry mate !
+      <H2>Using the code</H2>
+      <P>Just open Demo project source file TestDlg.cpp - Handler for Button 1 
+      is optional, use it if you like to change the default settings. Otherwise 
+      just use Button 2. Don't forget to initialize a COM object as usual. I 
+      think it is too easy for putting sample code and you'll find all you need 
+      in the source code. <!-- Article Ends --></P></DIV>
+      <H2>DDLL</H2>
+      <TABLE width="100%" border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD class=smallText noWrap><BR></TD>
+          <TD class=smallText width="100%">
+            <P class=smallText>Click <A 
+            href="http://www.codeproject.com/script/profile/whos_who.asp?vt=arts&amp;id=772501">here</A> 
+            to view DDLL's online profile.</P></TD></TR></TBODY></TABLE><BR>
+      <TABLE cellPadding=4 width="100%" border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD width="100%">
+            <H2>Other popular articles:</H2>
+            <UL>
+              <LI><A 
+              href="http://www.codeproject.com/dialog/dlgboxtricks.asp">Some 
+              handy dialog box tricks, tips and workarounds</A><BR><SPAN 
+              class=smalltext>Hidden modal dialogs, stealing focus, always on 
+              top dialogs, going full-screen, expanding and contracting dialogs, 
+              removing task bar icon, context sensitive help and many other 
+              useful tips and tricks.</SPAN>
+              <LI><A 
+              href="http://www.codeproject.com/dialog/quickwin.asp">QuickWin - 
+              Turn a console application into a Windows program</A><BR><SPAN 
+              class=smalltext>Redirect stdin, stdout and stderr into a 
+              window</SPAN>
+              <LI><A 
+              href="http://www.codeproject.com/dialog/slidabledialogbar.asp">3D 
+              Studio Max like Slidable DialogBar</A><BR><SPAN 
+              class=smalltext>Ever seen 3D Studio 2.5 Slidable DialogBar? Want 
+              to know how they did it?</SPAN>
+              <LI><A 
+              href="http://www.codeproject.com/dialog/winampwnd.asp">Nullsoft 
+              Winamp Plug-in With Bitmapped UI, Docking and Restrictive 
+              Resizing</A><BR><SPAN class=smalltext>An article discussing a 
+              Plug-in for Nullsoft Winamp which looks and behaves like the 
+              Winamp UI.</SPAN></LI></UL></TD></TR></TBODY></TABLE>
+      <FORM action=/script/rating/code/app/insert_vote.asp method=post><INPUT 
+      type=hidden value=LeoMsgBox/dialog5/25/2004 name=vote_name> <INPUT 
+      type=hidden value=/dialog/LeoMsgBox.asp name=goal> 
+      <TABLE cellSpacing=0 cellPadding=1 width="100%" bgColor=#ff9900 
+        border=0><TBODY>
+        <TR>
+          <TD width="100%">
+            <TABLE cellSpacing=0 cellPadding=4 width="100%" bgColor=#fbedbb 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD class=smalltext vAlign=center>[<A 
+                  href="http://www.codeproject.com/dialog/LeoMsgBox.asp#__top">Top</A>]</TD>
+                <TD vAlign=center noWrap align=right><I><B>Rate this Article 
+                  for us!</B></I>&nbsp;&nbsp;&nbsp;&nbsp; <I>Poor</I><INPUT 
+                  type=radio value=1 name=rate><INPUT type=radio value=2 
+                  name=rate><INPUT type=radio value=3 name=rate><INPUT 
+                  type=radio value=4 name=rate><INPUT type=radio value=5 
+                  name=rate><I>Excellent</I>&nbsp;&nbsp;<INPUT class=FormButton type=submit value=Vote> 
+                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></FORM>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD vAlign=top>
+            <CENTER>
+            <SCRIPT language=javascript>document.write("<a href=\"/script/admentor/admentorredir.asp?id=612&way=ban\" target=_blank><img src=\"/script/admentor/include/ServeAd.aspx?File=%2Fscript%2Fadmentor%2Fimages%2Finfragistics%5Fbuttonjune%2Egif&C=False&id=612\" alt=\"\" border=0 width=120 height=60></a>");</SCRIPT>
+            <BR><FONT size=1><A 
+            href="http://www.codeproject.com/info/MediaKit/">Premium 
+            Sponsor</A></FONT></CENTER><BR></TD>
+          <TD vAlign=top noWrap align=middle><SPAN id=AdBanner5>
+            <SCRIPT language=javascript>document.write("<a href=\"/script/admentor/admentorredir.asp?id=126&way=ban\" target=_blank><img src=\"/script/admentor/include/ServeAd.aspx?File=%2Fscript%2Fadmentor%2Fimages%2FAutomate%2Egif&C=False&id=126\" alt=\"Download Visual Build - Automate your software builds\" border=0 width=468 height=60></a>");</SCRIPT>
+            </SPAN></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><A 
+name=__comments></A>
+<SCRIPT language=JavaScript>
+function MsgVoteForm(UserID, MsgID)
+{
+	document.write("Rate this message: ");
+	for (var i=1; i<=5;i++)
+		document.write("<a href='#xx" + MsgID.toString() + "xx' title='give this message a vote of " + i.toString() + "' onclick='RateMsg(" + UserID.toString() + ", " + MsgID.toString() + ", " + i.toString() + ")'><b>" + i.toString() + "</b></a> ");
+	document.write(" (out of 5)");
+}
+
+function RateMsg(userid, msgid, score) 
+{ 
+	open("/script/comments/vote.asp?js=1&user="+userid.toString()+"&msg="+msgid.toString()+"&score="+score.toString() ,"helpful","toolbar=no,resizable=yes,scrollbars=yes,directories=no,menubar=no,width=300,height=200");
+	return false;
+}
+</SCRIPT>
+
+<SCRIPT language=JavaScript>
+var Selected = "";
+var AdTime = new Date();
+
+function SwitchMessage(elm)
+{
+	
+	var elmref;
+	if (Selected != "")
+	{
+		elmref = eval("document.getElementById('" + Selected + "_h1')");
+		if (elmref) elmref.style.display = 'none';
+		elmref = eval("document.getElementById('" + Selected + "_h0')");
+		if (elmref) elmref.bgColor = '#FEF9E7';
+	}
+	if (Selected != elm.name) 
+	{
+		Selected = elm.name;
+		elmref = eval("document.getElementById('" + Selected + "_h1')");
+		if (elmref) 
+		{
+			if (elmref.style.display=='none') elmref.style.display='';
+			else elmref.style.display = 'none';
+		}
+		elmref = eval("document.getElementById('" + Selected + "_h0')");
+		if (elmref) 
+			elmref.bgColor = '#99CCFF';
+	}
+	else
+		Selected="";
+		
+	window.location = "#xx" + Selected + "xx";
+
+	return false;
+}
+
+</SCRIPT>
+
+<SCRIPT language=javascript event=onclick for=DynMessLink>
+return SwitchMessage(this);
+</SCRIPT>
+
+<TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#ff9900 border=0>
+  <TBODY>
+  <TR>
+    <TD width="100%">
+      <TABLE id=ForumTable cellSpacing=1 cellPadding=0 width="100%" 
+      bgColor=#ff9900 border=0>
+        <FORM 
+        action=/script/comments/app/do_filtermessages.asp?main=/dialog/LeoMsgBox.asp&amp;df=100&amp;forumid=51754 
+        method=post>
+        <TBODY>
+        <TR>
+          <TD>
+            <TABLE cellSpacing=0 cellPadding=3 width="100%" bgColor=white 
+            border=0>
+              <TBODY>
+              <TR bgColor=#fbedbb>
+                <TD class=smalltext noWrap><A 
+                  href="http://www.codeproject.com/script/comments/faq.asp"><IMG 
+                  height=16 src="LeoMsgBox_files/info.gif" width=16 
+                  align=absMiddle border=0> <B>FAQ</B></A>&nbsp;</TD>
+                <TD class=smalltext vAlign=top noWrap align=right>Noise level 
+                  <SELECT class=smalltext size=1 name=noise><OPTION 
+                    value=1>Very High</OPTION> <OPTION value=2>High</OPTION> 
+                    <OPTION value=3 selected>Medium</OPTION> <OPTION 
+                    value=4>Low</OPTION> <OPTION value=5>Very 
+                  low</OPTION></SELECT>&nbsp;&nbsp;</TD>
+                <TD class=smalltext vAlign=center noWrap align=right 
+                  colSpan=2><A 
+                  href="http://www.codeproject.com/script/comments/search_comments.asp?forumid=51754"><IMG 
+                  height=15 src="LeoMsgBox_files/search.gif" width=16 border=0> 
+                  Search comments</A> &nbsp;</TD>
+                <TD vAlign=top align=right><INPUT class=FormButton type=submit value="Set Options" name=submit></TD></TR>
+              <TR bgColor=#ff9900>
+                <TD width="100%">&nbsp;</TD>
+                <TD class=smalltext vAlign=top noWrap align=right>View <SELECT 
+                  class=smalltext size=1 name=expand><OPTION value=0>Normal 
+                    (slow)</OPTION> <OPTION value=2>Preview (slow)</OPTION> 
+                    <OPTION value=5 selected>Message View</OPTION> <OPTION 
+                    value=6>Topic View</OPTION> <OPTION value=1>Thread 
+                    View</OPTION> <OPTION value=3>Expanded (Supporters 
+                    only)</OPTION></SELECT>&nbsp;&nbsp;</TD>
+                <TD class=smalltext vAlign=top noWrap>Per page <SELECT 
+                  class=smalltext size=1 name=perpage><OPTION 
+                    value=10>10</OPTION> <OPTION value=25 selected>25</OPTION> 
+                    <OPTION value=50>50</OPTION></SELECT></TD>
+                <TD colSpan=2>&nbsp;</TD></TR></TBODY></TABLE></TD></TR></FORM>
+        <TR bgColor=#fbedbb>
+          <TD><A name=xx0xx></A>
+            <TABLE cellPadding=2 width="100%" bgColor=#fbedbb border=0>
+              <TBODY>
+              <TR>
+                <TD class=messagetitle><A class=HoverLink 
+                  title="Add a new message to the discussions" 
+                  href="http://www.codeproject.com/script/comments/user_new.asp?main=/dialog/LeoMsgBox.asp&amp;df=100&amp;forumid=51754" 
+                  target=_top name=HoverNL><B><IMG height=16 
+                  src="LeoMsgBox_files/admin_modify.gif" width=16 align=top 
+                  border=0> New thread</B></A></TD>
+                <TD class=messagetitle>Msgs 1 to 3 of 3 (Total: 3) (<A 
+                  href="http://www.codeproject.com/dialog/LeoMsgBox.asp?df=100&amp;forumid=51754">Refresh</A>)</TD>
+                <TD noWrap align=right><FONT class=messagetitle><SPAN 
+                  class=HoverLink>First</SPAN> <SPAN class=HoverLink>Prev</SPAN> 
+                  <SPAN class=HoverLink>Next</SPAN> <SPAN 
+                  class=HoverLink>Last</SPAN> </FONT></TD></TR></TBODY></TABLE></TD></TR>
+        <TR bgColor=white>
+          <TD>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=2 bgColor=#fbedbb border=0>
+                    <TBODY>
+                    <TR>
+                      <TD class=messagetitle width="100%">Subject&nbsp;</TD>
+                      <TD class=messagetitle noWrap width=140>Author&nbsp;</TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT 
+                    class=messagetitle>Date&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="LeoMsgBox_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR id=902834_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx902834xx></A><IMG 
+                        src="LeoMsgBox_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/dialog/LeoMsgBox.asp?df=100&amp;forumid=51754&amp;select=902834#xx902834xx" 
+                        name=902834><B>About Your Dll?</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=1268748"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="LeoMsgBox_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>Zero_One_ADO</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>2:11 20 Aug 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=902834_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="LeoMsgBox_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent>Hello,<BR>How can I make 
+                                Dll like yours?<BR>(Any simple links?)<BR>Best 
+                                Wishes,<BR>Thanks. <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/dialog/LeoMsgBox.asp&amp;df=100&amp;forumid=51754&amp;select=902834">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/dialog/LeoMsgBox.asp&amp;df=100&amp;forumid=51754&amp;select=902834">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/dialog/LeoMsgBox.asp?df=100&amp;tid=902834&amp;forumid=51754&amp;select=902834#xx902834xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/dialog/LeoMsgBox.asp?msg=902834#xx902834xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/dialog/LeoMsgBox.asp&amp;df=100&amp;forumid=51754&amp;select=902834"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/dialog/LeoMsgBox.asp&amp;df=100&amp;forumid=51754&amp;select=902834"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(1268748,902834);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="LeoMsgBox_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 src="LeoMsgBox_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=833005_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx833005xx></A><IMG 
+                        src="LeoMsgBox_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/dialog/LeoMsgBox.asp?df=100&amp;forumid=51754&amp;select=833005#xx833005xx" 
+                        name=833005><B>MessageBox</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=428648"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="LeoMsgBox_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>A_F</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>0:30 26 May 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=833005_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="LeoMsgBox_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>You 
+                                said :<BR>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;Don't 
+                                forget to initialize a COM object as 
+                                usual&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<BR>How I 
+                                can initialize a COM object in this example 
+                                .(Test example) ?<BR>thanks .<IMG 
+                                src="LeoMsgBox_files/smiley_confused.gif" 
+                                align=absMiddle> <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/dialog/LeoMsgBox.asp&amp;df=100&amp;forumid=51754&amp;select=833005">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/dialog/LeoMsgBox.asp&amp;df=100&amp;forumid=51754&amp;select=833005">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/dialog/LeoMsgBox.asp?df=100&amp;tid=833005&amp;forumid=51754&amp;select=833005#xx833005xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/dialog/LeoMsgBox.asp?msg=833005#xx833005xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/dialog/LeoMsgBox.asp&amp;df=100&amp;forumid=51754&amp;select=833005"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/dialog/LeoMsgBox.asp&amp;df=100&amp;forumid=51754&amp;select=833005"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(428648,833005);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="LeoMsgBox_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR id=833052_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx833052xx></A><IMG height=1 
+                        src="LeoMsgBox_files/ind.gif" width=18><IMG 
+                        src="LeoMsgBox_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/dialog/LeoMsgBox.asp?df=100&amp;forumid=51754&amp;select=833052#xx833052xx" 
+                        name=833052>Re: MessageBox</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=42434"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="LeoMsgBox_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle>Atif 
+                        Mushtaq&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>1:40 26 May 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=833052_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="LeoMsgBox_files/ind.gif" 
+                        width=18><IMG src="LeoMsgBox_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>using 
+                                regsvr32 register the com dll first. 
+                                <BR><BR>Unmanaged in a .NET 
+                                world<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/dialog/LeoMsgBox.asp&amp;df=100&amp;forumid=51754&amp;select=833052">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/dialog/LeoMsgBox.asp&amp;df=100&amp;forumid=51754&amp;select=833052">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/dialog/LeoMsgBox.asp?df=100&amp;tid=833005&amp;forumid=51754&amp;select=833052#xx833052xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/dialog/LeoMsgBox.asp?msg=833052#xx833052xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/dialog/LeoMsgBox.asp&amp;df=100&amp;forumid=51754&amp;select=833052"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/dialog/LeoMsgBox.asp&amp;df=100&amp;forumid=51754&amp;select=833052"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(42434,833052);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="LeoMsgBox_files/t.gif" width=1 
+                border=0></TD></TR></TBODY></TABLE></TD></TR>
+        <TR bgColor=#fbedbb>
+          <TD>
+            <TABLE cellPadding=2 width="100%">
+              <TBODY>
+              <TR>
+                <TD class=messagetitle>Last Visit: 7:18 Wednesday 13th 
+                  October, 2004</TD>
+                <TD noWrap align=right><FONT class=messagetitle><SPAN 
+                  class=HoverLink>First</SPAN> <SPAN class=HoverLink>Prev</SPAN> 
+                  <SPAN class=HoverLink>Next</SPAN> <SPAN 
+                  class=HoverLink>Last</SPAN> 
+        </FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><BR>
+<TABLE cellSpacing=5 width="100%">
+  <TBODY>
+  <TR vAlign=top>
+    <TD><FONT style="FONT-SIZE: 7pt" size=1><A 
+      href="http://www.codeproject.com/?cat=1">All Topics</A>, <A 
+      href="http://www.codeproject.com/?cat=2">MFC / C++</A> &gt;&gt; <A 
+      href="http://www.codeproject.com/dialog/">Dialog and Windows</A> &gt;&gt; 
+      <A href="http://www.codeproject.com/dialog/#General">General</A> 
+      <BR>Updated: 25 May 2004 </FONT></TD>
+    <TD align=right><FONT style="FONT-SIZE: 7pt" size=1>Article content 
+      copyright DDLL, 2004<BR>everything else Copyright © <A 
+      href="mailto:webmaster@codeproject.com">CodeProject</A>, 1999-2004</A>. 
+      <BR><A href="http://www.codeproject.com/info/MediaKit">Advertise on The 
+      Code Project</A> | <A 
+      href="http://www.codeproject.com/info/privacy.asp">Privacy</A> 
+  </FONT></TD></TR></TBODY></TABLE><BR>
+<CENTER>
+<TABLE cellSpacing=0 cellPadding=0 width="95%" border=0>
+  <TBODY>
+  <TR>
+    <TD bgColor=#ff9900 height=1><IMG height=1 
+    src="LeoMsgBox_files/space.gif"></TD></TR>
+  <TR>
+    <TD align=middle><FONT size=1><A 
+      href="http://www.codeproject.com/redir.asp?id=235">MSDN Communities</A> | 
+      <A href="http://aspalliance.com/">ASPAlliance</A> • <A 
+      href="http://www.developerfusion.com/">Developer Fusion</A> • <A 
+      href="http://www.devguru.com/">DevGuru</A> • <A 
+      href="http://www.programmersheaven.com/">Programmers Heaven</A> • <A 
+      href="http://www.planet-source-code.com/">Planet Source Code</A> • <A 
+      href="http://www.resourceindex.com/">Resource Index</A> • <A 
+      href="http://www.tek-tips.com/">Tek-Tips Forums</A> • <A 
+      href="http://www.topxml.com/">What is XML?</A> • <A 
+      href="http://www.visualbuilder.com/">VisualBuilder</A> • <A 
+      href="http://www.zvon.org/">ZVON</A> • <A 
+      href="http://www.codeproject.com/redir.asp?id=169">Search Us!</A> 
+    </FONT></TD></TR></TBODY></TABLE></CENTER></BODY></HTML>

@@ -1,0 +1,132 @@
+[Project]
+FileName=D:\backup\agmagic\src\common\lib\agutil\project\windows\dev_cpp\AGmagicUtil_DevC499d.dev
+Name=AGmagicUtil_DevC499d
+Ver=1
+IsCpp=1
+Type=0
+Compiler=-D__GNUWIN32__ -W -fexceptions -DWIN32 -D_DEBUG -D_WINDOWS -D_WINDLL -D_AFXDLL -D_MBCS -DJAS_WIN_MSVC_BUILD 
+CppCompiler=-D__GNUWIN32__ -W -fexceptions -DWIN32 -D_DEBUG -D_WINDOWS -D_WINDLL -D_AFXDLL -D_MBCS -DJAS_WIN_MSVC_BUILD 
+Includes=
+Linker=
+Libs=
+UnitCount=17
+Folders="Source Files","Header Files","Resource Files"
+[Unit1]
+FileName=../../../main/AGdataStruct.cpp
+Folder="Source Files"
+Compile=1
+CompileCpp=1
+Link=1
+Priority=1000
+[Unit2]
+FileName=../../../main/AGmagicUI.cpp
+Folder="Source Files"
+Compile=1
+CompileCpp=1
+Link=1
+Priority=1000
+[Unit3]
+FileName=../../../main/AGmagicUI2.cpp
+Folder="Source Files"
+Compile=1
+CompileCpp=1
+Link=1
+Priority=1000
+[Unit4]
+FileName=../../AGmagicUtil.cpp
+Folder="Source Files"
+Compile=1
+CompileCpp=1
+Link=1
+Priority=1000
+[Unit5]
+FileName=../../../main/AGmagicUtilRC.rc
+Folder="Source Files"
+Compile=1
+CompileCpp=1
+Link=0
+Priority=1000
+[Unit6]
+FileName=../../../main/AGutilCore.cpp
+Folder="Source Files"
+Compile=1
+CompileCpp=1
+Link=1
+Priority=1000
+[Unit7]
+FileName=../../../main/AGutilCore2.cpp
+Folder="Source Files"
+Compile=1
+CompileCpp=1
+Link=1
+Priority=1000
+[Unit8]
+FileName=../../../main/AGdataStruct.h
+Folder="Header Files"
+Compile=1
+CompileCpp=1
+Link=1
+Priority=1000
+[Unit9]
+FileName=../../../main/AGmagicUI.h
+Folder="Header Files"
+Compile=1
+CompileCpp=1
+Link=1
+Priority=1000
+[Unit10]
+FileName=../../../main/AGmagicUI2.h
+Folder="Header Files"
+Compile=1
+CompileCpp=1
+Link=1
+Priority=1000
+[Unit11]
+FileName=../../AGmagicUtil.h
+Folder="Header Files"
+Compile=1
+CompileCpp=1
+Link=1
+Priority=1000
+[Unit12]
+FileName=../../../main/AGmagicUtilRC.h
+Folder="Header Files"
+Compile=1
+CompileCpp=1
+Link=1
+Priority=1000
+[Unit13]
+FileName=../../../main/AGutilCore.h
+Folder="Header Files"
+Compile=1
+CompileCpp=1
+Link=1
+Priority=1000
+[Unit14]
+FileName=../../../main/AGutilCore2.h
+Folder="Header Files"
+Compile=1
+CompileCpp=1
+Link=1
+Priority=1000
+[Unit15]
+FileName=../../../main/res/Splitter.cur
+Folder="Resource Files"
+Compile=0
+CompileCpp=0
+Link=0
+Priority=1000
+[Unit16]
+FileName=../../../main/res/tree_bitmap_n.bmp
+Folder="Resource Files"
+Compile=0
+CompileCpp=0
+Link=0
+Priority=1000
+[Unit17]
+FileName=../../../main/res/tree_bitmap_s.bmp
+Folder="Resource Files"
+Compile=0
+CompileCpp=0
+Link=0
+Priority=1000

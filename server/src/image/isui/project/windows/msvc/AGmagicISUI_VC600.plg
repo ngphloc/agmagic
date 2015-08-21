@@ -1,0 +1,30 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: AGmagicISUI - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\PHUOCL~1\LOCALS~1\Temp\RSP3A7.tmp" with contents
+[
+/nologo /subsystem:windows /dll /incremental:yes /pdb:"../../../output/AGmagicISUI.pdb" /debug /machine:I386 /out:"../../../../../../bin/AGmagicISUI.dll" /implib:"../../../output/AGmagicISUI.lib" /pdbtype:sept 
+\temp\ag\agmagic\server\src\image\isui\output\AGmagicISUI_prj.obj
+\temp\ag\agmagic\server\src\image\isui\output\AGmagicISUI.obj
+\temp\ag\agmagic\server\src\image\ip\output\AGmagicIP.lib
+\temp\ag\agmagic\server\src\image\ipui\output\AGmagicIPUI.lib
+\temp\ag\agmagic\server\src\image\is\output\AGmagicIS.lib
+\temp\ag\agmagic\server\src\common\lib\agutil\output\AGmagicUtil.lib
+]
+Creating command line "link.exe @C:\DOCUME~1\PHUOCL~1\LOCALS~1\Temp\RSP3A7.tmp"
+<h3>Output Window</h3>
+Linking...
+   Creating library ../../../output/AGmagicISUI.lib and object ../../../output/AGmagicISUI.exp
+
+
+
+<h3>Results</h3>
+AGmagicISUI.dll - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

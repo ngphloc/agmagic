@@ -1,0 +1,2363 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0050)http://www.codeproject.com/staticctrl/cclockst.asp -->
+<HTML><HEAD><TITLE>The Code Project - CClockST v1.3 - Static Controls</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META http-equiv=Reply-to content=mailto:webmaster@codeproject.com>
+<META content="Free source code and tutorials for Windows developers." 
+name=Description>
+<META 
+content="Free source code, Static Controls, Visual C++, MFC, Windows, CStatic, Clock, LCD" 
+name=keywords>
+<META 
+content="Article content copyright Davide Calabro, 2002, everthing else Copyright © CodeProject, 1999-2004, All Rights Reserved." 
+name=Copyright><LINK href="/favicon.ico" type=image/ico rel=icon><LINK 
+href="/favicon.ico" rel="SHORTCUT ICON"><LINK href="CClockST_files/global.css" 
+type=text/css rel=stylesheet>
+<SCRIPT language=javascript src="CClockST_files/oncopy.js"></SCRIPT>
+
+<META content="MSHTML 6.00.3790.0" name=GENERATOR></HEAD>
+<BODY oncopy="return copyCode();" text=black vLink=purple aLink=red link=blue 
+bgColor=white leftMargin=3 topMargin=3>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#ff9900 border=0>
+  <TBODY>
+  <TR>
+    <TD width="100%">
+      <TABLE cellSpacing=1 cellPadding=0 width="100%" bgColor=#ff9900 
+        border=0><TBODY>
+        <TR>
+          <TD vAlign=top><A href="http://www.codeproject.com/"><IMG height=72 
+            alt="The Code Project" src="CClockST_files/logo225x72.gif" width=225 
+            border=0></A></TD>
+          <TD align=right><SPAN id=AdBanner4><A 
+            href="http://www.codeproject.com/script/admentor/ads.asp"><IMG 
+            height=60 alt="View our advertisers" 
+            src="CClockST_files/sponsors.gif" width=20 border=1></A>
+            <SCRIPT language=javascript>document.write("<a href=\"/script/admentor/admentorredir.asp?id=774&way=ban\" target=_blank><img src=\"/script/admentor/include/ServeAd.aspx?File=%2Fscript%2Fadmentor%2Fimages%2FElementoolCodeProjectBanner2%2EGIF&C=False&id=774\" alt=\"\" border=0 width=468 height=60></a>");</SCRIPT>
+            <A href="http://www.codeproject.com/info/mediakit"><IMG height=60 
+            alt="Advertise on the CodeProject" 
+            src="CClockST_files/advertise.gif" width=20 
+        border=1></A></SPAN></TD></TR>
+        <TR>
+          <TD bgColor=#fbedbb colSpan=2>
+            <TABLE cellPadding=3 width="100%" bgColor=#fbedbb border=0>
+              <TBODY>
+              <TR vAlign=top>
+                <TD width="100%"><FONT style="FONT-SIZE: 8pt"><A 
+                  href="http://www.codeproject.com/?cat=1">All Topics</A>, <A 
+                  href="http://www.codeproject.com/?cat=2">MFC / C++</A> 
+                  &gt;&gt; <A 
+                  href="http://www.codeproject.com/staticctrl/">Static 
+                  Controls</A> &gt;&gt; <A 
+                  href="http://www.codeproject.com/staticctrl/#Custom+Controls">Custom 
+                  Controls</A></FONT><BR><BR><B><FONT style="FONT-SIZE: 16pt" 
+                  size=4>CClockST v1.3</FONT></B><BR><B>By <A 
+                  href="http://www.codeproject.com/script/profile/whos_who.asp?id=65">Davide 
+                  Calabro</A> </B><BR><BR><FONT style="FONT-SIZE: 9pt">A simple 
+                  digital clock and date class derived from the MFC CStatic 
+                  class&nbsp;</FONT> </TD>
+                <TD vAlign=top align=right>
+                  <TABLE cellSpacing=0 cellPadding=1 width=200 border=0>
+                    <TBODY>
+                    <TR vAlign=top>
+                      <TD>&nbsp;</TD>
+                      <TD class=SmallText>C++ (VC7, VC6)<BR>Windows (WinXP, 
+                        Win2K, Win95, Win98, WinME)<BR>MFC, Win32, 
+                    VS<BR>Dev</TD></TR>
+                    <TR>
+                      <TD>&nbsp;</TD>
+                      <TD class=SmallText noWrap>Posted 2 Jul 2002</TD></TR>
+                    <TR>
+                      <TD>&nbsp;</TD>
+                      <TD class=SmallText>Updated 13 Jul 2002</TD></TR>
+                    <TR vAlign=top>
+                      <TD><IMG height=16 src="CClockST_files/hlp.gif" 
+                      width=16></TD>
+                      <TD class=SmallText noWrap><A 
+                        href="http://www.codeproject.com/script/Articles/list_articles.asp?userid=65">Articles 
+                        by this author</A></TD></TR>
+                    <TR vAlign=top>
+                      <TD></TD>
+                      <TD class=SmallText noWrap><B>45,297</B> 
+                    views</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD colSpan=2>
+            <TABLE id=tblSiteToolbar cellSpacing=0 cellPadding=1 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <FORM name=Search action=/info/search.asp method=post>
+                <TD vAlign=top align=left width="100%">
+                  <TABLE cellSpacing=0 cellPadding=1 border=0>
+                    <TBODY>
+                    <TR vAlign=center>
+                      <TD class=smallText><B><FONT 
+                        color=white>Search:</FONT></B></TD>
+                      <TD class=navbar noWrap><INPUT class=smallText 
+                        maxLength=255 size=18 name=target></TD>
+                      <TD vAlign=top><SELECT class=smallText name=st> 
+                          <OPTION value=kw selected>Articles</OPTION> <OPTION 
+                          value=au>Authors</OPTION></SELECT></TD>
+                      <TD><INPUT class=formButton type=submit value=Go></TD></TR></TBODY></TABLE></TD></FORM>
+                <TD>
+                  <DIV id=MenuPos 
+                  style="WIDTH: 380px; POSITION: relative; HEIGHT: 20px">
+                  <TABLE height=20 cellSpacing=0 cellPadding=2 width=375>
+                    <TBODY>
+                    <TR>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/info/faq.asp">Help!</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/info/latest.asp">Articles</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/script/comments/forums.asp">Message 
+                        Boards</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/store/">StoreFront</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/lounge.asp">Lounge</A></TD></TR></TBODY></TABLE></DIV></TD></TR></TBODY></TABLE>
+            <SCRIPT type=text/javascript>function Go(){return}</SCRIPT>
+
+            <SCRIPT src="CClockST_files/cpmenu_var.js" 
+            type=text/javascript></SCRIPT>
+
+            <SCRIPT src="CClockST_files/menu10_com.js" 
+            type=text/javascript></SCRIPT>
+          </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=1 border=0>
+  <TBODY>
+  <TR vAlign=top>
+    <TD vAlign=top bgColor=#fbedbb rowSpan=2>
+      <TABLE cellSpacing=0 cellPadding=0 border=0>
+        <SCRIPT language=javascript>
+function ErrorHandle() {}
+window.onerror = ErrorHandle;
+
+function OnNLSubmit(option)
+{
+	if (option=="up")
+		document.subForm.action = "/script/profile/modify.asp?ct=%2Fstaticctrl%2Fcclockst%2Easp";
+	else if (option=="in")
+		document.subForm.action = "/script/profile/process_logon.asp?ct=%2Fstaticctrl%2Fcclockst%2Easp";
+	document.subForm.submit();
+	return true;
+}
+</SCRIPT>
+
+        <TBODY>
+        <TR>
+          <TD>
+            <TABLE cellSpacing=3 cellPadding=0>
+              <TBODY>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD class=InfoBarHeader>Toolbox</TD></TR>
+              <TR>
+                <TD bgColor=black colSpan=2><IMG height=1 
+                  src="CClockST_files/space.gif" width=1></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="CClockST_files/sitebuild_icon.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/submit/ReportProblem.asp?GUID=CClockST%2Fstaticctrl7%2F2%2F2002">Broken 
+                  Article?</A></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="CClockST_files/support_icon.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/store/"><B>VS.NET 2003 from 
+                  $899</B></A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="CClockST_files/support_icon.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/store/"><B>MSDN Univ. from 
+                  $1950</B></A></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="CClockST_files/print.gif" width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/staticctrl/cclockst.asp?print=true" 
+                  target=_print>Print version</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="CClockST_files/link.gif" width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/add_bookmark.asp?t=0&amp;ct=%2Fstaticctrl%2Fcclockst%2Easp&amp;guid=CClockST%2Fstaticctrl7%2F2%2F2002">Bookmark 
+                  this</A></TD></TR></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="CClockST_files/mail.gif" width=16></TD>
+                <TD class=SmallText><A 
+                  href="http://www.codeproject.com/script/recommend/form.asp?guid=CClockST%2Fstaticctrl7%2F2%2F2002">Send 
+                  to a friend</A></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD class=InfoBarHeader>My Profile</TD></TR>
+              <TR>
+                <TD bgColor=black colSpan=2><IMG height=1 
+                  src="CClockST_files/space.gif" width=1></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="CClockST_files/profile_small.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/modify.asp?ct=/staticctrl/cclockst.asp">My 
+                  Settings</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="CClockST_files/submit_small.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/articles/list_articles.asp?userid=649009">My 
+                  Articles</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="CClockST_files/bookmarks.gif" 
+                width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/bookmark_list.asp">My 
+                  Bookmarks</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="CClockST_files/logoff_small.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/logoff.asp?ct=/staticctrl/cclockst.asp">Sign 
+                  out</A></TD></TR>
+              <TR>
+                <TD bgColor=black colSpan=2><IMG height=1 
+                  src="CClockST_files/space.gif" 
+        width=1></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD>&nbsp;</TD></TR>
+        <TR>
+          <TD>
+            <CENTER>
+            <SCRIPT language=javascript>document.write("<a href=\"/script/admentor/admentorredir.asp?id=407&way=ban\" target=_blank><img src=\"/script/admentor/include/ServeAd.aspx?File=%2Fscript%2Fadmentor%2Fimages%2FSAMS%5FSkyScraperASPNET%2Egif&C=False&id=407\" alt=\"SAMS Publishing\" border=0 width=120 height=600></a>");</SCRIPT>
+            <BR></CENTER><BR></TD></TR></TBODY></TABLE></TD>
+    <TD width=5 rowSpan=2><IMG height=1 src="CClockST_files/space.gif" 
+      width=5> </TD>
+    <TD align=right width="100%" bgColor=white>
+      <TABLE width="100%">
+        <TBODY>
+        <TR vAlign=top>
+          <TD class=smallText vAlign=top noWrap></TD>
+          <TD noWrap align=right><A name=__top></A>
+            <TABLE>
+              <TBODY>
+              <TR>
+                <TD class=smallText align=right>19 members have rated this 
+                  article. Result:</TD>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=0 border=2>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=5 src="CClockST_files/red.gif" width=20 
+                        border=0></TD>
+                      <TD><IMG height=5 src="CClockST_files/red.gif" width=20 
+                        border=0></TD>
+                      <TD><IMG height=5 src="CClockST_files/red.gif" width=20 
+                        border=0></TD>
+                      <TD><IMG height=5 src="CClockST_files/red.gif" width=20 
+                        border=0></TD>
+                      <TD><IMG height=5 src="CClockST_files/red.gif" width=13 
+                        border=0><IMG height=5 src="CClockST_files/white.gif" 
+                        width=7 border=0></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD class=smallText align=right colSpan=2><A 
+                  title="Calculated as rating x Log10(# votes)" 
+                  href="http://www.codeproject.com/script/articles/top_articles.asp?st=2">Popularity: 
+                  5.94</A>. Rating: <B>4.64</B> out of 
+        5.</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD vAlign=top width="100%">
+      <DIV id=contentdiv><!-- Article Starts --><!-- Download Links -->
+      <UL class=download>
+        <LI><A 
+        href="http://www.codeproject.com/staticctrl/CClockST/CClockST_src.zip">Download 
+        source files - 6 Kb</A> 
+        <LI><A 
+        href="http://www.codeproject.com/staticctrl/CClockST/CClockST_demo.zip">Download 
+        demo project - 113 Kb</A> </LI></UL><!-- Article image -->
+      <P><IMG height=172 alt="Sample Image - CClockST.png" 
+      src="CClockST_files/CClockST.png" width=308></P>
+      <H2>Abstract</H2>
+      <P><CODE>CClockST</CODE> is a class derived from MFC <CODE>CStatic</CODE> 
+      class. <CODE>CClockST</CODE> just subclasses the supplied 
+      <CODE>CStatic</CODE> control in your dialog and implements a simple clock 
+      and date!<BR><BR>Main <CODE>CClockST</CODE> features are: 
+      <UL>
+        <LI>An easy way to put a clock in you dialog/application 
+        <LI>It's free! 
+        <LI>Full source code included! 
+        <LI>Cost-less implementation in existing applications </LI></UL>
+      <H2>How to integrate CClockST in your application</H2>
+      <P>In your project include the following files: 
+      <UL>
+        <LI>ClockST.h 
+        <LI>ClockST.cpp </LI></UL>Also include the following bitmap resources: 
+      <UL>
+        <LI><CODE>IDB_CLOCKST_PANE</CODE> (ClockST_pane.bmp) 
+        <LI><CODE>IDB_CLOCKST_BIG</CODE> (ClockST_big.bmp) 
+        <LI><CODE>IDB_CLOCKST_SMALL</CODE> (ClockST_small.bmp) </LI></UL>Use 
+      dialog editor to create a static text called, for example, 
+      <CODE>IDC_CLOCKFRAME</CODE> (no matter what size you give it, it will be 
+      resized by <CODE>CClockST</CODE>) and create a member variable for this 
+      static control: <PRE>CClockST m_Clock;
+</PRE>Now attach the static control to <CODE>CClockST</CODE>. For 
+      dialog-based applications, in your <CODE>OnInitDialog</CODE>: <PRE><SPAN class=cpp-comment>// Call the base-class method</SPAN>
+CDialog::OnInitDialog();
+
+<SPAN class=cpp-comment>// Create the clock</SPAN>
+m_Clock.SubclassDlgItem(IDC_CLOCKFRAME, <SPAN class=cpp-keyword>this</SPAN>);
+</PRE>Or in your <CODE>DoDataExchange</CODE>: <PRE><SPAN class=cpp-comment>// Call the base method</SPAN>
+CDialog::DoDataExchange(pDX);
+
+<SPAN class=cpp-comment>// Create the clock</SPAN>
+DDX_Control(pDX, IDC_CLOCKFRAME , m_Clock);
+</PRE>Now start the clock, passing the ID resources of the bitmaps to use: 
+<PRE><SPAN class=cpp-comment>// Start clock</SPAN>
+m_Clock.Start(IDB_CLOCKST_PANE, IDB_CLOCKST_BIG, IDB_CLOCKST_SMALL);
+</PRE>Your clock is now active! The static control created with dialog 
+      editor has been resized to<BR>match the same size of the clock. There is 
+      no way to stop the clock once started. 
+      <H2>Class methods</H2>
+      <P><B>Start</B> 
+      <P>Starts (and displays) the clock loading all the necessary 
+      bitmaps<BR>and creating the worker thread. </P><PRE><SPAN class=cpp-comment>// Parameters:</SPAN>
+<SPAN class=cpp-comment>//     [IN]   nPaneID</SPAN>
+<SPAN class=cpp-comment>//            ID number of the bitmap resource of the whole clock.</SPAN>
+<SPAN class=cpp-comment>//     [IN]   nBigID</SPAN>
+<SPAN class=cpp-comment>//            ID number of the bitmap resource of the big digits.</SPAN>
+<SPAN class=cpp-comment>//     [IN]   nSmallID</SPAN>
+<SPAN class=cpp-comment>//            ID number of the bitmap resource of the small digits.</SPAN>
+<SPAN class=cpp-comment>//     [IN]   bAlternateDateFormat</SPAN>
+<SPAN class=cpp-comment>//            TRUE to display date in mm-dd-yyyy format, else</SPAN>
+<SPAN class=cpp-comment>//            FALSE to display date in dd-mm-yyyy format.</SPAN>
+<SPAN class=cpp-comment>//</SPAN>
+<SPAN class=cpp-comment>// Return value:</SPAN>
+<SPAN class=cpp-comment>//     CLOCKST_OK</SPAN>
+<SPAN class=cpp-comment>//        Function executed successfully.</SPAN>
+<SPAN class=cpp-comment>//     CLOCKST_INVALIDRESOURCE</SPAN>
+<SPAN class=cpp-comment>//        Some error loading bitmaps.</SPAN>
+<SPAN class=cpp-comment>//     CLOCKST_THREADKO</SPAN>
+<SPAN class=cpp-comment>//        Failed creating worker thread.</SPAN>
+<SPAN class=cpp-comment>//</SPAN>
+DWORD Start(<SPAN class=cpp-keyword>int</SPAN> nPaneID, <SPAN class=cpp-keyword>int</SPAN> nBigID, <SPAN class=cpp-keyword>int</SPAN> nSmallID, BOOL bAlternateDateFormat = FALSE)
+</PRE><B>GetVersionI</B> 
+      <P>Returns the class version as a short value.</P><PRE><SPAN class=cpp-comment>// Return value:</SPAN>
+<SPAN class=cpp-comment>//     Class version. Divide by 10 to get actual version.</SPAN>
+<SPAN class=cpp-comment>//</SPAN>
+<SPAN class=cpp-keyword>static</SPAN> <SPAN class=cpp-keyword>short</SPAN> GetVersionI()
+</PRE><B>GetVersionC</B> 
+      <P>Returns the class version as a string value.</P><PRE><SPAN class=cpp-comment>// Return value:</SPAN>
+<SPAN class=cpp-comment>//     Pointer to a null-terminated string containig the class version.</SPAN>
+<SPAN class=cpp-comment>//</SPAN>
+<SPAN class=cpp-keyword>static</SPAN> LPCTSTR GetVersionC()
+</PRE>
+      <H2>History</H2>
+      <UL>
+        <LI>v1.3 (10/July/2002)<BR>Fixed a problem in the <B>OnPaint</B> method 
+        <LI>v1.2 (29/June/2002)<BR>Modified the <B>Start</B> method parameter 
+        list 
+        <LI>v1.0 (15/June/1999)<BR>First release </LI></UL>
+      <H2>Disclaimer</H2>
+      <P>THE SOFTWARE AND THE ACCOMPANYING FILES ARE DISTRIBUTED "AS IS" AND 
+      WITHOUT ANY WARRANTIES WHETHER EXPRESSED OR IMPLIED. NO REPONSIBILITIES 
+      FOR POSSIBLE DAMAGES OR EVEN FUNCTIONALITY CAN BE TAKEN. THE USER MUST 
+      ASSUME THE ENTIRE RISK OF USING THIS SOFTWARE. 
+      </P><!-- Article Ends --></DIV>
+      <H2>Davide Calabro</H2>
+      <TABLE width="100%" border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD class=smallText noWrap><IMG 
+            src="CClockST_files/{9DC992D0-7ED9-4348-9115-E0027FD0DBDA}.png"><BR></TD>
+          <TD class=smallText width="100%">
+            <P class=smallText>Click <A 
+            href="http://www.codeproject.com/script/profile/whos_who.asp?vt=arts&amp;id=65">here</A> 
+            to view Davide Calabro's online profile.</P></TD></TR></TBODY></TABLE><BR>
+      <TABLE cellPadding=4 width="100%" border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD width="100%">
+            <H2>Other popular Static Controls articles:</H2>
+            <UL>
+              <LI><A 
+              href="http://www.codeproject.com/staticctrl/digistring.asp">Static 
+              LED control - CDigiStatic 1.3</A><BR><SPAN class=smalltext>A 
+              control to display text or numbers with a 14 or 7 segment 
+              display.</SPAN>
+              <LI><A 
+              href="http://www.codeproject.com/staticctrl/staticcounter.asp">An 
+              LED Style display control and bar control</A><BR><SPAN 
+              class=smalltext>A control to display time, floating point numbers 
+              or integers using an LED digital-style display</SPAN>
+              <LI><A 
+              href="http://www.codeproject.com/staticctrl/digidisplay.asp">Digital 
+              Display CStatic control</A><BR><SPAN class=smalltext>An article on 
+              the Digital Display Control</SPAN>
+              <LI><A 
+              href="http://www.codeproject.com/staticctrl/CBitmapSlider.asp">CBitmapSlider</A><BR><SPAN 
+              class=smalltext>A CStatic derived class that has slider functions. 
+              It is skinned using bitmaps.</SPAN></LI></UL></TD>
+          <TD width=360>
+            <SCRIPT language=javascript>document.write("<IFRAME src=\"/script/admentor/include/ServeAdHTML.aspx?C=False&id=786\" border=0 frameborder=0 scrolling=no width=300 height=250></IFRAME>");</SCRIPT>
+          </TD>
+          <FORM action=/script/rating/code/app/insert_vote.asp 
+          method=post><INPUT type=hidden value=CClockST/staticctrl7/2/2002 
+          name=vote_name> <INPUT type=hidden value=/staticctrl/cclockst.asp 
+          name=goal> </TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=1 width="100%" bgColor=#ff9900 
+        border=0><TBODY>
+        <TR>
+          <TD width="100%">
+            <TABLE cellSpacing=0 cellPadding=4 width="100%" bgColor=#fbedbb 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD class=smalltext vAlign=center>[<A 
+                  href="http://www.codeproject.com/staticctrl/cclockst.asp#__top">Top</A>]</TD>
+                <TD vAlign=center noWrap align=right><I><B>Rate this Article 
+                  for us!</B></I>&nbsp;&nbsp;&nbsp;&nbsp; <I>Poor</I><INPUT 
+                  type=radio value=1 name=rate><INPUT type=radio value=2 
+                  name=rate><INPUT type=radio value=3 name=rate><INPUT 
+                  type=radio value=4 name=rate><INPUT type=radio value=5 
+                  name=rate><I>Excellent</I>&nbsp;&nbsp;<INPUT class=FormButton type=submit value=Vote> 
+                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></FORM>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD vAlign=top>
+            <CENTER>
+            <SCRIPT language=javascript>document.write("<a href=\"/script/admentor/admentorredir.asp?id=544&way=ban\" target=_blank><img src=\"/script/admentor/include/ServeAd.aspx?File=%2Fscript%2Fadmentor%2Fimages%2Fdundas%5FbluelogoCP%2Egif&C=False&id=544\" alt=\"\" border=0 width=120 height=60></a>");</SCRIPT>
+            <BR><FONT size=1><A 
+            href="http://www.codeproject.com/info/MediaKit/">Premium 
+            Sponsor</A></FONT></CENTER><BR></TD>
+          <TD vAlign=top noWrap align=middle><SPAN id=AdBanner5>
+            <SCRIPT language=javascript>document.write("<IFRAME src=\"/script/admentor/include/ServeAdHTML.aspx?C=False&id=770\" border=0 frameborder=0 scrolling=no width=468 height=60></IFRAME>");</SCRIPT>
+            </SPAN></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><A 
+name=__comments></A>
+<SCRIPT language=JavaScript>
+function MsgVoteForm(UserID, MsgID)
+{
+	document.write("Rate this message: ");
+	for (var i=1; i<=5;i++)
+		document.write("<a href='#xx" + MsgID.toString() + "xx' title='give this message a vote of " + i.toString() + "' onclick='RateMsg(" + UserID.toString() + ", " + MsgID.toString() + ", " + i.toString() + ")'><b>" + i.toString() + "</b></a> ");
+	document.write(" (out of 5)");
+}
+
+function RateMsg(userid, msgid, score) 
+{ 
+	open("/script/comments/vote.asp?js=1&user="+userid.toString()+"&msg="+msgid.toString()+"&score="+score.toString() ,"helpful","toolbar=no,resizable=yes,scrollbars=yes,directories=no,menubar=no,width=300,height=200");
+	return false;
+}
+</SCRIPT>
+
+<SCRIPT language=JavaScript>
+var Selected = "";
+var AdTime = new Date();
+document.writeln("<iframe name=AdFrame width=0 height=0 frameborder=0></IFRAME>");
+function SwitchMessage(elm)
+{
+
+	var now = new Date();
+	if (Number(now.getTime() - AdTime.getTime()) > Number(5000))
+	{
+		AdTime = now;
+		var loc = window.frames["AdFrame"];
+		if (loc) loc = loc.document;
+		if (loc) loc = loc.location;
+		if (loc) loc.replace('/script/comments/fetchAd.asp?cat=2');
+	}
+	
+	var elmref;
+	if (Selected != "")
+	{
+		elmref = eval("document.getElementById('" + Selected + "_h1')");
+		if (elmref) elmref.style.display = 'none';
+		elmref = eval("document.getElementById('" + Selected + "_h0')");
+		if (elmref) elmref.bgColor = '#FEF9E7';
+	}
+	if (Selected != elm.name) 
+	{
+		Selected = elm.name;
+		elmref = eval("document.getElementById('" + Selected + "_h1')");
+		if (elmref) 
+		{
+			if (elmref.style.display=='none') elmref.style.display='';
+			else elmref.style.display = 'none';
+		}
+		elmref = eval("document.getElementById('" + Selected + "_h0')");
+		if (elmref) 
+			elmref.bgColor = '#99CCFF';
+	}
+	else
+		Selected="";
+		
+	window.location = "#xx" + Selected + "xx";
+
+	return false;
+}
+
+</SCRIPT>
+
+<SCRIPT language=javascript event=onclick for=DynMessLink>
+return SwitchMessage(this);
+</SCRIPT>
+
+<TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#ff9900 border=0>
+  <TBODY>
+  <TR>
+    <TD width="100%">
+      <TABLE id=ForumTable cellSpacing=1 cellPadding=0 width="100%" 
+      bgColor=#ff9900 border=0>
+        <FORM 
+        action=/script/comments/app/do_filtermessages.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214 
+        method=post>
+        <TBODY>
+        <TR>
+          <TD>
+            <TABLE cellSpacing=0 cellPadding=3 width="100%" bgColor=white 
+            border=0>
+              <TBODY>
+              <TR bgColor=#fbedbb>
+                <TD class=smalltext noWrap><A 
+                  href="http://www.codeproject.com/script/comments/faq.asp"><IMG 
+                  height=16 src="CClockST_files/info.gif" width=16 
+                  align=absMiddle border=0> <B>FAQ</B></A>&nbsp;</TD>
+                <TD class=smalltext vAlign=top noWrap align=right>Noise level 
+                  <SELECT class=smalltext size=1 name=noise><OPTION 
+                    value=1>Very High</OPTION> <OPTION value=2>High</OPTION> 
+                    <OPTION value=3 selected>Medium</OPTION> <OPTION 
+                    value=4>Low</OPTION> <OPTION value=5>Very 
+                  low</OPTION></SELECT>&nbsp;&nbsp;</TD>
+                <TD class=smalltext vAlign=center noWrap align=right 
+                  colSpan=2><A 
+                  href="http://www.codeproject.com/script/comments/search_comments.asp?forumid=4214"><IMG 
+                  height=15 src="CClockST_files/search.gif" width=16 border=0> 
+                  Search comments</A> &nbsp;</TD>
+                <TD vAlign=top align=right><INPUT class=FormButton type=submit value="Set Options" name=submit></TD></TR>
+              <TR bgColor=#ff9900>
+                <TD width="100%">&nbsp;</TD>
+                <TD class=smalltext vAlign=top noWrap align=right>View <SELECT 
+                  class=smalltext size=1 name=expand><OPTION value=0>Normal 
+                    (slow)</OPTION> <OPTION value=2>Preview (slow)</OPTION> 
+                    <OPTION value=5 selected>Message View</OPTION> <OPTION 
+                    value=6>Topic View</OPTION> <OPTION value=1>Thread 
+                    View</OPTION> <OPTION value=3>Expanded (Supporters 
+                    only)</OPTION></SELECT>&nbsp;&nbsp;</TD>
+                <TD class=smalltext vAlign=top noWrap>Per page <SELECT 
+                  class=smalltext size=1 name=perpage><OPTION 
+                    value=10>10</OPTION> <OPTION value=25 selected>25</OPTION> 
+                    <OPTION value=50>50</OPTION></SELECT></TD>
+                <TD colSpan=2>&nbsp;</TD></TR></TBODY></TABLE></TD></TR></FORM>
+        <TR bgColor=#fbedbb>
+          <TD><A name=xx0xx></A>
+            <TABLE cellPadding=2 width="100%" bgColor=#fbedbb border=0>
+              <TBODY>
+              <TR>
+                <TD class=messagetitle><A class=HoverLink 
+                  title="Add a new message to the discussions" 
+                  href="http://www.codeproject.com/script/comments/user_new.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214" 
+                  target=_top name=HoverNL><B><IMG height=16 
+                  src="CClockST_files/admin_modify.gif" width=16 align=top 
+                  border=0> New thread</B></A></TD>
+                <TD class=messagetitle>Msgs 1 to 25 of 31 (Total: 31) (<A 
+                  href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;forumid=4214">Refresh</A>)</TD>
+                <TD noWrap align=right><FONT class=messagetitle><SPAN 
+                  class=HoverLink>First</SPAN> <SPAN class=HoverLink>Prev</SPAN> 
+                  <A class=HoverLink 
+                  href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;forumid=4214&amp;fr=26" 
+                  name=HoverNL>Next</A> <A class=HoverLink 
+                  href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;forumid=4214&amp;fr=26" 
+                  name=HoverNL>Last</A> </FONT></TD></TR></TBODY></TABLE></TD></TR>
+        <TR bgColor=white>
+          <TD>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=2 bgColor=#fbedbb border=0>
+                    <TBODY>
+                    <TR>
+                      <TD class=messagetitle width="100%">Subject&nbsp;</TD>
+                      <TD class=messagetitle noWrap width=140>Author&nbsp;</TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT 
+                    class=messagetitle>Date&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CClockST_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR id=848649_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx848649xx></A><IMG 
+                        src="CClockST_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;forumid=4214&amp;select=848649#xx848649xx" 
+                        name=848649><B>beginer</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=913558"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CClockST_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>dnqhung</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>2:26 13 Jun 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=848649_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="CClockST_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent>Sir.<BR>i have a created 
+                                project and i want to add it into my own 
+                                project(or its class) to use its 
+                                funtion<BR>please help me<BR>thank you in 
+                                advance 
+                                <BR><BR>dnqhung<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=848649">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=848649">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;tid=848649&amp;forumid=4214&amp;select=848649#xx848649xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?msg=848649#xx848649xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=848649"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=848649"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(913558,848649);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CClockST_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 src="CClockST_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=736999_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx736999xx></A><IMG 
+                        src="CClockST_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;forumid=4214&amp;select=736999#xx736999xx" 
+                        name=736999><B>Great Control!</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=203978"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CClockST_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>Christoph 
+                      Lederer</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>5:48 11 Feb 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=736999_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="CClockST_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent>Hi,<BR><BR>I really like 
+                                your clock-control, looks very professional! And 
+                                the button in your example project. Did you take 
+                                it from another Code Project Thread or did you 
+                                create it by yourself? 
+                                <BR><BR>____________________________<BR>Rule #1: 
+                                code doesn't lie!<BR>Rule #2: code never 
+                                lies!<BR>Rule #3: if the docs are incorrect 
+                                -&gt; take a look at the 
+                                code!<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=736999">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=736999">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;tid=736999&amp;forumid=4214&amp;select=736999#xx736999xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?msg=736999#xx736999xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=736999"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=736999"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(203978,736999);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CClockST_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR id=737004_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx737004xx></A><IMG height=1 
+                        src="CClockST_files/ind.gif" width=18><IMG 
+                        src="CClockST_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;forumid=4214&amp;select=737004#xx737004xx" 
+                        name=737004>Re: Great Control!</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=191"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CClockST_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle>Ravi 
+                        Bhavnani&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>5:56 11 Feb 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=737004_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="CClockST_files/ind.gif" 
+                        width=18><IMG src="CClockST_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Davide 
+                                is the author of several *very* cool button 
+                                classes! See <A 
+                                href="http://www.codeproject.com/script/Articles/list_articles.asp?userid=65"><U>this</U></A>[<A 
+                                title="New Window" 
+                                href="http://www.codeproject.com/script/Articles/list_articles.asp?userid=65" 
+                                target=_blank>^</A>] link. 
+                                <BR><BR>/ravi<BR><BR><SMALL>My new year's 
+                                resolution: 2048 x 1536<BR><A 
+                                href="http://www.ravib.com/"><U><FONT 
+                                color=blue>Home</FONT></U></A> | <A 
+                                href="http://www.codeproject.com/script/articles/list_articles.asp?userid=191"><U><FONT 
+                                color=blue>Articles</FONT></U></A> | <A 
+                                href="http://www.ravib.com/freeware.htm"><U><FONT 
+                                color=blue>Freeware</FONT></U></A></FONT> | <A 
+                                href="http://www.ravib.com/music"><U><FONT 
+                                color=blue>Music</FONT></U></A><BR>ravib@ravib.com</SMALL><BR>&nbsp;</TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=737004">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=737004">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;tid=736999&amp;forumid=4214&amp;select=737004#xx737004xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?msg=737004#xx737004xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=737004"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=737004"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(191,737004);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CClockST_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 src="CClockST_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=585373_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx585373xx></A><IMG 
+                        src="CClockST_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;forumid=4214&amp;select=585373#xx585373xx" 
+                        name=585373><B>Assistance needed</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=470722"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CClockST_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>crystalyd</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>5:18 19 Aug 
+                        '03</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=585373_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="CClockST_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Why is 
+                                it I am face with an error like 
+                                this?<BR><BR>LINK : fatal error LNK1104: cannot 
+                                open file "uafxcw.lib"<BR>Error executing 
+                                link.exe.<BR><BR>Where is the file "uafxcw.lib"? 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=585373">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=585373">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;tid=585373&amp;forumid=4214&amp;select=585373#xx585373xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?msg=585373#xx585373xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=585373"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=585373"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(470722,585373);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CClockST_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR id=585389_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx585389xx></A><IMG height=1 
+                        src="CClockST_files/ind.gif" width=18><IMG 
+                        src="CClockST_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;forumid=4214&amp;select=585389#xx585389xx" 
+                        name=585389>Re: Assistance needed</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=65"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CClockST_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle>Davide 
+                        Calabro&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>5:29 19 Aug 
+                        '03&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=585389_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="CClockST_files/ind.gif" 
+                        width=18><IMG src="CClockST_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Select 
+                                a non-Unicode build. 
+                                <BR><BR>SoftechSoftware<BR>Davide 
+                                Calabro'<BR>davide_calabro@yahoo.com<BR>http://www.softechsoftware.it<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=585389">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=585389">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;tid=585373&amp;forumid=4214&amp;select=585389#xx585389xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?msg=585389#xx585389xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=585389"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=585389"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(65,585389);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CClockST_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR id=586382_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx586382xx></A><IMG height=1 
+                        src="CClockST_files/ind.gif" width=36><IMG 
+                        src="CClockST_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;forumid=4214&amp;select=586382#xx586382xx" 
+                        name=586382>Re: Assistance needed</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=470722"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CClockST_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>crystalyd&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>3:49 20 Aug 
+                        '03&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=586382_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="CClockST_files/ind.gif" 
+                        width=36><IMG src="CClockST_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>What 
+                                would a non-Unicode build be? Could you please 
+                                elaborate as I am really new to VC++ 
+                                programming.<BR><BR>Thanks 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=586382">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=586382">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;tid=585373&amp;forumid=4214&amp;select=586382#xx586382xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?msg=586382#xx586382xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=586382"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=586382"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(470722,586382);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CClockST_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR id=586495_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx586495xx></A><IMG height=1 
+                        src="CClockST_files/ind.gif" width=54><IMG 
+                        src="CClockST_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;forumid=4214&amp;select=586495#xx586495xx" 
+                        name=586495>Re: Assistance needed</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=65"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CClockST_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle>Davide 
+                        Calabro&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>5:52 20 Aug 
+                        '03&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=586495_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="CClockST_files/ind.gif" 
+                        width=54><IMG src="CClockST_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent>Build-&gt;Set active 
+                                configuration<BR><BR><BR>SoftechSoftware<BR>Davide 
+                                Calabro'<BR>davide_calabro@yahoo.com<BR>http://www.softechsoftware.it<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=586495">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=586495">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;tid=585373&amp;forumid=4214&amp;select=586495#xx586495xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?msg=586495#xx586495xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=586495"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=586495"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(65,586495);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CClockST_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR id=587550_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx587550xx></A><IMG height=1 
+                        src="CClockST_files/ind.gif" width=72><IMG 
+                        src="CClockST_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;forumid=4214&amp;select=587550#xx587550xx" 
+                        name=587550>Re: Assistance needed</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=470722"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CClockST_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>crystalyd&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>22:09 20 Aug 
+                        '03&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=587550_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="CClockST_files/ind.gif" 
+                        width=72><IMG src="CClockST_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Thanks 
+                                alot... <IMG 
+                                src="CClockST_files/smiley_biggrin.gif" 
+                                align=absMiddle> <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=587550">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=587550">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;tid=585373&amp;forumid=4214&amp;select=587550#xx587550xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?msg=587550#xx587550xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=587550"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=587550"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(470722,587550);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CClockST_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR id=832264_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx832264xx></A><IMG height=1 
+                        src="CClockST_files/ind.gif" width=18><IMG 
+                        src="CClockST_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;forumid=4214&amp;select=832264#xx832264xx" 
+                        name=832264>Re: Assistance needed</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=591095"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CClockST_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>ccf&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>9:36 25 May 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=832264_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="CClockST_files/ind.gif" 
+                        width=18><IMG src="CClockST_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>I have 
+                                got a LINK error when compile:<BR><BR>LINK : 
+                                fatal error LNK1104: cannot open file 
+                                "uafxcw.lib"<BR><BR>Could you tell me why? 
+                                <BR><BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=832264">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=832264">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;tid=585373&amp;forumid=4214&amp;select=832264#xx832264xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?msg=832264#xx832264xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=832264"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=832264"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(591095,832264);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CClockST_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 src="CClockST_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=562539_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx562539xx></A><IMG 
+                        src="CClockST_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;forumid=4214&amp;select=562539#xx562539xx" 
+                        name=562539><B>CStatic ?? help pls !</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=494350"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CClockST_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>TontOnduWeb</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>1:29 25 Jul 
+                        '03</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=562539_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="CClockST_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Start' 
+                                : is not a member of 'CStatic'<BR>e:\program 
+                                files\microsoft visual 
+                                studio\vc98\mfc\include\afxwin.h(2676) : see 
+                                declaration of 'CStatic'<BR><BR>my code is 
+                                :<BR><BR>m_Clock.SubclassDlgItem(IDC_CLOCKFRAME, 
+                                this);<BR>m_Clock.Start(IDB_CLOCKST_PANE, 
+                                IDB_CLOCKST_BIG, IDB_CLOCKST_SMALL);<BR><BR>in 
+                                class 
+                                Dlg::OnInitDialog()......<BR><BR><BR>thanks for 
+                                more <IMG src="CClockST_files/smiley_smile.gif" 
+                                align=absMiddle><IMG 
+                                src="CClockST_files/smiley_confused.gif" 
+                                align=absMiddle> <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=562539">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=562539">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;tid=562539&amp;forumid=4214&amp;select=562539#xx562539xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?msg=562539#xx562539xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=562539"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=562539"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(494350,562539);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CClockST_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR id=562572_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx562572xx></A><IMG height=1 
+                        src="CClockST_files/ind.gif" width=18><IMG 
+                        src="CClockST_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;forumid=4214&amp;select=562572#xx562572xx" 
+                        name=562572>Re: CStatic ?? help pls !</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=65"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CClockST_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle>Davide 
+                        Calabro&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>2:58 25 Jul 
+                        '03&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=562572_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="CClockST_files/ind.gif" 
+                        width=18><IMG src="CClockST_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Your 
+                                m_Clock member must be of type CClockST and not 
+                                CStatic ! <BR><BR>SoftechSoftware<BR>Davide 
+                                Calabro'<BR>davide_calabro@yahoo.com<BR>http://www.softechsoftware.it<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=562572">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=562572">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;tid=562539&amp;forumid=4214&amp;select=562572#xx562572xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?msg=562572#xx562572xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=562572"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=562572"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(65,562572);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CClockST_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR id=562584_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx562584xx></A><IMG height=1 
+                        src="CClockST_files/ind.gif" width=36><IMG 
+                        src="CClockST_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;forumid=4214&amp;select=562584#xx562584xx" 
+                        name=562584>Re: CStatic ?? help pls !</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=494350"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CClockST_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>TontOnduWeb&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>3:33 25 Jul 
+                        '03&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=562584_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="CClockST_files/ind.gif" 
+                        width=36><IMG src="CClockST_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Sure, i 
+                                saw the mistake only five minutes later <IMG 
+                                src="CClockST_files/smiley_smile.gif" 
+                                align=absMiddle><BR><BR><BR>ThankS for the 
+                                response [speed : 500.000.000 Mbp/s]<BR><BR>=)) 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=562584">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=562584">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;tid=562539&amp;forumid=4214&amp;select=562584#xx562584xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?msg=562584#xx562584xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=562584"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=562584"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(494350,562584);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CClockST_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 src="CClockST_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=531887_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx531887xx></A><IMG 
+                        src="CClockST_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;forumid=4214&amp;select=531887#xx531887xx" 
+                        name=531887><B>Stop Watch Option Wanted</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=57510"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CClockST_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>bachi</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>1:55 23 Jun 
+                        '03</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=531887_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="CClockST_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>:-DHi 
+                                David..<BR><BR>The Program is excellent. Please 
+                                include the StopWatch Option in the Next 
+                                release. This option will be more 
+                                useful.<BR><BR>Bye 
+                                Bye<BR><BR>Bhasker<BR><BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=531887">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=531887">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;tid=531887&amp;forumid=4214&amp;select=531887#xx531887xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?msg=531887#xx531887xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=531887"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=531887"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(57510,531887);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CClockST_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR id=562573_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx562573xx></A><IMG height=1 
+                        src="CClockST_files/ind.gif" width=18><IMG 
+                        src="CClockST_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;forumid=4214&amp;select=562573#xx562573xx" 
+                        name=562573>Re: Stop Watch Option Wanted</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=65"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CClockST_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle>Davide 
+                        Calabro&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>2:59 25 Jul 
+                        '03&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=562573_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="CClockST_files/ind.gif" 
+                        width=18><IMG src="CClockST_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>What do 
+                                you expect calling StopWatch ?!? 
+                                <BR><BR>SoftechSoftware<BR>Davide 
+                                Calabro'<BR>davide_calabro@yahoo.com<BR>http://www.softechsoftware.it<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=562573">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=562573">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;tid=531887&amp;forumid=4214&amp;select=562573#xx562573xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?msg=562573#xx562573xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=562573"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=562573"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(65,562573);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CClockST_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR id=562927_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx562927xx></A><IMG height=1 
+                        src="CClockST_files/ind.gif" width=36><IMG 
+                        src="CClockST_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;forumid=4214&amp;select=562927#xx562927xx" 
+                        name=562927>Re: Stop Watch Option Wanted</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=57510"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CClockST_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>bachi&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>9:36 25 Jul 
+                        '03&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=562927_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="CClockST_files/ind.gif" 
+                        width=36><IMG src="CClockST_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Its 
+                                like the one used in the Olympics. Its to 
+                                measure the time for a given operation 
+                                :<BR><BR>When we say start the Timer Should 
+                                Start Like 0:00:00<BR>When we say stop this 
+                                should give the time than was<BR>taken before 
+                                giving the stop option:<BR><BR>I hope u got the 
+                                requirement<BR><IMG 
+                                src="CClockST_files/smiley_tongue.gif" 
+                                align=absMiddle> <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=562927">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=562927">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;tid=531887&amp;forumid=4214&amp;select=562927#xx562927xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?msg=562927#xx562927xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=562927"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=562927"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(57510,562927);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CClockST_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR id=562988_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx562988xx></A><IMG height=1 
+                        src="CClockST_files/ind.gif" width=54><IMG 
+                        src="CClockST_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;forumid=4214&amp;select=562988#xx562988xx" 
+                        name=562988>Re: Stop Watch Option Wanted</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=65"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CClockST_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle>Davide 
+                        Calabro&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>10:15 25 Jul 
+                        '03&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=562988_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="CClockST_files/ind.gif" 
+                        width=54><IMG src="CClockST_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Sorry, 
+                                but this control is a clock, not a chronometer 
+                                <IMG src="CClockST_files/smiley_frown.gif" 
+                                align=absMiddle> 
+                                <BR><BR>SoftechSoftware<BR>Davide 
+                                Calabro'<BR>davide_calabro@yahoo.com<BR>http://www.softechsoftware.it<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=562988">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=562988">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;tid=531887&amp;forumid=4214&amp;select=562988#xx562988xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?msg=562988#xx562988xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=562988"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=562988"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(65,562988);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CClockST_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 src="CClockST_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=503488_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx503488xx></A><IMG 
+                        src="CClockST_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;forumid=4214&amp;select=503488#xx503488xx" 
+                        name=503488><B>invisible</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=95463"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CClockST_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>jiangyuyong</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>4:16 22 May 
+                        '03</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=503488_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="CClockST_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>on some 
+                                machine,it works well<BR>but on on others ,the 
+                                clock invisible <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=503488">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=503488">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;tid=503488&amp;forumid=4214&amp;select=503488#xx503488xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?msg=503488#xx503488xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=503488"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=503488"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(95463,503488);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CClockST_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 src="CClockST_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=395671_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx395671xx></A><IMG 
+                        src="CClockST_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;forumid=4214&amp;select=395671#xx395671xx" 
+                        name=395671><B>error C2065: 'RT_GROUP_BITMAP' : 
+                        undeclared identifier</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=95463"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CClockST_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>jiangyuyong</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>20:12 22 Jan 
+                        '03</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=395671_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="CClockST_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>when i 
+                                used it in my program,this erro happened<IMG 
+                                src="CClockST_files/smiley_confused.gif" 
+                                align=absMiddle><BR>where RT_GROUP_BITMAP,I 've 
+                                downed SDK PlatForm and VS6 sp5 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=395671">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=395671">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;tid=395671&amp;forumid=4214&amp;select=395671#xx395671xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?msg=395671#xx395671xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=395671"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=395671"><I>Delete</I></A>]<BR>Score: 
+                                1.5 (2 votes).
+                                <SCRIPT language=Javascript>MsgVoteForm(95463,395671);</SCRIPT>
+                                 
+                    </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CClockST_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR id=395743_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx395743xx></A><IMG height=1 
+                        src="CClockST_files/ind.gif" width=18><IMG 
+                        src="CClockST_files/news_suss.gif" 
+                      align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle style="COLOR: #aaaaaa" 
+                        width="100%"><A class=messagetitle id=DynMessLink 
+                        style="COLOR: #aaaaaa" 
+                        href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;forumid=4214&amp;select=395743#xx395743xx" 
+                        name=395743>mistake</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=95463"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CClockST_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle 
+                        style="COLOR: #aaaaaa">jiangyuyong&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle 
+                        style="COLOR: #aaaaaa">23:07 22 Jan 
+                    '03&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=395743_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="CClockST_files/ind.gif" 
+                        width=18><IMG src="CClockST_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>not 
+                                'RT_GROUP_BITMAP' but 'RT__BITMAP' <IMG 
+                                src="CClockST_files/smiley_biggrin.gif" 
+                                align=absMiddle> <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=395743">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=395743">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;tid=395671&amp;forumid=4214&amp;select=395743#xx395743xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?msg=395743#xx395743xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=395743"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=395743"><I>Delete</I></A>]<BR>Score: 
+                                2.7 (3 votes).
+                                <SCRIPT language=Javascript>MsgVoteForm(95463,395743);</SCRIPT>
+                                 
+                    </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CClockST_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 src="CClockST_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=309938_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx309938xx></A><IMG 
+                        src="CClockST_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;forumid=4214&amp;select=309938#xx309938xx" 
+                        name=309938><B>Clock Size</B></A></TD>
+                      <TD vAlign=bottom><IMG height=13 
+                        alt="Unconfirmed/Anonymous posting" 
+                        src="CClockST_files/usersuss.gif" width=15></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>Anonymous</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>1:34 16 Oct 
+                        '02</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=309938_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="CClockST_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Great 
+                                program...<BR>But how to adjust the clock 
+                                size?<BR>Do i have to change the 
+                                bitmap?<BR>Thanks very 
+                                much...<BR><BR><BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=309938">Reply</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;tid=309938&amp;forumid=4214&amp;select=309938#xx309938xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?msg=309938#xx309938xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=309938"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=309938"><I>Delete</I></A>]<BR>Score: 
+                                2.0 (1 vote).
+                                <SCRIPT language=Javascript>MsgVoteForm(0,309938);</SCRIPT>
+                                 
+                    </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CClockST_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR id=309970_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx309970xx></A><IMG height=1 
+                        src="CClockST_files/ind.gif" width=18><IMG 
+                        src="CClockST_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;forumid=4214&amp;select=309970#xx309970xx" 
+                        name=309970>Re: Clock Size</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=65"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CClockST_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle>Davide 
+                        Calabro&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>2:59 16 Oct 
+                        '02&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=309970_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="CClockST_files/ind.gif" 
+                        width=18><IMG src="CClockST_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent>CClockST was designed to be 
+                                a fixed-size control. You have to change the 
+                                bitmaps of course and also all the 
+                                <CODE>#define</CODE>s inside the class for the 
+                                positions.<BR><BR><BR>SoftechSoftware<BR>Davide 
+                                Calabro'<BR>davide_calabro@yahoo.com<BR>http://www.softechsoftware.it<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=309970">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=309970">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;tid=309938&amp;forumid=4214&amp;select=309970#xx309970xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?msg=309970#xx309970xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=309970"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=309970"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(65,309970);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CClockST_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 src="CClockST_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=229695_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx229695xx></A><IMG 
+                        src="CClockST_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;forumid=4214&amp;select=229695#xx229695xx" 
+                        name=229695><B>GREAT, but a little problem</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=8110"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CClockST_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle><B>Martin 
+                        Schneider</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>10:30 9 Jul 
+                        '02</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=229695_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="CClockST_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>I 
+                                followed you instructions above to implement the 
+                                clock in my App.<BR>After Compiling I run my 
+                                App. The static field for the clock was 
+                                <BR>resizing (ok.) but all what I can see is an 
+                                empty grey field !!!!<IMG 
+                                src="CClockST_files/smiley_confused.gif" 
+                                align=absMiddle><BR><BR>The Debug-Window 
+                                outputs:<BR>...after Start clock: thrClock: 
+                                Enter<BR>...after Stop clock: thrClock: 
+                                Exit<BR><BR>Please, Can you help me 
+                                ???<BR>Thanks in 
+                                advance,<BR>Martin<BR><BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=229695">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=229695">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;tid=229695&amp;forumid=4214&amp;select=229695#xx229695xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?msg=229695#xx229695xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=229695"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=229695"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(8110,229695);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CClockST_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR id=229801_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx229801xx></A><IMG height=1 
+                        src="CClockST_files/ind.gif" width=18><IMG 
+                        src="CClockST_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;forumid=4214&amp;select=229801#xx229801xx" 
+                        name=229801>Re: GREAT, but a little problem</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=65"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CClockST_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle>Davide 
+                        Calabro&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>12:21 9 Jul 
+                        '02&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=229801_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="CClockST_files/ind.gif" 
+                        width=18><IMG src="CClockST_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>I never 
+                                noticed this problem, except when the bitmaps 
+                                can't be loaded (but I think this isn't the 
+                                case...). Could you please send me a little 
+                                application showing the problem? Have you tried 
+                                to re-compile the sample application? Does it 
+                                work?<BR><BR>Please take me informed, 
+                                <BR><BR>SoftechSoftware<BR>Davide 
+                                Calabro'<BR>davide_calabro@yahoo.com<BR>http://www.softechsoftware.it<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=229801">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=229801">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;tid=229695&amp;forumid=4214&amp;select=229801#xx229801xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?msg=229801#xx229801xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=229801"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=229801"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(65,229801);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CClockST_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR id=230297_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx230297xx></A><IMG height=1 
+                        src="CClockST_files/ind.gif" width=18><IMG 
+                        src="CClockST_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;forumid=4214&amp;select=230297#xx230297xx" 
+                        name=230297>Here is the fix</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=65"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CClockST_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle>Davide 
+                        Calabro&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>3:45 10 Jul 
+                        '02&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=230297_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="CClockST_files/ind.gif" 
+                        width=18><IMG src="CClockST_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>At the 
+                                very beginning of the CClockST::OnPaint method 
+                                add the<BR>following lines:<BR><BR>// If not 
+                                started<BR>if (m_thrParam.hThrHandle == NULL) 
+                                <BR>{<BR>CStatic::OnPaint();<BR>return;<BR>} // 
+                                if<BR><BR>A fixed version of the class will be 
+                                shortly released <IMG 
+                                src="CClockST_files/smiley_smile.gif" 
+                                align=absMiddle> 
+                                <BR><BR><BR>SoftechSoftware<BR>Davide 
+                                Calabro'<BR>davide_calabro@yahoo.com<BR>http://www.softechsoftware.it<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=230297">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=230297">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;tid=229695&amp;forumid=4214&amp;select=230297#xx230297xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?msg=230297#xx230297xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=230297"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=230297"><I>Delete</I></A>]<BR>Score: 
+                                2.0 (1 vote).
+                                <SCRIPT language=Javascript>MsgVoteForm(65,230297);</SCRIPT>
+                                 
+                    </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CClockST_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR id=230321_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx230321xx></A><IMG height=1 
+                        src="CClockST_files/ind.gif" width=36><IMG 
+                        src="CClockST_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;forumid=4214&amp;select=230321#xx230321xx" 
+                        name=230321>Re: Here is the fix</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=8110"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CClockST_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle>Martin 
+                        Schneider&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>4:49 10 Jul 
+                        '02&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=230321_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="CClockST_files/ind.gif" 
+                        width=36><IMG src="CClockST_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>thanks 
+                                Davide, now it works !!!!<BR><BR>Rgrds<IMG 
+                                src="CClockST_files/smiley_wink.gif" 
+                                align=absMiddle> <BR>Martin 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=230321">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=230321">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;tid=229695&amp;forumid=4214&amp;select=230321#xx230321xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/staticctrl/cclockst.asp?msg=230321#xx230321xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=230321"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/staticctrl/cclockst.asp&amp;df=100&amp;forumid=4214&amp;select=230321"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(8110,230321);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CClockST_files/t.gif" width=1 
+                border=0></TD></TR></TBODY></TABLE></TD></TR>
+        <TR bgColor=#fbedbb>
+          <TD>
+            <TABLE cellPadding=2 width="100%">
+              <TBODY>
+              <TR>
+                <TD class=messagetitle>Last Visit: 23:44 Wednesday 22nd 
+                  September, 2004</TD>
+                <TD noWrap align=right><FONT class=messagetitle><SPAN 
+                  class=HoverLink>First</SPAN> <SPAN class=HoverLink>Prev</SPAN> 
+                  <A class=HoverLink 
+                  href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;forumid=4214&amp;fr=26" 
+                  name=HoverNL>Next</A> <A class=HoverLink 
+                  href="http://www.codeproject.com/staticctrl/cclockst.asp?df=100&amp;forumid=4214&amp;fr=26" 
+                  name=HoverNL>Last</A> 
+      </FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><BR>
+<TABLE cellSpacing=5 width="100%">
+  <TBODY>
+  <TR vAlign=top>
+    <TD><FONT style="FONT-SIZE: 7pt" size=1><A 
+      href="http://www.codeproject.com/?cat=1">All Topics</A>, <A 
+      href="http://www.codeproject.com/?cat=2">MFC / C++</A> &gt;&gt; <A 
+      href="http://www.codeproject.com/staticctrl/">Static Controls</A> &gt;&gt; 
+      <A href="http://www.codeproject.com/staticctrl/#Custom+Controls">Custom 
+      Controls</A> <BR>Updated: 13 Jul 2002 </FONT></TD>
+    <TD align=right><FONT style="FONT-SIZE: 7pt" size=1>Article content 
+      copyright Davide Calabro, 2002<BR>everything else Copyright © <A 
+      href="mailto:webmaster@codeproject.com">CodeProject</A>, 1999-2004</A>. 
+      <BR><A href="http://www.codeproject.com/info/MediaKit">Advertise on The 
+      Code Project</A> | <A 
+      href="http://www.codeproject.com/info/privacy.asp">Privacy</A> 
+  </FONT></TD></TR></TBODY></TABLE><BR>
+<CENTER>
+<TABLE cellSpacing=0 cellPadding=0 width="95%" border=0>
+  <TBODY>
+  <TR>
+    <TD bgColor=#ff9900 height=1><IMG height=1 
+    src="CClockST_files/space.gif"></TD></TR>
+  <TR>
+    <TD align=middle><FONT size=1><A 
+      href="http://www.codeproject.com/redir.asp?id=235">MSDN Communities</A> | 
+      <A href="http://aspalliance.com/">ASPAlliance</A> • <A 
+      href="http://www.developerfusion.com/">Developer Fusion</A> • <A 
+      href="http://www.devguru.com/">DevGuru</A> • <A 
+      href="http://www.programmersheaven.com/">Programmers Heaven</A> • <A 
+      href="http://www.planet-source-code.com/">Planet Source Code</A> • <A 
+      href="http://www.resourceindex.com/">Resource Index</A> • <A 
+      href="http://www.tek-tips.com/">Tek-Tips Forums</A> • <A 
+      href="http://www.topxml.com/">What is XML?</A> • <A 
+      href="http://www.visualbuilder.com/">VisualBuilder</A> • <A 
+      href="http://www.zvon.org/">ZVON</A> • <A 
+      href="http://www.codeproject.com/redir.asp?id=169">Search Us!</A> 
+    </FONT></TD></TR></TBODY></TABLE></CENTER></BODY></HTML>

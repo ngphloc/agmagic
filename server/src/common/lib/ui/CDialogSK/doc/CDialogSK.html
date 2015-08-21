@@ -1,0 +1,2122 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0047)http://www.codeproject.com/dialog/cdialogsk.asp -->
+<HTML><HEAD><TITLE>The Code Project - CDialogSK - A Skinnable Dialog Class - Dialog and Windows</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META http-equiv=Reply-to content=mailto:webmaster@codeproject.com>
+<META content="Free source code and tutorials for Windows developers." 
+name=Description>
+<META 
+content="Free source code, Dialog and Windows, Visual C++, MFC, Windows, Transparent, Skin, Win32, CDialog" 
+name=keywords>
+<META 
+content="Article content copyright abhinaba, 2003, everthing else Copyright © CodeProject, 1999-2004, All Rights Reserved." 
+name=Copyright><LINK href="/favicon.ico" type=image/ico rel=icon><LINK 
+href="/favicon.ico" rel="SHORTCUT ICON"><LINK href="CDialogSK_files/global.css" 
+type=text/css rel=stylesheet>
+<SCRIPT language=javascript src="CDialogSK_files/oncopy.js"></SCRIPT>
+
+<META content="MSHTML 6.00.3790.0" name=GENERATOR></HEAD>
+<BODY oncopy="return copyCode();" text=black vLink=purple aLink=red link=blue 
+bgColor=white leftMargin=3 topMargin=3>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#ff9900 border=0>
+  <TBODY>
+  <TR>
+    <TD width="100%">
+      <TABLE cellSpacing=1 cellPadding=0 width="100%" bgColor=#ff9900 
+        border=0><TBODY>
+        <TR>
+          <TD vAlign=top><A href="http://www.codeproject.com/"><IMG height=72 
+            alt="The Code Project" src="CDialogSK_files/logo225x72.gif" 
+            width=225 border=0></A></TD>
+          <TD align=right><SPAN id=AdBanner4><A 
+            href="http://www.codeproject.com/script/admentor/ads.asp"><IMG 
+            height=60 alt="View our advertisers" 
+            src="CDialogSK_files/sponsors.gif" width=20 border=1></A>
+            <SCRIPT language=javascript>document.write("<a href=\"/script/admentor/admentorredir.asp?id=412&way=ban\" target=_blank><img src=\"/script/admentor/include/ServeAd.aspx?File=%2Fscript%2Fadmentor%2Fimages%2Fbanner%2D468x60%2Dtallpdf%2Egif&C=False&id=412\" alt=\"Generating PDF was never this easy.\" border=0 width=486 height=60></a>");</SCRIPT>
+            <A href="http://www.codeproject.com/info/mediakit"><IMG height=60 
+            alt="Advertise on the CodeProject" 
+            src="CDialogSK_files/advertise.gif" width=20 
+        border=1></A></SPAN></TD></TR>
+        <TR>
+          <TD bgColor=#fbedbb colSpan=2>
+            <TABLE cellPadding=3 width="100%" bgColor=#fbedbb border=0>
+              <TBODY>
+              <TR vAlign=top>
+                <TD width="100%"><FONT style="FONT-SIZE: 8pt"><A 
+                  href="http://www.codeproject.com/?cat=1">All Topics</A>, <A 
+                  href="http://www.codeproject.com/?cat=2">MFC / C++</A> 
+                  &gt;&gt; <A href="http://www.codeproject.com/dialog/">Dialog 
+                  and Windows</A> &gt;&gt; <A 
+                  href="http://www.codeproject.com/dialog/#Skins+%26+Advanced+UI">Skins 
+                  &amp; Advanced UI</A></FONT><BR><BR><B><FONT 
+                  style="FONT-SIZE: 16pt" size=4>CDialogSK - A Skinnable Dialog 
+                  Class</FONT></B><BR><B>By <A 
+                  href="http://www.codeproject.com/script/profile/whos_who.asp?id=450325">abhinaba</A> 
+                  </B><BR><BR><FONT style="FONT-SIZE: 9pt">This article 
+                  discusses the CDialogSK class that extends the CDialog MFC 
+                  class and can be used to create dialogs that can be 
+                  skinned.&nbsp;</FONT> </TD>
+                <TD vAlign=top align=right>
+                  <TABLE cellSpacing=0 cellPadding=1 width=200 border=0>
+                    <TBODY>
+                    <TR vAlign=top>
+                      <TD>&nbsp;</TD>
+                      <TD class=SmallText>C++ (VC6)<BR>Windows (WinXP, Win2K, 
+                        Win2003)<BR>MFC, Win32, VS<BR>Dev</TD></TR>
+                    <TR>
+                      <TD>&nbsp;</TD>
+                      <TD class=SmallText noWrap>Posted 8 Jul 2003</TD></TR>
+                    <TR vAlign=top>
+                      <TD><IMG height=16 src="CDialogSK_files/hlp.gif" 
+                        width=16></TD>
+                      <TD class=SmallText noWrap><A 
+                        href="http://www.codeproject.com/script/Articles/list_articles.asp?userid=450325">Articles 
+                        by this author</A></TD></TR>
+                    <TR vAlign=top>
+                      <TD></TD>
+                      <TD class=SmallText noWrap><B>27,196</B> 
+                    views</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD colSpan=2>
+            <TABLE id=tblSiteToolbar cellSpacing=0 cellPadding=1 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <FORM name=Search action=/info/search.asp method=post>
+                <TD vAlign=top align=left width="100%">
+                  <TABLE cellSpacing=0 cellPadding=1 border=0>
+                    <TBODY>
+                    <TR vAlign=center>
+                      <TD class=smallText><B><FONT 
+                        color=white>Search:</FONT></B></TD>
+                      <TD class=navbar noWrap><INPUT class=smallText 
+                        maxLength=255 size=18 name=target></TD>
+                      <TD vAlign=top><SELECT class=smallText name=st> 
+                          <OPTION value=kw selected>Articles</OPTION> <OPTION 
+                          value=au>Authors</OPTION></SELECT></TD>
+                      <TD><INPUT class=formButton type=submit value=Go></TD></TR></TBODY></TABLE></TD></FORM>
+                <TD>
+                  <DIV id=MenuPos 
+                  style="WIDTH: 380px; POSITION: relative; HEIGHT: 20px">
+                  <TABLE height=20 cellSpacing=0 cellPadding=2 width=375>
+                    <TBODY>
+                    <TR>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/info/faq.asp">Help!</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/info/latest.asp">Articles</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/script/comments/forums.asp">Message 
+                        Boards</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/store/">StoreFront</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/lounge.asp">Lounge</A></TD></TR></TBODY></TABLE></DIV></TD></TR></TBODY></TABLE>
+            <SCRIPT type=text/javascript>function Go(){return}</SCRIPT>
+
+            <SCRIPT src="CDialogSK_files/cpmenu_var.js" 
+            type=text/javascript></SCRIPT>
+
+            <SCRIPT src="CDialogSK_files/menu10_com.js" 
+            type=text/javascript></SCRIPT>
+          </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=1 border=0>
+  <TBODY>
+  <TR vAlign=top>
+    <TD vAlign=top bgColor=#fbedbb rowSpan=2>
+      <TABLE cellSpacing=0 cellPadding=0 border=0>
+        <SCRIPT language=javascript>
+function ErrorHandle() {}
+window.onerror = ErrorHandle;
+
+function OnNLSubmit(option)
+{
+	if (option=="up")
+		document.subForm.action = "/script/profile/modify.asp?ct=%2Fdialog%2Fcdialogsk%2Easp";
+	else if (option=="in")
+		document.subForm.action = "/script/profile/process_logon.asp?ct=%2Fdialog%2Fcdialogsk%2Easp";
+	document.subForm.submit();
+	return true;
+}
+</SCRIPT>
+
+        <TBODY>
+        <TR>
+          <TD>
+            <TABLE cellSpacing=3 cellPadding=0>
+              <TBODY>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD class=InfoBarHeader>Toolbox</TD></TR>
+              <TR>
+                <TD bgColor=black colSpan=2><IMG height=1 
+                  src="CDialogSK_files/space.gif" width=1></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="CDialogSK_files/sitebuild_icon.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/submit/ReportProblem.asp?GUID=CDialogSK%2Fdialog7%2F8%2F2003">Broken 
+                  Article?</A></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="CDialogSK_files/support_icon.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/store/"><B>VS.NET 2003 from 
+                  $899</B></A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="CDialogSK_files/support_icon.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/store/"><B>MSDN Univ. from 
+                  $1950</B></A></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="CDialogSK_files/print.gif" 
+width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/dialog/cdialogsk.asp?print=true" 
+                  target=_print>Print version</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="CDialogSK_files/link.gif" width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/add_bookmark.asp?t=0&amp;ct=%2Fdialog%2Fcdialogsk%2Easp&amp;guid=CDialogSK%2Fdialog7%2F8%2F2003">Bookmark 
+                  this</A></TD></TR></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="CDialogSK_files/mail.gif" width=16></TD>
+                <TD class=SmallText><A 
+                  href="http://www.codeproject.com/script/recommend/form.asp?guid=CDialogSK%2Fdialog7%2F8%2F2003">Send 
+                  to a friend</A></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD class=InfoBarHeader>My Profile</TD></TR>
+              <TR>
+                <TD bgColor=black colSpan=2><IMG height=1 
+                  src="CDialogSK_files/space.gif" width=1></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="CDialogSK_files/profile_small.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/modify.asp?ct=/dialog/cdialogsk.asp">My 
+                  Settings</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="CDialogSK_files/submit_small.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/articles/list_articles.asp?userid=649009">My 
+                  Articles</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="CDialogSK_files/bookmarks.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/bookmark_list.asp">My 
+                  Bookmarks</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="CDialogSK_files/logoff_small.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/logoff.asp?ct=/dialog/cdialogsk.asp">Sign 
+                  out</A></TD></TR>
+              <TR>
+                <TD bgColor=black colSpan=2><IMG height=1 
+                  src="CDialogSK_files/space.gif" 
+        width=1></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD>&nbsp;</TD></TR>
+        <TR>
+          <TD>
+            <CENTER>
+            <SCRIPT language=javascript>document.write("<a href=\"/script/admentor/admentorredir.asp?id=709&way=ban\" target=_blank><img src=\"/script/admentor/include/ServeAd.aspx?File=%2Fscript%2Fadmentor%2Fimages%2FElementoolsky%2Egif&C=False&id=709\" alt=\"\" border=0 width=120 height=500></a>");</SCRIPT>
+            <BR></CENTER><BR></TD></TR></TBODY></TABLE></TD>
+    <TD width=5 rowSpan=2><IMG height=1 src="CDialogSK_files/space.gif" 
+      width=5> </TD>
+    <TD align=right width="100%" bgColor=white>
+      <TABLE width="100%">
+        <TBODY>
+        <TR vAlign=top>
+          <TD class=smallText vAlign=top noWrap></TD>
+          <TD noWrap align=right><A name=__top></A>
+            <TABLE>
+              <TBODY>
+              <TR>
+                <TD class=smallText align=right>22 members have rated this 
+                  article. Result:</TD>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=0 border=2>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=5 src="CDialogSK_files/red.gif" width=20 
+                        border=0></TD>
+                      <TD><IMG height=5 src="CDialogSK_files/red.gif" width=20 
+                        border=0></TD>
+                      <TD><IMG height=5 src="CDialogSK_files/red.gif" width=20 
+                        border=0></TD>
+                      <TD><IMG height=5 src="CDialogSK_files/red.gif" width=13 
+                        border=0><IMG height=5 src="CDialogSK_files/white.gif" 
+                        width=7 border=0></TD>
+                      <TD><IMG height=5 src="CDialogSK_files/white.gif" 
+                        width=20 border=0></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD class=smallText align=right colSpan=2><A 
+                  title="Calculated as rating x Log10(# votes)" 
+                  href="http://www.codeproject.com/script/articles/top_articles.asp?st=2">Popularity: 
+                  4.88</A>. Rating: <B>3.63</B> out of 
+        5.</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD vAlign=top width="100%">
+      <DIV id=contentdiv><!-- Article Starts -->
+      <UL class=download>
+        <LI><A 
+        href="http://www.codeproject.com/dialog/CDialogSK/CDialogSK_demo.zip">Download 
+        demo project - 33 Kb </A>
+        <LI><A 
+        href="http://www.codeproject.com/dialog/CDialogSK/CDialogSK_Src.zip">Download 
+        source - 4 Kb</A> </LI></UL>
+      <P><IMG height=383 src="CDialogSK_files/CDialogSK.jpg" width=395 
+      border=0></P>
+      <H2>Introduction</H2>
+      <P>This class is derived from the MFC <CODE>CDialog</CODE>. It supports 
+      the following features :-
+      <OL>
+        <LI>If running on Windows 2000 or Windows XP, make any one color 
+        transparent so that you can see through regions of the dialog 
+        <LI>If running on Windows 2000 or Windows XP, make the whole dialog 
+        translucent 
+        <LI>Adding a bitmap to the back ground. The bitmap can be a resource, a 
+        BMP file, or a <CODE>HBITMAP</CODE> 
+        <LI>Set style for background : Tile, Center, Stretch, resize dialog to 
+        the size of the bitmap 
+        <LI>Can enable/disable moving the dialog by clicking anywhere in it 
+      </LI></OL>
+      <P>Previous to Windows 2000 creating skinned dialogs were a bit difficult. 
+      You needed to write functions that could parse through the back ground 
+      image and create a <CODE>CRgn</CODE> that defined the shape of the skin. 
+      This could be done using repetitive calls to <CODE>CRgn::CombineRgn</CODE> 
+      for part of the image you wanted to see on the dialog. After creating the 
+      whole region you need to call <CODE>CWnd::SetWindowRgn</CODE> with a 
+      handle to the combined <CODE>CRgn</CODE> object.</P>
+      <P>From Windows 2000 a new API 
+      <CODE>SetLayeredWindowAttributes</CODE>&nbsp; has been added to 
+      <I>User32.dll</I>. This class uses that to create skinned dialogs. However 
+      the background bitmap feature is not dependent on OS version and can be 
+      used on any version of Windows.</P>
+      <H2>Using The Code</H2>
+      <P><!-- start a block of source code -->The class can be used using the 
+      following steps 
+      <OL>
+        <LI>
+        <P>Add the files <I>CDialogSK.h</I> and <I>CDialogSK.cpp</I> to your 
+        project. </P>
+        <LI>
+        <P>Include <I>CDialogSK.h</I> in the .h file for your dialog class </P>
+        <LI>
+        <P>Replace all occurrences of "<CODE>CDialog</CODE>" with 
+        "<CODE>CDialogSK</CODE>" in the .h and&nbsp;.cpp files for your dialog 
+        class </P>
+        <LI>
+        <P>If you plan to use a background image (bitmap) go to dialog 
+        properties, styles tab and make Style=Popup, Border=None, and uncheck 
+        the "Title Bar" check box. </P>
+        <LI>
+        <P>At the end of <CODE>OnInitDialog</CODE> of your dialog class add 
+        calls to the appropriate methods in <CODE>CDialogSK</CODE> </P><PRE>BOOL CSkinDialog_DemoDlg::OnInitDialog()
+{
+    ...
+    EnableEasyMove();  <SPAN class=cpp-comment>// enable moving of the dialog </SPAN>
+                       <SPAN class=cpp-comment>// by clicking anywhere in the dialog</SPAN>
+    SetBitmap (IDB_BACKGROUND); <SPAN class=cpp-comment>// set background bitmap</SPAN>
+    SetStyle (LO_RESIZE); <SPAN class=cpp-comment>// resize dialog to the size of the bitmap</SPAN>
+    SetTransparentColor(RGB(<SPAN class=cpp-literal>0</SPAN>, <SPAN class=cpp-literal>255</SPAN>, <SPAN class=cpp-literal>0</SPAN>)); <SPAN class=cpp-comment>// set green as the </SPAN>
+                                         <SPAN class=cpp-comment>// transparent color</SPAN>
+
+    <SPAN class=cpp-keyword>return</SPAN> TRUE;
+}
+</PRE>
+        <LI>If you want to change the window style later you can call any of 
+        these method anywhere in your code at run time. 
+        <LI>If for example you want to make a circular dialog. Create a image 
+        which has a blue circle on a green background. Then call 
+        <CODE>SetBitmap</CODE> with the path to the image and call 
+        <CODE>SetTransparentColor</CODE> passing the color of background 
+        (green). This will remove the background from view and you will get a 
+        circular window. </LI></OL>
+      <H2>Methods</H2>
+      <P>The following methods are present in <CODE>CDialogSK</CODE> class 
+      <OL>
+        <LI><CODE>DWORD SetBitmap (HBITMAP hBitmap); </CODE>Sets a background 
+        bitmap based on a <CODE>HBITMAP.</CODE> 
+        <LI><CODE>DWORD SetBitmap (<SPAN class=cpp-keyword>int</SPAN> nBitmap); 
+        </CODE>Sets a background bitmap based on a resource ID. 
+        <LI><CODE>DWORD SetBitmap (LPCTSTR lpszFileName); </CODE>Sets a 
+        background bitmap based on a Windows bitmap (.bmp) file. 
+        <LI><CODE><SPAN class=cpp-keyword>void</SPAN> SetStyle (LayOutStyle 
+        style); </CODE>Sets the bitmap layout style. Can be any of 
+        <CODE>LO_DEFAULT</CODE>, <CODE>LO_TILE</CODE> (tile image), 
+        <CODE>LO_CENTER</CODE> (center image), <CODE>LO_STRETCH</CODE> (stretch 
+        image to fit dialog), <CODE>LO_RESIZE</CODE> (resize dialog to fit the 
+        image). 
+        <LI><CODE><SPAN class=cpp-keyword>void</SPAN> EnableEasyMove (BOOL 
+        pEnable = TRUE); </CODE>If called with TRUE then you can move the dialog 
+        by clicking anywhere in the client area of the dialog. 
+        <LI><CODE>BOOL SetTransparent (BYTE bAlpha); </CODE>Make the dialog as a 
+        whole transparent. Range is 0(transparent) - 255 (opaque). This works 
+        only on Windows2000 and above (WinXP). 
+        <LI><CODE>BOOL SetTransparentColor (COLORREF col, BOOL bTrans = TRUE); 
+        </CODE>Make a particular color transparent. This works only on 
+        Windows2000 and above (WinXP). This can be used to create dialog in 
+        which you can see through parts of the dialog.&nbsp; </LI></OL>
+      <H2>History</H2>
+      <UL>
+        <LI>This is the initial version. Date Posted: July 01, 2003 </LI></UL><!-- Article Ends --></DIV>
+      <H2>About abhinaba</H2>
+      <TABLE width="100%" border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD class=smallText noWrap><IMG 
+            src="CDialogSK_files/{E904C0B4-E652-4599-B15D-A81AFF75E182}.jpg"><BR></TD>
+          <TD class=smallText width="100%">Abhinaba loves coding for the sheer 
+            fun of it. He started programming in 1995 with BASIC and then moved 
+            through Cobol, Pascal, Prolog, C, C++, VB and VC++.<BR>He received a 
+            Bachelor of Technology degree in Computer Science from University of 
+            Calcutta in 2001.<BR>Abhinaba is originally from the City of Joy, 
+            Kolkata in India, but now codes and lives in Noida close to 
+            Delhi.<BR>His hobby is coding which also happens to be his job. 
+            Besides coding he loves traveling.
+            <P class=smallText>Click <A 
+            href="http://www.codeproject.com/script/profile/whos_who.asp?vt=arts&amp;id=450325">here</A> 
+            to view abhinaba's online profile.</P></TD></TR></TBODY></TABLE><BR>
+      <TABLE cellPadding=4 width="100%" border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD width="100%">
+            <H2>Other popular Dialog and Windows articles:</H2>
+            <UL>
+              <LI><A 
+              href="http://www.codeproject.com/dialog/dlgboxtricks.asp">Some 
+              handy dialog box tricks, tips and workarounds</A><BR><SPAN 
+              class=smalltext>Hidden modal dialogs, stealing focus, always on 
+              top dialogs, going full-screen, expanding and contracting dialogs, 
+              removing task bar icon, context sensitive help and many other 
+              useful tips and tricks.</SPAN>
+              <LI><A 
+              href="http://www.codeproject.com/dialog/quickwin.asp">QuickWin - 
+              Turn a console application into a Windows program</A><BR><SPAN 
+              class=smalltext>Redirect stdin, stdout and stderr into a 
+              window</SPAN>
+              <LI><A 
+              href="http://www.codeproject.com/dialog/slidabledialogbar.asp">3D 
+              Studio Max like Slidable DialogBar</A><BR><SPAN 
+              class=smalltext>Ever seen 3D Studio 2.5 Slidable DialogBar? Want 
+              to know how they did it?</SPAN>
+              <LI><A 
+              href="http://www.codeproject.com/dialog/winampwnd.asp">Nullsoft 
+              Winamp Plug-in With Bitmapped UI, Docking and Restrictive 
+              Resizing</A><BR><SPAN class=smalltext>An article discussing a 
+              Plug-in for Nullsoft Winamp which looks and behaves like the 
+              Winamp UI.</SPAN></LI></UL></TD>
+          <TD width=360>
+            <SCRIPT language=javascript>document.write("<IFRAME src=\"/script/admentor/include/ServeAdHTML.aspx?C=False&id=786\" border=0 frameborder=0 scrolling=no width=300 height=250></IFRAME>");</SCRIPT>
+          </TD>
+          <FORM action=/script/rating/code/app/insert_vote.asp 
+          method=post><INPUT type=hidden value=CDialogSK/dialog7/8/2003 
+          name=vote_name> <INPUT type=hidden value=/dialog/cdialogsk.asp 
+          name=goal> </TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=1 width="100%" bgColor=#ff9900 
+        border=0><TBODY>
+        <TR>
+          <TD width="100%">
+            <TABLE cellSpacing=0 cellPadding=4 width="100%" bgColor=#fbedbb 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD class=smalltext vAlign=center>[<A 
+                  href="http://www.codeproject.com/dialog/cdialogsk.asp#__top">Top</A>]</TD>
+                <TD vAlign=center noWrap align=right><I><B>Rate this Article 
+                  for us!</B></I>&nbsp;&nbsp;&nbsp;&nbsp; <I>Poor</I><INPUT 
+                  type=radio value=1 name=rate><INPUT type=radio value=2 
+                  name=rate><INPUT type=radio value=3 name=rate><INPUT 
+                  type=radio value=4 name=rate><INPUT type=radio value=5 
+                  name=rate><I>Excellent</I>&nbsp;&nbsp;<INPUT class=FormButton type=submit value=Vote> 
+                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></FORM>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD vAlign=top>
+            <CENTER>
+            <SCRIPT language=javascript>document.write("<IFRAME src=\"/script/admentor/include/ServeAdHTML.aspx?C=False&id=800\" border=0 frameborder=0 scrolling=no width=120 height=60></IFRAME>");</SCRIPT>
+            <BR><FONT size=1><A 
+            href="http://www.codeproject.com/info/MediaKit/">Premium 
+            Sponsor</A></FONT></CENTER><BR></TD>
+          <TD vAlign=top noWrap align=middle><SPAN id=AdBanner5>
+            <SCRIPT language=javascript>document.write("<a href=\"/script/admentor/admentorredir.asp?id=204&way=ban\" target=_blank><img src=\"/script/admentor/include/ServeAd.aspx?File=%2Fscript%2Fadmentor%2Fimages%2FSoftwareValidator%2Egif&C=False&id=204\" alt=\"Memory Validator - Faster leak detection, better analysis (Special Launch Offer! $299, Save $100)\" border=0 width=468 height=60></a>");</SCRIPT>
+            </SPAN></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><A 
+name=__comments></A>
+<SCRIPT language=JavaScript>
+function MsgVoteForm(UserID, MsgID)
+{
+	document.write("Rate this message: ");
+	for (var i=1; i<=5;i++)
+		document.write("<a href='#xx" + MsgID.toString() + "xx' title='give this message a vote of " + i.toString() + "' onclick='RateMsg(" + UserID.toString() + ", " + MsgID.toString() + ", " + i.toString() + ")'><b>" + i.toString() + "</b></a> ");
+	document.write(" (out of 5)");
+}
+
+function RateMsg(userid, msgid, score) 
+{ 
+	open("/script/comments/vote.asp?js=1&user="+userid.toString()+"&msg="+msgid.toString()+"&score="+score.toString() ,"helpful","toolbar=no,resizable=yes,scrollbars=yes,directories=no,menubar=no,width=300,height=200");
+	return false;
+}
+</SCRIPT>
+
+<SCRIPT language=JavaScript>
+var Selected = "";
+var AdTime = new Date();
+document.writeln("<iframe name=AdFrame width=0 height=0 frameborder=0></IFRAME>");
+function SwitchMessage(elm)
+{
+
+	var now = new Date();
+	if (Number(now.getTime() - AdTime.getTime()) > Number(5000))
+	{
+		AdTime = now;
+		var loc = window.frames["AdFrame"];
+		if (loc) loc = loc.document;
+		if (loc) loc = loc.location;
+		if (loc) loc.replace('/script/comments/fetchAd.asp?cat=2');
+	}
+	
+	var elmref;
+	if (Selected != "")
+	{
+		elmref = eval("document.getElementById('" + Selected + "_h1')");
+		if (elmref) elmref.style.display = 'none';
+		elmref = eval("document.getElementById('" + Selected + "_h0')");
+		if (elmref) elmref.bgColor = '#FEF9E7';
+	}
+	if (Selected != elm.name) 
+	{
+		Selected = elm.name;
+		elmref = eval("document.getElementById('" + Selected + "_h1')");
+		if (elmref) 
+		{
+			if (elmref.style.display=='none') elmref.style.display='';
+			else elmref.style.display = 'none';
+		}
+		elmref = eval("document.getElementById('" + Selected + "_h0')");
+		if (elmref) 
+			elmref.bgColor = '#99CCFF';
+	}
+	else
+		Selected="";
+		
+	window.location = "#xx" + Selected + "xx";
+
+	return false;
+}
+
+</SCRIPT>
+
+<SCRIPT language=javascript event=onclick for=DynMessLink>
+return SwitchMessage(this);
+</SCRIPT>
+
+<TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#ff9900 border=0>
+  <TBODY>
+  <TR>
+    <TD width="100%">
+      <TABLE id=ForumTable cellSpacing=1 cellPadding=0 width="100%" 
+      bgColor=#ff9900 border=0>
+        <FORM 
+        action=/script/comments/app/do_filtermessages.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148 
+        method=post>
+        <TBODY>
+        <TR>
+          <TD>
+            <TABLE cellSpacing=0 cellPadding=3 width="100%" bgColor=white 
+            border=0>
+              <TBODY>
+              <TR bgColor=#fbedbb>
+                <TD class=smalltext noWrap><A 
+                  href="http://www.codeproject.com/script/comments/faq.asp"><IMG 
+                  height=16 src="CDialogSK_files/info.gif" width=16 
+                  align=absMiddle border=0> <B>FAQ</B></A>&nbsp;</TD>
+                <TD class=smalltext vAlign=top noWrap align=right>Noise level 
+                  <SELECT class=smalltext size=1 name=noise><OPTION 
+                    value=1>Very High</OPTION> <OPTION value=2>High</OPTION> 
+                    <OPTION value=3 selected>Medium</OPTION> <OPTION 
+                    value=4>Low</OPTION> <OPTION value=5>Very 
+                  low</OPTION></SELECT>&nbsp;&nbsp;</TD>
+                <TD class=smalltext vAlign=center noWrap align=right 
+                  colSpan=2><A 
+                  href="http://www.codeproject.com/script/comments/search_comments.asp?forumid=16148"><IMG 
+                  height=15 src="CDialogSK_files/search.gif" width=16 border=0> 
+                  Search comments</A> &nbsp;</TD>
+                <TD vAlign=top align=right><INPUT class=FormButton type=submit value="Set Options" name=submit></TD></TR>
+              <TR bgColor=#ff9900>
+                <TD width="100%">&nbsp;</TD>
+                <TD class=smalltext vAlign=top noWrap align=right>View <SELECT 
+                  class=smalltext size=1 name=expand><OPTION value=0>Normal 
+                    (slow)</OPTION> <OPTION value=2>Preview (slow)</OPTION> 
+                    <OPTION value=5 selected>Message View</OPTION> <OPTION 
+                    value=6>Topic View</OPTION> <OPTION value=1>Thread 
+                    View</OPTION> <OPTION value=3>Expanded (Supporters 
+                    only)</OPTION></SELECT>&nbsp;&nbsp;</TD>
+                <TD class=smalltext vAlign=top noWrap>Per page <SELECT 
+                  class=smalltext size=1 name=perpage><OPTION 
+                    value=10>10</OPTION> <OPTION value=25 selected>25</OPTION> 
+                    <OPTION value=50>50</OPTION></SELECT></TD>
+                <TD colSpan=2>&nbsp;</TD></TR></TBODY></TABLE></TD></TR></FORM>
+        <TR bgColor=#fbedbb>
+          <TD><A name=xx0xx></A>
+            <TABLE cellPadding=2 width="100%" bgColor=#fbedbb border=0>
+              <TBODY>
+              <TR>
+                <TD class=messagetitle><A class=HoverLink 
+                  title="Add a new message to the discussions" 
+                  href="http://www.codeproject.com/script/comments/user_new.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148" 
+                  target=_top name=HoverNL><B><IMG height=16 
+                  src="CDialogSK_files/admin_modify.gif" width=16 align=top 
+                  border=0> New thread</B></A></TD>
+                <TD class=messagetitle>Msgs 1 to 20 of 20 (Total: 20) (<A 
+                  href="http://www.codeproject.com/dialog/cdialogsk.asp?df=100&amp;forumid=16148">Refresh</A>)</TD>
+                <TD noWrap align=right><FONT class=messagetitle><SPAN 
+                  class=HoverLink>First</SPAN> <SPAN class=HoverLink>Prev</SPAN> 
+                  <SPAN class=HoverLink>Next</SPAN> <SPAN 
+                  class=HoverLink>Last</SPAN> </FONT></TD></TR></TBODY></TABLE></TD></TR>
+        <TR bgColor=white>
+          <TD>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=2 bgColor=#fbedbb border=0>
+                    <TBODY>
+                    <TR>
+                      <TD class=messagetitle width="100%">Subject&nbsp;</TD>
+                      <TD class=messagetitle noWrap width=140>Author&nbsp;</TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT 
+                    class=messagetitle>Date&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CDialogSK_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR id=924630_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx924630xx></A><IMG 
+                        src="CDialogSK_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/dialog/cdialogsk.asp?df=100&amp;forumid=16148&amp;select=924630#xx924630xx" 
+                        name=924630><B>Change Skin Dynamically?</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=87447"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CDialogSK_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle><B>Arsalan 
+                        Malik</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>1:55 15 Sep 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=924630_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="CDialogSK_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>How can 
+                                I change dialog skin dynamically using your 
+                                class. I want to give user, the option to change 
+                                skins at runtime, (similar to Windows Media 
+                                Player etc). Can you please guide me to do that. 
+                                Which dialog handler should call SetBitmap 
+                                method etc.<IMG 
+                                src="CDialogSK_files/smiley_confused.gif" 
+                                align=absMiddle> <BR><BR><SPAN 
+                                style="FONT-WEIGHT: 700; LETTER-SPACING: 1px; TEXT-DECORATION: overline"><BR><U><FONT 
+                                face="Courier New" color=#008000 size=2>ARSALAN 
+                                MALIK 
+                                <BR></FONT></U></SPAN><BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=924630">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=924630">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/dialog/cdialogsk.asp?df=100&amp;tid=924630&amp;forumid=16148&amp;select=924630#xx924630xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/dialog/cdialogsk.asp?msg=924630#xx924630xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=924630"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=924630"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(87447,924630);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CDialogSK_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR id=924649_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx924649xx></A><IMG height=1 
+                        src="CDialogSK_files/ind.gif" width=18><IMG 
+                        src="CDialogSK_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/dialog/cdialogsk.asp?df=100&amp;forumid=16148&amp;select=924649#xx924649xx" 
+                        name=924649>Re: Change Skin Dynamically?</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=450325"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CDialogSK_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>abhinaba&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>2:20 15 Sep 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=924649_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="CDialogSK_files/ind.gif" 
+                        width=18><IMG src="CDialogSK_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Add a 
+                                another public function named ChangeSkin, that 
+                                takes the name of a skin file. In that add paths 
+                                for the background bitmap, color to be made 
+                                transparent, etc...<BR><BR>Then in ChangeSkin 
+                                read the file, retrieve the values and call 
+                                SetBitmap(...), SetTransparentColor(...) and at 
+                                the end Invalidate the dialog. This will force a 
+                                repaint and hence the new skin will get applied. 
+                                <BR><BR>==========================<BR>AB =&gt; 
+                                Code and let code<BR><A 
+                                href="http://www.geocities.com/basuabhinaba/">Go 
+                                to my 
+                                home</A><BR>==========================<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=924649">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=924649">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/dialog/cdialogsk.asp?df=100&amp;tid=924630&amp;forumid=16148&amp;select=924649#xx924649xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/dialog/cdialogsk.asp?msg=924649#xx924649xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=924649"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=924649"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(450325,924649);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CDialogSK_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR id=924772_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx924772xx></A><IMG height=1 
+                        src="CDialogSK_files/ind.gif" width=36><IMG 
+                        src="CDialogSK_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/dialog/cdialogsk.asp?df=100&amp;forumid=16148&amp;select=924772#xx924772xx" 
+                        name=924772>Re: Change Skin Dynamically?</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=87447"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CDialogSK_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle>Arsalan 
+                        Malik&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>6:07 15 Sep 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=924772_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="CDialogSK_files/ind.gif" 
+                        width=36><IMG src="CDialogSK_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent>Thankyou. One problem I 
+                                faced while compiling was 
+                                <CODE>AFX_EXT_CLASS</CODE>, I removed it and 
+                                every thing worked. Can you tell me what does it 
+                                mean?<IMG src="CDialogSK_files/smiley_wink.gif" 
+                                align=absMiddle> <BR><BR><SPAN 
+                                style="FONT-WEIGHT: 700; LETTER-SPACING: 1px; TEXT-DECORATION: overline"><BR><U><FONT 
+                                face="Courier New" color=#008000 size=2>ARSALAN 
+                                MALIK 
+                                <BR></FONT></U></SPAN><BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=924772">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=924772">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/dialog/cdialogsk.asp?df=100&amp;tid=924630&amp;forumid=16148&amp;select=924772#xx924772xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/dialog/cdialogsk.asp?msg=924772#xx924772xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=924772"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=924772"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(87447,924772);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CDialogSK_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR id=924863_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx924863xx></A><IMG height=1 
+                        src="CDialogSK_files/ind.gif" width=54><IMG 
+                        src="CDialogSK_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/dialog/cdialogsk.asp?df=100&amp;forumid=16148&amp;select=924863#xx924863xx" 
+                        name=924863>Re: Change Skin Dynamically?</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=450325"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CDialogSK_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>abhinaba&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>8:26 15 Sep 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=924863_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="CDialogSK_files/ind.gif" 
+                        width=54><IMG src="CDialogSK_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>I guess 
+                                you saw my message "Bug in code" below. 
+                                <BR><BR>AFX_EXT_CLASS is required if you build 
+                                the class as a seperate DLL. In my original work 
+                                I used to build all of my controls like 
+                                CDialogSK, CButtonSK, CUrl as seperate DLLs and 
+                                use it for my application. If you use static 
+                                linking this gives a error.... 
+                                <BR><BR>==========================<BR>AB =&gt; 
+                                Code and let code<BR><A 
+                                href="http://www.geocities.com/basuabhinaba/">Go 
+                                to my 
+                                home</A><BR>==========================<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=924863">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=924863">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/dialog/cdialogsk.asp?df=100&amp;tid=924630&amp;forumid=16148&amp;select=924863#xx924863xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/dialog/cdialogsk.asp?msg=924863#xx924863xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=924863"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=924863"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(450325,924863);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CDialogSK_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 src="CDialogSK_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=856296_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx856296xx></A><IMG 
+                        src="CDialogSK_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/dialog/cdialogsk.asp?df=100&amp;forumid=16148&amp;select=856296#xx856296xx" 
+                        name=856296><B>Skinnable class</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=763616"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CDialogSK_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>skinney46</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>5:14 21 Jun 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=856296_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="CDialogSK_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent>Abhinaba this is a great 
+                                little class and I will be using a derivative of 
+                                it in my own screen capture application, Many 
+                                thanks. <IMG 
+                                src="CDialogSK_files/smiley_smile.gif" 
+                                align=absMiddle> <BR><BR>Chris. 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=856296">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=856296">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/dialog/cdialogsk.asp?df=100&amp;tid=856296&amp;forumid=16148&amp;select=856296#xx856296xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/dialog/cdialogsk.asp?msg=856296#xx856296xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=856296"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=856296"><I>Delete</I></A>]<BR>Score: 
+                                2.0 (1 vote).
+                                <SCRIPT language=Javascript>MsgVoteForm(763616,856296);</SCRIPT>
+                                 
+                    </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CDialogSK_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 src="CDialogSK_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=830316_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx830316xx></A><IMG 
+                        src="CDialogSK_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/dialog/cdialogsk.asp?df=100&amp;forumid=16148&amp;select=830316#xx830316xx" 
+                        name=830316><B>Win 98 Solution</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=144805"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CDialogSK_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>skallestad</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>6:04 23 May 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=830316_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="CDialogSK_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>I was 
+                                wondering if there was a simple way to not use 
+                                this if the OS is Win98? Perhaps I'll create 
+                                separate downloads, or perhaps I'll have 2 
+                                dialogs to call, one if the OS is Win98, one if 
+                                the dialog is Win2K/XP. 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=830316">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=830316">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/dialog/cdialogsk.asp?df=100&amp;tid=830316&amp;forumid=16148&amp;select=830316#xx830316xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/dialog/cdialogsk.asp?msg=830316#xx830316xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=830316"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=830316"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(144805,830316);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CDialogSK_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR id=830817_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx830817xx></A><IMG height=1 
+                        src="CDialogSK_files/ind.gif" width=18><IMG 
+                        src="CDialogSK_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/dialog/cdialogsk.asp?df=100&amp;forumid=16148&amp;select=830817#xx830817xx" 
+                        name=830817>Re: Win 98 Solution</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=450325"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CDialogSK_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>abhinaba&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>1:16 24 May 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=830817_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="CDialogSK_files/ind.gif" 
+                        width=18><IMG src="CDialogSK_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>you can 
+                                always do this. Yu can either query the windows 
+                                version and then choose the dialog to use. 
+                                Otherwise you can go ahead with the call<BR><BR><PRE><BR>g_pSetLayeredWindowAttributes = (lpfnSetLayeredWindowAttributes)<BR>                        GetProcAddress(hUser32, "SetLayeredWindowAttributes");<BR><BR><BR>if(g_pSetLayeredWindowAttributes != NULL)<BR>   // Use transparent dialog<BR>else<BR>   // Use dialog for older versions <BR>   // of Windows that does not use transparency<BR></PRE><BR><BR>==========================<BR>AB 
+                                =&gt; Code and let code<BR><A 
+                                href="http://www.geocities.com/basuabhinaba/">Go 
+                                to my 
+                                home</A><BR>==========================<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=830817">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=830817">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/dialog/cdialogsk.asp?df=100&amp;tid=830316&amp;forumid=16148&amp;select=830817#xx830817xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/dialog/cdialogsk.asp?msg=830817#xx830817xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=830817"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=830817"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(450325,830817);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CDialogSK_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 src="CDialogSK_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=727846_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx727846xx></A><IMG 
+                        src="CDialogSK_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/dialog/cdialogsk.asp?df=100&amp;forumid=16148&amp;select=727846#xx727846xx" 
+                        name=727846><B>Transparent Child Dialog</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=811874"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CDialogSK_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>Calder</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>20:30 30 Jan 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=727846_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="CDialogSK_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent>Hi!<BR>Is it possible to 
+                                make a transparent child dialog with CDialogSK? 
+                                <BR>I'm using this class:<BR><A 
+                                href="http://www.codeproject.com/dialog/childdlg.asp?target=child%7Cdialog">Child 
+                                Dialog (Sub Forms)</A> 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=727846">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=727846">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/dialog/cdialogsk.asp?df=100&amp;tid=727846&amp;forumid=16148&amp;select=727846#xx727846xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/dialog/cdialogsk.asp?msg=727846#xx727846xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=727846"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=727846"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(811874,727846);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CDialogSK_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR id=729180_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx729180xx></A><IMG height=1 
+                        src="CDialogSK_files/ind.gif" width=18><IMG 
+                        src="CDialogSK_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/dialog/cdialogsk.asp?df=100&amp;forumid=16148&amp;select=729180#xx729180xx" 
+                        name=729180>Re: Transparent Child Dialog</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=450325"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CDialogSK_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>abhinaba&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>2:07 2 Feb 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=729180_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="CDialogSK_files/ind.gif" 
+                        width=18><IMG src="CDialogSK_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>What do 
+                                you mean by a child dialog? If you are talking 
+                                about a dialog popped from a SDI, MDI or any 
+                                other Dialog based application then you will be 
+                                able to do this without any issues by deriving 
+                                that dialog class from CDialogSK instead of 
+                                CDialog. 
+                                <BR><BR>==========================<BR>AB =&gt; 
+                                Code and let code<BR><A 
+                                href="http://www.geocities.com/basuabhinaba/">Go 
+                                to my 
+                                home</A><BR>==========================<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=729180">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=729180">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/dialog/cdialogsk.asp?df=100&amp;tid=727846&amp;forumid=16148&amp;select=729180#xx729180xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/dialog/cdialogsk.asp?msg=729180#xx729180xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=729180"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=729180"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(450325,729180);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CDialogSK_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR id=729343_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx729343xx></A><IMG height=1 
+                        src="CDialogSK_files/ind.gif" width=36><IMG 
+                        src="CDialogSK_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/dialog/cdialogsk.asp?df=100&amp;forumid=16148&amp;select=729343#xx729343xx" 
+                        name=729343>Re: Transparent Child Dialog</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=811874"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CDialogSK_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>Calder&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>6:51 2 Feb 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=729343_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="CDialogSK_files/ind.gif" 
+                        width=36><IMG src="CDialogSK_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Not a 
+                                popup dialog, but an embedded dialog (like a 
+                                form)... Look at the link in my previous posting 
+                                and see what I mean.<BR>The problem with a child 
+                                dialog is that it's class doesn't include an 
+                                OnInitDialog()... <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=729343">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=729343">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/dialog/cdialogsk.asp?df=100&amp;tid=727846&amp;forumid=16148&amp;select=729343#xx729343xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/dialog/cdialogsk.asp?msg=729343#xx729343xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=729343"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=729343"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(811874,729343);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CDialogSK_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 src="CDialogSK_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=628815_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx628815xx></A><IMG 
+                        src="CDialogSK_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/dialog/cdialogsk.asp?df=100&amp;forumid=16148&amp;select=628815#xx628815xx" 
+                        name=628815><B>Windows 98?</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=493474"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CDialogSK_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>JayDoggett</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>17:04 3 Oct 
+                        '03</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=628815_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="CDialogSK_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>How can 
+                                I make this work in Win98?<BR><BR>Jay 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=628815">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=628815">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/dialog/cdialogsk.asp?df=100&amp;tid=628815&amp;forumid=16148&amp;select=628815#xx628815xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/dialog/cdialogsk.asp?msg=628815#xx628815xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=628815"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=628815"><I>Delete</I></A>]<BR>Score: 
+                                1.0 (1 vote).
+                                <SCRIPT language=Javascript>MsgVoteForm(493474,628815);</SCRIPT>
+                                 
+                    </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CDialogSK_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR id=687183_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx687183xx></A><IMG height=1 
+                        src="CDialogSK_files/ind.gif" width=18><IMG 
+                        src="CDialogSK_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/dialog/cdialogsk.asp?df=100&amp;forumid=16148&amp;select=687183#xx687183xx" 
+                        name=687183>Re: Windows 98?</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=450325"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CDialogSK_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>abhinaba&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>3:13 10 Dec 
+                        '03&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=687183_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="CDialogSK_files/ind.gif" 
+                        width=18><IMG src="CDialogSK_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Sorry 
+                                this code uses some Win2K/XP specific layerinig 
+                                calls. These calls are fundamental to the way 
+                                the class works in implementing transparency. So 
+                                you will not be able to port it to Win98. Win98 
+                                would require a completely different 
+                                transparency mechanism involving creating 
+                                regions with the shape of the skin and then 
+                                attaching the region to the dialog window. I 
+                                thought of writing a similar stuff for Win98 but 
+                                was not sure about its requirement as almost 
+                                everyone has already or is planning to Upgrade 
+                                to a newer version on Windows. 
+                                <BR><BR>==========================<BR>AB =&gt; 
+                                Code and let code<BR><A 
+                                href="http://www.geocities.com/basuabhinaba/">Go 
+                                to my 
+                                home</A><BR>==========================<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=687183">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=687183">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/dialog/cdialogsk.asp?df=100&amp;tid=628815&amp;forumid=16148&amp;select=687183#xx687183xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/dialog/cdialogsk.asp?msg=687183#xx687183xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=687183"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=687183"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(450325,687183);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CDialogSK_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 src="CDialogSK_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=626284_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx626284xx></A><IMG 
+                        src="CDialogSK_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/dialog/cdialogsk.asp?df=100&amp;forumid=16148&amp;select=626284#xx626284xx" 
+                        name=626284><B>Making the dialog resizable...</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=275859"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CDialogSK_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>WolfSupernova</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>14:12 1 Oct 
+                        '03</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=626284_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="CDialogSK_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Hi 
+                                abhinaba,<BR><BR>I've been getting some help 
+                                from Paolo Messina trying to get your class and 
+                                his ResizableLib to play nicely with one 
+                                another. I think this would be very useful, as 
+                                most people who want to create a skinnable 
+                                dialog would most likely want it to be resizable 
+                                as well.<BR><BR>The problem is that if you set 
+                                the dialog to resizable, you can't get rid of 
+                                the frame border which looks bad around a 
+                                transparent or non-rectangular window, yet 
+                                without setting WS_THICKFRAME, it won't be 
+                                resizable.<BR><BR>The ideal situation would be 
+                                to hide the border (make it transparent or 
+                                something), and add a resizable grip somewhere 
+                                on the skin, most likely in the bottom 
+                                right-hand corner. <BR><BR>He's pretty sure that 
+                                by capturing the left mouse button on the grip, 
+                                it's possible to call ::PostMessage(hDlg, 
+                                WM_SYSCOMMAND, SC_SIZE, 0) and that may let you 
+                                resize the window. However, you're already 
+                                handling the left-mouse button, so I'm trying to 
+                                figure out how to determine whether the hit was 
+                                on the nontransparent part of the bitmap, or on 
+                                the resizing grip.<BR><BR>Do you think you could 
+                                join in on our conversation and provide a little 
+                                insight? That would be awesome. Like I said, I 
+                                think this could be very useful information to a 
+                                lot of people.<BR><BR><A 
+                                href="http://www.codeproject.com/dialog/ResizableDialog.asp#xx625414xx">http://www.codeproject.com/dialog/ResizableDialog.asp#xx625414xx</A>[<A 
+                                title="New Window" 
+                                href="http://www.codeproject.com/dialog/ResizableDialog.asp#xx625414xx" 
+                                target=_blank>^</A>]<BR><BR>Thanks,<BR>Don 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=626284">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=626284">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/dialog/cdialogsk.asp?df=100&amp;tid=626284&amp;forumid=16148&amp;select=626284#xx626284xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/dialog/cdialogsk.asp?msg=626284#xx626284xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=626284"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=626284"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(275859,626284);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CDialogSK_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 src="CDialogSK_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=608403_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx608403xx></A><IMG 
+                        src="CDialogSK_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/dialog/cdialogsk.asp?df=100&amp;forumid=16148&amp;select=608403#xx608403xx" 
+                        name=608403><B>Too bad there's a copyright.</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=275859"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CDialogSK_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>WolfSupernova</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>15:21 12 Sep 
+                        '03</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=608403_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="CDialogSK_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent><IMG 
+                                src="CDialogSK_files/smiley_frown.gif" 
+                                align=absMiddle> <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=608403">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=608403">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/dialog/cdialogsk.asp?df=100&amp;tid=608403&amp;forumid=16148&amp;select=608403#xx608403xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/dialog/cdialogsk.asp?msg=608403#xx608403xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=608403"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=608403"><I>Delete</I></A>]<BR>Score: 
+                                1.0 (2 votes).
+                                <SCRIPT language=Javascript>MsgVoteForm(275859,608403);</SCRIPT>
+                                 
+                    </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CDialogSK_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR id=687179_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx687179xx></A><IMG height=1 
+                        src="CDialogSK_files/ind.gif" width=18><IMG 
+                        src="CDialogSK_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/dialog/cdialogsk.asp?df=100&amp;forumid=16148&amp;select=687179#xx687179xx" 
+                        name=687179>Re: Too bad there's a copyright.</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=450325"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CDialogSK_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>abhinaba&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>3:08 10 Dec 
+                        '03&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=687179_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="CDialogSK_files/ind.gif" 
+                        width=18><IMG src="CDialogSK_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent>veryyyyyyy sorry. I 
+                                overlooked the notice that got inserted in the 
+                                file using some scripts. I no longer work with 
+                                the company whose notice was inserted. So I 
+                                cannot remove it now.<BR><BR>Anyway the 
+                                CDialogSK.cpp file does not have any notice so 
+                                you can use it <IMG 
+                                src="CDialogSK_files/smiley_smile.gif" 
+                                align=absMiddle> Just write your own CDialogSK.h 
+                                files <BR><BR>==========================<BR>AB 
+                                =&gt; Code and let code<BR><A 
+                                href="http://www.geocities.com/basuabhinaba/">Go 
+                                to my 
+                                home</A><BR>==========================<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=687179">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=687179">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/dialog/cdialogsk.asp?df=100&amp;tid=608403&amp;forumid=16148&amp;select=687179#xx687179xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/dialog/cdialogsk.asp?msg=687179#xx687179xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=687179"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=687179"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(450325,687179);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CDialogSK_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 src="CDialogSK_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=565236_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx565236xx></A><IMG 
+                        src="CDialogSK_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/dialog/cdialogsk.asp?df=100&amp;forumid=16148&amp;select=565236#xx565236xx" 
+                        name=565236><B>Wonderful!!!</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=480592"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CDialogSK_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>leonbourassa</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>11:36 28 Jul 
+                        '03</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=565236_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="CDialogSK_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>This is 
+                                wonderful, exactly what i was looking for - 
+                                well, not exactly, but close enough..<BR><BR>I 
+                                have pretty much combined this class with Davide 
+                                Pizzolato's CXSkinButton class to give me a 
+                                pretty good dialog skinning library for 
+                                myself.<BR><BR>If anyone reading this knows of 
+                                some good skinning classes for other controls, 
+                                please let me know<BR>- Right now looking for a 
+                                skinnable treectrl, and DBGrid 
+                                control<BR><BR><BR><BR>Leon<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=565236">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=565236">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/dialog/cdialogsk.asp?df=100&amp;tid=565236&amp;forumid=16148&amp;select=565236#xx565236xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/dialog/cdialogsk.asp?msg=565236#xx565236xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=565236"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=565236"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(480592,565236);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CDialogSK_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 src="CDialogSK_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=564747_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx564747xx></A><IMG 
+                        src="CDialogSK_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/dialog/cdialogsk.asp?df=100&amp;forumid=16148&amp;select=564747#xx564747xx" 
+                        name=564747><B>Bug in code</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=450325"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CDialogSK_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>abhinaba</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>23:58 27 Jul 
+                        '03</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=564747_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="CDialogSK_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>The src 
+                                has a bug. I created the CDialogSK to build as a 
+                                dll but while putting up the source here forgot 
+                                to remove the dll specific macro.<BR><BR>To fix 
+                                this go to the "class AFX_EXT_CLASS CDialogSK : 
+                                public CDialog" line in CDialogSK.h and remove 
+                                "AFX_EXT_CLASS"<BR><BR>After this the code 
+                                should build fine with your application 
+                                <BR><BR>==========================<BR>AB -&gt; 
+                                Code and let 
+                                code<BR>==========================<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=564747">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=564747">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/dialog/cdialogsk.asp?df=100&amp;tid=564747&amp;forumid=16148&amp;select=564747#xx564747xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/dialog/cdialogsk.asp?msg=564747#xx564747xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=564747"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=564747"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(450325,564747);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CDialogSK_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 src="CDialogSK_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=551990_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx551990xx></A><IMG 
+                        src="CDialogSK_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/dialog/cdialogsk.asp?df=100&amp;forumid=16148&amp;select=551990#xx551990xx" 
+                        name=551990><B>How do you get rid of it?</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=4650"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CDialogSK_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>WREY</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>23:22 14 Jul 
+                        '03</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=551990_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="CDialogSK_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>There 
+                                are no exit button, context menu, or any such 
+                                mechanism by which one can get it to go away. 
+                                Getting it to go away is not the same as 
+                                "hiding" it. I'm talking about ending 
+                                it.<BR><BR>I had to go into Task Manager and 
+                                from the "Process" tab I had to look for it and 
+                                then click "End Process", because it didn't even 
+                                show up on the "Application" tab.<BR><BR>So how 
+                                do you get it to go away (other than the way 
+                                I've just described)?<BR><BR><IMG 
+                                src="CDialogSK_files/smiley_confused.gif" 
+                                align=absMiddle><BR><BR><BR><BR>William<BR><BR>Fortes 
+                                in fide et opere!<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=551990">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=551990">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/dialog/cdialogsk.asp?df=100&amp;tid=551990&amp;forumid=16148&amp;select=551990#xx551990xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/dialog/cdialogsk.asp?msg=551990#xx551990xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=551990"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=551990"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(4650,551990);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CDialogSK_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR id=551993_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx551993xx></A><IMG height=1 
+                        src="CDialogSK_files/ind.gif" width=18><IMG 
+                        src="CDialogSK_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/dialog/cdialogsk.asp?df=100&amp;forumid=16148&amp;select=551993#xx551993xx" 
+                        name=551993>Re: How do you get rid of it?</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=450325"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CDialogSK_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>abhinaba&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>23:27 14 Jul 
+                        '03&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=551993_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="CDialogSK_files/ind.gif" 
+                        width=18><IMG src="CDialogSK_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>The 
+                                application is just a demo that shows how to use 
+                                CDialogSK. Since the class is inherited from 
+                                CDialog it has the same characteriztics. For 
+                                this particular application just hit the escape 
+                                (Esc) key.<BR><BR>You can add your own OK 
+                                buttons on it. 
+                                <BR><BR>==========================<BR>AB -&gt; 
+                                Enjoy!!<BR>==========================<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=551993">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=551993">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/dialog/cdialogsk.asp?df=100&amp;tid=551990&amp;forumid=16148&amp;select=551993#xx551993xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/dialog/cdialogsk.asp?msg=551993#xx551993xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=551993"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=551993"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(450325,551993);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CDialogSK_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 src="CDialogSK_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=546772_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx546772xx></A><IMG 
+                        src="CDialogSK_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle style="COLOR: #aa0000" 
+                        width="100%"><A class=messagetitle id=DynMessLink 
+                        style="COLOR: #aa0000" 
+                        href="http://www.codeproject.com/dialog/cdialogsk.asp?df=100&amp;forumid=16148&amp;select=546772#xx546772xx" 
+                        name=546772><B>Very Neat</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=32721"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CDialogSK_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle 
+                        style="COLOR: #aa0000"><B>Chopper</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle 
+                        style="COLOR: #aa0000"><B>8:29 9 Jul 
+                      '03</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=546772_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="CDialogSK_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Nice 
+                                piece of code, neat interface, my 
+                                5.<BR><BR><BR>Regards,<BR>Vitaly 
+                                Tomilov<BR><BR><FONT 
+                                class=smallText><BR>Professional tooltips for 
+                                all development platforms available on <A 
+                                href="http://www.tooltips.net/">http://www.tooltips.net/</A><BR></FONT><BR><BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=546772">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=546772">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/dialog/cdialogsk.asp?df=100&amp;tid=546772&amp;forumid=16148&amp;select=546772#xx546772xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/dialog/cdialogsk.asp?msg=546772#xx546772xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=546772"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/dialog/cdialogsk.asp&amp;df=100&amp;forumid=16148&amp;select=546772"><I>Delete</I></A>]<BR>Score: 
+                                5.0 (1 vote).
+                                <SCRIPT language=Javascript>MsgVoteForm(32721,546772);</SCRIPT>
+                                 
+                    </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CDialogSK_files/t.gif" width=1 
+                border=0></TD></TR></TBODY></TABLE></TD></TR>
+        <TR bgColor=#fbedbb>
+          <TD>
+            <TABLE cellPadding=2 width="100%">
+              <TBODY>
+              <TR>
+                <TD class=messagetitle>Last Visit: 2:42 Wednesday 22nd 
+                  September, 2004</TD>
+                <TD noWrap align=right><FONT class=messagetitle><SPAN 
+                  class=HoverLink>First</SPAN> <SPAN class=HoverLink>Prev</SPAN> 
+                  <SPAN class=HoverLink>Next</SPAN> <SPAN 
+                  class=HoverLink>Last</SPAN> 
+        </FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><BR>
+<TABLE cellSpacing=5 width="100%">
+  <TBODY>
+  <TR vAlign=top>
+    <TD><FONT style="FONT-SIZE: 7pt" size=1><A 
+      href="http://www.codeproject.com/?cat=1">All Topics</A>, <A 
+      href="http://www.codeproject.com/?cat=2">MFC / C++</A> &gt;&gt; <A 
+      href="http://www.codeproject.com/dialog/">Dialog and Windows</A> &gt;&gt; 
+      <A href="http://www.codeproject.com/dialog/#Skins+%26+Advanced+UI">Skins 
+      &amp; Advanced UI</A> <BR>Updated: 8 Jul 2003 </FONT></TD>
+    <TD align=right><FONT style="FONT-SIZE: 7pt" size=1>Article content 
+      copyright abhinaba, 2003<BR>everything else Copyright © <A 
+      href="mailto:webmaster@codeproject.com">CodeProject</A>, 1999-2004</A>. 
+      <BR><A href="http://www.codeproject.com/info/MediaKit">Advertise on The 
+      Code Project</A> | <A 
+      href="http://www.codeproject.com/info/privacy.asp">Privacy</A> 
+  </FONT></TD></TR></TBODY></TABLE><BR>
+<CENTER>
+<TABLE cellSpacing=0 cellPadding=0 width="95%" border=0>
+  <TBODY>
+  <TR>
+    <TD bgColor=#ff9900 height=1><IMG height=1 
+    src="CDialogSK_files/space.gif"></TD></TR>
+  <TR>
+    <TD align=middle><FONT size=1><A 
+      href="http://www.codeproject.com/redir.asp?id=235">MSDN Communities</A> | 
+      <A href="http://aspalliance.com/">ASPAlliance</A> • <A 
+      href="http://www.developerfusion.com/">Developer Fusion</A> • <A 
+      href="http://www.devguru.com/">DevGuru</A> • <A 
+      href="http://www.programmersheaven.com/">Programmers Heaven</A> • <A 
+      href="http://www.planet-source-code.com/">Planet Source Code</A> • <A 
+      href="http://www.resourceindex.com/">Resource Index</A> • <A 
+      href="http://www.tek-tips.com/">Tek-Tips Forums</A> • <A 
+      href="http://www.topxml.com/">What is XML?</A> • <A 
+      href="http://www.visualbuilder.com/">VisualBuilder</A> • <A 
+      href="http://www.zvon.org/">ZVON</A> • <A 
+      href="http://www.codeproject.com/redir.asp?id=169">Search Us!</A> 
+    </FONT></TD></TR></TBODY></TABLE></CENTER></BODY></HTML>

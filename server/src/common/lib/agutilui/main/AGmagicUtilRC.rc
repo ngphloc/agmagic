@@ -1,0 +1,171 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "AGmagicUtilRC.h"
+
+#if AGMAGIC_SUPPORT_MFC
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "CITD\0"
+            VALUE "FileDescription", "AGmagicUtil\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "AGmagicUtil\0"
+            VALUE "LegalCopyright", "Copyright © 2004\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "AGmagicUtil.dll\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "CITD AGmagicUtil\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_AGMAGIC_LOGIN DIALOG DISCARDABLE  0, 0, 373, 175
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "AGmagic Login"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "OK",IDOK,50,151,83,16
+    PUSHBUTTON      "Cancel",IDCANCEL,144,151,83,16
+    LTEXT           "Server Machine               : ",IDC_STATIC,7,19,86,9
+    EDITTEXT        IDC_AGMAGIC_LOGIN_SERVER_MACHINE,101,16,96,13
+    LTEXT           "Port                                  :",IDC_STATIC,7,
+                    40,86,9
+    EDITTEXT        IDC_AGMAGIC_LOGIN_PORT,101,37,29,13
+    LTEXT           "Database Connect Type  :",IDC_STATIC,7,61,86,9
+    COMBOBOX        IDC_AGMAGIC_LOGIN_DB_CONNECTION_TYPE,101,58,125,45,
+                    CBS_DROPDOWNLIST | WS_TABSTOP
+    LTEXT           "Database Name               :",IDC_STATIC,7,82,86,9
+    EDITTEXT        IDC_AGMAGIC_LOGIN_DB_NAME,101,78,126,13,ES_AUTOHSCROLL
+    LTEXT           "User                                 :",IDC_STATIC,7,
+                    103,86,9
+    EDITTEXT        IDC_AGMAGIC_LOGIN_USER,101,99,70,13,ES_AUTOHSCROLL
+    LTEXT           "Password                         :",IDC_STATIC,7,124,86,
+                    9
+    EDITTEXT        IDC_AGMAGIC_LOGIN_PASSWORD,101,120,70,13,ES_PASSWORD | 
+                    ES_AUTOHSCROLL
+    PUSHBUTTON      "&Create",IDC_AGMAGIC_LOGIN_DB_CREATE,273,78,34,13
+    PUSHBUTTON      "&Register",IDC_AGMAGIC_LOGIN_USER_REGISTER,176,99,34,13
+    PUSHBUTTON      "&Test Connection",IDC_AGMAGIC_LOGIN_TEST_CONNECTION,238,
+                    151,83,16
+    LTEXT           "Provider : ",IDC_STATIC,237,60,32,9
+    EDITTEXT        IDC_AGMAGIC_LOGIN_DB_PROVIDER,273,58,92,13
+    PUSHBUTTON      "&Browse",IDC_AGMAGIC_LOGIN_DB_BROWSE,233,78,34,13
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_TREE_BITMAP_NORMAL       BITMAP  DISCARDABLE     "res\\tree_bitmap_n.bmp"
+IDB_TREE_BITMAP_STATUS       BITMAP  DISCARDABLE     "res\\tree_bitmap_s.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Extend Include
+//
+#include "../../ui/OptionTree/src/COptionTree/CommonRes.rc"
+
+#endif    // English (U.S.) resources
+
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
+#endif //AGMAGIC_SUPPORT_MFC

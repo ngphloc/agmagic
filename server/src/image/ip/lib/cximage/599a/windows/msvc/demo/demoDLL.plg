@@ -1,0 +1,167 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: demoDll - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP7C.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /I "..\cximage" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /D "VATI_EXTENSIONS" /Fr"DebugDll/" /Fo"DebugDll/" /Fd"DebugDll/" /FD /c 
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\demo\BCMenu.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\demo\ChildFrm.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\demo\demo.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\demo\demoDoc.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\demo\demoView.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\demo\DlgCapture.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\demo\DlgColorize.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\demo\DlgCombine.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\demo\DlgDecBpp.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\demo\DlgDither.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\demo\DlgFFT.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\demo\DlgGamma.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\demo\DlgHisto.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\demo\DlgIncBpp.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\demo\DlgMix.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\demo\DlgOpacity.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\demo\DlgOptions.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\demo\DlgPalette.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\demo\DlgRepair.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\demo\DlgResample.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\demo\DlgRotate.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\demo\DlgText.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\demo\DlgThreshold.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\demo\DlgURL.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\demo\logomdi.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\demo\MainFrm.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\demo\Quantize.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\demo\TwainCpp.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\demo\xTargetButton.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP7C.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP7D.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /I "..\cximage" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /D "VATI_EXTENSIONS" /Fr"DebugDll/" /Fp"DebugDll/demoDLL.pch" /Yc"stdafx.h" /Fo"DebugDll/" /Fd"DebugDll/" /FD /c 
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\demo\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP7D.tmp" 
+<h3>Output Window</h3>
+Compiling...
+StdAfx.cpp
+Compiling...
+BCMenu.cpp
+ChildFrm.cpp
+demo.cpp
+demoDoc.cpp
+demoView.cpp
+DlgCapture.cpp
+DlgColorize.cpp
+DlgCombine.cpp
+DlgDecBpp.cpp
+DlgDither.cpp
+DlgFFT.cpp
+DlgGamma.cpp
+DlgHisto.cpp
+DlgIncBpp.cpp
+DlgMix.cpp
+DlgOpacity.cpp
+DlgOptions.cpp
+DlgPalette.cpp
+DlgRepair.cpp
+DlgResample.cpp
+Generating Code...
+Compiling...
+DlgRotate.cpp
+DlgText.cpp
+DlgThreshold.cpp
+DlgURL.cpp
+logomdi.cpp
+MainFrm.cpp
+Quantize.cpp
+TwainCpp.cpp
+xTargetButton.cpp
+Generating Code...
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP7E.tmp" with contents
+[
+wininet.lib ../cximage/CxImageDLL/Debug/cximagecrtd.lib /nologo /subsystem:windows /incremental:yes /pdb:"DebugDll/demoddll.pdb" /debug /machine:I386 /out:"../bin/demoddll.exe" 
+".\DebugDll\BCMenu.obj"
+".\DebugDll\ChildFrm.obj"
+".\DebugDll\demo.obj"
+".\DebugDll\demoDoc.obj"
+".\DebugDll\demoView.obj"
+".\DebugDll\DlgCapture.obj"
+".\DebugDll\DlgColorize.obj"
+".\DebugDll\DlgCombine.obj"
+".\DebugDll\DlgDecBpp.obj"
+".\DebugDll\DlgDither.obj"
+".\DebugDll\DlgFFT.obj"
+".\DebugDll\DlgGamma.obj"
+".\DebugDll\DlgHisto.obj"
+".\DebugDll\DlgIncBpp.obj"
+".\DebugDll\DlgMix.obj"
+".\DebugDll\DlgOpacity.obj"
+".\DebugDll\DlgOptions.obj"
+".\DebugDll\DlgPalette.obj"
+".\DebugDll\DlgRepair.obj"
+".\DebugDll\DlgResample.obj"
+".\DebugDll\DlgRotate.obj"
+".\DebugDll\DlgText.obj"
+".\DebugDll\DlgThreshold.obj"
+".\DebugDll\DlgURL.obj"
+".\DebugDll\logomdi.obj"
+".\DebugDll\MainFrm.obj"
+".\DebugDll\Quantize.obj"
+".\DebugDll\StdAfx.obj"
+".\DebugDll\TwainCpp.obj"
+".\DebugDll\xTargetButton.obj"
+".\DebugDll\demo.res"
+"\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\CxImage\CxImageDLL\Debug\cximagecrtd.lib"
+]
+Creating command line "link.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP7E.tmp"
+<h3>Output Window</h3>
+Linking...
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP7F.tmp" with contents
+[
+/nologo /o"DebugDll/demoDLL.bsc" 
+".\DebugDll\StdAfx.sbr"
+".\DebugDll\BCMenu.sbr"
+".\DebugDll\ChildFrm.sbr"
+".\DebugDll\demo.sbr"
+".\DebugDll\demoDoc.sbr"
+".\DebugDll\demoView.sbr"
+".\DebugDll\DlgCapture.sbr"
+".\DebugDll\DlgColorize.sbr"
+".\DebugDll\DlgCombine.sbr"
+".\DebugDll\DlgDecBpp.sbr"
+".\DebugDll\DlgDither.sbr"
+".\DebugDll\DlgFFT.sbr"
+".\DebugDll\DlgGamma.sbr"
+".\DebugDll\DlgHisto.sbr"
+".\DebugDll\DlgIncBpp.sbr"
+".\DebugDll\DlgMix.sbr"
+".\DebugDll\DlgOpacity.sbr"
+".\DebugDll\DlgOptions.sbr"
+".\DebugDll\DlgPalette.sbr"
+".\DebugDll\DlgRepair.sbr"
+".\DebugDll\DlgResample.sbr"
+".\DebugDll\DlgRotate.sbr"
+".\DebugDll\DlgText.sbr"
+".\DebugDll\DlgThreshold.sbr"
+".\DebugDll\DlgURL.sbr"
+".\DebugDll\logomdi.sbr"
+".\DebugDll\MainFrm.sbr"
+".\DebugDll\Quantize.sbr"
+".\DebugDll\TwainCpp.sbr"
+".\DebugDll\xTargetButton.sbr"]
+Creating command line "bscmake.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP7F.tmp"
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+demoddll.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

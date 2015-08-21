@@ -1,0 +1,12 @@
+.FeatureBox {
+	BORDER-RIGHT: #6699cc 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: #6699cc 1px solid; PADDING-LEFT: 2px; FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=1, StartColorStr='#00B4CCE5', EndColorStr='#90B4CCE5') progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#00B4CCE5', EndColorStr='#40B4CCE5' ); PADDING-BOTTOM: 2px; BORDER-LEFT: #6699cc 1px solid; PADDING-TOP: 2px; BORDER-BOTTOM: #6699cc 1px solid; BACKGROUND-COLOR: transparent
+}
+.FeatureBoxHeader {
+	PADDING-LEFT: 2pt; FONT-WEIGHT: bold; FONT-SIZE: 13pt; PADDING-BOTTOM: 2pt; COLOR: #993300; FONT-FAMILY: Verdana
+}
+.FeatureBoxHeader A {
+	PADDING-LEFT: 2pt; FONT-WEIGHT: bold; FONT-SIZE: 13pt; PADDING-BOTTOM: 2pt; COLOR: #993300; FONT-FAMILY: Verdana
+}
+.FeatureBoxHeaderArrow {
+	BACKGROUND-COLOR: #a5c9ef
+}

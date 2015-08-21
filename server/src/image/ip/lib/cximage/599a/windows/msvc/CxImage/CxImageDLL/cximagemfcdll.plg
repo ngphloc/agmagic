@@ -1,0 +1,840 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: j2k - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4F.tmp" with contents
+[
+/nologo /MDd /W3 /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /D "_AFXDLL" /D "LIBJ2K_EXPORTS" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\j2k\bio.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\j2k\cio.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\j2k\dwt.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\j2k\fix.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\j2k\int.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\j2k\j2k.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\j2k\mct.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\j2k\mqc.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\j2k\pi.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\j2k\t1.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\j2k\t2.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\j2k\tcd.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\j2k\tgt.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4F.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP50.tmp" with contents
+[
+/nologo /out:"Debug\j2k.lib" 
+".\Debug\bio.obj"
+".\Debug\cio.obj"
+".\Debug\dwt.obj"
+".\Debug\fix.obj"
+".\Debug\int.obj"
+".\Debug\j2k.obj"
+".\Debug\mct.obj"
+".\Debug\mqc.obj"
+".\Debug\pi.obj"
+".\Debug\t1.obj"
+".\Debug\t2.obj"
+".\Debug\tcd.obj"
+".\Debug\tgt.obj"
+]
+Creating command line "link.exe -lib @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP50.tmp"
+<h3>Output Window</h3>
+Compiling...
+bio.c
+cio.c
+dwt.c
+fix.c
+int.c
+j2k.c
+mct.c
+mqc.c
+pi.c
+t1.c
+t2.c
+tcd.c
+tgt.c
+Generating Code...
+Creating library...
+<h3>
+--------------------Configuration: jbig - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP51.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_LIB" /D "_AFXDLL" /Fp"Debug/jbig.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jbig\jbig.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jbig\jbig_tab.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP51.tmp" 
+Creating command line "link.exe -lib /nologo /out:"Debug\jbig.lib"  ".\Debug\jbig.obj" ".\Debug\jbig_tab.obj" "
+<h3>Output Window</h3>
+Compiling...
+jbig.c
+d:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jbig\jbig.c(1497) : warning C4146: unary minus operator applied to unsigned type, result still unsigned
+jbig_tab.c
+Creating library...
+<h3>
+--------------------Configuration: jpeg - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP52.tmp" with contents
+[
+/nologo /MDd /W3 /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /Fo"Debug/" /Fd"Debug/" /FD /c 
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jpeg\Jcapimin.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jpeg\Jcapistd.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jpeg\Jccoefct.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jpeg\Jccolor.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jpeg\Jcdctmgr.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jpeg\Jchuff.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jpeg\Jcinit.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jpeg\Jcmainct.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jpeg\Jcmarker.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jpeg\Jcmaster.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jpeg\Jcomapi.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jpeg\Jcparam.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jpeg\Jcphuff.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jpeg\Jcprepct.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jpeg\Jcsample.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jpeg\Jctrans.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jpeg\Jdapimin.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jpeg\Jdapistd.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jpeg\Jdatadst.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jpeg\Jdatasrc.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jpeg\Jdcoefct.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jpeg\Jdcolor.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jpeg\Jddctmgr.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jpeg\Jdhuff.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jpeg\Jdinput.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jpeg\Jdmainct.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jpeg\Jdmarker.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jpeg\Jdmaster.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jpeg\Jdmerge.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jpeg\Jdphuff.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jpeg\Jdpostct.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jpeg\Jdsample.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jpeg\Jdtrans.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jpeg\Jerror.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jpeg\Jfdctflt.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jpeg\Jfdctfst.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jpeg\Jfdctint.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jpeg\Jidctflt.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jpeg\Jidctfst.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jpeg\Jidctint.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jpeg\Jidctred.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jpeg\Jmemmgr.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jpeg\Jmemnobs.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jpeg\Jquant1.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jpeg\Jquant2.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jpeg\Jutils.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP52.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP53.tmp" with contents
+[
+/nologo /out:"Debug\Jpeg.lib" 
+".\Debug\Jcapimin.obj"
+".\Debug\Jcapistd.obj"
+".\Debug\Jccoefct.obj"
+".\Debug\Jccolor.obj"
+".\Debug\Jcdctmgr.obj"
+".\Debug\Jchuff.obj"
+".\Debug\Jcinit.obj"
+".\Debug\Jcmainct.obj"
+".\Debug\Jcmarker.obj"
+".\Debug\Jcmaster.obj"
+".\Debug\Jcomapi.obj"
+".\Debug\Jcparam.obj"
+".\Debug\Jcphuff.obj"
+".\Debug\Jcprepct.obj"
+".\Debug\Jcsample.obj"
+".\Debug\Jctrans.obj"
+".\Debug\Jdapimin.obj"
+".\Debug\Jdapistd.obj"
+".\Debug\Jdatadst.obj"
+".\Debug\Jdatasrc.obj"
+".\Debug\Jdcoefct.obj"
+".\Debug\Jdcolor.obj"
+".\Debug\Jddctmgr.obj"
+".\Debug\Jdhuff.obj"
+".\Debug\Jdinput.obj"
+".\Debug\Jdmainct.obj"
+".\Debug\Jdmarker.obj"
+".\Debug\Jdmaster.obj"
+".\Debug\Jdmerge.obj"
+".\Debug\Jdphuff.obj"
+".\Debug\Jdpostct.obj"
+".\Debug\Jdsample.obj"
+".\Debug\Jdtrans.obj"
+".\Debug\Jerror.obj"
+".\Debug\Jfdctflt.obj"
+".\Debug\Jfdctfst.obj"
+".\Debug\Jfdctint.obj"
+".\Debug\Jidctflt.obj"
+".\Debug\Jidctfst.obj"
+".\Debug\Jidctint.obj"
+".\Debug\Jidctred.obj"
+".\Debug\Jmemmgr.obj"
+".\Debug\Jmemnobs.obj"
+".\Debug\Jquant1.obj"
+".\Debug\Jquant2.obj"
+".\Debug\Jutils.obj"
+]
+Creating command line "link.exe -lib @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP53.tmp"
+<h3>Output Window</h3>
+Compiling...
+Jcapimin.c
+Jcapistd.c
+Jccoefct.c
+Jccolor.c
+Jcdctmgr.c
+Jchuff.c
+Jcinit.c
+Jcmainct.c
+Jcmarker.c
+Jcmaster.c
+Jcomapi.c
+Jcparam.c
+Jcphuff.c
+Jcprepct.c
+Jcsample.c
+Jctrans.c
+Jdapimin.c
+Jdapistd.c
+Jdatadst.c
+Jdatasrc.c
+Generating Code...
+Compiling...
+Jdcoefct.c
+Jdcolor.c
+Jddctmgr.c
+Jdhuff.c
+Jdinput.c
+Jdmainct.c
+Jdmarker.c
+Jdmaster.c
+Jdmerge.c
+Jdphuff.c
+Jdpostct.c
+Jdsample.c
+Jdtrans.c
+Jerror.c
+Jfdctflt.c
+Jfdctfst.c
+Jfdctint.c
+Jidctflt.c
+Jidctfst.c
+Jidctint.c
+Generating Code...
+Compiling...
+Jidctred.c
+Jmemmgr.c
+Jmemnobs.c
+Jquant1.c
+Jquant2.c
+Jutils.c
+Generating Code...
+Creating library...
+<h3>
+--------------------Configuration: png - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP54.tmp" with contents
+[
+/nologo /MDd /W3 /GX /ZI /Od /I "..\zlib" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /D "_AFXDLL" /Fo"Debug/" /Fd"Debug/" /FD /c 
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\png\png.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\png\pngerror.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\png\pngget.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\png\pngmem.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\png\pngpread.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\png\pngread.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\png\pngrio.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\png\pngrtran.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\png\pngrutil.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\png\pngset.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\png\pngtrans.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\png\pngvcrd.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\png\pngwio.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\png\pngwrite.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\png\pngwtran.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\png\pngwutil.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP54.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP55.tmp" with contents
+[
+/nologo /out:"Debug\png.lib" 
+".\Debug\png.obj"
+".\Debug\pngerror.obj"
+".\Debug\pngget.obj"
+".\Debug\pngmem.obj"
+".\Debug\pngpread.obj"
+".\Debug\pngread.obj"
+".\Debug\pngrio.obj"
+".\Debug\pngrtran.obj"
+".\Debug\pngrutil.obj"
+".\Debug\pngset.obj"
+".\Debug\pngtrans.obj"
+".\Debug\pngvcrd.obj"
+".\Debug\pngwio.obj"
+".\Debug\pngwrite.obj"
+".\Debug\pngwtran.obj"
+".\Debug\pngwutil.obj"
+]
+Creating command line "link.exe -lib @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP55.tmp"
+<h3>Output Window</h3>
+Compiling...
+png.c
+pngerror.c
+pngget.c
+pngmem.c
+pngpread.c
+pngread.c
+pngrio.c
+pngrtran.c
+pngrutil.c
+pngset.c
+pngtrans.c
+pngvcrd.c
+pngwio.c
+pngwrite.c
+pngwtran.c
+pngwutil.c
+Generating Code...
+Creating library...
+<h3>
+--------------------Configuration: tiff - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP56.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /I "..\zlib" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_LIB" /D "_AFXDLL" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\fax3sm_winnt.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_aux.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_close.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_codec.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_compress.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_dir.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_dirinfo.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_dirread.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_dirwrite.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_dumpmode.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_error.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_fax3.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_flush.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_getimage.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_jpeg.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_luv.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_lzw.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_next.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_ojpeg.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_open.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_packbits.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_pixarlog.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_predict.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_print.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_read.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_strip.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_swab.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_thunder.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_tile.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_version.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_warning.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_write.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_zip.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP56.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP57.tmp" with contents
+[
+/nologo /out:"Debug\Tiff.lib" 
+".\Debug\fax3sm_winnt.obj"
+".\Debug\tif_aux.obj"
+".\Debug\tif_close.obj"
+".\Debug\tif_codec.obj"
+".\Debug\tif_compress.obj"
+".\Debug\tif_dir.obj"
+".\Debug\tif_dirinfo.obj"
+".\Debug\tif_dirread.obj"
+".\Debug\tif_dirwrite.obj"
+".\Debug\tif_dumpmode.obj"
+".\Debug\tif_error.obj"
+".\Debug\tif_fax3.obj"
+".\Debug\tif_flush.obj"
+".\Debug\tif_getimage.obj"
+".\Debug\tif_jpeg.obj"
+".\Debug\tif_luv.obj"
+".\Debug\tif_lzw.obj"
+".\Debug\tif_next.obj"
+".\Debug\tif_ojpeg.obj"
+".\Debug\tif_open.obj"
+".\Debug\tif_packbits.obj"
+".\Debug\tif_pixarlog.obj"
+".\Debug\tif_predict.obj"
+".\Debug\tif_print.obj"
+".\Debug\tif_read.obj"
+".\Debug\tif_strip.obj"
+".\Debug\tif_swab.obj"
+".\Debug\tif_thunder.obj"
+".\Debug\tif_tile.obj"
+".\Debug\tif_version.obj"
+".\Debug\tif_warning.obj"
+".\Debug\tif_write.obj"
+".\Debug\tif_zip.obj"
+]
+Creating command line "link.exe -lib @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP57.tmp"
+<h3>Output Window</h3>
+Compiling...
+fax3sm_winnt.c
+tif_aux.c
+tif_close.c
+tif_codec.c
+tif_compress.c
+tif_dir.c
+tif_dirinfo.c
+tif_dirread.c
+tif_dirwrite.c
+tif_dumpmode.c
+tif_error.c
+tif_fax3.c
+tif_flush.c
+tif_getimage.c
+tif_jpeg.c
+tif_luv.c
+tif_lzw.c
+tif_next.c
+tif_ojpeg.c
+tif_open.c
+Generating Code...
+Compiling...
+tif_packbits.c
+tif_pixarlog.c
+tif_predict.c
+tif_print.c
+tif_read.c
+tif_strip.c
+tif_swab.c
+tif_thunder.c
+tif_tile.c
+tif_version.c
+tif_warning.c
+tif_write.c
+tif_zip.c
+Generating Code...
+Creating library...
+<h3>
+--------------------Configuration: zlib - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP58.tmp" with contents
+[
+/nologo /MDd /W3 /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /D "_AFXDLL" /Fo"Debug/" /Fd"Debug/" /FD /c 
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\zlib\adler32.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\zlib\compress.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\zlib\crc32.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\zlib\deflate.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\zlib\gzio.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\zlib\infback.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\zlib\inffast.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\zlib\inflate.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\zlib\inftrees.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\zlib\trees.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\zlib\uncompr.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\zlib\zutil.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP58.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP59.tmp" with contents
+[
+/nologo /out:"Debug\zlib.lib" 
+".\Debug\adler32.obj"
+".\Debug\compress.obj"
+".\Debug\crc32.obj"
+".\Debug\deflate.obj"
+".\Debug\gzio.obj"
+".\Debug\infback.obj"
+".\Debug\inffast.obj"
+".\Debug\inflate.obj"
+".\Debug\inftrees.obj"
+".\Debug\trees.obj"
+".\Debug\uncompr.obj"
+".\Debug\zutil.obj"
+]
+Creating command line "link.exe -lib @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP59.tmp"
+<h3>Output Window</h3>
+Compiling...
+adler32.c
+compress.c
+crc32.c
+deflate.c
+gzio.c
+infback.c
+inffast.c
+inflate.c
+inftrees.c
+trees.c
+uncompr.c
+zutil.c
+Generating Code...
+Creating library...
+<h3>
+--------------------Configuration: jasper - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP5A.tmp" with contents
+[
+/nologo /MDd /W2 /Gm /GX /ZI /Od /I ".\include" /D "_DEBUG" /D "WIN32" /D "_MBCS" /D "_LIB" /D "JAS_WIN_MSVC_BUILD" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\bmp\bmp_cod.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\bmp\bmp_dec.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\bmp\bmp_enc.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\base\jas_cm.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\base\jas_debug.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\base\jas_getopt.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\base\jas_icc.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\base\jas_iccdata.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\base\jas_image.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\base\jas_init.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\base\jas_malloc.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\base\jas_seq.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\base\jas_stream.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\base\jas_string.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\base\jas_tvp.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\base\jas_version.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\jp2\jp2_cod.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\jp2\jp2_dec.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\jp2\jp2_enc.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\jpc\jpc_bs.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\jpc\jpc_cs.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\jpc\jpc_dec.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\jpc\jpc_enc.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\jpc\jpc_math.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\jpc\jpc_mct.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\jpc\jpc_mqcod.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\jpc\jpc_mqdec.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\jpc\jpc_mqenc.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\jpc\jpc_qmfb.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\jpc\jpc_t1cod.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\jpc\jpc_t1dec.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\jpc\jpc_t1enc.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\jpc\jpc_t2cod.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\jpc\jpc_t2dec.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\jpc\jpc_t2enc.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\jpc\jpc_tagtree.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\jpc\jpc_tsfb.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\jpc\jpc_util.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\jpg\jpg_dummy.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\jpg\jpg_val.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\mif\mif_cod.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\pgx\pgx_cod.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\pgx\pgx_dec.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\pgx\pgx_enc.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\pnm\pnm_cod.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\pnm\pnm_dec.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\pnm\pnm_enc.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\ras\ras_cod.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\ras\ras_dec.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\ras\ras_enc.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP5A.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP5B.tmp" with contents
+[
+/nologo /out:"Debug\jasper.lib" 
+".\Debug\bmp_cod.obj"
+".\Debug\bmp_dec.obj"
+".\Debug\bmp_enc.obj"
+".\Debug\jas_cm.obj"
+".\Debug\jas_debug.obj"
+".\Debug\jas_getopt.obj"
+".\Debug\jas_icc.obj"
+".\Debug\jas_iccdata.obj"
+".\Debug\jas_image.obj"
+".\Debug\jas_init.obj"
+".\Debug\jas_malloc.obj"
+".\Debug\jas_seq.obj"
+".\Debug\jas_stream.obj"
+".\Debug\jas_string.obj"
+".\Debug\jas_tvp.obj"
+".\Debug\jas_version.obj"
+".\Debug\jp2_cod.obj"
+".\Debug\jp2_dec.obj"
+".\Debug\jp2_enc.obj"
+".\Debug\jpc_bs.obj"
+".\Debug\jpc_cs.obj"
+".\Debug\jpc_dec.obj"
+".\Debug\jpc_enc.obj"
+".\Debug\jpc_math.obj"
+".\Debug\jpc_mct.obj"
+".\Debug\jpc_mqcod.obj"
+".\Debug\jpc_mqdec.obj"
+".\Debug\jpc_mqenc.obj"
+".\Debug\jpc_qmfb.obj"
+".\Debug\jpc_t1cod.obj"
+".\Debug\jpc_t1dec.obj"
+".\Debug\jpc_t1enc.obj"
+".\Debug\jpc_t2cod.obj"
+".\Debug\jpc_t2dec.obj"
+".\Debug\jpc_t2enc.obj"
+".\Debug\jpc_tagtree.obj"
+".\Debug\jpc_tsfb.obj"
+".\Debug\jpc_util.obj"
+".\Debug\jpg_dummy.obj"
+".\Debug\jpg_val.obj"
+".\Debug\mif_cod.obj"
+".\Debug\pgx_cod.obj"
+".\Debug\pgx_dec.obj"
+".\Debug\pgx_enc.obj"
+".\Debug\pnm_cod.obj"
+".\Debug\pnm_dec.obj"
+".\Debug\pnm_enc.obj"
+".\Debug\ras_cod.obj"
+".\Debug\ras_dec.obj"
+".\Debug\ras_enc.obj"
+]
+Creating command line "link.exe -lib @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP5B.tmp"
+<h3>Output Window</h3>
+Compiling...
+bmp_cod.c
+bmp_dec.c
+bmp_enc.c
+jas_cm.c
+jas_debug.c
+jas_getopt.c
+jas_icc.c
+jas_iccdata.c
+jas_image.c
+jas_init.c
+jas_malloc.c
+jas_seq.c
+jas_stream.c
+jas_string.c
+jas_tvp.c
+jas_version.c
+jp2_cod.c
+jp2_dec.c
+jp2_enc.c
+jpc_bs.c
+Generating Code...
+d:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\jp2\jp2_cod.c(757) : warning C4761: integral size mismatch in argument; conversion supplied
+d:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\jp2\jp2_cod.c(757) : warning C4761: integral size mismatch in argument; conversion supplied
+d:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\base\jas_image.c(221) : warning C4761: integral size mismatch in argument; conversion supplied
+d:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\base\jas_image.c(720) : warning C4761: integral size mismatch in argument; conversion supplied
+Compiling...
+jpc_cs.c
+jpc_dec.c
+jpc_enc.c
+jpc_math.c
+jpc_mct.c
+jpc_mqcod.c
+jpc_mqdec.c
+jpc_mqenc.c
+jpc_qmfb.c
+jpc_t1cod.c
+jpc_t1dec.c
+jpc_t1enc.c
+jpc_t2cod.c
+jpc_t2dec.c
+jpc_t2enc.c
+jpc_tagtree.c
+jpc_tsfb.c
+jpc_util.c
+jpg_dummy.c
+jpg_val.c
+Generating Code...
+d:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\jpc\jpc_dec.c(1232) : warning C4761: integral size mismatch in argument; conversion supplied
+d:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\jpc\jpc_dec.c(1576) : warning C4761: integral size mismatch in argument; conversion supplied
+Compiling...
+mif_cod.c
+d:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\jpc\jpc_cs.c(401) : warning C4761: integral size mismatch in argument; conversion supplied
+d:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\jpc\jpc_cs.c(601) : warning C4761: integral size mismatch in argument; conversion supplied
+d:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\jpc\jpc_cs.c(741) : warning C4761: integral size mismatch in argument; conversion supplied
+d:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\jpc\jpc_cs.c(838) : warning C4761: integral size mismatch in argument; conversion supplied
+d:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\jpc\jpc_cs.c(875) : warning C4761: integral size mismatch in argument; conversion supplied
+d:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\jpc\jpc_cs.c(958) : warning C4761: integral size mismatch in argument; conversion supplied
+d:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\jpc\jpc_cs.c(972) : warning C4761: integral size mismatch in argument; conversion supplied
+d:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\jpc\jpc_cs.c(1065) : warning C4761: integral size mismatch in argument; conversion supplied
+d:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\jpc\jpc_cs.c(1069) : warning C4761: integral size mismatch in argument; conversion supplied
+d:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\jpc\jpc_cs.c(1339) : warning C4761: integral size mismatch in argument; conversion supplied
+d:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\jpc\jpc_cs.c(1339) : warning C4761: integral size mismatch in argument; conversion supplied
+pgx_cod.c
+pgx_dec.c
+pgx_enc.c
+pnm_cod.c
+pnm_dec.c
+pnm_enc.c
+ras_cod.c
+ras_dec.c
+ras_enc.c
+Generating Code...
+d:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\pnm\pnm_enc.c(342) : warning C4761: integral size mismatch in argument; conversion supplied
+d:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\pnm\pnm_enc.c(380) : warning C4761: integral size mismatch in argument; conversion supplied
+d:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\pnm\pnm_dec.c(260) : warning C4761: integral size mismatch in argument; conversion supplied
+d:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\pnm\pnm_dec.c(275) : warning C4761: integral size mismatch in argument; conversion supplied
+d:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\pnm\pnm_dec.c(317) : warning C4761: integral size mismatch in argument; conversion supplied
+d:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\pnm\pnm_dec.c(318) : warning C4761: integral size mismatch in argument; conversion supplied
+Creating library...
+<h3>
+--------------------Configuration: CxImageMfcDll - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x410 /fo"Debug/cximagemfcdll.res" /d "_DEBUG" /d "_AFXDLL" "D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\CxImage\CxImageDLL\cximagemfcdll.rc"" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP5C.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /I "../../zlib" /I "../../jasper/include" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "_MBCS" /D "_USRDLL" /D "JAS_WIN_MSVC_BUILD" /FR"Debug/" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\CxImage\CxImageDLL\cximagemfcdll.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\CxImage\tif_xfile.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\CxImage\ximabmp.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\CxImage\ximadsp.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\CxImage\ximaenc.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\CxImage\ximaexif.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\CxImage\ximage.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\CxImage\ximagif.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\CxImage\ximahist.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\CxImage\ximaico.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\CxImage\ximaj2k.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\CxImage\ximajas.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\CxImage\ximajbg.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\CxImage\ximajpg.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\CxImage\ximalpha.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\CxImage\ximalyr.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\CxImage\ximamng.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\CxImage\ximapal.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\CxImage\ximapcx.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\CxImage\ximapng.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\CxImage\ximasel.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\CxImage\ximatga.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\CxImage\ximatif.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\CxImage\ximatran.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\CxImage\ximawbmp.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\CxImage\ximawmf.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\CxImage\ximawnd.cpp"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\CxImage\xmemfile.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP5C.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP5D.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /I "../../zlib" /I "../../jasper/include" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "_MBCS" /D "_USRDLL" /D "JAS_WIN_MSVC_BUILD" /FR"Debug/" /Fp"Debug/cximagemfcdll.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\CxImage\CxImageDLL\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP5D.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP5E.tmp" with contents
+[
+/nologo /subsystem:windows /dll /incremental:yes /pdb:"Debug/cximaged.pdb" /debug /machine:I386 /out:"../../bin/cximaged.dll" /implib:"Debug/cximaged.lib" /pdbtype:sept 
+".\Debug\cximagemfcdll.obj"
+".\Debug\StdAfx.obj"
+".\Debug\tif_xfile.obj"
+".\Debug\ximabmp.obj"
+".\Debug\ximadsp.obj"
+".\Debug\ximaenc.obj"
+".\Debug\ximaexif.obj"
+".\Debug\ximage.obj"
+".\Debug\ximagif.obj"
+".\Debug\ximahist.obj"
+".\Debug\ximaico.obj"
+".\Debug\ximaj2k.obj"
+".\Debug\ximajas.obj"
+".\Debug\ximajbg.obj"
+".\Debug\ximajpg.obj"
+".\Debug\ximalpha.obj"
+".\Debug\ximalyr.obj"
+".\Debug\ximamng.obj"
+".\Debug\ximapal.obj"
+".\Debug\ximapcx.obj"
+".\Debug\ximapng.obj"
+".\Debug\ximasel.obj"
+".\Debug\ximatga.obj"
+".\Debug\ximatif.obj"
+".\Debug\ximatran.obj"
+".\Debug\ximawbmp.obj"
+".\Debug\ximawmf.obj"
+".\Debug\ximawnd.obj"
+".\Debug\xmemfile.obj"
+".\Debug\cximagemfcdll.res"
+"\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\j2k\Debug\j2k.lib"
+"\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jbig\Debug\jbig.lib"
+"\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jpeg\Debug\Jpeg.lib"
+"\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\png\Debug\png.lib"
+"\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\Debug\Tiff.lib"
+"\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\zlib\Debug\zlib.lib"
+"\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\jasper\Debug\jasper.lib"
+]
+Creating command line "link.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP5E.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+cximagemfcdll.cpp
+tif_xfile.cpp
+ximabmp.cpp
+ximadsp.cpp
+ximaenc.cpp
+ximaexif.cpp
+ximage.cpp
+ximagif.cpp
+ximahist.cpp
+ximaico.cpp
+ximaj2k.cpp
+ximajas.cpp
+ximajbg.cpp
+ximajpg.cpp
+ximalpha.cpp
+ximalyr.cpp
+ximamng.cpp
+ximapal.cpp
+ximapcx.cpp
+ximapng.cpp
+Generating Code...
+Compiling...
+ximasel.cpp
+ximatga.cpp
+ximatif.cpp
+ximatran.cpp
+ximawbmp.cpp
+ximawmf.cpp
+ximawnd.cpp
+xmemfile.cpp
+Generating Code...
+Linking...
+   Creating library Debug/cximaged.lib and object Debug/cximaged.exp
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP62.tmp" with contents
+[
+/nologo /o"Debug/cximagemfcdll.bsc" 
+".\Debug\StdAfx.sbr"
+".\Debug\cximagemfcdll.sbr"
+".\Debug\tif_xfile.sbr"
+".\Debug\ximabmp.sbr"
+".\Debug\ximadsp.sbr"
+".\Debug\ximaenc.sbr"
+".\Debug\ximaexif.sbr"
+".\Debug\ximage.sbr"
+".\Debug\ximagif.sbr"
+".\Debug\ximahist.sbr"
+".\Debug\ximaico.sbr"
+".\Debug\ximaj2k.sbr"
+".\Debug\ximajas.sbr"
+".\Debug\ximajbg.sbr"
+".\Debug\ximajpg.sbr"
+".\Debug\ximalpha.sbr"
+".\Debug\ximalyr.sbr"
+".\Debug\ximamng.sbr"
+".\Debug\ximapal.sbr"
+".\Debug\ximapcx.sbr"
+".\Debug\ximapng.sbr"
+".\Debug\ximasel.sbr"
+".\Debug\ximatga.sbr"
+".\Debug\ximatif.sbr"
+".\Debug\ximatran.sbr"
+".\Debug\ximawbmp.sbr"
+".\Debug\ximawmf.sbr"
+".\Debug\ximawnd.sbr"
+".\Debug\xmemfile.sbr"]
+Creating command line "bscmake.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP62.tmp"
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+cximaged.dll - 0 error(s), 24 warning(s)
+</pre>
+</body>
+</html>

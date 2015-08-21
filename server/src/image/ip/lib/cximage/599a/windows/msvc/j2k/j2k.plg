@@ -1,0 +1,88 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: j2k - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP99.tmp" with contents
+[
+/nologo /MDd /W3 /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /D "_AFXDLL" /D "LIBJ2K_EXPORTS" /FR"Debug/" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\j2k\bio.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\j2k\cio.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\j2k\dwt.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\j2k\fix.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\j2k\int.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\j2k\j2k.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\j2k\mct.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\j2k\mqc.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\j2k\pi.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\j2k\t1.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\j2k\t2.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\j2k\tcd.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\j2k\tgt.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP99.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP9A.tmp" with contents
+[
+/nologo /out:"Debug\j2k.lib" 
+".\Debug\bio.obj"
+".\Debug\cio.obj"
+".\Debug\dwt.obj"
+".\Debug\fix.obj"
+".\Debug\int.obj"
+".\Debug\j2k.obj"
+".\Debug\mct.obj"
+".\Debug\mqc.obj"
+".\Debug\pi.obj"
+".\Debug\t1.obj"
+".\Debug\t2.obj"
+".\Debug\tcd.obj"
+".\Debug\tgt.obj"
+]
+Creating command line "link.exe -lib @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP9A.tmp"
+<h3>Output Window</h3>
+Compiling...
+bio.c
+cio.c
+dwt.c
+fix.c
+int.c
+j2k.c
+mct.c
+mqc.c
+pi.c
+t1.c
+t2.c
+tcd.c
+tgt.c
+Generating Code...
+Creating library...
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP9B.tmp" with contents
+[
+/nologo /o"Debug/j2k.bsc" 
+".\Debug\bio.sbr"
+".\Debug\cio.sbr"
+".\Debug\dwt.sbr"
+".\Debug\fix.sbr"
+".\Debug\int.sbr"
+".\Debug\j2k.sbr"
+".\Debug\mct.sbr"
+".\Debug\mqc.sbr"
+".\Debug\pi.sbr"
+".\Debug\t1.sbr"
+".\Debug\t2.sbr"
+".\Debug\tcd.sbr"
+".\Debug\tgt.sbr"]
+Creating command line "bscmake.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP9B.tmp"
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+j2k.lib - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

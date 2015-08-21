@@ -1,0 +1,11 @@
+1) Thu vien dung de lap trinh CSDL khi su dung ADO thuong duoc luu tru tai tai:
+	"c:\Program Files\Common Files\System\ADO"
+
+2) Cach su dung
+#import "c:\Program Files\Common Files\System\ADO\msado15.dll" \
+   no_namespace rename("EOF", "EndOfFile")
+
+hay
+
+#import "c:\Program Files\Common Files\System\ADO\msado20.tlb" \
+   no_namespace rename("EOF", "EndOfFile")

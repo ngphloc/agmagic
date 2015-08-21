@@ -1,0 +1,82 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: ProfUIS_Controls - Win32 ANSI Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x409 /fo"..\..\Bin_600\AnsiRelease\ProfUIS_Controls/ProfUIS_Controls.res" /d "NDEBUG" /d "_AFXDLL" "D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Samples\ProfUIS_Controls\ProfUIS_Controls.rc"" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP16B.tmp" with contents
+[
+/nologo /MD /W4 /GX /O2 /I "..\..\include" /D "NDEBUG" /D "_AFXDLL" /D "WIN32" /D "_WINDOWS" /D _WIN32_WINNT=0x0400 /D _WIN32_IE=0x0400 /Fp"..\..\Bin_600\AnsiRelease\ProfUIS_Controls/ProfUIS_Controls_600.pch" /Yu"stdafx.h" /Fo"..\..\Bin_600\AnsiRelease\ProfUIS_Controls/" /Fd"..\..\Bin_600\AnsiRelease\ProfUIS_Controls/" /FD /c 
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Samples\ProfUIS_Controls\IconListBox.cpp"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Samples\ProfUIS_Controls\MainDlg.cpp"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Samples\ProfUIS_Controls\PageBase.cpp"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Samples\ProfUIS_Controls\PageButtons.cpp"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Samples\ProfUIS_Controls\PageCalendar.cpp"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Samples\ProfUIS_Controls\PageNotAvailable.cpp"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Samples\ProfUIS_Controls\PagePopupMenus.cpp"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Samples\ProfUIS_Controls\PageStatusBar.cpp"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Samples\ProfUIS_Controls\PageTabContainers.cpp"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Samples\ProfUIS_Controls\PageTabWindow.cpp"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Samples\ProfUIS_Controls\PageToolbars.cpp"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Samples\ProfUIS_Controls\ProfUIS_Controls.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP16B.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP16C.tmp" with contents
+[
+/nologo /MD /W4 /GX /O2 /I "..\..\include" /D "NDEBUG" /D "_AFXDLL" /D "WIN32" /D "_WINDOWS" /D _WIN32_WINNT=0x0400 /D _WIN32_IE=0x0400 /Fp"..\..\Bin_600\AnsiRelease\ProfUIS_Controls/ProfUIS_Controls_600.pch" /Yc"stdafx.h" /Fo"..\..\Bin_600\AnsiRelease\ProfUIS_Controls/" /Fd"..\..\Bin_600\AnsiRelease\ProfUIS_Controls/" /FD /c 
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Samples\ProfUIS_Controls\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP16C.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP16D.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:no /pdb:"..\..\Bin_600/ProfUIS_Controls-n.pdb" /machine:I386 /out:"..\..\Bin_600/ProfUIS_Controls-n.exe" /libpath:"..\..\Bin_600" 
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\ProfUIS_Controls\IconListBox.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\ProfUIS_Controls\MainDlg.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\ProfUIS_Controls\PageBase.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\ProfUIS_Controls\PageButtons.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\ProfUIS_Controls\PageCalendar.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\ProfUIS_Controls\PageNotAvailable.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\ProfUIS_Controls\PagePopupMenus.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\ProfUIS_Controls\PageStatusBar.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\ProfUIS_Controls\PageTabContainers.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\ProfUIS_Controls\PageTabWindow.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\ProfUIS_Controls\PageToolbars.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\ProfUIS_Controls\ProfUIS_Controls.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\ProfUIS_Controls\StdAfx.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\ProfUIS_Controls\ProfUIS_Controls.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP16D.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+   Prof-UIS multiply monitor support:
+      built-in
+   Automatically linking with ProfUIS225 library
+      (Professional User Interface Suite)
+Compiling...
+IconListBox.cpp
+MainDlg.cpp
+PageBase.cpp
+PageButtons.cpp
+PageCalendar.cpp
+PageNotAvailable.cpp
+PagePopupMenus.cpp
+PageStatusBar.cpp
+PageTabContainers.cpp
+PageTabWindow.cpp
+PageToolbars.cpp
+ProfUIS_Controls.cpp
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+ProfUIS_Controls-n.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

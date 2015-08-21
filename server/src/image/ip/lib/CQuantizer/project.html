@@ -1,0 +1,234 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0032)http://www.xdp.it/cquantizer.htm -->
+<HTML><HEAD><TITLE>xdp - cquantizer</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8"><LINK 
+href="project_files/xdp.css" type=text/css rel=stylesheet>
+<META content="MSHTML 6.00.3790.0" name=GENERATOR></HEAD>
+<BODY bgColor=#ffffff background=project_files/grid02.gif><A name=top></A>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD align=middle height=50><A href="http://www.xdp.it/index.shtml"><IMG 
+      height=26 alt=home src="project_files/xdp02s.gif" width=43 
+border=0></A></TD>
+    <TD vAlign=bottom width=3 height=50><IMG height=50 alt="" 
+      src="project_files/fu050.gif" width=3></TD>
+    <TD vAlign=center noWrap align=middle width="100%" height=50><I><SPAN 
+      class=title>::</SPAN></I><SPAN class=title> CQuantizer <I>::</I></SPAN></TD>
+    <TD noWrap align=right width=400><IMG height=50 alt="" 
+      src="project_files/top1.jpg" width=400></TD></TR>
+  <TR>
+    <TD width=150 bgColor=#666666 height=3><IMG height=3 alt="" 
+      src="project_files/fl150.gif" width=150></TD>
+    <TD width=3 bgColor=#666666 height=3></TD>
+    <TD align=right bgColor=#666666 colSpan=2 height=3><IMG height=3 alt="" 
+      src="project_files/fr400.gif" width=400></TD></TR>
+  <TR>
+    <TD vAlign=top height=116><BR>
+      <DL>
+        <DD><A href="http://www.xdp.it/projects.htm">Projects</A> 
+        <DD><A href="http://www.xdp.it/download.htm">Downloads</A> 
+        <DD><A href="http://www.xdp.it/documents.htm">Documents</A> 
+        <DD><A href="http://www.xdp.it/forum.htm">Forum</A> 
+        <DD><A href="http://www.xdp.it/contact.htm">Contact</A> 
+        <DD><A href="http://www.xdp.it/aboutme.htm">About me</A> </DD></DL>
+      <P align=right><IMG height=3 src="project_files/fl100.gif" width=100></P>
+      <UL>
+        <LI><A 
+        href="http://www.xdp.it/cquantizer.htm#Introduction">Introduction</A> 
+        <LI><A href="http://www.xdp.it/cquantizer.htm#Whatsnew">What's new</A> 
+        <LI><A href="http://www.xdp.it/cquantizer.htm#Operations">Class Members 
+        &amp; Operations</A> 
+        <LI><A href="http://www.xdp.it/cquantizer.htm#Example">Example</A> 
+      </LI></UL>
+      <P align=right><IMG height=3 src="project_files/fl050.gif" 
+width=50></P></TD>
+    <TD vAlign=bottom width=3 bgColor=#666666 height=116><IMG height=100 
+      alt="" src="project_files/fd100.gif" width=3></TD>
+    <TD colSpan=2 height=50>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD vAlign=top><BR>
+            <TABLE cellSpacing=0 cellPadding=3 width="80%" align=center 
+border=1>
+              <TBODY>
+              <TR>
+                <TD width="20%">Platform:</TD>
+                <TD width="80%">Windows</TD></TR>
+              <TR>
+                <TD width="20%">License:</TD>
+                <TD width="80%">Freeware</TD></TR>
+              <TR>
+                <TD width="20%">Release:</TD>
+                <TD width="80%">1.02</TD></TR>
+              <TR>
+                <TD width="20%">Last update:</TD>
+                <TD width="80%">4 September 2003</TD></TR>
+              <TR>
+                <TD width="20%">Description:</TD>
+                <TD width="80%">An implementation of the octree algorithm used 
+                  to reduce the number of colors, finding the optimal palette of 
+                  the image</TD></TR></TBODY></TABLE><BR><IMG height=3 
+            src="project_files/fr400.gif" width=400><BR><A 
+            name=Introduction></A><BR>
+            <TABLE cellSpacing=0 cellPadding=0 width="90%" align=center 
+border=0>
+              <TBODY>
+              <TR>
+                <TD>
+                  <CENTER>
+                  <H2>Introduction</H2></CENTER></TD></TR>
+              <TR>
+                <TD>
+                  <P>This article shows an implementation of the octree 
+                  algorithm used to reduce the number of colors, finding the 
+                  optimal palette of the image. The applications of the 
+                  algorithm range from optimized drawing routines, graphic 
+                  tools, file format conversion utilities. 
+                  <P>For this purpose, I will use the <CODE>CQuantizer</CODE> 
+                  class, developed in 1996-97 by Jeff Prosise, and described 
+                  with 2 articles in the MSDN. The original code has been 
+                  written to display images on 256-color display devices in the 
+                  end of the 16-bit era; but nowadays some functions can be 
+                  replaced, so I changed the memory allocation functions and 
+                  removed the need of a device context, to make the class a bit 
+                  more portable. </P></TD></TR></TBODY></TABLE><BR><IMG height=3 
+            src="project_files/fr200.gif" width=200><BR><A 
+name=Whatsnew></A><BR>
+            <TABLE cellSpacing=0 cellPadding=0 width="90%" align=center 
+border=0>
+              <TBODY>
+              <TR>
+                <TD>
+                  <CENTER>
+                  <H2>What's new</H2></CENTER></TD></TR>
+              <TR>
+                <TD>
+                  <P>In this update there are only 2 minor changes. The first is 
+                  a small bugfix in <CODE>CQuantizer::ProcessImage,</CODE> which 
+                  causes strange results in small images (let's say icons) with 
+                  8 bit per pixel or less, when you try to reduce the number of 
+                  colors down to 16 or less. 
+                  <P>The second change is an improvement to avoid a limit of the 
+                  octree algorithm: the reduction comes on the leafs of the 
+                  tree, each of them hold 8 colors, and for less than 16 colors 
+                  there are only 2 leafs; so the reduction for a really small 
+                  number of colors needs a different process. This has been 
+                  implemented in<CODE> CQuantizer::SetColorTable</CODE>, with 
+                  the help of some additional information gathered by 
+                  <CODE>CQuantizer::GetPaletteColors</CODE>. 
+                  <TABLE cellSpacing=1 cellPadding=1 width="90%" align=center 
+                  border=1>
+                    <TBODY>
+                    <TR>
+                      <TD colSpan=2>&nbsp; </TD></TR>
+                    <TR>
+                      <TD align=middle width="50%"><IMG height=241 alt="" 
+                        src="project_files/cquantizer_rgb.jpg" 
+                        width=227><BR>original true-color image</TD>
+                      <TD align=middle width="50%"><IMG height=241 alt="" 
+                        src="project_files/cquantizer_16.png" 
+                        width=227><BR>reduction to 16 colors</TD></TR>
+                    <TR>
+                      <TD align=middle width="50%"><IMG height=241 alt="" 
+                        src="project_files/cquantizer_08.png" width=227> 
+                        reduction to 8 colors</TD>
+                      <TD align=middle width="50%"><IMG height=241 alt="" 
+                        src="project_files/cquantizer_04.png" width=227> 
+                        reduction to 4 colors</TD></TR>
+                    <TR align=middle>
+                      <TD colSpan=2>
+                        <DIV align=center>all images are © <A 
+                        href="http://weboso.deviantart.com/">Jairo Boudewyn</A> 
+                        [<A href="http://weboso.deviantart.com/" 
+                        target=_blank>^</A>]</DIV></TD></TR></TBODY></TABLE>
+                  <P>The images above show some good results, achievable when 
+                  the cromatic contents are not very complex, but don't pretend 
+                  the same quality for all the kinds of images. 
+              </P></TD></TR></TBODY></TABLE><BR><IMG height=3 
+            src="project_files/fr100.gif" width=100><BR><A 
+            name=Operations></A><BR>
+            <TABLE cellSpacing=0 cellPadding=0 width="90%" align=center 
+border=0>
+              <TBODY>
+              <TR>
+                <TD>
+                  <CENTER>
+                  <H2>Class Members &amp; Operations</H2></CENTER></TD></TR>
+              <TR>
+                <TD>
+                  <TABLE width="100%" border=1>
+                    <TBODY>
+                    <TR vAlign=top>
+                      <TD width="47%" height=111><CODE>CQuantizer (UINT 
+                        nMaxColors, UINT nColorBits)</CODE></TD>
+                      <TD width="53%" height=111>Construction and 
+                        initialization.<BR><CODE>nMaxColors</CODE> = maximum 
+                        number of colors permitted in the 
+                        palette.<BR><CODE>nColorBits</CODE> = number of 
+                        significant bits in each 8-bit color component. For 
+                        example nColorBits = 6 tells the algorithm to ignore the 
+                        lower two bits of each color component. A setting of 5 
+                        or 6 generally produces a palette that is pleasing to 
+                        the eye while keeping the octree’s memory requirements 
+                        to a reasonable minimum. nColorBits = 8 is required for 
+                        reduction to 16 colors or less, when the precision is 
+                        very important.</TD></TR>
+                    <TR vAlign=top>
+                      <TD width="47%" height=18><CODE>ProcessImage (HANDLE 
+                        hImage)</CODE></TD>
+                      <TD width="53%" height=18>Processes the image to find 
+                        the optimal palette.<BR><CODE>hImage</CODE> = DIB image 
+                        handle.</TD></TR>
+                    <TR vAlign=top>
+                      <TD width="47%" height=13><CODE>SetColorTable (RGBQUAD* 
+                        prgb)</CODE></TD>
+                      <TD width="53%" height=13>Transfers the optimized 
+                        palette to a RGBQUAD structure.<BR>The size of the 
+                        structure must be at least 
+<CODE>nMaxColors</CODE>.</TD></TR>
+                    <TR vAlign=top>
+                      <TD width="47%"><CODE>GetColorCount ()</CODE></TD>
+                      <TD width="53%">Returns the number of colors found in 
+                        the optimized 
+            palette</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><BR><IMG 
+            height=3 src="project_files/fr050.gif" width=50><BR><A 
+            name=Example></A><BR>
+            <TABLE cellSpacing=0 cellPadding=0 width="90%" align=center 
+border=0>
+              <TBODY>
+              <TR>
+                <TD>
+                  <CENTER>
+                  <H2>Example</H2></CENTER></TD></TR>
+              <TR>
+                <TD>
+                  <P>This example shows an application of 
+                  <CODE>CQuantizer</CODE> with the <CODE>CxImage</CODE> 
+                  class:</P><PRE>CxImage image("test.bmp",CXIMAGE_FORMAT_BMP);
+
+CQuantizer q(16,8);
+q.ProcessImage(image.GetDIB());
+RGBQUAD* ppal=(RGBQUAD*)malloc(16*sizeof(RGBQUAD));
+q.SetColorTable(ppal);
+image.DecreaseBpp(4,ppal);
+free(ppal);</PRE></TD></TR></TBODY></TABLE><BR></TD>
+          <TD vAlign=bottom height=150><IMG height=100 alt="" 
+            src="project_files/fu100.gif" width=3></TD>
+          <TD></TD></TR>
+        <TR>
+          <TD align=right width=700 height=3><IMG height=3 alt="" 
+            src="project_files/fl400.gif" width=400></TD>
+          <TD width=3 bgColor=#666666 height=3></TD>
+          <TD height=3><IMG height=3 alt="" src="project_files/fr050.gif" 
+            width=50></TD></TR>
+        <TR>
+          <TD align=right height=50><SPAN class=tiny>2003 - 2004 © Davide 
+            Pizzolato - www.xdp.it</SPAN> &nbsp; &nbsp; &nbsp;</TD>
+          <TD width=3 height=50><IMG height=50 alt="" 
+            src="project_files/fd050.gif" width=3></TD>
+          <TD height=50>&nbsp; <A 
+            href="http://www.xdp.it/cquantizer.htm#top"><IMG height=14 alt=top 
+            src="project_files/reload1.gif" width=16 
+      border=0></A></TD></TR></TBODY></TABLE><BR></TD></TR></TBODY></TABLE></BODY></HTML>

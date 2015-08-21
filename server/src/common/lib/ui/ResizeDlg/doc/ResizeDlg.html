@@ -1,0 +1,1071 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0049)http://www.codeproject.com/dialog/RPResizeDlg.asp -->
+<HTML><HEAD><TITLE>The Code Project - Simple and more powerful resizable dialog - Dialog and Windows</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META http-equiv=Reply-to content=mailto:webmaster@codeproject.com>
+<META content="Free source code and tutorials for Windows developers." 
+name=Description>
+<META 
+content="Free source code, Dialog and Windows, Visual C++, MFC, Windows, Control, Dialog, Resize, MFC" 
+name=keywords>
+<META 
+content="Article content copyright Robert Python, 2004, everthing else Copyright © CodeProject, 1999-2004, All Rights Reserved." 
+name=Copyright><LINK href="/favicon.ico" type=image/ico rel=icon><LINK 
+href="/favicon.ico" rel="SHORTCUT ICON"><LINK href="ResizeDlg_files/global.css" 
+type=text/css rel=stylesheet>
+<SCRIPT language=javascript src="ResizeDlg_files/oncopy.js"></SCRIPT>
+
+<META content="MSHTML 6.00.3790.0" name=GENERATOR></HEAD>
+<BODY oncopy="return copyCode();" text=black vLink=purple aLink=red link=blue 
+bgColor=white leftMargin=3 topMargin=3>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#ff9900 border=0>
+  <TBODY>
+  <TR>
+    <TD width="100%">
+      <TABLE cellSpacing=1 cellPadding=0 width="100%" bgColor=#ff9900 
+        border=0><TBODY>
+        <TR>
+          <TD vAlign=top><A href="http://www.codeproject.com/"><IMG height=72 
+            alt="The Code Project" src="ResizeDlg_files/logo225x72.gif" 
+            width=225 border=0></A></TD>
+          <TD align=right><SPAN id=AdBanner4><A 
+            href="http://www.codeproject.com/script/admentor/ads.asp"><IMG 
+            height=60 alt="View our advertisers" 
+            src="ResizeDlg_files/sponsors.gif" width=20 border=1></A>
+            <SCRIPT language=javascript>document.write("<a href=\"/script/admentor/admentorredir.asp?id=859&way=ban\" target=_blank><img src=\"/script/admentor/include/ServeAd.aspx?File=%2Fscript%2Fadmentor%2Fimages%2FDundasChart41Banner%2Egif&C=False&id=859\" alt=\"\" border=0 width=468 height=60></a>");</SCRIPT>
+            <A href="http://www.codeproject.com/info/mediakit"><IMG height=60 
+            alt="Advertise on the CodeProject" 
+            src="ResizeDlg_files/advertise.gif" width=20 
+        border=1></A></SPAN></TD></TR>
+        <TR>
+          <TD bgColor=#fbedbb colSpan=2>
+            <TABLE cellPadding=3 width="100%" bgColor=#fbedbb border=0>
+              <TBODY>
+              <TR vAlign=top>
+                <TD width="100%"><FONT style="FONT-SIZE: 8pt"><A 
+                  href="http://www.codeproject.com/?cat=1">All Topics</A>, <A 
+                  href="http://www.codeproject.com/?cat=2">MFC / C++</A> 
+                  &gt;&gt; <A href="http://www.codeproject.com/dialog/">Dialog 
+                  and Windows</A> &gt;&gt; <A 
+                  href="http://www.codeproject.com/dialog/#Dialogs">Dialogs</A></FONT><BR><BR><B><FONT 
+                  style="FONT-SIZE: 16pt" size=4>Simple and more powerful 
+                  resizable dialog</FONT></B><BR><B>By <A 
+                  href="http://www.codeproject.com/script/profile/whos_who.asp?id=1396650">Robert 
+                  Python</A> </B><BR><BR><FONT style="FONT-SIZE: 9pt">A simple 
+                  resizable dialog which resizes in NONE, RESIZE, REPOS, 
+                  RELATIVE, ZOOM, DELTA_ZOOM mode and behaves differently in 
+                  different directions(left, top, right, bottom)&nbsp;</FONT> 
+</TD>
+                <TD vAlign=top align=right>
+                  <TABLE cellSpacing=0 cellPadding=1 width=200 border=0>
+                    <TBODY>
+                    <TR vAlign=top>
+                      <TD>&nbsp;</TD>
+                      <TD class=SmallText>C++ (VC7, VC7.1, 
+                        VC6)<BR>Windows<BR>Win32, VS, MFC<BR>Dev</TD></TR>
+                    <TR>
+                      <TD>&nbsp;</TD>
+                      <TD class=SmallText noWrap>Posted 27 Sep 2004 0:45</TD></TR>
+                    <TR vAlign=top>
+                      <TD><IMG height=16 src="ResizeDlg_files/hlp.gif" 
+                        width=16></TD>
+                      <TD class=SmallText noWrap><A 
+                        href="http://www.codeproject.com/script/Articles/list_articles.asp?userid=1396650">Articles 
+                        by this author</A></TD></TR>
+                    <TR vAlign=top>
+                      <TD></TD>
+                      <TD class=SmallText noWrap><B>2,021</B> 
+                    views</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD colSpan=2>
+            <TABLE id=tblSiteToolbar cellSpacing=0 cellPadding=1 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <FORM name=Search action=/info/search.asp method=post>
+                <TD vAlign=top align=left width="100%">
+                  <TABLE cellSpacing=0 cellPadding=1 border=0>
+                    <TBODY>
+                    <TR vAlign=center>
+                      <TD class=smallText><B><FONT 
+                        color=white>Search:</FONT></B></TD>
+                      <TD class=navbar noWrap><INPUT class=smallText 
+                        maxLength=255 size=18 name=target></TD>
+                      <TD vAlign=top><SELECT class=smallText name=st> 
+                          <OPTION value=kw selected>Articles</OPTION> <OPTION 
+                          value=au>Authors</OPTION></SELECT></TD>
+                      <TD><INPUT class=formButton type=submit value=Go></TD></TR></TBODY></TABLE></TD></FORM>
+                <TD>
+                  <DIV id=MenuPos 
+                  style="WIDTH: 380px; POSITION: relative; HEIGHT: 20px">
+                  <TABLE height=20 cellSpacing=0 cellPadding=2 width=375>
+                    <TBODY>
+                    <TR>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/info/faq.asp">Help!</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/info/latest.asp">Articles</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/script/comments/forums.asp">Message 
+                        Boards</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/store/">StoreFront</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/lounge.asp">Lounge</A></TD></TR></TBODY></TABLE></DIV></TD></TR></TBODY></TABLE>
+            <SCRIPT type=text/javascript>function Go(){return}</SCRIPT>
+
+            <SCRIPT src="ResizeDlg_files/cpmenu_var.js" 
+            type=text/javascript></SCRIPT>
+
+            <SCRIPT src="ResizeDlg_files/menu10_com.js" 
+            type=text/javascript></SCRIPT>
+          </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=1 border=0>
+  <TBODY>
+  <TR vAlign=top>
+    <TD vAlign=top bgColor=#fbedbb rowSpan=2>
+      <TABLE cellSpacing=0 cellPadding=0 border=0>
+        <SCRIPT language=javascript>
+function ErrorHandle() {}
+window.onerror = ErrorHandle;
+
+function OnNLSubmit(option)
+{
+	if (option=="up")
+		document.subForm.action = "/script/profile/modify.asp?ct=%2Fdialog%2FRPResizeDlg%2Easp";
+	else if (option=="in")
+		document.subForm.action = "/script/profile/process_logon.asp?ct=%2Fdialog%2FRPResizeDlg%2Easp";
+	document.subForm.submit();
+	return true;
+}
+</SCRIPT>
+
+        <TBODY>
+        <TR>
+          <TD>
+            <TABLE cellSpacing=3 cellPadding=0>
+              <TBODY>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD class=InfoBarHeader>Toolbox</TD></TR>
+              <TR>
+                <TD bgColor=black colSpan=2><IMG height=1 
+                  src="ResizeDlg_files/space.gif" width=1></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="ResizeDlg_files/sitebuild_icon.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/submit/ReportProblem.asp?GUID=RPResizeDlg%2Fdialog9%2F27%2F2004">Broken 
+                  Article?</A></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="ResizeDlg_files/support_icon.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/store/"><B>VS.NET 2003 from 
+                  $899</B></A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="ResizeDlg_files/support_icon.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/store/"><B>MSDN Univ. from 
+                  $1950</B></A></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="ResizeDlg_files/print.gif" 
+width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/dialog/RPResizeDlg.asp?print=true" 
+                  target=_print>Print version</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="ResizeDlg_files/link.gif" width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/add_bookmark.asp?t=0&amp;ct=%2Fdialog%2FRPResizeDlg%2Easp&amp;guid=RPResizeDlg%2Fdialog9%2F27%2F2004">Bookmark 
+                  this</A></TD></TR></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="ResizeDlg_files/mail.gif" width=16></TD>
+                <TD class=SmallText><A 
+                  href="http://www.codeproject.com/script/recommend/form.asp?guid=RPResizeDlg%2Fdialog9%2F27%2F2004">Send 
+                  to a friend</A></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD class=InfoBarHeader>My Profile</TD></TR>
+              <TR>
+                <TD bgColor=black colSpan=2><IMG height=1 
+                  src="ResizeDlg_files/space.gif" width=1></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="ResizeDlg_files/profile_small.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/modify.asp?ct=/dialog/RPResizeDlg.asp">My 
+                  Settings</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="ResizeDlg_files/submit_small.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/articles/list_articles.asp?userid=649009">My 
+                  Articles</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="ResizeDlg_files/bookmarks.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/bookmark_list.asp">My 
+                  Bookmarks</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="ResizeDlg_files/logoff_small.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/logoff.asp?ct=/dialog/RPResizeDlg.asp">Sign 
+                  out</A></TD></TR>
+              <TR>
+                <TD bgColor=black colSpan=2><IMG height=1 
+                  src="ResizeDlg_files/space.gif" 
+        width=1></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD>&nbsp;</TD></TR>
+        <TR>
+          <TD>
+            <CENTER>
+            <SCRIPT language=javascript>document.write("<IFRAME src=\"/script/admentor/include/ServeAdHTML.aspx?C=False&id=876\" border=0 frameborder=0 scrolling=no width=120 height=600></IFRAME>");</SCRIPT>
+            <BR></CENTER><BR></TD></TR></TBODY></TABLE></TD>
+    <TD width=5 rowSpan=2><IMG height=1 src="ResizeDlg_files/space.gif" 
+      width=5> </TD>
+    <TD align=right width="100%" bgColor=white>
+      <TABLE width="100%">
+        <TBODY>
+        <TR vAlign=top>
+          <TD class=smallText vAlign=top noWrap></TD>
+          <TD noWrap align=right><A name=__top></A>
+            <TABLE>
+              <TBODY>
+              <TR>
+                <TD class=smallText align=right>3 members have rated this 
+                  article. Result:</TD>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=0 border=2>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=5 src="ResizeDlg_files/red.gif" width=20 
+                        border=0></TD>
+                      <TD><IMG height=5 src="ResizeDlg_files/red.gif" width=20 
+                        border=0></TD>
+                      <TD><IMG height=5 src="ResizeDlg_files/red.gif" width=20 
+                        border=0></TD>
+                      <TD><IMG height=5 src="ResizeDlg_files/red.gif" width=13 
+                        border=0><IMG height=5 src="ResizeDlg_files/white.gif" 
+                        width=7 border=0></TD>
+                      <TD><IMG height=5 src="ResizeDlg_files/white.gif" 
+                        width=20 border=0></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD class=smallText align=right colSpan=2><A 
+                  title="Calculated as rating x Log10(# votes)" 
+                  href="http://www.codeproject.com/script/articles/top_articles.asp?st=2">Popularity: 
+                  1.75</A>. Rating: <B>3.67</B> out of 
+        5.</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD vAlign=top width="100%">
+      <DIV id=contentdiv><!-- Article Starts -->
+      <UL class=download>
+        <LI><A 
+        href="http://www.codeproject.com/dialog/RPResizeDlg/ResizeDlg_1_0_demo.zip">Download 
+        demo project - 45 Kb</A> 
+        <LI><A 
+        href="http://www.codeproject.com/dialog/RPResizeDlg/ResizeDlg_1_0_src.zip">Download 
+        source - 6 Kb</A> 
+        <LI><A 
+        href="http://www.codeproject.com/dialog/RPResizeDlg/mfc71_dll.zip">Download 
+        MFC7.1 DLLs - 812 Kb</A> (If you execute ResizeDlg.exe in above 
+        demo-project and OS fail for no mfcxxx.DLL found, then download those 
+        DLLs and unzip to the same directory as demo-project and try again) 
+      </LI></UL>
+      <H2>The Sample Dialog</H2>
+      <OL>
+        <LI>Original Dialog<BR><IMG height=250 src="ResizeDlg_files/dlg0.gif" 
+        width=374 border=0> 
+        <LI>Dialog after sized bottom-right<BR><IMG height=309 
+        src="ResizeDlg_files/dlg_rb.gif" width=482 border=0> 
+        <LI>Dialog after sized left-top<BR><IMG height=289 
+        src="ResizeDlg_files/dlg_lt.gif" width=465 border=0> </LI></OL>
+      <H2>Introduction</H2>
+      <P>This resizable dialog class can automatically adjusts controls position 
+      and/or size as dialog is sized. the reposition and resize is direction 
+      sensitive (left and right, top and bottom can be handled differently 
+      respectively) and behave one of six ways: NONE, RESIZE, REPOS, RELATIVE, 
+      ZOOM, DELTA_ZOOM (see below for more information). 
+      <H2>Background</H2>
+      <P>This class was derived from the <A 
+      href="http://www.codeproject.com/dialog/resizabledialog.asp">Flicker-Free 
+      Resizing Dialog</A> (thanks Andy Brown). Andy Brown had solved the flicker 
+      problem (which really puzzled me once) and his class supports resizing in 
+      NONE, RESIZE, REPOS, RELATIVE mode. </P>
+      <P>However I need more controllable reposition and/or resize handler, I 
+      think someone else need it too. So I enhanced Andy Brown's class and wrote 
+      this class which added the following features: 
+      <OL>
+        <LI>Reposition and resize is direction sensitive. e.g. Andy Brown's 
+        class treat dialog's sizing left and right as the same sizing 
+        (x-direction). This class can treat them differently. 
+        <LI>Zoom control as dialog is zoomed. 
+        <LI>Be able to adjust more than one controls' position and/size 
+        respectively, which are at the same X-/y-level. e.g. this class can 
+        resize two controls which are at the same horizontal line as 50% as 
+        dialog's changed-width, in another words, if dialog's width is increased 
+        10 pixels, this class increase each control's width 5 pixels. </LI></OL>
+      <H2>Using the code</H2>
+      <OL>
+        <LI>Add <B>ResizeDlg.cpp</B> and <B>ResizeDlg.h</B> to your project or 
+        makefile; 
+        <LI>Add "<B>#Include ResizeDlg.h</B>" to <B>stdafx.h</B> file or your 
+        dialog header file; 
+        <LI>Make your dialog-derived class inherit from <CODE>CResizeDlg</CODE> 
+        instead of <CODE>CDialog</CODE> by replacing all instances of 
+        "<CODE>CDialog</CODE>" with "<CODE>CResizeDlg</CODE>" in your dialog 
+        header and implementation files. 
+        <LI>Add a handler for <CODE>WM_INITDIALOG</CODE> in your dialog class if 
+        you haven't done so, as described below. </LI></OL>
+      <H2><B>WM_INITDIALOG (OnInitDialog)</B></H2>
+      <P>In your <CODE>OnInitDialog</CODE> handler you should call the base 
+      class's <CODE>OnInitDialog</CODE> and call <CODE>AddControl</CODE> for 
+      those controls that are to be automatically repositioned and/or sized when 
+      the dialog is sized. here is an example. </P><PRE><SPAN class=cpp-comment>//</SPAN>
+<SPAN class=cpp-comment>// the minimal work you have to do in your OnInitDialog handler.</SPAN>
+<SPAN class=cpp-comment>//</SPAN>
+BOOL CMyDialog::OnInitDialog()
+{
+ CResizeDlg::OnInitDialog();
+
+ AddControl(IDOK, CST_REPOS, CST_REPOS, CST_NONE, CST_NONE, <SPAN class=cpp-literal>1</SPAN>);
+ AddControl(IDCANCEL, CST_REPOS, CST_REPOS, CST_NONE, CST_NONE, <SPAN class=cpp-literal>1</SPAN>);
+ 
+ <SPAN class=cpp-keyword>return</SPAN> TRUE;
+}
+</PRE>
+      <H2>How Controls Reposition and/or Size</H2>
+      <P>This class allow controls dynamically repositioned and/or sized in each 
+      direction (left, top, right, bottom) as one of the following ways. 
+<BR><BR>
+      <TABLE id=AutoNumber1 style="BORDER-COLLAPSE: collapse" 
+      borderColor=#c0c0c0 cellSpacing=0 cellPadding=4 width="100%" border=1>
+        <TBODY>
+        <TR>
+          <TD width="18%"><CODE>CST_NONE</CODE></TD>
+          <TD width="82%">do not reposition and size in this direction; </TD></TR>
+        <TR>
+          <TD width="18%"><CODE>CST_RESIZE</CODE></TD>
+          <TD width="82%">size controls as much as dialog's changed-size in 
+            this direction.<PRE>    <SPAN class=cpp-comment>//</SPAN>
+    <SPAN class=cpp-comment>// in x direction, where deltaX is </SPAN>
+    <SPAN class=cpp-comment>// dialog's changed-width.</SPAN>
+    <SPAN class=cpp-comment>//</SPAN>
+    ctrlRect.right += deltaX;</PRE></TD></TR>
+        <TR>
+          <TD width="18%"><CODE>CST_REPOS</CODE></TD>
+          <TD width="82%">reposition controls as much as dialog's change-size 
+            in this direction. <PRE>    <SPAN class=cpp-comment>//</SPAN>
+    <SPAN class=cpp-comment>// in x direction, where deltaX is dialog's </SPAN>
+    <SPAN class=cpp-comment>// changed-width.</SPAN>
+    <SPAN class=cpp-comment>//</SPAN>
+    ctrlRect.left += deltaX;
+    ctrlRect.right += deltaX;</PRE></TD></TR>
+        <TR>
+          <TD width="18%"><CODE>CST_RELATIVE</CODE></TD>
+          <TD width="82%">reposition controls with user-defined proportion 
+            (make controls always at the same proportional position in dialog). <PRE>    <SPAN class=cpp-comment>//</SPAN>
+    <SPAN class=cpp-comment>// in x direction, where m_xRatio is </SPAN>
+    <SPAN class=cpp-comment>// user-defined proportion</SPAN>
+    <SPAN class=cpp-comment>// pnRect is dialog's new ClientRect</SPAN>
+    <SPAN class=cpp-comment>//</SPAN>
+    newCx = ctrlRect.Width();
+    ctrlRect.left = (<SPAN class=cpp-keyword>int</SPAN>)(m_xRatio * 
+        pnRect-&gt;Width() - newCx / <SPAN class=cpp-literal>2.0</SPAN>);
+    ctrlRect.right = ctrlRect.left + newCx;</PRE></TD></TR>
+        <TR>
+          <TD width="18%"><CODE>CST_ZOOM</CODE></TD>
+          <TD width="82%">reposition and size controls automatically <PRE>    <SPAN class=cpp-comment>//</SPAN>
+    <SPAN class=cpp-comment>// in x direction, where pnRect is </SPAN>
+    <SPAN class=cpp-comment>// dialog's new ClientRect.</SPAN>
+    <SPAN class=cpp-comment>// pR0 is dialog's original ClientRect</SPAN>
+    <SPAN class=cpp-comment>// (NOT previous width).</SPAN>
+    <SPAN class=cpp-comment>//</SPAN>
+    ctrlRect.left = (<SPAN class=cpp-keyword>int</SPAN>)(<SPAN class=cpp-literal>1.0</SPAN> * ctrlRect.left  
+       * (<SPAN class=cpp-keyword>double</SPAN>)pnRect-&gt;Width() / pR0-&gt;Width());
+    ctrlRect.right = (<SPAN class=cpp-keyword>int</SPAN>)(<SPAN class=cpp-literal>1.0</SPAN> * ctrlRect.right 
+       * (<SPAN class=cpp-keyword>double</SPAN>)pnRect-&gt;Width() / pR0-&gt;Width());</PRE></TD></TR>
+        <TR>
+          <TD width="18%"><CODE>CST_DELTA_ZOOM</CODE></TD>
+          <TD width="82%">reposition and size controls proportionally, both 
+            proportion can be set respectively. <PRE>    <SPAN class=cpp-comment>//</SPAN>
+    <SPAN class=cpp-comment>// in x direction, where deltaX0 is </SPAN>
+    <SPAN class=cpp-comment>// the dialog's chenged-width</SPAN>
+    <SPAN class=cpp-comment>// compared with its original width(NOT </SPAN>
+    <SPAN class=cpp-comment>// previous width, otherwise error </SPAN>
+    <SPAN class=cpp-comment>// will mess the result).</SPAN>
+    <SPAN class=cpp-comment>// m_xRatio is user defined X-reposition </SPAN>
+    <SPAN class=cpp-comment>// proportion and</SPAN>
+    <SPAN class=cpp-comment>// m_cxRatio is user defined X-size proportion.</SPAN>
+    <SPAN class=cpp-comment>//</SPAN>
+    newCx = ctrlRect.Width();
+    ctrlRect.right = (<SPAN class=cpp-keyword>int</SPAN>)(ctrlRect.left + 
+      deltaX0 * m_xRatio + newCx + deltaX0 * m_cxRatio);
+    ctrlRect.left += (<SPAN class=cpp-keyword>int</SPAN>)(deltaX0 * m_xRatio);</PRE></TD></TR></TBODY></TABLE>
+      <H2>Usage of AddControl</H2>
+      <P>You should call <CODE>AddControl</CODE> to set how controls behave as 
+      dialog is sized in <CODE>OnInitDialog</CODE>. It's prototype as 
+      below:<BR><BR></P><PRE><SPAN class=cpp-keyword>void</SPAN> AddControl( UINT nID, <SPAN class=cpp-keyword>int</SPAN> xl, <SPAN class=cpp-keyword>int</SPAN> xr, <SPAN class=cpp-keyword>int</SPAN> yt, 
+              <SPAN class=cpp-keyword>int</SPAN> yb, <SPAN class=cpp-keyword>int</SPAN> bFlickerFree = <SPAN class=cpp-literal>0</SPAN>, 
+              <SPAN class=cpp-keyword>double</SPAN> xRatio = -<SPAN class=cpp-literal>1.0</SPAN>, <SPAN class=cpp-keyword>double</SPAN> cxRatio = -<SPAN class=cpp-literal>1.0</SPAN>,
+              <SPAN class=cpp-keyword>double</SPAN> yRatio = -<SPAN class=cpp-literal>1.0</SPAN>, <SPAN class=cpp-keyword>double</SPAN> cyRatio = -<SPAN class=cpp-literal>1.0</SPAN> );</PRE>where 
+
+      <TABLE style="BORDER-COLLAPSE: collapse" borderColor=#c0c0c0 cellSpacing=0 
+      cellPadding=4 width="100%" border=1>
+        <TBODY>
+        <TR>
+          <TD width="17%"><CODE>nID</CODE></TD>
+          <TD width="83%">control's resource ID</TD></TR>
+        <TR>
+          <TD width="17%"><CODE>xl</CODE></TD>
+          <TD width="83%">how controls reposition and/or resize when dialog 
+            resize left. set it one of CST_xx.</TD></TR>
+        <TR>
+          <TD width="17%"><CODE>xr</CODE></TD>
+          <TD width="83%">how controls reposition and/or resize when dialog 
+            resize right. set it one of CST_xx.</TD></TR>
+        <TR>
+          <TD width="17%"><CODE>yt</CODE></TD>
+          <TD width="83%">how controls reposition and/or resize when dialog 
+            resize top. set it one of CST_xx.</TD></TR>
+        <TR>
+          <TD width="17%"><CODE>yb</CODE></TD>
+          <TD width="83%">how controls reposition and/or resize when dialog 
+            resize bottom. set it one of CST_xx.</TD></TR>
+        <TR>
+          <TD width="17%"><CODE>bFlickerFree</CODE></TD>
+          <TD width="83%">whether try to avoid flickering when reposition 
+            and/or resize this control</TD></TR>
+        <TR>
+          <TD width="17%"><CODE>xRatio</CODE></TD>
+          <TD width="83%">user-defined x-direction reposition proportion. 
+            valid only when xl or xr is CST_RELATIVE or CST_DELTA_ZOOM. set it 
+            to 0.0~1.0.</TD></TR>
+        <TR>
+          <TD width="17%"><CODE>cxRatio</CODE></TD>
+          <TD width="83%">user-defined x-direction resize proportion. valid 
+            only when xl or xr is CST_DELTA_ZOOM. set it to 0.0~1.0.</TD></TR>
+        <TR>
+          <TD width="17%"><CODE>yRatio</CODE></TD>
+          <TD width="83%">user-defined y-direction reposition proportion. 
+            valid only when yt or yb is CST_RELATIVE or CST_DELTA_ZOOM. set it 
+            to 0.0~1.0.</TD></TR>
+        <TR>
+          <TD width="17%"><CODE>cyRatio</CODE></TD>
+          <TD width="83%">user-defined y-direction resize proportion. valid 
+            only when yt or yb is CST_DELTA_ZOOM. set it to 
+        0.0~1.0.</TD></TR></TBODY></TABLE>
+      <H2>Typical use of AddControl</H2>
+      <OL>
+        <LI>keep a edit control resize horizontally as dialog sized. <PRE>AddControl(edit-ID, CST_RESIZE, CST_RESIZE,
+ CST_NONE, CST_NONE, <SPAN class=cpp-literal>1</SPAN>);</PRE>
+        <LI>keep a top-right button at the same top-right position. <PRE>AddControl(button-ID, CST_REPOS, CST_REPOS,
+ CST_NONE, CST_NONE, <SPAN class=cpp-literal>1</SPAN>);</PRE>
+        <LI>Keep a button at the fixed distance to bottom and horizontal-center. 
+<PRE>AddControl(button-ID, CST_RELATIVE, CST_RELATIVE,
+ CST_REPOS, CST_REPOS, <SPAN class=cpp-literal>1</SPAN>, <SPAN class=cpp-literal>1.0</SPAN>);</PRE>
+        <LI>two edit controls are in a horizontal-line, make left edit control 
+        resize and right one keep the same size when dialog left-sized, or left 
+        one keep the same size and right one resize when dialog size right. <PRE>AddControl(left-edit-ID, CST_RESIZE, 
+ CST_NONE, CST_NONE, CST_NONE, CST_NONE, <SPAN class=cpp-literal>1</SPAN>);
+AddControl(right-edit-ID, CST_REPOS,
+ CST_RESIZE, CST_NONE, CST_NONE, <SPAN class=cpp-literal>1</SPAN>);</PRE>
+        <LI>two edit controls as example 4. make them size share the same of 
+        dialog's changed-width. In another words, if dialog's width increase 10 
+        pixels, then each of the edit-control increase its width 5 pixels 
+        respectively. <PRE>AddControl(left-edit-ID, CST_DELTA_ZOOM, CST_DELTA_ZOOM,
+ CST_NONE, CST_NONE, <SPAN class=cpp-literal>1</SPAN>, <SPAN class=cpp-literal>0.0</SPAN>, <SPAN class=cpp-literal>0.5</SPAN>);
+AddControl(right-edit-ID, CST_DELTA_ZOOM, CST_DELTA_ZOOM,
+ CST_NONE, CST_NONE, <SPAN class=cpp-literal>1</SPAN>, <SPAN class=cpp-literal>0.5</SPAN>, <SPAN class=cpp-literal>0.5</SPAN>);</PRE>where 
+        <CODE><SPAN class=cpp-literal>0.0</SPAN>, <SPAN 
+        class=cpp-literal>0.5</SPAN> </CODE>means left-edit control do not 
+        change its position and resize as 50% as dialog's changed-width. 
+        <CODE><SPAN class=cpp-literal>0.5</SPAN>, <SPAN 
+        class=cpp-literal>0.5</SPAN> </CODE>means right-edit control change its 
+        position as 50%, because left control resize, so it must reposition, and 
+        resize as 50% as dialog's changed-width. </LI></OL>
+      <H2>Attention</H2>
+      <OL>
+        <LI>Resize-grip (<IMG height=19 src="ResizeDlg_files/gripper.gif" 
+        width=20 border=0>, at the bottom-right of dialog) 's resource ID 
+        (IDC_DLGSIZEBOX) is defined in ResizeDlg.h. You should set it another 
+        unused resource ID if you have used it in somewhere else. 
+        <LI>Do not set flicker-free for group-controls in dialog (set 
+        <CODE>bFlickerFree</CODE> to 0 in calling <CODE>AddControl</CODE>). 
+      </LI></OL>
+      <H2>History</H2>
+      <OL>
+        <LI>Sep 26, 2004 -Initial public release. 
+      </LI></OL><!-- Article Ends --></DIV>
+      <H2>Robert Python</H2>
+      <TABLE width="100%" border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD class=smallText noWrap><BR></TD>
+          <TD class=smallText width="100%">
+            <P class=smallText>Click <A 
+            href="http://www.codeproject.com/script/profile/whos_who.asp?vt=arts&amp;id=1396650">here</A> 
+            to view Robert Python's online profile.</P></TD></TR></TBODY></TABLE><BR>
+      <TABLE cellPadding=4 width="100%" border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD width="100%">
+            <H2>Other popular Dialog and Windows articles:</H2>
+            <UL>
+              <LI><A 
+              href="http://www.codeproject.com/dialog/dlgboxtricks.asp">Some 
+              handy dialog box tricks, tips and workarounds</A><BR><SPAN 
+              class=smalltext>Hidden modal dialogs, stealing focus, always on 
+              top dialogs, going full-screen, expanding and contracting dialogs, 
+              removing task bar icon, context sensitive help and many other 
+              useful tips and tricks.</SPAN>
+              <LI><A 
+              href="http://www.codeproject.com/dialog/quickwin.asp">QuickWin - 
+              Turn a console application into a Windows program</A><BR><SPAN 
+              class=smalltext>Redirect stdin, stdout and stderr into a 
+              window</SPAN>
+              <LI><A 
+              href="http://www.codeproject.com/dialog/slidabledialogbar.asp">3D 
+              Studio Max like Slidable DialogBar</A><BR><SPAN 
+              class=smalltext>Ever seen 3D Studio 2.5 Slidable DialogBar? Want 
+              to know how they did it?</SPAN>
+              <LI><A 
+              href="http://www.codeproject.com/dialog/winampwnd.asp">Nullsoft 
+              Winamp Plug-in With Bitmapped UI, Docking and Restrictive 
+              Resizing</A><BR><SPAN class=smalltext>An article discussing a 
+              Plug-in for Nullsoft Winamp which looks and behaves like the 
+              Winamp UI.</SPAN></LI></UL></TD>
+          <TD width=360>
+            <SCRIPT language=javascript>document.write("<IFRAME src=\"/script/admentor/include/ServeAdHTML.aspx?C=False&id=786\" border=0 frameborder=0 scrolling=no width=300 height=250></IFRAME>");</SCRIPT>
+          </TD>
+          <FORM action=/script/rating/code/app/insert_vote.asp 
+          method=post><INPUT type=hidden value=RPResizeDlg/dialog9/27/2004 
+          name=vote_name> <INPUT type=hidden value=/dialog/RPResizeDlg.asp 
+          name=goal> </TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=1 width="100%" bgColor=#ff9900 
+        border=0><TBODY>
+        <TR>
+          <TD width="100%">
+            <TABLE cellSpacing=0 cellPadding=4 width="100%" bgColor=#fbedbb 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD class=smalltext vAlign=center>[<A 
+                  href="http://www.codeproject.com/dialog/RPResizeDlg.asp#__top">Top</A>]</TD>
+                <TD vAlign=center noWrap align=right><I><B>Rate this Article 
+                  for us!</B></I>&nbsp;&nbsp;&nbsp;&nbsp; <I>Poor</I><INPUT 
+                  type=radio value=1 name=rate><INPUT type=radio value=2 
+                  name=rate><INPUT type=radio value=3 name=rate><INPUT 
+                  type=radio value=4 name=rate><INPUT type=radio value=5 
+                  name=rate><I>Excellent</I>&nbsp;&nbsp;<INPUT class=FormButton type=submit value=Vote> 
+                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></FORM>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD vAlign=top>
+            <CENTER>
+            <SCRIPT language=javascript>document.write("<a href=\"/script/admentor/admentorredir.asp?id=156&way=ban\" target=_blank><img src=\"/script/admentor/include/ServeAd.aspx?File=%2Fscript%2Fadmentor%2Fimages%2Fmsdn%5Fbutton%2Egif&C=False&id=156\" alt=\"MSDN Magazine - Your guide to Microsoft tools, development environments, and technologies for Windows and the Web.\" border=0 width=120 height=60></a>");</SCRIPT>
+            <BR><FONT size=1><A 
+            href="http://www.codeproject.com/info/MediaKit/">Premium 
+            Sponsor</A></FONT></CENTER><BR></TD>
+          <TD vAlign=top noWrap align=middle><SPAN id=AdBanner5>
+            <SCRIPT language=javascript>document.write("<a href=\"/script/admentor/admentorredir.asp?id=693&way=ban\" target=_blank><img src=\"/script/admentor/include/ServeAd.aspx?File=%2Fscript%2Fadmentor%2Fimages%2FMSDNbottom%2Egif&C=False&id=693\" alt=\"\" border=0 width=468 height=60></a>");</SCRIPT>
+            </SPAN></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><A 
+name=__comments></A>
+<SCRIPT language=JavaScript>
+function MsgVoteForm(UserID, MsgID)
+{
+	document.write("Rate this message: ");
+	for (var i=1; i<=5;i++)
+		document.write("<a href='#xx" + MsgID.toString() + "xx' title='give this message a vote of " + i.toString() + "' onclick='RateMsg(" + UserID.toString() + ", " + MsgID.toString() + ", " + i.toString() + ")'><b>" + i.toString() + "</b></a> ");
+	document.write(" (out of 5)");
+}
+
+function RateMsg(userid, msgid, score) 
+{ 
+	open("/script/comments/vote.asp?js=1&user="+userid.toString()+"&msg="+msgid.toString()+"&score="+score.toString() ,"helpful","toolbar=no,resizable=yes,scrollbars=yes,directories=no,menubar=no,width=300,height=200");
+	return false;
+}
+</SCRIPT>
+
+<SCRIPT language=JavaScript>
+var Selected = "";
+var AdTime = new Date();
+document.writeln("<iframe name=AdFrame width=0 height=0 frameborder=0></IFRAME>");
+function SwitchMessage(elm)
+{
+
+	var now = new Date();
+	if (Number(now.getTime() - AdTime.getTime()) > Number(5000))
+	{
+		AdTime = now;
+		var loc = window.frames["AdFrame"];
+		if (loc) loc = loc.document;
+		if (loc) loc = loc.location;
+		if (loc) loc.replace('/script/comments/fetchAd.asp?cat=2');
+	}
+	
+	var elmref;
+	if (Selected != "")
+	{
+		elmref = eval("document.getElementById('" + Selected + "_h1')");
+		if (elmref) elmref.style.display = 'none';
+		elmref = eval("document.getElementById('" + Selected + "_h0')");
+		if (elmref) elmref.bgColor = '#FEF9E7';
+	}
+	if (Selected != elm.name) 
+	{
+		Selected = elm.name;
+		elmref = eval("document.getElementById('" + Selected + "_h1')");
+		if (elmref) 
+		{
+			if (elmref.style.display=='none') elmref.style.display='';
+			else elmref.style.display = 'none';
+		}
+		elmref = eval("document.getElementById('" + Selected + "_h0')");
+		if (elmref) 
+			elmref.bgColor = '#99CCFF';
+	}
+	else
+		Selected="";
+		
+	window.location = "#xx" + Selected + "xx";
+
+	return false;
+}
+
+</SCRIPT>
+
+<SCRIPT language=javascript event=onclick for=DynMessLink>
+return SwitchMessage(this);
+</SCRIPT>
+
+<TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#ff9900 border=0>
+  <TBODY>
+  <TR>
+    <TD width="100%">
+      <TABLE id=ForumTable cellSpacing=1 cellPadding=0 width="100%" 
+      bgColor=#ff9900 border=0>
+        <FORM 
+        action=/script/comments/app/do_filtermessages.asp?main=/dialog/RPResizeDlg.asp&amp;df=100&amp;forumid=111603 
+        method=post>
+        <TBODY>
+        <TR>
+          <TD>
+            <TABLE cellSpacing=0 cellPadding=3 width="100%" bgColor=white 
+            border=0>
+              <TBODY>
+              <TR bgColor=#fbedbb>
+                <TD class=smalltext noWrap><A 
+                  href="http://www.codeproject.com/script/comments/faq.asp"><IMG 
+                  height=16 src="ResizeDlg_files/info.gif" width=16 
+                  align=absMiddle border=0> <B>FAQ</B></A>&nbsp;</TD>
+                <TD class=smalltext vAlign=top noWrap align=right>Noise level 
+                  <SELECT class=smalltext size=1 name=noise><OPTION 
+                    value=1>Very High</OPTION> <OPTION value=2>High</OPTION> 
+                    <OPTION value=3 selected>Medium</OPTION> <OPTION 
+                    value=4>Low</OPTION> <OPTION value=5>Very 
+                  low</OPTION></SELECT>&nbsp;&nbsp;</TD>
+                <TD class=smalltext vAlign=center noWrap align=right 
+                  colSpan=2><A 
+                  href="http://www.codeproject.com/script/comments/search_comments.asp?forumid=111603"><IMG 
+                  height=15 src="ResizeDlg_files/search.gif" width=16 border=0> 
+                  Search comments</A> &nbsp;</TD>
+                <TD vAlign=top align=right><INPUT class=FormButton type=submit value="Set Options" name=submit></TD></TR>
+              <TR bgColor=#ff9900>
+                <TD width="100%">&nbsp;</TD>
+                <TD class=smalltext vAlign=top noWrap align=right>View <SELECT 
+                  class=smalltext size=1 name=expand><OPTION value=0>Normal 
+                    (slow)</OPTION> <OPTION value=2>Preview (slow)</OPTION> 
+                    <OPTION value=5 selected>Message View</OPTION> <OPTION 
+                    value=6>Topic View</OPTION> <OPTION value=1>Thread 
+                    View</OPTION> <OPTION value=3>Expanded (Supporters 
+                    only)</OPTION></SELECT>&nbsp;&nbsp;</TD>
+                <TD class=smalltext vAlign=top noWrap>Per page <SELECT 
+                  class=smalltext size=1 name=perpage><OPTION 
+                    value=10>10</OPTION> <OPTION value=25 selected>25</OPTION> 
+                    <OPTION value=50>50</OPTION></SELECT></TD>
+                <TD colSpan=2>&nbsp;</TD></TR></TBODY></TABLE></TD></TR></FORM>
+        <TR bgColor=#fbedbb>
+          <TD><A name=xx0xx></A>
+            <TABLE cellPadding=2 width="100%" bgColor=#fbedbb border=0>
+              <TBODY>
+              <TR>
+                <TD class=messagetitle><A class=HoverLink 
+                  title="Add a new message to the discussions" 
+                  href="http://www.codeproject.com/script/comments/user_new.asp?main=/dialog/RPResizeDlg.asp&amp;df=100&amp;forumid=111603" 
+                  target=_top name=HoverNL><B><IMG height=16 
+                  src="ResizeDlg_files/admin_modify.gif" width=16 align=top 
+                  border=0> New thread</B></A></TD>
+                <TD class=messagetitle>Msgs 1 to 4 of 4 (Total: 4) (<A 
+                  href="http://www.codeproject.com/dialog/RPResizeDlg.asp?df=100&amp;forumid=111603">Refresh</A>)</TD>
+                <TD noWrap align=right><FONT class=messagetitle><SPAN 
+                  class=HoverLink>First</SPAN> <SPAN class=HoverLink>Prev</SPAN> 
+                  <SPAN class=HoverLink>Next</SPAN> <SPAN 
+                  class=HoverLink>Last</SPAN> </FONT></TD></TR></TBODY></TABLE></TD></TR>
+        <TR bgColor=white>
+          <TD>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=2 bgColor=#fbedbb border=0>
+                    <TBODY>
+                    <TR>
+                      <TD class=messagetitle width="100%">Subject&nbsp;</TD>
+                      <TD class=messagetitle noWrap width=140>Author&nbsp;</TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT 
+                    class=messagetitle>Date&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="ResizeDlg_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR id=934191_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx934191xx></A><IMG 
+                        src="ResizeDlg_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/dialog/RPResizeDlg.asp?df=100&amp;forumid=111603&amp;select=934191#xx934191xx" 
+                        name=934191><B>Problem with resizing in Release 
+                        build</B></A></TD>
+                      <TD vAlign=bottom><IMG height=13 
+                        alt="Unconfirmed/Anonymous posting" 
+                        src="ResizeDlg_files/usersuss.gif" 
+width=15></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>Anonymous</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>12:15 27 Sep 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=934191_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="ResizeDlg_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>I have 
+                                a formview and a dialog derived from your class 
+                                in an MFC extension DLL. Formview has a button 
+                                which creates the dialog with DoModal(). No 
+                                problems in Debug build and it also works fine 
+                                in Release build if dialog is created in 
+                                OnInitialUpdate() function.<BR><BR>But if dialog 
+                                is created outside OnInitialUpdate() function in 
+                                Release build (like in the function that gets 
+                                triggered by the button on the formview), it can 
+                                only be resized horizontally.<BR><BR>Any ideas? 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/dialog/RPResizeDlg.asp&amp;df=100&amp;forumid=111603&amp;select=934191">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/dialog/RPResizeDlg.asp&amp;df=100&amp;forumid=111603&amp;select=934191">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/dialog/RPResizeDlg.asp?df=100&amp;tid=934191&amp;forumid=111603&amp;select=934191#xx934191xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/dialog/RPResizeDlg.asp?msg=934191#xx934191xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/dialog/RPResizeDlg.asp&amp;df=100&amp;forumid=111603&amp;select=934191"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/dialog/RPResizeDlg.asp&amp;df=100&amp;forumid=111603&amp;select=934191"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(0,934191);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="ResizeDlg_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR id=935111_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx935111xx></A><IMG height=1 
+                        src="ResizeDlg_files/ind.gif" width=18><IMG 
+                        src="ResizeDlg_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/dialog/RPResizeDlg.asp?df=100&amp;forumid=111603&amp;select=935111#xx935111xx" 
+                        name=935111>Re: Problem with resizing in Release 
+                        build</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=1055850"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="ResizeDlg_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>RobertPython&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>11:34 28 Sep 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=935111_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="ResizeDlg_files/ind.gif" 
+                        width=18><IMG src="ResizeDlg_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Maybe 
+                                you should check the difference in mthonds 
+                                triggered by button on the formview between the 
+                                debug build and release build. <BR><BR>I had a 
+                                test with a formview &amp; resizable-dlg and no 
+                                such problem happend.<BR>Check out my test <A 
+                                href="http://www.codeproject.com/dialog/www.panapax.com/download/FormDlg.zip">pkg</A>. 
+                                If it can not help u, tell me. 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/dialog/RPResizeDlg.asp&amp;df=100&amp;forumid=111603&amp;select=935111">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/dialog/RPResizeDlg.asp&amp;df=100&amp;forumid=111603&amp;select=935111">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/dialog/RPResizeDlg.asp?df=100&amp;tid=934191&amp;forumid=111603&amp;select=935111#xx935111xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/dialog/RPResizeDlg.asp?msg=935111#xx935111xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/dialog/RPResizeDlg.asp&amp;df=100&amp;forumid=111603&amp;select=935111"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/dialog/RPResizeDlg.asp&amp;df=100&amp;forumid=111603&amp;select=935111"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(1055850,935111);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="ResizeDlg_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 src="ResizeDlg_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=933860_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx933860xx></A><IMG 
+                        src="ResizeDlg_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/dialog/RPResizeDlg.asp?df=100&amp;forumid=111603&amp;select=933860#xx933860xx" 
+                        name=933860><B>wrong link...</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=168"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="ResizeDlg_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle><B>Paolo 
+                        Messina</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>4:34 27 Sep 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=933860_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="ResizeDlg_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>or 
+                                wrong author?<BR><BR><I><SMALL>"This class was 
+                                derived from the <A 
+                                href="http://www.codeproject.com/dialog/resizabledialog.asp">Flicker-Free 
+                                Resizing Dialog</A> (thanks Andy Brown). Andy 
+                                Brown had solved the flicker problem (which 
+                                really puzzled me once) and his class supports 
+                                resizing in NONE, RESIZE, REPOS, RELATIVE 
+                                mode."</SMALL></I><BR><BR>Actually that link 
+                                points to an article of mine.<BR><BR>Paolo 
+                                <BR><BR>------<BR><I><SMALL>Why spend 2 minutes 
+                                doing it by hand when you can spend all night 
+                                plus most of the following day writing a system 
+                                to do it for you? - (Chris 
+                                Maunder)</SMALL></I><BR><BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/dialog/RPResizeDlg.asp&amp;df=100&amp;forumid=111603&amp;select=933860">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/dialog/RPResizeDlg.asp&amp;df=100&amp;forumid=111603&amp;select=933860">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/dialog/RPResizeDlg.asp?df=100&amp;tid=933860&amp;forumid=111603&amp;select=933860#xx933860xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/dialog/RPResizeDlg.asp?msg=933860#xx933860xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/dialog/RPResizeDlg.asp&amp;df=100&amp;forumid=111603&amp;select=933860"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/dialog/RPResizeDlg.asp&amp;df=100&amp;forumid=111603&amp;select=933860"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(168,933860);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="ResizeDlg_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR id=935041_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx935041xx></A><IMG height=1 
+                        src="ResizeDlg_files/ind.gif" width=18><IMG 
+                        src="ResizeDlg_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/dialog/RPResizeDlg.asp?df=100&amp;forumid=111603&amp;select=935041#xx935041xx" 
+                        name=935041>Re: wrong link...</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=1055850"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="ResizeDlg_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>RobertPython@hotmail.com&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>10:28 28 Sep 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=935041_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="ResizeDlg_files/ind.gif" 
+                        width=18><IMG src="ResizeDlg_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Oh, I 
+                                am sorry. The right link is <A 
+                                href="http://www.codeguru.com/Cpp/W-D/dislog/resizabledialogs/article.php/c1917/">http://www.codeguru.com/Cpp/W-D/dislog/resizabledialogs/article.php/c1917/</A> 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/dialog/RPResizeDlg.asp&amp;df=100&amp;forumid=111603&amp;select=935041">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/dialog/RPResizeDlg.asp&amp;df=100&amp;forumid=111603&amp;select=935041">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/dialog/RPResizeDlg.asp?df=100&amp;tid=933860&amp;forumid=111603&amp;select=935041#xx935041xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/dialog/RPResizeDlg.asp?msg=935041#xx935041xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/dialog/RPResizeDlg.asp&amp;df=100&amp;forumid=111603&amp;select=935041"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/dialog/RPResizeDlg.asp&amp;df=100&amp;forumid=111603&amp;select=935041"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(1055850,935041);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="ResizeDlg_files/t.gif" width=1 
+                border=0></TD></TR></TBODY></TABLE></TD></TR>
+        <TR bgColor=#fbedbb>
+          <TD>
+            <TABLE cellPadding=2 width="100%">
+              <TBODY>
+              <TR>
+                <TD class=messagetitle>Last Visit: 2:58 Monday 4th October, 
+                  2004</TD>
+                <TD noWrap align=right><FONT class=messagetitle><SPAN 
+                  class=HoverLink>First</SPAN> <SPAN class=HoverLink>Prev</SPAN> 
+                  <SPAN class=HoverLink>Next</SPAN> <SPAN 
+                  class=HoverLink>Last</SPAN> 
+        </FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><BR>
+<TABLE cellSpacing=5 width="100%">
+  <TBODY>
+  <TR vAlign=top>
+    <TD><FONT style="FONT-SIZE: 7pt" size=1><A 
+      href="http://www.codeproject.com/?cat=1">All Topics</A>, <A 
+      href="http://www.codeproject.com/?cat=2">MFC / C++</A> &gt;&gt; <A 
+      href="http://www.codeproject.com/dialog/">Dialog and Windows</A> &gt;&gt; 
+      <A href="http://www.codeproject.com/dialog/#Dialogs">Dialogs</A> 
+      <BR>Updated: 27 Sep 2004 0:45 </FONT></TD>
+    <TD align=right><FONT style="FONT-SIZE: 7pt" size=1>Article content 
+      copyright Robert Python, 2004<BR>everything else Copyright © <A 
+      href="mailto:webmaster@codeproject.com">CodeProject</A>, 1999-2004</A>. 
+      <BR><A href="http://www.codeproject.com/info/MediaKit">Advertise on The 
+      Code Project</A> | <A 
+      href="http://www.codeproject.com/info/privacy.asp">Privacy</A> 
+  </FONT></TD></TR></TBODY></TABLE><BR>
+<CENTER>
+<TABLE cellSpacing=0 cellPadding=0 width="95%" border=0>
+  <TBODY>
+  <TR>
+    <TD bgColor=#ff9900 height=1><IMG height=1 
+    src="ResizeDlg_files/space.gif"></TD></TR>
+  <TR>
+    <TD align=middle><FONT size=1><A 
+      href="http://www.codeproject.com/redir.asp?id=235">MSDN Communities</A> | 
+      <A href="http://aspalliance.com/">ASPAlliance</A> • <A 
+      href="http://www.developerfusion.com/">Developer Fusion</A> • <A 
+      href="http://www.devguru.com/">DevGuru</A> • <A 
+      href="http://www.programmersheaven.com/">Programmers Heaven</A> • <A 
+      href="http://www.planet-source-code.com/">Planet Source Code</A> • <A 
+      href="http://www.resourceindex.com/">Resource Index</A> • <A 
+      href="http://www.tek-tips.com/">Tek-Tips Forums</A> • <A 
+      href="http://www.topxml.com/">What is XML?</A> • <A 
+      href="http://www.visualbuilder.com/">VisualBuilder</A> • <A 
+      href="http://www.zvon.org/">ZVON</A> • <A 
+      href="http://www.codeproject.com/redir.asp?id=169">Search Us!</A> 
+    </FONT></TD></TR></TBODY></TABLE></CENTER></BODY></HTML>

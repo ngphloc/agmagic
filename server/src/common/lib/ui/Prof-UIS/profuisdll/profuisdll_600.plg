@@ -1,0 +1,135 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: profuisdll - Win32 ANSI Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x409 /fo"..\Bin_600\AnsiRelease\profuisdll/profuisdll.res" /d "NDEBUG" /d "_AFXDLL" "D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\profuisdll\profuisdll.rc"" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP139.tmp" with contents
+[
+/nologo /MD /W4 /GR /GX /O2 /I "..\Include" /D "NDEBUG" /D "_WINDLL" /D "_AFXEXT" /D "_AFXDLL" /D "__PROF_UIS_IMPL__" /D _WIN32_WINNT=0x0400 /D _WIN32_IE=0x0400 /D "WIN32" /D "_WINDOWS" /Fp"..\Bin_600\AnsiRelease\profuisdll/profuisdll_600.pch" /Yu"stdafx.h" /Fo"..\Bin_600\AnsiRelease\profuisdll/" /Fd"..\Bin_600\AnsiRelease\profuisdll/" /FD /c 
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Src\exdlgbase.cpp"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Src\ExtBtnOnFlat.cpp"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Src\ExtButton.cpp"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Src\ExtCmdIcon.cpp"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Src\ExtCmdManager.cpp"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Src\ExtColorCtrl.cpp"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Src\ExtColorDlg.cpp"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Src\ExtComboBox.cpp"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Src\extcontrolbar.cpp"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Src\ExtDockBar.cpp"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Src\ExtEdit.cpp"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Src\ExtGroupBox.cpp"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Src\ExtHook.cpp"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Src\ExtLabel.cpp"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Src\ExtMdiWindowsListDlg.cpp"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Src\ExtMenuControlBar.cpp"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Src\ExtMiniDockFrameWnd.cpp"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Src\ExtMouseCaptureSink.cpp"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Src\ExtPaintManager.cpp"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Src\ExtPopupMenuWnd.cpp"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Src\ExtProfUISAboutDialog.cpp"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Src\ExtResizableDialog.cpp"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Src\ExtScrollWnd.cpp"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Src\ExtToolControlBar.cpp"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\profuisdll\profuisdll.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP139.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP13A.tmp" with contents
+[
+/nologo /MD /W4 /GR /GX /O2 /I "..\Include" /I "..\profuisdll" /D "NDEBUG" /D "_WINDLL" /D "_AFXEXT" /D "_AFXDLL" /D "__PROF_UIS_IMPL__" /D _WIN32_WINNT=0x0400 /D _WIN32_IE=0x0400 /D "WIN32" /D "_WINDOWS" /Fp"..\Bin_600\AnsiRelease\profuisdll/profuisdll_600.pch" /Yu"stdafx.h" /Fo"..\Bin_600\AnsiRelease\profuisdll/" /Fd"..\Bin_600\AnsiRelease\profuisdll/" /FD /c 
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Src\ExtStatusControlBar.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP13A.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP13B.tmp" with contents
+[
+/nologo /MD /W4 /GR /GX /O2 /I "..\Include" /D "NDEBUG" /D "_WINDLL" /D "_AFXEXT" /D "_AFXDLL" /D "__PROF_UIS_IMPL__" /D _WIN32_WINNT=0x0400 /D _WIN32_IE=0x0400 /D "WIN32" /D "_WINDOWS" /Fp"..\Bin_600\AnsiRelease\profuisdll/profuisdll_600.pch" /Yc"stdafx.h" /Fo"..\Bin_600\AnsiRelease\profuisdll/" /Fd"..\Bin_600\AnsiRelease\profuisdll/" /FD /c 
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\profuisdll\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP13B.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP13C.tmp" with contents
+[
+/nologo /subsystem:windows /dll /incremental:no /pdb:"..\Bin_600/ProfUIS225n.pdb" /machine:I386 /def:".\profuisdll.def" /out:"..\Bin_600/ProfUIS225n.dll" /implib:"..\Bin_600/ProfUIS225n.lib" 
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\profuisdll\exdlgbase.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\profuisdll\ExtBtnOnFlat.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\profuisdll\ExtButton.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\profuisdll\ExtCmdIcon.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\profuisdll\ExtCmdManager.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\profuisdll\ExtColorCtrl.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\profuisdll\ExtColorDlg.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\profuisdll\ExtComboBox.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\profuisdll\ExtControlBar.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\profuisdll\ExtDockBar.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\profuisdll\ExtEdit.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\profuisdll\ExtGroupBox.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\profuisdll\ExtHook.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\profuisdll\ExtLabel.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\profuisdll\ExtMdiWindowsListDlg.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\profuisdll\ExtMenuControlBar.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\profuisdll\ExtMiniDockFrameWnd.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\profuisdll\ExtMouseCaptureSink.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\profuisdll\ExtPaintManager.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\profuisdll\ExtPopupMenuWnd.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\profuisdll\ExtProfUISAboutDialog.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\profuisdll\ExtResizableDialog.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\profuisdll\ExtScrollWnd.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\profuisdll\ExtStatusControlBar.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\profuisdll\ExtToolControlBar.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\profuisdll\profuisdll.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\profuisdll\StdAfx.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\profuisdll\profuisdll.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP13C.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+   Prof-UIS multiply monitor support:
+      built-in
+Compiling...
+exdlgbase.cpp
+ExtBtnOnFlat.cpp
+ExtButton.cpp
+ExtCmdIcon.cpp
+ExtCmdManager.cpp
+ExtColorCtrl.cpp
+   Prof-UIS is automatically linking with version.lib
+      (Version info support)
+ExtColorDlg.cpp
+ExtComboBox.cpp
+extcontrolbar.cpp
+ExtDockBar.cpp
+ExtEdit.cpp
+ExtGroupBox.cpp
+ExtHook.cpp
+ExtLabel.cpp
+ExtMdiWindowsListDlg.cpp
+ExtMenuControlBar.cpp
+ExtMiniDockFrameWnd.cpp
+ExtMouseCaptureSink.cpp
+ExtPaintManager.cpp
+ExtPopupMenuWnd.cpp
+Generating Code...
+   Prof-UIS is automatically linking with WinMM library
+      (Windows Multimedia System)
+Compiling...
+ExtProfUISAboutDialog.cpp
+ExtResizableDialog.cpp
+ExtScrollWnd.cpp
+ExtToolControlBar.cpp
+profuisdll.cpp
+Generating Code...
+Compiling...
+ExtStatusControlBar.cpp
+Linking...
+   Creating library ..\Bin_600/ProfUIS225n.lib and object ..\Bin_600/ProfUIS225n.exp
+
+
+
+<h3>Results</h3>
+ProfUIS225n.dll - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

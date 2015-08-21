@@ -1,0 +1,84 @@
+FONT {
+	FONT-SIZE: 12px; FONT-FAMILY: Verdana,Helvetica
+}
+P {
+	FONT-SIZE: 12px; FONT-FAMILY: Verdana,Helvetica
+}
+DIV {
+	FONT-SIZE: 12px; FONT-FAMILY: Verdana,Helvetica
+}
+TD {
+	FONT-SIZE: 12px; FONT-FAMILY: Verdana,Helvetica
+}
+LI {
+	FONT-SIZE: 12px; LINE-HEIGHT: 18px; FONT-FAMILY: Verdana,Helvetica
+}
+DD {
+	FONT-SIZE: 12pt; COLOR: navy; LINE-HEIGHT: 18px; FONT-FAMILY: Verdana, Helvetica
+}
+BODY {
+	FONT-SIZE: 12px; MARGIN: 0px; FONT-FAMILY: Verdana,Helvetica
+}
+H2 {
+	FONT-SIZE: 15px; FONT-FAMILY: Verdana,Helvetica; LETTER-SPACING: 2px
+}
+H3 {
+	FONT-SIZE: 13px; FONT-FAMILY: Verdana,Helvetica; LETTER-SPACING: 2px
+}
+INPUT {
+	FONT-SIZE: 11px; FONT-FAMILY: Verdana,Helvetica
+}
+TEXTAREA {
+	FONT-SIZE: 11px; FONT-FAMILY: Verdana,Helvetica
+}
+FORM {
+	FONT-SIZE: 11px; FONT-FAMILY: Verdana,Helvetica
+}
+SELECT {
+	FONT-SIZE: 11px; FONT-FAMILY: Verdana,Helvetica
+}
+PRE {
+	BORDER-RIGHT: black 1px solid; PADDING-RIGHT: 3px; BORDER-TOP: black 1px solid; PADDING-LEFT: 3px; FONT-SIZE: 11px; BACKGROUND-IMAGE: url(img5/gridpre.gif); PADDING-BOTTOM: 3px; BORDER-LEFT: black 1px solid; WIDTH: 80%; PADDING-TOP: 3px; BORDER-BOTTOM: black 1px solid; FONT-FAMILY: "Courier New", Courier, monospace; BACKGROUND-COLOR: #f8f4f4
+}
+CODE {
+	FONT-SIZE: 12px; COLOR: #800000; FONT-FAMILY: "Courier New", Courier, monospace
+}
+A:link {
+	FONT-SIZE: 12px; COLOR: #4169e1; FONT-FAMILY: Verdana, Helvetica; TEXT-DECORATION: none
+}
+A:active {
+	FONT-SIZE: 12px; COLOR: red; FONT-FAMILY: Verdana, Helvetica; TEXT-DECORATION: none
+}
+A:visited {
+	FONT-SIZE: 12px; COLOR: #4682b4; FONT-FAMILY: Verdana, Helvetica; TEXT-DECORATION: none
+}
+A:hover {
+	FONT-SIZE: 12px; COLOR: blue; FONT-FAMILY: Verdana, Helvetica; TEXT-DECORATION: underline
+}
+.title {
+	FONT-WEIGHT: bold; FONT-SIZE: 15px; COLOR: #003399; FONT-FAMILY: Verdana, Helvetica
+}
+.chapter {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; FONT-FAMILY: Verdana,Helvetica; LETTER-SPACING: 2px; TEXT-ALIGN: center
+}
+.content {
+	FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: Verdana, Helvetica
+}
+.grayed {
+	FONT-SIZE: 11px; COLOR: #999999; FONT-FAMILY: Verdana, Helvetica
+}
+.frozen {
+	FONT-SIZE: 11px; COLOR: #0099ff; FONT-FAMILY: Verdana, Helvetica
+}
+.comment {
+	FONT-SIZE: 11px; COLOR: green; FONT-STYLE: italic; FONT-FAMILY: "Courier New", Courier, monospace
+}
+.active {
+	FONT-SIZE: 11px; COLOR: #ff0000; FONT-FAMILY: Verdana, Helvetica
+}
+.option {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #ffffff; FONT-FAMILY: Verdana, Helvetica; TEXT-DECORATION: none
+}
+.tiny {
+	FONT-WEIGHT: normal; FONT-SIZE: 9px; BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #4682b4; FONT-STYLE: italic; FONT-FAMILY: Verdana, Helvetica
+}

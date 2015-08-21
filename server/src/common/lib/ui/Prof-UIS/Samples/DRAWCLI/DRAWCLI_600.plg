@@ -1,0 +1,85 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: DRAWCLI - Win32 ANSI Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x409 /fo"..\..\Bin_600\AnsiRelease\DRAWCLI/DRAWCLI.res" /d "NDEBUG" /d "_AFXDLL" "D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Samples\DRAWCLI\DRAWCLI.rc"" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP147.tmp" with contents
+[
+/nologo /MD /W4 /GX /O2 /I "..\..\include" /D "NDEBUG" /D "_AFXDLL" /D "WIN32" /D "_WINDOWS" /D _WIN32_WINNT=0x0400 /D _WIN32_IE=0x0400 /Fp"..\..\Bin_600\AnsiRelease\DRAWCLI/DRAWCLI_600.pch" /Yu"stdafx.h" /Fo"..\..\Bin_600\AnsiRelease\DRAWCLI/" /Fd"..\..\Bin_600\AnsiRelease\DRAWCLI/" /FD /c 
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Samples\DRAWCLI\CNTRITEM.CPP"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Samples\DRAWCLI\DRAWCLI.cpp"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Samples\DRAWCLI\DRAWDOC.CPP"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Samples\DRAWCLI\DRAWOBJ.CPP"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Samples\DRAWCLI\DRAWTOOL.CPP"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Samples\DRAWCLI\DRAWVW.CPP"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Samples\DRAWCLI\MainFrm.cpp"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Samples\DRAWCLI\PROPSET.CPP"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Samples\DRAWCLI\RECTDLG.CPP"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Samples\DRAWCLI\SPLITFRM.CPP"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Samples\DRAWCLI\STATPAGE.CPP"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Samples\DRAWCLI\SUMMINFO.CPP"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Samples\DRAWCLI\SUMMPAGE.CPP"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP147.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP148.tmp" with contents
+[
+/nologo /MD /W4 /GX /O2 /I "..\..\include" /D "NDEBUG" /D "_AFXDLL" /D "WIN32" /D "_WINDOWS" /D _WIN32_WINNT=0x0400 /D _WIN32_IE=0x0400 /Fp"..\..\Bin_600\AnsiRelease\DRAWCLI/DRAWCLI_600.pch" /Yc"stdafx.h" /Fo"..\..\Bin_600\AnsiRelease\DRAWCLI/" /Fd"..\..\Bin_600\AnsiRelease\DRAWCLI/" /FD /c 
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Samples\DRAWCLI\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP148.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP149.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:no /pdb:"..\..\Bin_600/DRAWCLI-n.pdb" /machine:I386 /out:"..\..\Bin_600/DRAWCLI-n.exe" /libpath:"..\..\Bin_600" 
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\DRAWCLI\CNTRITEM.OBJ"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\DRAWCLI\DRAWCLI.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\DRAWCLI\DRAWDOC.OBJ"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\DRAWCLI\DRAWOBJ.OBJ"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\DRAWCLI\DRAWTOOL.OBJ"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\DRAWCLI\DRAWVW.OBJ"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\DRAWCLI\MainFrm.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\DRAWCLI\PROPSET.OBJ"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\DRAWCLI\RECTDLG.OBJ"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\DRAWCLI\SPLITFRM.OBJ"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\DRAWCLI\STATPAGE.OBJ"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\DRAWCLI\StdAfx.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\DRAWCLI\SUMMINFO.OBJ"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\DRAWCLI\SUMMPAGE.OBJ"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\DRAWCLI\DRAWCLI.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP149.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+   Prof-UIS multiply monitor support:
+      built-in
+   Automatically linking with ProfUIS225 library
+      (Professional User Interface Suite)
+Compiling...
+CNTRITEM.CPP
+DRAWCLI.cpp
+DRAWDOC.CPP
+DRAWOBJ.CPP
+DRAWTOOL.CPP
+DRAWVW.CPP
+MainFrm.cpp
+PROPSET.CPP
+RECTDLG.CPP
+SPLITFRM.CPP
+STATPAGE.CPP
+SUMMINFO.CPP
+SUMMPAGE.CPP
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+DRAWCLI-n.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

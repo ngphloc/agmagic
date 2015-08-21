@@ -1,0 +1,13 @@
+#ifndef AGMAGIC_DEFINED_COUNTER
+#define THIS_PART_USE_AGMAGIC_LIBRARY
+#define	AGMAGIC_DEFINED_COUNTER			0
+	
+#ifdef	AGMAGIC_DECL
+#undef	AGMAGIC_DECL
+#endif
+#define AGMAGIC_DECL					__declspec(dllimport)
+	
+#endif	//#ifndef AGMAGIC_DEFINED_COUNTER
+
+#include "AG_PRIVATE_INCREASE_DEFINED.h"
+

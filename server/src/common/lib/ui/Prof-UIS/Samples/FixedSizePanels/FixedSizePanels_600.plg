@@ -1,0 +1,55 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: FixedSizePanels - Win32 ANSI Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x409 /fo"..\..\Bin_600\AnsiRelease\FixedSizePanels/FixedSizePanels.res" /d "NDEBUG" /d "_AFXDLL" "D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Samples\FixedSizePanels\FixedSizePanels.rc"" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP14B.tmp" with contents
+[
+/nologo /MD /W4 /GX /O2 /I "..\..\include" /D "NDEBUG" /D "_AFXDLL" /D "WIN32" /D "_WINDOWS" /D _WIN32_WINNT=0x0400 /D _WIN32_IE=0x0400 /Fp"..\..\Bin_600\AnsiRelease\FixedSizePanels/FixedSizePanels_600.pch" /Yu"stdafx.h" /Fo"..\..\Bin_600\AnsiRelease\FixedSizePanels/" /Fd"..\..\Bin_600\AnsiRelease\FixedSizePanels/" /FD /c 
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Samples\FixedSizePanels\ChildView.cpp"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Samples\FixedSizePanels\FixedSizePanels.cpp"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Samples\FixedSizePanels\MainFrm.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP14B.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP14C.tmp" with contents
+[
+/nologo /MD /W4 /GX /O2 /I "..\..\include" /D "NDEBUG" /D "_AFXDLL" /D "WIN32" /D "_WINDOWS" /D _WIN32_WINNT=0x0400 /D _WIN32_IE=0x0400 /Fp"..\..\Bin_600\AnsiRelease\FixedSizePanels/FixedSizePanels_600.pch" /Yc"stdafx.h" /Fo"..\..\Bin_600\AnsiRelease\FixedSizePanels/" /Fd"..\..\Bin_600\AnsiRelease\FixedSizePanels/" /FD /c 
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Samples\FixedSizePanels\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP14C.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP14D.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:no /pdb:"..\..\Bin_600/FixedSizePanels-n.pdb" /machine:I386 /out:"..\..\Bin_600/FixedSizePanels-n.exe" /libpath:"..\..\Bin_600" 
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\FixedSizePanels\ChildView.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\FixedSizePanels\FixedSizePanels.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\FixedSizePanels\MainFrm.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\FixedSizePanels\StdAfx.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\FixedSizePanels\FixedSizePanels.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP14D.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+   Prof-UIS multiply monitor support:
+      built-in
+   Automatically linking with ProfUIS225 library
+      (Professional User Interface Suite)
+Compiling...
+ChildView.cpp
+FixedSizePanels.cpp
+MainFrm.cpp
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+FixedSizePanels-n.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

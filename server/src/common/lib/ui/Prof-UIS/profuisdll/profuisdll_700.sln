@@ -1,0 +1,35 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "profuisdll", "profuisdll_700.vcproj", "{C6561E92-27F8-4246-9DE7-477641307A17}"
+EndProject
+Global
+	GlobalSection(DevPartner Solution Properties) = postSolution
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = ANSI Debug
+		ConfigName.1 = ANSI Release
+		ConfigName.2 = MBCS Debug
+		ConfigName.3 = MBCS Release
+		ConfigName.4 = Unicode Debug
+		ConfigName.5 = Unicode Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{C6561E92-27F8-4246-9DE7-477641307A17}.ANSI Debug.ActiveCfg = ANSI Debug|Win32
+		{C6561E92-27F8-4246-9DE7-477641307A17}.ANSI Debug.Build.0 = ANSI Debug|Win32
+		{C6561E92-27F8-4246-9DE7-477641307A17}.ANSI Release.ActiveCfg = ANSI Release|Win32
+		{C6561E92-27F8-4246-9DE7-477641307A17}.ANSI Release.Build.0 = ANSI Release|Win32
+		{C6561E92-27F8-4246-9DE7-477641307A17}.MBCS Debug.ActiveCfg = MBCS Debug|Win32
+		{C6561E92-27F8-4246-9DE7-477641307A17}.MBCS Debug.Build.0 = MBCS Debug|Win32
+		{C6561E92-27F8-4246-9DE7-477641307A17}.MBCS Release.ActiveCfg = MBCS Release|Win32
+		{C6561E92-27F8-4246-9DE7-477641307A17}.MBCS Release.Build.0 = MBCS Release|Win32
+		{C6561E92-27F8-4246-9DE7-477641307A17}.Unicode Debug.ActiveCfg = Unicode Debug|Win32
+		{C6561E92-27F8-4246-9DE7-477641307A17}.Unicode Debug.Build.0 = Unicode Debug|Win32
+		{C6561E92-27F8-4246-9DE7-477641307A17}.Unicode Release.ActiveCfg = Unicode Release|Win32
+		{C6561E92-27F8-4246-9DE7-477641307A17}.Unicode Release.Build.0 = Unicode Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

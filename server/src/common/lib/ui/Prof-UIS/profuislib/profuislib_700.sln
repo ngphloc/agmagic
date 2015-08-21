@@ -1,0 +1,53 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "profuislib", "profuislib_700.vcproj", "{EF66613E-0358-442C-AC4C-D95B467B4627}"
+EndProject
+Global
+	GlobalSection(DevPartner Solution Properties) = postSolution
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Static ANSI Debug
+		ConfigName.1 = Static ANSI Release
+		ConfigName.2 = Static MBCS Debug
+		ConfigName.3 = Static MBCS Release
+		ConfigName.4 = Static Unicode Debug
+		ConfigName.5 = Static Unicode Release
+		ConfigName.6 = Static ANSI Debug with MFC DLL
+		ConfigName.7 = Static ANSI Release with MFC DLL
+		ConfigName.8 = Static MBCS Debug with MFC DLL
+		ConfigName.9 = Static MBCS Release with MFC DLL
+		ConfigName.10 = Static Unicode Debug with MFC DLL
+		ConfigName.11 = Static Unicode Release with MFC DLL
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{EF66613E-0358-442C-AC4C-D95B467B4627}.Static ANSI Debug.ActiveCfg = Static ANSI Debug|Win32
+		{EF66613E-0358-442C-AC4C-D95B467B4627}.Static ANSI Debug.Build.0 = Static ANSI Debug|Win32
+		{EF66613E-0358-442C-AC4C-D95B467B4627}.Static ANSI Release.ActiveCfg = Static ANSI Release|Win32
+		{EF66613E-0358-442C-AC4C-D95B467B4627}.Static ANSI Release.Build.0 = Static ANSI Release|Win32
+		{EF66613E-0358-442C-AC4C-D95B467B4627}.Static MBCS Debug.ActiveCfg = Static MBCS Debug|Win32
+		{EF66613E-0358-442C-AC4C-D95B467B4627}.Static MBCS Debug.Build.0 = Static MBCS Debug|Win32
+		{EF66613E-0358-442C-AC4C-D95B467B4627}.Static MBCS Release.ActiveCfg = Static MBCS Release|Win32
+		{EF66613E-0358-442C-AC4C-D95B467B4627}.Static MBCS Release.Build.0 = Static MBCS Release|Win32
+		{EF66613E-0358-442C-AC4C-D95B467B4627}.Static Unicode Debug.ActiveCfg = Static Unicode Debug|Win32
+		{EF66613E-0358-442C-AC4C-D95B467B4627}.Static Unicode Debug.Build.0 = Static Unicode Debug|Win32
+		{EF66613E-0358-442C-AC4C-D95B467B4627}.Static Unicode Release.ActiveCfg = Static Unicode Release|Win32
+		{EF66613E-0358-442C-AC4C-D95B467B4627}.Static Unicode Release.Build.0 = Static Unicode Release|Win32
+		{EF66613E-0358-442C-AC4C-D95B467B4627}.Static ANSI Debug with MFC DLL.ActiveCfg = Static ANSI Debug with MFC DLL|Win32
+		{EF66613E-0358-442C-AC4C-D95B467B4627}.Static ANSI Debug with MFC DLL.Build.0 = Static ANSI Debug with MFC DLL|Win32
+		{EF66613E-0358-442C-AC4C-D95B467B4627}.Static ANSI Release with MFC DLL.ActiveCfg = Static ANSI Release with MFC DLL|Win32
+		{EF66613E-0358-442C-AC4C-D95B467B4627}.Static ANSI Release with MFC DLL.Build.0 = Static ANSI Release with MFC DLL|Win32
+		{EF66613E-0358-442C-AC4C-D95B467B4627}.Static MBCS Debug with MFC DLL.ActiveCfg = Static MBCS Debug with MFC DLL|Win32
+		{EF66613E-0358-442C-AC4C-D95B467B4627}.Static MBCS Debug with MFC DLL.Build.0 = Static MBCS Debug with MFC DLL|Win32
+		{EF66613E-0358-442C-AC4C-D95B467B4627}.Static MBCS Release with MFC DLL.ActiveCfg = Static MBCS Release with MFC DLL|Win32
+		{EF66613E-0358-442C-AC4C-D95B467B4627}.Static MBCS Release with MFC DLL.Build.0 = Static MBCS Release with MFC DLL|Win32
+		{EF66613E-0358-442C-AC4C-D95B467B4627}.Static Unicode Debug with MFC DLL.ActiveCfg = Static Unicode Debug with MFC DLL|Win32
+		{EF66613E-0358-442C-AC4C-D95B467B4627}.Static Unicode Debug with MFC DLL.Build.0 = Static Unicode Debug with MFC DLL|Win32
+		{EF66613E-0358-442C-AC4C-D95B467B4627}.Static Unicode Release with MFC DLL.ActiveCfg = Static Unicode Release with MFC DLL|Win32
+		{EF66613E-0358-442C-AC4C-D95B467B4627}.Static Unicode Release with MFC DLL.Build.0 = Static Unicode Release with MFC DLL|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

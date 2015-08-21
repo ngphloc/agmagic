@@ -1,0 +1,138 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: COptionTree - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x409 /fo"Debug/COptionTree.res" /i "..\COptionTree" /d "_DEBUG" /d "_AFXDLL" "C:\Documents and Settings\Matt\My Documents\Source Code\C++\Win32\ComputerSmarts.net\Projects\COptionTree\COptionTree\DLL\COptionTree.rc"" 
+Creating temporary file "C:\DOCUME~1\matt\LOCALS~1\Temp\RSP216.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /I "..\COptionTree" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "_MBCS" /D "_AFXEXT" /Fp"Debug/COptionTree.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Documents and Settings\Matt\My Documents\Source Code\C++\Win32\ComputerSmarts.net\Projects\COptionTree\COptionTree\DLL\COptionTree.cpp"
+"C:\Documents and Settings\Matt\My Documents\Source Code\C++\Win32\ComputerSmarts.net\Projects\COptionTree\COptionTree\COptionTree\OptionTreeSpinnerEdit.cpp"
+"C:\Documents and Settings\Matt\My Documents\Source Code\C++\Win32\ComputerSmarts.net\Projects\COptionTree\COptionTree\COptionTree\OptionTreeCheckButton.cpp"
+"C:\Documents and Settings\Matt\My Documents\Source Code\C++\Win32\ComputerSmarts.net\Projects\COptionTree\COptionTree\COptionTree\OptionTreeColorPopUp.cpp"
+"C:\Documents and Settings\Matt\My Documents\Source Code\C++\Win32\ComputerSmarts.net\Projects\COptionTree\COptionTree\COptionTree\OptionTreeFileDlg.cpp"
+"C:\Documents and Settings\Matt\My Documents\Source Code\C++\Win32\ComputerSmarts.net\Projects\COptionTree\COptionTree\COptionTree\OptionTreeFontSel.cpp"
+"C:\Documents and Settings\Matt\My Documents\Source Code\C++\Win32\ComputerSmarts.net\Projects\COptionTree\COptionTree\COptionTree\OptionTreeFontSelColorButton.cpp"
+"C:\Documents and Settings\Matt\My Documents\Source Code\C++\Win32\ComputerSmarts.net\Projects\COptionTree\COptionTree\COptionTree\OptionTreeFontSelFontCombo.cpp"
+"C:\Documents and Settings\Matt\My Documents\Source Code\C++\Win32\ComputerSmarts.net\Projects\COptionTree\COptionTree\COptionTree\OptionTreeFontSelGlobals.cpp"
+"C:\Documents and Settings\Matt\My Documents\Source Code\C++\Win32\ComputerSmarts.net\Projects\COptionTree\COptionTree\COptionTree\OptionTreeFontSelSizeCombo.cpp"
+"C:\Documents and Settings\Matt\My Documents\Source Code\C++\Win32\ComputerSmarts.net\Projects\COptionTree\COptionTree\COptionTree\OptionTreeImagePopUp.cpp"
+"C:\Documents and Settings\Matt\My Documents\Source Code\C++\Win32\ComputerSmarts.net\Projects\COptionTree\COptionTree\COptionTree\OptionTreeInfo.cpp"
+"C:\Documents and Settings\Matt\My Documents\Source Code\C++\Win32\ComputerSmarts.net\Projects\COptionTree\COptionTree\COptionTree\OptionTreeIPAddressEdit.cpp"
+"C:\Documents and Settings\Matt\My Documents\Source Code\C++\Win32\ComputerSmarts.net\Projects\COptionTree\COptionTree\COptionTree\OptionTreeItem.cpp"
+"C:\Documents and Settings\Matt\My Documents\Source Code\C++\Win32\ComputerSmarts.net\Projects\COptionTree\COptionTree\COptionTree\OptionTreeItemCheckBox.cpp"
+"C:\Documents and Settings\Matt\My Documents\Source Code\C++\Win32\ComputerSmarts.net\Projects\COptionTree\COptionTree\COptionTree\OptionTreeItemColor.cpp"
+"C:\Documents and Settings\Matt\My Documents\Source Code\C++\Win32\ComputerSmarts.net\Projects\COptionTree\COptionTree\COptionTree\OptionTreeItemComboBox.cpp"
+"C:\Documents and Settings\Matt\My Documents\Source Code\C++\Win32\ComputerSmarts.net\Projects\COptionTree\COptionTree\COptionTree\OptionTreeItemDate.cpp"
+"C:\Documents and Settings\Matt\My Documents\Source Code\C++\Win32\ComputerSmarts.net\Projects\COptionTree\COptionTree\COptionTree\OptionTreeItemEdit.cpp"
+"C:\Documents and Settings\Matt\My Documents\Source Code\C++\Win32\ComputerSmarts.net\Projects\COptionTree\COptionTree\COptionTree\OptionTreeItemFile.cpp"
+"C:\Documents and Settings\Matt\My Documents\Source Code\C++\Win32\ComputerSmarts.net\Projects\COptionTree\COptionTree\COptionTree\OptionTreeItemFont.cpp"
+"C:\Documents and Settings\Matt\My Documents\Source Code\C++\Win32\ComputerSmarts.net\Projects\COptionTree\COptionTree\COptionTree\OptionTreeItemHyperLink.cpp"
+"C:\Documents and Settings\Matt\My Documents\Source Code\C++\Win32\ComputerSmarts.net\Projects\COptionTree\COptionTree\COptionTree\OptionTreeItemImage.cpp"
+"C:\Documents and Settings\Matt\My Documents\Source Code\C++\Win32\ComputerSmarts.net\Projects\COptionTree\COptionTree\COptionTree\OptionTreeItemIPAddress.cpp"
+"C:\Documents and Settings\Matt\My Documents\Source Code\C++\Win32\ComputerSmarts.net\Projects\COptionTree\COptionTree\COptionTree\OptionTreeItemRadio.cpp"
+"C:\Documents and Settings\Matt\My Documents\Source Code\C++\Win32\ComputerSmarts.net\Projects\COptionTree\COptionTree\COptionTree\OptionTreeItemSpinner.cpp"
+"C:\Documents and Settings\Matt\My Documents\Source Code\C++\Win32\ComputerSmarts.net\Projects\COptionTree\COptionTree\COptionTree\OptionTreeItemStatic.cpp"
+"C:\Documents and Settings\Matt\My Documents\Source Code\C++\Win32\ComputerSmarts.net\Projects\COptionTree\COptionTree\COptionTree\OptionTreeList.cpp"
+"C:\Documents and Settings\Matt\My Documents\Source Code\C++\Win32\ComputerSmarts.net\Projects\COptionTree\COptionTree\COptionTree\OptionTreeRadioButton.cpp"
+"C:\Documents and Settings\Matt\My Documents\Source Code\C++\Win32\ComputerSmarts.net\Projects\COptionTree\COptionTree\COptionTree\OptionTreeSpinnerButton.cpp"
+"C:\Documents and Settings\Matt\My Documents\Source Code\C++\Win32\ComputerSmarts.net\Projects\COptionTree\COptionTree\COptionTree\OptionTree.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\matt\LOCALS~1\Temp\RSP216.tmp" 
+Creating temporary file "C:\DOCUME~1\matt\LOCALS~1\Temp\RSP217.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /I "..\COptionTree" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "_MBCS" /D "_AFXEXT" /Fp"Debug/COptionTree.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Documents and Settings\Matt\My Documents\Source Code\C++\Win32\ComputerSmarts.net\Projects\COptionTree\COptionTree\DLL\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\matt\LOCALS~1\Temp\RSP217.tmp" 
+Creating temporary file "C:\DOCUME~1\matt\LOCALS~1\Temp\RSP218.tmp" with contents
+[
+/nologo /subsystem:windows /dll /incremental:yes /pdb:"Debug/COptionTree.pdb" /debug /machine:I386 /def:".\COptionTree.def" /out:"Debug/COptionTree.dll" /implib:"Debug/COptionTree.lib" /pdbtype:sept 
+".\Debug\COptionTree.obj"
+".\Debug\StdAfx.obj"
+".\Debug\COptionTree.res"
+".\Debug\OptionTreeSpinnerEdit.obj"
+".\Debug\OptionTreeCheckButton.obj"
+".\Debug\OptionTreeColorPopUp.obj"
+".\Debug\OptionTreeFileDlg.obj"
+".\Debug\OptionTreeFontSel.obj"
+".\Debug\OptionTreeFontSelColorButton.obj"
+".\Debug\OptionTreeFontSelFontCombo.obj"
+".\Debug\OptionTreeFontSelGlobals.obj"
+".\Debug\OptionTreeFontSelSizeCombo.obj"
+".\Debug\OptionTreeImagePopUp.obj"
+".\Debug\OptionTreeInfo.obj"
+".\Debug\OptionTreeIPAddressEdit.obj"
+".\Debug\OptionTreeItem.obj"
+".\Debug\OptionTreeItemCheckBox.obj"
+".\Debug\OptionTreeItemColor.obj"
+".\Debug\OptionTreeItemComboBox.obj"
+".\Debug\OptionTreeItemDate.obj"
+".\Debug\OptionTreeItemEdit.obj"
+".\Debug\OptionTreeItemFile.obj"
+".\Debug\OptionTreeItemFont.obj"
+".\Debug\OptionTreeItemHyperLink.obj"
+".\Debug\OptionTreeItemImage.obj"
+".\Debug\OptionTreeItemIPAddress.obj"
+".\Debug\OptionTreeItemRadio.obj"
+".\Debug\OptionTreeItemSpinner.obj"
+".\Debug\OptionTreeItemStatic.obj"
+".\Debug\OptionTreeList.obj"
+".\Debug\OptionTreeRadioButton.obj"
+".\Debug\OptionTreeSpinnerButton.obj"
+".\Debug\OptionTree.obj"
+]
+Creating command line "link.exe @C:\DOCUME~1\matt\LOCALS~1\Temp\RSP218.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+COptionTree.cpp
+OptionTreeSpinnerEdit.cpp
+OptionTreeCheckButton.cpp
+OptionTreeColorPopUp.cpp
+OptionTreeFileDlg.cpp
+OptionTreeFontSel.cpp
+OptionTreeFontSelColorButton.cpp
+OptionTreeFontSelFontCombo.cpp
+OptionTreeFontSelGlobals.cpp
+OptionTreeFontSelSizeCombo.cpp
+OptionTreeImagePopUp.cpp
+OptionTreeInfo.cpp
+OptionTreeIPAddressEdit.cpp
+OptionTreeItem.cpp
+OptionTreeItemCheckBox.cpp
+OptionTreeItemColor.cpp
+OptionTreeItemComboBox.cpp
+OptionTreeItemDate.cpp
+OptionTreeItemEdit.cpp
+OptionTreeItemFile.cpp
+Generating Code...
+Compiling...
+OptionTreeItemFont.cpp
+OptionTreeItemHyperLink.cpp
+OptionTreeItemImage.cpp
+OptionTreeItemIPAddress.cpp
+OptionTreeItemRadio.cpp
+OptionTreeItemSpinner.cpp
+OptionTreeItemStatic.cpp
+OptionTreeList.cpp
+OptionTreeRadioButton.cpp
+OptionTreeSpinnerButton.cpp
+OptionTree.cpp
+Generating Code...
+Linking...
+   Creating library Debug/COptionTree.lib and object Debug/COptionTree.exp
+
+
+
+<h3>Results</h3>
+COptionTree.dll - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

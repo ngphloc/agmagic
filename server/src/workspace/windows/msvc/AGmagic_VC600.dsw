@@ -1,0 +1,212 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "AGmagicIP"=..\..\..\image\ip\project\windows\msvc\AGmagicIP_VC600.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name AGmagicUtil
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "AGmagicIPUI"=..\..\..\image\ipui\project\windows\msvc\AGmagicIPUI_VC600.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name AGmagicUtil
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name AGmagicUtilUI
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name AGmagicIP
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "AGmagicIS"=..\..\..\image\is\project\windows\msvc\AGmagicIS_VC600.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name AGmagicUtil
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name AGmagicIP
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "AGmagicISDemo"=..\..\..\image\is\demo\isdemo\project\windows\msvc\AGmagicISDemo_VC600.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name AGmagicUtil
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name AGmagicUtilUI
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name AGmagicIP
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name AGmagicIPUI
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name AGmagicIS
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name AGmagicISUI
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "AGmagicISUI"=..\..\..\image\isui\project\windows\msvc\AGmagicISUI_VC600.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name AGmagicUtil
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name AGmagicUtilUI
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name AGmagicIP
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name AGmagicIPUI
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "AGmagicMuP"=..\..\..\music\mup\project\windows\msvc\AGmagicMuP_VC600.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name AGmagicUtil
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "AGmagicSP"=..\..\..\sound\sp\project\windows\msvc\AGmagicSP_VC600.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name AGmagicUtil
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "AGmagicStorageTool"=..\..\..\common\util\AGmagicStorageTool\project\windows\msvc\AGmagicStorageTool_VC600.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name AGmagicUtil
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "AGmagicUtil"=..\..\..\common\lib\agutil\project\windows\msvc\AGmagicUtil_VC600.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "AGmagicUtilUI"=..\..\..\common\lib\agutilui\project\windows\msvc\AGmagicUtilUI_VC600.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name AGmagicUtil
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "AGmagicVP"=..\..\..\video\vp\project\windows\msvc\AGmagicVP_VC600.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name AGmagicUtil
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

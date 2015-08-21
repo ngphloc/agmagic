@@ -1,0 +1,614 @@
+
+<HTML>
+<HEAD>
+<TITLE>CodeGuru: Implementing Checkbox Controls with a TreeView</TITLE>
+<META Name="description" Content="Implementing Checkbox Controls with a TreeView By Peter Hahm.">
+<META NAME="Author" CONTENT="Peter Hahm">
+<META Name="keywords" Content="">
+<META NAME="date" CONTENT="19991218">
+
+<link REL="stylesheet" HREF="/css/text.css" TYPE="text/css">
+<script language="JavaScript" type="text/javascript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v3.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function HM_doPreload() { // dmr
+   MM_preloadImages('/img/visualc-but-on.gif',
+                    '/img/net-but-on.gif',
+                    '/img/vb-but-on.gif',
+                    '/img/forums-but-on.gif',
+                    '/img/reviews-but-on.gif',
+                    '/img/directory-but-on.gif',
+                    '/img/submit-but-on.gif',
+                    '/img/announcements-but-on.gif',
+                    '/img/guru-but-on.gif',
+                    '/img/guest-but-on.gif',
+                    '/img/about-but-on.gif',
+                    '/img/faq-but-on.gif')
+}
+window.onload=HM_doPreload;
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#666666" LEFTMARGIN="0" TOPMARGIN="4" MARGINWIDTH="0" MARGINHEIGHT="4">
+<script language="JavaScript1.2" src="/hierscripts/HM_Loader.js" type="text/javascript"></script>
+
+<MAP NAME="tabs_Map">
+  <AREA SHAPE="rect" ALT="Earthwebnews" COORDS="709,0,765,17" HREF="http://www.earthwebnews.com">
+  <AREA SHAPE="rect" ALT="Software Development" COORDS="559,0,707,17" HREF="http://softwaredev.earthweb.com">
+  <AREA SHAPE="rect" ALT="Hardware and Systems" COORDS="423,0,558,17" HREF="http://hardware.earthweb.com">
+  <AREA SHAPE="rect" ALT="Web Developer" COORDS="303,0,422,17" HREF="http://webdeveloper.earthweb.com/">
+  <AREA SHAPE="rect" ALT="Networking and Communications" COORDS="106,0,301,17" HREF="http://networking.earthweb.com/">
+  <AREA SHAPE="rect" ALT="IT Management" COORDS="0,0,104,17" HREF="http://itmanagement.earthweb.com">
+</MAP> 
+
+<table width="100%" cellpadding="4" cellspacing="0" border="0">
+  <tr><td align="center"><A HREF="http://www.codeguru.com/RealMedia/ads/click_lx.cgi/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/1795011963/house_ribbon/OasDefault/DevX_IBM_Cloudscape_Portal_1w/cscape_ipod750x25-static.gif/63626132326333313431326165353530" target="_top"><IMG SRC="http://www.codeguru.com/RealMedia/ads/Creatives/OasDefault/DevX_IBM_Cloudscape_Portal_1w/cscape_ipod750x25-static.gif"  ALT=""  BORDER="0"></A><img src="http://www.codeguru.com/RealMedia/ads/adstream_lx.cgi/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/1795011963/house_ribbon/OasDefault/DevX_IBM_Cloudscape_Portal_1w/cscape_ipod750x25-static.gif/63626132326333313431326165353530?_RM_EMPTY_" Width="1" Height="1" Border="0"></td></tr>
+  <tr>
+    <td align="center"><img src="/img/sp.gif" width="1" height="100" border="0" alt="" vspace="0" hspace="0" align="left"><A HREF="http://www.codeguru.com/RealMedia/ads/click_lx.cgi/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/2115329505/468x60-1/OasDefault/DevX_IBM_Cloudscape_Portal_1l/cscape_new728x90.gif/63626132326333313431326165353530" target="_top"><IMG SRC="http://www.codeguru.com/RealMedia/ads/Creatives/OasDefault/DevX_IBM_Cloudscape_Portal_1l/cscape_new728x90.gif"  ALT=""  BORDER="0"></A><img src="http://www.codeguru.com/RealMedia/ads/adstream_lx.cgi/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/2115329505/468x60-1/OasDefault/DevX_IBM_Cloudscape_Portal_1l/cscape_new728x90.gif/63626132326333313431326165353530?_RM_EMPTY_" Width="1" Height="1" Border="0"></td>
+  </tr>
+</table>
+
+<!--Top Navigation-->
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td>
+      <table width="780" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><IMG SRC="/img/tabs.gif" WIDTH=780 HEIGHT=17 BORDER=0 USEMAP="#tabs_Map" ALT="Earthweb Tabs" vspace="0" hspace="0"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td background="/img/top-bg.gif">
+      <table width="780" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td width="272"><a href="/"><img src="/img/logo.gif" width="272" height="82" border="0" alt="CodeGuru" vspace="0" hspace="0"></a></td>
+          <td background="/img/top-bg-2.gif">
+            <table width="508" cellpadding="0" cellspacing="0" border="0" background="">
+               <tr>
+                 <td width="508" colspan="2"><img src="/img/sp.gif" width="508" height="1" border="0" alt="" vspace="0" hspace="0"></td>
+               </tr>
+               <tr><form method="post" name="myform" action="http://search.internet.com/www.codeguru.com">
+                 <td width="1"><img src="/img/sp.gif" width="1" height="54" border="0" alt="" vspace="0" hspace="0"></td>
+                 <td><a href="http://www.earthweb.com"><img src="/img/eweb.gif" width="135" height="20" border="0" align="right" alt="Earthweb"></a>
+                 <input type="hidden" name="starget" value="">
+              	 <input type="hidden" name="IC_QueryDatabase" value="">
+              	 <img src="/img/search.gif" width="50" height="23" border="0" align="absmiddle" alt="Search">
+              	 <select name="searchsite" style="color: #000000; font-family:  verdana, arial, sans-serif ; font-weight: normal; font-size: 9pt; background-color: #ffffff;">
+                 <option value="CodeGuru" selected>CodeGuru.com</option>
+                 <option value="CodeGuru-Articles">---Articles</option>
+                 <option value="CodeGuru-Comments">---Comments</option>
+                 <option value="CodeGuru-Forums">---Forums</option>
+                 <option value="Earthweb">Earthweb</option>
+                 </select>
+              <input type="text" name="IC_QueryText" size="10">
+              <input type="image" border="0" name="submit" value="Go!" src="/img/go.gif" width="40" height="23" alt="Go" align="absmiddle">
+                 </td>
+               </tr></form>
+               <tr>
+                 <td width="1"><img src="/img/sp.gif" width="1" height="27" border="0" alt="" vspace="0" hspace="0"></td>
+                 <td align="center"> 
+                 <IMG SRC="/img/eweb-nav.gif" WIDTH=330 HEIGHT=14 BORDER=0 USEMAP="#eweb_nav_Map" vspace="0" hspace="0">
+					<MAP NAME="eweb_nav_Map">
+					<AREA SHAPE="rect" ALT="Forums" COORDS="253,0,330,14" HREF="http://www.codeguru.com/forum">
+					<AREA SHAPE="rect" ALT="Wireless" COORDS="185,0,244,14" HREF="http://www.developer.com/ws/">
+					<AREA SHAPE="rect" ALT="Jars" COORDS="145,0,176,14" HREF="http://www.jars.com">
+					<AREA SHAPE="rect" ALT="Gamelan" COORDS="77,0,136,14" HREF="http://www.developer.com/java/">
+					<AREA SHAPE="rect" ALT="Developer.com" COORDS="0,0,69,14" HREF="http://www.developer.com">
+					</MAP>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<!--End Top-->
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td width="1%" background="/img/leftnav-bg.gif" valign="top">
+    <!--Left Navigation-->
+<table width="146" bgcolor="#999999" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td>
+          <a href="/"><img src="/img/leftnav-top.gif" width="146" height="30" border="0" alt="CodeGuru Navigation"></a></td>
+        </tr>
+        <tr>
+          <td><a href="/Cpp" onMouseOver="HM_f_PopUp('HM_Menu1',event)" onMouseOut="HM_f_PopDown('HM_Menu1')"><img src="/img/visualc-but-off.gif" width="146" height="25" alt="Visual C++ / C++" border="0" name="visualc" vspace="0" hspace="0"></a></td>
+        </tr>
+        <tr>
+          <td><a href="/Csharp" onMouseOver="HM_f_PopUp('HM_Menu2',event)" onMouseOut="HM_f_PopDown('HM_Menu2')"><img src="/img/net-but-off.gif" width="146" height="25" alt=".Net / C#" border="0" name="net" vspace="0" hspace="0"></a></td>
+        </tr>
+        <tr>
+          <td><a href="/vb" onMouseOver="HM_f_PopUp('HM_Menu3',event)" onMouseOut="HM_f_PopDown('HM_Menu3')"><img src="/img/vb-but-off.gif" width="146" height="25" alt="Visual Basic" border="0" name="vb" vspace="0" hspace="0"></a></td>
+        </tr>
+        <tr>
+          <td><a href="/edit-article.php" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('submit','','/img/submit-but-on.gif',1)"><img src="/img/submit-but-off.gif" width="146" height="25" alt="Submit an Article" border="0" name="submit" vspace="0" hspace="0"></a></td>
+        </tr>
+        <tr>
+          <td><a href="/forum" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('forums','','/img/forums-but-on.gif',1)"><img src="/img/forums-but-off.gif" width="146" height="25" alt="Discussion Forums" border="0" name="forums" vspace="0" hspace="0"></a></td>
+        </tr>
+        <tr>
+          <td><a href="/resources" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('directory','','/img/directory-but-on.gif',1)"><img src="/img/directory-but-off.gif" width="146" height="25" alt="Resource Directory" border="0" name="directory" vspace="0" hspace="0"></a></td>
+        </tr>
+        <tr>
+          <td><a href="/announcements" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('announcements','','/img/announcements-but-on.gif',1)"><img src="/img/announcements-but-off.gif" width="146" height="25" alt="Announcements" border="0" name="announcements" vspace="0" hspace="0"></a></td>
+        </tr>
+        <tr>
+          <td><a href="http://extra.codeguru.com/bookList/booklist.asp" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('booklist','','/img/booklist-but-on.gif',1)"><img src="/img/booklist-but-off.gif" width="146" height="25" alt="Book List" border="0" name="booklist" vspace="0" hspace="0"></a></td>
+        </tr>
+        <tr>
+          <td><a href="http://extra.codeguru.com/default.asp" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('reviews','','/img/reviews-but-on.gif',1)"><img src="/img/reviews-but-off.gif" width="146" height="25" alt="Book Reviews" border="0" name="reviews" vspace="0" hspace="0"></a></td>
+        </tr>
+        <tr>
+          <td><a href="/gurus.php" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('guru','','/img/guru-but-on.gif',1)"><img src="/img/guru-but-off.gif" width="146" height="25" alt="Guru Lists" border="0" name="guru" vspace="0" hspace="0"></a></td>
+        </tr>
+        <tr>
+          <td><a href="http://www.theguestbook.com/read.php/608196" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('guest','','/img/guest-but-on.gif',1)"><img src="/img/guest-but-off.gif" width="146" height="25" alt="Guest Book" border="0" name="guest" vspace="0" hspace="0"></a></td>
+        </tr>
+        <tr>
+          <td><a href="/about.php" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('about','','/img/about-but-on.gif',1)"><img src="/img/about-but-off.gif" width="146" height="25" alt="About Us" border="0" name="about" vspace="0" hspace="0"></a></td>
+        </tr>
+        <tr>
+          <td><a href="/faq.php" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('faq','','/img/faq-but-on.gif',1)"><img src="/img/faq-but-off.gif" width="146" height="25" alt="FAQs" border="0" name="faq" vspace="0" hspace="0"></a></td>
+        </tr>
+        <tr>
+          <td><a href="/sitemap.php" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('sitemap','','/img/map-but-on.gif',1)"><img src="/img/map-but-off.gif" width="146" height="25" alt="Site Map" border="0" name="sitemap" vspace="0" hspace="0"></a></td>
+        </tr>
+
+</table>
+<table width="146" cellpadding="3" cellspacing="0" border="0" bgcolor="#053061">
+  <tr><form action="/login.php" method="post">
+  <input type="hidden" name="action" value="login">
+  <input type="hidden" name="url" value="/Cpp/controls/treeview/misc-advanced/article.php/c701/">
+    <td colspan="2" align="center">
+            	  <img src="/img/member-top.gif" width="113" height="13" border="0" vspace="5" alt="Member Sign In">
+          		</td>
+        	  </tr>
+        	  <tr>
+          		<td align="right"><span class="bodycopy"><font color="#FFFFFF">User ID:</font></span></td>
+          		<td><input type="text" size="7" style="width: 60px" name="username"></td>
+        	  </tr>
+        	  <tr>
+          		<td align="right"><span class="bodycopy"><font color="#FFFFFF">Password:</font></span></td>
+          		<td><input type="password" size="7" style="width: 60px" name="password"></td>
+        	  </tr>
+                  <tr>
+          		<td align="center" colspan="2"><span class="bodycopy"><font color="#FFFFFF">Remember Me:</font></span> <input type="checkbox" name="perm" value="1"></td>
+        	  </tr>
+
+        	  <tr>
+          		<td colspan="2" align="center"><input type="image" border="0" name="member" src="/img/signin-blue.gif" width="73" height="23" align="absmiddle"></td>
+        	  </tr></form>
+						<tr>
+        	    <td colspan="2" align="center"><a href="/forgotpw.php" class="moreinfo">Forgot Password?</a></td>
+        	  </tr>
+        	  <tr>
+        	    <td colspan="2" align="center"><a href="/register.php?url=/Cpp/controls/treeview/misc-advanced/article.php/c701/" class="moreinfo">Not a member?<br>Click here for more information and to register.</a></td>
+        	  </tr>
+        	</table>
+
+<table width="146" bgcolor="#999999" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td bgcolor="#000000"><img src="/img/sp.gif" width="1" height="1" border="0" alt=""></td>
+        </tr>
+        <tr>
+          <td bgcolor="#999999"><img src="/img/sp.gif" width="1" height="1" border="0" alt=""></td>
+        </tr>
+      </table>
+      <img src="/img/sp.gif" width="151" height="10" border="0" alt="">
+      <table width="146" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td align="center">
+          <A HREF="http://www.codeguru.com/RealMedia/ads/click_lx.cgi/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/1468344073/125x125-1/OasDefault/DevX_IBM_Cloudscape_Portal_1n/cloudscape_new125x125.gif/63626132326333313431326165353530" target="_top"><IMG SRC="http://www.codeguru.com/RealMedia/ads/Creatives/OasDefault/DevX_IBM_Cloudscape_Portal_1n/cloudscape_new125x125.gif"  ALT=""  BORDER="0"></A><img src="http://www.codeguru.com/RealMedia/ads/adstream_lx.cgi/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/1468344073/125x125-1/OasDefault/DevX_IBM_Cloudscape_Portal_1n/cloudscape_new125x125.gif/63626132326333313431326165353530?_RM_EMPTY_" Width="1" Height="1" Border="0">          <p>
+          <a href="http://www.jobs.internet.com"><img src="/img/jobs.gif" width="120" height="35" alt="jobs.internet.com" border="0"></a>
+          <p>
+            <table width="100%" cellpadding="3" cellspacing="0" border="0" background="">
+              <tr>
+                <td bgcolor="#000000" align="center" class="bodycopy"><font color="#FFFFFF"><b>internet.commerce</b></font></td>
+              </tr>
+              <tr>
+                <td bgcolor="#CCCCCC" class="bodycopy" align="left"><a href="http://www.internet.com/partners/">Partners &amp; Affiliates</A><BR>
+<a href="http://www.valueweb.com/dedicated/dedicated-hosting.htm">Dedicated Servers</a>
+<IMG SRC="http://www.codeguru.com/RealMedia/ads/adstream_lx.cgi/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/1685437820/cp1/OasDefault/ValueWeb_10a/DedicatedServers.html/63626132326333313431326165353530?_RM_EMPTY_" WIDTH=1 HEIGHT=1 BORDER=0><br><a href="http://www.roses-nationwide.com">Flower Delivery</a>
+<IMG SRC="http://www.codeguru.com/RealMedia/ads/adstream_lx.cgi/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/1210168995/cp2/OasDefault/Roses_Nationwide_10b/FlowerDelivery.html/63626132326333313431326165353530?_RM_EMPTY_" WIDTH=1 HEIGHT=1 BORDER=0><br><a href="http://www.carangel.org">Car Donations</a>
+<IMG SRC="http://www.codeguru.com/RealMedia/ads/adstream_lx.cgi/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/310297196/cp3/OasDefault/Carangel.org_5a/CarDonations.html/63626132326333313431326165353530?_RM_EMPTY_" WIDTH=1 HEIGHT=1 BORDER=0><br><a href="http://www.hostdepartment.com">Web Hosting Services</a>
+<IMG SRC="http://www.codeguru.com/RealMedia/ads/adstream_lx.cgi/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/306639580/cp4/OasDefault/HostDepartment_CP_7d/WebHostingServices.html/63626132326333313431326165353530?_RM_EMPTY_" WIDTH=1 HEIGHT=1 BORDER=0><br><a href="http://www.dentalplans.com">Dental Insurance</a>
+<IMG SRC="http://www.codeguru.com/RealMedia/ads/adstream_lx.cgi/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/661896842/cp5/OasDefault/Dental_Plans_5d/DentalInsurance_new.html/63626132326333313431326165353530?_RM_EMPTY_" WIDTH=1 HEIGHT=1 BORDER=0><br><a href="http://www.governmentgrant.com/free/small-business-grants.htm">Small Business Grants</a>
+<IMG SRC="http://www.codeguru.com/RealMedia/ads/adstream_lx.cgi/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/1679496469/cp6/OasDefault/GovernmentGrants_3a/SmallBusinessGrants.html/63626132326333313431326165353530?_RM_EMPTY_" WIDTH=1 HEIGHT=1 BORDER=0><br><a href="http://www.codeguru.com/RealMedia/ads/click_lx.cgi/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/1687675530/cp7/OasDefault/Trellian_38c/PromoteYourWebsite.html/63626132326333313431326165353530" target=new>Promote Your Website</a>
+<IMG SRC="http://www.codeguru.com/RealMedia/ads/adstream_lx.cgi/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/1687675530/cp7/OasDefault/Trellian_38c/PromoteYourWebsite.html/63626132326333313431326165353530?_RM_EMPTY_" WIDTH=1 HEIGHT=1><br><a href="http://www.databazaar.com">Ink Cartridges</a>
+<IMG SRC="http://www.codeguru.com/RealMedia/ads/adstream_lx.cgi/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/1447144150/cp8/OasDefault/Databazaar_4d/InkCartridges.html/63626132326333313431326165353530?_RM_EMPTY_" WIDTH=1 HEIGHT=1 BORDER=0><br><a href="http://www.codeguru.com/RealMedia/ads/click_lx.cgi/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/2115549287/cp9/OasDefault/HostSave_CP_10d/CheapWebHosting.html/63626132326333313431326165353530">Cheap Web Hosting</a>
+<IMG SRC="http://www.codeguru.com/RealMedia/ads/adstream_lx.cgi/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/2115549287/cp9/OasDefault/HostSave_CP_10d/CheapWebHosting.html/63626132326333313431326165353530?_RM_EMPTY_" WIDTH=1 HEIGHT=1 BORDER=0><br><a href="http://shopping.yahoo.com/b:Digital%20Cameras:20148412">Digital Camera</a>
+<IMG SRC="http://www.codeguru.com/RealMedia/ads/adstream_lx.cgi/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/1691140334/cp10/OasDefault/Yahoo_CP_8l/DigitalCamera.html/63626132326333313431326165353530?_RM_EMPTY_" WIDTH=1 HEIGHT=1 BORDER=0><br><a href="http://www.techcubic.com">Internet Directory</a>
+<IMG SRC="http://www.codeguru.com/RealMedia/ads/adstream_lx.cgi/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/1859713354/cp11/OasDefault/TechCubic_1d/InternetDirectory.html/63626132326333313431326165353530?_RM_EMPTY_" WIDTH=1 HEIGHT=1 BORDER=0><br><a href="http://www.healthinsurancesort.com/">Health Insurance</a>
+<IMG SRC="http://www.codeguru.com/RealMedia/ads/adstream_lx.cgi/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/1715898911/cp12/OasDefault/MJ_Direct_Consulting_4a/HealthInsurance.html/63626132326333313431326165353530?_RM_EMPTY_" WIDTH=1 HEIGHT=1 BORDER=0><br><A HREF="http://www.codeguru.com/RealMedia/ads/click_lx.cgi/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/959981255/cp13/default/empty.gif/63626132326333313431326165353530" target="_top"><IMG SRC="http://www.codeguru.com/RealMedia/ads/Creatives/default/empty.gif"  WIDTH=2 HEIGHT=2 ALT="" BORDER=0 BORDER="0"></A><img src="http://www.codeguru.com/RealMedia/ads/adstream_lx.cgi/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/959981255/cp13/default/empty.gif/63626132326333313431326165353530?_RM_EMPTY_" Width="1" Height="1" Border="0"><br></td>
+              </tr>
+            </table>                
+          </td>
+        </tr>
+      </table>     
+<br>
+<br>
+<table width="146" cellpadding="4" bgcolor="#053061">
+<tr>
+<td>
+<font color="#CCCC66"><b>RSS Feeds</font></b><p>
+<a href="/icom_includes/feeds/codeguru/rss-all.xml"><img src="/img/xml.gif" width="36" height="14" border="0" align="absmiddle" hspace="5"><font color="#ffffff">All</font></a>
+<br><img src="/img/sp.gif" width="1" height="2" border="0" alt=""><br>
+<a href="/icom_includes/feeds/codeguru/rss-cpp.xml"><img src="/img/xml.gif" width="36" height="14" border="0" align="absmiddle" hspace="5"><font color="#ffffff">VC++/C++</font></a>
+<br><img src="/img/sp.gif" width="1" height="2" border="0" alt=""><br>
+<a href="/icom_includes/feeds/codeguru/rss-csharp.xml"><img src="/img/xml.gif" width="36" height="14" border="0" align="absmiddle" hspace="5"><font color="#ffffff">.NET/C#</font></a>
+<br><img src="/img/sp.gif" width="1" height="2" border="0" alt=""><br>
+<a href="/icom_includes/feeds/codeguru/rss-vb.xml"><img src="/img/xml.gif" width="36" height="14" border="0" align="absmiddle" hspace="5"><font color="#ffffff">VB</font></a>
+
+</td>
+</tr>
+</table>    </td>
+
+    <td width="99%" bgcolor="#FFFFFF" background="" valign="top">
+    <img src="/img/sp.gif" width="629" height="1" border="0" alt="">
+
+    <table width="100%" border="0" cellspacing="0" cellpadding="4" border="0">
+      <tr>
+	<td>
+
+
+
+
+<span class='bodycopy'><b><a href='/'>Home</a></b> >> <b><a href='/Cpp/'>Visual C++ / C++</a></b> >> <b><a href='/Cpp/controls/'>Controls</a></b> >> <b><a href='/Cpp/controls/treeview/'>Treeview Control</a></b> >> <b><a href='/Cpp/controls/treeview/misc-advanced/'>Misc - Advanced</a></b><br><br>
+
+  
+<table cellpadding="5" cellspacing="0" border="0" align="right" width="135">
+  <tr>
+    <td align="center">
+        <A HREF="http://www.codeguru.com/RealMedia/ads/click_lx.cgi/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/1452711087/125x800/OasDefault/DevX_IBM_Cloudscape_Portal_1q/cscape_new160x600.gif/63626132326333313431326165353530" target="_top"><IMG SRC="http://www.codeguru.com/RealMedia/ads/Creatives/OasDefault/DevX_IBM_Cloudscape_Portal_1q/cscape_new160x600.gif"  ALT=""  BORDER="0"></A><img src="http://www.codeguru.com/RealMedia/ads/adstream_lx.cgi/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/1452711087/125x800/OasDefault/DevX_IBM_Cloudscape_Portal_1q/cscape_new160x600.gif/63626132326333313431326165353530?_RM_EMPTY_" Width="1" Height="1" Border="0">    </td>
+  </tr>
+</table>
+
+<!--content_start-->
+   <table border="0" cellspacing="0" cellpadding="1" bgcolor="#000000">
+        <tr>
+          <td>
+            <table border="0" cellspacing="0" cellpadding="1" bgcolor="#CCCCCC">
+              <tr> 
+                <td><font face="Verdana, Arial, Helvetica, sans-serif" size="-2"><A HREF="http://www.codeguru.com/RealMedia/ads/click_lx.cgi/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/90130286/ciu/OasDefault/Tripwire_VendorShowcase_1a/Findouthowto.html/63626132326333313431326165353530">
+Free Whitepaper: Find out how to comply with Sarbanes-Oxley Section 302 and 404, address policies and procedures of internal controls and understand the relationship between SOX, COSO and COBIT.  Click here.</A>
+
+</font></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table><IMG SRC="http://www.codeguru.com/RealMedia/ads/adstream_lx.cgi/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/90130286/ciu/OasDefault/Tripwire_VendorShowcase_1a/Findouthowto.html/63626132326333313431326165353530?_RM_EMPTY_" WIDTH=1 HEIGHT=1><BR>
+<font class="sectionhead">Implementing Checkbox Controls with a TreeView</font><br>
+<b>Rating:</b> <font color="#990000">none</font><br>
+<br>
+
+<table cellpadding="5" cellspacing="0" border="0">
+  <tr>
+    <td align="right">
+    </td>
+    <td class="bodycopy">
+    <b>Peter Hahm</b> (<a href='/member.php/563/'>view profile</a>)<br>
+    December 18, 1999    </td>
+  </tr>
+</table>	 
+
+
+
+<p>
+<span class="bodycopy">
+
+
+
+<p>
+This little sample program demonstrates how to make a treecontrol with
+checkboxes belonging to each item. 
+Note that this sample was generated using MSVC++ 5. Should work with MSVC++
+6 as well.
+
+<p>
+Note further that I used the style-constant TVS_CHECKBOXES, which is
+declarated in VC++5, but not commented.
+
+<h3>Downloads</h3>
+<a href="/code/legacy/treeview/TreeWithCheckBoxes_demo.zip">Download demo project - 23 Kb</a><br><p>
+
+
+
+
+
+</span>
+<!--content_stop-->
+
+
+<table border="0" width="100%" cellpadding="3">
+  <tr> 
+    <td align="left" valign="TOP"> <br>
+<a href="/Cpp/controls/treeview/misc-advanced/email.php/c701/"><IMG SRC="/img/emailicon.gif" BORDER="0"></a>
+
+<a href="/Cpp/controls/treeview/misc-advanced/print.php/c701/"><IMG SRC="/img/printicon.gif" BORDER="0"></a>           
+
+    </td>
+  </tr>
+</table>
+
+
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+<a name="rating"></a>
+<table width="100%" cellpadding="4" cellspacing="0" border="1" bgcolor="#CCCCCC">
+  <tr>
+    <input type="hidden" name="url" value="/Cpp/controls/treeview/misc-advanced/article.php/c701/">
+    <td class="bodycopy">
+    <font color="#CC0000"><b>RATE THIS ARTICLE:</B></font>&nbsp;&nbsp;
+<input type="radio" value="5" name="vote">Excellent&nbsp;&nbsp;<input type="radio" value="4" name="vote">Very Good&nbsp;&nbsp;<input type="radio" value="3" name="vote">Average&nbsp;&nbsp;<input type="radio" value="2" name="vote">Below Average&nbsp;&nbsp;<input type="radio" value="1" name="vote">Poor&nbsp;&nbsp;<input type="image" src="/img/rate.gif" border="0" width="73" height="23" align="absmiddle">
+
+<br><br><b>(You must be signed in to rank an article. Not a member? <a href="/register.php?url=/Cpp/controls/treeview/misc-advanced/article.php/c701/">Click here</a> to register)</b>
+    </td>
+  </tr>
+</form>
+</table>
+
+
+
+<br>
+
+
+  <!--COMMENTS-->  
+<table width="100%" cellpadding="4" cellspacing="0" border="0" bgcolor="#CCCCCC">
+  <tr>
+    <td class="bodycopy" colspan="2"><font class="title">Latest Comments: </font></td>
+  </tr>
+  <tr>
+    <td class="bodycopy">
+&#149; <a href="/Cpp/controls/treeview/misc-advanced/comments.php/c701/?thread=7826">
+
+Tree Control</a> - Legacy CodeGuru (01/08/2003)<br>
+&#149; <a href="/Cpp/controls/treeview/misc-advanced/comments.php/c701/?thread=7828">
+
+ExTree</a> - Legacy CodeGuru (10/18/2001)<br>
+&#149; <a href="/Cpp/controls/treeview/misc-advanced/comments.php/c701/?thread=7830">
+
+treecontrol</a> - Legacy CodeGuru (04/25/2000)<br>
+ 
+<br><a href="/Cpp/controls/treeview/misc-advanced/comments.php/c701/"><b>View All Comments</b></a>
+    <hr>
+    </td>
+  </tr> 
+  <tr>
+    <td class="bodycopy" colspan="2"><font class="title">Add a Comment: </font></td>
+  </tr>
+  <tr>
+    <td class="bodycopy">
+		    <input type="hidden" name="action" value="add">
+    <center>
+    <table class="bodycopy">
+      <tr valign="top">
+        <td align="right" class="bodycopy"><strong>Title: </strong></td>
+        <td><input type="text" name="title"  size="60" maxlength="256"></td>
+      </tr>
+      <tr valign="top">
+        <td align="right" class="bodycopy"><strong>Comment: </strong></td>
+        <td><textarea name="subject" rows=5 cols=60 wrap="physical"></textarea></td>
+      </tr>
+      <tr valign="top">
+        <td align="right" class="bodycopy"><strong>Pre-Formatted: </strong></td>
+        <td><input type="checkbox" name="preformatted" value="on">Check this if you want the text to display with the formatting as typed (good for source code)</td>
+      </tr>
+    </table>
+    <br>
+    <input type="image" src="/img/submit.gif" width="73" height="23" border="0" name="AddComment" value="Add Comment">
+    </center>
+		<br><br><b>(You must be signed in to comment on an article. Not a member? <a href="/register.php?url=/Cpp/controls/treeview/misc-advanced/article.php/c701/">Click here</a> to register)</b>
+       </td>
+ </form>
+  </tr>
+</table>
+
+
+        </td>
+      </tr>
+
+    </table>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" bgcolor="#666666"><img src="/img/sp.gif" width="1" height="2" border="0" alt=""></td>
+  </tr>
+</table>
+
+<table width="100%" cellpadding="10" cellspacing="0" border="0" bgcolor="#FFFFFF">
+  <tr>
+    <td align="center"><TABLE WIDTH="728" BORDER="0" CELLSPACING="0" CELLPADDING="0" HEIGHT="90" BGCOLOR="#FFFFFF" STYLE="border:1px solid #FF6600;">
+<TR>
+<TD VALIGN="TOP" width="353">
+<A HREF="http://www.codeguru.com/RealMedia/ads/click_lx.ads/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/477198678/468x60-2/OasDefault/Devx_MS_Destination.NETPortal_1b/VS2005-728x90.html/63626132326333313431326165353530?http://www.devx.com/SummitDays/Article/22554"><IMG SRC="http://www.devx.com/assets/destination/11705.gif" WIDTH=353 HEIGHT=90 BORDER=0 ALT=""></A><TD VALIGN="TOP">
+<TABLE CELLSPACING="0" CELLPADDING="0" border="0" style="padding:1px;" width="105">
+<TR>
+<TD nowrap style="font-size:11px; font-family:Arial;border-bottom: #FF6600 dotted 1px; padding-bottom:3px;">
+<A HREF="http://www.codeguru.com/RealMedia/ads/click_lx.ads/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/477198678/468x60-2/OasDefault/Devx_MS_Destination.NETPortal_1b/VS2005-728x90.html/63626132326333313431326165353530?http://www.devx.com/SummitDays/Link/22558">CA, Los Angeles</A> </TD>
+<TD nowrap style="font-size:11px; font-family:Arial;border-bottom: #FF6600 dotted 1px; padding-bottom:3px;"><A HREF="http://www.codeguru.com/RealMedia/ads/click_lx.ads/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/477198678/468x60-2/OasDefault/Devx_MS_Destination.NETPortal_1b/VS2005-728x90.html/63626132326333313431326165353530?http://www.devx.com/SummitDays/Link/22558">Feb 9</A>
+</TD>
+</TR>
+<TR>
+<TD nowrap style="font-size:11px; font-family:Arial;border-bottom: #FF6600 dotted 1px; padding-bottom:3px;">
+<A HREF="http://www.codeguru.com/RealMedia/ads/click_lx.ads/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/477198678/468x60-2/OasDefault/Devx_MS_Destination.NETPortal_1b/VS2005-728x90.html/63626132326333313431326165353530?http://www.devx.com/SummitDays/Link/22556">CA, San Diego </A> </TD>
+<TD nowrap style="font-size:11px; font-family:Arial;border-bottom: #FF6600 dotted 1px; padding-bottom:3px;"><A HREF="http://www.codeguru.com/RealMedia/ads/click_lx.ads/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/477198678/468x60-2/OasDefault/Devx_MS_Destination.NETPortal_1b/VS2005-728x90.html/63626132326333313431326165353530?http://www.devx.com/SummitDays/Link/22556">Feb 8</A>
+</TD>
+</TR>
+<TR>
+<TD nowrap style="font-size:11px; font-family:Arial;border-bottom: #FF6600 dotted 1px; padding-bottom:3px;">
+<A HREF="http://www.codeguru.com/RealMedia/ads/click_lx.ads/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/477198678/468x60-2/OasDefault/Devx_MS_Destination.NETPortal_1b/VS2005-728x90.html/63626132326333313431326165353530?http://www.devx.com/SummitDays/Link/22560">CA, San Francisco </A>  </TD>
+<TD nowrap style="font-size:11px; font-family:Arial;border-bottom: #FF6600 dotted 1px; padding-bottom:3px;"><A HREF="http://www.codeguru.com/RealMedia/ads/click_lx.ads/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/477198678/468x60-2/OasDefault/Devx_MS_Destination.NETPortal_1b/VS2005-728x90.html/63626132326333313431326165353530?http://www.devx.com/SummitDays/Link/22560">Feb 11</A>
+</TD>
+</TR>
+
+<TR>
+<TD nowrap style="font-size:11px; font-family:Arial;border-bottom: #FF6600 dotted 1px; padding-bottom:3px;">
+<A HREF="http://www.codeguru.com/RealMedia/ads/click_lx.ads/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/477198678/468x60-2/OasDefault/Devx_MS_Destination.NETPortal_1b/VS2005-728x90.html/63626132326333313431326165353530?http://www.devx.com/SummitDays/Link/22571">CO, Denver</A> </TD>
+<TD nowrap style="font-size:11px; font-family:Arial;border-bottom: #FF6600 dotted 1px; padding-bottom:3px;"><A HREF="http://www.codeguru.com/RealMedia/ads/click_lx.ads/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/477198678/468x60-2/OasDefault/Devx_MS_Destination.NETPortal_1b/VS2005-728x90.html/63626132326333313431326165353530?http://www.devx.com/SummitDays/Link/22571">Mar 2</A>
+</TD>
+</TR>
+<TR>
+<TD nowrap style="font-size:11px; font-family:Arial;">
+<A HREF="http://www.codeguru.com/RealMedia/ads/click_lx.ads/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/477198678/468x60-2/OasDefault/Devx_MS_Destination.NETPortal_1b/VS2005-728x90.html/63626132326333313431326165353530?http://www.devx.com/SummitDays/Link/22565">DC, Washington </A> </TD>
+<TD nowrap style="font-size:11px; font-family:Arial;"><A HREF="http://www.codeguru.com/RealMedia/ads/click_lx.ads/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/477198678/468x60-2/OasDefault/Devx_MS_Destination.NETPortal_1b/VS2005-728x90.html/63626132326333313431326165353530?http://www.devx.com/SummitDays/Link/22565">Feb 17</A>
+</TD>
+</TR>
+
+</td>
+</table>
+<td valign="top">
+<TABLE CELLSPACING="0" CELLPADDING="1" border="0" style="padding:1px;" width="131">
+<TR>
+<TD nowrap style="font-size:11px; font-family:Arial;border-bottom: #FF6600 dotted 1px; padding-bottom:3px;">
+<A HREF="http://www.codeguru.com/RealMedia/ads/click_lx.ads/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/477198678/468x60-2/OasDefault/Devx_MS_Destination.NETPortal_1b/VS2005-728x90.html/63626132326333313431326165353530?http://www.devx.com/SummitDays/Link/22566">FL, Ft. Lauderdale</A> </TD>
+<TD nowrap style="font-size:11px; font-family:Arial;border-bottom: #FF6600 dotted 1px; padding-bottom:3px;"><A HREF="http://www.codeguru.com/RealMedia/ads/click_lx.ads/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/477198678/468x60-2/OasDefault/Devx_MS_Destination.NETPortal_1b/VS2005-728x90.html/63626132326333313431326165353530?http://www.devx.com/SummitDays/Link/22566">Feb 18</A>
+</TD>
+</TR>
+<TR>
+<TD nowrap style="font-size:11px; font-family:Arial;border-bottom: #FF6600 dotted 1px; padding-bottom:3px;">
+<A HREF="http://www.codeguru.com/RealMedia/ads/click_lx.ads/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/477198678/468x60-2/OasDefault/Devx_MS_Destination.NETPortal_1b/VS2005-728x90.html/63626132326333313431326165353530?http://www.devx.com/SummitDays/Link/22564">GA, Atlanta </A> </TD>
+<TD nowrap style="font-size:11px; font-family:Arial;border-bottom: #FF6600 dotted 1px; padding-bottom:3px;"><A HREF="http://www.codeguru.com/RealMedia/ads/click_lx.ads/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/477198678/468x60-2/OasDefault/Devx_MS_Destination.NETPortal_1b/VS2005-728x90.html/63626132326333313431326165353530?http://www.devx.com/SummitDays/Link/22564">Feb 16</A>
+</TD>
+</TR>
+<TR>
+<TD nowrap style="font-size:11px; font-family:Arial;border-bottom: #FF6600 dotted 1px; padding-bottom:3px;">
+<A HREF="http://www.codeguru.com/RealMedia/ads/click_lx.ads/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/477198678/468x60-2/OasDefault/Devx_MS_Destination.NETPortal_1b/VS2005-728x90.html/63626132326333313431326165353530?http://www.devx.com/SummitDays/Link/22561">IL, Chicago </A> </TD>
+<TD nowrap style="font-size:11px; font-family:Arial;border-bottom: #FF6600 dotted 1px; padding-bottom:3px;"><A HREF="http://www.codeguru.com/RealMedia/ads/click_lx.ads/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/477198678/468x60-2/OasDefault/Devx_MS_Destination.NETPortal_1b/VS2005-728x90.html/63626132326333313431326165353530?http://www.devx.com/SummitDays/Link/22561">Feb 14</A>
+</TD>
+</TR>
+
+<TR>
+<TD nowrap style="font-size:11px; font-family:Arial;border-bottom: #FF6600 dotted 1px; padding-bottom:3px;">
+<A HREF="http://www.codeguru.com/RealMedia/ads/click_lx.ads/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/477198678/468x60-2/OasDefault/Devx_MS_Destination.NETPortal_1b/VS2005-728x90.html/63626132326333313431326165353530?http://www.devx.com/SummitDays/Link/22563">MA, Boston </A> </TD>
+<TD nowrap style="font-size:11px; font-family:Arial;border-bottom: #FF6600 dotted 1px; padding-bottom:3px;"><A HREF="http://www.codeguru.com/RealMedia/ads/click_lx.ads/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/477198678/468x60-2/OasDefault/Devx_MS_Destination.NETPortal_1b/VS2005-728x90.html/63626132326333313431326165353530?http://www.devx.com/SummitDays/Link/22563">Feb 15</A>
+</TD>
+</TR>
+<TR>
+<TD nowrap style="font-size:11px; font-family:Arial;">
+<A HREF="http://www.codeguru.com/RealMedia/ads/click_lx.ads/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/477198678/468x60-2/OasDefault/Devx_MS_Destination.NETPortal_1b/VS2005-728x90.html/63626132326333313431326165353530?http://www.devx.com/SummitDays/Link/22555">MI, Detroit </A> </TD>
+<TD nowrap style="font-size:11px; font-family:Arial;"><A HREF="http://www.codeguru.com/RealMedia/ads/click_lx.ads/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/477198678/468x60-2/OasDefault/Devx_MS_Destination.NETPortal_1b/VS2005-728x90.html/63626132326333313431326165353530?http://www.devx.com/SummitDays/Link/22555">Feb 7</A>
+</TD>
+</TR>
+
+</TABLE>
+</TD>
+
+<TD VALIGN="TOP">
+<TABLE CELLSPACING="0" CELLPADDING="0"  border="0" style="padding:1px;" width="110">
+<TR>
+<TD nowrap style="font-size:11px; font-family:Arial;border-bottom: #FF6600 dotted 1px; padding-bottom:3px;">
+<A HREF="http://www.codeguru.com/RealMedia/ads/click_lx.ads/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/477198678/468x60-2/OasDefault/Devx_MS_Destination.NETPortal_1b/VS2005-728x90.html/63626132326333313431326165353530?http://www.devx.com/SummitDays/Link/22562">NY, New York </A> </TD>
+<TD nowrap style="font-size:11px; font-family:Arial;border-bottom: #FF6600 dotted 1px; padding-bottom:3px;"><A HREF="http://www.codeguru.com/RealMedia/ads/click_lx.ads/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/477198678/468x60-2/OasDefault/Devx_MS_Destination.NETPortal_1b/VS2005-728x90.html/63626132326333313431326165353530?http://www.devx.com/SummitDays/Link/22562">Feb 14</A>
+</TD>
+</TR>
+
+<TR>
+<TD nowrap style="font-size:11px; font-family:Arial;border-bottom: #FF6600 dotted 1px; padding-bottom:3px;">
+<A HREF="http://www.codeguru.com/RealMedia/ads/click_lx.ads/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/477198678/468x60-2/OasDefault/Devx_MS_Destination.NETPortal_1b/VS2005-728x90.html/63626132326333313431326165353530?http://www.devx.com/SummitDays/Link/22557">OH, Cincinnati </A> </TD>
+<TD nowrap style="font-size:11px; font-family:Arial;border-bottom: #FF6600 dotted 1px; padding-bottom:3px;"><A HREF="http://www.codeguru.com/RealMedia/ads/click_lx.ads/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/477198678/468x60-2/OasDefault/Devx_MS_Destination.NETPortal_1b/VS2005-728x90.html/63626132326333313431326165353530?http://www.devx.com/SummitDays/Link/22557">Feb 9</A>
+</TD>
+</TR>
+
+
+<TR>
+<TD nowrap style="font-size:11px; font-family:Arial;border-bottom: #FF6600 dotted 1px; padding-bottom:3px;">
+<A HREF="http://www.codeguru.com/RealMedia/ads/click_lx.ads/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/477198678/468x60-2/OasDefault/Devx_MS_Destination.NETPortal_1b/VS2005-728x90.html/63626132326333313431326165353530?http://www.devx.com/SummitDays/Link/22569">TX, Dallas  </A> </TD>
+<TD nowrap style="font-size:11px; font-family:Arial;border-bottom: #FF6600 dotted 1px; padding-bottom:3px;"><A HREF="http://www.codeguru.com/RealMedia/ads/click_lx.ads/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/477198678/468x60-2/OasDefault/Devx_MS_Destination.NETPortal_1b/VS2005-728x90.html/63626132326333313431326165353530?http://www.devx.com/SummitDays/Link/22569">Feb 28</A>
+</TD>
+</TR>
+<TR>
+<TD nowrap style="font-size:11px; font-family:Arial;border-bottom: #FF6600 dotted 1px;">
+<A HREF="http://www.codeguru.com/RealMedia/ads/click_lx.ads/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/477198678/468x60-2/OasDefault/Devx_MS_Destination.NETPortal_1b/VS2005-728x90.html/63626132326333313431326165353530?http://www.devx.com/SummitDays/Link/22559">WA, Seattle </A> </TD>
+<TD nowrap style="font-size:11px; font-family:Arial;border-bottom: #FF6600 dotted 1px;"><A HREF="http://www.codeguru.com/RealMedia/ads/click_lx.ads/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/477198678/468x60-2/OasDefault/Devx_MS_Destination.NETPortal_1b/VS2005-728x90.html/63626132326333313431326165353530?http://www.devx.com/SummitDays/Link/22559">Feb 11</A></TD>
+</TR>
+
+<TR>
+<TD nowrap style="font-size:11px; font-family:Arial; font-weight:bold;" colspan="2">
+<A HREF="http://www.codeguru.com/RealMedia/ads/click_lx.ads/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/477198678/468x60-2/OasDefault/Devx_MS_Destination.NETPortal_1b/VS2005-728x90.html/63626132326333313431326165353530?http://www.devx.com/SummitDays/Article/22554">Click here to see all cities</A>
+</TD>
+</TR>
+</TABLE></TD></TR></TABLE><IMG SRC="http://www.codeguru.com/RealMedia/ads/adstream_lx.cgi/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c701/i/477198678/468x60-2/OasDefault/Devx_MS_Destination.NETPortal_1b/VS2005-728x90.html/63626132326333313431326165353530?_RM_EMPTY_" WIDTH=1 HEIGHT=1 BORDER=0></td>
+  </tr>
+  <tr>
+    <td class="bodycopy" align="center">
+      <CENTER>
+
+<BR CLEAR="all"><center><table border="0" cellspacing="0" cellpadding="5">
+                <tr> 
+                  <form method="POST" action="http://search.internet.com/www.jupiterweb.com">
+                    <td align="center"><font size="-2" face="verdana, arial, helvetica"><b>JupiterWeb networks:</b></font> 
+                      <p> <a href="http://www.internet.com" class="foot"><img src="/icom_includes/footers/icom_foot.gif" alt="internet.com" width="97" height="15" hspace="0" border="0" align="absmiddle"></a><img src="/icom_includes/footers/ruledivide_foot.gif" alt="" width="1" height="25" hspace="10" border="0" align="absmiddle"><a href="http://www.earthweb.com"><img src="/icom_includes/footers/earthweb_foot2.gif" alt="earthweb.com" width="93" height="12" hspace="5" border="0" align="absmiddle"></a><img src="/icom_includes/footers/ruledivide_foot.gif" alt="" width="1" height="25" hspace="10" border="0" align="absmiddle"><a href="http://www.devx.com"><img src="/icom_includes/footers/devx_foot2.gif" alt="Devx.com" width="35" height="30" hspace="0" border="0" align="absmiddle"></a><img src="/icom_includes/footers/ruledivide_foot.gif" alt="" width="1" height="25" hspace="10" border="0" align="absmiddle"><a href="http://www.clickz.com"><img src="/icom_includes/footers/clickz_foot2.gif" alt="ClickZ" width="55" height="24" hspace="0" border="0" align="absmiddle"></a>
+                      <p> 
+                      <font size="-2" face="verdana, arial, helvetica"><b>Search JupiterWeb:</b> 
+                      <input type="HIDDEN" name="IC_Summary" value="1">
+                      <input type="HIDDEN" name="IC_StartNumber" value="0">
+                      <input type="HIDDEN" name="IC_BatchSize" value="10">
+                      <input type="HIDDEN" name="IC_RelevanceThreshold" value="50">
+                      <input type="hidden" name="IC_QueryDatabase" value="all">
+                      <input type="text" name="IC_QueryText" size="50">
+                      <input type="image" border="0" value="Find" name="SUBMIT" src="/icom_includes/footers/but_find.gif" width="41" height="20" align="absmiddle">
+                      </font>
+                      <p>
+                      <font size="-2" face="verdana, arial, helvetica">
+                     <a href="http://www.jupitermedia.com/" class="foot"> Jupitermedia Corporation</a> has four divisions:
+                      <br><a href="http://www.jupiterweb.com/" class="foot">JupiterWeb</a>, <a href="http://www.jupiterresearch.com/" class="foot">JupiterResearch</a>, <a href="http://www.jupiterevents.com/" class="foot">JupiterEvents</a> and <a href="http://www.jupiterimages.com/" class="foot">JupiterImages</a>
+                      <p>
+                      <div class="foot">Copyright <!--YEAR-->2004 Jupitermedia Corporation All Rights Reserved.<br>
+                        <a href="http://www.jupitermedia.com/corporate/legal.html" class="foot">Legal 
+                        Notices</a>, <a href="http://www.jupitermedia.com/corporate/reprints.html#Licensing1" class="foot">Licensing</a>, 
+                        <a href="http://www.jupitermedia.com/corporate/reprints.html#Reprints1" class="foot">Reprints</a>, 
+                        & <a href="http://www.jupitermedia.com/corporate/reprints.html#Permissions" class="foot">Permissions</a>, 
+                        <a href="http://www.jupitermedia.com/corporate/privacy/privacypolicy.html" class="foot">Privacy 
+                        Policy</a>. </font>
+                      <p> <font size="-2" face="verdana, arial, helvetica"><a href="http://www.jupitermedia.com/corporate/" class="foot">Jupitermedia Corporate 
+                        Info</a> | <a href="http://e-newsletters.internet.com/" class="foot">Newsletters</a> 
+                        | <a href="http://jobs.internet.com/" class="foot">Tech 
+                        Jobs</a> | <a href="http://e-newsletters.internet.com/mailinglists.html" class="foot">E-mail 
+                        Offers</a></div></font>
+
+                    </td>
+                  </form>
+                </tr>
+              </table></center>
+
+</CENTER>
+
+    </td>
+  </tr>
+  
+</table>     </BODY>
+</HTML>
+   

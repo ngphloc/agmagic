@@ -1,0 +1,171 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: tiff - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP93.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /I "..\zlib" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_LIB" /D "_AFXDLL" /Fr"Debug/" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\fax3sm_winnt.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_aux.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_close.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_codec.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_compress.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_dir.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_dirinfo.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_dirread.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_dirwrite.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_dumpmode.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_error.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_fax3.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_flush.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_getimage.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_jpeg.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_luv.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_lzw.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_next.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_ojpeg.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_open.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_packbits.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_pixarlog.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_predict.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_print.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_read.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_strip.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_swab.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_thunder.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_tile.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_version.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_warning.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_write.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\tiff\tif_zip.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP93.tmp" 
+<h3>Output Window</h3>
+Compiling...
+fax3sm_winnt.c
+tif_aux.c
+tif_close.c
+tif_codec.c
+tif_compress.c
+tif_dir.c
+tif_dirinfo.c
+tif_dirread.c
+tif_dirwrite.c
+tif_dumpmode.c
+tif_error.c
+tif_fax3.c
+tif_flush.c
+tif_getimage.c
+tif_jpeg.c
+tif_luv.c
+tif_lzw.c
+tif_next.c
+tif_ojpeg.c
+tif_open.c
+Generating Code...
+Compiling...
+tif_packbits.c
+tif_pixarlog.c
+tif_predict.c
+tif_print.c
+tif_read.c
+tif_strip.c
+tif_swab.c
+tif_thunder.c
+tif_tile.c
+tif_version.c
+tif_warning.c
+tif_write.c
+tif_zip.c
+Generating Code...
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP94.tmp" with contents
+[
+/nologo /out:"Debug\Tiff.lib" 
+".\Debug\fax3sm_winnt.obj"
+".\Debug\tif_aux.obj"
+".\Debug\tif_close.obj"
+".\Debug\tif_codec.obj"
+".\Debug\tif_compress.obj"
+".\Debug\tif_dir.obj"
+".\Debug\tif_dirinfo.obj"
+".\Debug\tif_dirread.obj"
+".\Debug\tif_dirwrite.obj"
+".\Debug\tif_dumpmode.obj"
+".\Debug\tif_error.obj"
+".\Debug\tif_fax3.obj"
+".\Debug\tif_flush.obj"
+".\Debug\tif_getimage.obj"
+".\Debug\tif_jpeg.obj"
+".\Debug\tif_luv.obj"
+".\Debug\tif_lzw.obj"
+".\Debug\tif_next.obj"
+".\Debug\tif_ojpeg.obj"
+".\Debug\tif_open.obj"
+".\Debug\tif_packbits.obj"
+".\Debug\tif_pixarlog.obj"
+".\Debug\tif_predict.obj"
+".\Debug\tif_print.obj"
+".\Debug\tif_read.obj"
+".\Debug\tif_strip.obj"
+".\Debug\tif_swab.obj"
+".\Debug\tif_thunder.obj"
+".\Debug\tif_tile.obj"
+".\Debug\tif_version.obj"
+".\Debug\tif_warning.obj"
+".\Debug\tif_write.obj"
+".\Debug\tif_zip.obj"
+]
+Creating command line "link.exe -lib @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP94.tmp"
+<h3>Output Window</h3>
+Creating library...
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP95.tmp" with contents
+[
+/nologo /o"Debug/Tiff.bsc" 
+".\Debug\fax3sm_winnt.sbr"
+".\Debug\tif_aux.sbr"
+".\Debug\tif_close.sbr"
+".\Debug\tif_codec.sbr"
+".\Debug\tif_compress.sbr"
+".\Debug\tif_dir.sbr"
+".\Debug\tif_dirinfo.sbr"
+".\Debug\tif_dirread.sbr"
+".\Debug\tif_dirwrite.sbr"
+".\Debug\tif_dumpmode.sbr"
+".\Debug\tif_error.sbr"
+".\Debug\tif_fax3.sbr"
+".\Debug\tif_flush.sbr"
+".\Debug\tif_getimage.sbr"
+".\Debug\tif_jpeg.sbr"
+".\Debug\tif_luv.sbr"
+".\Debug\tif_lzw.sbr"
+".\Debug\tif_next.sbr"
+".\Debug\tif_ojpeg.sbr"
+".\Debug\tif_open.sbr"
+".\Debug\tif_packbits.sbr"
+".\Debug\tif_pixarlog.sbr"
+".\Debug\tif_predict.sbr"
+".\Debug\tif_print.sbr"
+".\Debug\tif_read.sbr"
+".\Debug\tif_strip.sbr"
+".\Debug\tif_swab.sbr"
+".\Debug\tif_thunder.sbr"
+".\Debug\tif_tile.sbr"
+".\Debug\tif_version.sbr"
+".\Debug\tif_warning.sbr"
+".\Debug\tif_write.sbr"
+".\Debug\tif_zip.sbr"]
+Creating command line "bscmake.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP95.tmp"
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+Tiff.lib - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

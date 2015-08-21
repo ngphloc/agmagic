@@ -1,0 +1,138 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: AGmagicUtil - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\PHUOCL~1\LOCALS~1\Temp\RSP24F.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "_MBCS" /D "JAS_WIN_MSVC_BUILD" /FR"../../../output/" /Fo"../../../output/" /Fd"../../../output/" /FD /GZ /c 
+"D:\temp\ag\agmagic\server\src\common\lib\agutil\main\AGdataStruct.cpp"
+"D:\temp\ag\agmagic\server\src\common\lib\agutil\project\AGmagicUtil_prj.cpp"
+"D:\temp\ag\agmagic\server\src\common\lib\agutil\main\AGutilCore.cpp"
+"D:\temp\ag\agmagic\server\src\common\lib\agutil\main\AGutilCore2.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\PHUOCL~1\LOCALS~1\Temp\RSP24F.tmp" 
+Creating temporary file "C:\DOCUME~1\PHUOCL~1\LOCALS~1\Temp\RSP250.tmp" with contents
+[
+/nologo /subsystem:windows /dll /incremental:yes /pdb:"../../../output/AGmagicUtil.pdb" /debug /machine:I386 /out:"../../../../../../../bin/AGmagicUtil.dll" /implib:"../../../output/AGmagicUtil.lib" /pdbtype:sept 
+\temp\ag\agmagic\server\src\common\lib\agutil\output\AGdataStruct.obj
+\temp\ag\agmagic\server\src\common\lib\agutil\output\AGmagicUtil_prj.obj
+\temp\ag\agmagic\server\src\common\lib\agutil\output\AGutilCore.obj
+\temp\ag\agmagic\server\src\common\lib\agutil\output\AGutilCore2.obj
+]
+Creating command line "link.exe @C:\DOCUME~1\PHUOCL~1\LOCALS~1\Temp\RSP250.tmp"
+<h3>Output Window</h3>
+Compiling...
+AGdataStruct.cpp
+AGmagicUtil_prj.cpp
+AGutilCore.cpp
+AGutilCore2.cpp
+Generating Code...
+Linking...
+   Creating library ../../../output/AGmagicUtil.lib and object ../../../output/AGmagicUtil.exp
+<h3>
+--------------------Configuration: AGmagicIP - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\PHUOCL~1\LOCALS~1\Temp\RSP254.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /I "../../../lib/cximage/599a/windows/msvc/zlib" /I "../../../lib/cximage/599a/windows/msvc/jasper/include" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "_MBCS" /D "JAS_WIN_MSVC_BUILD" /FR"../../../output/" /Fo"../../../output/" /Fd"../../../output/" /FD /GZ /c 
+"D:\temp\ag\agmagic\server\src\image\ip\main\AGimage.cpp"
+"D:\temp\ag\agmagic\server\src\image\ip\main\AGimageFeat.cpp"
+"D:\temp\ag\agmagic\server\src\image\ip\main\AGimageSeg.cpp"
+"D:\temp\ag\agmagic\server\src\image\ip\main\AGimageUtil.cpp"
+"D:\temp\ag\agmagic\server\src\image\ip\project\AGmagicIP_prj.cpp"
+"D:\temp\ag\agmagic\server\src\image\ip\main\AGsemantic.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\PHUOCL~1\LOCALS~1\Temp\RSP254.tmp" 
+Creating temporary file "C:\DOCUME~1\PHUOCL~1\LOCALS~1\Temp\RSP255.tmp" with contents
+[
+/nologo /subsystem:windows /dll /incremental:yes /pdb:"../../../output/AGmagicIP.pdb" /debug /machine:I386 /out:"../../../../../../bin/AGmagicIP.dll" /implib:"../../../output/AGmagicIP.lib" /pdbtype:sept 
+\temp\ag\agmagic\server\src\image\ip\output\AGimage.obj
+\temp\ag\agmagic\server\src\image\ip\output\AGimageFeat.obj
+\temp\ag\agmagic\server\src\image\ip\output\AGimageSeg.obj
+\temp\ag\agmagic\server\src\image\ip\output\AGimageUtil.obj
+\temp\ag\agmagic\server\src\image\ip\output\AGmagicIP_prj.obj
+\temp\ag\agmagic\server\src\image\ip\output\AGsemantic.obj
+\temp\ag\agmagic\server\src\common\lib\agutil\output\AGmagicUtil.lib
+]
+Creating command line "link.exe @C:\DOCUME~1\PHUOCL~1\LOCALS~1\Temp\RSP255.tmp"
+<h3>Output Window</h3>
+Compiling...
+AGimage.cpp
+AGimageFeat.cpp
+AGimageSeg.cpp
+AGimageUtil.cpp
+AGmagicIP_prj.cpp
+AGsemantic.cpp
+Automatically linking with AGmagicUtil library
+Automatically linking with cximage library
+Automatically linking with j2k library
+Automatically linking with jasper library
+Automatically linking with jbig library
+Automatically linking with Jpeg library
+Automatically linking with mng library
+Automatically linking with png library
+Automatically linking with Tiff library
+Automatically linking with zlib library
+Generating Code...
+Linking...
+   Creating library ../../../output/AGmagicIP.lib and object ../../../output/AGmagicIP.exp
+Creating temporary file "C:\DOCUME~1\PHUOCL~1\LOCALS~1\Temp\RSP259.tmp" with contents
+[
+/nologo /o"../../../output/AGmagicIP_VC600.bsc" 
+\temp\ag\agmagic\server\src\image\ip\output\AGimage.sbr
+\temp\ag\agmagic\server\src\image\ip\output\AGimageFeat.sbr
+\temp\ag\agmagic\server\src\image\ip\output\AGimageSeg.sbr
+\temp\ag\agmagic\server\src\image\ip\output\AGimageUtil.sbr
+\temp\ag\agmagic\server\src\image\ip\output\AGmagicIP_prj.sbr
+\temp\ag\agmagic\server\src\image\ip\output\AGsemantic.sbr]
+Creating command line "bscmake.exe @C:\DOCUME~1\PHUOCL~1\LOCALS~1\Temp\RSP259.tmp"
+Creating browse info file...
+<h3>Output Window</h3>
+<h3>
+--------------------Configuration: AGmagicIS - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\PHUOCL~1\LOCALS~1\Temp\RSP25A.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "_MBCS" /D "JAS_WIN_MSVC_BUILD" /FR"../../../output/" /Fo"../../../output/" /Fd"../../../output/" /FD /GZ /c 
+"D:\temp\ag\agmagic\server\src\image\is\project\AGmagicIS_prj.cpp"
+"D:\temp\ag\agmagic\server\src\image\is\main\AGmmm.cpp"
+"D:\temp\ag\agmagic\server\src\image\is\main\AGsearchEngine.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\PHUOCL~1\LOCALS~1\Temp\RSP25A.tmp" 
+Creating temporary file "C:\DOCUME~1\PHUOCL~1\LOCALS~1\Temp\RSP25B.tmp" with contents
+[
+/nologo /subsystem:windows /dll /incremental:yes /pdb:"../../../output/AGmagicIS.pdb" /debug /machine:I386 /out:"../../../../../../bin/AGmagicIS.dll" /implib:"../../../output/AGmagicIS.lib" /pdbtype:sept 
+\temp\ag\agmagic\server\src\image\is\output\AGmagicIS_prj.obj
+\temp\ag\agmagic\server\src\image\is\output\AGmmm.obj
+\temp\ag\agmagic\server\src\image\is\output\AGsearchEngine.obj
+\temp\ag\agmagic\server\src\image\ip\output\AGmagicIP.lib
+\temp\ag\agmagic\server\src\common\lib\agutil\output\AGmagicUtil.lib
+]
+Creating command line "link.exe @C:\DOCUME~1\PHUOCL~1\LOCALS~1\Temp\RSP25B.tmp"
+<h3>Output Window</h3>
+Compiling...
+AGmagicIS_prj.cpp
+AGmmm.cpp
+Automatically linking with AGmagicUtil library
+Automatically linking with AGmagicIP library
+AGsearchEngine.cpp
+Generating Code...
+Linking...
+   Creating library ../../../output/AGmagicIS.lib and object ../../../output/AGmagicIS.exp
+Creating command line "bscmake.exe /nologo /o"../../../output/AGmagicIS_VC600.bsc"  \temp\ag\agmagic\server\src\image\is\output\AGmagicIS_prj.sbr \temp\ag\agmagic\server\src\image\is\output\AGmmm.sbr \temp\ag\agmagic\server\src\image\is\output\AGsearchEngine.sbr"
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+AGmagicIS.dll - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

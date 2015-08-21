@@ -1,0 +1,2501 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0047)http://www.codeproject.com/bitmap/pictureex.asp -->
+<HTML><HEAD><TITLE>The Code Project - Add GIF-animation to your MFC and ATL projects with the help of CPictureEx and CPictureExWnd - Bitmaps & Palettes</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META http-equiv=Reply-to content=mailto:webmaster@codeproject.com>
+<META content="Free source code and tutorials for Windows developers." 
+name=Description>
+<META 
+content="Free source code, Bitmaps &amp; Palettes, Visual C++, MFC, Windows, GIF, animation" 
+name=keywords>
+<META 
+content="Article content copyright Oleg Bykov, 2001, everthing else Copyright © CodeProject, 1999-2004, All Rights Reserved." 
+name=Copyright><LINK href="/favicon.ico" type=image/ico rel=icon><LINK 
+href="/favicon.ico" rel="SHORTCUT ICON"><LINK 
+href="CPictureEx_CPictureExWnd_files/global.css" type=text/css rel=stylesheet>
+<SCRIPT language=javascript 
+src="CPictureEx_CPictureExWnd_files/oncopy.js"></SCRIPT>
+
+<META content="MSHTML 6.00.2600.0" name=GENERATOR></HEAD>
+<BODY oncopy="return copyCode();" text=black vLink=purple aLink=red link=blue 
+bgColor=white leftMargin=3 topMargin=3>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#ff9900 border=0>
+  <TBODY>
+  <TR>
+    <TD width="100%">
+      <TABLE cellSpacing=1 cellPadding=0 width="100%" bgColor=#ff9900 
+        border=0><TBODY>
+        <TR>
+          <TD vAlign=top><A href="http://www.codeproject.com/"><IMG height=72 
+            alt="The Code Project" 
+            src="CPictureEx_CPictureExWnd_files/logo225x72.gif" width=225 
+            border=0></A></TD>
+          <TD align=right><SPAN id=AdBanner4><A 
+            href="http://www.codeproject.com/script/admentor/ads.asp"><IMG 
+            height=60 alt="View our advertisers" 
+            src="CPictureEx_CPictureExWnd_files/sponsors.gif" width=20 
+            border=1></A>
+            <SCRIPT language=javascript>document.write("<IFRAME src=\"/script/admentor/include/ServeAdHTML.aspx?C=False&id=802\" border=0 frameborder=0 scrolling=no width=468 height=60></IFRAME>");</SCRIPT>
+            <A href="http://www.codeproject.com/info/mediakit"><IMG height=60 
+            alt="Advertise on the CodeProject" 
+            src="CPictureEx_CPictureExWnd_files/advertise.gif" width=20 
+            border=1></A></SPAN></TD></TR>
+        <TR>
+          <TD bgColor=#fbedbb colSpan=2>
+            <TABLE cellPadding=3 width="100%" bgColor=#fbedbb border=0>
+              <TBODY>
+              <TR vAlign=top>
+                <TD width="100%"><FONT style="FONT-SIZE: 8pt"><A 
+                  href="http://www.codeproject.com/?cat=1">All Topics</A>, <A 
+                  href="http://www.codeproject.com/?cat=2">MFC / C++</A> 
+                  &gt;&gt; <A href="http://www.codeproject.com/bitmap/">Bitmaps 
+                  &amp; Palettes</A> &gt;&gt; <A 
+                  href="http://www.codeproject.com/bitmap/#Image+Display">Image 
+                  Display</A></FONT><BR><BR><B><FONT style="FONT-SIZE: 16pt" 
+                  size=4>Add GIF-animation to your MFC and ATL projects with the 
+                  help of CPictureEx and CPictureExWnd</FONT></B><BR><B>By <A 
+                  href="http://www.codeproject.com/script/profile/whos_who.asp?id=20604">Oleg 
+                  Bykov</A> </B><BR><BR><FONT style="FONT-SIZE: 9pt">A class for 
+                  displaying animated GIFs and more. MFC and ATL versions 
+                  available!&nbsp;</FONT> </TD>
+                <TD vAlign=top align=right>
+                  <TABLE cellSpacing=0 cellPadding=1 width=200 border=0>
+                    <TBODY>
+                    <TR vAlign=top>
+                      <TD>&nbsp;</TD>
+                      <TD class=SmallText>C++ (VC6)<BR>Windows<BR>MFC, ATL, 
+                        Win32, VS<BR>Dev</TD></TR>
+                    <TR>
+                      <TD>&nbsp;</TD>
+                      <TD class=SmallText noWrap>Posted 5 Oct 2001</TD></TR>
+                    <TR>
+                      <TD>&nbsp;</TD>
+                      <TD class=SmallText>Updated 24 Nov 2001</TD></TR>
+                    <TR vAlign=top>
+                      <TD><IMG height=16 
+                        src="CPictureEx_CPictureExWnd_files/hlp.gif" 
+width=16></TD>
+                      <TD class=SmallText noWrap><A 
+                        href="http://www.codeproject.com/script/Articles/list_articles.asp?userid=20604">Articles 
+                        by this author</A></TD></TR>
+                    <TR vAlign=top>
+                      <TD></TD>
+                      <TD class=SmallText noWrap><B>95,717</B> 
+                    views</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD colSpan=2>
+            <TABLE id=tblSiteToolbar cellSpacing=0 cellPadding=1 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <FORM name=Search action=/info/search.asp method=post>
+                <TD vAlign=top align=left width="100%">
+                  <TABLE cellSpacing=0 cellPadding=1 border=0>
+                    <TBODY>
+                    <TR vAlign=center>
+                      <TD class=smallText><B><FONT 
+                        color=white>Search:</FONT></B></TD>
+                      <TD class=navbar noWrap><INPUT class=smallText 
+                        maxLength=255 size=18 name=target></TD>
+                      <TD vAlign=top><SELECT class=smallText name=st> 
+                          <OPTION value=kw selected>Articles</OPTION> <OPTION 
+                          value=au>Authors</OPTION></SELECT></TD>
+                      <TD><INPUT class=formButton type=submit value=Go></TD></TR></TBODY></TABLE></TD></FORM>
+                <TD>
+                  <DIV id=MenuPos 
+                  style="WIDTH: 380px; POSITION: relative; HEIGHT: 20px">
+                  <TABLE height=20 cellSpacing=0 cellPadding=2 width=375>
+                    <TBODY>
+                    <TR>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/info/faq.asp">Help!</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/info/latest.asp">Articles</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/script/comments/forums.asp">Message 
+                        Boards</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/store/">StoreFront</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/lounge.asp">Lounge</A></TD></TR></TBODY></TABLE></DIV></TD></TR></TBODY></TABLE>
+            <SCRIPT type=text/javascript>function Go(){return}</SCRIPT>
+
+            <SCRIPT src="CPictureEx_CPictureExWnd_files/cpmenu_var.js" 
+            type=text/javascript></SCRIPT>
+
+            <SCRIPT src="CPictureEx_CPictureExWnd_files/menu10_com.js" 
+            type=text/javascript></SCRIPT>
+          </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=1 border=0>
+  <TBODY>
+  <TR vAlign=top>
+    <TD vAlign=top bgColor=#fbedbb rowSpan=2>
+      <TABLE cellSpacing=0 cellPadding=0 border=0>
+        <SCRIPT language=javascript>
+function ErrorHandle() {}
+window.onerror = ErrorHandle;
+
+function OnNLSubmit(option)
+{
+	if (option=="up")
+		document.subForm.action = "/script/profile/modify.asp?ct=%2Fbitmap%2Fpictureex%2Easp";
+	else if (option=="in")
+		document.subForm.action = "/script/profile/process_logon.asp?ct=%2Fbitmap%2Fpictureex%2Easp";
+	document.subForm.submit();
+	return true;
+}
+</SCRIPT>
+
+        <TBODY>
+        <TR>
+          <TD>
+            <TABLE cellSpacing=3 cellPadding=0>
+              <TBODY>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD class=InfoBarHeader>Toolbox</TD></TR>
+              <TR>
+                <TD bgColor=black colSpan=2><IMG height=1 
+                  src="CPictureEx_CPictureExWnd_files/space.gif" width=1></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="CPictureEx_CPictureExWnd_files/sitebuild_icon.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/submit/ReportProblem.asp?GUID=%2Fbitmap%2FPictureEx%2Easp">Broken 
+                  Article?</A></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="CPictureEx_CPictureExWnd_files/support_icon.gif" 
+                width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/store/"><B>VS.NET 2003 from 
+                  $899</B></A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="CPictureEx_CPictureExWnd_files/support_icon.gif" 
+                width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/store/"><B>MSDN Univ. from 
+                  $1950</B></A></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="CPictureEx_CPictureExWnd_files/print.gif" width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/bitmap/pictureex.asp?print=true" 
+                  target=_print>Print version</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="CPictureEx_CPictureExWnd_files/link.gif" width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/add_bookmark.asp?t=0&amp;ct=%2Fbitmap%2Fpictureex%2Easp&amp;guid=%2Fbitmap%2FPictureEx%2Easp">Bookmark 
+                  this</A></TD></TR></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="CPictureEx_CPictureExWnd_files/mail.gif" width=16></TD>
+                <TD class=SmallText><A 
+                  href="http://www.codeproject.com/script/recommend/form.asp?guid=%2Fbitmap%2FPictureEx%2Easp">Send 
+                  to a friend</A></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD class=InfoBarHeader>My Profile</TD></TR>
+              <TR>
+                <TD bgColor=black colSpan=2><IMG height=1 
+                  src="CPictureEx_CPictureExWnd_files/space.gif" width=1></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="CPictureEx_CPictureExWnd_files/profile_small.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/modify.asp?ct=/bitmap/pictureex.asp">My 
+                  Settings</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="CPictureEx_CPictureExWnd_files/submit_small.gif" 
+                width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/articles/list_articles.asp?userid=649009">My 
+                  Articles</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="CPictureEx_CPictureExWnd_files/bookmarks.gif" 
+width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/bookmark_list.asp">My 
+                  Bookmarks</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="CPictureEx_CPictureExWnd_files/logoff_small.gif" 
+                width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/logoff.asp?ct=/bitmap/pictureex.asp">Sign 
+                  out</A></TD></TR>
+              <TR>
+                <TD bgColor=black colSpan=2><IMG height=1 
+                  src="CPictureEx_CPictureExWnd_files/space.gif" 
+              width=1></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD>&nbsp;</TD></TR>
+        <TR>
+          <TD>
+            <CENTER>
+            <SCRIPT language=javascript>document.write("<a href=\"/script/admentor/admentorredir.asp?id=407&way=ban\" target=_blank><img src=\"/script/admentor/include/ServeAd.aspx?File=%2Fscript%2Fadmentor%2Fimages%2FSAMS%5FSkyScraperASPNET%2Egif&C=False&id=407\" alt=\"SAMS Publishing\" border=0 width=120 height=600></a>");</SCRIPT>
+            <BR></CENTER><BR></TD></TR></TBODY></TABLE></TD>
+    <TD width=5 rowSpan=2><IMG height=1 
+      src="CPictureEx_CPictureExWnd_files/space.gif" width=5> </TD>
+    <TD align=right width="100%" bgColor=white>
+      <TABLE width="100%">
+        <TBODY>
+        <TR vAlign=top>
+          <TD class=smallText vAlign=top noWrap></TD>
+          <TD noWrap align=right><A name=__top></A>
+            <TABLE>
+              <TBODY>
+              <TR>
+                <TD class=smallText align=right>55 members have rated this 
+                  article. Result:</TD>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=0 border=2>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=5 
+                        src="CPictureEx_CPictureExWnd_files/red.gif" width=20 
+                        border=0></TD>
+                      <TD><IMG height=5 
+                        src="CPictureEx_CPictureExWnd_files/red.gif" width=20 
+                        border=0></TD>
+                      <TD><IMG height=5 
+                        src="CPictureEx_CPictureExWnd_files/red.gif" width=20 
+                        border=0></TD>
+                      <TD><IMG height=5 
+                        src="CPictureEx_CPictureExWnd_files/red.gif" width=20 
+                        border=0></TD>
+                      <TD><IMG height=5 
+                        src="CPictureEx_CPictureExWnd_files/red.gif" width=12 
+                        border=0><IMG height=5 
+                        src="CPictureEx_CPictureExWnd_files/white.gif" width=8 
+                        border=0></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD class=smallText align=right colSpan=2><A 
+                  title="Calculated as rating x Log10(# votes)" 
+                  href="http://www.codeproject.com/script/articles/top_articles.asp?st=2">Popularity: 
+                  8.02</A>. Rating: <B>4.61</B> out of 
+        5.</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD vAlign=top width="100%">
+      <DIV id=contentdiv><!-- Article Starts -->
+      <UL class=download>
+        <LI><A 
+        href="http://www.codeproject.com/bitmap/PictureEx/PictureEx_demo.zip">Download 
+        MFC-demo project - 173 Kb </A>
+        <LI><A 
+        href="http://www.codeproject.com/bitmap/PictureEx/PictureEx_src.zip">Download 
+        MFC-source - 12 Kb</A> 
+        <LI><A 
+        href="http://www.codeproject.com/bitmap/PictureEx/PictureExWnd_demo.zip">Download 
+        ATL-demo project - 210 Kb </A>
+        <LI><A 
+        href="http://www.codeproject.com/bitmap/PictureEx/PictureExWnd_src.zip">Download 
+        ATL-source - 12 Kb</A> </LI></UL>
+      <P><IMG height=204 alt="Sample Image" 
+      src="CPictureEx_CPictureExWnd_files/picturex.gif" width=293></P>
+      <H2>Introduction</H2>
+      <P>Class <CODE>CPictureEx</CODE> was written for an MFC-project, that 
+      required support for banners in JPEG and GIF formats. Static banners 
+      weren't hard to display using the <CODE>OleLoadPicture</CODE> function and 
+      the <CODE>IPicture</CODE> interface, but dealing with animated GIFs was a 
+      whole different story. 
+      <P>Having rummaged through numerous Internet-links, I discovered that 
+      there's only one free option available - a <A 
+      href="http://codeguru.earthweb.com/atl/Gif89a.shtml" 
+      type=ext>COM-object</A> by George Tersaakov on CodeGuru. Unfortunately, it 
+      had problems with displaying some of my test GIFs. Of course, I could buy 
+      a third-party library, but in that case I would pay for an extra 
+      functionality (which I didn't actually need). I decided to give it a try 
+      and write my own class. The basic idea was to split a GIF into separate 
+      frames and display the frames with the familiar combination of 
+      <CODE>OleLoadPicture</CODE> and <CODE>IPicture</CODE>. After thoroughly 
+      reading through specifications of GIF87a and GIF89a I wrote the class that 
+      I bring to your attention. Note that <CODE>CPictureEx</CODE> can display 
+      not only GIFs (including animated GIFs) but also JPEG, BMP, WMF, ICO and 
+      CUR (that is, everything that <CODE>OleLoadPicture</CODE> knows of). Later 
+      on, I wrote an ATL-version of the class. 
+      <H2>How you use the MFC-version (<CODE>CPictureEx</CODE>)</H2>
+      <P>Add a Static text or a Picture control to your dialog (Group box will 
+      do the trick as well); change the ID of that control to something like 
+      <CODE>IDC_MYPICTURE</CODE>; use the ClassWizard to associate a member 
+      variable (for example m_Picture) with the control added, Category - 
+      Control, Variable type - <CODE>CStatic</CODE>; in your dialog's header 
+      file replace the variable type from <CODE>CStatic</CODE> to 
+      <CODE>CPictureEx</CODE> (don't forget to <CODE><SPAN 
+      class=cpp-preprocessor>#include "PictureEx.h"</SPAN></CODE> and add 
+      <I>PictureEx.h</I> and <I>PictureEx.cpp</I> to your project); in 
+      <CODE>OnInitDialog</CODE> (or anywhere you fancy) add these lines: </P><PRE><SPAN class=cpp-keyword>if</SPAN> (m_Picture.Load(_T("mypicture.gif")))
+    m_Picture.Draw();
+</PRE>
+      <P>Sit back and enjoy the animation :) 
+      <P>You can also treat <CODE>CPicture</CODE> as a standard 
+      <CODE>CStatic</CODE>, and manually create it (you'll have to, if your host 
+      window is not a dialog) by calling <CODE>CPictureEx::Create()</CODE>, and 
+      then <CODE>CPictureEx::Load</CODE> and <CODE>CPictureEx::Draw</CODE>. 
+      <H2>How you use the ATL-version (<CODE>CPictureExWnd</CODE>)</H2>
+      <P>To use the ATL-version (<CODE>CPictureExWnd</CODE>) follow the same 
+      steps, but instead of using ClassWizard, manually add a variable of type 
+      <CODE>CPictureExWnd</CODE> in your class and add the following code to 
+      your WM_INITDIALOG handler function: </P><PRE>HWND hWnd = GetDlgItem(IDC_MYPIC);
+<SPAN class=cpp-keyword>if</SPAN> (hWnd) m_wndBanner.SubclassWindow(hWnd);
+</PRE>
+      <P>After that, you can call <CODE>CPictureExWnd::Load()</CODE> and 
+      <CODE>CPictureExWnd::Draw()</CODE>. Of course, you can also call 
+      <CODE>CPictureExWnd::Create</CODE> directly - <CODE>CPictureExWnd</CODE> 
+      is just another window with some extra functionality in its window 
+      procedure. 
+      <H2>Interface functions</H2>
+      <UL>
+        <LI><CODE>BOOL Load(...)</CODE> - loads a GIF and prepares an object for 
+        drawing; 
+        <LI><CODE>BOOL Draw()</CODE> - draws the picture or continues animation; 
+
+        <LI><CODE><SPAN class=cpp-keyword>void</SPAN> Stop()</CODE> - stops 
+        animation; 
+        <LI><CODE><SPAN class=cpp-keyword>void</SPAN> UnLoad()</CODE> - stops 
+        animation and releases all resources; 
+        <LI><CODE><SPAN class=cpp-keyword>void</SPAN> 
+        SetBkColor(COLORREF)</CODE> - sets the fill color for transparent areas; 
+
+        <LI><CODE>COLORREF GetBkColor()</CODE> - gets the current fill color; 
+        <LI><CODE>BOOL IsGIF()</CODE> - TRUE if the current picture is a GIF; 
+        <LI><CODE>BOOL IsAnimatedGIF()</CODE> - TRUE if the current picture is 
+        an animated GIF; 
+        <LI><CODE>BOOL IsPlaying()</CODE> - TRUE if an animation is being shown 
+        for the current picture; 
+        <LI><CODE>SIZE GetSize()</CODE> - returns the picture's dimensions; 
+        <LI><CODE><SPAN class=cpp-keyword>int</SPAN> GetFrameCount()</CODE> - 
+        returns the number of frames in the current picture; 
+        <LI><CODE>BOOL GetPaintRect(RECT *lpRect)</CODE> - returns the current 
+        painting rectangle; 
+        <LI><CODE>BOOL SetPaintRect(<SPAN class=cpp-keyword>const</SPAN> RECT 
+        *lpRect)</CODE> - sets the current painting rectangle; </LI></UL>
+      <P><CODE>CPictureEx[Wnd]::Load</CODE> is available in three versions: </P><PRE>BOOL Load(LPCTSTR szFileName);</PRE>
+      <P>This version loads a picture from the file <CODE>szFileName</CODE>. The 
+      function's return type indicates the success of the loading. </P><PRE>BOOL Load(HGLOBAL hGlobal, DWORD dwSize);</PRE>
+      <P>This Load gets a handle to the global memory block, allocated with 
+      <CODE>GlobalAlloc</CODE> and <CODE>GMEM_MOVEABLE</CODE> flag. The function 
+      <B>does not free</B> the memory, so don't forget to 
+      <CODE>GlobalFree</CODE> it. The return value indicates the success of the 
+      loading. </P><PRE>BOOL Load(LPCTSTR szResourceName,LPCTSTR szResourceType);</PRE>
+      <P>The function gets a name for the resource with a picture and a name for 
+      the type of that resource. For example: </P><PRE>m_Picture.Load(MAKEINTRESOURCE(IDR_MYPIC),_T("GIFTYPE"));</PRE>
+      <P>After loading a picture, display it with 
+      <CODE>CPictureEx[Wnd]::Draw()</CODE> function. If the picture is an 
+      animated GIF, the function will spawn a background thread to perform the 
+      animation, if it's a still picture, it will be displayed right away with 
+      <CODE>OleLoadPicture/IPicture</CODE>. You can stop the spawned thread 
+      anytime with the <CODE>CPictureEx[Wnd]::Stop()</CODE> function. If you 
+      want not only stop the animation but to free all its resources, use 
+      <CODE>CPictureEx[Wnd]::UnLoad()</CODE> 
+      (<CODE>CPictureEx[Wnd]::Load()</CODE> calls <CODE>UnLoad()</CODE> 
+      automatically). 
+      <P>By default, the picture's background is filled with COLOR_3DFACE (the 
+      background color of dialog windows). If you need to change the picture's 
+      background, call <CODE>CPictureEx[Wnd]::SetBkColor(COLORREF)</CODE> after 
+      calling <CODE>CPictureEx[Wnd]::Load()</CODE>. 
+      <H2>Version history</H2>
+      <UL>
+        <LI>1.0 (7 Aug 2001) - initial release; 
+        <LI>1.1 (6 Sept 2001) - ATL version of the class; 
+        <LI>1.2 (31 Oct 2001) - various bugfixes: 
+        <UL>
+          <LI>Fixed a problem with loading GIFs from resources in MFC-version of 
+          the class for multi-modules apps. Thanks to Ruben Avila-Carretero for 
+          finding this out. 
+          <LI>Got rid of waitable timer in ThreadAnimation(), now 
+          CPictureEx[Wnd] works in Win95 too. Thanks to Alex Egiazarov and Wayne 
+          King for the idea. 
+          <LI>Fixed a visual glitch when using SetBkColor. Thanks to Kwangjin 
+          Lee for finding this out. </LI></UL>
+        <LI>1.3 (18 Nov 2001) - a bugfix and new features: 
+        <UL>
+          <LI>Fixed a DC leak. One DC leaked per each UnLoad() (forgot to put a 
+          ReleaseDC() in the end of CPictureExWnd::PrepareDC() function). 
+          <LI>Now it is possible to set a clipping rectangle using 
+          CPictureEx[Wnd]::SetPaintRect(const LPRECT) function. The LPRECT 
+          parameter tells the class what portion of a picture it should display. 
+          If the clipping rect is not set, the whole picture is shown. Thanks to 
+          Fabrice Rodriguez for the idea. 
+          <LI>Added support for Stop/Draw. Now you can Stop() an animated GIF, 
+          then Draw() it again, it will continue animation from the frame it was 
+          stopped on. You can also know if a GIF is currently playing with the 
+          help of IsPlaying() function. 
+          <LI>Got rid of math.h and made m_bExitThread volatile. Thanks to Piotr 
+          Sawicki for the suggestion. 
+</LI></UL></LI></UL><!-- Article Ends --></DIV>
+      <H2>Oleg Bykov</H2>
+      <TABLE width="100%" border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD class=smallText noWrap><BR></TD>
+          <TD class=smallText width="100%">
+            <P class=smallText>Click <A 
+            href="http://www.codeproject.com/script/profile/whos_who.asp?vt=arts&amp;id=20604">here</A> 
+            to view Oleg Bykov's online profile.</P></TD></TR></TBODY></TABLE><BR>
+      <TABLE cellPadding=4 width="100%" border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD width="100%">
+            <H2>Other popular Bitmaps &amp; Palettes articles:</H2>
+            <UL>
+              <LI><A 
+              href="http://www.codeproject.com/bitmap/specialfx.asp">Really cool 
+              visual FX</A><BR><SPAN class=smalltext>A set of classes for doing 
+              stunning visual effects, including water, plasma and fire.</SPAN>
+              <LI><A href="http://www.codeproject.com/bitmap/DFB_vs_DIB.asp">DFB 
+              vs. DIB</A><BR><SPAN class=smalltext>The difference between DFB 
+              and DIB.</SPAN>
+              <LI><A 
+              href="http://www.codeproject.com/bitmap/trans_cimage.asp">Drawing 
+              transparent bitmaps using CImage</A><BR><SPAN 
+              class=smalltext>Universal implementation of transparent drawing of 
+              bitmap files (BMP, JPEG, GIF, PNG). Based on the method described 
+              by Chris Becke and Raja Segar.</SPAN>
+              <LI><A 
+              href="http://www.codeproject.com/bitmap/bmpscroll.asp">Displaying 
+              Bitmap with Scrolling</A><BR><SPAN class=smalltext>An article 
+              showing how to display a picture within a dialog, and add 
+              scrollbars where needed to view the whole image.</SPAN></LI></UL></TD>
+          <TD width=360>
+            <SCRIPT language=javascript>document.write("<IFRAME src=\"/script/admentor/include/ServeAdHTML.aspx?C=False&id=786\" border=0 frameborder=0 scrolling=no width=300 height=250></IFRAME>");</SCRIPT>
+          </TD>
+          <FORM action=/script/rating/code/app/insert_vote.asp 
+          method=post><INPUT type=hidden value=/bitmap/PictureEx.asp 
+          name=vote_name> <INPUT type=hidden value=/bitmap/pictureex.asp 
+          name=goal> </TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=1 width="100%" bgColor=#ff9900 
+        border=0><TBODY>
+        <TR>
+          <TD width="100%">
+            <TABLE cellSpacing=0 cellPadding=4 width="100%" bgColor=#fbedbb 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD class=smalltext vAlign=center>[<A 
+                  href="http://www.codeproject.com/bitmap/pictureex.asp#__top">Top</A>]</TD>
+                <TD vAlign=center noWrap align=right><I><B>Rate this Article 
+                  for us!</B></I>&nbsp;&nbsp;&nbsp;&nbsp; <I>Poor</I><INPUT 
+                  type=radio value=1 name=rate><INPUT type=radio value=2 
+                  name=rate><INPUT type=radio value=3 name=rate><INPUT 
+                  type=radio value=4 name=rate><INPUT type=radio value=5 
+                  name=rate><I>Excellent</I>&nbsp;&nbsp;<INPUT class=FormButton type=submit value=Vote> 
+                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></FORM>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD vAlign=top>
+            <CENTER>
+            <SCRIPT language=javascript>document.write("<IFRAME src=\"/script/admentor/include/ServeAdHTML.aspx?C=False&id=800\" border=0 frameborder=0 scrolling=no width=120 height=60></IFRAME>");</SCRIPT>
+            <BR><FONT size=1><A 
+            href="http://www.codeproject.com/info/MediaKit/">Premium 
+            Sponsor</A></FONT></CENTER><BR></TD>
+          <TD vAlign=top noWrap align=middle><SPAN id=AdBanner5>
+            <SCRIPT language=javascript>document.write("<a href=\"/script/admentor/admentorredir.asp?id=784&way=ban\" target=_blank><img src=\"/script/admentor/include/ServeAd.aspx?File=%2Fscript%2Fadmentor%2Fimages%2Fwholetomato%5Fswift%5Fkick%2Egif&C=False&id=784\" alt=\"The intellisense upgrade for Visual Studio .NET - make your IDE as smart as you.\" border=0 width=468 height=60></a>");</SCRIPT>
+            </SPAN></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><A 
+name=__comments></A>
+<SCRIPT language=JavaScript>
+function MsgVoteForm(UserID, MsgID)
+{
+	document.write("Rate this message: ");
+	for (var i=1; i<=5;i++)
+		document.write("<a href='#xx" + MsgID.toString() + "xx' title='give this message a vote of " + i.toString() + "' onclick='RateMsg(" + UserID.toString() + ", " + MsgID.toString() + ", " + i.toString() + ")'><b>" + i.toString() + "</b></a> ");
+	document.write(" (out of 5)");
+}
+
+function RateMsg(userid, msgid, score) 
+{ 
+	open("/script/comments/vote.asp?js=1&user="+userid.toString()+"&msg="+msgid.toString()+"&score="+score.toString() ,"helpful","toolbar=no,resizable=yes,scrollbars=yes,directories=no,menubar=no,width=300,height=200");
+	return false;
+}
+</SCRIPT>
+
+<SCRIPT language=JavaScript>
+var Selected = "";
+var AdTime = new Date();
+document.writeln("<iframe name=AdFrame width=0 height=0 frameborder=0></IFRAME>");
+function SwitchMessage(elm)
+{
+
+	var now = new Date();
+	if (Number(now.getTime() - AdTime.getTime()) > Number(5000))
+	{
+		AdTime = now;
+		var loc = window.frames["AdFrame"];
+		if (loc) loc = loc.document;
+		if (loc) loc = loc.location;
+		if (loc) loc.replace('/script/comments/fetchAd.asp?cat=1');
+	}
+	
+	var elmref;
+	if (Selected != "")
+	{
+		elmref = eval("document.getElementById('" + Selected + "_h1')");
+		if (elmref) elmref.style.display = 'none';
+		elmref = eval("document.getElementById('" + Selected + "_h0')");
+		if (elmref) elmref.bgColor = '#FEF9E7';
+	}
+	if (Selected != elm.name) 
+	{
+		Selected = elm.name;
+		elmref = eval("document.getElementById('" + Selected + "_h1')");
+		if (elmref) 
+		{
+			if (elmref.style.display=='none') elmref.style.display='';
+			else elmref.style.display = 'none';
+		}
+		elmref = eval("document.getElementById('" + Selected + "_h0')");
+		if (elmref) 
+			elmref.bgColor = '#99CCFF';
+	}
+	else
+		Selected="";
+		
+	window.location = "#xx" + Selected + "xx";
+
+	return false;
+}
+
+</SCRIPT>
+
+<SCRIPT language=javascript event=onclick for=DynMessLink>
+return SwitchMessage(this);
+</SCRIPT>
+
+<TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#ff9900 border=0>
+  <TBODY>
+  <TR>
+    <TD width="100%">
+      <TABLE id=ForumTable cellSpacing=1 cellPadding=0 width="100%" 
+      bgColor=#ff9900 border=0>
+        <FORM 
+        action=/script/comments/app/do_filtermessages.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691 
+        method=post>
+        <TBODY>
+        <TR>
+          <TD>
+            <TABLE cellSpacing=0 cellPadding=3 width="100%" bgColor=white 
+            border=0>
+              <TBODY>
+              <TR bgColor=#fbedbb>
+                <TD class=smalltext noWrap><A 
+                  href="http://www.codeproject.com/script/comments/faq.asp"><IMG 
+                  height=16 src="CPictureEx_CPictureExWnd_files/info.gif" 
+                  width=16 align=absMiddle border=0> <B>FAQ</B></A>&nbsp;</TD>
+                <TD class=smalltext vAlign=top noWrap align=right>Noise level 
+                  <SELECT class=smalltext size=1 name=noise><OPTION 
+                    value=1>Very High</OPTION> <OPTION value=2>High</OPTION> 
+                    <OPTION value=3 selected>Medium</OPTION> <OPTION 
+                    value=4>Low</OPTION> <OPTION value=5>Very 
+                  low</OPTION></SELECT>&nbsp;&nbsp;</TD>
+                <TD class=smalltext vAlign=center noWrap align=right 
+                  colSpan=2><A 
+                  href="http://www.codeproject.com/script/comments/search_comments.asp?forumid=2691"><IMG 
+                  height=15 src="CPictureEx_CPictureExWnd_files/search.gif" 
+                  width=16 border=0> Search comments</A> &nbsp;</TD>
+                <TD vAlign=top align=right><INPUT class=FormButton type=submit value="Set Options" name=submit></TD></TR>
+              <TR bgColor=#ff9900>
+                <TD width="100%">&nbsp;</TD>
+                <TD class=smalltext vAlign=top noWrap align=right>View <SELECT 
+                  class=smalltext size=1 name=expand><OPTION value=0>Normal 
+                    (slow)</OPTION> <OPTION value=2>Preview (slow)</OPTION> 
+                    <OPTION value=5 selected>Message View</OPTION> <OPTION 
+                    value=6>Topic View</OPTION> <OPTION value=1>Thread 
+                    View</OPTION> <OPTION value=3>Expanded (Supporters 
+                    only)</OPTION></SELECT>&nbsp;&nbsp;</TD>
+                <TD class=smalltext vAlign=top noWrap>Per page <SELECT 
+                  class=smalltext size=1 name=perpage><OPTION 
+                    value=10>10</OPTION> <OPTION value=25 selected>25</OPTION> 
+                    <OPTION value=50>50</OPTION></SELECT></TD>
+                <TD colSpan=2>&nbsp;</TD></TR></TBODY></TABLE></TD></TR></FORM>
+        <TR bgColor=#fbedbb>
+          <TD><A name=xx0xx></A>
+            <TABLE cellPadding=2 width="100%" bgColor=#fbedbb border=0>
+              <TBODY>
+              <TR>
+                <TD class=messagetitle><A class=HoverLink 
+                  title="Add a new message to the discussions" 
+                  href="http://www.codeproject.com/script/comments/user_new.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691" 
+                  target=_top name=HoverNL><B><IMG height=16 
+                  src="CPictureEx_CPictureExWnd_files/admin_modify.gif" width=16 
+                  align=top border=0> New thread</B></A></TD>
+                <TD class=messagetitle>Msgs 1 to 25 of 99 (Total: 99) (<A 
+                  href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;forumid=2691">Refresh</A>)</TD>
+                <TD noWrap align=right><FONT class=messagetitle><SPAN 
+                  class=HoverLink>First</SPAN> <SPAN class=HoverLink>Prev</SPAN> 
+                  <A class=HoverLink 
+                  href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;forumid=2691&amp;fr=26" 
+                  name=HoverNL>Next</A> <A class=HoverLink 
+                  href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;forumid=2691&amp;fr=76" 
+                  name=HoverNL>Last</A> </FONT></TD></TR></TBODY></TABLE></TD></TR>
+        <TR bgColor=white>
+          <TD>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=2 bgColor=#fbedbb border=0>
+                    <TBODY>
+                    <TR>
+                      <TD class=messagetitle width="100%">Subject&nbsp;</TD>
+                      <TD class=messagetitle noWrap width=140>Author&nbsp;</TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT 
+                    class=messagetitle>Date&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CPictureEx_CPictureExWnd_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=866453_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx866453xx></A><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;forumid=2691&amp;select=866453#xx866453xx" 
+                        name=866453><B>Transparency problem</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=1128786"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CPictureEx_CPictureExWnd_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>milas</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>15:28 2 Jul 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=866453_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Does 
+                                anybody knows how to use this class when GIF 
+                                image is transparent?! This class always have 
+                                background! <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=866453">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=866453">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;tid=866453&amp;forumid=2691&amp;select=866453#xx866453xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?msg=866453#xx866453xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=866453"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=866453"><I>Delete</I></A>]<BR>Score: 
+                                2.0 (1 vote).
+                                <SCRIPT language=Javascript>MsgVoteForm(1128786,866453);</SCRIPT>
+                                 
+                    </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CPictureEx_CPictureExWnd_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="CPictureEx_CPictureExWnd_files/t.gif" width=1></TD></TR>
+              <TR id=862269_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx862269xx></A><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;forumid=2691&amp;select=862269#xx862269xx" 
+                        name=862269><B>Playing an animated GIF in the status 
+                        bar</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=45051"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CPictureEx_CPictureExWnd_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle><B>Alex 
+                        Evans</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>2:30 28 Jun 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=862269_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent>Hello<BR><BR>Is there away 
+                                to play an animated GIF in one of the panes of 
+                                my applications status bar?<BR><BR>Hope someone 
+                                can 
+                                help<BR><BR>Cheers<BR>Alex<BR>aevans@microknox.com.au<BR><BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=862269">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=862269">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;tid=862269&amp;forumid=2691&amp;select=862269#xx862269xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?msg=862269#xx862269xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=862269"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=862269"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(45051,862269);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CPictureEx_CPictureExWnd_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="CPictureEx_CPictureExWnd_files/t.gif" width=1></TD></TR>
+              <TR id=854945_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx854945xx></A><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;forumid=2691&amp;select=854945#xx854945xx" 
+                        name=854945><B>One question</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=166820"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CPictureEx_CPictureExWnd_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>selecta</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>17:50 18 Jun 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=854945_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Hi, 
+                                thanks you very much for your 
+                                program.<BR><BR>I've modified a little your 
+                                source to have the possibilty to change the 
+                                background color when the mouse is over/out the 
+                                GIF. I do this each time this is necessary (when 
+                                mouse leave / when mouse 
+                                enter):<BR>Stop();<BR>SetBkColor(RGB(enter/leave));<BR>Draw();<BR><BR>It 
+                                works only when the gif is in his first display 
+                                frame. If the gif is displaying the 2nd...3th.. 
+                                frame, the background color fill all the gif. 
+                                After that, when the gif return to his first 
+                                frame, the backgroud color do not fill the gif 
+                                anymore.<BR><BR>Do you have an idea to resolve 
+                                this problem ??<BR>Thanks you ! 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=854945">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=854945">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;tid=854945&amp;forumid=2691&amp;select=854945#xx854945xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?msg=854945#xx854945xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=854945"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=854945"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(166820,854945);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CPictureEx_CPictureExWnd_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="CPictureEx_CPictureExWnd_files/t.gif" width=1></TD></TR>
+              <TR id=845166_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx845166xx></A><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;forumid=2691&amp;select=845166#xx845166xx" 
+                        name=845166><B>thank for your program</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=81103"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CPictureEx_CPictureExWnd_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>duankuanjun</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>0:12 9 Jun 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=845166_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>i 
+                                search for all document, but can not find . 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=845166">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=845166">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;tid=845166&amp;forumid=2691&amp;select=845166#xx845166xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?msg=845166#xx845166xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=845166"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=845166"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(81103,845166);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CPictureEx_CPictureExWnd_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="CPictureEx_CPictureExWnd_files/t.gif" width=1></TD></TR>
+              <TR id=816293_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx816293xx></A><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;forumid=2691&amp;select=816293#xx816293xx" 
+                        name=816293><B>THANKS!!!!</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=921173"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CPictureEx_CPictureExWnd_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle><B>Lukas 
+                        St-Germain</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>18:49 9 May 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=816293_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent>Finnnnnnnnally!!!!!! 
+                                something that's easy and that works!!!!! God I 
+                                think I could kiss you!! <IMG 
+                                src="CPictureEx_CPictureExWnd_files/smiley_tongue.gif" 
+                                align=absMiddle>really many thanks!! I've been 
+                                trying to find a class that works in Release 
+                                mode for a while... anyway thanks!!!!!! <IMG 
+                                src="CPictureEx_CPictureExWnd_files/smiley_biggrin.gif" 
+                                align=absMiddle><IMG 
+                                src="CPictureEx_CPictureExWnd_files/smiley_biggrin.gif" 
+                                align=absMiddle> 
+                                <BR><BR>Lukas<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=816293">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=816293">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;tid=816293&amp;forumid=2691&amp;select=816293#xx816293xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?msg=816293#xx816293xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=816293"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=816293"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(921173,816293);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CPictureEx_CPictureExWnd_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="CPictureEx_CPictureExWnd_files/t.gif" width=1></TD></TR>
+              <TR id=807069_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx807069xx></A><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;forumid=2691&amp;select=807069#xx807069xx" 
+                        name=807069><B>ERROR!</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=1059571"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CPictureEx_CPictureExWnd_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>qtnl</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>21:24 29 Apr 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=807069_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Thanks 
+                                your great effort!<BR>But I find it will be 
+                                traped in :<BR>if 
+                                (OleLoadPicture(pStream,dwSize,FALSE,IID_IPicture,<BR>reinterpret_cast<LPVOID 
+                                *>(&amp;m_pPicture)) != S_OK)<BR><BR>At some 
+                                gif.<BR><BR>hoping your answer. <BR><BR>A poor 
+                                Coder<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=807069">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=807069">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;tid=807069&amp;forumid=2691&amp;select=807069#xx807069xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?msg=807069#xx807069xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=807069"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=807069"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(1059571,807069);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CPictureEx_CPictureExWnd_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=815201_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx815201xx></A><IMG height=1 
+                        src="CPictureEx_CPictureExWnd_files/ind.gif" 
+                        width=18><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;forumid=2691&amp;select=815201#xx815201xx" 
+                        name=815201>Re: ERROR!</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=1059571"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CPictureEx_CPictureExWnd_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>qtnl&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>20:37 7 May 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=815201_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="CPictureEx_CPictureExWnd_files/ind.gif" 
+                        width=18><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>I found 
+                                it!<BR><BR>The codes will be crashed when a 
+                                comments Extension block is inserted to the 
+                                contral extension block and Image block. 
+                                <BR><BR>A poor Coder<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=815201">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=815201">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;tid=807069&amp;forumid=2691&amp;select=815201#xx815201xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?msg=815201#xx815201xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=815201"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=815201"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(1059571,815201);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CPictureEx_CPictureExWnd_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="CPictureEx_CPictureExWnd_files/t.gif" width=1></TD></TR>
+              <TR id=803730_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx803730xx></A><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;forumid=2691&amp;select=803730#xx803730xx" 
+                        name=803730><B>Thank u for your great 
+article!</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=52977"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CPictureEx_CPictureExWnd_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>eslea</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>0:49 27 Apr 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=803730_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>You get 
+                                my 5 for this wonderful one.<IMG 
+                                src="CPictureEx_CPictureExWnd_files/rose.gif" 
+                                align=absMiddle><BR>There is an problem, how can 
+                                i save the frames to one gif ?<IMG 
+                                src="CPictureEx_CPictureExWnd_files/smiley_confused.gif" 
+                                align=absMiddle> <BR><BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=803730">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=803730">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;tid=803730&amp;forumid=2691&amp;select=803730#xx803730xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?msg=803730#xx803730xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=803730"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=803730"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(52977,803730);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CPictureEx_CPictureExWnd_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=803813_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx803813xx></A><IMG height=1 
+                        src="CPictureEx_CPictureExWnd_files/ind.gif" 
+                        width=18><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;forumid=2691&amp;select=803813#xx803813xx" 
+                        name=803813>Re: Thank u for your great article!</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=20604"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CPictureEx_CPictureExWnd_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle>Oleg 
+                        Bykov&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>2:59 27 Apr 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=803813_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="CPictureEx_CPictureExWnd_files/ind.gif" 
+                        width=18><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Thanks 
+                                for your support, eslea. As for assembling 
+                                separate frames to make a gif (if I understood 
+                                you correctly) - I used CorelXARA for this 
+                                purpose. <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=803813">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=803813">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;tid=803730&amp;forumid=2691&amp;select=803813#xx803813xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?msg=803813#xx803813xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=803813"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=803813"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(20604,803813);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CPictureEx_CPictureExWnd_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=804933_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx804933xx></A><IMG height=1 
+                        src="CPictureEx_CPictureExWnd_files/ind.gif" 
+                        width=36><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;forumid=2691&amp;select=804933#xx804933xx" 
+                        name=804933>Re: Thank u for your great article!</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=52977"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CPictureEx_CPictureExWnd_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>eslea&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>4:17 28 Apr 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=804933_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="CPictureEx_CPictureExWnd_files/ind.gif" 
+                        width=36><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent><BR><SMALL><B>Oleg Bykov 
+                                wrote:</B></SMALL><BR><I>Thanks for your 
+                                support, eslea. As for assembling separate 
+                                frames to make a gif (if I understood you 
+                                correctly) - I used CorelXARA for this purpose. 
+                                </I><BR><BR>sorry, you did not get it ; I mean 
+                                how to assemble separate frames to make a gif by 
+                                "source code"<IMG 
+                                src="CPictureEx_CPictureExWnd_files/smiley_laugh.gif" 
+                                align=absMiddle><BR><BR>I need your help. 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=804933">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=804933">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;tid=803730&amp;forumid=2691&amp;select=804933#xx804933xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?msg=804933#xx804933xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=804933"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=804933"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(52977,804933);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CPictureEx_CPictureExWnd_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=805140_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx805140xx></A><IMG height=1 
+                        src="CPictureEx_CPictureExWnd_files/ind.gif" 
+                        width=54><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;forumid=2691&amp;select=805140#xx805140xx" 
+                        name=805140>Re: Thank u for your great article!</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=20604"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CPictureEx_CPictureExWnd_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle>Oleg 
+                        Bykov&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>8:34 28 Apr 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=805140_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="CPictureEx_CPictureExWnd_files/ind.gif" 
+                        width=54><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>It is 
+                                possible if you have many separate GIF-files and 
+                                wish to make one animated GIF out of them, but 
+                                I'm too lazy to write all this code. <IMG 
+                                src="CPictureEx_CPictureExWnd_files/smiley_redface.gif" 
+                                align=absMiddle> The only help I can provide is 
+                                the structures' definitions, so you have to read 
+                                the GIF specification, then use the CPictureEx 
+                                to disassemble each GIF to separate blocks and 
+                                at last combine blocks so that they form an 
+                                animated GIF. <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=805140">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=805140">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;tid=803730&amp;forumid=2691&amp;select=805140#xx805140xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?msg=805140#xx805140xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=805140"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=805140"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(20604,805140);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CPictureEx_CPictureExWnd_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=815196_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx815196xx></A><IMG height=1 
+                        src="CPictureEx_CPictureExWnd_files/ind.gif" 
+                        width=72><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;forumid=2691&amp;select=815196#xx815196xx" 
+                        name=815196>Re: Thank u for your great article!</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=52977"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CPictureEx_CPictureExWnd_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>eslea&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>20:24 7 May 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=815196_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="CPictureEx_CPictureExWnd_files/ind.gif" 
+                        width=72><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>you 
+                                wrote: //The only help I can provide is the 
+                                structures' definitions,<BR><BR>so, may I get 
+                                the definitions detailed frome you 
+                                ?<BR><BR><BR>Thanx!<BR><BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=815196">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=815196">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;tid=803730&amp;forumid=2691&amp;select=815196#xx815196xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?msg=815196#xx815196xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=815196"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=815196"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(52977,815196);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CPictureEx_CPictureExWnd_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=816555_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx816555xx></A><IMG height=1 
+                        src="CPictureEx_CPictureExWnd_files/ind.gif" 
+                        width=90><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;forumid=2691&amp;select=816555#xx816555xx" 
+                        name=816555>Re: Thank u for your great article!</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=20604"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CPictureEx_CPictureExWnd_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle>Oleg 
+                        Bykov&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>4:50 10 May 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=816555_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="CPictureEx_CPictureExWnd_files/ind.gif" 
+                        width=90><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Sorry 
+                                for the delay. The definitions are already there 
+                                - in the class header file. 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=816555">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=816555">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;tid=803730&amp;forumid=2691&amp;select=816555#xx816555xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?msg=816555#xx816555xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=816555"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=816555"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(20604,816555);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CPictureEx_CPictureExWnd_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="CPictureEx_CPictureExWnd_files/t.gif" width=1></TD></TR>
+              <TR id=719063_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx719063xx></A><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;forumid=2691&amp;select=719063#xx719063xx" 
+                        name=719063><B>Animated Emoticons in Chat 
+                      window</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=797796"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CPictureEx_CPictureExWnd_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>naumankhan</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>5:54 21 Jan 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=719063_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent>Hi,<BR><BR>How can i 
+                                display animated gif - emoticons - in chat 
+                                window like MSN Messenger or Yahoo - in C++/VC. 
+                                Please send me some 
+                                solution.<BR><BR>Regards<BR>nauman<BR><IMG 
+                                src="CPictureEx_CPictureExWnd_files/smiley_snore.gif" 
+                                align=absMiddle><IMG 
+                                src="CPictureEx_CPictureExWnd_files/smiley_mad.gif" 
+                                align=absMiddle><IMG 
+                                src="CPictureEx_CPictureExWnd_files/smiley_sigh.gif" 
+                                align=absMiddle> <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=719063">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=719063">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;tid=719063&amp;forumid=2691&amp;select=719063#xx719063xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?msg=719063#xx719063xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=719063"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=719063"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(797796,719063);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CPictureEx_CPictureExWnd_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=722303_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx722303xx></A><IMG height=1 
+                        src="CPictureEx_CPictureExWnd_files/ind.gif" 
+                        width=18><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;forumid=2691&amp;select=722303#xx722303xx" 
+                        name=722303>Re: Animated Emoticons in Chat window</A></TD>
+                      <TD vAlign=bottom><IMG height=13 
+                        alt="Unconfirmed/Anonymous posting" 
+                        src="CPictureEx_CPictureExWnd_files/usersuss.gif" 
+                        width=15></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>Anonymous&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>16:01 24 Jan 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=722303_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="CPictureEx_CPictureExWnd_files/ind.gif" 
+                        width=18><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Are you 
+                                fscking serious?!!... it's all in the demo, do 
+                                it yourself stupid. <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=722303">Reply</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;tid=719063&amp;forumid=2691&amp;select=722303#xx722303xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?msg=722303#xx722303xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=722303"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=722303"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(0,722303);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CPictureEx_CPictureExWnd_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="CPictureEx_CPictureExWnd_files/t.gif" width=1></TD></TR>
+              <TR id=717787_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx717787xx></A><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;forumid=2691&amp;select=717787#xx717787xx" 
+                        name=717787><B>Resource Leaks, etc</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=11687"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CPictureEx_CPictureExWnd_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>gjr</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>19:42 19 Jan 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=717787_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>A 
+                                brilliant piece of code! 
+                                Congratulations.<BR><BR>I think you need to 
+                                replace<BR>Stop();<BR>with<BR>UnLoad();<BR>in 
+                                the OnDestroy() method, to avoid memory and 
+                                resource leaks as m_hMemDC and m_hBitmap will 
+                                not be deleted otherwise.<BR><BR>Under WinXP and 
+                                VC6.0, the example app appears to use a dangling 
+                                pointer several times in vector line 114 while 
+                                its loading. (That's in the vector size() 
+                                method.) I have no idea why, as I can't see 
+                                anything wrong with the way you have used 
+                                vector?? Any 
+                                ideas?<BR><BR><BR>gjr<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=717787">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=717787">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;tid=717787&amp;forumid=2691&amp;select=717787#xx717787xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?msg=717787#xx717787xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=717787"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=717787"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(11687,717787);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CPictureEx_CPictureExWnd_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="CPictureEx_CPictureExWnd_files/t.gif" width=1></TD></TR>
+              <TR id=663728_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx663728xx></A><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;forumid=2691&amp;select=663728#xx663728xx" 
+                        name=663728><B>Help me</B></A></TD>
+                      <TD vAlign=bottom><IMG height=13 
+                        alt="Unconfirmed/Anonymous posting" 
+                        src="CPictureEx_CPictureExWnd_files/usersuss.gif" 
+                        width=15></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>Anonymous</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>4:05 12 Nov 
+                        '03</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=663728_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>sadfasd 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=663728">Reply</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;tid=663728&amp;forumid=2691&amp;select=663728#xx663728xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?msg=663728#xx663728xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=663728"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=663728"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(0,663728);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CPictureEx_CPictureExWnd_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=722308_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx722308xx></A><IMG height=1 
+                        src="CPictureEx_CPictureExWnd_files/ind.gif" 
+                        width=18><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;forumid=2691&amp;select=722308#xx722308xx" 
+                        name=722308>Re: Help me</A></TD>
+                      <TD vAlign=bottom><IMG height=13 
+                        alt="Unconfirmed/Anonymous posting" 
+                        src="CPictureEx_CPictureExWnd_files/usersuss.gif" 
+                        width=15></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>Anonymous&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>16:04 24 Jan 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=722308_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="CPictureEx_CPictureExWnd_files/ind.gif" 
+                        width=18><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>another 
+                                genious <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=722308">Reply</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;tid=663728&amp;forumid=2691&amp;select=722308#xx722308xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?msg=722308#xx722308xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=722308"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=722308"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(0,722308);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CPictureEx_CPictureExWnd_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=722507_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx722507xx></A><IMG height=1 
+                        src="CPictureEx_CPictureExWnd_files/ind.gif" 
+                        width=36><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;forumid=2691&amp;select=722507#xx722507xx" 
+                        name=722507>Re: Help me</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=199383"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CPictureEx_CPictureExWnd_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>indefx&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>0:54 25 Jan 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=722507_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="CPictureEx_CPictureExWnd_files/ind.gif" 
+                        width=36><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>or 
+                                another genius, genious 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=722507">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=722507">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;tid=663728&amp;forumid=2691&amp;select=722507#xx722507xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?msg=722507#xx722507xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=722507"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=722507"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(199383,722507);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CPictureEx_CPictureExWnd_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="CPictureEx_CPictureExWnd_files/t.gif" width=1></TD></TR>
+              <TR id=622804_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx622804xx></A><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;forumid=2691&amp;select=622804#xx622804xx" 
+                        name=622804><B>unexplainable error</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=517193"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CPictureEx_CPictureExWnd_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>TheTempest</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>21:35 27 Sep 
+                        '03</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=622804_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent>Hi,<BR><BR>I tired to use 
+                                your source from your zip and when i did 
+                                everything you said to do in the readme i got 
+                                the following error:<BR><BR>1) error : undefined 
+                                symbol _beginthreadex on line 471.<BR><BR>any 
+                                ideas on how to fix this.<BR><BR>My 
+                                enviornment:<BR>MSVC++ 6.0 (created a win32 
+                                app)<BR>currently using ATL library and it's 
+                                working fine...<BR>Windows XP SP1 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=622804">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=622804">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;tid=622804&amp;forumid=2691&amp;select=622804#xx622804xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?msg=622804#xx622804xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=622804"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=622804"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(517193,622804);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CPictureEx_CPictureExWnd_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=671864_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx671864xx></A><IMG height=1 
+                        src="CPictureEx_CPictureExWnd_files/ind.gif" 
+                        width=18><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;forumid=2691&amp;select=671864#xx671864xx" 
+                        name=671864>Re: unexplainable error</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=28210"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CPictureEx_CPictureExWnd_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>blongtq&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>21:30 20 Nov 
+                        '03&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=671864_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="CPictureEx_CPictureExWnd_files/ind.gif" 
+                        width=18><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent>TheTempest,<BR>error : 
+                                undefined symbol _beginthreadex on line 
+                                471<BR>This error means your project has not 
+                                included some required libs. Because of the MFC 
+                                version of PictureEx, you have to include all of 
+                                MFC libs into your Win32 project.<BR>Hope it 
+                                helps.<BR><BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=671864">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=671864">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;tid=622804&amp;forumid=2691&amp;select=671864#xx671864xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?msg=671864#xx671864xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=671864"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=671864"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(28210,671864);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CPictureEx_CPictureExWnd_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="CPictureEx_CPictureExWnd_files/t.gif" width=1></TD></TR>
+              <TR id=619214_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx619214xx></A><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;forumid=2691&amp;select=619214#xx619214xx" 
+                        name=619214><B>Solution to make operate this class in 
+                        SDI and MDI with Gif animated</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=598623"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CPictureEx_CPictureExWnd_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>Thim</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>13:57 24 Sep 
+                        '03</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=619214_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent><I><BR>First of all, excuse 
+                                my English.<BR><IMG 
+                                src="CPictureEx_CPictureExWnd_files/smiley_suss.gif" 
+                                align=absMiddle><BR>When you use this class, 
+                                don't put your code directly in the OnDraw 
+                                Method because this class draws itself with the 
+                                threads.<BR><BR>You can for example use it in 
+                                the OnInitialUpdate method like 
+                                that.<BR></I><BR><SMALL>void 
+                                CYourView::OnInitialUpdate()<BR>{<BR>CView::OnInitialUpdate();<BR><BR>// 
+                                TODO : etc. etc etc<BR><BR>// Don't forget to 
+                                create the control to recover its 
+                                handle<BR>m_picture.Create(NULL, WS_VISIBLE, 
+                                CRect(20,20,200,200), 
+                                this);<BR><BR>m_picture.Load("your.gif");<BR>m_picture.Draw();<BR>}</SMALL><BR><BR>Evidently, 
+                                m_picture is the variable member of CYourView 
+                                and its type is CPictureEx.<BR><BR>Thank you 
+                                Oleg for this class.<BR><BR><BR>Thim <IMG 
+                                src="CPictureEx_CPictureExWnd_files/smiley_suss.gif" 
+                                align=absMiddle><BR><BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=619214">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=619214">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;tid=619214&amp;forumid=2691&amp;select=619214#xx619214xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?msg=619214#xx619214xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=619214"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=619214"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(598623,619214);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CPictureEx_CPictureExWnd_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="CPictureEx_CPictureExWnd_files/t.gif" width=1></TD></TR>
+              <TR id=617745_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx617745xx></A><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;forumid=2691&amp;select=617745#xx617745xx" 
+                        name=617745><B>Loading bitmap from resource</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=514863"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CPictureEx_CPictureExWnd_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>annephilip</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>7:43 23 Sep 
+                        '03</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=617745_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent>Hi,<BR>I have extended your 
+                                class to load a bmp image from a file, however 
+                                when I try to load a bmp from a resource it 
+                                fails. OleLoadPicture fails with an unknown 
+                                error! Any ideas why this happens only when you 
+                                load from resource and not from a file and only 
+                                for a bmp?<BR>Thanks,<BR>Anne 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=617745">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=617745">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;tid=617745&amp;forumid=2691&amp;select=617745#xx617745xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?msg=617745#xx617745xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=617745"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=617745"><I>Delete</I></A>]<BR>Score: 
+                                1.0 (1 vote).
+                                <SCRIPT language=Javascript>MsgVoteForm(514863,617745);</SCRIPT>
+                                 
+                    </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CPictureEx_CPictureExWnd_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="CPictureEx_CPictureExWnd_files/t.gif" width=1></TD></TR>
+              <TR id=613884_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx613884xx></A><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;forumid=2691&amp;select=613884#xx613884xx" 
+                        name=613884><B>Strech the GIF</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=242631"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CPictureEx_CPictureExWnd_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>bfadi</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>12:17 18 Sep 
+                        '03</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=613884_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent>Hi<BR>nice article.<BR>I 
+                                have question for you please:<BR>Is your class 
+                                support Stech the gif picture to a specific rect 
+                                ?<BR>Thanks<BR>Fadi<BR><BR><BR><IMG 
+                                src="CPictureEx_CPictureExWnd_files/rose.gif" 
+                                align=absMiddle><IMG 
+                                src="CPictureEx_CPictureExWnd_files/rose.gif" 
+                                align=absMiddle><IMG 
+                                src="CPictureEx_CPictureExWnd_files/rose.gif" 
+                                align=absMiddle> <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=613884">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=613884">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;tid=613884&amp;forumid=2691&amp;select=613884#xx613884xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?msg=613884#xx613884xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=613884"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=613884"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(242631,613884);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CPictureEx_CPictureExWnd_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="CPictureEx_CPictureExWnd_files/t.gif" width=1></TD></TR>
+              <TR id=612840_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx612840xx></A><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;forumid=2691&amp;select=612840#xx612840xx" 
+                        name=612840><B>Using CPictureEx to display thumbnails in 
+                        CListCtrl</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=514863"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CPictureEx_CPictureExWnd_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>annephilip</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>11:50 17 Sep 
+                        '03</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=612840_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG 
+                        src="CPictureEx_CPictureExWnd_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent>Hi,<BR>Would you know how 
+                                to display all the gif files in a directory in a 
+                                ListCtrl as thumbnails of a fixed size?<BR>Could 
+                                you please help me?<BR>Thanks,<BR>Anne 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=612840">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=612840">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;tid=612840&amp;forumid=2691&amp;select=612840#xx612840xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/bitmap/pictureex.asp?msg=612840#xx612840xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=612840"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/bitmap/pictureex.asp&amp;df=100&amp;forumid=2691&amp;select=612840"><I>Delete</I></A>]<BR>Score: 
+                                2.0 (1 vote).
+                                <SCRIPT language=Javascript>MsgVoteForm(514863,612840);</SCRIPT>
+                                 
+                    </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CPictureEx_CPictureExWnd_files/t.gif" 
+                  width=1 border=0></TD></TR></TBODY></TABLE></TD></TR>
+        <TR bgColor=#fbedbb>
+          <TD>
+            <TABLE cellPadding=2 width="100%">
+              <TBODY>
+              <TR>
+                <TD class=messagetitle>Last Visit: 9:15 Thursday 23rd 
+                  September, 2004</TD>
+                <TD noWrap align=right><FONT class=messagetitle><SPAN 
+                  class=HoverLink>First</SPAN> <SPAN class=HoverLink>Prev</SPAN> 
+                  <A class=HoverLink 
+                  href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;forumid=2691&amp;fr=26" 
+                  name=HoverNL>Next</A> <A class=HoverLink 
+                  href="http://www.codeproject.com/bitmap/pictureex.asp?df=100&amp;forumid=2691&amp;fr=76" 
+                  name=HoverNL>Last</A> 
+      </FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><BR>
+<TABLE cellSpacing=5 width="100%">
+  <TBODY>
+  <TR vAlign=top>
+    <TD><FONT style="FONT-SIZE: 7pt" size=1><A 
+      href="http://www.codeproject.com/?cat=1">All Topics</A>, <A 
+      href="http://www.codeproject.com/?cat=2">MFC / C++</A> &gt;&gt; <A 
+      href="http://www.codeproject.com/bitmap/">Bitmaps &amp; Palettes</A> 
+      &gt;&gt; <A href="http://www.codeproject.com/bitmap/#Image+Display">Image 
+      Display</A> <BR>Updated: 24 Nov 2001 </FONT></TD>
+    <TD align=right><FONT style="FONT-SIZE: 7pt" size=1>Article content 
+      copyright Oleg Bykov, 2001<BR>everything else Copyright © <A 
+      href="mailto:webmaster@codeproject.com">CodeProject</A>, 1999-2004</A>. 
+      <BR><A href="http://www.codeproject.com/info/MediaKit">Advertise on The 
+      Code Project</A> | <A 
+      href="http://www.codeproject.com/info/privacy.asp">Privacy</A> 
+  </FONT></TD></TR></TBODY></TABLE><BR>
+<CENTER>
+<TABLE cellSpacing=0 cellPadding=0 width="95%" border=0>
+  <TBODY>
+  <TR>
+    <TD bgColor=#ff9900 height=1><IMG height=1 
+      src="CPictureEx_CPictureExWnd_files/space.gif"></TD></TR>
+  <TR>
+    <TD align=middle><FONT size=1><A 
+      href="http://www.codeproject.com/redir.asp?id=235">MSDN Communities</A> | 
+      <A href="http://aspalliance.com/">ASPAlliance</A> • <A 
+      href="http://www.developerfusion.com/">Developer Fusion</A> • <A 
+      href="http://www.devguru.com/">DevGuru</A> • <A 
+      href="http://www.programmersheaven.com/">Programmers Heaven</A> • <A 
+      href="http://www.planet-source-code.com/">Planet Source Code</A> • <A 
+      href="http://www.resourceindex.com/">Resource Index</A> • <A 
+      href="http://www.tek-tips.com/">Tek-Tips Forums</A> • <A 
+      href="http://www.topxml.com/">What is XML?</A> • <A 
+      href="http://www.visualbuilder.com/">VisualBuilder</A> • <A 
+      href="http://www.zvon.org/">ZVON</A> • <A 
+      href="http://www.codeproject.com/redir.asp?id=169">Search Us!</A> 
+    </FONT></TD></TR></TBODY></TABLE></CENTER></BODY></HTML>

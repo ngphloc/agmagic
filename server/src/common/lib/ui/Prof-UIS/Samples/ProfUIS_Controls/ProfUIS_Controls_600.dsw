@@ -1,0 +1,32 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "ProfUIS_Controls"=".\ProfUIS_Controls_600.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+    {774D3CC5-12CA-447F-9428-9EA0262F517A}
+    {DB2B48DF-11A3-407F-ACE0-0947DA929B4B}
+    {91B700F7-03A2-446E-9174-593B36C29E7B}
+}}}
+
+###############################################################################
+

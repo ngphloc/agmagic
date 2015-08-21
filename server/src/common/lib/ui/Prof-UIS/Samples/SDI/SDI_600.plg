@@ -1,0 +1,55 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: SDI - Win32 ANSI Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x409 /fo"..\..\Bin_600\AnsiRelease\SDI/SDI.res" /d "NDEBUG" /d "_AFXDLL" "D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Samples\SDI\SDI.rc"" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP177.tmp" with contents
+[
+/nologo /MD /W4 /GX /O2 /I "..\..\include" /D "NDEBUG" /D "_AFXDLL" /D "WIN32" /D "_WINDOWS" /D _WIN32_WINNT=0x0400 /D _WIN32_IE=0x0400 /Fp"..\..\Bin_600\AnsiRelease\SDI/SDI_600.pch" /Yu"stdafx.h" /Fo"..\..\Bin_600\AnsiRelease\SDI/" /Fd"..\..\Bin_600\AnsiRelease\SDI/" /FD /c 
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Samples\SDI\ChildView.cpp"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Samples\SDI\MainFrm.cpp"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Samples\SDI\SDI.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP177.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP178.tmp" with contents
+[
+/nologo /MD /W4 /GX /O2 /I "..\..\include" /D "NDEBUG" /D "_AFXDLL" /D "WIN32" /D "_WINDOWS" /D _WIN32_WINNT=0x0400 /D _WIN32_IE=0x0400 /Fp"..\..\Bin_600\AnsiRelease\SDI/SDI_600.pch" /Yc"stdafx.h" /Fo"..\..\Bin_600\AnsiRelease\SDI/" /Fd"..\..\Bin_600\AnsiRelease\SDI/" /FD /c 
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Samples\SDI\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP178.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP17C.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:no /pdb:"..\..\Bin_600/SDI-n.pdb" /machine:I386 /out:"..\..\Bin_600/SDI-n.exe" /libpath:"..\..\Bin_600" 
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\SDI\ChildView.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\SDI\MainFrm.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\SDI\SDI.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\SDI\StdAfx.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\SDI\SDI.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP17C.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+   Prof-UIS multiply monitor support:
+      built-in
+   Automatically linking with ProfUIS225 library
+      (Professional User Interface Suite)
+Compiling...
+ChildView.cpp
+MainFrm.cpp
+SDI.cpp
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+SDI-n.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

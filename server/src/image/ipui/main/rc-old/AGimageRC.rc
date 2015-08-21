@@ -1,0 +1,1590 @@
+#include "AGimageRC.h"
+
+//#if AGMAGIC_SUPPORT_MFC
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+
+IDR_AGMAGICIPMAINFRAME    ICON    DISCARDABLE    "res\\AGmagicIP.ico"
+IDR_AGMAGICIPTYPE         ICON    DISCARDABLE    "res\\AGmagicIPDoc.ico"
+IDI_AGMAGICIP_OK          ICON    DISCARDABLE    "res\\ok.ico"
+IDI_AGMAGICIP_CANC        ICON    DISCARDABLE    "res\\canc.ico"
+IDI_AGMAGICIP_R           ICON    DISCARDABLE    "res\\no1.ico"
+IDI_AGMAGICIP_G           ICON    DISCARDABLE    "res\\r1.ico"
+IDI_AGMAGICIP_B           ICON    DISCARDABLE    "res\\b1.ico"
+IDI_AGMAGICIP_GRAY        ICON    DISCARDABLE    "res\\gray.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_AGMAGICIPMAINFRAME    BITMAP  MOVEABLE PURE	"res\\Toolbar.bmp"
+IDB_AGMAGICIPBITMAP       BITMAP  DISCARDABLE	"res\\bg.BMP"
+IDR_AGMAGICIPTOOLBAR      BITMAP  DISCARDABLE	"res\\toolbar1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// JPG
+//
+
+IDR_AGMAGICIP_JPG1                JPG     DISCARDABLE     "res\\bg.jpg"
+IDR_AGMAGICIP_JPG2                JPG     DISCARDABLE     "res\\bg2.jpg"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// ICO
+//
+
+IDR_AGMAGICIP_ICO1                ICO     DISCARDABLE     "res\\ico2.bin"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// GIF
+//
+
+IDR_AGMAGICIP_GIF1                GIF     DISCARDABLE     "res\\bg.gif"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// PNG
+//
+
+IDR_AGMAGICIP_PNG1                PNG     DISCARDABLE     "res\\us.png"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// TIF
+//
+
+IDR_AGMAGICIP_TIF1                TIF     DISCARDABLE     "res\\bg.tif"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_AGMAGICIPMAINFRAME TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON        ID_FILE_NEW
+    BUTTON        ID_FILE_OPEN
+    BUTTON        ID_FILE_SAVE
+    BUTTON        ID_FILE_PRINT
+    BUTTON        ID_FILE_ACQUIRE
+
+    SEPARATOR
+    BUTTON        ID_EDIT_CUT
+    BUTTON        ID_EDIT_COPY
+    BUTTON        ID_EDIT_PASTE
+
+    SEPARATOR
+    BUTTON        ID_EDIT_UNDO
+    BUTTON        ID_EDIT_REDO
+
+    SEPARATOR
+    BUTTON        ID_VIEW_ZOOMIN
+    BUTTON        ID_VIEW_NORMALVIEWING11
+    BUTTON        ID_VIEW_ZOOMOUT
+
+    SEPARATOR
+    BUTTON        ID_VIEW_TOOLS_MOVE
+    BUTTON        ID_VIEW_TOOLS_SELECT
+    BUTTON        ID_VIEW_TOOLS_ZOOM
+    BUTTON        ID_VIEW_TOOLS_TEXT
+
+    SEPARATOR
+    BUTTON        ID_VIEW_HISTOGRAM
+    BUTTON        ID_VIEW_PALETTE
+    BUTTON        ID_AGMAGICIP_OPTIONS
+
+    SEPARATOR
+    BUTTON        ID_APP_ABOUT
+END
+
+IDR_AGMAGICIPTOOLBAR TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON        ID_VIEW_NORMALVIEWING11
+    BUTTON        ID_AGMAGICIP_OPTIONS
+    BUTTON        ID_APP_EXIT
+    BUTTON        ID_VIEW_ZOOMIN
+    BUTTON        ID_VIEW_ZOOMOUT
+    BUTTON        ID_AGMAGICIP_ROTATE
+    BUTTON        ID_AGMAGICIP_FLIP
+    BUTTON        ID_AGMAGICIP_MIRROR
+    BUTTON        ID_AGMAGICIP_RESAMPLE
+    BUTTON        ID_AGMAGICIP_CROP
+    BUTTON        ID_AGMAGICIP_GRAYSCALE
+    BUTTON        ID_COLORS_NEGATIVE
+    BUTTON        ID_COLORS_DECREASEBPP
+    BUTTON        ID_COLORS_INCREASEBPP
+    BUTTON        ID_COLORS_SPLITCHANNELS
+    BUTTON        ID_BUTTON32842
+    BUTTON        ID_COLORS_SETTRANSPARENCY
+    BUTTON        ID_COLORS_REMOVETRANSPARENCY
+    BUTTON        ID_VIEW_PALETTE
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_AGMAGICIPMAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                           ID_FILE_NEW
+        MENUITEM "&Open...\tCtrl+O",                       ID_FILE_OPEN
+
+        MENUITEM SEPARATOR
+        MENUITEM "Select Source...",                       ID_FILE_SELECTSOURCE
+        MENUITEM "Acquire...",                             ID_FILE_ACQUIRE
+
+        MENUITEM SEPARATOR
+        MENUITEM "Capture...",                             ID_FILE_CAPTURE
+
+        MENUITEM SEPARATOR
+        MENUITEM "P&rint Setup...",                        ID_FILE_PRINT_SETUP
+
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                            ID_FILE_MRU_FILE1, GRAYED
+
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                                  ID_APP_EXIT
+    END
+
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Paste\tCtrl+V",                         ID_EDIT_PASTE
+    END
+
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                               ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                            ID_VIEW_STATUS_BAR
+        MENUITEM "Histogram",                              ID_VIEW_HISTOGRAM
+
+        POPUP "Menu Style"
+        BEGIN
+            MENUITEM "Default",                            ID_VIEW_MENUSTYLE_NORMAL
+            MENUITEM "XP",                                 ID_VIEW_MENUSTYLE_XP
+        END
+
+        MENUITEM SEPARATOR
+        MENUITEM "Full Screen",                            ID_VIEW_FULLSCREEN
+    END
+
+    POPUP "&Image"
+    BEGIN
+        MENUITEM "Load Bitmap Resource",                   ID_AGMAGICIP_FROM_BITMAP
+        MENUITEM "Load Jpeg Resource",                     ID_AGMAGICIP_LOADJPEGRESOURCE
+        MENUITEM "Load Icon Resource",                     ID_AGMAGICIP_LOADICONRESOURCE
+        MENUITEM "Load Png Resource",                      ID_AGMAGICIP_LOADPNGRESOURCE
+        MENUITEM "Load Gif Resource",                      ID_AGMAGICIP_LOADGIFRESOURCE
+        MENUITEM "Load Tif Resource",                      ID_AGMAGICIP_LOADTIFRESOURCE
+
+        MENUITEM SEPARATOR
+        MENUITEM "Demo Save MultiPageTIFF",                ID_AGMAGICIP_DEMOSAVEMULTIPAGETIFF
+        MENUITEM "Demo Save Animated GIF",                 ID_AGMAGICIP_DEMOSAVEANIMATEDGIF
+
+        MENUITEM "Download from URL ...",                  ID_AGMAGICIP_DOWNLOADFROMURL
+        MENUITEM "Demo CreateFromArray",                   ID_AGMAGICIP_DEMOCREATEFROMARRAY
+    END
+
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About AGmagicIP...",                         ID_APP_ABOUT
+    END
+END
+
+IDR_AGMAGICIPTYPE MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                           ID_FILE_NEW
+        MENUITEM "&Open...\tCtrl+O",                       ID_FILE_OPEN
+        MENUITEM "&Close",                                 ID_FILE_CLOSE
+        MENUITEM "&Save\tCtrl+S",                          ID_FILE_SAVE
+        MENUITEM "Save &As...",                            ID_FILE_SAVE_AS
+
+        MENUITEM SEPARATOR
+        MENUITEM "Select Source...",                       ID_FILE_SELECTSOURCE
+        MENUITEM "Acquire...",                             ID_FILE_ACQUIRE
+
+        MENUITEM SEPARATOR
+        MENUITEM "Capture...",                             ID_FILE_CAPTURE
+
+        MENUITEM SEPARATOR
+        MENUITEM "&Print...\tCtrl+P",                      ID_FILE_PRINT
+        MENUITEM "Print Pre&view",                         ID_FILE_PRINT_PREVIEW
+        MENUITEM "P&rint Setup...",                        ID_FILE_PRINT_SETUP
+
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                            ID_FILE_MRU_FILE1, GRAYED
+
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                                  ID_APP_EXIT
+    END
+
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Undo\tCtrl+Z",                          ID_EDIT_UNDO
+        MENUITEM "Redo\tCtrl+Y",                           ID_EDIT_REDO
+
+        MENUITEM SEPARATOR
+        MENUITEM "Cu&t\tCtrl+X",                           ID_EDIT_CUT
+        MENUITEM "&Copy\tCtrl+C",                          ID_EDIT_COPY
+        MENUITEM "&Paste\tCtrl+V",                         ID_EDIT_PASTE
+    END
+
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                               ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                            ID_VIEW_STATUS_BAR
+        MENUITEM "Histogram",                              ID_VIEW_HISTOGRAM
+        MENUITEM "Palette",                                ID_VIEW_PALETTE
+
+        POPUP "Tools"
+        BEGIN
+            MENUITEM "Move",                               ID_VIEW_TOOLS_MOVE
+            MENUITEM "Select",                             ID_VIEW_TOOLS_SELECT
+            MENUITEM "Zoom",                               ID_VIEW_TOOLS_ZOOM
+            MENUITEM "Text",                               ID_VIEW_TOOLS_TEXT
+        END
+
+        POPUP "Menu Style"
+        BEGIN
+            MENUITEM "Default",                            ID_VIEW_MENUSTYLE_NORMAL
+            MENUITEM "XP",                                 ID_VIEW_MENUSTYLE_XP
+        END
+
+        MENUITEM SEPARATOR
+        MENUITEM "Str&etch mode",                          ID_STRETCH_MODE
+        MENUITEM "Full Screen",                            ID_VIEW_FULLSCREEN
+
+        MENUITEM SEPARATOR
+        MENUITEM "Zoom In\t+",                             ID_VIEW_ZOOMIN
+        MENUITEM "Zoom Out\t-",                            ID_VIEW_ZOOMOUT
+        MENUITEM "Normal Viewing (1:1)\t/",                ID_VIEW_NORMALVIEWING11
+    END
+
+    POPUP "&Image"
+    BEGIN
+        POPUP "&Resources"
+        BEGIN
+            MENUITEM "Load Bitmap Resource",               ID_AGMAGICIP_FROM_BITMAP
+            MENUITEM "Load Jpeg Resource",                 ID_AGMAGICIP_LOADJPEGRESOURCE
+            MENUITEM "Load Icon Resource",                 ID_AGMAGICIP_LOADICONRESOURCE
+            MENUITEM "Load Png Resource",                  ID_AGMAGICIP_LOADPNGRESOURCE
+            MENUITEM "Load Gif Resource",                  ID_AGMAGICIP_LOADGIFRESOURCE
+            MENUITEM "Load Tif Resource",                  ID_AGMAGICIP_LOADTIFRESOURCE
+        END
+
+        MENUITEM SEPARATOR
+        POPUP "&Demo"
+        BEGIN
+            MENUITEM "Save MultiPageTIFF",                 ID_AGMAGICIP_DEMOSAVEMULTIPAGETIFF
+            MENUITEM "Save Animated GIF",                  ID_AGMAGICIP_DEMOSAVEANIMATEDGIF
+            MENUITEM "Download from URL ...",              ID_AGMAGICIP_DOWNLOADFROMURL
+            MENUITEM "Demo CreateFromArray",               ID_AGMAGICIP_DEMOCREATEFROMARRAY
+        END
+
+        MENUITEM SEPARATOR
+        MENUITEM "Mirror",                                 ID_AGMAGICIP_MIRROR
+        MENUITEM "Flip",                                   ID_AGMAGICIP_FLIP
+        MENUITEM "Rotate Left",                            ID_AGMAGICIP_ROTATEL
+        MENUITEM "Rotate Right",                           ID_AGMAGICIP_ROTATER
+        MENUITEM "Rotate...",                              ID_AGMAGICIP_ROTATE
+
+        MENUITEM SEPARATOR
+        MENUITEM "Resample...",                            ID_AGMAGICIP_RESAMPLE
+        MENUITEM "Crop",                                   ID_AGMAGICIP_CROP
+
+        MENUITEM SEPARATOR
+        MENUITEM "Gray Scale",                             ID_AGMAGICIP_GRAYSCALE
+        MENUITEM "Dither...",                              ID_AGMAGICIP_DITHER
+        MENUITEM "FFT...",                                 ID_AGMAGICIP_FFT
+        MENUITEM "Repair...",                              ID_AGMAGICIP_REPAIR
+        MENUITEM "Mix ...",                                ID_AGMAGICIP_MIX
+
+        MENUITEM SEPARATOR
+        MENUITEM "Options...",                             ID_AGMAGICIP_OPTIONS
+    END
+
+    POPUP "E&ffects"
+    BEGIN
+        POPUP "&Blur"
+        BEGIN
+            MENUITEM "Blur",                               ID_EFFECTS_BLUR_BLUR
+            MENUITEM "Soften",                             ID_EFFECTS_BLUR_SOFTEN
+            MENUITEM "Gaussian 3x3",                       ID_EFFECTS_BLUR_GAUSSIAN3X3
+            MENUITEM "Gaussian 5x5",                       ID_EFFECTS_BLUR_GAUSSIAN5X5
+        END
+
+        POPUP "&Sharpen"
+        BEGIN
+            MENUITEM "Sharpen",                            ID_EFFECTS_SHARPEN_SHARPEN
+            MENUITEM "Unsharp Mask",                       ID_EFFECTS_SHARPEN_UNSHARPMASK
+        END
+
+        POPUP "&Edge"
+        BEGIN
+            MENUITEM "Dilate",                             ID_EFFECTS_EDGE_DILATE
+            MENUITEM "Erode",                              ID_EFFECTS_EDGE_ERODE
+            MENUITEM "Edge",                               ID_EFFECTS_EDGE_EDGE
+        END
+
+        POPUP "&Noise"
+        BEGIN
+            MENUITEM "Add Noise",                          ID_EFFECTS_NOISE_ADDNOISE
+            MENUITEM "Jitter",                             ID_EFFECTS_NOISE_JITTER
+            MENUITEM SEPARATOR
+            MENUITEM "Median",                             ID_EFFECTS_NOISE_MEDIAN
+        END
+        /*
+        MENUITEM SEPARATOR
+        POPUP "&3D Effects"
+        BEGIN
+        END
+        */
+        POPUP "&Artistic Effects"
+        BEGIN
+            MENUITEM "Contour",                            ID_EFFECTS_ARTISTIC_CONTOUR
+        END
+
+        POPUP "&Geometric Effects"
+        BEGIN
+            MENUITEM "Pinch",                              ID_EFFECTS_GEOMETRIC_PINCH
+            MENUITEM "Punch",                              ID_EFFECTS_GEOMETRIC_PUNCH
+            MENUITEM "Twirl",                              ID_EFFECTS_GEOMETRIC_SWIRL
+            MENUITEM "Cylinder",                           ID_EFFECTS_GEOMETRIC_CYLINDER
+            MENUITEM "Bathroom",                           ID_EFFECTS_GEOMETRIC_BATHROOM
+
+            MENUITEM SEPARATOR
+            MENUITEM "&Ellipse",                           ID_EFFECTS_GEOMETRIC_ELLIPSE
+        END
+        /*
+        POPUP "&Illumination Effects"
+        BEGIN
+        END
+
+        POPUP "&Reflection Effects"
+        BEGIN
+        END
+         */
+        POPUP "&Texture Effects"
+        BEGIN
+            MENUITEM "Emboss",                             ID_EFFECTS_TEXTURE_EMBOSS
+        END
+    END
+
+    POPUP "&Colors"
+    BEGIN
+        POPUP "&Adjust"
+        BEGIN
+            MENUITEM "Lighten",                            ID_COLORS_ADJUST_LIGHTEN
+            MENUITEM "Darken",                             ID_COLORS_ADJUST_DARKEN
+            MENUITEM "More Contrast",                      ID_COLORS_ADJUST_CONTRAST
+            MENUITEM "Less Contrast",                      ID_COLORS_ADJUST_LESSCONTRAST
+
+            MENUITEM SEPARATOR
+            MENUITEM "Threshold...",                       ID_COLORS_ADJUST_THRESHOLD
+        END
+        MENUITEM "Colorize...",                            ID_COLORS_COLORIZE
+        MENUITEM "Gamma...",                               ID_COLORS_GAMMA
+
+        POPUP "&Histogram"
+        BEGIN
+            MENUITEM "Stretch",                            ID_COLORS_HISTOGRAM_STRETCH
+            MENUITEM "Stretch1",                           ID_COLORS_HISTOGRAM_STRETCH1
+            MENUITEM "Stretch2",                           ID_COLORS_HISTOGRAM_STRETCH2
+
+            MENUITEM SEPARATOR
+            MENUITEM "Equalize",                           ID_COLORS_HISTOGRAM_EQUALIZE
+            MENUITEM "Normalize",                          ID_COLORS_HISTOGRAM_NORMALIZE
+
+            MENUITEM SEPARATOR
+            MENUITEM "Log",                                ID_COLORS_HISTOGRAM_LOG
+            MENUITEM "Root",                               ID_COLORS_HISTOGRAM_ROOT
+
+        END
+        MENUITEM "Negative",                               ID_COLORS_NEGATIVE
+        MENUITEM "Pseudo Colors",                          ID_COLORS_PSEUDOCOLORS
+
+        MENUITEM SEPARATOR
+        POPUP "&Split"
+        BEGIN
+            MENUITEM "Split to RGB",                       ID_COLORS_SPLIT_SPLITRGB
+            MENUITEM "Split to HSL",                       ID_COLORS_SPLIT_SPLITHSL
+            MENUITEM "Split to YUV",                       ID_COLORS_SPLIT_SPLITYUV
+            MENUITEM "Split to YIQ",                       ID_COLORS_SPLIT_SPLITYIQ
+            MENUITEM "Split to XYZ",                       ID_COLORS_SPLIT_SPLITXYZ
+            MENUITEM "Split to CMYK",                      ID_COLORS_SPLIT_SPLITCMYK
+        END
+        MENUITEM "Combine ...",                            ID_COLORS_COMBINE
+
+        MENUITEM SEPARATOR
+        MENUITEM "Set Transparency... (click)",            ID_COLORS_SETTRANSPARENCY
+        MENUITEM "Remove Transparency",                    ID_COLORS_REMOVETRANSPARENCY
+        POPUP "A&lpha Channel"
+        BEGIN
+            MENUITEM "Opacity...",                         ID_COLORS_ALPHA_OPACITY
+            MENUITEM "Remove",                             ID_COLORS_ALPHA_REMOVEALPHACHANNEL
+            MENUITEM "Split",                              ID_COLORS_ALPHA_ALPHACHANNEL_SPLIT
+            MENUITEM "Strip",                              ID_COLORS_ALPHA_ALPHASTRIP
+            MENUITEM "Invert",                             ID_COLORS_ALPHA_INVERTALPHA
+            MENUITEM "Toggle Alpha Palette",               ID_COLORS_ALPHA_ALPHAPALETTETOGGLE
+            MENUITEM "Create from lightness",              ID_COLORS_ALPHA_ALPHACREATE
+        END
+
+        MENUITEM SEPARATOR
+        MENUITEM "Decrease Bpp...",                        ID_COLORS_DECREASEBPP
+        MENUITEM "Increase Bpp...",                        ID_COLORS_INCREASEBPP
+    END
+
+    POPUP "&Segmentation"
+    BEGIN
+        MENUITEM "Se&gment",                               ID_SEGMENTATION_SEGMENT
+        MENUITEM "Segment &Intel",                         ID_SEGMENTATION_SEGMENT_INTEL
+        MENUITEM "Segment In&verse",                       ID_SEGMENTATION_SEGMENT_INVERSE
+        MENUITEM "Segment &Load",                          ID_SEGMENTATION_SEGMENT_LOAD
+        MENUITEM SEPARATOR
+        MENUITEM "Sho&w Segs",                             ID_SEGMENTATION_SHOW
+        MENUITEM "Segment &Option",                        ID_SEGMENTATION_OPTION
+    END
+
+    POPUP "&Database"
+    BEGIN
+        MENUITEM "&Insert",                               ID_DATABASE_INSERT
+        MENUITEM "&Update",                               ID_DATABASE_UPDATE
+        MENUITEM "D&elete",                               ID_DATABASE_DELETE
+        MENUITEM SEPARATOR
+        MENUITEM "&Selete",                               ID_DATABASE_SELECT
+    END
+
+    POPUP "&Window"
+    BEGIN
+        MENUITEM "&New Window",                            ID_WINDOW_NEW
+        MENUITEM "&Cascade",                               ID_WINDOW_CASCADE
+        MENUITEM "&Tile",                                  ID_WINDOW_TILE_HORZ
+        MENUITEM "&Arrange Icons",                         ID_WINDOW_ARRANGE
+
+        MENUITEM SEPARATOR
+        MENUITEM "Close All",                              ID_WINDOW_CLOSEALL
+
+        MENUITEM SEPARATOR
+        MENUITEM "Duplicate\tCtrl+D",                      ID_WINDOW_DUPLICATE
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About program...",                      ID_APP_ABOUT
+        MENUITEM "&Test program...",                       ID_HELP_TEST_AGMAGICIP
+    END
+END
+
+IDM_AGMAGICIP_CONTEXT MENU DISCARDABLE 
+BEGIN
+    POPUP "Image"
+    BEGIN
+        MENUITEM "&Undo\tCtrl+Z",                          ID_EDIT_UNDO
+        MENUITEM "Redo\tCtrl+Y",                           ID_EDIT_REDO
+
+        MENUITEM SEPARATOR
+        MENUITEM "&Copy\tCtrl+C",                          ID_EDIT_COPY
+        MENUITEM "&Paste\tCtrl+V",                         ID_EDIT_PASTE
+
+        MENUITEM SEPARATOR
+        MENUITEM "Mirror",                                 ID_AGMAGICIP_MIRROR
+        MENUITEM "Flip",                                   ID_AGMAGICIP_FLIP
+        MENUITEM "Rotate Left",                            ID_AGMAGICIP_ROTATEL
+        MENUITEM "Rotate Right",                           ID_AGMAGICIP_ROTATER
+        MENUITEM "Rotate...",                              ID_AGMAGICIP_ROTATE
+
+        MENUITEM SEPARATOR
+        MENUITEM "Resample...",                            ID_AGMAGICIP_RESAMPLE
+        MENUITEM "Crop",                                   ID_AGMAGICIP_CROP
+
+        MENUITEM SEPARATOR
+        MENUITEM "Gray Scale",                             ID_AGMAGICIP_GRAYSCALE
+        MENUITEM "Dither...",                              ID_AGMAGICIP_DITHER
+        MENUITEM "FFT...",                                 ID_AGMAGICIP_FFT
+        MENUITEM "Repair...",                              ID_AGMAGICIP_REPAIR
+        MENUITEM "Mix ...",                                ID_AGMAGICIP_MIX
+
+        MENUITEM SEPARATOR
+        POPUP "Blur"
+        BEGIN
+            MENUITEM "Blur",                               ID_EFFECTS_BLUR_BLUR
+            MENUITEM "Soften",                             ID_EFFECTS_BLUR_SOFTEN
+            MENUITEM "Gaussian 3x3",                       ID_EFFECTS_BLUR_GAUSSIAN3X3
+            MENUITEM "Gaussian 5x5",                       ID_EFFECTS_BLUR_GAUSSIAN5X5
+        END
+
+        POPUP "Sharpen"
+        BEGIN
+            MENUITEM "Sharpen",                            ID_EFFECTS_SHARPEN_SHARPEN
+            MENUITEM "Unsharp Mask...",                    ID_EFFECTS_SHARPEN_UNSHARPMASK
+        END
+
+        POPUP "Edge"
+        BEGIN
+            MENUITEM "Dilate",                             ID_EFFECTS_EDGE_DILATE
+            MENUITEM "Erode",                              ID_EFFECTS_EDGE_ERODE
+            MENUITEM "Edge",                               ID_EFFECTS_EDGE_EDGE
+        END
+
+        POPUP "Noise"
+        BEGIN
+            MENUITEM "Add Noise",                          ID_EFFECTS_NOISE_ADDNOISE
+            MENUITEM "Jitter",                             ID_EFFECTS_NOISE_JITTER
+
+            MENUITEM SEPARATOR
+            MENUITEM "Median",                             ID_EFFECTS_NOISE_MEDIAN
+        END
+
+        MENUITEM SEPARATOR
+        /*
+        POPUP "3D Effects"
+        BEGIN
+        END
+        */
+        POPUP "Artistic Effects"
+        BEGIN
+            MENUITEM "Contour",                            ID_EFFECTS_ARTISTIC_CONTOUR
+        END
+        POPUP "Geometric Effects"
+        BEGIN
+            MENUITEM "Pinch",                              ID_EFFECTS_GEOMETRIC_PINCH
+            MENUITEM "Punch",                              ID_EFFECTS_GEOMETRIC_PUNCH
+            MENUITEM "Twirl",                              ID_EFFECTS_GEOMETRIC_SWIRL
+            MENUITEM "Cylinde",                            ID_EFFECTS_GEOMETRIC_CYLINDER
+            MENUITEM "Bathroom",                           ID_EFFECTS_GEOMETRIC_BATHROOM
+
+            MENUITEM SEPARATOR
+            MENUITEM "&Ellipse",                           ID_EFFECTS_GEOMETRIC_ELLIPSE
+        END
+        /*
+        POPUP "Illumination Effects"
+        BEGIN
+        END
+
+        POPUP "Reflection Effects"
+        BEGIN
+        END
+        */
+        POPUP "Texture Effects"
+        BEGIN
+            MENUITEM "Emboss",                             ID_EFFECTS_TEXTURE_EMBOSS
+        END
+	        
+        MENUITEM SEPARATOR
+        POPUP "Adjust"
+        BEGIN
+            MENUITEM "Lighten",                            ID_COLORS_ADJUST_LIGHTEN
+            MENUITEM "Darken",                             ID_COLORS_ADJUST_DARKEN
+            MENUITEM "More Contrast",                      ID_COLORS_ADJUST_CONTRAST
+            MENUITEM "Less Contrast",                      ID_COLORS_ADJUST_LESSCONTRAST
+
+            MENUITEM SEPARATOR
+            MENUITEM "Threshold...",                       ID_COLORS_ADJUST_THRESHOLD
+        END
+        MENUITEM "Colorize...",                            ID_COLORS_COLORIZE
+        MENUITEM "Gamma...",                               ID_COLORS_GAMMA
+
+        POPUP "Histogram"
+        BEGIN
+            MENUITEM "Stretch",                            ID_COLORS_HISTOGRAM_STRETCH
+            MENUITEM "Stretch1",                           ID_COLORS_HISTOGRAM_STRETCH1
+            MENUITEM "Stretch2",                           ID_COLORS_HISTOGRAM_STRETCH2
+
+            MENUITEM SEPARATOR
+            MENUITEM "Equalize",                           ID_COLORS_HISTOGRAM_EQUALIZE
+            MENUITEM "Normalize",                          ID_COLORS_HISTOGRAM_NORMALIZE
+
+            MENUITEM SEPARATOR
+            MENUITEM "Log",                                ID_COLORS_HISTOGRAM_LOG
+            MENUITEM "Root",                               ID_COLORS_HISTOGRAM_ROOT
+        END
+        MENUITEM "Negative",                               ID_COLORS_NEGATIVE
+        MENUITEM "Pseudo Colors",                          ID_COLORS_PSEUDOCOLORS
+
+        MENUITEM SEPARATOR
+        POPUP "Split"
+        BEGIN
+            MENUITEM "Split to RGB",                       ID_COLORS_SPLIT_SPLITRGB
+            MENUITEM "Split to HSL",                       ID_COLORS_SPLIT_SPLITHSL
+            MENUITEM "Split to YUV",                       ID_COLORS_SPLIT_SPLITYUV
+            MENUITEM "Split to YIQ",                       ID_COLORS_SPLIT_SPLITYIQ
+            MENUITEM "Split to XYZ",                       ID_COLORS_SPLIT_SPLITXYZ
+            MENUITEM "Split to CMYK",                      ID_COLORS_SPLIT_SPLITCMYK
+        END
+        MENUITEM "Combine ...",                            ID_COLORS_COMBINE
+
+        MENUITEM SEPARATOR
+        MENUITEM "Set Transparency... (click)",            ID_COLORS_SETTRANSPARENCY
+        MENUITEM "Remove Transparency",                    ID_COLORS_REMOVETRANSPARENCY
+        POPUP "Alpha Channel"
+        BEGIN
+            MENUITEM "Opacity...",                         ID_COLORS_ALPHA_OPACITY
+            MENUITEM "Remove",                             ID_COLORS_ALPHA_REMOVEALPHACHANNEL
+            MENUITEM "Split",                              ID_COLORS_ALPHA_ALPHACHANNEL_SPLIT
+            MENUITEM "Strip",                              ID_COLORS_ALPHA_ALPHASTRIP
+            MENUITEM "Invert",                             ID_COLORS_ALPHA_INVERTALPHA
+            MENUITEM "Toggle Alpha Palette ",              ID_COLORS_ALPHA_ALPHAPALETTETOGGLE
+            MENUITEM "Create from lightness",              ID_COLORS_ALPHA_ALPHACREATE
+        END
+
+        MENUITEM SEPARATOR
+        MENUITEM "Decrease Bpp...",                        ID_COLORS_DECREASEBPP
+        MENUITEM "Increase Bpp...",                        ID_COLORS_INCREASEBPP
+
+        MENUITEM SEPARATOR
+        MENUITEM "Options...",                             ID_AGMAGICIP_OPTIONS
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_AGMAGICIPMAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "C",                ID_EDIT_COPY,                   VIRTKEY, CONTROL, NOINVERT
+    "D",                ID_WINDOW_DUPLICATE,            VIRTKEY, CONTROL, NOINVERT
+    "N",                ID_FILE_NEW,                    VIRTKEY, CONTROL, NOINVERT
+    "O",                ID_FILE_OPEN,                   VIRTKEY, CONTROL, NOINVERT
+    "P",                ID_FILE_PRINT,                  VIRTKEY, CONTROL, NOINVERT
+    "S",                ID_FILE_SAVE,                   VIRTKEY, CONTROL, NOINVERT
+    "V",                ID_EDIT_PASTE,                  VIRTKEY, CONTROL, NOINVERT
+    VK_ADD,             ID_VIEW_ZOOMIN,                 VIRTKEY, NOINVERT
+    VK_BACK,            ID_EDIT_UNDO,                   VIRTKEY, ALT, NOINVERT
+    VK_DELETE,          ID_EDIT_CUT,                    VIRTKEY, SHIFT, NOINVERT
+    VK_DIVIDE,          ID_VIEW_NORMALVIEWING11,        VIRTKEY, NOINVERT
+    VK_F6,              ID_NEXT_PANE,                   VIRTKEY, NOINVERT
+    VK_F6,              ID_PREV_PANE,                   VIRTKEY, SHIFT, NOINVERT
+    VK_INSERT,          ID_EDIT_COPY,                   VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,          ID_EDIT_PASTE,                  VIRTKEY, SHIFT, NOINVERT
+    VK_SUBTRACT,        ID_VIEW_ZOOMOUT,                VIRTKEY, NOINVERT
+    "X",                ID_EDIT_CUT,                    VIRTKEY, CONTROL, NOINVERT
+    "Y",                ID_EDIT_REDO,                   VIRTKEY, CONTROL, NOINVERT
+    "Z",                ID_EDIT_UNDO,                   VIRTKEY, CONTROL, NOINVERT
+END
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_CAPTURE DIALOG DISCARDABLE  0, 0, 297, 81
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Capture"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,5,58,50,16
+    PUSHBUTTON      "Cancel",IDCANCEL,60,58,50,16
+    LISTBOX         IDC_CAPTURE_LIST1,5,5,285,45,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | 
+                    WS_TABSTOP
+END
+
+IDD_COLORIZE DIALOG DISCARDABLE  0, 0, 166, 114
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Colorize"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,109,6,50,16
+    PUSHBUTTON      "Cancel",IDCANCEL,109,23,50,16
+    EDITTEXT        IDC_COLORIZE_EDIT1,75,17,25,12,ES_AUTOHSCROLL
+    LTEXT           "Hue: [0 : 255]",IDC_STATIC,7,20,44,8
+    EDITTEXT        IDC_COLORIZE_EDIT2,75,33,25,12,ES_AUTOHSCROLL
+    LTEXT           "Saturation: [0 : 255]",IDC_STATIC,7,34,63,8
+    EDITTEXT        IDC_COLORIZE_EDIT3,75,62,25,12,ES_AUTOHSCROLL
+    LTEXT           "Red:    [-255 : 255]",IDC_STATIC,7,64,60,8
+    EDITTEXT        IDC_COLORIZE_EDIT4,75,79,25,12,ES_AUTOHSCROLL
+    LTEXT           "Green: [-255 : 255]",IDC_STATIC,7,81,60,8
+    EDITTEXT        IDC_COLORIZE_EDIT5,75,95,25,12,ES_AUTOHSCROLL
+    LTEXT           "Blue:    [-255 : 255]",IDC_STATIC,7,97,61,8
+    CONTROL         "HSL",IDC_COLORIZE_RADIO3,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,7,6,30,10
+    CONTROL         "RGB",IDC_COLORIZE_RADIO4,"Button",BS_AUTORADIOBUTTON,
+                    7,50,31,10
+END
+
+IDD_COMBINE DIALOG DISCARDABLE  0, 0, 242, 119
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Combine"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,185,7,50,16
+    PUSHBUTTON      "Cancel",IDCANCEL,185,24,50,16
+    COMBOBOX        IDC_COMBINE_COMBO1,7,19,114,55,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Red / H /  Y /  X channel source:",IDC_STATIC,7,7,97,8
+    LTEXT           "Green / S / U /  I /  Y channel source:",IDC_STATIC,7,35,97,8
+    LTEXT           "Blue / L /  V / Q /  Z channel source:",IDC_STATIC,7,63,97,8
+    COMBOBOX        IDC_COMBINE_COMBO2,7,47,114,55,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_COMBINE_COMBO3,7,74,114,57,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Alpha channel source:",IDC_STATIC,7,90,97,8
+    COMBOBOX        IDC_COMBINE_COMBO4,7,101,114,61,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_COMBINE_COMBO5,125,19,48,55,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_COMBINE_COMBO6,125,47,48,55,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_COMBINE_COMBO7,125,74,48,55,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_COMBINE_COMBO8,125,100,48,55,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_COMBINE_COMBO9,185,60,50,79,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Color Space",IDC_STATIC,188,50,40,8
+END
+
+IDD_DECBPP DIALOG DISCARDABLE  0, 0, 131, 106
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Decrease Bpp"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,74,7,50,16
+    PUSHBUTTON      "Cancel",IDCANCEL,74,24,50,16
+    CONTROL         "1",IDC_DECBPP_RADIO1,"Button",BS_AUTORADIOBUTTON | WS_GROUP,15,85,25,10
+    GROUPBOX        "Bpp",IDC_STATIC,7,70,118,30
+    CONTROL         "4",IDC_DECBPP_RADIO2,"Button",BS_AUTORADIOBUTTON,50,85,25,10
+    CONTROL         "8",IDC_DECBPP_RADIO3,"Button",BS_AUTORADIOBUTTON,85,85,25,10
+    GROUPBOX        "Palette",IDC_STATIC,7,5,63,35
+    CONTROL         "Standard",IDC_DECBPP_RADIO4,"Button",BS_AUTORADIOBUTTON | WS_GROUP,15,15,45,10
+    CONTROL         "Optimized",IDC_DECBPP_RADIO5,"Button",BS_AUTORADIOBUTTON,15,25,45,10
+    CONTROL         " Error Diffusion",IDC_DECBPP_CHECK1,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,43,110,10
+    CONTROL         "Limit max colors:",IDC_DECBPP_CHECK2,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,55,67,10
+    EDITTEXT        IDC_DECBPP_EDIT1,87,54,22,12,ES_AUTOHSCROLL
+END
+
+IDD_DITHER DIALOG DISCARDABLE  0, 0, 186, 46
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dither"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,129,7,50,16
+    PUSHBUTTON      "Cancel",IDCANCEL,129,23,50,16
+    CONTROL         "Floyd-Steinberg error diffusion",IDC_DITHER_RADIO1,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,7,7,109,10
+    CONTROL         "Ordered dither",IDC_DITHER_RADIO2,"Button",BS_AUTORADIOBUTTON,7,21,61,10
+END
+
+IDD_FFT DIALOG DISCARDABLE  0, 0, 252, 79
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "FFT"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,195,39,50,16
+    PUSHBUTTON      "Cancel",IDCANCEL,195,56,50,16
+    COMBOBOX        IDC_FFT_REAL,7,20,114,114,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_FFT_IMAG,131,20,114,126,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Real",IDC_STATIC,7,7,16,8
+    LTEXT           "Imaginary",IDC_STATIC,131,7,31,8
+    CONTROL         "Inverse",IDC_FFT_CHECK1,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,41,39,10
+    CONTROL         "Compute magnitude",IDC_FFT_CHECK3,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,51,79,10
+    CONTROL         "Force FFT",IDC_FFT_CHECK4,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,61,49,10
+END
+
+IDD_GAMMA DIALOG DISCARDABLE  0, 0, 143, 46
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Gamma"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,86,6,50,16
+    PUSHBUTTON      "Cancel",IDCANCEL,86,23,50,16
+    EDITTEXT        IDC_GAMMA_EDIT1,10,25,51,12,ES_AUTOHSCROLL
+    LTEXT           "Correction [0...5]",IDC_STATIC,10,10,53,8
+END
+
+IDD_HISTO DIALOGEX 0, 0, 186, 115
+STYLE WS_CHILD
+EXSTYLE WS_EX_TOOLWINDOW
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "log",IDC_HISTO_LOG,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                   148,7,30,15
+END
+
+IDD_INCBPP DIALOG DISCARDABLE  0, 0, 132, 71
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Increase Bpp"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,75,5,50,16
+    PUSHBUTTON      "Cancel",IDCANCEL,75,22,50,16
+    CONTROL         "4",IDC_INCBPP_RADIO1,"Button",BS_AUTORADIOBUTTON | WS_GROUP,
+                    15,20,25,10
+    GROUPBOX        "Bpp",-1,5,5,60,60
+    CONTROL         "8",IDC_INCBPP_RADIO2,"Button",BS_AUTORADIOBUTTON,15,35,25,10
+    CONTROL         "24",IDC_INCBPP_RADIO3,"Button",BS_AUTORADIOBUTTON,15,50,25,10
+END
+
+IDD_MIX DIALOG DISCARDABLE  0, 0, 209, 178
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Mix"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,152,143,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,152,158,50,14
+    COMBOBOX        IDC_MIX_DST,34,7,168,108,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Dst :",IDC_STATIC,7,11,16,8
+    LTEXT           "Src :",IDC_STATIC,7,25,16,8
+    COMBOBOX        IDC_MIX_SRC,33,23,169,92,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_MIX_OP,154,54,48,64,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "OpType :",IDC_STATIC,172,41,30,8
+    CONTROL         "",IDC_MIX_PICTURE,"Static",SS_BITMAP | SS_SUNKEN,7,42,16,14
+    PUSHBUTTON      "Preview",IDC_MIX_BUTTON1,152,127,50,14
+    EDITTEXT        IDC_MIX_EDIT1,162,81,40,14,ES_AUTOHSCROLL
+    LTEXT           "X offset :",IDC_STATIC,173,70,29,8
+    LTEXT           "Y offset :",IDC_STATIC,173,98,29,8
+    EDITTEXT        IDC_MIX_EDIT2,162,110,40,14,ES_AUTOHSCROLL
+END
+
+IDD_OPACITY DIALOG DISCARDABLE  0, 0, 143, 46
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Opacity"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,86,6,50,16
+    PUSHBUTTON      "Cancel",IDCANCEL,86,23,50,16
+    EDITTEXT        IDC_OPACITY_EDIT1,10,25,51,12,ES_AUTOHSCROLL
+    LTEXT           "Level [0 ... 255]",IDC_STATIC,10,10,50,8
+END
+
+IDD_OPTIONS DIALOG DISCARDABLE  0, 0, 193, 156
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Options"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,136,7,50,16
+    PUSHBUTTON      "Cancel",IDCANCEL,136,23,50,16
+    LTEXT           "JPEG quality [0 ... 100]",IDC_STATIC,10,12,73,8
+    EDITTEXT        IDC_OPTIONS_EDIT1,96,10,32,12,ES_AUTOHSCROLL
+    LTEXT           "X resolution [DPI]",IDC_STATIC,10,27,56,8
+    EDITTEXT        IDC_OPTIONS_EDIT2,96,25,32,12,ES_AUTOHSCROLL
+    LTEXT           "Y resolution [DPI]",IDC_STATIC,10,42,56,8
+    EDITTEXT        IDC_OPTIONS_EDIT3,96,40,32,12,ES_AUTOHSCROLL
+    GROUPBOX        "TIFF / GIF Encode Option",IDC_STATIC,7,57,121,92
+    CONTROL         "Default - TIF : auto, GIF : RLE",IDC_OPTIONS_RADIO1,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,11,69,112,10
+    CONTROL         "none",IDC_OPTIONS_RADIO2,"Button",BS_AUTORADIOBUTTON,11,80,32,10
+    CONTROL         "TIF : RLE, GIF : LZW",IDC_OPTIONS_RADIO3,"Button",
+                    BS_AUTORADIOBUTTON | WS_DISABLED,11,91,84,10
+    CONTROL         "TIF : Fax",IDC_OPTIONS_RADIO4,"Button",BS_AUTORADIOBUTTON,
+                    11,102,48,10
+    CONTROL         "TIF : Packbits",IDC_OPTIONS_RADIO5,"Button",BS_AUTORADIOBUTTON,
+                    11,113,60,10
+    CONTROL         "TIF : Jpeg",IDC_OPTIONS_RADIO6,"Button",BS_AUTORADIOBUTTON,
+                    11,124,48,10
+    CONTROL         "TIF : LZW",IDC_OPTIONS_RADIO7,"Button",BS_AUTORADIOBUTTON | 
+                    WS_DISABLED,11,136,49,10
+    PUSHBUTTON      "Exif",IDEXIF,136,39,50,16
+END
+
+IDD_PALETTE DIALOGEX 0, 0, 271, 135
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Palette"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,159,7,50,16
+    PUSHBUTTON      "Cancel",IDCANCEL,214,7,50,16
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDFRAME,7,7,132,122,
+                    WS_EX_TRANSPARENT
+    PUSHBUTTON      "Load ...",IDC_PALETTE_LOAD,159,29,50,16
+    PUSHBUTTON      "Save ...",IDC_PALETTE_SAVE,214,29,50,16
+    GROUPBOX        "Load Options",IDC_STATIC,159,52,105,48
+    CONTROL         "Maintain indexes",IDC_PALETTE_RADIO1,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,168,64,69,10
+    CONTROL         "Nearest color matching",IDC_PALETTE_RADIO2,"Button",
+                    BS_AUTORADIOBUTTON,168,75,89,10
+    CONTROL         "Error diffusion dithering",IDC_PALETTE_RADIO3,"Button",
+                    BS_AUTORADIOBUTTON,168,87,87,10
+    CONTROL         "Edit alpha component",IDC_PALETTE_CHECK2,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,168,104,85,10
+    LTEXT           " I = 0, RGBA = (0,0,0,0)",IDC_PALETTE_BAR,143,117,121,12,
+                    SS_SUNKEN
+END
+
+IDD_REPAIR DIALOG DISCARDABLE  0, 0, 186, 61
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Repair"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,129,7,50,16
+    PUSHBUTTON      "Cancel",IDCANCEL,129,23,50,16
+    LTEXT           "Radius",IDC_STATIC,10,27,23,8
+    EDITTEXT        IDC_REPAIR_EDIT2,65,25,38,12,ES_AUTOHSCROLL
+    LTEXT           "Iterations",IDC_STATIC,10,42,30,8
+    EDITTEXT        IDC_REPAIR_EDIT3,65,40,38,12,ES_AUTOHSCROLL
+    LTEXT           "Color Space",IDC_STATIC,7,7,40,8
+    COMBOBOX        IDC_REPAIR_COMBO9,65,7,50,79,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+END
+
+IDD_RESAMPLE DIALOG DISCARDABLE  0, 0, 143, 71
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Resample"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,86,6,50,16
+    PUSHBUTTON      "Cancel",IDCANCEL,86,23,50,16
+    EDITTEXT        IDC_RESAMPLE_EDIT1,10,15,51,12,ES_AUTOHSCROLL
+    LTEXT           "Factor",IDC_STATIC,10,5,21,8
+    CONTROL         "Nearest Pixel",IDC_RESAMPLE_RADIO1,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,7,32,57,10
+    CONTROL         "Bilinear",IDC_RESAMPLE_RADIO2,"Button",BS_AUTORADIOBUTTON,7,43,39,10
+    CONTROL         "Bicubic",IDC_RESAMPLE_RADIO3,"Button",BS_AUTORADIOBUTTON,7,54,39,10
+END
+
+IDD_ROTATE DIALOG DISCARDABLE  0, 0, 143, 46
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Rotate"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,86,6,50,16
+    PUSHBUTTON      "Cancel",IDCANCEL,86,23,50,16
+    EDITTEXT        IDC_ROTATE_EDIT1,10,25,51,12,ES_AUTOHSCROLL
+    LTEXT           "Angle [degrees]",IDC_STATIC,10,10,50,8
+END
+
+IDD_TEXT DIALOG DISCARDABLE  0, 0, 262, 167
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Place text to image"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "OK",IDOK,195,6,59,16
+    PUSHBUTTON      "Cancel",IDCANCEL,195,23,59,16
+    EDITTEXT        IDC_TEXT_EDIT1,7,24,180,56,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_AUTOHSCROLL | ES_WANTRETURN
+    LTEXT           "Text to place:",IDC_STATIC,10,10,177,8
+    PUSHBUTTON      "Font",ID_AGMAGICIP_FONT,195,49,59,14
+    PUSHBUTTON      "Color...",IDC_TEXT_BTN_TXTCOLOR,195,64,59,14
+    PUSHBUTTON      "Color...",IDC_TEXT_BTN_BCKCOLOR,108,95,59,14
+    CONTROL         "Text has background",IDC_TEXT_CHECK1,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,13,98,90,8
+    GROUPBOX        "Background",IDC_STATIC,7,85,174,75
+    CONTROL         "Slider1",IDC_TEXT_SLIDER_OPACITY,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | WS_TABSTOP,61,111,93,20
+    CONTROL         "Slider1",IDC_TEXT_SLIDER_RADIUS,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | WS_TABSTOP,61,131,93,21
+    LTEXT           "Opacity:",IDC_STATIC,14,116,48,12
+    LTEXT           "Round radius:",IDC_STATIC,14,137,48,12
+    LTEXT           "0%",IDC_TEXT_STATIC_OP,160,117,17,13
+    LTEXT           "0%",IDC_TEXT_STATIC_RADIUS,160,138,17,13
+    GROUPBOX        "Alignment",IDC_STATIC,184,85,70,75
+    CONTROL         "centered",IDC_TEXT_RADIO1,"Button",BS_AUTORADIOBUTTON,
+                    195,97,48,11
+    CONTROL         "to left",IDC_TEXT_RADIO2,"Button",BS_AUTORADIOBUTTON,
+                    195,111,50,11
+    CONTROL         "to right",IDC_TEXT_RADIO3,"Button",BS_AUTORADIOBUTTON,
+                    195,125,50,11
+END
+
+IDD_THRESHOLD DIALOG DISCARDABLE  0, 0, 143, 46
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Threshold"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,86,6,50,16
+    PUSHBUTTON      "Cancel",IDCANCEL,86,23,50,16
+    EDITTEXT        IDC_THRESHOLD_EDIT1,10,25,51,12,ES_AUTOHSCROLL
+    LTEXT           "Level [0 ... 255]",IDC_STATIC,10,10,50,8
+END
+
+
+IDD_DWNURL DIALOGEX 0, 0, 287, 46
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Download from URL"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Download",IDOK,230,7,50,16
+    PUSHBUTTON      "Cancel",IDCANCEL,230,23,50,16
+    LTEXT           "URL",IDC_STATIC,7,10,16,8
+    LTEXT           "Status",IDC_STATIC,7,26,21,8
+    LTEXT           "",IDC_DWNURL_STATUS,38,25,183,11,0,WS_EX_STATICEDGE
+    EDITTEXT        IDC_DWNURL_URL,38,7,183,14,ES_AUTOHSCROLL
+END
+
+IDD_AGMAGICIPABOUTBOX DIALOG DISCARDABLE  0, 0, 273, 82
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About AGmagicIP"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,108,61,50,14
+    LTEXT           "AGmagicIP 1.0.0 Copyright by Nguyen Phuoc Loc 2004",
+                    IDC_STATIC,48,12,177,10
+    CTEXT           "This is Image Processing Toolkit that supports all image formats and all algorithms",
+                    IDC_STATIC,5,31,264,16
+END
+
+IDD_AGMAGICIPDLL_SERIAL DIALOG DISCARDABLE  0, 0, 273, 97
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "AGmagicIP DLL Serial"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,109,74,50,14
+    LTEXT           "Your application used: AGmagicIP DLL 1.0.0 Copyright by Nguyen Phuoc Loc 2004",
+                    IDC_STATIC,4,12,266,8
+    CTEXT           "This is Image Processing DLL that supports all image formats and all algorithms",
+                    IDC_STATIC,5,27,264,9
+    LTEXT           "You must enter serial key: ",IDC_STATIC,29,49,83,8
+    EDITTEXT        IDC_AGMAGICDLL_SERIALKEY,119,48,85,12,ES_PASSWORD | 
+                    ES_AUTOHSCROLL
+END
+
+IDD_AGMAGICIP_DEFAULT DIALOG DISCARDABLE  0, 0, 250, 100
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About AGmagicIP"
+FONT 8, "MS Sans Serif"
+BEGIN
+END
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_CAPTURE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 290
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 74
+    END
+
+    IDD_COLORIZE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 159
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 107
+    END
+
+    IDD_COMBINE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 235
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 112
+    END
+
+    IDD_DECBPP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 124
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 99
+    END
+
+    IDD_DITHER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 39
+    END
+
+    IDD_FFT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 245
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 72
+    END
+
+    IDD_GAMMA, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 136
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 39
+    END
+
+    IDD_HISTO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 108
+    END
+
+    IDD_INCBPP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 125
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 64
+    END
+
+    IDD_MIX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 202
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 171
+    END
+
+    IDD_OPACITY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 136
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 39
+    END
+
+    IDD_OPTIONS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 186
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 149
+    END
+
+    IDD_PALETTE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 264
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 129
+    END
+
+    IDD_REPAIR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 52
+    END
+
+    IDD_RESAMPLE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 136
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 64
+    END
+
+    IDD_ROTATE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 136
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 39
+    END
+
+    IDD_TEXT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 254
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 160
+    END
+
+    IDD_THRESHOLD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 136
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 39
+    END
+
+    IDD_DWNURL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 280
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 39
+    END
+
+    IDD_AGMAGICIPABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 266
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 75
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_COMBINE DLGINIT
+BEGIN
+    IDC_COMBINE_COMBO5, 0x403, 5, 0
+0x7267, 0x7961, "\000" 
+    IDC_COMBINE_COMBO5, 0x403, 4, 0
+0x6572, 0x0064, 
+    IDC_COMBINE_COMBO5, 0x403, 6, 0
+0x7267, 0x6565, 0x006e, 
+    IDC_COMBINE_COMBO5, 0x403, 5, 0
+0x6c62, 0x6575, "\000" 
+    IDC_COMBINE_COMBO6, 0x403, 5, 0
+0x7267, 0x7961, "\000" 
+    IDC_COMBINE_COMBO6, 0x403, 4, 0
+0x6572, 0x0064, 
+    IDC_COMBINE_COMBO6, 0x403, 6, 0
+0x7267, 0x6565, 0x006e, 
+    IDC_COMBINE_COMBO6, 0x403, 5, 0
+0x6c62, 0x6575, "\000" 
+    IDC_COMBINE_COMBO7, 0x403, 5, 0
+0x7267, 0x7961, "\000" 
+    IDC_COMBINE_COMBO7, 0x403, 4, 0
+0x6572, 0x0064, 
+    IDC_COMBINE_COMBO7, 0x403, 6, 0
+0x7267, 0x6565, 0x006e, 
+    IDC_COMBINE_COMBO7, 0x403, 5, 0
+0x6c62, 0x6575, "\000" 
+    IDC_COMBINE_COMBO8, 0x403, 5, 0
+0x7267, 0x7961, "\000" 
+    IDC_COMBINE_COMBO8, 0x403, 4, 0
+0x6572, 0x0064, 
+    IDC_COMBINE_COMBO8, 0x403, 6, 0
+0x7267, 0x6565, 0x006e, 
+    IDC_COMBINE_COMBO8, 0x403, 5, 0
+0x6c62, 0x6575, "\000" 
+    IDC_COMBINE_COMBO9, 0x403, 4, 0
+0x4752, 0x0042, 
+    IDC_COMBINE_COMBO9, 0x403, 4, 0
+0x5348, 0x004c, 
+    IDC_COMBINE_COMBO9, 0x403, 4, 0
+0x5559, 0x0056, 
+    IDC_COMBINE_COMBO9, 0x403, 4, 0
+0x4959, 0x0051, 
+    IDC_COMBINE_COMBO9, 0x403, 4, 0
+0x5958, 0x005a, 
+    0
+END
+
+IDD_REPAIR DLGINIT
+BEGIN
+    IDC_REPAIR_COMBO9, 0x403, 4, 0
+0x4752, 0x0042, 
+    IDC_REPAIR_COMBO9, 0x403, 4, 0
+0x5348, 0x004c, 
+    IDC_REPAIR_COMBO9, 0x403, 4, 0
+0x5559, 0x0056, 
+    IDC_REPAIR_COMBO9, 0x403, 4, 0
+0x4959, 0x0051, 
+    IDC_REPAIR_COMBO9, 0x403, 4, 0
+0x5958, 0x005a, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+//Cac String default da duoc MFC dinh nghia
+/*
+STRINGTABLE DISCARDABLE
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+    AFX_IDS_MDICHILD        "Activate this window"
+    AFX_IDS_PREVIEW_CLOSE   "Close print preview mode\nCancel Preview"
+
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open an existing document\nOpen"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+    ID_FILE_PAGE_SETUP      "Change the printing options\nPage Setup"
+    ID_FILE_PRINT_SETUP     "Change the printer and printing options\nPrint Setup"
+    ID_FILE_PRINT           "Print the active document\nPrint"
+    ID_FILE_PRINT_PREVIEW   "Display full pages\nPrint Preview"
+
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+    ID_FILE_MRU_FILE5       "Open this document"
+    ID_FILE_MRU_FILE6       "Open this document"
+    ID_FILE_MRU_FILE7       "Open this document"
+    ID_FILE_MRU_FILE8       "Open this document"
+    ID_FILE_MRU_FILE9       "Open this document"
+    ID_FILE_MRU_FILE10      "Open this document"
+    ID_FILE_MRU_FILE11      "Open this document"
+    ID_FILE_MRU_FILE12      "Open this document"
+    ID_FILE_MRU_FILE13      "Open this document"
+    ID_FILE_MRU_FILE14      "Open this document"
+    ID_FILE_MRU_FILE15      "Open this document"
+    ID_FILE_MRU_FILE16      "Open this document"
+
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+
+    ID_WINDOW_NEW           "Open another window for the active document\nNew Window"
+    ID_WINDOW_ARRANGE       "Arrange icons at the bottom of the window\nArrange Icons"
+    ID_WINDOW_CASCADE       "Arrange windows so they overlap\nCascade Windows"
+    ID_WINDOW_TILE_HORZ     "Arrange windows as non-overlapping tiles\nTile Windows"
+    ID_WINDOW_TILE_VERT     "Arrange windows as non-overlapping tiles\nTile Windows"
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+*/
+
+STRINGTABLE DISCARDABLE
+BEGIN
+    AFX_IDS_IDLEMESSAGE     "Ready"
+    AFX_IDS_APP_TITLE       "AGmagicIP"
+END
+
+
+STRINGTABLE PRELOAD DISCARDABLE
+BEGIN
+    IDR_AGMAGICIPMAINFRAME                        "AGmagicIP"
+    IDR_AGMAGICIPTYPE                             "\nAGmagicIP\nAGmagicIP\n\n\nAGmagicIP.Document\nAGmagicIP Document"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+    ID_AGMAGICIPINDICATOR1                        " "
+    ID_AGMAGICIPINDICATOR2                        "                            "
+    ID_AGMAGICIPINDICATOR3                        "        "
+    ID_AGMAGICIPINDICATOR4                        "                            "
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+    ID_FILE_CAPTURE                             "Capture..."
+    ID_FILE_SELECTSOURCE                        "Select Source...\nSelect Source..."
+    ID_FILE_ACQUIRE                             "Acquire from Twain source\nAcquire"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+    ID_VIEW_HISTOGRAM                           "Histogram\nHistogram"
+    ID_VIEW_PALETTE                             "Palette\nPalette"
+    ID_VIEW_TOOLS_MOVE                          "Move\nMove"
+    ID_VIEW_TOOLS_SELECT                        "Select\nSelect"
+    ID_VIEW_TOOLS_ZOOM                          "Zoom\nZoom"
+    ID_VIEW_TOOLS_TEXT                          "Text"
+    ID_VIEW_MENUSTYLE_NORMAL                    "Default"
+    ID_VIEW_MENUSTYLE_XP                        "XP"
+    ID_STRETCH_MODE                             "Set stretch mode\nStretch mode"
+    ID_VIEW_FULLSCREEN                          "Full Screen"
+    ID_VIEW_ZOOMIN                              "Zoom In\nZoom In"
+    ID_VIEW_ZOOMOUT                             "Zoom Out\nZoom Out"
+    ID_VIEW_NORMALVIEWING11                     "Normal Viewing (1:1)\nNormal View"
+END
+
+
+STRINGTABLE DISCARDABLE
+BEGIN
+    ID_AGMAGICIP_RESOURCES                        "Resources"
+    ID_AGMAGICIP_FROM_BITMAP                      "Make Image from Resource\nImage from Resource"
+    ID_AGMAGICIP_LOADJPEGRESOURCE                 "Load JPEG Resource"
+    ID_AGMAGICIP_LOADICONRESOURCE                 "Load Icon Resource"
+    ID_AGMAGICIP_LOADGIFRESOURCE                  "Load Gif Resource"
+    ID_AGMAGICIP_LOADPNGRESOURCE                  "Load Png Resource"
+    ID_AGMAGICIP_LOADTIFRESOURCE                  "Load Tif Resource"
+
+    ID_AGMAGICIP_DEMOSAVEMULTIPAGETIFF            "Creates a multi page TIF file "
+    ID_AGMAGICIP_DEMOSAVEANIMATEDGIF              "Demo Save Animated GIF"
+    ID_AGMAGICIP_DOWNLOADFROMURL                  "Download from URL "
+    ID_AGMAGICIP_DEMOCREATEFROMARRAY              "CreateFromArray"
+
+    ID_AGMAGICIP_MIRROR                           "Mirror\nMirror"
+    ID_AGMAGICIP_FLIP                             "Flip\nFlip"
+    ID_AGMAGICIP_ROTATEL                          "Rotate Left"
+    ID_AGMAGICIP_ROTATER                          "Rotate Right"
+    ID_AGMAGICIP_ROTATE                           "Rotate"
+
+    ID_AGMAGICIP_RESAMPLE                         "Resample"
+    ID_AGMAGICIP_CROP                             "Crop"
+
+    ID_AGMAGICIP_GRAYSCALE                        "Gray Scale"
+    ID_AGMAGICIP_DITHER                           "Dither"
+    ID_AGMAGICIP_FFT                              "FFT"
+    ID_AGMAGICIP_REPAIR                           "Repair..."
+    ID_AGMAGICIP_MIX                              "Mix"
+
+    ID_AGMAGICIP_OPTIONS                          "Options..."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+    ID_EFFECTS_BLUR_BLUR                        "Blur"
+    ID_EFFECTS_BLUR_SOFTEN                      "Soften"
+    ID_EFFECTS_BLUR_GAUSSIAN3X3                 "Gaussian 3x3"
+    ID_EFFECTS_BLUR_GAUSSIAN5X5                 "Gaussian 5x5"
+
+    ID_EFFECTS_SHARPEN_SHARPEN                  "Sharpen"
+    ID_EFFECTS_SHARPEN_UNSHARPMASK              "Unsharp Mask"
+
+    ID_EFFECTS_EDGE_DILATE                      "Dilate"
+    ID_EFFECTS_EDGE_ERODE                       "Erode"
+    ID_EFFECTS_EDGE_EDGE                        "Edge"
+
+    ID_EFFECTS_NOISE_ADDNOISE                   "Noise"
+    ID_EFFECTS_NOISE_JITTER                     "Jitter"
+    ID_EFFECTS_NOISE_MEDIAN                     "Median"
+
+    ID_EFFECTS_ARTISTIC_CONTOUR                 "Contour"
+
+    ID_EFFECTS_GEOMETRIC_PINCH                  "Pinch"
+    ID_EFFECTS_GEOMETRIC_PUNCH                  "Punch"
+    ID_EFFECTS_GEOMETRIC_SWIRL                  "Twirl"
+    ID_EFFECTS_GEOMETRIC_CYLINDER               "Cylinder"
+    ID_EFFECTS_GEOMETRIC_BATHROOM               "Bathroom"
+    ID_EFFECTS_GEOMETRIC_ELLIPSE                "Ellipse transform\nEllipse transform"
+
+    ID_EFFECTS_TEXTURE_EMBOSS                   "Emboss"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+    ID_COLORS_ADJUST_LIGHTEN                    "Lighten"
+    ID_COLORS_ADJUST_DARKEN                     "Darken"
+    ID_COLORS_ADJUST_CONTRAST                   "More Contrast"
+    ID_COLORS_ADJUST_LESSCONTRAST               "Less Contrast"
+    ID_COLORS_ADJUST_THRESHOLD                  "Threshold"
+    ID_COLORS_COLORIZE                          "Colorize..."
+    ID_COLORS_GAMMA                             "Gamma"
+
+    ID_COLORS_HISTOGRAM_STRETCH                 "Stretch"
+    ID_COLORS_HISTOGRAM_STRETCH1                "Stretch1"
+    ID_COLORS_HISTOGRAM_STRETCH2                "Stretch2"
+    ID_COLORS_HISTOGRAM_EQUALIZE                "Equalize"
+    ID_COLORS_HISTOGRAM_NORMALIZE               "Normalize"
+    ID_COLORS_HISTOGRAM_LOG                     "Log"
+    ID_COLORS_HISTOGRAM_ROOT                    "Root"
+
+    ID_COLORS_NEGATIVE                          "Negative\nNegative"
+    ID_COLORS_PSEUDOCOLORS                      "Pseudo Colors"
+
+    ID_COLORS_SPLIT                             "Split"
+    ID_COLORS_SPLIT_SPLITRGB                    "Split RGB"
+    ID_COLORS_SPLIT_SPLITHSL                    "Split HSL"
+    ID_COLORS_SPLIT_SPLITYUV                    "Split YUV"
+    ID_COLORS_SPLIT_SPLITYIQ                    "Split YIQ"
+    ID_COLORS_SPLIT_SPLITXYZ                    "Split XYZ"
+    ID_COLORS_SPLIT_SPLITCMYK                   "Split to CMYK"
+    ID_COLORS_COMBINE                           "Combine"
+
+    ID_COLORS_SPLITCHANNELS                     "Split Channels"
+
+    ID_COLORS_SETTRANSPARENCY                   "Set Transparency... (click on the image)"
+    ID_COLORS_REMOVETRANSPARENCY                "Remove Transparency"
+    ID_COLORS_ALPHA_OPACITY                     "Opacity"
+    ID_COLORS_ALPHA_REMOVEALPHACHANNEL          "Remove Alpha Channel"
+    ID_COLORS_ALPHA_ALPHACHANNEL_SPLIT          "Split"
+    ID_COLORS_ALPHA_ALPHASTRIP                  "Strip Alpha"
+    ID_COLORS_ALPHA_INVERTALPHA                 "Invert Alpha Channel"
+    ID_COLORS_ALPHA_ALPHAPALETTETOGGLE          "Toggle Alpha Palette "
+    ID_COLORS_ALPHA_ALPHACREATE                 "Create from lightness"
+
+    ID_COLORS_DECREASEBPP                       "Decrease Bpp..."
+    ID_COLORS_INCREASEBPP                       "Increase Bpp..."
+END
+
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_DUPLICATE                         "Duplicate\nDuplicate"
+    ID_WINDOW_CLOSEALL                          "Close all"
+END
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,0
+ PRODUCTVERSION 1,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "000004b0"
+        BEGIN
+            VALUE "Comments", "AGmagicIP  Extension MFC DLL\0"
+            VALUE "CompanyName", "An Giang Universitas - www.agu.edu.vn\0"
+            VALUE "FileDescription", "AGmagicIP\0"
+            VALUE "FileVersion", "1, 0, 0, 0\0"
+            VALUE "InternalName", "AGmagicIP\0"
+            VALUE "LegalCopyright", "Copyright © 2004\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "AGmagicIP.dll\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "AGmagicIP\0"
+            VALUE "ProductVersion", "1, 0, 0, 0\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0, 1200
+    END
+END
+
+//#endif	//#if AGMAGIC_SUPPORT_MFC

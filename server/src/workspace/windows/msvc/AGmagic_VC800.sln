@@ -1,0 +1,131 @@
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AGmagicIP", "..\..\..\image\ip\project\windows\msvc\AGmagicIP_VC800.vcproj", "{86C29C85-66BD-4B04-B0F8-F0DCAADCC6C3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{000771EC-F9BC-416F-80DD-8F366644F41A} = {000771EC-F9BC-416F-80DD-8F366644F41A}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AGmagicIS", "..\..\..\image\is\project\windows\msvc\AGmagicIS_VC800.vcproj", "{51926635-44C7-4A6D-909A-11E72F2FE82C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{86C29C85-66BD-4B04-B0F8-F0DCAADCC6C3} = {86C29C85-66BD-4B04-B0F8-F0DCAADCC6C3}
+		{000771EC-F9BC-416F-80DD-8F366644F41A} = {000771EC-F9BC-416F-80DD-8F366644F41A}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AGmagicMuP", "..\..\..\music\mup\project\windows\msvc\AGmagicMuP_VC800.vcproj", "{BE6C2657-CEFA-4747-9A85-284E2DF49EA6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{000771EC-F9BC-416F-80DD-8F366644F41A} = {000771EC-F9BC-416F-80DD-8F366644F41A}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AGmagicSP", "..\..\..\sound\sp\project\windows\msvc\AGmagicSP_VC800.vcproj", "{56D7F3CA-0E18-42E4-955A-9A69D9A0F959}"
+	ProjectSection(ProjectDependencies) = postProject
+		{000771EC-F9BC-416F-80DD-8F366644F41A} = {000771EC-F9BC-416F-80DD-8F366644F41A}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AGmagicStorageTool", "..\..\..\common\util\AGmagicStorageTool\project\windows\msvc\AGmagicStorageTool_VC800.vcproj", "{6E427792-A36A-41C2-86A2-5586CDD1546D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{000771EC-F9BC-416F-80DD-8F366644F41A} = {000771EC-F9BC-416F-80DD-8F366644F41A}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AGmagicUtil", "..\..\..\common\lib\agutil\project\windows\msvc\AGmagicUtil_VC800.vcproj", "{000771EC-F9BC-416F-80DD-8F366644F41A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AGmagicVP", "..\..\..\video\vp\project\windows\msvc\AGmagicVP_VC800.vcproj", "{3EEA5ADE-B11E-4F7A-B2BC-D9EDF8FE455E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{000771EC-F9BC-416F-80DD-8F366644F41A} = {000771EC-F9BC-416F-80DD-8F366644F41A}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AGmagicISDemo", "..\..\..\image\is\demo\isdemo\project\windows\msvc\AGmagicISDemo_VC800.vcproj", "{B621C148-08F4-4E2B-9948-76D974C7901A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{ABA94506-803D-4F23-9D13-3E587D0571A3} = {ABA94506-803D-4F23-9D13-3E587D0571A3}
+		{C846C062-F064-49D7-B5C3-4BE174E8B107} = {C846C062-F064-49D7-B5C3-4BE174E8B107}
+		{CF02FA12-3F46-4BA7-A5E3-531FFEA6CE27} = {CF02FA12-3F46-4BA7-A5E3-531FFEA6CE27}
+		{000771EC-F9BC-416F-80DD-8F366644F41A} = {000771EC-F9BC-416F-80DD-8F366644F41A}
+		{86C29C85-66BD-4B04-B0F8-F0DCAADCC6C3} = {86C29C85-66BD-4B04-B0F8-F0DCAADCC6C3}
+		{51926635-44C7-4A6D-909A-11E72F2FE82C} = {51926635-44C7-4A6D-909A-11E72F2FE82C}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2A058373-3F7F-4F7D-8070-DA8C19D4FCF6}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\common\include\AG_PRIVATE_DECREASE_DEFINED.h = ..\..\..\common\include\AG_PRIVATE_DECREASE_DEFINED.h
+		..\..\..\common\include\AG_PRIVATE_INCREASE_DEFINED.h = ..\..\..\common\include\AG_PRIVATE_INCREASE_DEFINED.h
+		..\..\..\common\include\AGBEGIN_INCLUDE_LIBRARY.h = ..\..\..\common\include\AGBEGIN_INCLUDE_LIBRARY.h
+		..\..\..\common\include\AGEND_INCLUDE_LIBRARY.h = ..\..\..\common\include\AGEND_INCLUDE_LIBRARY.h
+		..\..\..\common\include\AGmagicDB.h = ..\..\..\common\include\AGmagicDB.h
+		..\..\..\common\include\AGmagicDefs.h = ..\..\..\common\include\AGmagicDefs.h
+		..\..\..\common\include\AGmagicLib.h = ..\..\..\common\include\AGmagicLib.h
+		..\..\..\common\include\AGmagicOSVer.h = ..\..\..\common\include\AGmagicOSVer.h
+		..\..\..\common\include\AGmagicType.h = ..\..\..\common\include\AGmagicType.h
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AGmagicUtilUI", "..\..\..\common\lib\agutilui\project\windows\msvc\AGmagicUtilUI_VC800.vcproj", "{CF02FA12-3F46-4BA7-A5E3-531FFEA6CE27}"
+	ProjectSection(ProjectDependencies) = postProject
+		{000771EC-F9BC-416F-80DD-8F366644F41A} = {000771EC-F9BC-416F-80DD-8F366644F41A}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AGmagicIPUI", "..\..\..\image\ipui\project\windows\msvc\AGmagicIPUI_VC800.vcproj", "{ABA94506-803D-4F23-9D13-3E587D0571A3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CF02FA12-3F46-4BA7-A5E3-531FFEA6CE27} = {CF02FA12-3F46-4BA7-A5E3-531FFEA6CE27}
+		{86C29C85-66BD-4B04-B0F8-F0DCAADCC6C3} = {86C29C85-66BD-4B04-B0F8-F0DCAADCC6C3}
+		{000771EC-F9BC-416F-80DD-8F366644F41A} = {000771EC-F9BC-416F-80DD-8F366644F41A}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AGmagicISUI", "..\..\..\image\isui\project\windows\msvc\AGmagicISUI_VC800.vcproj", "{C846C062-F064-49D7-B5C3-4BE174E8B107}"
+	ProjectSection(ProjectDependencies) = postProject
+		{ABA94506-803D-4F23-9D13-3E587D0571A3} = {ABA94506-803D-4F23-9D13-3E587D0571A3}
+		{CF02FA12-3F46-4BA7-A5E3-531FFEA6CE27} = {CF02FA12-3F46-4BA7-A5E3-531FFEA6CE27}
+		{000771EC-F9BC-416F-80DD-8F366644F41A} = {000771EC-F9BC-416F-80DD-8F366644F41A}
+		{86C29C85-66BD-4B04-B0F8-F0DCAADCC6C3} = {86C29C85-66BD-4B04-B0F8-F0DCAADCC6C3}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{86C29C85-66BD-4B04-B0F8-F0DCAADCC6C3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{86C29C85-66BD-4B04-B0F8-F0DCAADCC6C3}.Debug|Win32.Build.0 = Debug|Win32
+		{86C29C85-66BD-4B04-B0F8-F0DCAADCC6C3}.Release|Win32.ActiveCfg = Release|Win32
+		{86C29C85-66BD-4B04-B0F8-F0DCAADCC6C3}.Release|Win32.Build.0 = Release|Win32
+		{51926635-44C7-4A6D-909A-11E72F2FE82C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{51926635-44C7-4A6D-909A-11E72F2FE82C}.Debug|Win32.Build.0 = Debug|Win32
+		{51926635-44C7-4A6D-909A-11E72F2FE82C}.Release|Win32.ActiveCfg = Release|Win32
+		{51926635-44C7-4A6D-909A-11E72F2FE82C}.Release|Win32.Build.0 = Release|Win32
+		{BE6C2657-CEFA-4747-9A85-284E2DF49EA6}.Debug|Win32.ActiveCfg = Debug|Win32
+		{BE6C2657-CEFA-4747-9A85-284E2DF49EA6}.Debug|Win32.Build.0 = Debug|Win32
+		{BE6C2657-CEFA-4747-9A85-284E2DF49EA6}.Release|Win32.ActiveCfg = Release|Win32
+		{BE6C2657-CEFA-4747-9A85-284E2DF49EA6}.Release|Win32.Build.0 = Release|Win32
+		{56D7F3CA-0E18-42E4-955A-9A69D9A0F959}.Debug|Win32.ActiveCfg = Debug|Win32
+		{56D7F3CA-0E18-42E4-955A-9A69D9A0F959}.Debug|Win32.Build.0 = Debug|Win32
+		{56D7F3CA-0E18-42E4-955A-9A69D9A0F959}.Release|Win32.ActiveCfg = Release|Win32
+		{56D7F3CA-0E18-42E4-955A-9A69D9A0F959}.Release|Win32.Build.0 = Release|Win32
+		{6E427792-A36A-41C2-86A2-5586CDD1546D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6E427792-A36A-41C2-86A2-5586CDD1546D}.Debug|Win32.Build.0 = Debug|Win32
+		{6E427792-A36A-41C2-86A2-5586CDD1546D}.Release|Win32.ActiveCfg = Release|Win32
+		{6E427792-A36A-41C2-86A2-5586CDD1546D}.Release|Win32.Build.0 = Release|Win32
+		{000771EC-F9BC-416F-80DD-8F366644F41A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{000771EC-F9BC-416F-80DD-8F366644F41A}.Debug|Win32.Build.0 = Debug|Win32
+		{000771EC-F9BC-416F-80DD-8F366644F41A}.Release|Win32.ActiveCfg = Release|Win32
+		{000771EC-F9BC-416F-80DD-8F366644F41A}.Release|Win32.Build.0 = Release|Win32
+		{3EEA5ADE-B11E-4F7A-B2BC-D9EDF8FE455E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3EEA5ADE-B11E-4F7A-B2BC-D9EDF8FE455E}.Debug|Win32.Build.0 = Debug|Win32
+		{3EEA5ADE-B11E-4F7A-B2BC-D9EDF8FE455E}.Release|Win32.ActiveCfg = Release|Win32
+		{3EEA5ADE-B11E-4F7A-B2BC-D9EDF8FE455E}.Release|Win32.Build.0 = Release|Win32
+		{B621C148-08F4-4E2B-9948-76D974C7901A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B621C148-08F4-4E2B-9948-76D974C7901A}.Release|Win32.ActiveCfg = Release|Win32
+		{CF02FA12-3F46-4BA7-A5E3-531FFEA6CE27}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CF02FA12-3F46-4BA7-A5E3-531FFEA6CE27}.Debug|Win32.Build.0 = Debug|Win32
+		{CF02FA12-3F46-4BA7-A5E3-531FFEA6CE27}.Release|Win32.ActiveCfg = Release|Win32
+		{CF02FA12-3F46-4BA7-A5E3-531FFEA6CE27}.Release|Win32.Build.0 = Release|Win32
+		{ABA94506-803D-4F23-9D13-3E587D0571A3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{ABA94506-803D-4F23-9D13-3E587D0571A3}.Debug|Win32.Build.0 = Debug|Win32
+		{ABA94506-803D-4F23-9D13-3E587D0571A3}.Release|Win32.ActiveCfg = Release|Win32
+		{ABA94506-803D-4F23-9D13-3E587D0571A3}.Release|Win32.Build.0 = Release|Win32
+		{C846C062-F064-49D7-B5C3-4BE174E8B107}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C846C062-F064-49D7-B5C3-4BE174E8B107}.Debug|Win32.Build.0 = Debug|Win32
+		{C846C062-F064-49D7-B5C3-4BE174E8B107}.Release|Win32.ActiveCfg = Release|Win32
+		{C846C062-F064-49D7-B5C3-4BE174E8B107}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

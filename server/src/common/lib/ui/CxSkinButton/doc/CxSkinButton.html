@@ -1,0 +1,2618 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0054)http://www.codeproject.com/buttonctrl/cxskinbutton.asp -->
+<HTML><HEAD><TITLE>The Code Project - CxSkinButton - Button Controls</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META http-equiv=Reply-to content=mailto:webmaster@codeproject.com>
+<META content="Free source code and tutorials for Windows developers." 
+name=Description>
+<META 
+content="Free source code, Button Controls, Visual C++, MFC, Windows, Control, Dialog, MFC" 
+name=keywords>
+<META 
+content="Article content copyright Davide Pizzolato, 2001, everthing else Copyright © CodeProject, 1999-2004, All Rights Reserved." 
+name=Copyright><LINK href="/favicon.ico" type=image/ico rel=icon><LINK 
+href="/favicon.ico" rel="SHORTCUT ICON"><LINK 
+href="CxSkinButton_files/global.css" type=text/css rel=stylesheet>
+<SCRIPT language=javascript src="CxSkinButton_files/oncopy.js"></SCRIPT>
+
+<META content="MSHTML 6.00.3790.0" name=GENERATOR></HEAD>
+<BODY oncopy="return copyCode();" text=black vLink=purple aLink=red link=blue 
+bgColor=white leftMargin=3 topMargin=3>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#ff9900 border=0>
+  <TBODY>
+  <TR>
+    <TD width="100%">
+      <TABLE cellSpacing=1 cellPadding=0 width="100%" bgColor=#ff9900 
+        border=0><TBODY>
+        <TR>
+          <TD vAlign=top><A href="http://www.codeproject.com/"><IMG height=72 
+            alt="The Code Project" src="CxSkinButton_files/logo225x72.gif" 
+            width=225 border=0></A></TD>
+          <TD align=right><SPAN id=AdBanner4><A 
+            href="http://www.codeproject.com/script/admentor/ads.asp"><IMG 
+            height=60 alt="View our advertisers" 
+            src="CxSkinButton_files/sponsors.gif" width=20 border=1></A>
+            <SCRIPT language=javascript>document.write("<a href=\"/script/admentor/admentorredir.asp?id=203&way=ban\" target=_blank><img src=\"/script/admentor/include/ServeAd.aspx?File=%2Fscript%2Fadmentor%2Fimages%2FSoftwareValidator%2Egif&C=False&id=203\" alt=\"Memory Validator - Faster leak detection, better analysis (Special Launch Offer! $299, Save $100)\" border=0 width=468 height=60></a>");</SCRIPT>
+            <A href="http://www.codeproject.com/info/mediakit"><IMG height=60 
+            alt="Advertise on the CodeProject" 
+            src="CxSkinButton_files/advertise.gif" width=20 
+          border=1></A></SPAN></TD></TR>
+        <TR>
+          <TD bgColor=#fbedbb colSpan=2>
+            <TABLE cellPadding=3 width="100%" bgColor=#fbedbb border=0>
+              <TBODY>
+              <TR vAlign=top>
+                <TD width="100%"><FONT style="FONT-SIZE: 8pt"><A 
+                  href="http://www.codeproject.com/?cat=1">All Topics</A>, <A 
+                  href="http://www.codeproject.com/?cat=2">MFC / C++</A> 
+                  &gt;&gt; <A 
+                  href="http://www.codeproject.com/buttonctrl/">Button 
+                  Controls</A> &gt;&gt; <A 
+                  href="http://www.codeproject.com/buttonctrl/#Owner%2Ddraw+buttons">Owner-draw 
+                  buttons</A></FONT><BR><BR><B><FONT style="FONT-SIZE: 16pt" 
+                  size=4>CxSkinButton</FONT></B><BR><B>By <A 
+                  href="http://www.codeproject.com/script/profile/whos_who.asp?id=9566">Davide 
+                  Pizzolato</A> </B><BR><BR><FONT style="FONT-SIZE: 9pt">A 
+                  skinned button class with clipping region, tooltip and mouse 
+                  tracking&nbsp;</FONT> </TD>
+                <TD vAlign=top align=right>
+                  <TABLE cellSpacing=0 cellPadding=1 width=200 border=0>
+                    <TBODY>
+                    <TR vAlign=top>
+                      <TD>&nbsp;</TD>
+                      <TD class=SmallText>C++ (VC6)<BR>Windows (Win95, Win98, 
+                        NT4, Win2K)<BR>MFC, Win32, VS<BR>Dev</TD></TR>
+                    <TR>
+                      <TD>&nbsp;</TD>
+                      <TD class=SmallText noWrap>Posted 20 Mar 2001</TD></TR>
+                    <TR>
+                      <TD>&nbsp;</TD>
+                      <TD class=SmallText>Updated 19 Jun 2003</TD></TR>
+                    <TR vAlign=top>
+                      <TD><IMG height=16 src="CxSkinButton_files/hlp.gif" 
+                        width=16></TD>
+                      <TD class=SmallText noWrap><A 
+                        href="http://www.codeproject.com/script/Articles/list_articles.asp?userid=9566">Articles 
+                        by this author</A></TD></TR>
+                    <TR vAlign=top>
+                      <TD></TD>
+                      <TD class=SmallText noWrap><B>159,787</B> 
+                    views</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD colSpan=2>
+            <TABLE id=tblSiteToolbar cellSpacing=0 cellPadding=1 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <FORM name=Search action=/info/search.asp method=post>
+                <TD vAlign=top align=left width="100%">
+                  <TABLE cellSpacing=0 cellPadding=1 border=0>
+                    <TBODY>
+                    <TR vAlign=center>
+                      <TD class=smallText><B><FONT 
+                        color=white>Search:</FONT></B></TD>
+                      <TD class=navbar noWrap><INPUT class=smallText 
+                        maxLength=255 size=18 name=target></TD>
+                      <TD vAlign=top><SELECT class=smallText name=st> 
+                          <OPTION value=kw selected>Articles</OPTION> <OPTION 
+                          value=au>Authors</OPTION></SELECT></TD>
+                      <TD><INPUT class=formButton type=submit value=Go></TD></TR></TBODY></TABLE></TD></FORM>
+                <TD>
+                  <DIV id=MenuPos 
+                  style="WIDTH: 380px; POSITION: relative; HEIGHT: 20px">
+                  <TABLE height=20 cellSpacing=0 cellPadding=2 width=375>
+                    <TBODY>
+                    <TR>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/info/faq.asp">Help!</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/info/latest.asp">Articles</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/script/comments/forums.asp">Message 
+                        Boards</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/store/">StoreFront</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/lounge.asp">Lounge</A></TD></TR></TBODY></TABLE></DIV></TD></TR></TBODY></TABLE>
+            <SCRIPT type=text/javascript>function Go(){return}</SCRIPT>
+
+            <SCRIPT src="CxSkinButton_files/cpmenu_var.js" 
+            type=text/javascript></SCRIPT>
+
+            <SCRIPT src="CxSkinButton_files/menu10_com.js" 
+            type=text/javascript></SCRIPT>
+          </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=1 border=0>
+  <TBODY>
+  <TR vAlign=top>
+    <TD vAlign=top bgColor=#fbedbb rowSpan=2>
+      <TABLE cellSpacing=0 cellPadding=0 border=0>
+        <SCRIPT language=javascript>
+function ErrorHandle() {}
+window.onerror = ErrorHandle;
+
+function OnNLSubmit(option)
+{
+	if (option=="up")
+		document.subForm.action = "/script/profile/modify.asp?ct=%2Fbuttonctrl%2Fcxskinbutton%2Easp";
+	else if (option=="in")
+		document.subForm.action = "/script/profile/process_logon.asp?ct=%2Fbuttonctrl%2Fcxskinbutton%2Easp";
+	document.subForm.submit();
+	return true;
+}
+</SCRIPT>
+
+        <TBODY>
+        <TR>
+          <TD>
+            <TABLE cellSpacing=3 cellPadding=0>
+              <TBODY>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD class=InfoBarHeader>Toolbox</TD></TR>
+              <TR>
+                <TD bgColor=black colSpan=2><IMG height=1 
+                  src="CxSkinButton_files/space.gif" width=1></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="CxSkinButton_files/sitebuild_icon.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/submit/ReportProblem.asp?GUID=%2Fbuttonctrl%2FCxSkinButton%2Easp">Broken 
+                  Article?</A></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="CxSkinButton_files/support_icon.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/store/"><B>VS.NET 2003 from 
+                  $899</B></A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="CxSkinButton_files/support_icon.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/store/"><B>MSDN Univ. from 
+                  $1950</B></A></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="CxSkinButton_files/print.gif" 
+                width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?print=true" 
+                  target=_print>Print version</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="CxSkinButton_files/link.gif" 
+                width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/add_bookmark.asp?t=0&amp;ct=%2Fbuttonctrl%2Fcxskinbutton%2Easp&amp;guid=%2Fbuttonctrl%2FCxSkinButton%2Easp">Bookmark 
+                  this</A></TD></TR></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="CxSkinButton_files/mail.gif" 
+                width=16></TD>
+                <TD class=SmallText><A 
+                  href="http://www.codeproject.com/script/recommend/form.asp?guid=%2Fbuttonctrl%2FCxSkinButton%2Easp">Send 
+                  to a friend</A></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD class=InfoBarHeader>My Profile</TD></TR>
+              <TR>
+                <TD bgColor=black colSpan=2><IMG height=1 
+                  src="CxSkinButton_files/space.gif" width=1></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="CxSkinButton_files/profile_small.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/modify.asp?ct=/buttonctrl/cxskinbutton.asp">My 
+                  Settings</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="CxSkinButton_files/submit_small.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/articles/list_articles.asp?userid=649009">My 
+                  Articles</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="CxSkinButton_files/bookmarks.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/bookmark_list.asp">My 
+                  Bookmarks</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="CxSkinButton_files/logoff_small.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/logoff.asp?ct=/buttonctrl/cxskinbutton.asp">Sign 
+                  out</A></TD></TR>
+              <TR>
+                <TD bgColor=black colSpan=2><IMG height=1 
+                  src="CxSkinButton_files/space.gif" 
+          width=1></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD>&nbsp;</TD></TR>
+        <TR>
+          <TD>
+            <CENTER>
+            <SCRIPT language=javascript>document.write("<a href=\"/script/admentor/admentorredir.asp?id=407&way=ban\" target=_blank><img src=\"/script/admentor/include/ServeAd.aspx?File=%2Fscript%2Fadmentor%2Fimages%2FSAMS%5FSkyScraperASPNET%2Egif&C=False&id=407\" alt=\"SAMS Publishing\" border=0 width=120 height=600></a>");</SCRIPT>
+            <BR></CENTER><BR></TD></TR></TBODY></TABLE></TD>
+    <TD width=5 rowSpan=2><IMG height=1 src="CxSkinButton_files/space.gif" 
+      width=5> </TD>
+    <TD align=right width="100%" bgColor=white>
+      <TABLE width="100%">
+        <TBODY>
+        <TR vAlign=top>
+          <TD class=smallText vAlign=top noWrap></TD>
+          <TD noWrap align=right><A name=__top></A>
+            <TABLE>
+              <TBODY>
+              <TR>
+                <TD class=smallText align=right>74 members have rated this 
+                  article. Result:</TD>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=0 border=2>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=5 src="CxSkinButton_files/red.gif" 
+                        width=20 border=0></TD>
+                      <TD><IMG height=5 src="CxSkinButton_files/red.gif" 
+                        width=20 border=0></TD>
+                      <TD><IMG height=5 src="CxSkinButton_files/red.gif" 
+                        width=20 border=0></TD>
+                      <TD><IMG height=5 src="CxSkinButton_files/red.gif" 
+                        width=20 border=0></TD>
+                      <TD><IMG height=5 src="CxSkinButton_files/red.gif" 
+                        width=11 border=0><IMG height=5 
+                        src="CxSkinButton_files/white.gif" width=9 
+                    border=0></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD class=smallText align=right colSpan=2><A 
+                  title="Calculated as rating x Log10(# votes)" 
+                  href="http://www.codeproject.com/script/articles/top_articles.asp?st=2">Popularity: 
+                  8.47</A>. Rating: <B>4.53</B> out of 
+        5.</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD vAlign=top width="100%">
+      <DIV id=contentdiv><!-- Article Starts -->
+      <UL class=download>
+        <LI><A 
+        href="http://www.codeproject.com/buttonctrl/CxSkinButton/CxSkinButton_src.zip">Download 
+        source files - 10 Kb</A> 
+        <LI><A 
+        href="http://www.codeproject.com/buttonctrl/CxSkinButton/CxSkinButton_demo.zip">Download 
+        demo project - 92 Kb</A> </LI></UL>
+      <P><IMG height=157 alt="Sample Image - sample.gif" 
+      src="CxSkinButton_files/sample.gif" width=362></P><!-- Main HTML starts here -->
+      <P>With this class you can easily give a skin to your buttons in few 
+      steps: 
+      <OL>
+        <LI>Add "xSkinButton.cpp" and "xSkinButton.h" to the project.<BR>
+        <LI>Include "xSkinButton.h" in the header file where the controls are 
+        defined<BR>
+        <LI>Create (or edit) a member variable for each button you want to 
+        customize as <CODE>CxSkinButton</CODE>. If the Class Wizard doesn't show 
+        the <CODE>CxSkinButton</CODE> type, select <CODE>CButton</CODE> and then 
+        edit the code manually.<BR>
+        <LI>Add the bitmap resource for the buttons: 
+        <UL>
+          <LI>NORMAL bitmap: default button image. 
+          <LI>DOWN bitmap: pushed button image. 
+          <LI>OVER bitmap:(optional) image to shown when the mouse is over the 
+          button. If NULL, NORMAL bitmap will be used. 
+          <LI>DISABLED bitmap: (optional) image for the disabled state. If NULL, 
+          NORMAL bitmap will be used. 
+          <LI>FOCUS bitmap: (optional) image for the focused state. If NULL, 
+          NORMAL bitmap will be used. 
+          <LI>MASK bitmap: (optional) clipping region. If you don't use the 
+          MASK, the button will be a rectangular owner-draw control. The default 
+          transparent color is RGB(255,255,255). </LI></UL>
+        <LI>In the window initialization add the <CODE>CxSkinButton</CODE> 
+        methods: <PRE>BOOL CxSkinButtonDemoDlg::OnInitDialog()
+{
+<SPAN class=cpp-comment>//	...</SPAN>
+	m_btn1.SetTextColor(RGB(<SPAN class=cpp-literal>255</SPAN>,<SPAN class=cpp-literal>0</SPAN>,<SPAN class=cpp-literal>0</SPAN>));
+	m_btn1.SetToolTipText(<SPAN class=cpp-string>"Button1"</SPAN>);
+	m_btn1.SetSkin(IDB_B1NORM,IDB_B1DOWN,IDB_B1OVER,IDB_B1GRAY,
+                       <SPAN class=cpp-literal>0</SPAN>,IDB_B1MASK,<SPAN class=cpp-literal>0</SPAN>,<SPAN class=cpp-literal>0</SPAN>,<SPAN class=cpp-literal>0</SPAN>);
+<SPAN class=cpp-comment>//	...</SPAN>
+</PRE>
+        <P>The <CODE>SetTextColor</CODE> and <CODE>SetToolTipText</CODE> are 
+        self explaining; <CODE>SetSkin</CODE> is: </P><PRE><SPAN class=cpp-keyword>void</SPAN> CxSkinButton::SetSkin(UINT normal,UINT down,UINT over, 
+                           UINT disabled, UINT focus,UINT mask, 
+                           <SPAN class=cpp-keyword>short</SPAN> drawmode, <SPAN class=cpp-keyword>short</SPAN> border, 
+                           <SPAN class=cpp-keyword>short</SPAN> margin)</PRE>
+        <UL>
+          <LI>normal, down, over, disabled, focus, mask = bitmap resource IDs 
+          <LI>drawmode = if mask is not NULL, this should be 0 (normal); else 
+          you can try 1 (stretch) or 2 (tiled). 
+          <LI>border = if mask is not NULL or is not rectangular, this should be 
+          0; else you can try 1 to draw the standard 3D border around the 
+          button. 
+          <LI>margin = if mask is not NULL or is not rectangular, this should be 
+          0; else you can try to change this value to draw a dotted rectangle 
+          over the button when the control has the focus. </LI></UL></LI></OL>
+      <H2>Remarks</H2>
+      <UL>
+        <LI>The BS_OWNERDRAW style is added automatically, you don't need to set 
+        the "Owner draw" property in the resource editor. 
+        <LI>only NORMAL and DOWN bitmaps are essential; OVER bitmap is a plus. 
+        <LI>DISABLED bitmap is not necessary if the button is always enabled. 
+        You can also use the button text (automatically etched) to show the 
+        disabled state. 
+        <LI>MASK bitmap is not necessary if the button is rectangular. 
+        <LI>for rectangular buttons you should set the margin parameter greater 
+        than 0 (4 is a good choice), or use the FOCUS bitmap. 
+        <LI>for rectangular buttons you can use 'flat' bitmaps and set the 
+        border parameter to 1. In this situation, NORMAL and DOWN bitmaps can 
+        also share the same resource. </LI></UL>
+      <H2>Release History</H2><B>v1.00 - 15/03/2001</B><BR>- basic 
+      implementation and interface.<BR><B>v1.10 - 28/03/2001</B><BR>enhanced 
+      mouse tracking implementation (by Milan Gardian).<BR>- SetCapture removed: 
+      accelerators now are dispatched.<BR>- Double-click handling.<BR>- Better 
+      behavior during "button-pressed" (mouse button down &amp; holding) 
+      phase<BR><B>v1.20 - 02/04/2001</B><BR>- New CreateRgnFromBitmap() 
+      implementation. Mask bitmap now works in any display color mode, any mask 
+      color depth and any mask size.<BR><B>v1.21 - 14/04/2001</B><BR>- 
+      OnMouseLeave cast error fixed.<BR>- Fixed FocusRect defect when OVER 
+      bitmap was NULL.<BR><B>v1.30 - 25/04/2001</B><BR>- Fixed 
+      CreateRgnFromBitmap failure under WinNT4.0<BR><B>v1.40 - 
+      29/06/2001</B><BR>- check &amp; radio button add on.<BR>- added "focus" 
+      bitmap.<BR>- fixed CreateRgnFromBitmap bug.<BR>- fixed shortcut bug.<BR>- 
+      fixed text drawing code. <B>v1.41 - 5/11/2001</B><BR>- Fixed memory 
+      leakage in CreateRgnFromBitmap<BR>
+      <P></P>
+      <H2>Compatibility</H2>Win95,WinNT = Yes, requires IE3.0 or 
+      higher<BR>Win98, WinME, W2k, WinXP = Yes 
+      <P>For any questions, e-mail to: <A 
+      href="mailto:ing.davide.pizzolato@libero.it">ing.davide.pizzolato@libero.it</A></P>
+      <P>Thanks to all the Code Project developers!<BR>Special thanks to:<BR><A 
+      href="mailto:Milan.Gardian@LEIBINGER.com">Milan Gardian</A> for mouse and 
+      keyboard tracking code.<BR><A 
+      href="mailto:Fable@aramszu.net">Fable@aramszu.net</A> for ExtCreateRegion 
+      replacement code.<BR><A href="mailto:Rainer@Mangold.com">Rainer 
+      Mangold</A> for radio-button and check-box code.<BR>Andy Green and Cameron 
+      Epp for suggestions &amp; debugging. </P><!-- Article Ends --></DIV>
+      <H2>About Davide Pizzolato</H2>
+      <TABLE width="100%" border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD class=smallText noWrap><IMG 
+            src="CxSkinButton_files/{75C93BB1-A4E5-499E-A936-FB7699AB099D}.png"><BR><A 
+            href="http://www.codeproject.com/info/supporter.asp#supporters"><IMG 
+            height=64 alt="CodeProject Supporter" 
+            src="CxSkinButton_files/Supporter.gif" width=48 border=0></A> </TD>
+          <TD class=smallText width="100%"><FONT color=#ff0000 
+            size=+1><B><BR>- - - - - - - DISCONTINUED - - - - - - -</B><BR>The 
+            author will not maintain this page any more,<BR>neither replies to 
+            questions posted on the message board</FONT>
+            <P class=smallText>Click <A 
+            href="http://www.codeproject.com/script/profile/whos_who.asp?vt=arts&amp;id=9566">here</A> 
+            to view Davide Pizzolato's online 
+      profile.</P></TD></TR></TBODY></TABLE><BR>
+      <TABLE cellPadding=4 width="100%" border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD width="100%">
+            <H2>Other popular Button Controls articles:</H2>
+            <UL>
+              <LI><A 
+              href="http://www.codeproject.com/buttonctrl/mfc2ocx.asp">Creating 
+              an ActiveX button from a MFC owner-draw button</A><BR><SPAN 
+              class=smalltext>Basic steps to transform a MFC button in an 
+              activex control</SPAN>
+              <LI><A 
+              href="http://www.codeproject.com/buttonctrl/groupcontrol.asp">GroupControl</A><BR><SPAN 
+              class=smalltext>CButton-derived control to help with using 
+              groups</SPAN>
+              <LI><A 
+              href="http://www.codeproject.com/buttonctrl/FooButton.asp">FooButton</A><BR><SPAN 
+              class=smalltext>A lightweight general-purpose owner drawn bitmap 
+              button.</SPAN>
+              <LI><A 
+              href="http://www.codeproject.com/buttonctrl/cbuttonst.asp">CButtonST 
+              v3.9 (MFC Flat buttons)</A><BR><SPAN class=smalltext>A fully 
+              featured owner-draw button class - it's got the 
+          lot!</SPAN></LI></UL></TD>
+          <TD width=360>
+            <SCRIPT language=javascript>document.write("<IFRAME src=\"/script/admentor/include/ServeAdHTML.aspx?C=False&id=786\" border=0 frameborder=0 scrolling=no width=300 height=250></IFRAME>");</SCRIPT>
+          </TD>
+          <FORM action=/script/rating/code/app/insert_vote.asp 
+          method=post><INPUT type=hidden value=/buttonctrl/CxSkinButton.asp 
+          name=vote_name> <INPUT type=hidden value=/buttonctrl/cxskinbutton.asp 
+          name=goal> </TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=1 width="100%" bgColor=#ff9900 
+        border=0><TBODY>
+        <TR>
+          <TD width="100%">
+            <TABLE cellSpacing=0 cellPadding=4 width="100%" bgColor=#fbedbb 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD class=smalltext vAlign=center>[<A 
+                  href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp#__top">Top</A>]</TD>
+                <TD vAlign=center noWrap align=right><I><B>Rate this Article 
+                  for us!</B></I>&nbsp;&nbsp;&nbsp;&nbsp; <I>Poor</I><INPUT 
+                  type=radio value=1 name=rate><INPUT type=radio value=2 
+                  name=rate><INPUT type=radio value=3 name=rate><INPUT 
+                  type=radio value=4 name=rate><INPUT type=radio value=5 
+                  name=rate><I>Excellent</I>&nbsp;&nbsp;<INPUT class=FormButton type=submit value=Vote> 
+                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></FORM>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD vAlign=top>
+            <CENTER>
+            <SCRIPT language=javascript>document.write("<a href=\"/script/admentor/admentorredir.asp?id=156&way=ban\" target=_blank><img src=\"/script/admentor/include/ServeAd.aspx?File=%2Fscript%2Fadmentor%2Fimages%2Fmsdn%5Fbutton%2Egif&C=False&id=156\" alt=\"MSDN Magazine - Your guide to Microsoft tools, development environments, and technologies for Windows and the Web.\" border=0 width=120 height=60></a>");</SCRIPT>
+            <BR><FONT size=1><A 
+            href="http://www.codeproject.com/info/MediaKit/">Premium 
+            Sponsor</A></FONT></CENTER><BR></TD>
+          <TD vAlign=top noWrap align=middle><SPAN id=AdBanner5>
+            <SCRIPT language=javascript>document.write("<a href=\"/script/admentor/admentorredir.asp?id=855&way=ban\" target=_blank><img src=\"/script/admentor/include/ServeAd.aspx?File=%2Fscript%2Fadmentor%2Fimages%2Fironspeedbanner468x60webinar209232004%2Egif&C=False&id=855\" alt=\"\" border=0 width=468 height=60></a>");</SCRIPT>
+            </SPAN></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><A 
+name=__comments></A>
+<SCRIPT language=JavaScript>
+function MsgVoteForm(UserID, MsgID)
+{
+	document.write("Rate this message: ");
+	for (var i=1; i<=5;i++)
+		document.write("<a href='#xx" + MsgID.toString() + "xx' title='give this message a vote of " + i.toString() + "' onclick='RateMsg(" + UserID.toString() + ", " + MsgID.toString() + ", " + i.toString() + ")'><b>" + i.toString() + "</b></a> ");
+	document.write(" (out of 5)");
+}
+
+function RateMsg(userid, msgid, score) 
+{ 
+	open("/script/comments/vote.asp?js=1&user="+userid.toString()+"&msg="+msgid.toString()+"&score="+score.toString() ,"helpful","toolbar=no,resizable=yes,scrollbars=yes,directories=no,menubar=no,width=300,height=200");
+	return false;
+}
+</SCRIPT>
+
+<SCRIPT language=JavaScript>
+var Selected = "";
+var AdTime = new Date();
+document.writeln("<iframe name=AdFrame width=0 height=0 frameborder=0></IFRAME>");
+function SwitchMessage(elm)
+{
+
+	var now = new Date();
+	if (Number(now.getTime() - AdTime.getTime()) > Number(5000))
+	{
+		AdTime = now;
+		var loc = window.frames["AdFrame"];
+		if (loc) loc = loc.document;
+		if (loc) loc = loc.location;
+		if (loc) loc.replace('/script/comments/fetchAd.asp?cat=2');
+	}
+	
+	var elmref;
+	if (Selected != "")
+	{
+		elmref = eval("document.getElementById('" + Selected + "_h1')");
+		if (elmref) elmref.style.display = 'none';
+		elmref = eval("document.getElementById('" + Selected + "_h0')");
+		if (elmref) elmref.bgColor = '#FEF9E7';
+	}
+	if (Selected != elm.name) 
+	{
+		Selected = elm.name;
+		elmref = eval("document.getElementById('" + Selected + "_h1')");
+		if (elmref) 
+		{
+			if (elmref.style.display=='none') elmref.style.display='';
+			else elmref.style.display = 'none';
+		}
+		elmref = eval("document.getElementById('" + Selected + "_h0')");
+		if (elmref) 
+			elmref.bgColor = '#99CCFF';
+	}
+	else
+		Selected="";
+		
+	window.location = "#xx" + Selected + "xx";
+
+	return false;
+}
+
+</SCRIPT>
+
+<SCRIPT language=javascript event=onclick for=DynMessLink>
+return SwitchMessage(this);
+</SCRIPT>
+
+<TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#ff9900 border=0>
+  <TBODY>
+  <TR>
+    <TD width="100%">
+      <TABLE id=ForumTable cellSpacing=1 cellPadding=0 width="100%" 
+      bgColor=#ff9900 border=0>
+        <FORM 
+        action=/script/comments/app/do_filtermessages.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028 
+        method=post>
+        <TBODY>
+        <TR>
+          <TD>
+            <TABLE cellSpacing=0 cellPadding=3 width="100%" bgColor=white 
+            border=0>
+              <TBODY>
+              <TR bgColor=#fbedbb>
+                <TD class=smalltext noWrap><A 
+                  href="http://www.codeproject.com/script/comments/faq.asp"><IMG 
+                  height=16 src="CxSkinButton_files/info.gif" width=16 
+                  align=absMiddle border=0> <B>FAQ</B></A>&nbsp;</TD>
+                <TD class=smalltext vAlign=top noWrap align=right>Noise level 
+                  <SELECT class=smalltext size=1 name=noise><OPTION 
+                    value=1>Very High</OPTION> <OPTION value=2>High</OPTION> 
+                    <OPTION value=3 selected>Medium</OPTION> <OPTION 
+                    value=4>Low</OPTION> <OPTION value=5>Very 
+                  low</OPTION></SELECT>&nbsp;&nbsp;</TD>
+                <TD class=smalltext vAlign=center noWrap align=right 
+                  colSpan=2><A 
+                  href="http://www.codeproject.com/script/comments/search_comments.asp?forumid=2028"><IMG 
+                  height=15 src="CxSkinButton_files/search.gif" width=16 
+                  border=0> Search comments</A> &nbsp;</TD>
+                <TD vAlign=top align=right><INPUT class=FormButton type=submit value="Set Options" name=submit></TD></TR>
+              <TR bgColor=#ff9900>
+                <TD width="100%">&nbsp;</TD>
+                <TD class=smalltext vAlign=top noWrap align=right>View <SELECT 
+                  class=smalltext size=1 name=expand><OPTION value=0>Normal 
+                    (slow)</OPTION> <OPTION value=2>Preview (slow)</OPTION> 
+                    <OPTION value=5 selected>Message View</OPTION> <OPTION 
+                    value=6>Topic View</OPTION> <OPTION value=1>Thread 
+                    View</OPTION> <OPTION value=3>Expanded (Supporters 
+                    only)</OPTION></SELECT>&nbsp;&nbsp;</TD>
+                <TD class=smalltext vAlign=top noWrap>Per page <SELECT 
+                  class=smalltext size=1 name=perpage><OPTION 
+                    value=10>10</OPTION> <OPTION value=25 selected>25</OPTION> 
+                    <OPTION value=50>50</OPTION></SELECT></TD>
+                <TD colSpan=2>&nbsp;</TD></TR></TBODY></TABLE></TD></TR></FORM>
+        <TR bgColor=#fbedbb>
+          <TD><A name=xx0xx></A>
+            <TABLE cellPadding=2 width="100%" bgColor=#fbedbb border=0>
+              <TBODY>
+              <TR>
+                <TD class=messagetitle><A class=HoverLink 
+                  title="Add a new message to the discussions" 
+                  href="http://www.codeproject.com/script/comments/user_new.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028" 
+                  target=_top name=HoverNL><B><IMG height=16 
+                  src="CxSkinButton_files/admin_modify.gif" width=16 align=top 
+                  border=0> New thread</B></A></TD>
+                <TD class=messagetitle>Msgs 1 to 25 of 67 (Total: 67) (<A 
+                  href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;forumid=2028">Refresh</A>)</TD>
+                <TD noWrap align=right><FONT class=messagetitle><SPAN 
+                  class=HoverLink>First</SPAN> <SPAN class=HoverLink>Prev</SPAN> 
+                  <A class=HoverLink 
+                  href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;forumid=2028&amp;fr=26" 
+                  name=HoverNL>Next</A> <A class=HoverLink 
+                  href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;forumid=2028&amp;fr=51" 
+                  name=HoverNL>Last</A> </FONT></TD></TR></TBODY></TABLE></TD></TR>
+        <TR bgColor=white>
+          <TD>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=2 bgColor=#fbedbb border=0>
+                    <TBODY>
+                    <TR>
+                      <TD class=messagetitle width="100%">Subject&nbsp;</TD>
+                      <TD class=messagetitle noWrap width=140>Author&nbsp;</TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT 
+                    class=messagetitle>Date&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CxSkinButton_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR id=811258_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx811258xx></A><IMG 
+                        src="CxSkinButton_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;forumid=2028&amp;select=811258#xx811258xx" 
+                        name=811258><B>Leak in CreateRgnFromBitmap</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=391302"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CxSkinButton_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>sachelis</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>10:24 4 May 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=811258_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="CxSkinButton_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>In 
+                                xSkinButton.cpp, line 311, change the code as 
+                                follows:<BR><BR>&lt; 
+                                dcBmp.SelectObject(hBmp);<BR>&gt; HBITMAP 
+                                hOldBitmap = 
+                                (HBITMAP)dcBmp.SelectObject(hBmp);<BR><BR>Then 
+                                add the following line 356 (just before 
+                                dcBmp.DeleteDC()):<BR><BR>dcBmp.SelectObject( 
+                                hOldBitmap );<BR><BR>Otherwise, you will be 
+                                deleting the DC with the bitmap still 
+                                selected.<BR><BR><BR><BR>Steve<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=811258">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=811258">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;tid=811258&amp;forumid=2028&amp;select=811258#xx811258xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?msg=811258#xx811258xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=811258"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=811258"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(391302,811258);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CxSkinButton_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR id=811299_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx811299xx></A><IMG height=1 
+                        src="CxSkinButton_files/ind.gif" width=18><IMG 
+                        src="CxSkinButton_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;forumid=2028&amp;select=811299#xx811299xx" 
+                        name=811299>Re: Leak in CreateRgnFromBitmap</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=391302"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CxSkinButton_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>sachelis&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>10:46 4 May 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=811299_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="CxSkinButton_files/ind.gif" 
+                        width=18><IMG src="CxSkinButton_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>There 
+                                are many other places where SelectObject() needs 
+                                to store the return value and then select the 
+                                old object before calling 
+                                DeleteDC().&nbsp;&nbsp;Here are a few, but it's 
+                                best if you simply search for all calls to 
+                                SelectObject() and DeleteDC().<BR><BR>For 
+                                example, SelectObject() calls near lines 198, 
+                                202, and 207 need to be changed so they store 
+                                the return value.&nbsp;&nbsp;For 
+                                example:<BR><BR>HBITMAP hOldBitmap1 = 
+                                (HBITMAP)hdcMem.SelectObject(hBitmap);<BR><BR>Then 
+                                you need to deselect the old bitmap just before 
+                                the calls to DeleteDC() (near lines 225, 228, 
+                                and 243) by adding code similar 
+                                to:<BR><BR>hdcMem.SelectObject( hOldBitmap1 ); 
+                                <BR><BR>Steve<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=811299">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=811299">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;tid=811258&amp;forumid=2028&amp;select=811299#xx811299xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?msg=811299#xx811299xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=811299"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=811299"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(391302,811299);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CxSkinButton_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR id=866072_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx866072xx></A><IMG height=1 
+                        src="CxSkinButton_files/ind.gif" width=36><IMG 
+                        src="CxSkinButton_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;forumid=2028&amp;select=866072#xx866072xx" 
+                        name=866072>Re: Leak in CreateRgnFromBitmap</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=36374"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CxSkinButton_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle>Bernd 
+                        Giesen&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>7:12 2 Jul 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=866072_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="CxSkinButton_files/ind.gif" 
+                        width=36><IMG src="CxSkinButton_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>There 
+                                is still at east on other GDI leak in the 
+                                SetSkin() method assuming one will set the skin 
+                                more than once:<BR><BR>Change the the follwing 
+                                lines in 
+                                CxSkinButton::SetSkin(...):<BR><BR>SetWindowRgn(m_hClipRgn, 
+                                TRUE);<BR>SelectClipRgn((HDC) 
+                                GetDC(),m_hClipRgn);<BR><BR>to:<BR>SetWindowRgn(m_hClipRgn, 
+                                TRUE);<BR>CDC *pDC = 
+                                GetDC();<BR>SelectClipRgn(pDC-&gt;GetSafeHdc(), 
+                                m_hClipRgn);<BR>ReleaseDC(pDC);<BR><BR>to 
+                                ensure, that the DC is properly 
+                                released.<BR><BR><BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=866072">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=866072">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;tid=811258&amp;forumid=2028&amp;select=866072#xx866072xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?msg=866072#xx866072xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=866072"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=866072"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(36374,866072);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CxSkinButton_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="CxSkinButton_files/t.gif" width=1></TD></TR>
+              <TR id=785725_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx785725xx></A><IMG 
+                        src="CxSkinButton_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;forumid=2028&amp;select=785725#xx785725xx" 
+                        name=785725><B>Flaw in DrawItem() method</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=36374"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CxSkinButton_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle><B>Bernd 
+                        Giesen</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>6:50 7 Apr 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=785725_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="CxSkinButton_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>There's 
+                                IMO a flaw in CxSkinButton::DrawItem 
+                                method.<BR>If the CxSkinButton object represents 
+                                e.g. a checkbox with "normal" button text, the 
+                                text in the pushed/checked state of the button 
+                                is not displayed properly if the button becomes 
+                                disabled. That is the position of the checked, 
+                                disabled button text is wrong.<BR><BR>To fix 
+                                this change the appropriate section in the 
+                                DrawItem() method as follows:<BR><BR>// Select 
+                                the correct skin <BR>if 
+                                (lpDrawItemStruct-&gt;itemState &amp; 
+                                ODS_DISABLED){ // DISABLED 
+                                BUTTON<BR>if(m_bDisabled.m_hObject==NULL)<BR>// 
+                                no skin selected for disabled state -&gt; 
+                                standard 
+                                button<BR>pDC-&gt;FillSolidRect(&amp;r,GetSysColor(COLOR_BTNFACE));<BR>else 
+                                // paint the 
+                                skin<BR>DrawBitmap(pDC,(HBITMAP)m_bDisabled,r,m_DrawMode);<BR>// 
+                                if needed, draw the standard 3D rectangular 
+                                border<BR>if (m_Border) 
+                                pDC-&gt;DrawEdge(&amp;r,EDGE_RAISED,BF_RECT);<BR>// 
+                                paint the etched button 
+                                text<BR>pDC-&gt;SetTextColor(GetSysColor(COLOR_3DHILIGHT));<BR><BR>//Fix: 
+                                Check if button is in checked/pushed state<BR>if 
+                                (m_Checked)<BR>OffsetRect(&amp;tr,1,1);<BR><BR>pDC-&gt;DrawText(sCaption,&amp;tr,DT_SINGLELINE|DT_VCENTER|DT_CENTER);<BR>pDC-&gt;SetTextColor(GetSysColor(COLOR_GRAYTEXT));<BR>//Fix: 
+                                Remove this line: 
+                                OffsetRect(&amp;tr,-1,-1);<BR>pDC-&gt;DrawText(sCaption,&amp;tr,DT_SINGLELINE|DT_VCENTER|DT_CENTER);<BR>} 
+                                else { // SELECTED (DOWN) 
+                                BUTTON<BR>...<BR><BR><BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=785725">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=785725">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;tid=785725&amp;forumid=2028&amp;select=785725#xx785725xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?msg=785725#xx785725xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=785725"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=785725"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(36374,785725);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CxSkinButton_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="CxSkinButton_files/t.gif" width=1></TD></TR>
+              <TR id=664189_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx664189xx></A><IMG 
+                        src="CxSkinButton_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;forumid=2028&amp;select=664189#xx664189xx" 
+                        name=664189><B>Loading image from disk</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=275859"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CxSkinButton_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>WolfSupernova</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>12:02 12 Nov 
+                        '03</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=664189_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="CxSkinButton_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Great 
+                                class! <IMG 
+                                src="CxSkinButton_files/smiley_biggrin.gif" 
+                                align=absMiddle><BR><BR>I'm working on a 
+                                user-skinnable application so I need to load the 
+                                images from files. The way I accomplished this 
+                                was to replace the UINT's with LPCTSTR's in the 
+                                SetSkin() parameters and modified the following 
+                                code:<BR><BR><PRE><BR>if (normal&gt;0)	//m_bNormal.LoadBitmap(normal);<BR>{<BR>HBITMAP hNormal=(HBITMAP)::LoadImage(AfxGetInstanceHandle(),<BR>                                     normal,<BR>                                     IMAGE_BITMAP,<BR>                                     0,<BR>                                     0,<BR>                                     LR_LOADFROMFILE);<BR>m_bNormal.Attach(hNormal);<BR>}<BR></PRE><BR><BR>My 
+                                question is, will this cause any problems, or is 
+                                there any additional clean-up that I need to be 
+                                concerned with? I'm fairly new to C++. 
+                                <BR><BR>Thanks,<BR>Wolf 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=664189">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=664189">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;tid=664189&amp;forumid=2028&amp;select=664189#xx664189xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?msg=664189#xx664189xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=664189"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=664189"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(275859,664189);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CxSkinButton_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR id=664365_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx664365xx></A><IMG height=1 
+                        src="CxSkinButton_files/ind.gif" width=18><IMG 
+                        src="CxSkinButton_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;forumid=2028&amp;select=664365#xx664365xx" 
+                        name=664365>Re: Loading image from disk</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=9566"><IMG 
+                        title="CodeProject supporter - Click for Profile" 
+                        height=16 src="CxSkinButton_files/support_icon.gif" 
+                        width=16 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle>Davide 
+                        Pizzolato&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>15:08 12 Nov 
+                        '03&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=664365_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="CxSkinButton_files/ind.gif" 
+                        width=18><IMG src="CxSkinButton_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent><SMALL><B>WolfSupernova 
+                                wrote:</B></SMALL><BR><I>Great 
+                                class!</I><BR><BR>thanks <IMG 
+                                src="CxSkinButton_files/smiley_smile.gif" 
+                                align=absMiddle><BR><BR><SMALL><B>WolfSupernova 
+                                wrote:</B></SMALL><BR><I>will this cause any 
+                                problems</I><BR><BR>you must release the bitmaps 
+                                in the destructor or before you <CODE>Attach 
+                                </CODE>a bitmap over an existing one. With 
+                                resources this was not necessary 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=664365">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=664365">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;tid=664189&amp;forumid=2028&amp;select=664365#xx664365xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?msg=664365#xx664365xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=664365"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=664365"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(9566,664365);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CxSkinButton_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="CxSkinButton_files/t.gif" width=1></TD></TR>
+              <TR id=632450_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx632450xx></A><IMG 
+                        src="CxSkinButton_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;forumid=2028&amp;select=632450#xx632450xx" 
+                        name=632450><B>I want to know the event of when it swaps 
+                        mouseon with mouseout images</B></A></TD>
+                      <TD vAlign=bottom><IMG height=13 
+                        alt="Unconfirmed/Anonymous posting" 
+                        src="CxSkinButton_files/usersuss.gif" 
+                      width=15></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>sdfdsfa</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>0:55 8 Oct 
+                        '03</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=632450_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="CxSkinButton_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>I want 
+                                to have the same effect on key board 
+                                usage.<BR>What I mean is that when you push 
+                                up-arrow key<BR>the button change the state from 
+                                normal to mouse over<BR><BR>Thanks<BR>Shin 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=632450">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=632450">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;tid=632450&amp;forumid=2028&amp;select=632450#xx632450xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?msg=632450#xx632450xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=632450"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=632450"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(0,632450);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CxSkinButton_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR id=633205_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx633205xx></A><IMG height=1 
+                        src="CxSkinButton_files/ind.gif" width=18><IMG 
+                        src="CxSkinButton_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;forumid=2028&amp;select=633205#xx633205xx" 
+                        name=633205>Re: I want to know the event of when it 
+                        swaps mouseon with mouseout images</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=9566"><IMG 
+                        title="CodeProject supporter - Click for Profile" 
+                        height=16 src="CxSkinButton_files/support_icon.gif" 
+                        width=16 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle>Davide 
+                        Pizzolato&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>14:56 8 Oct 
+                        '03&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=633205_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="CxSkinButton_files/ind.gif" 
+                        width=18><IMG src="CxSkinButton_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent>WM_KEYUP 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=633205">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=633205">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;tid=632450&amp;forumid=2028&amp;select=633205#xx633205xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?msg=633205#xx633205xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=633205"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=633205"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(9566,633205);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CxSkinButton_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="CxSkinButton_files/t.gif" width=1></TD></TR>
+              <TR id=596499_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx596499xx></A><IMG 
+                        src="CxSkinButton_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;forumid=2028&amp;select=596499#xx596499xx" 
+                        name=596499><B>hide buttons</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=507649"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CxSkinButton_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>kaber</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>3:52 30 Aug 
+                        '03</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=596499_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="CxSkinButton_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent>Hey.<BR>I have a 
+                                question.<BR>In my program, i want to hide the 
+                                buttons so they dont' show up in some pages, any 
+                                of you know how to do that 
+                                ?<BR><BR>thanks.<BR><BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=596499">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=596499">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;tid=596499&amp;forumid=2028&amp;select=596499#xx596499xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?msg=596499#xx596499xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=596499"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=596499"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(507649,596499);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CxSkinButton_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR id=596500_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx596500xx></A><IMG height=1 
+                        src="CxSkinButton_files/ind.gif" width=18><IMG 
+                        src="CxSkinButton_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;forumid=2028&amp;select=596500#xx596500xx" 
+                        name=596500>Re: hide buttons</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=507649"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CxSkinButton_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>kaber&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>3:55 30 Aug 
+                        '03&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=596500_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="CxSkinButton_files/ind.gif" 
+                        width=18><IMG src="CxSkinButton_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Hi 
+                                again.<BR>I just figured it out 
+                                =)<BR>groups.google.com is a good resource as 
+                                well.<BR>I used the ShowWindow 
+                                function.<BR><BR>ShowWindow(SW_SHOW);<BR>or 
+                                <BR>ShowWindow(SW_HIDE);<BR><BR>thanks anyways 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=596500">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=596500">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;tid=596499&amp;forumid=2028&amp;select=596500#xx596500xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?msg=596500#xx596500xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=596500"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=596500"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(507649,596500);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CxSkinButton_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="CxSkinButton_files/t.gif" width=1></TD></TR>
+              <TR id=596497_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx596497xx></A><IMG 
+                        src="CxSkinButton_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;forumid=2028&amp;select=596497#xx596497xx" 
+                        name=596497><B>remove and add</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=507649"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CxSkinButton_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>kaber</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>3:52 30 Aug 
+                        '03</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=596497_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="CxSkinButton_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent>Hey.<BR>I have a 
+                                question.<BR>In my program, i want to hide the 
+                                buttons so they dont' show up in some pages, any 
+                                of you know how to do that 
+                                ?<BR><BR>thanks.<BR><BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=596497">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=596497">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;tid=596497&amp;forumid=2028&amp;select=596497#xx596497xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?msg=596497#xx596497xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=596497"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=596497"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(507649,596497);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CxSkinButton_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="CxSkinButton_files/t.gif" width=1></TD></TR>
+              <TR id=526237_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx526237xx></A><IMG 
+                        src="CxSkinButton_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;forumid=2028&amp;select=526237#xx526237xx" 
+                        name=526237><B>CToolTipCtrl has a possible 
+                      issue</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=325878"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CxSkinButton_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>scully12</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>16:25 16 Jun 
+                        '03</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=526237_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="CxSkinButton_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>I'm 
+                                currently using the cxSkinButton class and 
+                                noticed some problems with it under VC++7. It's 
+                                not a huge deal but kind of annoying. If I 
+                                create a new project using the wizard and 
+                                include the manifest the tool tips don't work 
+                                100%. They will show up but if I click a button 
+                                the tool tip for that button doesn't come back. 
+                                Also, if I hold my mouse over a button until the 
+                                tool tip goes away it won't come back again 
+                                either. I'm only able to get the tool tip to 
+                                come back if I pop up an AfxMessageBox and then 
+                                close it. If I create another new project 
+                                without a manifest the tool tips work perfectly. 
+                                Has anybody else had this problem? I'm not even 
+                                adding anything into the manifest. It only 
+                                contains the stuff that VC++ puts in there by 
+                                default. I could just remove the manifest but 
+                                then I'd lose the newer interface features like 
+                                the rounded buttons etc. I guess I could just 
+                                use the skin control and make them whatever I 
+                                want anyway but I'd like to find away to make 
+                                the tool tips work right with the manifest and 
+                                cxSkinButton. 
+                                <BR><BR>-scully12<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=526237">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=526237">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;tid=526237&amp;forumid=2028&amp;select=526237#xx526237xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?msg=526237#xx526237xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=526237"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=526237"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(325878,526237);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CxSkinButton_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR id=784772_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx784772xx></A><IMG height=1 
+                        src="CxSkinButton_files/ind.gif" width=18><IMG 
+                        src="CxSkinButton_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;forumid=2028&amp;select=784772#xx784772xx" 
+                        name=784772>Re: CToolTipCtrl has a possible issue</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=36374"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CxSkinButton_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle>Bernd 
+                        Giesen&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>8:13 6 Apr 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=784772_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="CxSkinButton_files/ind.gif" 
+                        width=18><IMG src="CxSkinButton_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Hi 
+                                scully12,<BR><BR>I have the same problem here 
+                                with the lost tooltips, independent if I use the 
+                                CxSkinButton class or simply the CButton class. 
+                                So, CxSkinButton is not the reason why, it seems 
+                                to be a general problem in VC++7 (the same 
+                                sources built with VC++6 work perfectly, w/o the 
+                                manifest, of course).<BR><BR>Did you find any 
+                                solution in the meantime fro the 
+                                issue?<BR><BR>Bernd<BR><BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=784772">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=784772">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;tid=526237&amp;forumid=2028&amp;select=784772#xx784772xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?msg=784772#xx784772xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=784772"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=784772"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(36374,784772);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CxSkinButton_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR id=784781_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx784781xx></A><IMG height=1 
+                        src="CxSkinButton_files/ind.gif" width=36><IMG 
+                        src="CxSkinButton_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;forumid=2028&amp;select=784781#xx784781xx" 
+                        name=784781>Re: CToolTipCtrl has a possible issue</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=325878"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CxSkinButton_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>scully12&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>8:19 6 Apr 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=784781_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="CxSkinButton_files/ind.gif" 
+                        width=36><IMG src="CxSkinButton_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Hi 
+                                Bernd,<BR>I never did find a solution. I ended 
+                                up just removing the manifest and using it that 
+                                way. I was hoping that it really was a bug in VC 
+                                and it would get fixed eventually. It's good to 
+                                hear that I'm not crazy though.<BR><BR>-scully12 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=784781">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=784781">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;tid=526237&amp;forumid=2028&amp;select=784781#xx784781xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?msg=784781#xx784781xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=784781"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=784781"><I>Delete</I></A>]<BR>Score: 
+                                1.0 (1 vote).
+                                <SCRIPT language=Javascript>MsgVoteForm(325878,784781);</SCRIPT>
+                                 
+                    </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CxSkinButton_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR id=900762_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx900762xx></A><IMG height=1 
+                        src="CxSkinButton_files/ind.gif" width=36><IMG 
+                        src="CxSkinButton_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;forumid=2028&amp;select=900762#xx900762xx" 
+                        name=900762>Re: CToolTipCtrl has a possible issue</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=1158005"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CxSkinButton_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>eastar0921&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>1:32 18 Aug 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=900762_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="CxSkinButton_files/ind.gif" 
+                        width=36><IMG src="CxSkinButton_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Hi 
+                                scully12,<BR><BR>I have the same problem, I add 
+                                some code at when the button losted 
+                                focus.<BR>//code :<BR>if ( m_ctrlTooltip.m_hWnd 
+                                != NULL )<BR>m_ctrlTooltip.Pop();<BR>//code 
+                                end;<BR><BR>now, my button work 
+                                fine!<BR><BR>sorry, my english was very pool<IMG 
+                                src="CxSkinButton_files/smiley_smile.gif" 
+                                align=absMiddle> <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=900762">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=900762">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;tid=526237&amp;forumid=2028&amp;select=900762#xx900762xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?msg=900762#xx900762xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=900762"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=900762"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(1158005,900762);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CxSkinButton_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="CxSkinButton_files/t.gif" width=1></TD></TR>
+              <TR id=525779_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx525779xx></A><IMG 
+                        src="CxSkinButton_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;forumid=2028&amp;select=525779#xx525779xx" 
+                        name=525779><B>Set tooltip color</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=68081"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CxSkinButton_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>Mykel</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>8:13 16 Jun 
+                        '03</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=525779_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="CxSkinButton_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent>Hi!<BR><BR>I have a small 
+                                improvement for the tooltip of a CxSkinButton. 
+                                With this function you can colorize the tooltip 
+                                as you want. The first COLORREF ist the text 
+                                color, the second is the background 
+                                color.<BR><BR><CODE><BR>void 
+                                CxSkinButton::SetToolTipColor(COLORREF crText, 
+                                COLORREF 
+                                crBkgnd)<BR>{<BR>&nbsp;&nbsp;&nbsp;&nbsp;if(m_tooltip.m_hWnd 
+                                != 
+                                NULL)<BR>&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(crText 
+                                != NULL 
+                                )<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_tooltip.SetTipTextColor(crText);<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(crBkgnd 
+                                != 
+                                NULL)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_tooltip.SetTipBkColor(crBkgnd);<BR>&nbsp;&nbsp;&nbsp;&nbsp;}<BR>}<BR></CODE><BR><BR>Perhaps 
+                                someone will have use for it... <IMG 
+                                src="CxSkinButton_files/smiley_cool.gif" 
+                                align=absMiddle><BR><BR>bye... 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=525779">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=525779">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;tid=525779&amp;forumid=2028&amp;select=525779#xx525779xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?msg=525779#xx525779xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=525779"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=525779"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(68081,525779);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CxSkinButton_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR id=526166_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx526166xx></A><IMG height=1 
+                        src="CxSkinButton_files/ind.gif" width=18><IMG 
+                        src="CxSkinButton_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;forumid=2028&amp;select=526166#xx526166xx" 
+                        name=526166>Re: Set tooltip color</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=9566"><IMG 
+                        title="CodeProject supporter - Click for Profile" 
+                        height=16 src="CxSkinButton_files/support_icon.gif" 
+                        width=16 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle>Davide 
+                        Pizzolato&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>15:24 16 Jun 
+                        '03&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=526166_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="CxSkinButton_files/ind.gif" 
+                        width=18><IMG src="CxSkinButton_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Thank 
+                                you. Maybe it's time to update the article <IMG 
+                                src="CxSkinButton_files/smiley_wink.gif" 
+                                align=absMiddle> <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=526166">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=526166">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;tid=525779&amp;forumid=2028&amp;select=526166#xx526166xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?msg=526166#xx526166xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=526166"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=526166"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(9566,526166);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CxSkinButton_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR id=527194_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx527194xx></A><IMG height=1 
+                        src="CxSkinButton_files/ind.gif" width=18><IMG 
+                        src="CxSkinButton_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;forumid=2028&amp;select=527194#xx527194xx" 
+                        name=527194>Re: Set tooltip color</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=68081"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CxSkinButton_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>Mykel&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>15:11 17 Jun 
+                        '03&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=527194_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="CxSkinButton_files/ind.gif" 
+                        width=18><IMG src="CxSkinButton_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent><BR>Sorry, I made a small 
+                                mistake in the 'SetToolTipColor' function.<BR>If 
+                                you check the COLORREF for not NULL you can't 
+                                set the COLORREF to #000000 (black).<BR>So the 
+                                correct code is:<BR><BR><PRE>void CxSkinButton::SetToolTipColor(COLORREF crText, COLORREF crBkgnd)<BR>{<BR>    if(m_tooltip.m_hWnd != NULL)<BR>    {<BR>        m_tooltip.SetTipTextColor(crText);<BR>        m_tooltip.SetTipBkColor(crBkgnd);<BR>    }<BR>}<BR></PRE><BR>Here 
+                                is another small function for the compensation 
+                                of my bug <IMG 
+                                src="CxSkinButton_files/smiley_wink.gif" 
+                                align=absMiddle><BR>Call this function if you 
+                                have enough of those colorized 
+                                tooltips...<BR><BR><PRE>void CxSkinButton::ResetToolTipColor()<BR>{<BR>    if(m_tooltip.m_hWnd != NULL)<BR>    {<BR>        m_tooltip.SetTipTextColor(GetSysColor(COLOR_INFOTEXT));<BR>        m_tooltip.SetTipBkColor(GetSysColor(COLOR_INFOBK));<BR>    }<BR>}<BR></PRE>The 
+                                function will set the tooltip text and 
+                                background color to the system default. 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=527194">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=527194">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;tid=525779&amp;forumid=2028&amp;select=527194#xx527194xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?msg=527194#xx527194xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=527194"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=527194"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(68081,527194);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CxSkinButton_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="CxSkinButton_files/t.gif" width=1></TD></TR>
+              <TR id=512665_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx512665xx></A><IMG 
+                        src="CxSkinButton_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;forumid=2028&amp;select=512665#xx512665xx" 
+                        name=512665><B>Multiple line support added</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=71374"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CxSkinButton_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>robkent</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>9:44 2 Jun 
+                        '03</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=512665_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="CxSkinButton_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent>Hi,<BR><BR>I've added a 
+                                multiple line support for scinned buttons. The 
+                                method CxSkinButton::DrawItem looks<BR>now like 
+                                follows:<BR><BR>void 
+                                CxSkinButton::DrawItem(LPDRAWITEMSTRUCT 
+                                lpDrawItemStruct) <BR>{<BR>ASSERT 
+                                (lpDrawItemStruct);<BR>//TRACE("* Captured: 
+                                %08X\n", ::GetCapture());<BR><BR>//Check if the 
+                                button state in not in inconsistent 
+                                mode...<BR>POINT mouse_position;<BR>if 
+                                ((m_button_down) &amp;&amp; (::GetCapture() == 
+                                m_hWnd) &amp;&amp; 
+                                (::GetCursorPos(&amp;mouse_position))){<BR>if 
+                                (::WindowFromPoint(mouse_position) == 
+                                m_hWnd){<BR>if ((GetState() &amp; BST_PUSHED) != 
+                                BST_PUSHED) {<BR>//TRACE("* Inconsistency up 
+                                detected! 
+                                Fixing.\n");<BR>SetState(TRUE);<BR>return;<BR>}<BR>} 
+                                else {<BR>if ((GetState() &amp; BST_PUSHED) == 
+                                BST_PUSHED) {<BR>//TRACE("* Inconsistency up 
+                                detected! 
+                                Fixing.\n");<BR>SetState(FALSE);<BR>return;<BR>}<BR>}<BR>}<BR><BR>CString 
+                                sCaption;<BR>CDC *pDC = 
+                                CDC::FromHandle(lpDrawItemStruct-&gt;hDC); // 
+                                get device context<BR>RECT 
+                                r=lpDrawItemStruct-&gt;rcItem; // context 
+                                rectangle<BR>int cx = r.right - r.left ; // get 
+                                width<BR>int cy = r.bottom - r.top ; // get 
+                                height<BR>// get text box position<BR>RECT 
+                                tr={r.left+m_FocusRectMargin+2,r.top,r.right-m_FocusRectMargin-2,r.bottom};<BR><BR>//R.K. 
+                                07.03.03 New values for multi-line 
+                                support<BR>RECT rectsave = tr;<BR>int 
+                                hsize;<BR>int 
+                                iret;<BR><BR>GetWindowText(sCaption); // get 
+                                button 
+                                text<BR>pDC-&gt;SetBkMode(TRANSPARENT);<BR><BR>// 
+                                Select the correct skin <BR>if 
+                                (lpDrawItemStruct-&gt;itemState &amp; 
+                                ODS_DISABLED){ // DISABLED 
+                                BUTTON<BR>if(m_bDisabled.m_hObject==NULL)<BR>// 
+                                no skin selected for disabled state -&gt; 
+                                standard 
+                                button<BR>pDC-&gt;FillSolidRect(&amp;r,GetSysColor(COLOR_BTNFACE));<BR>else 
+                                // paint the 
+                                skin<BR>DrawBitmap(pDC,(HBITMAP)m_bDisabled,r,m_DrawMode);<BR>// 
+                                if needed, draw the standard 3D rectangular 
+                                border<BR>if (m_Border) 
+                                pDC-&gt;DrawEdge(&amp;r,EDGE_RAISED,BF_RECT);<BR>// 
+                                paint the etched button 
+                                text<BR>pDC-&gt;SetTextColor(GetSysColor(COLOR_3DHILIGHT));<BR><BR>//RK 
+                                pDC-&gt;DrawText(sCaption,&amp;tr,DT_SINGLELINE|DT_VCENTER|DT_CENTER);<BR>// 
+                                R.K. 07.03.03 Calculate new values for 
+                                multi-line support<BR><BR>hsize = tr.bottom - 
+                                tr.top; // Check maxsize of Rect<BR>// Calc 
+                                hsize of multiline text<BR>iret = 
+                                pDC-&gt;DrawText(sCaption,&amp;tr, 
+                                DT_WORDBREAK|DT_CALCRECT|DT_CENTER);<BR>tr = 
+                                rectsave;<BR><BR>tr.top = (hsize - iret) / 
+                                2;<BR>pDC-&gt;DrawText(sCaption,&amp;tr, 
+                                DT_WORDBREAK|DT_CENTER);<BR><BR>pDC-&gt;SetTextColor(GetSysColor(COLOR_GRAYTEXT));<BR>OffsetRect(&amp;tr,-1,-1);<BR>//RK 
+                                pDC-&gt;DrawText(sCaption,&amp;tr,DT_SINGLELINE|DT_VCENTER|DT_CENTER);<BR><BR>hsize 
+                                = tr.bottom - tr.top;<BR>iret = 
+                                pDC-&gt;DrawText(sCaption,&amp;tr, 
+                                DT_WORDBREAK|DT_CALCRECT|DT_CENTER);<BR>tr = 
+                                rectsave;<BR><BR>tr.top = (hsize - iret) / 
+                                2;<BR>pDC-&gt;DrawText(sCaption,&amp;tr, 
+                                DT_WORDBREAK|DT_CENTER);<BR><BR>} else { <BR>// 
+                                SELECTED (DOWN) BUTTON<BR>if 
+                                ((lpDrawItemStruct-&gt;itemState &amp; 
+                                ODS_SELECTED)){<BR>if(m_bDown.m_hObject==NULL)<BR>// 
+                                no skin selected for selected state -&gt; 
+                                standard 
+                                button<BR>pDC-&gt;FillSolidRect(&amp;r,GetSysColor(COLOR_BTNFACE));<BR>else 
+                                { // paint the 
+                                skin<BR>DrawBitmap(pDC,(HBITMAP)m_bDown,r,m_DrawMode);<BR>}<BR>OffsetRect(&amp;tr,1,1); 
+                                //shift text<BR>// if needed, draw the standard 
+                                3D rectangular border<BR>if (m_Border) 
+                                pDC-&gt;DrawEdge(&amp;r,EDGE_SUNKEN,BF_RECT);<BR>} 
+                                else { <BR>// DEFAULT 
+                                BUTTON<BR>if(m_bNormal.m_hObject==NULL)<BR>// no 
+                                skin selected for normal state -&gt; standard 
+                                button<BR>pDC-&gt;FillSolidRect(&amp;r,GetSysColor(COLOR_BTNFACE));<BR>else 
+                                // paint the skin<BR>if 
+                                ((m_tracking)&amp;&amp;(m_bOver.m_hObject!=NULL)){<BR>DrawBitmap(pDC,(HBITMAP)m_bOver,r,m_DrawMode);<BR>} 
+                                else 
+                                {<BR>DrawBitmap(pDC,(HBITMAP)m_bNormal,r,m_DrawMode);<BR>}<BR>// 
+                                if needed, draw the standard 3D rectangular 
+                                border<BR>if (m_Border) 
+                                pDC-&gt;DrawEdge(&amp;r,EDGE_RAISED,BF_RECT);<BR>}<BR>// 
+                                paint the focus rect<BR>if 
+                                ((lpDrawItemStruct-&gt;itemState &amp; 
+                                ODS_FOCUS)&amp;&amp;(m_FocusRectMargin&gt;0)){<BR>r.left 
+                                += m_FocusRectMargin ;<BR>r.top += 
+                                m_FocusRectMargin ;<BR>r.right -= 
+                                m_FocusRectMargin ;<BR>r.bottom -= 
+                                m_FocusRectMargin ;<BR>DrawFocusRect 
+                                (lpDrawItemStruct-&gt;hDC, &amp;r) ;<BR>}<BR>// 
+                                paint the enabled button 
+                                text<BR>pDC-&gt;SetTextColor(m_TextColor);<BR>//RK 
+                                pDC-&gt;DrawText(sCaption,&amp;tr,DT_SINGLELINE|DT_VCENTER|DT_CENTER);<BR><BR><BR>int 
+                                hsize = tr.bottom - tr.top;<BR>int iret = 
+                                pDC-&gt;DrawText(sCaption,&amp;tr, 
+                                DT_WORDBREAK|DT_CALCRECT|DT_CENTER);<BR>tr = 
+                                rectsave;<BR><BR>tr.top = (hsize - iret) / 
+                                2;<BR>pDC-&gt;DrawText(sCaption,&amp;tr, 
+                                DT_WORDBREAK|DT_CENTER);<BR><BR>}<BR>}<BR><BR>Hope 
+                                this is helpful.<BR><BR>Robert 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=512665">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=512665">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;tid=512665&amp;forumid=2028&amp;select=512665#xx512665xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?msg=512665#xx512665xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=512665"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=512665"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(71374,512665);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="CxSkinButton_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR id=521525_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx521525xx></A><IMG height=1 
+                        src="CxSkinButton_files/ind.gif" width=18><IMG 
+                        src="CxSkinButton_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;forumid=2028&amp;select=521525#xx521525xx" 
+                        name=521525>Re: Multiple line support added</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=12109"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CxSkinButton_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle>Peggy Van 
+                        Lierde&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>10:00 11 Jun 
+                        '03&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=521525_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="CxSkinButton_files/ind.gif" 
+                        width=18><IMG src="CxSkinButton_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent>Hi,<BR><BR>I tried your 
+                                version of multiline, but in the demo-version, 
+                                it shows de radiobuttons and checkboxes aren't 
+                                properly displayed anymore. What I mean is that 
+                                they seem to "forget" there checked 
+                                status.<BR><BR>For normal pushbuttons, it works, 
+                                but only when checking the "multiline"-option in 
+                                the resource-properties of the 
+                                multiline-button.<BR><BR>Have you noticed this 
+                                problem also? Any idea how to solve 
+                                it?<BR><BR>Greetz,<BR>Peggy 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=521525">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=521525">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;tid=512665&amp;forumid=2028&amp;select=521525#xx521525xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?msg=521525#xx521525xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=521525"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=521525"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(12109,521525);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CxSkinButton_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="CxSkinButton_files/t.gif" width=1></TD></TR>
+              <TR id=503417_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx503417xx></A><IMG 
+                        src="CxSkinButton_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;forumid=2028&amp;select=503417#xx503417xx" 
+                        name=503417><B>enabling WS_CLIPCHILDREN causes bad 
+                        drawing of masked buttons</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=354175"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CxSkinButton_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>ohadp</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>3:05 22 May 
+                        '03</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=503417_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="CxSkinButton_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>I have 
+                                a set of buttons on my dialog. I've implemented 
+                                a resize button class that inherits from 
+                                CxResizeButton and uses SetWindowPos to set the 
+                                dialog's size.<BR><BR>The dialog also has a 
+                                layout manager I wrote that monitors 
+                                <CODE>onSize </CODE>and repositions the buttons 
+                                and other controls.<BR><BR>If I don't enable 
+                                <CODE>WS_CLIPCHILDREN</CODE> I get lots of 
+                                flickering, which is logical since the entire 
+                                background is redraw and so are the masked 
+                                buttons I have on it. If I enable this style, 
+                                There is no flickering during resizing, but for 
+                                some reason <U>the buttons don't display 
+                                correctly</U>. From what I've managed to figure, 
+                                the mask is scaled 1 extra pixel to the left of 
+                                the button, creating a vertical line that has a 
+                                buggy display instead of displaying the 
+                                background image.<BR><BR>any idea why this 
+                                happens ?<BR><BR>thanks for your time 
+                                guys<BR><BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=503417">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=503417">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;tid=503417&amp;forumid=2028&amp;select=503417#xx503417xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?msg=503417#xx503417xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=503417"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=503417"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(354175,503417);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CxSkinButton_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="CxSkinButton_files/t.gif" width=1></TD></TR>
+              <TR id=435937_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx435937xx></A><IMG 
+                        src="CxSkinButton_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;forumid=2028&amp;select=435937#xx435937xx" 
+                        name=435937><B>Adding a popup menu which belongs to the 
+                        button caused error.</B></A></TD>
+                      <TD vAlign=bottom><IMG height=13 
+                        alt="Unconfirmed/Anonymous posting" 
+                        src="CxSkinButton_files/usersuss.gif" 
+                      width=15></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle><B>VC 
+                        user</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>22:54 4 Mar 
+                        '03</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=435937_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="CxSkinButton_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>I try 
+                                to show a popup menu besiding the button through 
+                                RButtonDown message.<BR><BR>1. Add 
+                                OnRButtonDown() function.<BR><BR>2. Use 
+                                TrackPopupMenu() to popup menu besiding the 
+                                button.<BR><BR>3. Menu appears.<BR><BR>4. 
+                                Selects a item of menu or clicks any point on 
+                                screen out of the <BR>region of button to make 
+                                the menu disapper.<BR><BR>5. An error 
+                                occured.<BR><BR>77F767CD int 3<BR><BR>Could 
+                                anyone kindly give me some advice?<BR><BR>Best 
+                                regards! <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=435937">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=435937">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;tid=435937&amp;forumid=2028&amp;select=435937#xx435937xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?msg=435937#xx435937xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=435937"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=435937"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(0,435937);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CxSkinButton_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="CxSkinButton_files/t.gif" width=1></TD></TR>
+              <TR id=430120_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx430120xx></A><IMG 
+                        src="CxSkinButton_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;forumid=2028&amp;select=430120#xx430120xx" 
+                        name=430120><B>SelectClipRgn error</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=123581"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CxSkinButton_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>wangtao58</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>1:53 27 Feb 
+                        '03</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=430120_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="CxSkinButton_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent>Hi,<BR>thanks for very good 
+                                works.<BR>BoundsCheck report that an error at 
+                                the <BR>SelectClipRgn((HDC)GetDC(), 
+                                hClipRgn);<BR>which the HDC is not valid.<BR>I 
+                                change the (HDC)GetDC() to 
+                                GetDC()-&gt;m_hDC<BR>this time the SelectClipRgn 
+                                just return an<BR>ERROR if you change it 
+                                to:<BR>if(SelectClipRgn(GetDC()-&gt;m_hDC, 
+                                hClipRgn)==ERROR)<BR>AfxMessageBox("ERROR");<BR>it 
+                                seems that some thing is wrong with the 
+                                <BR>hClipRgn.<BR><BR>Anyone can help 
+                                me?<BR><BR>Thanks <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=430120">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=430120">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;tid=430120&amp;forumid=2028&amp;select=430120#xx430120xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?msg=430120#xx430120xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=430120"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=430120"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(123581,430120);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CxSkinButton_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="CxSkinButton_files/t.gif" width=1></TD></TR>
+              <TR id=385092_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx385092xx></A><IMG 
+                        src="CxSkinButton_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;forumid=2028&amp;select=385092#xx385092xx" 
+                        name=385092><B>How can I use a bitmap bigger than that 
+                        used in your code</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=154934"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="CxSkinButton_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>AberSabel</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>22:40 9 Jan 
+                        '03</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=385092_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="CxSkinButton_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>:)Dear 
+                                All,<BR><BR>I well appreciated your program 
+                                (CxSkinButton) and I like it a lot espacially 
+                                the interaction between the mouse and the check 
+                                box (eyes with different color ; blue eye, red 
+                                eye and gray eye). In your code, you are using 
+                                for each check box different bitmap with the 
+                                same size. I would like kindly ask you 2 
+                                questions :<BR><BR>1- How can I use a bitmap 
+                                bigger than that used in your code ( I want to 
+                                use a bitmap that has a size bigger than 
+                                IDB_EYERED, IDB_EYEBLU or IDB_EYEGRAY.....) 
+                                ?<BR><BR>2- When running the executable file of 
+                                your code, How can I switch blue eye with red 
+                                eye by clicking somewhere and without clicking 
+                                on the check box ?<BR><BR>Thanks a lot for your 
+                                help<BR><BR>email : abersabel2@hotmail.com 
+                                <BR><BR>I love programming with 
+                                vc++<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=385092">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=385092">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;tid=385092&amp;forumid=2028&amp;select=385092#xx385092xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?msg=385092#xx385092xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=385092"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=385092"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(154934,385092);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CxSkinButton_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="CxSkinButton_files/t.gif" width=1></TD></TR>
+              <TR id=307464_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx307464xx></A><IMG 
+                        src="CxSkinButton_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;forumid=2028&amp;select=307464#xx307464xx" 
+                        name=307464><B>Memory leak in DrawBitmap</B></A></TD>
+                      <TD vAlign=bottom><IMG height=13 
+                        alt="Unconfirmed/Anonymous posting" 
+                        src="CxSkinButton_files/usersuss.gif" 
+                      width=15></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>Anonymous</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>13:39 12 Oct 
+                        '02</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=307464_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="CxSkinButton_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent>Hi,<BR><BR>first, thank you 
+                                for the class. <BR>Second, Visual Studio 
+                                reported a memory leak to me at line 227 and 237 
+                                in function DrawBitmap, when you delete the 
+                                previously created compatible DC. I changed the 
+                                code to call the CDC member function DeleteDC 
+                                and everything is fine now <IMG 
+                                src="CxSkinButton_files/smiley_smile.gif" 
+                                align=absMiddle> <BR><BR>&lt; 
+                                DeleteDC(dcMask);<BR>&gt; 
+                                dcMask.DeleteDC();<BR><BR>&lt; 
+                                DeleteDC(dcBmp);<BR>&gt; 
+                                dcBmp.DeleteDC();<BR><BR>Dirk 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=307464">Reply</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;tid=307464&amp;forumid=2028&amp;select=307464#xx307464xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?msg=307464#xx307464xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=307464"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/buttonctrl/cxskinbutton.asp&amp;df=100&amp;forumid=2028&amp;select=307464"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(0,307464);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="CxSkinButton_files/t.gif" width=1 
+                  border=0></TD></TR></TBODY></TABLE></TD></TR>
+        <TR bgColor=#fbedbb>
+          <TD>
+            <TABLE cellPadding=2 width="100%">
+              <TBODY>
+              <TR>
+                <TD class=messagetitle>Last Visit: 2:42 Wednesday 22nd 
+                  September, 2004</TD>
+                <TD noWrap align=right><FONT class=messagetitle><SPAN 
+                  class=HoverLink>First</SPAN> <SPAN class=HoverLink>Prev</SPAN> 
+                  <A class=HoverLink 
+                  href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;forumid=2028&amp;fr=26" 
+                  name=HoverNL>Next</A> <A class=HoverLink 
+                  href="http://www.codeproject.com/buttonctrl/cxskinbutton.asp?df=100&amp;forumid=2028&amp;fr=51" 
+                  name=HoverNL>Last</A> 
+      </FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><BR>
+<TABLE cellSpacing=5 width="100%">
+  <TBODY>
+  <TR vAlign=top>
+    <TD><FONT style="FONT-SIZE: 7pt" size=1><A 
+      href="http://www.codeproject.com/?cat=1">All Topics</A>, <A 
+      href="http://www.codeproject.com/?cat=2">MFC / C++</A> &gt;&gt; <A 
+      href="http://www.codeproject.com/buttonctrl/">Button Controls</A> &gt;&gt; 
+      <A 
+      href="http://www.codeproject.com/buttonctrl/#Owner%2Ddraw+buttons">Owner-draw 
+      buttons</A> <BR>Updated: 19 Jun 2003 </FONT></TD>
+    <TD align=right><FONT style="FONT-SIZE: 7pt" size=1>Article content 
+      copyright Davide Pizzolato, 2001<BR>everything else Copyright © <A 
+      href="mailto:webmaster@codeproject.com">CodeProject</A>, 1999-2004</A>. 
+      <BR><A href="http://www.codeproject.com/info/MediaKit">Advertise on The 
+      Code Project</A> | <A 
+      href="http://www.codeproject.com/info/privacy.asp">Privacy</A> 
+  </FONT></TD></TR></TBODY></TABLE><BR>
+<CENTER>
+<TABLE cellSpacing=0 cellPadding=0 width="95%" border=0>
+  <TBODY>
+  <TR>
+    <TD bgColor=#ff9900 height=1><IMG height=1 
+      src="CxSkinButton_files/space.gif"></TD></TR>
+  <TR>
+    <TD align=middle><FONT size=1><A 
+      href="http://www.codeproject.com/redir.asp?id=235">MSDN Communities</A> | 
+      <A href="http://aspalliance.com/">ASPAlliance</A> • <A 
+      href="http://www.developerfusion.com/">Developer Fusion</A> • <A 
+      href="http://www.devguru.com/">DevGuru</A> • <A 
+      href="http://www.programmersheaven.com/">Programmers Heaven</A> • <A 
+      href="http://www.planet-source-code.com/">Planet Source Code</A> • <A 
+      href="http://www.resourceindex.com/">Resource Index</A> • <A 
+      href="http://www.tek-tips.com/">Tek-Tips Forums</A> • <A 
+      href="http://www.topxml.com/">What is XML?</A> • <A 
+      href="http://www.visualbuilder.com/">VisualBuilder</A> • <A 
+      href="http://www.zvon.org/">ZVON</A> • <A 
+      href="http://www.codeproject.com/redir.asp?id=169">Search Us!</A> 
+    </FONT></TD></TR></TBODY></TABLE></CENTER></BODY></HTML>

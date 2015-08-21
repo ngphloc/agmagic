@@ -1,0 +1,265 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0045)http://www.rocscience.com/~corkum/BCMenu.html -->
+<HTML xmlns="http://www.w3.org/TR/REC-html40" xmlns:v = 
+"urn:schemas-microsoft-com:vml" xmlns:o = 
+"urn:schemas-microsoft-com:office:office" xmlns:w = 
+"urn:schemas-microsoft-com:office:word"><HEAD><TITLE>Owner Drawn Menus with Bitmaps</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META content=FrontPage.Editor.Document name=ProgId>
+<META content="MSHTML 6.00.3790.0" name=GENERATOR>
+<META content="Microsoft Word 9" name=Originator><LINK 
+href="./BCMenu_files/editdata.mso" rel=Edit-Time-Data>
+<STYLE>@page Section1 {size: 8.5in 11.0in; margin: 1.0in 1.25in 1.0in 1.25in; mso-header-margin: .5in; mso-footer-margin: .5in; mso-paper-source: 0; }
+P.MsoNormal {
+	FONT-SIZE: 12pt; MARGIN: 0in 0in 0pt; FONT-FAMILY: "Times New Roman"; mso-style-parent: ""; mso-pagination: widow-orphan; mso-fareast-font-family: "Times New Roman"
+}
+LI.MsoNormal {
+	FONT-SIZE: 12pt; MARGIN: 0in 0in 0pt; FONT-FAMILY: "Times New Roman"; mso-style-parent: ""; mso-pagination: widow-orphan; mso-fareast-font-family: "Times New Roman"
+}
+DIV.MsoNormal {
+	FONT-SIZE: 12pt; MARGIN: 0in 0in 0pt; FONT-FAMILY: "Times New Roman"; mso-style-parent: ""; mso-pagination: widow-orphan; mso-fareast-font-family: "Times New Roman"
+}
+A:link {
+	COLOR: blue; TEXT-DECORATION: underline; text-underline: single
+}
+SPAN.MsoHyperlink {
+	COLOR: blue; TEXT-DECORATION: underline; text-underline: single
+}
+A:visited {
+	COLOR: purple; TEXT-DECORATION: underline; text-underline: single
+}
+SPAN.MsoHyperlinkFollowed {
+	COLOR: purple; TEXT-DECORATION: underline; text-underline: single
+}
+P {
+	FONT-SIZE: 12pt; FONT-FAMILY: "Times New Roman"; mso-fareast-font-family: "Times New Roman"
+}
+PRE {
+	FONT-SIZE: 10pt; MARGIN: 0in 0in 0pt; FONT-FAMILY: "Courier New"; mso-fareast-font-family: "Courier New"
+}
+TT {
+	mso-fareast-font-family: "Courier New"; mso-ascii-font-family: "Courier New"; mso-hansi-font-family: "Courier New"; mso-bidi-font-family: "Courier New"
+}
+DIV.Section1 {
+	page: Section1
+}
+OL {
+	MARGIN-BOTTOM: 0in
+}
+UL {
+	MARGIN-BOTTOM: 0in
+}
+</STYLE>
+<!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+<META content="D:\Program Files\Microsoft Office\Office\html.dot" 
+name=Template></HEAD>
+<BODY lang=EN-US style="tab-interval: .5in" vLink=purple link=blue>
+<DIV class=Section1 style="WIDTH: 728px; HEIGHT: 4481px">
+<TABLE id=AutoNumber1 style="BORDER-COLLAPSE: collapse" borderColor=#111111 
+height=162 cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD width="49%" height=162><B><SPAN 
+      style="FONT-SIZE: 13.5pt; COLOR: red">Cool Owner Drawn Menus with 
+      Bitmaps<BR>Version 3.034 May 2002<BR>By </SPAN></B><A 
+      style="COLOR: blue; TEXT-DECORATION: underline; text-underline: single" 
+      href="mailto:corkum@rocscience.com"><B><SPAN 
+      style="FONT-SIZE: 13.5pt">Brent Corkum</SPAN></B></A>
+      <P>&nbsp;</P>
+      <P><B><SPAN style="FONT-SIZE: 10pt"><A 
+      style="COLOR: blue; TEXT-DECORATION: underline; text-underline: single" 
+      href="http://www.rocscience.com/~corkum/Updates.html">Update 
+      Information<BR></A></SPAN></B><SPAN 
+      style="FONT-SIZE: 13.5pt"><BR></SPAN><B><SPAN style="FONT-SIZE: 10pt"><A 
+      style="COLOR: blue; TEXT-DECORATION: underline; text-underline: single" 
+      href="http://www.rocscience.com/~corkum/bcmenu3034.zip">Download MFC MDI 
+      Source Code+Example (97KB)</A><BR></SPAN></B><FONT size=2><B><A 
+      href="http://www.rocscience.com/~corkum/bcdialogmenu3034.zip">Download MFC 
+      Dialog Sorce Code+Example (78KB)</A></B></FONT></P>
+      <P>&nbsp;</P></TD>
+    <TD vAlign=top width="12%" height=162><IMG height=241 
+      src="bcmenu_files/menu.gif" width=154 border=0></TD>
+    <TD width="4%" height=162>&nbsp;</TD>
+    <TD width="25%" height=162><IMG height=285 
+      src="bcmenu_files/owner_drawn_menuxp.gif" width=174 align=left 
+  border=0></TD></TR></TBODY></TABLE>
+<H4>&nbsp;</H4>
+<H4><U><FONT color=#800000 size=4>What's new in Version 3.0</FONT></U></H4>
+<P><B>As you can see&nbsp; I've added the new Office XP drawing style for the 
+menu's. I just got a machine with Windows XP on it and I noticed that the menu's 
+in all our applications looked terrible. So I decided to do something about it 
+and after 2 years of not looking at the class, added the new menu drawing style, 
+and added lot's of fixes and user requests. Now the new drawing style isn't 
+exactly like Microsoft's, but I got it so it looks good enough to me. For people 
+that use the old class it's a simple matter of taking exchanging the old BCMenu 
+.cpp and .h files with the new ones.</B></P>
+<P><B>The class currently uses the new style on XP and the old style on Win9x/NT 
+and 2000. However, if you like the new style and you want to use it on all 
+Windows platforms, just change the following line at the top of the BCMenu.cpp 
+file from:</B></P><FONT color=#0000ff>
+<P>UINT</FONT> <FONT color=#0000ff>BCMenu</FONT>::<FONT 
+color=#808080>original_drawmode</FONT>=<FONT 
+color=#a000a0>BCMENU_DRAWMODE_ORIGINAL</FONT>;</P>
+<P><B>to</B></P><FONT color=#0000ff>
+<P>UINT</FONT> <FONT color=#0000ff>BCMenu</FONT>::<FONT 
+color=#808080>original_drawmode</FONT>=<FONT 
+color=#a000a0>BCMENU_DRAWMODE_XP</FONT>;</P>
+<P><B>Likewise, if you think I did a terrible job you can change the drawing 
+style to the original one on all the platforms. </B></P>
+<P><B>Other additions include support for images with greater than 16 colors. 
+The example contains images with both 256 and 16 million colors. There is also 
+an option for how to draw disabled options. In XP mode they are not selected but 
+this can be changed. I also fixed the problem with multiple menu items with the 
+same command ID not getting images (only the first one did!).&nbsp; I also went 
+through most of the articles on <A 
+href="http://www.codeguru.com/menu/owner_drawn_menu3.shtml">codeguru</A> and <A 
+href="http://www.codeproject.com/menu/bcmenu.asp">codeproject</A> and fixed a 
+number of bugs that people pointed out. See the <A 
+href="http://www.rocscience.com/~corkum/Updates.html">update page</A> for more 
+information.</B></P>
+<H4><U><FONT color=#800000 size=4>Introduction</FONT></U></H4>
+<H4>This class, BCMenu, implements owner drawn menus derived from the CMenu 
+class. The purpose of which is to mimic the menu style used in Visual C++ 
+5.0/6.0 and MS Word. I can't take credit for all the code, some portions of it 
+were taken from code supplied by Ben Ashley and Girish Bharadwaj. The difference 
+between their codes and this one is quite simple, this one makes it very easy to 
+build those cool menus with bitmaps into your application. I've removed the Icon 
+loading stuff and replaced it with Bitmaps. The bitmaps allow you to use the 
+16X15 toolbar bitmaps directly from your toolbars in the resource editor. As 
+well, there is no scaling of the bitmaps so they always look good. You can also 
+load Bitmap resources and define bitmaps for your check marks. I've also added 
+the default checkmark drawing stuff, separators, proper alignment of keyboard 
+accelerator text, keyboard shortcuts, proper alignment of popup menu items, 
+proper system color changes when the Display Appearance changes, plus bug fixes 
+to the Ben Ashley's LoadMenu function for complex submenu systems. I made quite 
+a few other modifications as well, too many to list or remember. If you find any 
+bugs, memory leaks, or just better ways of doing things, please let me know. I 
+used Visual C++ 5.0 and I have not tested compatibility with earlier VC 
+versions. I've tested it on Win 95/NT at various resolutions and color palette 
+sizes.</H4>
+<P><U><B><FONT color=#800000 size=4>Installation (MDI 
+Application)</FONT></B></U></P>
+<H4>Well, enough of the boring stuff, lets talk about implementation. To make it 
+easy I'm first going to list step by step the method for implementing the menus 
+into a MDI application:</H4>
+<OL type=1>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; mso-list: l0 level1 lfo1; tab-stops: list .5in">Create 
+  your MDI application using the App Wizard. 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; mso-list: l0 level1 lfo1; tab-stops: list .5in">Insert 
+  the BCMenu.cpp and BCMenu.h files into your Workspace. 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; mso-list: l0 level1 lfo1; tab-stops: list .5in">Add 
+  the following public member functions to your CMainFrame class in the 
+  MainFrm.h header file: </LI></OL><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red">HMENU NewMenu();<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red">HMENU NewDefaultMenu();<o:p></o:p></SPAN></PRE>
+<OL type=1 start=4>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; mso-list: l0 level1 lfo1; tab-stops: list .5in">Add 
+  the following public member variables to your CMainFrame class in the 
+  MainFrm.h header file: </LI></OL><PRE style="MARGIN-LEFT: 0.5in"><SPAN lang=FR style="COLOR: red; mso-ansi-language: FR">BCMenu m_menu,m_default;<o:p></o:p></SPAN></PRE>
+<OL type=1 start=5>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; mso-list: l0 level1 lfo1; tab-stops: list .5in">Add 
+  the line: </LI></OL><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red">#include "BCMenu.h"<o:p></o:p></SPAN></PRE>
+<P style="MARGIN-LEFT: 0.5in">to the top of the MainFrm.h header file.</P>
+<OL type=1 start=6>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; mso-list: l0 level1 lfo1; tab-stops: list .5in">Open 
+  the Mainfrm.cpp implementation file and add the NewMenu and NewDefaultMenu 
+  member functions as listed below. <B>IMPORTANT:</B> Make sure you replace the 
+  IDR_MYMENUTYPE menu id in the below LoadMenu call to the menu id associated 
+  with the menu's in your application. Look in the menus folder of the Resources 
+  view. </LI></OL><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN lang=FR style="COLOR: red; mso-ansi-language: FR">HMENU CMainFrame::NewMenu()<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red">{<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>static UINT toolbars[]={<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN>IDR_MAINFRAME</SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>};<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><TT><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>// Load the menu from the resources<o:p></o:p></TT></PRE><PRE style="MARGIN-LEFT: 0.5in"><TT><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>m_menu.LoadMenu(IDR_MYMENUTYPE);<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>// ****replace IDR_MENUTYPE with your menu ID****<o:p></o:p></SPAN></TT></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>// Use ModifyODMenu to add a bitmap to a menu options.The first parameter</PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>// is the menu option text string.If it's NULL, keep the current text</PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>// string.The second option is the ID of the menu option, or the menu</PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>// option text (can use this for adding bitmaps to popup options) to change.</PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>// The third option is the resource ID of the bitmap.This can also be a</PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>// toolbar ID in which case the class searches the toolbar for the</PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>// appropriate bitmap.Only Bitmap and Toolbar resources are supported.</PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>// m_menu.ModifyODMenu(NULL,ID_WINDOW_NEW,IDB_WINDOW_NEW);<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>// m_menu.ModifyODMenu(NULL, "&amp;Tile",IDB_WINDOW_TILE);<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>// Another method for adding bitmaps to menu options is through the</PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>// LoadToolbars member function.This method allows you to add all</PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>// the bitmaps in a toolbar object to menu options (if they exist).</PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>// The first function parameter is an array of toolbar id's.</PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>// The second is the number of toolbar id's. There is also a</PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>// function called LoadToolbar that just takes an id.</PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>m_menu.LoadToolbars(toolbars,1);<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><TT><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>return(m_menu.Detach());<o:p></o:p></SPAN></TT></PRE><PRE style="MARGIN-LEFT: 0.5in"><TT><SPAN style="COLOR: red">}<o:p></o:p></SPAN></TT></PRE><PRE style="MARGIN-LEFT: 0.5in"><TT><SPAN style="COLOR: red"><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></SPAN></TT></PRE><PRE style="MARGIN-LEFT: 0.5in"><TT><SPAN style="COLOR: red">HMENU CMainFrame::NewDefaultMenu()<o:p></o:p></SPAN></TT></PRE><PRE style="MARGIN-LEFT: 0.5in"><TT><SPAN style="COLOR: red">{<o:p></o:p></SPAN></TT></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN></SPAN><SPAN lang=FR style="COLOR: red; mso-ansi-language: FR">m_default.LoadMenu(IDR_MAINFRAME);<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN lang=FR style="COLOR: red; mso-ansi-language: FR"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN></SPAN><SPAN style="COLOR: red">m_default.LoadToolbar(IDR_MAINFRAME);<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>return(m_default.Detach());<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><TT><SPAN style="COLOR: red">}</SPAN><o:p></o:p></TT></PRE>
+<OL type=1 start=7>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; mso-list: l0 level1 lfo1; tab-stops: list .5in"><SPAN 
+  style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'; mso-fareast-font-family: 'Courier New'">Edit 
+  the InitInstance() member function of your CWinApp derived class and add 
+  following highlighted code in the position noted:<o:p></o:p></SPAN> </LI></OL><PRE style="MARGIN-LEFT: 0.5in">// create main MDI Frame window</PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN lang=FR style="mso-ansi-language: FR">CMainFrame* pMainFrame = new CMainFrame;<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in">if (!pMainFrame-&gt;LoadFrame(IDR_MAINFRAME))</PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="mso-tab-count: 1">&nbsp; </SPAN>return FALSE;</PRE><PRE style="MARGIN-LEFT: 0.5in">m_pMainWnd = pMainFrame;</PRE><PRE style="MARGIN-LEFT: 0.5in">// This code replaces the MFC created menus with the Ownerdrawn versions </PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red">pDocTemplate-&gt;m_hMenuShared=pMainFrame-&gt;NewMenu();<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red">pMainFrame-&gt;m_hMenuDefault=pMainFrame-&gt;NewDefaultMenu();<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in">// This simulates a window being opened if you don't have</PRE><PRE style="MARGIN-LEFT: 0.5in">// a default window displayed at startup</PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN lang=FR style="COLOR: red; mso-ansi-language: FR">pMainFrame-&gt;OnUpdateFrameMenu(pMainFrame-&gt;m_hMenuDefault);<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN lang=FR style="COLOR: red; mso-ansi-language: FR"><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in">// Parse command line for standard shell commands, DDE, file open</PRE><PRE style="MARGIN-LEFT: 0.5in">CCommandLineInfo cmdInfo;</PRE><PRE style="MARGIN-LEFT: 0.5in">ParseCommandLine(cmdInfo);</PRE>
+<OL type=1 start=8>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; mso-list: l0 level1 lfo1; tab-stops: list .5in"><SPAN 
+  style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'; mso-fareast-font-family: 'Courier New'">Add 
+  the message handlers for the WM_MEASUREITEM, WM_MENUCHAR, and WM_INITMENUPOPUP 
+  messages to your CMainFrame class. Do this by right clicking on the CMainFrame 
+  class in the ClassView and selecting <I>Add Windows Message Handler</I>. 
+  Choose the <I>Window</I> option from the <I>Filter for messages available to 
+  class</I> combo box. Select the message and add the handler. Then edit the 
+  handler and add the below code.<o:p></o:p></SPAN> </LI></OL><PRE style="MARGIN-LEFT: 0.5in">//This handler ensure that the popup menu items are drawn correctly</PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red">void CMainFrame::OnMeasureItem(int nIDCtl, LPMEASUREITEMSTRUCT lpMeasureItemStruct) <o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red">{<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>BOOL setflag=FALSE;<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>if(lpMeasureItemStruct-&gt;CtlType==ODT_MENU){<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN>if(IsMenu((HMENU)lpMeasureItemStruct-&gt;itemID)){<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>CMenu* cmenu=CMenu::FromHandle((HMENU)lpMeasureItemStruct-&gt;itemID);<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>if(BCMenu::IsMenu(cmenu)){<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>m_menu.MeasureItem(lpMeasureItemStruct);<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>setflag=TRUE;<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>}<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN>}<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>}<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>if(!setflag)CMDIFrameWnd::OnMeasureItem(nIDCtl, lpMeasureItemStruct);<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red">}<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></PRE><PRE style="MARGIN-LEFT: 0.5in">//This handler ensures that keyboard shortcuts work</PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red">LRESULT CMainFrame::OnMenuChar(UINT nChar, UINT nFlags, CMenu* pMenu) <o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red">{<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>LRESULT lresult;<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>if(BCMenu::IsMenu(pMenu))<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN>lresult=BCMenu::FindKeyboardShortcut(nChar, nFlags, pMenu);<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>else<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN>lresult=CMDIFrameWnd::OnMenuChar(nChar, nFlags, pMenu);<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>return(lresult);<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red">}<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in">//This handler updates the menus from time to time</PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red">void CMainFrame::OnInitMenuPopup(CMenu* pPopupMenu, UINT nIndex, BOOL bSysMenu) <o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red">{<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>CMDIFrameWnd::OnInitMenuPopup(pPopupMenu, nIndex, bSysMenu);<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>if(!bSysMenu){<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"> <SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;</SPAN>if(BCMenu::IsMenu(pPopupMenu))BCMenu::UpdateMenu(pPopupMenu);<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>}<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red">}<o:p></o:p></SPAN></PRE>
+<OL type=1 start=9>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; mso-list: l0 level1 lfo1; tab-stops: list .5in"><SPAN 
+  style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'; mso-fareast-font-family: 'Courier New'">If 
+  you are debugging or you are mixing standard menus with the BCMenu's (maybe 
+  you have different Document templates using the standard menu's) then you 
+  should turn on RTTI in the project settings.<o:p></o:p></SPAN> </LI></OL>
+<H4 style="MARGIN-LEFT: 0.5in">Well, that's it. Compile the program and look in 
+the File menu. You should see the bitmaps. I've tried the menus with context 
+menus and they seem to work fine. I also have a small <A 
+href="http://www.rocscience.com/~corkum/bcmenu300.zip">sample program</A> 
+(source+exe) that also uses bitmaps for check marks and bitmaps for a few menu 
+options and has a context menu when you right click in a view.</H4>
+<H4 style="MARGIN-LEFT: 0in" align=left><U><B><FONT color=#800000 
+size=4>Installation (SDI Application)</FONT></B></U></H4>
+<H4 style="MARGIN-LEFT: 0in">If you want to add the menus to a SDI 
+application:</H4>
+<OL type=1>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; mso-list: l0 level1 lfo2; tab-stops: list .5in"><SPAN 
+  style="FONT-SIZE: 10pt">Create your SDI application using the App 
+  Wizard.<o:p></o:p></SPAN> 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; mso-list: l0 level1 lfo2; tab-stops: list .5in"><SPAN 
+  style="FONT-SIZE: 10pt">Insert the BCMenu.cpp and BCMenu.h files into your 
+  Workspace.<o:p></o:p></SPAN> 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; mso-list: l0 level1 lfo2; tab-stops: list .5in"><SPAN 
+  style="FONT-SIZE: 10pt">Add the following public member function to your 
+  CMainFrame class in the MainFrm.h header file:<o:p></o:p></SPAN> </LI></OL><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red">HMENU NewMenu();<o:p></o:p></SPAN></PRE>
+<OL type=1 start=4>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; mso-list: l0 level1 lfo2; tab-stops: list .5in"><SPAN 
+  style="FONT-SIZE: 10pt">Add the following public member variables to your 
+  CMainFrame class in the MainFrm.h header file:<o:p></o:p></SPAN> </LI></OL><PRE style="MARGIN-LEFT: 0.5in"><SPAN lang=FR style="COLOR: red; mso-ansi-language: FR">BCMenu m_menu;<o:p></o:p></SPAN></PRE>
+<OL type=1 start=5>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; mso-list: l0 level1 lfo2; tab-stops: list .5in"><SPAN 
+  style="FONT-SIZE: 10pt">Add the line:<o:p></o:p></SPAN> </LI></OL><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red">#include "BCMenu.h"<o:p></o:p></SPAN></PRE>
+<P style="MARGIN-LEFT: 0.5in"><SPAN style="FONT-SIZE: 10pt">to the top of the 
+MainFrm.h header file.<o:p></o:p></SPAN></P>
+<OL type=1 start=6>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; mso-list: l0 level1 lfo2; tab-stops: list .5in"><SPAN 
+  style="FONT-SIZE: 10pt">Open the Mainfrm.cpp implementation file and add the 
+  NewMenu and NewDefaultMenu member functions as listed below. <B>IMPORTANT:</B> 
+  Make sure you replace the IDR_MAINFRAME menu id in the below LoadMenu call to 
+  the menu id associated with the menu's in your application. Look in the menus 
+  folder of the Resources view.<o:p></o:p></SPAN> </LI></OL><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN lang=FR style="COLOR: red; mso-ansi-language: FR">HMENU CMainFrame::NewMenu()<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red">{<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>// Load the menu from the resources</PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>m_menu.LoadMenu(IDR_MAINFRAME);<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>// ****replace IDR_MAINFRAME with your menu ID****<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>// Use ModifyODMenu to add a bitmap to a menu options.The first parameter</PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>// is the menu option text string.If it's NULL, keep the current text</PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>// string.The second option is the ID of the menu option to change.</PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>// The third option is the resource ID of the bitmap.This can also be a</PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>// toolbar ID in which case the class searches the toolbar for the</PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>// appropriate bitmap.Only Bitmap and Toolbar resources are supported.</PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>// m_menu.ModifyODMenu(NULL,ID_ZOOM,IDB_ZOOM);<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>// Another method for adding bitmaps to menu options is through the</PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>// LoadToolbar member function.This method allows you to add all</PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>// the bitmaps in a toolbar object to menu options (if they exist).</PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>// The function parameter is an the toolbar id.</PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>// There is also a function called LoadToolbars that takes an</PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>// array of id's.</PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>m_menu.LoadToolbar(IDR_MAINFRAME);<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><TT><SPAN style="COLOR: red"><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></SPAN></TT></PRE><PRE style="MARGIN-LEFT: 0.5in"><TT><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>return(m_menu.Detach());<o:p></o:p></SPAN></TT></PRE><PRE style="MARGIN-LEFT: 0.5in"><TT><SPAN style="COLOR: red">}</SPAN><o:p></o:p></TT></PRE>
+<OL type=1 start=7>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; mso-list: l0 level1 lfo2; tab-stops: list .5in"><SPAN 
+  style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'; mso-fareast-font-family: 'Courier New'">Edit 
+  the InitInstance() member function of your CWinApp derived class and add 
+  following highlighted code in the position noted:<o:p></o:p></SPAN> </LI></OL><PRE style="MARGIN-LEFT: 0.5in">// Dispatch commands specified on the command line</PRE><PRE style="MARGIN-LEFT: 0.5in">if (!ProcessShellCommand(cmdInfo))</PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="mso-tab-count: 1">&nbsp; </SPAN>return FALSE;</PRE><PRE style="MARGIN-LEFT: 0.5in"><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>CMenu* pMenu = m_pMainWnd-&gt;GetMenu();<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>if (pMenu)pMenu-&gt;DestroyMenu();<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>HMENU hMenu = ((CMainFrame*) m_pMainWnd)-&gt;NewMenu();<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>pMenu = CMenu::FromHandle( hMenu );<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>m_pMainWnd-&gt;SetMenu(pMenu);<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>((CMainFrame*)m_pMainWnd)-&gt;m_hMenuDefault = hMenu;<o:p></o:p></SPAN></PRE>
+<OL type=1 start=8>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; mso-list: l0 level1 lfo2; tab-stops: list .5in"><SPAN 
+  style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'; mso-fareast-font-family: 'Courier New'">Add 
+  the message handlers for the WM_MEASUREITEM, WM_MENUCHAR, and WM_INITMENUPOPUP 
+  messages to your CMainFrame class. Do this by right clicking on the CMainFrame 
+  class in the ClassView and selecting <I>Add Windows Message Handler</I>. 
+  Choose the <I>Window</I> option from the <I>Filter for messages available to 
+  class</I> combo box. Select the message and add the handler. Then edit the 
+  handler and add the below code.<o:p></o:p></SPAN> </LI></OL><PRE style="MARGIN-LEFT: 0.5in">//This handler ensure that the popup menu items are drawn correctly</PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red">void CMainFrame::OnMeasureItem(int nIDCtl, LPMEASUREITEMSTRUCT lpMeasureItemStruct) <o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red">{<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>BOOL setflag=FALSE;<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>if(lpMeasureItemStruct-&gt;CtlType==ODT_MENU){<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN>if(IsMenu((HMENU)lpMeasureItemStruct-&gt;itemID)){<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>CMenu* cmenu=CMenu::FromHandle((HMENU)lpMeasureItemStruct-&gt;itemID);<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>if(BCMenu::IsMenu(cmenu)){<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>m_menu.MeasureItem(lpMeasureItemStruct);<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>setflag=TRUE;<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>}<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN>}<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>}<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>if(!setflag)CFrameWnd::OnMeasureItem(nIDCtl, lpMeasureItemStruct);<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red">}<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></PRE><PRE style="MARGIN-LEFT: 0.5in">//This handler ensures that keyboard shortcuts work</PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red">LRESULT CMainFrame::OnMenuChar(UINT nChar, UINT nFlags, CMenu* pMenu) <o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red">{<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>LRESULT lresult;<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>if(BCMenu::IsMenu(pMenu))<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN>lresult=BCMenu::FindKeyboardShortcut(nChar, nFlags, pMenu);<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>else<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN>lresult=CFrameWnd::OnMenuChar(nChar, nFlags, pMenu);<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>return(lresult);<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red">}<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in">//This handler updates the menus from time to time</PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red">void CMainFrame::OnInitMenuPopup(CMenu* pPopupMenu, UINT nIndex, BOOL bSysMenu) <o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red">{<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>CFrameWnd::OnInitMenuPopup(pPopupMenu, nIndex, bSysMenu);<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>if(!bSysMenu){<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN>if(BCMenu::IsMenu(pPopupMenu))BCMenu::UpdateMenu(pPopupMenu);<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>}<o:p></o:p></SPAN></PRE><PRE style="MARGIN-LEFT: 0.5in"><SPAN style="COLOR: red">}<o:p></o:p></SPAN></PRE>
+<OL type=1 start=9>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; mso-list: l0 level1 lfo2; tab-stops: list .5in"><SPAN 
+  style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'; mso-fareast-font-family: 'Courier New'">If 
+  you are debugging or you are mixing standard menus with the BCMenu's (maybe 
+  you have different Document templates using the standard menu's) then you 
+  should turn on RTTI in the project settings.<o:p></o:p></SPAN> 
+</LI></OL></DIV></BODY></HTML>

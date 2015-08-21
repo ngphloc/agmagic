@@ -1,0 +1,64 @@
+
+      END-USER LICENSE AGREEMENT FOR PROF-UIS (FREEWARE)
+
+  
+  1.  This license agreement ("License") is a legal agreement
+      between you (either an individual or a single entity) and 
+      FOSS Software, Inc. and describes your rights and obligations
+      regarding the use of the freeware version of the Prof-UIS
+      software ("SOFTWARE PRODUCT").
+
+  2.  If you do not agree to all of the terms of this agreement,
+      you shall remove all the files related to the SOFTWARE PRODUCT
+      from your storage media and cease any further use of the
+      SOFTWARE PRODUCT. Any violation of these terms will subject you
+      to legal liability.
+
+  3.  The SOFTWARE PRODUCT is the intellectual property of and is
+      owned by FOSS Software, Inc.
+
+  4.  The SOFTWARE PRODUCT is protected by copyright laws and
+      international copyright treaties, as well as other intellectual
+      property laws and treaties. The SOFTWARE PRODUCT is licensed,
+      not sold.
+
+  5.  Subject to the terms set forth in this License, 
+      FOSS Software, Inc. grants you a nontransferable, non-exclusive right
+      to use the SOFTWARE PRODUCT.
+
+  6.  This License grants you a right to use the SOFTWARE PRODUCT
+      for FREE. Such use is granted for non-commercial purposes only.
+
+  7.  You may:
+        
+        a.  distribute any part of the SOFTWARE PRODUCT with you
+            applications for any kind of personal, educational, and non-
+            commercial usage
+        
+        b.  install and use the SOFTWARE PRODUCT on as many computers as
+            you wish
+        
+        c.  modify or alter the SOFTWARE PRODUCT at your own risk,
+            provided that such modifications are extensively commented
+  
+  8.  You may not:
+
+       a.  distribute any part of the SOFTWARE PRODUCT for commercial
+           purposes
+
+        b. sell, rent, lease, or sublicense the SOFTWARE PRODUCT
+        
+        c.  transfer the rights on the SOFTWARE PRODUCT
+
+        d.  remove any proprietary notices or labels on the SOFTWARE
+            PRODUCT.
+  
+  9.  This SOFTWARE PRODUCT is provided "AS IS" without warranty
+      of any kind including, but not limited to, warranties of
+      merchantability, fitness for a particular purpose and non-
+      infringement. In no event will the FOSS Software, Inc. be liable
+      for any direct, indirect, incidental, special, exemplary or
+      consequential damages, including damages for loss of profits,
+      loss or inaccuracy of data, incurred by any person from such
+      person's usage of this SOFTWARE PRODUCT even if advised of the
+      possibility of such damages.

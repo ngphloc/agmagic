@@ -1,0 +1,1869 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0049)http://www.codeproject.com/dialog/smoothalpha.asp -->
+<HTML><HEAD><TITLE>The Code Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META http-equiv=Reply-to content=mailto:webmaster@codeproject.com>
+<META content="Free source code and tutorials for Windows developers." 
+name=Description>
+<META 
+content="Free source code, Dialog and Windows, Visual C++, MFC, Windows, Translucent, Alpha, Smooth" 
+name=keywords>
+<META 
+content="Article content copyright -Kirill-, 2002, everthing else Copyright © CodeProject, 1999-2004, All Rights Reserved." 
+name=Copyright><LINK href="/favicon.ico" type=image/ico rel=icon><LINK 
+href="/favicon.ico" rel="SHORTCUT ICON"><LINK 
+href="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/global.css" 
+type=text/css rel=stylesheet>
+<SCRIPT language=javascript 
+src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/oncopy.js"></SCRIPT>
+
+<META content="MSHTML 6.00.2600.0" name=GENERATOR></HEAD>
+<BODY oncopy="return copyCode();" text=black vLink=purple aLink=red link=blue 
+bgColor=white leftMargin=3 topMargin=3>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#ff9900 border=0>
+  <TBODY>
+  <TR>
+    <TD width="100%">
+      <TABLE cellSpacing=1 cellPadding=0 width="100%" bgColor=#ff9900 
+        border=0><TBODY>
+        <TR>
+          <TD vAlign=top><A href="http://www.codeproject.com/"><IMG height=72 
+            alt="The Code Project" 
+            src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/logo225x72.gif" 
+            width=225 border=0></A></TD>
+          <TD align=right><SPAN id=AdBanner4><A 
+            href="http://www.codeproject.com/script/admentor/ads.asp"><IMG 
+            height=60 alt="View our advertisers" 
+            src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/sponsors.gif" 
+            width=20 border=1></A>
+            <SCRIPT language=javascript>document.write("<a href=\"/script/admentor/admentorredir.asp?id=412&way=ban\" target=_blank><img src=\"/script/admentor/include/ServeAd.aspx?File=%2Fscript%2Fadmentor%2Fimages%2Fbanner%2D468x60%2Dtallpdf%2Egif&C=False&id=412\" alt=\"Generating PDF was never this easy.\" border=0 width=486 height=60></a>");</SCRIPT>
+            <A href="http://www.codeproject.com/info/mediakit"><IMG height=60 
+            alt="Advertise on the CodeProject" 
+            src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/advertise.gif" 
+            width=20 border=1></A></SPAN></TD></TR>
+        <TR>
+          <TD bgColor=#fbedbb colSpan=2>
+            <TABLE cellPadding=3 width="100%" bgColor=#fbedbb border=0>
+              <TBODY>
+              <TR vAlign=top>
+                <TD width="100%"><FONT style="FONT-SIZE: 8pt"><A 
+                  href="http://www.codeproject.com/?cat=1">All Topics</A>, <A 
+                  href="http://www.codeproject.com/?cat=2">MFC / C++</A> 
+                  &gt;&gt; <A href="http://www.codeproject.com/dialog/">Dialog 
+                  and Windows</A> &gt;&gt; <A 
+                  href="http://www.codeproject.com/dialog/#Windows+2000+Styles">Windows 
+                  2000 Styles</A></FONT><BR><BR><B><FONT style="FONT-SIZE: 16pt" 
+                  size=4>Producing translucent dialog boxes and windows without 
+                  flickering</FONT></B><BR><B>By <A 
+                  href="http://www.codeproject.com/script/profile/whos_who.asp?id=44541">-Kirill-</A> 
+                  </B><BR><BR><FONT style="FONT-SIZE: 9pt">Enhancing window 
+                  fade-in to render common controls correctly and to allow the 
+                  window to remain transparent after the fade-in&nbsp;</FONT> 
+</TD>
+                <TD vAlign=top align=right>
+                  <TABLE cellSpacing=0 cellPadding=1 width=200 border=0>
+                    <TBODY>
+                    <TR vAlign=top>
+                      <TD>&nbsp;</TD>
+                      <TD class=SmallText>C++ (VC6)<BR>Windows (WinXP, 
+                        Win2K)<BR>MFC, Win32, VS<BR>Dev</TD></TR>
+                    <TR>
+                      <TD>&nbsp;</TD>
+                      <TD class=SmallText noWrap>Posted 7 Aug 2002</TD></TR>
+                    <TR vAlign=top>
+                      <TD><IMG height=16 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/hlp.gif" 
+                        width=16></TD>
+                      <TD class=SmallText noWrap><A 
+                        href="http://www.codeproject.com/script/Articles/list_articles.asp?userid=44541">Articles 
+                        by this author</A></TD></TR>
+                    <TR vAlign=top>
+                      <TD></TD>
+                      <TD class=SmallText noWrap><B>32,483</B> 
+                    views</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD colSpan=2>
+            <TABLE id=tblSiteToolbar cellSpacing=0 cellPadding=1 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <FORM name=Search action=/info/search.asp method=post>
+                <TD vAlign=top align=left width="100%">
+                  <TABLE cellSpacing=0 cellPadding=1 border=0>
+                    <TBODY>
+                    <TR vAlign=center>
+                      <TD class=smallText><B><FONT 
+                        color=white>Search:</FONT></B></TD>
+                      <TD class=navbar noWrap><INPUT class=smallText 
+                        maxLength=255 size=18 name=target></TD>
+                      <TD vAlign=top><SELECT class=smallText name=st> 
+                          <OPTION value=kw selected>Articles</OPTION> <OPTION 
+                          value=au>Authors</OPTION></SELECT></TD>
+                      <TD><INPUT class=formButton type=submit value=Go></TD></TR></TBODY></TABLE></TD></FORM>
+                <TD>
+                  <DIV id=MenuPos 
+                  style="WIDTH: 380px; POSITION: relative; HEIGHT: 20px">
+                  <TABLE height=20 cellSpacing=0 cellPadding=2 width=375>
+                    <TBODY>
+                    <TR>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/info/faq.asp">Help!</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/info/latest.asp">Articles</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/script/comments/forums.asp">Message 
+                        Boards</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/store/">StoreFront</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/lounge.asp">Lounge</A></TD></TR></TBODY></TABLE></DIV></TD></TR></TBODY></TABLE>
+            <SCRIPT type=text/javascript>function Go(){return}</SCRIPT>
+
+            <SCRIPT 
+            src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/cpmenu_var.js" 
+            type=text/javascript></SCRIPT>
+
+            <SCRIPT 
+            src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/menu10_com.js" 
+            type=text/javascript></SCRIPT>
+          </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=1 border=0>
+  <TBODY>
+  <TR vAlign=top>
+    <TD vAlign=top bgColor=#fbedbb rowSpan=2>
+      <TABLE cellSpacing=0 cellPadding=0 border=0>
+        <SCRIPT language=javascript>
+function ErrorHandle() {}
+window.onerror = ErrorHandle;
+
+function OnNLSubmit(option)
+{
+	if (option=="up")
+		document.subForm.action = "/script/profile/modify.asp?ct=%2Fdialog%2Fsmoothalpha%2Easp";
+	else if (option=="in")
+		document.subForm.action = "/script/profile/process_logon.asp?ct=%2Fdialog%2Fsmoothalpha%2Easp";
+	document.subForm.submit();
+	return true;
+}
+</SCRIPT>
+
+        <TBODY>
+        <TR>
+          <TD>
+            <TABLE cellSpacing=3 cellPadding=0>
+              <TBODY>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD class=InfoBarHeader>Toolbox</TD></TR>
+              <TR>
+                <TD bgColor=black colSpan=2><IMG height=1 
+                  src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/space.gif" 
+                  width=1></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/sitebuild_icon.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/submit/ReportProblem.asp?GUID=SmoothAlpha%2Fdialog8%2F7%2F2002">Broken 
+                  Article?</A></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/support_icon.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/store/"><B>VS.NET 2003 from 
+                  $899</B></A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/support_icon.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/store/"><B>MSDN Univ. from 
+                  $1950</B></A></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/print.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/dialog/smoothalpha.asp?print=true" 
+                  target=_print>Print version</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/link.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/add_bookmark.asp?t=0&amp;ct=%2Fdialog%2Fsmoothalpha%2Easp&amp;guid=SmoothAlpha%2Fdialog8%2F7%2F2002">Bookmark 
+                  this</A></TD></TR></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/mail.gif" 
+                  width=16></TD>
+                <TD class=SmallText><A 
+                  href="http://www.codeproject.com/script/recommend/form.asp?guid=SmoothAlpha%2Fdialog8%2F7%2F2002">Send 
+                  to a friend</A></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD class=InfoBarHeader>My Profile</TD></TR>
+              <TR>
+                <TD bgColor=black colSpan=2><IMG height=1 
+                  src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/space.gif" 
+                  width=1></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/profile_small.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/modify.asp?ct=/dialog/smoothalpha.asp">My 
+                  Settings</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/submit_small.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/articles/list_articles.asp?userid=649009">My 
+                  Articles</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/bookmarks.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/bookmark_list.asp">My 
+                  Bookmarks</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/logoff_small.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/logoff.asp?ct=/dialog/smoothalpha.asp">Sign 
+                  out</A></TD></TR>
+              <TR>
+                <TD bgColor=black colSpan=2><IMG height=1 
+                  src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/space.gif" 
+                  width=1></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD>&nbsp;</TD></TR>
+        <TR>
+          <TD>
+            <CENTER>
+            <SCRIPT language=javascript>document.write("<a href=\"/script/admentor/admentorredir.asp?id=407&way=ban\" target=_blank><img src=\"/script/admentor/include/ServeAd.aspx?File=%2Fscript%2Fadmentor%2Fimages%2FSAMS%5FSkyScraperASPNET%2Egif&C=False&id=407\" alt=\"SAMS Publishing\" border=0 width=120 height=600></a>");</SCRIPT>
+            <BR></CENTER><BR></TD></TR></TBODY></TABLE></TD>
+    <TD width=5 rowSpan=2><IMG height=1 
+      src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/space.gif" 
+      width=5> </TD>
+    <TD align=right width="100%" bgColor=white>
+      <TABLE width="100%">
+        <TBODY>
+        <TR vAlign=top>
+          <TD class=smallText vAlign=top noWrap></TD>
+          <TD noWrap align=right><A name=__top></A>
+            <TABLE>
+              <TBODY>
+              <TR>
+                <TD class=smallText align=right>6 members have rated this 
+                  article. Result:</TD>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=0 border=2>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=5 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/red.gif" 
+                        width=20 border=0></TD>
+                      <TD><IMG height=5 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/red.gif" 
+                        width=20 border=0></TD>
+                      <TD><IMG height=5 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/red.gif" 
+                        width=20 border=0></TD>
+                      <TD><IMG height=5 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/red.gif" 
+                        width=20 border=0></TD>
+                      <TD><IMG height=5 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/red.gif" 
+                        width=10 border=0><IMG height=5 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/white.gif" 
+                        width=10 border=0></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD class=smallText align=right colSpan=2><A 
+                  title="Calculated as rating x Log10(# votes)" 
+                  href="http://www.codeproject.com/script/articles/top_articles.asp?st=2">Popularity: 
+                  3.52</A>. Rating: <B>4.52</B> out of 
+        5.</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD vAlign=top width="100%">
+      <DIV id=contentdiv><!-- Article Starts -->
+      <UL class=download>
+        <LI><A 
+        href="http://www.codeproject.com/dialog/smoothalpha/SmoothAlpha_demo.zip">Download 
+        demo project - 12 Kb </A>
+        <LI><A 
+        href="http://www.codeproject.com/dialog/smoothalpha/SmoothAlpha_src.zip">Download 
+        source - 18 Kb</A> </LI></UL>
+      <P><IMG height=300 
+      src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/smoothalpha.gif" 
+      width=550 border=1></A> 
+      <H2>Problem</H2>The <CODE>AnimateWindow()</CODE> API with the 
+      <CODE>AW_BLEND</CODE> parameter is supposed to fade in and out windows 
+      smoothly. Basically, it has two drawbacks: 
+      <OL>
+        <LI>Text and ListView controls (and several others) aren't rendered 
+        correctly during fade-in. 
+        <LI>You cannot specify a translucency for the window, i.e., after the 
+        animation is over, the window is opaque. </LI></OL>Clicking 'No' in the 
+      sample project demonstrates both problems. 
+      <H2>Workaround?</H2>There seemed to be a simple workaround for this: 
+      Adding the <CODE>WS_EX_LAYERED</CODE> extended style to the window and 
+      calling <CODE>SetLayeredWindowAttributes()</CODE> with the desired alpha 
+      value, as described in the MSDN Library and in various other sources. 
+      Unfortunately, this didn't work either, at least on my XP Pro system. The 
+      code produced a very nasty flickering: the window area was initially 
+      black. 
+      <H2>Solution</H2>The following code shows how to fade in a dialog to a 
+      predefinded translucency without flickering: <PRE>INT_PTR CALLBACK DialogProc(
+  HWND hwndDlg,  <SPAN class=cpp-comment>// handle to dialog box</SPAN>
+  UINT uMsg,     <SPAN class=cpp-comment>// message</SPAN>
+  WPARAM wParam, <SPAN class=cpp-comment>// first message parameter</SPAN>
+  LPARAM lParam  <SPAN class=cpp-comment>// second message parameter</SPAN>
+  ) 
+{
+   RECT rcDesktop;
+   RECT rcMe;
+
+   BYTE bTranslucency;
+
+   <SPAN class=cpp-keyword>const</SPAN> DWORD ANIMATION_MILLIS = <SPAN class=cpp-literal>200</SPAN>;
+   <SPAN class=cpp-keyword>const</SPAN> BYTE TRANSLUCENCY = <SPAN class=cpp-literal>192</SPAN>;
+   <SPAN class=cpp-keyword>const</SPAN> BYTE TRANSLUCENCY_STEP = <SPAN class=cpp-literal>16</SPAN>;
+   <SPAN class=cpp-keyword>const</SPAN> DWORD TRANSLUCENCY_TIMEOUT 
+      = TRANSLUCENCY_STEP * ANIMATION_MILLIS / TRANSLUCENCY;
+
+   <SPAN class=cpp-keyword>switch</SPAN> (uMsg) {
+   <SPAN class=cpp-keyword>case</SPAN> WM_INITDIALOG:
+      <SPAN class=cpp-comment>// Make it a layered window.</SPAN>
+      ::SetWindowLong(hwndDlg, GWL_EXSTYLE,
+         ::GetWindowLong(hwndDlg, GWL_EXSTYLE) | WS_EX_LAYERED);
+
+      <SPAN class=cpp-comment>// Completely transparent window - note the third parameter</SPAN>
+      ::SetLayeredWindowAttributes(hwndDlg, <SPAN class=cpp-literal>0</SPAN>, <SPAN class=cpp-literal>0</SPAN>, LWA_ALPHA);
+
+      <SPAN class=cpp-comment>// Show it _first_</SPAN>
+      ::ShowWindow(hwndDlg, SW_SHOW);
+
+      <SPAN class=cpp-comment>// Redraw contents NOW - no flickering since the window's not visible</SPAN>
+      ::RedrawWindow(hwndDlg, NULL, NULL, RDW_UPDATENOW); 
+
+      <SPAN class=cpp-comment>// Normally, you would use a timer here...</SPAN>
+      <SPAN class=cpp-keyword>for</SPAN> (bTranslucency = <SPAN class=cpp-literal>0</SPAN>; bTranslucency &lt; TRANSLUCENCY;
+      bTranslucency+=TRANSLUCENCY_STEP) {
+         <SPAN class=cpp-comment>// Adjust the translucency</SPAN>
+         ::SetLayeredWindowAttributes(hwndDlg, <SPAN class=cpp-literal>0</SPAN>, bTranslucency, LWA_ALPHA);
+
+         <SPAN class=cpp-comment>// Wait</SPAN>
+         ::Sleep(TRANSLUCENCY_TIMEOUT);
+      }
+
+      <SPAN class=cpp-comment>// Set the final translucency</SPAN>
+      ::SetLayeredWindowAttributes(hwndDlg, <SPAN class=cpp-literal>0</SPAN>, bTranslucency, LWA_ALPHA);
+      <SPAN class=cpp-keyword>break</SPAN>;
+   }
+
+   <SPAN class=cpp-keyword>return</SPAN> <SPAN class=cpp-literal>0</SPAN>;
+}
+</PRE>Note that the call to <CODE>ShowWindow()</CODE> is usually done by 
+      the <CODE>CreateDialogXXX()</CODE> functions if the dialog template has 
+      the <CODE>WS_VISIBLE</CODE> style set. For our purposes, we have to do it 
+      right here in response to the <CODE>WM_INITDIALOG</CODE> message. <!-- Article Ends --></DIV>
+      <H2>About -Kirill-</H2>
+      <TABLE width="100%" border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD class=smallText noWrap><IMG 
+            src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/{CA1EB7B6-4678-4F5D-B529-8A6EB93F7BCE}.jpg"><BR></TD>
+          <TD class=smallText width="100%">Kirill lives in Berlin (Germany). 
+            The name comes from Russia where he was born and where he spent 
+            about eight years.<BR><BR>He started with a C64. Soon, he found out 
+            that BASIC is as slow as it is simple, and started to learn 
+            Assembler which revealed the "true power" of this 
+            computer.<BR><BR>After a while, a 486 was bought. He started to 
+            learn C/C++ and Pascal and to learn about algorithms and data 
+            structures.<BR><BR>Currently, he is studying computer sciences at <A 
+            href="http://www.uni-karlsruhe.de/">TU Karlsruhe</A> and working for 
+            <A href="http://www.organice.de/">orgAnice Software GmbH</A> as 
+            developer.<BR><BR>He enjoys playing badminton and pool billards.
+            <P class=smallText>Click <A 
+            href="http://www.codeproject.com/script/profile/whos_who.asp?vt=arts&amp;id=44541">here</A> 
+            to view -Kirill-'s online profile.</P></TD></TR></TBODY></TABLE><BR>
+      <TABLE cellPadding=4 width="100%" border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD width="100%">
+            <H2>Other popular Dialog and Windows articles:</H2>
+            <UL>
+              <LI><A 
+              href="http://www.codeproject.com/dialog/dlgboxtricks.asp">Some 
+              handy dialog box tricks, tips and workarounds</A><BR><SPAN 
+              class=smalltext>Hidden modal dialogs, stealing focus, always on 
+              top dialogs, going full-screen, expanding and contracting dialogs, 
+              removing task bar icon, context sensitive help and many other 
+              useful tips and tricks.</SPAN>
+              <LI><A 
+              href="http://www.codeproject.com/dialog/quickwin.asp">QuickWin - 
+              Turn a console application into a Windows program</A><BR><SPAN 
+              class=smalltext>Redirect stdin, stdout and stderr into a 
+              window</SPAN>
+              <LI><A 
+              href="http://www.codeproject.com/dialog/slidabledialogbar.asp">3D 
+              Studio Max like Slidable DialogBar</A><BR><SPAN 
+              class=smalltext>Ever seen 3D Studio 2.5 Slidable DialogBar? Want 
+              to know how they did it?</SPAN>
+              <LI><A 
+              href="http://www.codeproject.com/dialog/winampwnd.asp">Nullsoft 
+              Winamp Plug-in With Bitmapped UI, Docking and Restrictive 
+              Resizing</A><BR><SPAN class=smalltext>An article discussing a 
+              Plug-in for Nullsoft Winamp which looks and behaves like the 
+              Winamp UI.</SPAN></LI></UL></TD>
+          <TD width=360>
+            <SCRIPT language=javascript>document.write("<IFRAME src=\"/script/admentor/include/ServeAdHTML.aspx?C=False&id=786\" border=0 frameborder=0 scrolling=no width=300 height=250></IFRAME>");</SCRIPT>
+          </TD>
+          <FORM action=/script/rating/code/app/insert_vote.asp 
+          method=post><INPUT type=hidden value=SmoothAlpha/dialog8/7/2002 
+          name=vote_name> <INPUT type=hidden value=/dialog/smoothalpha.asp 
+          name=goal> </TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=1 width="100%" bgColor=#ff9900 
+        border=0><TBODY>
+        <TR>
+          <TD width="100%">
+            <TABLE cellSpacing=0 cellPadding=4 width="100%" bgColor=#fbedbb 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD class=smalltext vAlign=center>[<A 
+                  href="http://www.codeproject.com/dialog/smoothalpha.asp#__top">Top</A>]</TD>
+                <TD vAlign=center noWrap align=right><I><B>Rate this Article 
+                  for us!</B></I>&nbsp;&nbsp;&nbsp;&nbsp; <I>Poor</I><INPUT 
+                  type=radio value=1 name=rate><INPUT type=radio value=2 
+                  name=rate><INPUT type=radio value=3 name=rate><INPUT 
+                  type=radio value=4 name=rate><INPUT type=radio value=5 
+                  name=rate><I>Excellent</I>&nbsp;&nbsp;<INPUT class=FormButton type=submit value=Vote> 
+                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></FORM>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD vAlign=top>
+            <CENTER>
+            <SCRIPT language=javascript>document.write("<IFRAME src=\"/script/admentor/include/ServeAdHTML.aspx?C=False&id=800\" border=0 frameborder=0 scrolling=no width=120 height=60></IFRAME>");</SCRIPT>
+            <BR><FONT size=1><A 
+            href="http://www.codeproject.com/info/MediaKit/">Premium 
+            Sponsor</A></FONT></CENTER><BR></TD>
+          <TD vAlign=top noWrap align=middle><SPAN id=AdBanner5>
+            <SCRIPT language=javascript>document.write("<a href=\"/script/admentor/admentorredir.asp?id=411&way=ban\" target=_blank><img src=\"/script/admentor/include/ServeAd.aspx?File=%2Fscript%2Fadmentor%2Fimages%2Fbanner%2D468x60%2Dpdfkit%2Egif&C=False&id=411\" alt=\"The power of a complete PDF toolkit combined in one handy component\" border=0 width=486 height=60></a>");</SCRIPT>
+            </SPAN></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><A 
+name=__comments></A>
+<SCRIPT language=JavaScript>
+function MsgVoteForm(UserID, MsgID)
+{
+	document.write("Rate this message: ");
+	for (var i=1; i<=5;i++)
+		document.write("<a href='#xx" + MsgID.toString() + "xx' title='give this message a vote of " + i.toString() + "' onclick='RateMsg(" + UserID.toString() + ", " + MsgID.toString() + ", " + i.toString() + ")'><b>" + i.toString() + "</b></a> ");
+	document.write(" (out of 5)");
+}
+
+function RateMsg(userid, msgid, score) 
+{ 
+	open("/script/comments/vote.asp?js=1&user="+userid.toString()+"&msg="+msgid.toString()+"&score="+score.toString() ,"helpful","toolbar=no,resizable=yes,scrollbars=yes,directories=no,menubar=no,width=300,height=200");
+	return false;
+}
+</SCRIPT>
+
+<SCRIPT language=JavaScript>
+var Selected = "";
+var AdTime = new Date();
+document.writeln("<iframe name=AdFrame width=0 height=0 frameborder=0></IFRAME>");
+function SwitchMessage(elm)
+{
+
+	var now = new Date();
+	if (Number(now.getTime() - AdTime.getTime()) > Number(5000))
+	{
+		AdTime = now;
+		var loc = window.frames["AdFrame"];
+		if (loc) loc = loc.document;
+		if (loc) loc = loc.location;
+		if (loc) loc.replace('/script/comments/fetchAd.asp?cat=1');
+	}
+	
+	var elmref;
+	if (Selected != "")
+	{
+		elmref = eval("document.getElementById('" + Selected + "_h1')");
+		if (elmref) elmref.style.display = 'none';
+		elmref = eval("document.getElementById('" + Selected + "_h0')");
+		if (elmref) elmref.bgColor = '#FEF9E7';
+	}
+	if (Selected != elm.name) 
+	{
+		Selected = elm.name;
+		elmref = eval("document.getElementById('" + Selected + "_h1')");
+		if (elmref) 
+		{
+			if (elmref.style.display=='none') elmref.style.display='';
+			else elmref.style.display = 'none';
+		}
+		elmref = eval("document.getElementById('" + Selected + "_h0')");
+		if (elmref) 
+			elmref.bgColor = '#99CCFF';
+	}
+	else
+		Selected="";
+		
+	window.location = "#xx" + Selected + "xx";
+
+	return false;
+}
+
+</SCRIPT>
+
+<SCRIPT language=javascript event=onclick for=DynMessLink>
+return SwitchMessage(this);
+</SCRIPT>
+
+<TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#ff9900 border=0>
+  <TBODY>
+  <TR>
+    <TD width="100%">
+      <TABLE id=ForumTable cellSpacing=1 cellPadding=0 width="100%" 
+      bgColor=#ff9900 border=0>
+        <FORM 
+        action=/script/comments/app/do_filtermessages.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505 
+        method=post>
+        <TBODY>
+        <TR>
+          <TD>
+            <TABLE cellSpacing=0 cellPadding=3 width="100%" bgColor=white 
+            border=0>
+              <TBODY>
+              <TR bgColor=#fbedbb>
+                <TD class=smalltext noWrap><A 
+                  href="http://www.codeproject.com/script/comments/faq.asp"><IMG 
+                  height=16 
+                  src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/info.gif" 
+                  width=16 align=absMiddle border=0> <B>FAQ</B></A>&nbsp;</TD>
+                <TD class=smalltext vAlign=top noWrap align=right>Noise level 
+                  <SELECT class=smalltext size=1 name=noise><OPTION 
+                    value=1>Very High</OPTION> <OPTION value=2>High</OPTION> 
+                    <OPTION value=3 selected>Medium</OPTION> <OPTION 
+                    value=4>Low</OPTION> <OPTION value=5>Very 
+                  low</OPTION></SELECT>&nbsp;&nbsp;</TD>
+                <TD class=smalltext vAlign=center noWrap align=right 
+                  colSpan=2><A 
+                  href="http://www.codeproject.com/script/comments/search_comments.asp?forumid=4505"><IMG 
+                  height=15 
+                  src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/search.gif" 
+                  width=16 border=0> Search comments</A> &nbsp;</TD>
+                <TD vAlign=top align=right><INPUT class=FormButton type=submit value="Set Options" name=submit></TD></TR>
+              <TR bgColor=#ff9900>
+                <TD width="100%">&nbsp;</TD>
+                <TD class=smalltext vAlign=top noWrap align=right>View <SELECT 
+                  class=smalltext size=1 name=expand><OPTION value=0>Normal 
+                    (slow)</OPTION> <OPTION value=2>Preview (slow)</OPTION> 
+                    <OPTION value=5 selected>Message View</OPTION> <OPTION 
+                    value=6>Topic View</OPTION> <OPTION value=1>Thread 
+                    View</OPTION> <OPTION value=3>Expanded (Supporters 
+                    only)</OPTION></SELECT>&nbsp;&nbsp;</TD>
+                <TD class=smalltext vAlign=top noWrap>Per page <SELECT 
+                  class=smalltext size=1 name=perpage><OPTION 
+                    value=10>10</OPTION> <OPTION value=25 selected>25</OPTION> 
+                    <OPTION value=50>50</OPTION></SELECT></TD>
+                <TD colSpan=2>&nbsp;</TD></TR></TBODY></TABLE></TD></TR></FORM>
+        <TR bgColor=#fbedbb>
+          <TD><A name=xx0xx></A>
+            <TABLE cellPadding=2 width="100%" bgColor=#fbedbb border=0>
+              <TBODY>
+              <TR>
+                <TD class=messagetitle><A class=HoverLink 
+                  title="Add a new message to the discussions" 
+                  href="http://www.codeproject.com/script/comments/user_new.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505" 
+                  target=_top name=HoverNL><B><IMG height=16 
+                  src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/admin_modify.gif" 
+                  width=16 align=top border=0> New thread</B></A></TD>
+                <TD class=messagetitle>Msgs 1 to 15 of 15 (Total: 15) (<A 
+                  href="http://www.codeproject.com/dialog/smoothalpha.asp?df=100&amp;forumid=4505">Refresh</A>)</TD>
+                <TD noWrap align=right><FONT class=messagetitle><SPAN 
+                  class=HoverLink>First</SPAN> <SPAN class=HoverLink>Prev</SPAN> 
+                  <SPAN class=HoverLink>Next</SPAN> <SPAN 
+                  class=HoverLink>Last</SPAN> </FONT></TD></TR></TBODY></TABLE></TD></TR>
+        <TR bgColor=white>
+          <TD>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=2 bgColor=#fbedbb border=0>
+                    <TBODY>
+                    <TR>
+                      <TD class=messagetitle width="100%">Subject&nbsp;</TD>
+                      <TD class=messagetitle noWrap width=140>Author&nbsp;</TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT 
+                    class=messagetitle>Date&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 
+                  src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=895995_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx895995xx></A><IMG 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/dialog/smoothalpha.asp?df=100&amp;forumid=4505&amp;select=895995#xx895995xx" 
+                        name=895995><B>why SetLayeredWindowAttributes can't used 
+                        in 8 bits(256) for Win2k</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=14444"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>whizzkid@ms28.hinet.net</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>18:02 11 Aug 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=895995_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>who can 
+                                solve this problem...<BR>why 
+                                SetLayeredWindowAttributes can't used in 8 
+                                bits(256) color quality.<BR>please tell me, 
+                                thanks.<BR><BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=895995">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=895995">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/dialog/smoothalpha.asp?df=100&amp;tid=895995&amp;forumid=4505&amp;select=895995#xx895995xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/dialog/smoothalpha.asp?msg=895995#xx895995xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=895995"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=895995"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(14444,895995);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 
+                  src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=811983_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx811983xx></A><IMG 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/dialog/smoothalpha.asp?df=100&amp;forumid=4505&amp;select=811983#xx811983xx" 
+                        name=811983><B>How can this be implemented in 
+                        VB.NET?</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=752936"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>PC3700DDR</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>19:43 4 May 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=811983_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent>Hello,<BR><BR>Great article 
+                                by the way. However I was wondering how can this 
+                                be translated to VB.NET? I was looking for 
+                                something like this seems like forever. 
+                                Everything I tried, basically from changing 
+                                opacity with timer to Windowtransition() API, 
+                                never never seems to be working properly. If 
+                                this can be ported to VB.NET that would be 
+                                great. Thanks. <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=811983">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=811983">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/dialog/smoothalpha.asp?df=100&amp;tid=811983&amp;forumid=4505&amp;select=811983#xx811983xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/dialog/smoothalpha.asp?msg=811983#xx811983xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=811983"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=811983"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(752936,811983);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 
+                  src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=813276_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx813276xx></A><IMG height=1 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/ind.gif" 
+                        width=18><IMG 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/dialog/smoothalpha.asp?df=100&amp;forumid=4505&amp;select=813276#xx813276xx" 
+                        name=813276>Re: How can this be implemented in 
+                        VB.NET?</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=44541"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>-Kirill-&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>17:08 5 May 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=813276_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/ind.gif" 
+                        width=18><IMG 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Sorry, 
+                                no idea. Anyone? <BR><BR>Regards, 
+                                Kirill<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=813276">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=813276">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/dialog/smoothalpha.asp?df=100&amp;tid=811983&amp;forumid=4505&amp;select=813276#xx813276xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/dialog/smoothalpha.asp?msg=813276#xx813276xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=813276"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=813276"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(44541,813276);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 
+                  src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=830574_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx830574xx></A><IMG height=1 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/ind.gif" 
+                        width=36><IMG 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/dialog/smoothalpha.asp?df=100&amp;forumid=4505&amp;select=830574#xx830574xx" 
+                        name=830574>Re: How can this be implemented in 
+                        VB.NET?</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=752936"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>PC3700DDR&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>16:44 23 May 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=830574_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/ind.gif" 
+                        width=36><IMG 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>After a 
+                                bit of hair-pulling I have finally figured it 
+                                out myself:<BR><BR>Public Structure 
+                                RECT<BR>Public left As Integer<BR>Public top As 
+                                Integer<BR>Public right As Integer<BR>Public 
+                                bottom As Integer<BR>End Structure<BR><BR>Public 
+                                Const LWA_ALPHA As Short = 2<BR>Public Const 
+                                LWA_BOTH As Short = 3<BR>Public Const 
+                                WS_EX_LAYERED As Integer = &amp;H80000<BR>Public 
+                                Const GWL_EXSTYLE As Short = -20<BR>Private 
+                                Const RDW_UPDATENOW As Integer = 
+                                &amp;H100<BR>Private Const RDW_INVALIDATE As 
+                                Integer = &amp;H1<BR>Private Const 
+                                RDW_ALLCHILDREN As Integer = &amp;H80<BR>Private 
+                                Const RDW_ERASE As Integer = 
+                                &amp;H4<BR><BR>Public Declare Function Sleep Lib 
+                                "kernel32" (ByVal dwMilliseconds As Integer) As 
+                                Integer<BR>Public Declare Function 
+                                SetLayeredWindowAttributes Lib "user32" (ByVal 
+                                hwnd As Integer, ByVal color As Integer, ByVal x 
+                                As Byte, ByVal alpha As Integer) As 
+                                Boolean<BR>Public Declare Function SetWindowLong 
+                                Lib "user32" Alias "SetWindowLongA" (ByVal hwnd 
+                                As Integer, ByVal nIndex As Integer, ByVal 
+                                dwNewLong As Integer) As Integer<BR>Public 
+                                Declare Function GetWindowLong Lib "user32" 
+                                Alias "GetWindowLongA" (ByVal hwnd As Integer, 
+                                ByVal nIndex As Integer) As Integer<BR>Public 
+                                Declare Function RedrawWindow Lib "user32" Alias 
+                                "RedrawWindow" (ByVal hwnd As IntPtr, ByRef 
+                                lprcUpdate As RECT, ByVal hrgnUpdate As IntPtr, 
+                                ByVal fuRedraw As Integer) As Integer<BR>Public 
+                                Declare Function GetWindowRect Lib "user32" 
+                                Alias "GetWindowRect" (ByVal hwnd As IntPtr, 
+                                ByRef rect As RECT) As Integer<BR><BR>Public Sub 
+                                SetTranslucent(ByRef ThehWnd As Integer, ByRef 
+                                nTrans As Short)<BR>'SetWindowLong and 
+                                SetLayeredWindowAttributes are API functions, 
+                                see MSDN for details<BR>Dim AlphaAttrib As 
+                                Integer = GetWindowLong(ThehWnd, 
+                                GWL_EXSTYLE)<BR>SetWindowLong(ThehWnd, 
+                                GWL_EXSTYLE, AlphaAttrib Or 
+                                WS_EX_LAYERED)<BR>SetLayeredWindowAttributes(ThehWnd, 
+                                RGB(255, 255, 0), nTrans, LWA_ALPHA)<BR>End 
+                                Sub<BR><BR>Public Function FadeIn(Optional ByVal 
+                                Min As Integer = 0, Optional ByVal Max As 
+                                Integer = 255)<BR>Dim tR As New 
+                                RECT<BR>GetWindowRect(Handle, tR)<BR>tR.right -= 
+                                tR.left<BR>tR.left = 0<BR>tR.bottom -= 
+                                tR.top<BR>tR.top = 0<BR>For I As Integer = Min 
+                                To Max Step 16<BR>RedrawWindow(Me.Handle, tR, 
+                                IntPtr.Zero, 
+                                RDW_UPDATENOW)<BR>SetTranslucent(Me.Handle.ToInt32, 
+                                I)<BR>Sleep(16)<BR>Next<BR>End 
+                                Function<BR><BR>Public Function FadeOut(Optional 
+                                ByVal Min As Integer = 0, Optional ByVal Max As 
+                                Integer = 255)<BR>Dim tR As New 
+                                RECT<BR>GetWindowRect(Handle, tR)<BR>tR.right -= 
+                                tR.left<BR>tR.left = 0<BR>tR.bottom -= 
+                                tR.top<BR>tR.top = 0<BR>For I As Integer = Max 
+                                To Min Step -16<BR>RedrawWindow(Me.Handle, tR, 
+                                IntPtr.Zero, 
+                                RDW_INVALIDATE)<BR>SetTranslucent(Me.Handle.ToInt32, 
+                                I)<BR>Sleep(16)<BR>Next<BR>End 
+                                Function<BR><BR>And then you could use the 
+                                FadeOut() function in the Closing event of some 
+                                dialog window or form, or use the FadeIn() 
+                                function to fade in he form. Set the 
+                                transparency to 0 before the form is shown and 
+                                then set the form to visible and then use 
+                                FadeIn() to <U>smoothly</U> fade in the form or 
+                                some dialog window. Enjoy the code. 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=830574">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=830574">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/dialog/smoothalpha.asp?df=100&amp;tid=811983&amp;forumid=4505&amp;select=830574#xx830574xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/dialog/smoothalpha.asp?msg=830574#xx830574xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=830574"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=830574"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(752936,830574);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 
+                  src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=295840_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx295840xx></A><IMG 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/dialog/smoothalpha.asp?df=100&amp;forumid=4505&amp;select=295840#xx295840xx" 
+                        name=295840><B>it can't do anything for a 
+                        subwindow(control) in a dialog</B></A></TD>
+                      <TD vAlign=bottom><IMG height=13 
+                        alt="Unconfirmed/Anonymous posting" 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/usersuss.gif" 
+                        width=15></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>Anonymous</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>22:22 27 Sep 
+                        '02</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=295840_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>it only 
+                                can action for a Dialog window, but it can't do 
+                                anything for a subwindow(control) in a dialog, 
+                                what i'm doing?<BR><BR>Help me~~~, thanx. 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=295840">Reply</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/dialog/smoothalpha.asp?df=100&amp;tid=295840&amp;forumid=4505&amp;select=295840#xx295840xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/dialog/smoothalpha.asp?msg=295840#xx295840xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=295840"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=295840"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(0,295840);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 
+                  src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=295851_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx295851xx></A><IMG height=1 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/ind.gif" 
+                        width=18><IMG 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/dialog/smoothalpha.asp?df=100&amp;forumid=4505&amp;select=295851#xx295851xx" 
+                        name=295851>Re: it can't do anything for a 
+                        subwindow(control) in a dialog</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=44541"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>-Kirill-&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>22:49 27 Sep 
+                        '02&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=295851_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/ind.gif" 
+                        width=18><IMG 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>As of 
+                                the Platform SDK doc for "Layered Windows", 
+                                <BR><BR>"... Note that WS_EX_LAYERED cannot be 
+                                used for child windows." <IMG 
+                                src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/smiley_cry.gif" 
+                                align=absMiddle><BR><BR>You might want to look 
+                                at 
+                                <BR><BR>http://msdn.microsoft.com/library/en-us/winui/winui/windowsuserinterface/windowing/windows/windowfeatures.asp?frame=true#layered<BR><BR>Maybe 
+                                there's another approach that does not use 
+                                layered windows - like the AnimateWindow API? 
+                                <BR><BR>Kirill<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=295851">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=295851">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/dialog/smoothalpha.asp?df=100&amp;tid=295840&amp;forumid=4505&amp;select=295851#xx295851xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/dialog/smoothalpha.asp?msg=295851#xx295851xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=295851"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=295851"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(44541,295851);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 
+                  src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=519264_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx519264xx></A><IMG height=1 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/ind.gif" 
+                        width=18><IMG 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/dialog/smoothalpha.asp?df=100&amp;forumid=4505&amp;select=519264#xx519264xx" 
+                        name=519264>Re: it can't do anything for a 
+                        subwindow(control) in a dialog</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=403464"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>skygg&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>8:35 9 Jun 
+                        '03&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=519264_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/ind.gif" 
+                        width=18><IMG 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>what 
+                                does child window mean?<BR>can i use 
+                                SetLayeredWindowAttributes function in my 
+                                derived control? sure about this control is to 
+                                be shown in a parent window. Or do u have any 
+                                idea about common control's 
+                                transparency?<BR><BR><IMG 
+                                src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/smiley_confused.gif" 
+                                align=absMiddle><IMG 
+                                src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/rose.gif" 
+                                align=absMiddle><IMG 
+                                src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/rose.gif" 
+                                align=absMiddle> <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=519264">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=519264">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/dialog/smoothalpha.asp?df=100&amp;tid=295840&amp;forumid=4505&amp;select=519264#xx519264xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/dialog/smoothalpha.asp?msg=519264#xx519264xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=519264"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=519264"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(403464,519264);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 
+                  src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=519518_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx519518xx></A><IMG height=1 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/ind.gif" 
+                        width=36><IMG 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/dialog/smoothalpha.asp?df=100&amp;forumid=4505&amp;select=519518#xx519518xx" 
+                        name=519518>Re: it can't do anything for a 
+                        subwindow(control) in a dialog</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=44541"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>-Kirill-&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>11:47 9 Jun 
+                        '03&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=519518_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/ind.gif" 
+                        width=36><IMG 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>I 
+                                think, "child window" in this case indeed means 
+                                any window that has a parent other than NULL. 
+                                Then, a control that's inside a dialog 
+                                definitely would be a child window. I've tried 
+                                it myself - the code does not work with 
+                                controls. <IMG 
+                                src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/smiley_frown.gif" 
+                                align=absMiddle><BR><BR>The documentation for 
+                                AnimateWindow says something about WM_PRINT and 
+                                WM_PRINTCLIENT messages that could be used to 
+                                render a control to a device context. Maybe that 
+                                helps.<BR><BR>Kirill 
+                                <BR><BR>Kirill<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=519518">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=519518">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/dialog/smoothalpha.asp?df=100&amp;tid=295840&amp;forumid=4505&amp;select=519518#xx519518xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/dialog/smoothalpha.asp?msg=519518#xx519518xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=519518"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=519518"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(44541,519518);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 
+                  src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=259936_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx259936xx></A><IMG 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/dialog/smoothalpha.asp?df=100&amp;forumid=4505&amp;select=259936#xx259936xx" 
+                        name=259936><B>Win Ver...</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=40652"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>CDotNetUser</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>19:45 14 Aug 
+                        '02</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=259936_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>This 
+                                only will compile if the Window version defs are 
+                                setup correctly Win2000/XP when using a full MFC 
+                                app generated by AppWizard.<BR><BR>The other way 
+                                in MFC app is to use the user.dll's 
+                                SetLayeredWindowAttributes export.<BR><BR>I 
+                                don't about compiling it for non-MFC apps. 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=259936">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=259936">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/dialog/smoothalpha.asp?df=100&amp;tid=259936&amp;forumid=4505&amp;select=259936#xx259936xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/dialog/smoothalpha.asp?msg=259936#xx259936xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=259936"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=259936"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(40652,259936);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 
+                  src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=260581_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx260581xx></A><IMG height=1 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/ind.gif" 
+                        width=18><IMG 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/dialog/smoothalpha.asp?df=100&amp;forumid=4505&amp;select=260581#xx260581xx" 
+                        name=260581>Re: Win Ver...</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=40652"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>CDotNetUser&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>11:09 15 Aug 
+                        '02&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=260581_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/ind.gif" 
+                        width=18><IMG 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent><SMALL><B>I 
+                                wrote:</B></SMALL><BR><I>The other way in MFC 
+                                app is to use the user.dll's 
+                                SetLayeredWindowAttributes export.</I><BR><BR>It 
+                                should be user32.dll... 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=260581">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=260581">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/dialog/smoothalpha.asp?df=100&amp;tid=259936&amp;forumid=4505&amp;select=260581#xx260581xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/dialog/smoothalpha.asp?msg=260581#xx260581xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=260581"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=260581"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(40652,260581);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 
+                  src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=253774_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx253774xx></A><IMG 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/dialog/smoothalpha.asp?df=100&amp;forumid=4505&amp;select=253774#xx253774xx" 
+                        name=253774><B>Some restrictions...</B></A></TD>
+                      <TD vAlign=bottom><IMG height=13 
+                        alt="Unconfirmed/Anonymous posting" 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/usersuss.gif" 
+                        width=15></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>Mykel</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>3:12 8 Aug 
+                        '02</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=253774_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Because 
+                                you run a very tight scope when you change the 
+                                window transparency, combined with a "sleep" 
+                                period, your app will run very slow on old 
+                                machines and/or big windows. You need very much 
+                                CPU resources.<BR><BR>So you can't say how long 
+                                the fading time is. It is very annoying if one 
+                                window of your app fades very fast (small 
+                                window) and another window fades in very slow 
+                                (large window). With "AnimateWindow" the fading 
+                                time is guaranteed. If the computer isn't fast 
+                                enough for displaying all the fading steps, he 
+                                just skips some frames...<BR><BR>What you can do 
+                                is after fading in with "AnimateWindow" is just 
+                                sending an "Invalidate()" afterwards... not very 
+                                nice, but then the controls are displayed 
+                                correctly. A very bad thing is, as you said, 
+                                that you can't realize transparency with 
+                                "AnimateWindow"... <IMG 
+                                src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/smiley_cry.gif" 
+                                align=absMiddle><BR><BR>CU 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=253774">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=253774">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/dialog/smoothalpha.asp?df=100&amp;tid=253774&amp;forumid=4505&amp;select=253774#xx253774xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/dialog/smoothalpha.asp?msg=253774#xx253774xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=253774"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=253774"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(0,253774);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 
+                  src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=259932_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx259932xx></A><IMG height=1 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/ind.gif" 
+                        width=18><IMG 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/dialog/smoothalpha.asp?df=100&amp;forumid=4505&amp;select=259932#xx259932xx" 
+                        name=259932>Re: Some restrictions...</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=40652"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>CDotNetUser&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>19:37 14 Aug 
+                        '02&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=259932_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/ind.gif" 
+                        width=18><IMG 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>One fix 
+                                is to have a worker thread or timer that waits 
+                                for the InitDialog() or WM_INITDIALOG is finshed 
+                                adding any items to control that use item i.e. 
+                                tree, list, and combo. When InitDialog() or 
+                                WM_INITDIALOG end the dialog show not be shown 
+                                if WS_VISIBLE is applied then hide the 
+                                dialog.<BR><BR>AnimateWindow() should be use 
+                                like Mykel said in the timer or thread for 
+                                window size 
+                                consideration.<BR><BR><SMALL><B>Mykel 
+                                wrote:</B></SMALL><BR><I>What you can do is 
+                                after fading in with "AnimateWindow" is just 
+                                sending an "Invalidate()" afterwards... not very 
+                                nice, but then the controls are displayed 
+                                correctly. A very bad thing is, as you said, 
+                                that you can't realize transparency with 
+                                "AnimateWindow"... </I><BR><BR>After 
+                                AnimateWindow() is called the window is visible 
+                                still at 100% faded-in and if you want 90% 
+                                fade-in you can insert code after AnimateWindow 
+                                in the timer or thread to fade-out 10% or you 
+                                have to use use as present in Kirill Müller 
+                                article.<BR><BR>With this fix the all controls 
+                                should look the same as they would during 
+                                AnimateWindow() as they would if you displayed 
+                                the dialog with any fade-in or the dialog being 
+                                transparent.<BR><BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=259932">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=259932">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/dialog/smoothalpha.asp?df=100&amp;tid=253774&amp;forumid=4505&amp;select=259932#xx259932xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/dialog/smoothalpha.asp?msg=259932#xx259932xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=259932"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=259932"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(40652,259932);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 
+                  src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=259985_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx259985xx></A><IMG height=1 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/ind.gif" 
+                        width=18><IMG 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/dialog/smoothalpha.asp?df=100&amp;forumid=4505&amp;select=259985#xx259985xx" 
+                        name=259985>Re: Some restrictions...</A></TD>
+                      <TD vAlign=bottom><IMG height=13 
+                        alt="Unconfirmed/Anonymous posting" 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/usersuss.gif" 
+                        width=15></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>-Kirill-&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>21:00 14 Aug 
+                        '02&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=259985_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/ind.gif" 
+                        width=18><IMG 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Well, 
+                                there is a simple solution for the first 
+                                problem. You'll need a timer and the 
+                                ::GetTickCount() API:<BR><BR>- Move the code for 
+                                fade-in to a TimerProc procedure.<BR>- Remove 
+                                the ::Sleep and the for loop.<BR>- Calculate the 
+                                current alpha as a function of the time interval 
+                                elapsed since the start of the animation, e.g. 
+                                (TimeElapsed * FinalAlpha) / AnimationTime.<BR>- 
+                                In the WM_INITDIALOG handler, call ::SetTimer 
+                                for this timer procedure with a timer interval 
+                                of 1ms (3rd parameter).<BR><BR>Hope that helps. 
+                                <BR><BR>Kirill<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=259985">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=259985">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/dialog/smoothalpha.asp?df=100&amp;tid=253774&amp;forumid=4505&amp;select=259985#xx259985xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/dialog/smoothalpha.asp?msg=259985#xx259985xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=259985"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=259985"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(0,259985);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 
+                  src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=253673_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx253673xx></A><IMG 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/dialog/smoothalpha.asp?df=100&amp;forumid=4505&amp;select=253673#xx253673xx" 
+                        name=253673><B>Do I need Platform SDK ?</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=44133"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>Anthony_Yio</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>23:28 7 Aug 
+                        '02</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=253673_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Do I 
+                                need platform SDK to compile this project? 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=253673">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=253673">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/dialog/smoothalpha.asp?df=100&amp;tid=253673&amp;forumid=4505&amp;select=253673#xx253673xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/dialog/smoothalpha.asp?msg=253673#xx253673xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=253673"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=253673"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(44133,253673);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 
+                  src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=259977_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx259977xx></A><IMG height=1 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/ind.gif" 
+                        width=18><IMG 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/news_suss.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle style="COLOR: #aaaaaa" 
+                        width="100%"><A class=messagetitle id=DynMessLink 
+                        style="COLOR: #aaaaaa" 
+                        href="http://www.codeproject.com/dialog/smoothalpha.asp?df=100&amp;forumid=4505&amp;select=259977#xx259977xx" 
+                        name=259977>Re: Do I need Platform SDK ?</A></TD>
+                      <TD vAlign=bottom><IMG height=13 
+                        alt="Unconfirmed/Anonymous posting" 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/usersuss.gif" 
+                        width=15></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle 
+                        style="COLOR: #aaaaaa">-Kirill-&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle 
+                        style="COLOR: #aaaaaa">20:48 14 Aug 
+                    '02&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=259977_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/ind.gif" 
+                        width=18><IMG 
+                        src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>The 
+                                code should compile under VC++ 6.0 with SP5 
+                                installed. Of course, the simplest solution is 
+                                to install the newest Platform SDK. 
+                                <BR><BR>Kirill<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=259977">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=259977">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/dialog/smoothalpha.asp?df=100&amp;tid=253673&amp;forumid=4505&amp;select=259977#xx259977xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/dialog/smoothalpha.asp?msg=259977#xx259977xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=259977"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/dialog/smoothalpha.asp&amp;df=100&amp;forumid=4505&amp;select=259977"><I>Delete</I></A>]<BR>Score: 
+                                1.3 (3 votes).
+                                <SCRIPT language=Javascript>MsgVoteForm(0,259977);</SCRIPT>
+                                 
+                    </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 
+                  src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/t.gif" 
+                  width=1 border=0></TD></TR></TBODY></TABLE></TD></TR>
+        <TR bgColor=#fbedbb>
+          <TD>
+            <TABLE cellPadding=2 width="100%">
+              <TBODY>
+              <TR>
+                <TD class=messagetitle>Last Visit: 8:22 Sunday 3rd October, 
+                  2004</TD>
+                <TD noWrap align=right><FONT class=messagetitle><SPAN 
+                  class=HoverLink>First</SPAN> <SPAN class=HoverLink>Prev</SPAN> 
+                  <SPAN class=HoverLink>Next</SPAN> <SPAN 
+                  class=HoverLink>Last</SPAN> 
+        </FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><BR>
+<TABLE cellSpacing=5 width="100%">
+  <TBODY>
+  <TR vAlign=top>
+    <TD><FONT style="FONT-SIZE: 7pt" size=1><A 
+      href="http://www.codeproject.com/?cat=1">All Topics</A>, <A 
+      href="http://www.codeproject.com/?cat=2">MFC / C++</A> &gt;&gt; <A 
+      href="http://www.codeproject.com/dialog/">Dialog and Windows</A> &gt;&gt; 
+      <A href="http://www.codeproject.com/dialog/#Windows+2000+Styles">Windows 
+      2000 Styles</A> <BR>Updated: 7 Aug 2002 </FONT></TD>
+    <TD align=right><FONT style="FONT-SIZE: 7pt" size=1>Article content 
+      copyright -Kirill-, 2002<BR>everything else Copyright © <A 
+      href="mailto:webmaster@codeproject.com">CodeProject</A>, 1999-2004</A>. 
+      <BR><A href="http://www.codeproject.com/info/MediaKit">Advertise on The 
+      Code Project</A> | <A 
+      href="http://www.codeproject.com/info/privacy.asp">Privacy</A> 
+  </FONT></TD></TR></TBODY></TABLE><BR>
+<CENTER>
+<TABLE cellSpacing=0 cellPadding=0 width="95%" border=0>
+  <TBODY>
+  <TR>
+    <TD bgColor=#ff9900 height=1><IMG height=1 
+      src="de Project - Producing translucent dialog boxes and windows without flickering - Dialog and Windows_files/space.gif"></TD></TR>
+  <TR>
+    <TD align=middle><FONT size=1><A 
+      href="http://www.codeproject.com/redir.asp?id=235">MSDN Communities</A> | 
+      <A href="http://aspalliance.com/">ASPAlliance</A> • <A 
+      href="http://www.developerfusion.com/">Developer Fusion</A> • <A 
+      href="http://www.devguru.com/">DevGuru</A> • <A 
+      href="http://www.programmersheaven.com/">Programmers Heaven</A> • <A 
+      href="http://www.planet-source-code.com/">Planet Source Code</A> • <A 
+      href="http://www.resourceindex.com/">Resource Index</A> • <A 
+      href="http://www.tek-tips.com/">Tek-Tips Forums</A> • <A 
+      href="http://www.topxml.com/">What is XML?</A> • <A 
+      href="http://www.visualbuilder.com/">VisualBuilder</A> • <A 
+      href="http://www.zvon.org/">ZVON</A> • <A 
+      href="http://www.codeproject.com/redir.asp?id=169">Search Us!</A> 
+    </FONT></TD></TR></TBODY></TABLE></CENTER></BODY></HTML>

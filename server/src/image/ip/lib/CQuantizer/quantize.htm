@@ -1,0 +1,57 @@
+<H2>Introduction</H2>
+<P>This article shows an implementation of the octree algorithm used to reduce 
+  the number of colors, finding the optimal palette of the image.<br>
+<P>For this purpose, I will use the <code>CQuantizer</code> class, developed in 
+  1996-97 by Jeff Prosise, and described with 2 articles in the MSDN.<br>
+  The original code has been written to display images on 256-color display devices 
+  in the end of the 16-bit era; but nowadays some funtions can be replaced, so 
+  I changed the memory allocation functions and removed the need of a device context, 
+  to make the class a bit more portable. 
+<P>The applications of the algorithm range from optimized drawing routines, graphic 
+  tools, file format conversion utilities.
+<H2>Class Members &amp; Operations</H2>
+<table width="100%" border=1>
+  <tbody> 
+  <tr valign=top> 
+    <td width="47%" height="111"><code>CQuantizer (UINT nMaxColors, UINT nColorBits)</code></td>
+    <td width="53%" height="111">- Construction and initialization.<br>
+      <code>nMaxColors</code> = maximum number of colors permitted in the palette.<br>
+      <code>nColorBits</code> = number of significant bits in each 8-bit color 
+      component. For example nColorBits = 6 tells the algorithm to ignore the 
+      lower two bits of each color component. A setting of 5 or 6 generally produces 
+      a palette that is pleasing to the eye while keeping the octree&#146;s memory 
+      requirements to a reasonable minimum.</td>
+  </tr>
+  <tr valign=top> 
+    <td width="47%" height="18"><code>ProcessImage (HANDLE hImage)</code></td>
+    <td width="53%" height="18">- Processes the image to find the optimal palette.<br>
+      <code>hImage</code> = DIB image handle.</td>
+  </tr>
+  <tr valign=top> 
+    <td width="47%" height="13"><code>SetColorTable (RGBQUAD* prgb)</code></td>
+    <td width="53%" height="13">- Transfers the optimized palette to a RGBQUAD 
+      structure.</td>
+  </tr>
+  <tr valign=top> 
+    <td width="47%"><code>GetColorCount ()</code></td>
+    <td width="53%">- Returns the number of colors found in the optimized palette</td>
+  </tr>
+  </tbody> 
+</table>
+<h2>Example</h2>
+<p>This example shows an application of <code>CQuantizer</code> with the <code>CxImage</code> 
+  class:</p>
+<p> <code> CxImage image(100,100,24);<br>
+  ... <br>
+  CQuantizer q(16,8);<br>
+  q.ProcessImage(image.GetDIB());<br>
+  RGBQUAD* ppal=(RGBQUAD*)malloc(16*sizeof(RGBQUAD));<br>
+  q.SetColorTable(ppal);<br>
+  image.DecreaseBpp(4,ppal);<br>
+  free(ppal);<br>
+  </code><br>
+<hr>
+<p>For any questions, e-mail to: <A 
+href="mailto:ing.davide.pizzolato@libero.it">ing.davide.pizzolato@libero.it</A> 
+  <!-- Article Ends -->
+</p>

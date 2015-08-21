@@ -1,0 +1,2859 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0051)http://www.codeproject.com/treectrl/coptiontree.asp -->
+<HTML><HEAD><TITLE>The Code Project - COptionTree - Tree Controls</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META http-equiv=Reply-to content=mailto:webmaster@codeproject.com>
+<META content="Free source code and tutorials for Windows developers." 
+name=Description>
+<META 
+content="Free source code, Tree Controls, Visual C++, MFC, Windows, Tree, Options, Settings, Preferences" 
+name=keywords>
+<META 
+content="Article content copyright Matthew R. Miller, 2002, everthing else Copyright © CodeProject, 1999-2004, All Rights Reserved." 
+name=Copyright><LINK title="CodeProject Latest articles - All topics" 
+href="http://www.codeproject.com/webservices/articlerss.aspx?cat=1" 
+type=application/rss+xml rel=alternate><LINK 
+title="CodeProject Latest articles - MFC / C++" 
+href="http://www.codeproject.com/webservices/articlerss.aspx?cat=2" 
+type=application/rss+xml rel=alternate><LINK 
+title="CodeProject Latest articles - C#" 
+href="http://www.codeproject.com/webservices/articlerss.aspx?cat=3" 
+type=application/rss+xml rel=alternate><LINK 
+title="CodeProject Latest articles - ASP.NET" 
+href="http://www.codeproject.com/webservices/articlerss.aspx?cat=4" 
+type=application/rss+xml rel=alternate><LINK 
+title="CodeProject Latest articles - .NET" 
+href="http://www.codeproject.com/webservices/articlerss.aspx?cat=5" 
+type=application/rss+xml rel=alternate><LINK href="/favicon.ico" type=image/ico 
+rel=icon><LINK href="/favicon.ico" rel="SHORTCUT ICON"><LINK 
+href="COptionTree_files/global.css" type=text/css rel=stylesheet>
+<SCRIPT language=javascript src="COptionTree_files/oncopy.js"></SCRIPT>
+
+<META content="MSHTML 6.00.2800.1400" name=GENERATOR></HEAD>
+<BODY oncopy="return copyCode();" text=black vLink=purple aLink=red link=blue 
+bgColor=white leftMargin=3 topMargin=3>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#ff9900 border=0>
+  <TBODY>
+  <TR>
+    <TD width="100%">
+      <TABLE cellSpacing=1 cellPadding=0 width="100%" bgColor=#ff9900 
+        border=0><TBODY>
+        <TR>
+          <TD vAlign=top><A href="http://www.codeproject.com/"><IMG height=72 
+            alt="The Code Project" src="COptionTree_files/logo225x72.gif" 
+            width=225 border=0></A></TD>
+          <TD align=right><SPAN id=AdBanner4><A 
+            href="http://www.codeproject.com/script/admentor/ads.asp"><IMG 
+            height=60 alt="View our advertisers" 
+            src="COptionTree_files/sponsors.gif" width=20 border=1></A>
+            <SCRIPT language=javascript>document.write("<a href=\"/script/admentor/admentorredir.asp?id=783&way=ban\" target=_blank><img src=\"/script/admentor/include/ServeAd.aspx?File=%2Fscript%2Fadmentor%2Fimages%2Fwholetomato%5Fswift%5Fkick%2Egif&C=False&id=783\" alt=\"The intellisense upgrade for Visual Studio .NET - make your IDE as smart as you.\" border=0 width=468 height=60></a>");</SCRIPT>
+            <A href="http://www.codeproject.com/info/mediakit"><IMG height=60 
+            alt="Advertise on the CodeProject" 
+            src="COptionTree_files/advertise.gif" width=20 
+          border=1></A></SPAN></TD></TR>
+        <TR>
+          <TD bgColor=#fbedbb colSpan=2>
+            <TABLE cellPadding=3 width="100%" bgColor=#fbedbb border=0>
+              <TBODY>
+              <TR vAlign=top>
+                <TD width="100%"><FONT style="FONT-SIZE: 8pt"><A 
+                  href="http://www.codeproject.com/?cat=1">All Topics</A>, <A 
+                  href="http://www.codeproject.com/?cat=2">MFC / C++</A> 
+                  &gt;&gt; <A href="http://www.codeproject.com/treectrl/">Tree 
+                  Controls</A> &gt;&gt; <A 
+                  href="http://www.codeproject.com/treectrl/#Custom+Tree+Controls">Custom 
+                  Tree Controls</A></FONT><BR><BR><B><FONT 
+                  style="FONT-SIZE: 16pt" size=4>COptionTree</FONT></B><BR><B>By 
+                  <A 
+                  href="http://www.codeproject.com/script/profile/whos_who.asp?id=36743">Matthew 
+                  R. Miller</A> </B><BR><BR><FONT style="FONT-SIZE: 9pt">An 
+                  article on an easy and neat way to include options, 
+                  preferences, or settings into your applications&nbsp;</FONT> 
+                </TD>
+                <TD vAlign=top align=right>
+                  <TABLE cellSpacing=0 cellPadding=1 width=200 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD>&nbsp;</TD>
+                      <TD><FONT class=SmallText color=red 
+                        size=1><B>Advanced</B></FONT></TD></TR>
+                    <TR vAlign=top>
+                      <TD>&nbsp;</TD>
+                      <TD class=SmallText>C++ (VC7, VC6)<BR>Windows (WinXP, 
+                        Win2K, Win95, Win98, WinME)<BR>MFC, Win32, 
+                    VS<BR>Dev</TD></TR>
+                    <TR>
+                      <TD>&nbsp;</TD>
+                      <TD class=SmallText noWrap>Posted 8 May 2002</TD></TR>
+                    <TR>
+                      <TD>&nbsp;</TD>
+                      <TD class=SmallText>Updated 20 Sep 2002</TD></TR>
+                    <TR vAlign=top>
+                      <TD><IMG height=16 src="COptionTree_files/hlp.gif" 
+                        width=16></TD>
+                      <TD class=SmallText noWrap><A 
+                        href="http://www.codeproject.com/script/Articles/list_articles.asp?userid=36743">Articles 
+                        by this author</A></TD></TR>
+                    <TR vAlign=top>
+                      <TD></TD>
+                      <TD class=SmallText noWrap><B>226,940</B> 
+                    views</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD colSpan=2>
+            <TABLE id=tblSiteToolbar cellSpacing=0 cellPadding=1 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <FORM name=Search action=/info/search.asp method=post>
+                <TD vAlign=top align=left width="100%">
+                  <TABLE cellSpacing=0 cellPadding=1 border=0>
+                    <TBODY>
+                    <TR vAlign=center>
+                      <TD class=smallText><B><FONT 
+                        color=white>Search:</FONT></B></TD>
+                      <TD class=navbar noWrap><INPUT class=smallText 
+                        maxLength=255 size=18 name=target></TD>
+                      <TD vAlign=top><SELECT class=smallText name=st> 
+                          <OPTION value=kw selected>Articles</OPTION> <OPTION 
+                          value=au>Authors</OPTION></SELECT></TD>
+                      <TD><INPUT class=formButton type=submit value=Go></TD></TR></TBODY></TABLE></TD></FORM>
+                <TD>
+                  <DIV id=MenuPos 
+                  style="WIDTH: 380px; POSITION: relative; HEIGHT: 20px">
+                  <TABLE height=20 cellSpacing=0 cellPadding=2 width=375>
+                    <TBODY>
+                    <TR>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/info/faq.asp">Help!</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/info/latest.asp">Articles</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/script/comments/forums.asp">Message 
+                        Boards</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/store/">StoreFront</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/lounge.asp">Lounge</A></TD></TR></TBODY></TABLE></DIV></TD></TR></TBODY></TABLE>
+            <SCRIPT type=text/javascript>function Go(){return}</SCRIPT>
+
+            <SCRIPT src="COptionTree_files/cpmenu_var.js" 
+            type=text/javascript></SCRIPT>
+
+            <SCRIPT src="COptionTree_files/menu10_com.js" 
+            type=text/javascript></SCRIPT>
+          </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=1 border=0>
+  <TBODY>
+  <TR vAlign=top>
+    <TD vAlign=top bgColor=#fbedbb rowSpan=2>
+      <TABLE cellSpacing=0 cellPadding=0 border=0>
+        <SCRIPT language=javascript>
+function ErrorHandle() {}
+window.onerror = ErrorHandle;
+
+function OnNLSubmit(option)
+{
+	if (option=="up")
+		document.subForm.action = "/script/profile/modify.asp?ct=%2Ftreectrl%2Fcoptiontree%2Easp";
+	else if (option=="in")
+		document.subForm.action = "/script/profile/process_logon.asp?ct=%2Ftreectrl%2Fcoptiontree%2Easp";
+	document.subForm.submit();
+	return true;
+}
+</SCRIPT>
+
+        <TBODY>
+        <TR>
+          <TD>
+            <TABLE cellSpacing=3 cellPadding=0>
+              <TBODY>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD class=InfoBarHeader>Toolbox</TD></TR>
+              <TR>
+                <TD bgColor=black colSpan=2><IMG height=1 
+                  src="COptionTree_files/space.gif" width=1></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="COptionTree_files/sitebuild_icon.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/submit/ReportProblem.asp?GUID=%2Ftreectrl%2FCOptionTree%2Easp%2D5%2F8%2F2002">Broken 
+                  Article?</A></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="COptionTree_files/support_icon.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/store/"><B>VS.NET 2003 from 
+                  $899</B></A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="COptionTree_files/support_icon.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/store/"><B>MSDN Univ. from 
+                  $2499</B></A></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="COptionTree_files/print.gif" 
+                width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/treectrl/coptiontree.asp?print=true" 
+                  target=_print>Print version</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="COptionTree_files/link.gif" 
+                width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/add_bookmark.asp?t=0&amp;ct=%2Ftreectrl%2Fcoptiontree%2Easp&amp;guid=%2Ftreectrl%2FCOptionTree%2Easp%2D5%2F8%2F2002">Bookmark 
+                  this</A></TD></TR></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="COptionTree_files/mail.gif" 
+                width=16></TD>
+                <TD class=SmallText><A 
+                  href="http://www.codeproject.com/script/recommend/form.asp?guid=%2Ftreectrl%2FCOptionTree%2Easp%2D5%2F8%2F2002">Send 
+                  to a friend</A></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD class=InfoBarHeader>My Profile</TD></TR>
+              <TR>
+                <TD bgColor=black colSpan=2><IMG height=1 
+                  src="COptionTree_files/space.gif" width=1></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="COptionTree_files/profile_small.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/modify.asp?ct=/treectrl/coptiontree.asp">My 
+                  Settings</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="COptionTree_files/submit_small.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/articles/list_articles.asp?userid=649009">My 
+                  Articles</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="COptionTree_files/bookmarks.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/bookmark_list.asp">My 
+                  Bookmarks</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="COptionTree_files/logoff_small.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/logoff.asp?ct=/treectrl/coptiontree.asp">Sign 
+                  out</A></TD></TR>
+              <TR>
+                <TD bgColor=black colSpan=2><IMG height=1 
+                  src="COptionTree_files/space.gif" 
+          width=1></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD>&nbsp;</TD></TR>
+        <TR>
+          <TD>
+            <CENTER>
+            <SCRIPT language=javascript>document.write("<a href=\"/script/admentor/admentorredir.asp?id=884&way=ban\" target=_blank><img src=\"/script/admentor/include/ServeAd.aspx?File=%2Fscript%2Fadmentor%2Fimages%2FWinWebDundas120x600%2Egif&C=False&id=884\" alt=\"\" border=0 width=120 height=600></a>");</SCRIPT>
+            <BR></CENTER><BR></TD></TR></TBODY></TABLE></TD>
+    <TD width=5 rowSpan=2><IMG height=1 src="COptionTree_files/space.gif" 
+      width=5> </TD>
+    <TD align=right width="100%" bgColor=white>
+      <TABLE width="100%">
+        <TBODY>
+        <TR vAlign=top>
+          <TD class=smallText vAlign=top noWrap></TD>
+          <TD noWrap align=right><A name=__top></A>
+            <TABLE>
+              <TBODY>
+              <TR>
+                <TD class=smallText align=right>116 members have rated this 
+                  article. Result:</TD>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=0 border=2>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=5 src="COptionTree_files/red.gif" 
+                        width=20 border=0></TD>
+                      <TD><IMG height=5 src="COptionTree_files/red.gif" 
+                        width=20 border=0></TD>
+                      <TD><IMG height=5 src="COptionTree_files/red.gif" 
+                        width=20 border=0></TD>
+                      <TD><IMG height=5 src="COptionTree_files/red.gif" 
+                        width=20 border=0></TD>
+                      <TD><IMG height=5 src="COptionTree_files/red.gif" 
+                        width=16 border=0><IMG height=5 
+                        src="COptionTree_files/white.gif" width=4 
+                    border=0></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD class=smallText align=right colSpan=2><A 
+                  title="Calculated as rating x Log10(# votes)" 
+                  href="http://www.codeproject.com/script/articles/top_articles.asp?st=2">Popularity: 
+                  9.87</A>. Rating: <B>4.78</B> out of 
+        5.</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD vAlign=top width="100%">
+      <DIV id=contentdiv><!-- Article Starts -->
+      <UL class=download>
+        <LI><A 
+        href="http://www.codeproject.com/treectrl/COptionTree/COptionTreeDemo_demo.zip">Download 
+        demo application - 108 Kb</A> 
+        <LI><A 
+        href="http://www.codeproject.com/treectrl/COptionTree/COptionTreeDemo_src.zip">Download 
+        source - 284 Kb</A> </LI></UL>
+      <P><IMG height=350 src="COptionTree_files/COptionsTree1.gif" 
+      width=300>&nbsp; <IMG height=350 src="COptionTree_files/COptionsTree2.gif" 
+      width=300></P><A name=Introduction>
+      <H2>What's New with 2.0</H2></A>
+      <P>The long awaited 2.0 version is here. Good news is you get new 
+      features, new options, new items, and new bugs. Bad news is, a lot has 
+      changed so you may need to change around your current code to implement 
+      the new version. (<I>Thanks to <B>Tom</B> and <B>Irfan</B> for there fixes 
+      for bugs that haunted me at night when the lights are off. They deserve 
+      their names in bold.</I>) 
+      <H2>Contents</H2>
+      <UL>
+        <LI><A 
+        href="http://www.codeproject.com/treectrl/coptiontree.asp#Features">Features</A> 
+
+        <LI><A 
+        href="http://www.codeproject.com/treectrl/coptiontree.asp#Usage">Usage</A> 
+
+        <LI><A 
+        href="http://www.codeproject.com/treectrl/coptiontree.asp#API Reference">API 
+        Reference</A> 
+        <LI><A 
+        href="http://www.codeproject.com/treectrl/coptiontree.asp#Notifications">Notifications</A> 
+
+        <LI><A 
+        href="http://www.codeproject.com/treectrl/coptiontree.asp#Creating Custom">Creating 
+        Custom OptionTreeItem's</A> 
+        <LI><A 
+        href="http://www.codeproject.com/treectrl/coptiontree.asp#Acknowledgements">Acknowledgements</A> 
+
+        <LI><A 
+        href="http://www.codeproject.com/treectrl/coptiontree.asp#Version History">Version 
+        History</A> 
+        <LI><A 
+        href="http://www.codeproject.com/treectrl/coptiontree.asp#Bug Reports">Bug 
+        Reports</A> 
+        <LI><A 
+        href="http://www.codeproject.com/treectrl/coptiontree.asp#License">License</A> 
+        </LI></UL><A name=Features>
+      <H2>Features</H2></A>
+      <P>Below are some of the many features that <CODE>COptionTree</CODE> has. 
+      <UL>
+        <LI>Static controls. 
+        <LI>Edit controls. 
+        <LI>Combo box controls. 
+        <LI>Check box controls. 
+        <LI>Radio controls. 
+        <LI>Spinner controls. 
+        <LI>Color controls. 
+        <LI>Date and time controls. 
+        <LI>Image controls. 
+        <LI>Font controls. 
+        <LI>Files and folders controls. 
+        <LI>IP Address controls.. 
+        <LI>Hyperlink controls. 
+        <LI>Automatic column resize limit. 
+        <LI>Easy customized options for different GUI style. 
+        <LI>Easy customized options for each control item. 
+        <LI>And more... </LI></UL><A name=Usage>
+      <H2>Usage</H2></A>
+      <P>You have two options for using <CODE>COptionTree</CODE>, you can use it 
+      in static form or as a DLL. </P>
+      <P>Add The following files to your project: </P><PRE><SPAN class=cpp-comment>// DLL</SPAN>
+/COptionTreeDemo/COptionTree DLL/DLL.h
+
+<SPAN class=cpp-comment>// Static</SPAN>
+/COptionTreeDemo/COptionTree DLL/*.*
+/COptionTreeDemo/COptionTree DLL/res/*.*</PRE>
+      <P>Creating the control: </P><PRE><SPAN class=cpp-preprocessor>    #include "OptionTree.h"</SPAN>
+    
+    <SPAN class=cpp-comment>// Declare variables</SPAN>
+    CRect rcClient;
+    DWORD dwStyle, dwOptions;
+    
+    <SPAN class=cpp-comment>// Get the clients rectangle</SPAN>
+    GetClientRect(rcClient);
+    
+    <SPAN class=cpp-comment>// Setup the window style</SPAN>
+    dwStyle = WS_CHILD | WS_VISIBLE;
+
+    <SPAN class=cpp-comment>// Setup the tree options </SPAN>
+    dwOptions =  OT_OPTIONS_SHADEEXPANDCOLUMN | OT_OPTIONS_SHADEROOTITEMS;
+
+    <SPAN class=cpp-comment>// Create tree options</SPAN>
+    <SPAN class=cpp-keyword>if</SPAN> (m_otTree.Create(dwStyle, rcClient, <SPAN class=cpp-keyword>this</SPAN>, dwOptions, 
+        IDC_OPTIONSTREE_OPTIONS) == FALSE)
+    {
+        TRACE0(<SPAN class=cpp-string>"Failed to create options control.\r\n"</SPAN>);
+        <SPAN class=cpp-keyword>return</SPAN> FALSE;
+    }
+
+    <SPAN class=cpp-comment>// Insert tree items</SPAN>
+    <SPAN class=cpp-comment>// ...</SPAN>
+</PRE>Available Tree Options <PRE>OT_OPTIONS_SHOWINFOWINDOW        <SPAN class=cpp-comment>// Show information window</SPAN>
+OT_OPTIONS_NOTIFY            <SPAN class=cpp-comment>// Send parent notifications        </SPAN>
+OT_OPTIONS_DEFINFOTEXTNOSEL        <SPAN class=cpp-comment>// Show default info text for no </SPAN>
+                                     <SPAN class=cpp-comment>// selected item, otherwise blank</SPAN>
+OT_OPTIONS_SHADEEXPANDCOLUMN    <SPAN class=cpp-comment>// Shade the expand column</SPAN>
+OT_OPTIONS_SHADEROOTITEMS        <SPAN class=cpp-comment>// Shade the root items</SPAN>
+</PRE>Validating Tree Items <PRE><SPAN class=cpp-comment>// Use COptionTreeItem::GetItemType() to get item type. Different item </SPAN>
+<SPAN class=cpp-comment>// definitions include.</SPAN>
+
+OT_ITEM_STATIC
+OT_ITEM_CHECKBOX
+OT_ITEM_COLOR
+OT_ITEM_COMBOBOX
+OT_ITEM_DATE
+OT_ITEM_EDIT
+OT_ITEM_IMAGE
+OT_ITEM_RADIO
+OT_ITEM_SPINNER
+OT_ITEM_FONT
+OT_ITEM_FILE
+OT_ITEM_IPADDRESS
+</PRE><A name="API Reference">
+      <H2>API Reference</H2></A>
+      <P>This is a list of the most common used functions of COptionTree's 
+      classes. There many more functions than this, but these give the average 
+      user enough to use the control. </P><B>COptionTree</B> <PRE>BOOL COptionTree::Create(DWORD dwStyle, RECT rcRect, CWnd* pParentWnd, 
+                         DWORD dwTreeOptions, UINT nID)
+<SPAN class=cpp-comment>//Create the tree control and window.</SPAN>
+
+<SPAN class=cpp-keyword>void</SPAN> COptionTree::DeleteAllItems()
+<SPAN class=cpp-comment>//Delete all items in the tree.</SPAN>
+
+<SPAN class=cpp-keyword>void</SPAN> COptionTree::DeleteItem(COptionTreeItem *otiItem)
+<SPAN class=cpp-comment>//Delete an item from the tree.</SPAN>
+
+<SPAN class=cpp-keyword>void</SPAN> COptionTree::DisableInput(BOOL bDisable)
+<SPAN class=cpp-comment>//Disable user input, use this instead of EnableWindow</SPAN>
+
+COptionTreeItem * COptionTree::InsertItem(COptionTreeItem *otiItem, 
+                                          COptionTreeItem *otiParent)
+<SPAN class=cpp-comment>//Insert a new item into the tree. If otiParent is </SPAN>
+<SPAN class=cpp-comment>//NULL then the item becomes the root. InsertItem returns a pointer</SPAN>
+<SPAN class=cpp-comment>//to the item.</SPAN>
+</PRE><BR><B>COptionTreeItem</B><BR><CODE>COptionTreeItem</CODE> is a 
+      class used to handle items in a tree. Each options/preference is a 
+      different item. Depending on what type of item control is used, these 
+      functions are acquired by all control types. <PRE><SPAN class=cpp-keyword>void</SPAN> COptionTreeItem::SetLabelText(CString strLabel)
+<SPAN class=cpp-comment>//Set the label text of an item.</SPAN>
+
+CString COptionTreeItem::GetLabelText()
+<SPAN class=cpp-comment>//Get the label text.</SPAN>
+
+<SPAN class=cpp-keyword>void</SPAN> COptionTreeItem::SetInfoText(CString strText)
+<SPAN class=cpp-comment>//Set the information text that is displayed in the information window. </SPAN>
+<SPAN class=cpp-comment>//This can give the user a description of the item/option, and what it does.</SPAN>
+
+CString COptionTreeItem::GetInfoText()
+<SPAN class=cpp-comment>//Get the information text that is displayed in the information window. </SPAN>
+
+<SPAN class=cpp-keyword>void</SPAN> COptionTreeItem::ReadOnly(BOOL bReadOnly)
+<SPAN class=cpp-comment>//Set item to read only state.</SPAN>
+
+BOOL COptionTreeItem::IsReadOnly()
+<SPAN class=cpp-comment>//Returns TRUE if the item is read only.</SPAN>
+
+<SPAN class=cpp-keyword>void</SPAN> COptionTreeItem::OnSelect()
+<SPAN class=cpp-comment>//Select the item.</SPAN>
+
+BOOL COptionTreeItem::IsReadOnly()
+<SPAN class=cpp-comment>//Returns TRUE if the item is selected.</SPAN>
+</PRE><BR><B>COptionTreeItemStatic</B><BR><CODE>COptionTreeItemStatic</CODE> 
+      is a simple static control. The following are custom functions used to set 
+      the edit the static text. <PRE><SPAN class=cpp-keyword>void</SPAN> COptionTreeItemStatic::SetStaticText(CString strStaticText)
+<SPAN class=cpp-comment>//Set the text for the static item.</SPAN>
+
+CString COptionTreeItemStatic::GetStaticText()
+<SPAN class=cpp-comment>//Get the text for the static item.</SPAN>
+</PRE><BR><B>COptionTreeItemEdit</B><BR><CODE>COptionTreeItemEdit</CODE> 
+      handles like a regular edit control. You can also use all of the standard 
+      functions that you would normally use with a CEdit control. <PRE>BOOL COptionTreeItemEdit::CreateEditItem(BOOL bMultiline, BOOL bPassword, 
+                                         BOOL bNumerical, DWORD dwAddStyle)
+<SPAN class=cpp-comment>//Creates the edit window, returns TRUE if the window is created successful.</SPAN>
+
+BOOL COptionTreeItemEdit::GetMultiline()
+<SPAN class=cpp-comment>//Returns TRUE if edit is multiline.</SPAN>
+
+BOOL COptionTreeItemEdit::GetNumerical()
+<SPAN class=cpp-comment>//Returns TRUE if edit is numerical.</SPAN>
+
+BOOL COptionTreeItemEdit::GetPassword()
+<SPAN class=cpp-comment>//Returns TRUE if edit is password.</SPAN>
+
+<SPAN class=cpp-keyword>void</SPAN> COptionTreeItemEdit::SetMultiline(BOOL bMultiline)
+<SPAN class=cpp-comment>//Set the edit multiline option.</SPAN>
+
+<SPAN class=cpp-keyword>void</SPAN> COptionTreeItemEdit::SetEditDouble(<SPAN class=cpp-keyword>double</SPAN> dValue)
+<SPAN class=cpp-keyword>void</SPAN> COptionTreeItemEdit::SetEditDword(DWORD dwValue)
+<SPAN class=cpp-keyword>void</SPAN> COptionTreeItemEdit::SetEditFloat(<SPAN class=cpp-keyword>float</SPAN> fValue)
+<SPAN class=cpp-keyword>void</SPAN> COptionTreeItemEdit::SetEditInt(<SPAN class=cpp-keyword>int</SPAN> nValue)
+<SPAN class=cpp-keyword>void</SPAN> COptionTreeItemEdit::SetEditLong(<SPAN class=cpp-keyword>long</SPAN> lValue)
+<SPAN class=cpp-comment>//Set the edit text as a numerical value.</SPAN>
+
+BOOL COptionTreeItemEdit::GetEditDouble(<SPAN class=cpp-keyword>double</SPAN> &amp;dReturn)
+BOOL COptionTreeItemEdit::GetEditDword(DWORD &amp;dwReturn)
+BOOL COptionTreeItemEdit::GetEditFloat(<SPAN class=cpp-keyword>float</SPAN> &amp;fReturn)
+BOOL COptionTreeItemEdit::GetEditInt(<SPAN class=cpp-keyword>int</SPAN> &amp;nReturn)
+BOOL COptionTreeItemEdit::GetEditLong(<SPAN class=cpp-keyword>long</SPAN> &amp;lReturn)
+<SPAN class=cpp-comment>//Get the edit text as a numerical value. If function returns FALSE the </SPAN>
+<SPAN class=cpp-comment>//text is not numerical.</SPAN>
+</PRE><BR><B>COptionTreeItemComboBox</B><BR><CODE>COptionTreeItemComboBox</CODE> 
+      handles like a regular combo box control. You can also use all of the 
+      standard functions that you would normally use with a CComboBox control. <PRE>BOOL COptionTreeItemComboBox::CreateComboItem(DWORD dwAddStyle)
+<SPAN class=cpp-comment>//Creates the edit window, returns TRUE if the window is created successful.</SPAN>
+
+<SPAN class=cpp-keyword>void</SPAN> COptionTreeItemComboBox::SetDropDownHeight(<SPAN class=cpp-keyword>long</SPAN> lHeight)
+<SPAN class=cpp-comment>//Set the height for the drop down window.</SPAN>
+</PRE><BR><B>COptionTreeItemCheckBox</B><BR><CODE>COptionTreeItemCheckBox</CODE> 
+      is a check box control. <PRE>BOOL COptionTreeItemCheckBox::CreateCheckBoxItem(BOOL bChecked, BOOL bShowCheck, 
+                                                 BOOL bShowText)
+<SPAN class=cpp-comment>//Creates the check box window, returns TRUE if the window is created successful.</SPAN>
+
+BOOL COptionTreeCheckButton::GetCheck()
+<SPAN class=cpp-comment>//Returns TRUE if check box is checked.</SPAN>
+
+<SPAN class=cpp-keyword>void</SPAN> COptionTreeCheckButton::SetCheckText(CString strChecked, CString strUnChecked)
+<SPAN class=cpp-comment>//Sets the checked text to be displayed when checked and unchecked.</SPAN>
+</PRE><BR><B>COptionTreeItemRadio</B><BR><CODE>COptionTreeItemRadio</CODE> 
+      is a radio box control. <PRE>BOOL COptionTreeItemRadio::CreateRadioItem()
+<SPAN class=cpp-comment>//Creates the radio box window. </SPAN>
+
+<SPAN class=cpp-keyword>void</SPAN> COptionTreeItemRadio::InsertNewRadio(CString strText, BOOL bChecked)
+<SPAN class=cpp-comment>//Insert a new radio item, this should be done in the order you wish the radio </SPAN>
+<SPAN class=cpp-comment>//items to be in.</SPAN>
+
+<SPAN class=cpp-keyword>int</SPAN> COptionTreeItemRadio::GetCheckedRadio()
+<SPAN class=cpp-comment>//Gets the checked radio item in a 0 index form. Function returns -1 if error.</SPAN>
+</PRE><BR><B>COptionTreeItemSpinner</B><BR><CODE>COptionTreeItemSpinner</CODE> 
+      is a spinner control that allows users to select numerical values.. <PRE>BOOL COptionTreeItemSpinner::CreateSpinnerItem(BOOL bWrapAround, BOOL bUserEdit,
+                          <SPAN class=cpp-keyword>double</SPAN> dValue, <SPAN class=cpp-keyword>double</SPAN> dRangeBottom, <SPAN class=cpp-keyword>double</SPAN> dRangeTop)
+<SPAN class=cpp-comment>//Creates the spinner window, returns TRUE if the window is created successful.</SPAN>
+
+<SPAN class=cpp-keyword>void</SPAN> COptionTreeSpinnerButton::SetEditDouble(<SPAN class=cpp-keyword>double</SPAN> dValue)
+<SPAN class=cpp-keyword>void</SPAN> COptionTreeSpinnerButton::SetEditDword(DWORD dwValue)
+<SPAN class=cpp-keyword>void</SPAN> COptionTreeSpinnerButton::SetEditFloat(<SPAN class=cpp-keyword>float</SPAN> fValue)
+<SPAN class=cpp-keyword>void</SPAN> COptionTreeSpinnerButton::SetEditInt(<SPAN class=cpp-keyword>int</SPAN> nValue)
+<SPAN class=cpp-keyword>void</SPAN> COptionTreeSpinnerButton::SetEditLong(<SPAN class=cpp-keyword>long</SPAN> lValue)
+<SPAN class=cpp-comment>//Set the spinner value as a numerical value.</SPAN>
+
+BOOL COptionTreeSpinnerButton::GetEditDouble(<SPAN class=cpp-keyword>double</SPAN> &amp;dReturn)
+BOOL COptionTreeSpinnerButton::GetEditDword(DWORD &amp;dwReturn)
+BOOL COptionTreeSpinnerButton::GetEditFloat(<SPAN class=cpp-keyword>float</SPAN> &amp;fReturn)
+BOOL COptionTreeSpinnerButton::GetEditInt(<SPAN class=cpp-keyword>int</SPAN> &amp;nReturn)
+BOOL COptionTreeSpinnerButton::GetEditLong(<SPAN class=cpp-keyword>long</SPAN> &amp;lReturn)
+<SPAN class=cpp-comment>//Get the spinner value as a numerical value. If function returns FALSE an error </SPAN>
+<SPAN class=cpp-comment>//occured.</SPAN>
+
+<SPAN class=cpp-keyword>void</SPAN> COptionTreeSpinnerButton::GetRange(<SPAN class=cpp-keyword>double</SPAN> &amp;dBottom, <SPAN class=cpp-keyword>double</SPAN> &amp;dTop)
+<SPAN class=cpp-comment>//Gets the range for the spinner.</SPAN>
+
+<SPAN class=cpp-keyword>void</SPAN> COptionTreeSpinnerButton::SetRange(<SPAN class=cpp-keyword>double</SPAN> dBottom, <SPAN class=cpp-keyword>double</SPAN> dTop)
+<SPAN class=cpp-comment>//Sets the range for the spinner.</SPAN>
+</PRE><BR><B>COptionTreeItemColor</B><BR><CODE>COptionTreeItemColor</CODE> 
+      is a control to allow the user to select or set a custom color. <PRE>BOOL COptionTreeItemColor::CreateColorItem(COLORREF rcColor, 
+                                           COLORREF rcAutomatic, BOOL bShowHex, 
+                                           BOOL bLiveUpdate)
+<SPAN class=cpp-comment>//Creates the color window, returns TRUE if the window is created successful.</SPAN>
+
+COLORREF COptionTreeItemColor::GetColor()
+<SPAN class=cpp-comment>//Gets the selected color.</SPAN>
+
+<SPAN class=cpp-keyword>void</SPAN> COptionTreeItemColor::SetColor(COLORREF rcColor)
+<SPAN class=cpp-comment>//Sets the selected color.</SPAN>
+
+<SPAN class=cpp-keyword>void</SPAN> COptionTreeItemColor::SetShowHex(BOOL bShow)
+<SPAN class=cpp-comment>//Sets the option to show hexadecimal or RGB values.</SPAN>
+
+<SPAN class=cpp-keyword>void</SPAN> COptionTreeItemColor::SetLiveUpdate(BOOL bLive)
+<SPAN class=cpp-comment>//Sets the option to show live update colors.</SPAN>
+</PRE><BR><B>COptionTreeItemDate</B><BR><CODE>COptionTreeItemDate</CODE> 
+      is a control to allow the user to select or set a date or time. You can 
+      also use all of the standard functions that you would normally use with a 
+      CDateTimeCtrl control. <PRE>BOOL COptionTreeItemDate::CreateDateItem(CString strFormat, DWORD dwDateStyle)
+<SPAN class=cpp-comment>//Creates the date window, returns TRUE if the window is created successful.</SPAN>
+</PRE><BR><B>COptionTreeItemImage</B><BR><CODE>COptionTreeItemIcon</CODE> 
+      is a control to allow the user to select an icon.<PRE>BOOL COptionTreeItemImage::CreateImageItem(DWORD dwOptions, CSize sImageSizes, 
+                                           <SPAN class=cpp-keyword>int</SPAN> nNumberColumns)
+<SPAN class=cpp-comment>//Creates the icon window, returns TRUE if the window is created successful.</SPAN>
+
+<SPAN class=cpp-keyword>int</SPAN> COptionTreeItemImage::GetSelection()
+<SPAN class=cpp-comment>//Gets the selected image in a 0 based index.</SPAN>
+
+<SPAN class=cpp-keyword>void</SPAN> COptionTreeItemImage::AddBitmap(CString strBitmap, COLORREF crMask, CString strText)
+<SPAN class=cpp-keyword>void</SPAN> COptionTreeItemImage::AddBitmap(UINT uBitmap, COLORREF crMask, CString strText)
+<SPAN class=cpp-keyword>void</SPAN> COptionTreeItemImage::AddBitmap(CBitmap &amp;bBitmap, COLORREF crMask, CString strText)
+<SPAN class=cpp-keyword>void</SPAN> COptionTreeItemImage::AddIcon(UINT uIcon, CString strText)
+<SPAN class=cpp-keyword>void</SPAN> COptionTreeItemImage::AddIcon(HICON hIcon, CString strText)
+<SPAN class=cpp-comment>//Insert a new image.</SPAN>
+</PRE><B>COptionTreeItemFont</B><BR><CODE>COptionTreeItemFont</CODE> is a 
+      control to allow the user to select an font.<PRE>BOOL COptionTreeItemFont::CreateFontItem(LOGFONT lfFont, COLORREF crFontColor, 
+             LOGFONT lfDefaultFont, COLORREF crDefaultFontColor, DWORD dwOptions)
+BOOL COptionTreeItemFont::CreateFontItem(LOGFONT lfFont, COLORREF crFontColor, 
+             DWORD dwOptions)
+BOOL COptionTreeItemFont::CreateFontItem(CHARFORMAT cfFont, COLORREF crFontColor, 
+             CHARFORMAT cfDefaultFont, COLORREF crDefaultFontColor, DWORD dwOptions)
+BOOL COptionTreeItemFont::CreateFontItem(CHARFORMAT cfFont, COLORREF crFontColor, 
+             DWORD dwOptions)
+<SPAN class=cpp-comment>//Creates the font window, returns TRUE if the window is created successful.</SPAN>
+
+<SPAN class=cpp-keyword>void</SPAN> COptionTreeItemIcon::SetCurFont(CHARFORMAT cfFont)
+<SPAN class=cpp-keyword>void</SPAN> COptionTreeItemIcon::SetCurFont(LOGFONT lf)
+<SPAN class=cpp-comment>//Sets the font currently displayed.</SPAN>
+
+<SPAN class=cpp-keyword>void</SPAN> COptionTreeItemIcon::SetDefaultFont(CHARFORMAT cfFont)
+<SPAN class=cpp-keyword>void</SPAN> COptionTreeItemIcon::SetDefaultFont(LOGFONT lf)
+<SPAN class=cpp-comment>//Sets the default font, that will be set when the default button is pushed.</SPAN>
+
+<SPAN class=cpp-keyword>void</SPAN> COptionTreeItemIcon::SetTextColor(COLORREF crColor)
+<SPAN class=cpp-comment>//Sets the text color.</SPAN>
+
+<SPAN class=cpp-keyword>void</SPAN> COptionTreeItemIcon::SetDefaultTextColor(COLORREF crColor)
+<SPAN class=cpp-comment>//Sets the text color for the default font.</SPAN>
+
+<SPAN class=cpp-keyword>void</SPAN> COptionTreeItemIcon::SetApplyWindow(CWnd *pWnd)
+<SPAN class=cpp-comment>//Sets the window to be notified when the apply button is pressed.</SPAN>
+</PRE><B>COptionTreeItemFile</B><BR><CODE>COptionTreeItemFile</CODE> is a 
+      control to allow the user to select a file or folder.<PRE><SPAN class=cpp-comment>//Creates the file window, returns TRUE if the window is created successful.</SPAN>
+BOOL COptionTreeItemFile::CreateFileItem(CString strFile, CString strDefExt, 
+                                         CString strFilter, DWORD dwOptions, 
+                                         DWORD dwDlgFlags)
+
+<SPAN class=cpp-comment>// gets information about the selected file(s).</SPAN>
+CString COptionTreeItemFile::GetSelectedFolder()
+CString COptionTreeItemFile::GetFileDrive()
+CString COptionTreeItemFile::GetFileDir()
+CString COptionTreeItemFile::GetFileExt()
+CString COptionTreeItemFile::GetFileTitle()
+CString COptionTreeItemFile::GetFileName()
+CString COptionTreeItemFile::GetPathName()
+CString COptionTreeItemFile::GetNextPathName(POSITION&amp; pos)
+POSITION GetStartPosition()
+</PRE><B>COptionTreeItemIPAddress</B><BR><CODE>COptionTreeItemIPAddress</CODE> 
+      is a control to allow the user to select a IP Address.<PRE><SPAN class=cpp-comment>//Creates the ip address window, returns TRUE if the window is created successful.</SPAN>
+BOOL COptionTreeItemIPAddress::CreateIPAddressItem(DWORD dwAddStyle)
+</PRE><B>COptionTreeItemHyperLink</B><BR><CODE>COptionTreeItemHyperLink</CODE> 
+      is a control to allow the user to click on a hyperlink.<PRE><SPAN class=cpp-comment>// Creates the hyperlink window, returns TRUE if the window is created successful.</SPAN>
+BOOL COptionTreeItemIPAddress::CreateHyperlinkItem(DWORD dwOptions, 
+                   CString strLink, COLORREF crLink, COLORREF crHover = NULL, 
+                   COLORREF crVisited = NULL)</PRE><A name=Notifications>
+      <H2>Notifications</H2></A>
+      <P>You can have your application be notified of certain events that happen 
+      in the tree control. Below is an example of how to be notified when an 
+      event happens, and all the notifications you can have. </P>YourDialog.h <PRE><SPAN class=cpp-comment>//...</SPAN>
+    <SPAN class=cpp-comment>//}}AFX_MSG_MAP</SPAN>
+    ON_NOTIFY(OT_NOTIFY_ITEMCHANGED, IDC_OPTIONSTREE_OPTIONS, OnTreeItemChanged)
+END_MESSAGE_MAP()
+</PRE>YourDialog.cpp <PRE>
+<SPAN class=cpp-keyword>void</SPAN> CYourDialog::OnTreeItemChanged(NMHDR* pNotifyStruct, LRESULT* plResult)
+{
+    <SPAN class=cpp-comment>// Declare variables</SPAN>
+    LPNMOPTIONTREE pNMOptionTree = (LPNMOPTIONTREE)pNotifyStruct;
+
+    <SPAN class=cpp-comment>// Validate</SPAN>
+    <SPAN class=cpp-keyword>if</SPAN> (pNMOptionTree-&gt;pItem != NULL)
+    {
+        <SPAN class=cpp-comment>// -- Use item</SPAN>
+        <SPAN class=cpp-keyword>return</SPAN> <SPAN class=cpp-literal>1</SPAN>;
+    }
+
+    *plResult = <SPAN class=cpp-literal>0</SPAN>;
+}
+
+</PRE>Available Notifications <PRE>OT_NOTIFY_INSERTITEM        <SPAN class=cpp-comment>// Insert item</SPAN>
+OT_NOTIFY_DELETEITEM        <SPAN class=cpp-comment>// Delete item</SPAN>
+OT_NOTIFY_DELETEALLITEMS    <SPAN class=cpp-comment>// Delete all items</SPAN>
+OT_NOTIFY_ITEMCHANGED       <SPAN class=cpp-comment>// Item changed</SPAN>
+OT_NOTIFY_ITEMBUTTONCLICK   <SPAN class=cpp-comment>// Item button click</SPAN>
+OT_NOTIFY_SELCHANGE         <SPAN class=cpp-comment>// Selection changed</SPAN>
+OT_NOTIFY_ITEMEXPANDING     <SPAN class=cpp-comment>// Item expanding</SPAN>
+OT_NOTIFY_COLUMNCLICK       <SPAN class=cpp-comment>// Column click</SPAN>
+OT_NOTIFY_PROPCLICK         <SPAN class=cpp-comment>// Property click</SPAN>
+</PRE><A name="Creating Custom">
+      <H2>Creating Custom OptionTreeItem's</H2></A>
+      <P>Creating custom tree controls is a difficult and drawn out process, but 
+      I do not want this to deter you from taking on the task. If you are an 
+      beginner program and have ideas for new controls, please let me know and I 
+      will see what I can do. If you are and advanced programmer and have 
+      created customized controls, please let me also know and I will include 
+      them in the next release. Some overrides you made need to know for 
+      <CODE>OptionTreeItem</CODE> are below, you can look at some of the code 
+      for the controls I have created to get an idea of how they are managed. 
+      Each control type, requires a different attack angle to implement it. A 
+      good place to start is to take a look at 
+      <CODE>OptionTreeItemStatic</CODE>, this is a simple control. 
+      <CODE>OptionTreeItemEdit</CODE> is a good place to go after you look at 
+      the static item. </P><PRE><SPAN class=cpp-keyword>void</SPAN> OptionTreeItem::DrawAttribute(CDC *pDC, <SPAN class=cpp-keyword>const</SPAN> RECT &amp;rcRect)
+<SPAN class=cpp-comment>//Called when item needs to be painted.</SPAN>
+
+<SPAN class=cpp-keyword>void</SPAN> OptionTreeItem::OnActivate()
+<SPAN class=cpp-comment>//Called when the item is clicked by mouse or enter key is pressed. This may </SPAN>
+<SPAN class=cpp-comment>//be where your control displays a window, or a menu.</SPAN>
+
+<SPAN class=cpp-keyword>void</SPAN> OptionTreeItem::OnCommit()
+<SPAN class=cpp-comment>//Called when data has been committed, a confirmation that options have been</SPAN>
+<SPAN class=cpp-comment>//changed. CommitChanges() is then called to handle the selection of data.</SPAN>
+
+<SPAN class=cpp-keyword>void</SPAN> OptionTreeItem::OnMove()
+<SPAN class=cpp-comment>//Called when the item is moved.</SPAN>
+
+<SPAN class=cpp-keyword>void</SPAN> OptionTreeItem::OnMove()
+<SPAN class=cpp-comment>//Called when item is refreshed.</SPAN>
+
+<SPAN class=cpp-keyword>void</SPAN> OptionTreeItem::OnSelect()
+<SPAN class=cpp-comment>//Called when item is selected.</SPAN>
+
+<SPAN class=cpp-keyword>void</SPAN> OptionTreeItem::OnDeSelect()
+<SPAN class=cpp-comment>//Called when item is deselected.</SPAN>
+
+<SPAN class=cpp-keyword>void</SPAN> OptionTreeItem::CleanDestroyWindow()
+<SPAN class=cpp-comment>//Called when the Tree control is destroyed or when the item is deleted. This is </SPAN>
+<SPAN class=cpp-comment>//incase your item needs to destroy a window.</SPAN>
+</PRE><A name=Acknowledgements>
+      <H2>Acknowledgements</H2></A>
+      <P>The COptionTree is inspired by code, ideas, and submissions from the 
+      following: </P>
+      <UL>
+        <LI><A href="http://www.thecodeproject.com/treectrl/proptree.asp" 
+        target=_new>CPropTree v1.0 - Property Tree Control</A> - By Scott Ramsay 
+
+        <LI><A href="http://www.thecodeproject.com/miscctrl/colorbutton.asp" 
+        target=_new>A color picker button</A> - By James White 
+        <LI>Star bug fixers: YoSilver, Tom, Irfan </LI></UL><A 
+      name="Version History">
+      <H2>Version History</H2></A>
+      <P>Below is the version history for COptionTree. </P>
+      <DIV align=center>
+      <CENTER>
+      <TABLE cellSpacing=0 cellPadding=0 border=0>
+        <TBODY>
+        <TR>
+          <TD vAlign=top align=left width="10%">5/7/2002<BR><BR></TD>
+          <TD vAlign=top align=left width="10%">1.0.0.0</TD>
+          <TD vAlign=top align=left width="80%">Initial implementation.</TD></TR>
+        <TR>
+          <TD vAlign=top align=middle width="100%" colSpan=3>
+            <HR width="95%" color=#ff9900 noShade SIZE=1>
+          </TD></TR>
+        <TR>
+          <TD vAlign=top align=left width="10%">5/10/2002</TD>
+          <TD vAlign=top align=left width="10%">1.1.0.0</TD>
+          <TD vAlign=top align=left width="80%">Fix problems with icon and 
+            color items. Also fixed problems with expanding columns and column 
+            size. Added TAB support, hit TAB to activate next item, and SHIFT 
+            TAB to activate previous item. NOTE: You must commit current item 
+            with the ENTER key before tabbing, this is because some controls use 
+            TAB i.e.) edit, control box, radio, and so on.</TD></TR>
+        <TR>
+          <TD vAlign=top align=middle width="100%" colSpan=3>
+            <HR width="95%" color=#ff9900 noShade SIZE=1>
+          </TD></TR>
+        <TR>
+          <TD vAlign=top align=left width="10%">5/11/2002</TD>
+          <TD vAlign=top align=left width="10%">1.1.1.0</TD>
+          <TD vAlign=top align=left width="80%">Fixed IsWindow() issues, which 
+            are the causes for a lot of Win98 problems. Fixed IDC_HAND problem 
+            for non Win 2K or XP users. Fixed some resource and overhead 
+            problems. Also added expand all feature. Huge thanks go out to all 
+            bug reporters, especially YoSilver.</TD></TR>
+        <TR>
+          <TD vAlign=top align=middle width="100%" colSpan=3>
+            <HR width="95%" color=#ff9900 noShade SIZE=1>
+          </TD></TR>
+        <TR>
+          <TD vAlign=top align=left width="10%">5/14/2002</TD>
+          <TD vAlign=top align=left width="10%">1.1.2.0</TD>
+          <TD vAlign=top align=left width="80%">Fixed icon and color bug. Also 
+            added GetItemType() to determine different item types.</TD></TR>
+        <TR>
+          <TD vAlign=top align=middle width="100%" colSpan=3>
+            <HR width="95%" color=#ff9900 noShade SIZE=1>
+          </TD></TR>
+        <TR>
+          <TD vAlign=top align=left width="10%">9/1/2002</TD>
+          <TD vAlign=top align=left width="10%">1.1.2.1</TD>
+          <TD vAlign=top align=left width="80%">Beta release, beta is not 
+            stable by any means.</TD></TR>
+        <TR>
+          <TD vAlign=top align=middle width="100%" colSpan=3>
+            <HR width="95%" color=#ff9900 noShade SIZE=1>
+          </TD></TR>
+        <TR>
+          <TD vAlign=top align=left width="10%">9/8/2002</TD>
+          <TD vAlign=top align=left width="10%">2.0.0.0</TD>
+          <TD vAlign=top align=left width="80%">The long awaited 2.0 version 
+            is here. Fixed a lot of bugs, created more bugs, added several more 
+            items, and a lot of other stuff that is way too much to list here. 
+            Oh plus I added fancy new version numbers, this I think was the 
+            biggest update.</TD></TR></TBODY></TABLE></CENTER></DIV><A 
+      name="Bug Reports">
+      <H2>Bug Reports</H2></A>
+      <P>If you have a bug report, or a bug fix you can contact me through email 
+      or with the forums below. I would appreciate a notification of any bugs 
+      discovered or improvements that could be made to help the control grow for 
+      everyone. </P><A name=License>
+      <H2>License</H2></A>
+      <P>This code is provided "as is" with no expressed or implied warranty. 
+      </P>
+      <P>You may use this code in a commercial product with or without 
+      acknowledgement. However you may not sell this code or any modification of 
+      this code, this includes commercial libraries and anything else for 
+      profit. </P><!-- Article Ends --></DIV>
+      <H2>About Matthew R. Miller</H2>
+      <TABLE width="100%" border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD class=smallText noWrap><IMG 
+            src="COptionTree_files/{8C65F299-638E-44EE-97AC-92FF552C433F}.jpg"><BR></TD>
+          <TD class=smallText width="100%">I am a computer scientist with the 
+            love for anything technology related. I started ComputerSmarts.net 
+            LLC. when I was 18 to make sure that this is what I wanted to do for 
+            the rest of my life. The company soon took off, and has been a great 
+            outlet for myself and others. When I am not in front of the computer 
+            you might find me playing tennis, hockey, music, x-box, game cube, 
+            or playing with my family and pets, and many other activities too 
+            long to list here.
+            <P class=smallText>Click <A 
+            href="http://www.codeproject.com/script/profile/whos_who.asp?vt=arts&amp;id=36743">here</A> 
+            to view Matthew R. Miller's online 
+      profile.</P></TD></TR></TBODY></TABLE><BR>
+      <TABLE cellPadding=4 width="100%" border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD width="100%">
+            <H2>Other popular articles:</H2>
+            <UL>
+              <LI><A 
+              href="http://www.codeproject.com/treectrl/proptree.asp">CPropTree 
+              v1.0 - Property Tree Control</A><BR><SPAN class=smalltext>Custom 
+              MFC tree control that support dynamic editable items</SPAN>
+              <LI><A 
+              href="http://www.codeproject.com/treectrl/progresshourglassfx.asp">CProgressFX 
+              and CHourglassFX</A><BR><SPAN class=smalltext>Two animation 
+              provider classes to add animation effects to any 
+              CWaitingTreeCtrl-derived class</SPAN>
+              <LI><A 
+              href="http://www.codeproject.com/treectrl/movetreeitem.asp">Move 
+              Tree Items</A><BR><SPAN class=smalltext>Function to move or copy 
+              items and their children in a tree control</SPAN>
+              <LI><A 
+              href="http://www.codeproject.com/treectrl/ctreelistctrl.asp">A 
+              Tree List Control</A><BR><SPAN class=smalltext>A Tree List 
+              Control</SPAN></LI></UL></TD>
+          <TD width=360>
+            <SCRIPT language=javascript>document.write("<IFRAME src=\"/script/admentor/include/ServeAdHTML.aspx?C=False&id=786\" border=0 frameborder=0 scrolling=no width=300 height=250></IFRAME>");</SCRIPT>
+          </TD></TR></TBODY></TABLE>
+      <FORM action=/script/rating/code/app/insert_vote.asp method=post><INPUT 
+      type=hidden value=/treectrl/COptionTree.asp-5/8/2002 name=vote_name> 
+      <INPUT type=hidden value=/treectrl/coptiontree.asp name=goal> 
+      <TABLE cellSpacing=0 cellPadding=1 width="100%" bgColor=#ff9900 
+        border=0><TBODY>
+        <TR>
+          <TD width="100%">
+            <TABLE cellSpacing=0 cellPadding=4 width="100%" bgColor=#fbedbb 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD class=smalltext vAlign=center>[<A 
+                  href="http://www.codeproject.com/treectrl/coptiontree.asp#__top">Top</A>]</TD>
+                <TD vAlign=center noWrap align=right><I><B>Rate this Article 
+                  for us!</B></I>&nbsp;&nbsp;&nbsp;&nbsp; <I>Poor</I><INPUT 
+                  type=radio value=1 name=rate><INPUT type=radio value=2 
+                  name=rate><INPUT type=radio value=3 name=rate><INPUT 
+                  type=radio value=4 name=rate><INPUT type=radio value=5 
+                  name=rate><I>Excellent</I>&nbsp;&nbsp;<INPUT class=FormButton type=submit value=Vote> 
+                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></FORM>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD vAlign=top>
+            <CENTER>
+            <SCRIPT language=javascript>document.write("<a href=\"/script/admentor/admentorredir.asp?id=156&way=ban\" target=_blank><img src=\"/script/admentor/include/ServeAd.aspx?File=%2Fscript%2Fadmentor%2Fimages%2Fmsdn%5Fbutton%2Egif&C=False&id=156\" alt=\"MSDN Magazine - Your guide to Microsoft tools, development environments, and technologies for Windows and the Web.\" border=0 width=120 height=60></a>");</SCRIPT>
+            <BR><FONT size=1><A 
+            href="http://www.codeproject.com/info/MediaKit/">Premium 
+            Sponsor</A></FONT></CENTER><BR></TD>
+          <TD vAlign=top noWrap align=middle><SPAN id=AdBanner5>
+            <SCRIPT language=javascript>document.write("<a href=\"/script/admentor/admentorredir.asp?id=946&way=ban\" target=_blank><img src=\"/script/admentor/include/ServeAd.aspx?File=%2Fscript%2Fadmentor%2Fimages%2Ffoss%2Egif&C=False&id=946\" alt=\"\" border=0 width=468 height=60></a>");</SCRIPT>
+            </SPAN></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><A 
+name=__comments></A>
+<SCRIPT language=JavaScript>
+function MsgVoteForm(UserID, MsgID)
+{
+	document.write("Rate this message: ");
+	for (var i=1; i<=5;i++)
+		document.write("<a href='#xx" + MsgID.toString() + "xx' title='give this message a vote of " + i.toString() + "' onclick='RateMsg(" + UserID.toString() + ", " + MsgID.toString() + ", " + i.toString() + ")'><b>" + i.toString() + "</b></a> ");
+	document.write(" (out of 5)");
+}
+
+function RateMsg(userid, msgid, score) 
+{ 
+	open("/script/comments/vote.asp?js=1&user="+userid.toString()+"&msg="+msgid.toString()+"&score="+score.toString() ,"helpful","toolbar=no,resizable=yes,scrollbars=yes,directories=no,menubar=no,width=300,height=200");
+	return false;
+}
+</SCRIPT>
+
+<SCRIPT language=JavaScript>
+var Selected = "";
+var AdTime = new Date();
+document.writeln("<iframe name=AdFrame width=0 height=0 frameborder=0></IFRAME>");
+function SwitchMessage(elm)
+{
+
+	var now = new Date();
+	if (Number(now.getTime() - AdTime.getTime()) > Number(5000))
+	{
+		AdTime = now;
+		var loc = window.frames["AdFrame"];
+		if (loc) loc = loc.document;
+		if (loc) loc = loc.location;
+		if (loc) loc.replace('/script/comments/fetchAd.asp?cat=1');
+	}
+	
+	var elmref;
+	if (Selected != "")
+	{
+		elmref = eval("document.getElementById('" + Selected + "_h1')");
+		if (elmref) elmref.style.display = 'none';
+		elmref = eval("document.getElementById('" + Selected + "_h0')");
+		if (elmref) elmref.bgColor = '#FEF9E7';
+	}
+	if (Selected != elm.name) 
+	{
+		Selected = elm.name;
+		elmref = eval("document.getElementById('" + Selected + "_h1')");
+		if (elmref) 
+		{
+			if (elmref.style.display=='none') elmref.style.display='';
+			else elmref.style.display = 'none';
+		}
+		elmref = eval("document.getElementById('" + Selected + "_h0')");
+		if (elmref) 
+			elmref.bgColor = '#99CCFF';
+	}
+	else
+		Selected="";
+		
+	window.location = "#xx" + Selected + "xx";
+
+	return false;
+}
+
+</SCRIPT>
+
+<SCRIPT language=javascript event=onclick for=DynMessLink>
+return SwitchMessage(this);
+</SCRIPT>
+
+<TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#ff9900 border=0>
+  <TBODY>
+  <TR>
+    <TD width="100%">
+      <TABLE id=ForumTable cellSpacing=1 cellPadding=0 width="100%" 
+      bgColor=#ff9900 border=0>
+        <FORM 
+        action=/script/comments/app/do_filtermessages.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829 
+        method=post>
+        <TBODY>
+        <TR>
+          <TD>
+            <TABLE cellSpacing=0 cellPadding=3 width="100%" bgColor=white 
+            border=0>
+              <TBODY>
+              <TR bgColor=#fbedbb>
+                <TD class=smalltext noWrap><A 
+                  href="http://www.codeproject.com/script/comments/faq.asp"><IMG 
+                  height=16 src="COptionTree_files/info.gif" width=16 
+                  align=absMiddle border=0> <B>FAQ</B></A>&nbsp;</TD>
+                <TD class=smalltext vAlign=top noWrap align=right>Noise level 
+                  <SELECT class=smalltext size=1 name=noise><OPTION 
+                    value=1>Very High</OPTION> <OPTION value=2>High</OPTION> 
+                    <OPTION value=3 selected>Medium</OPTION> <OPTION 
+                    value=4>Low</OPTION> <OPTION value=5>Very 
+                  low</OPTION></SELECT>&nbsp;&nbsp;</TD>
+                <TD class=smalltext vAlign=center noWrap align=right 
+                  colSpan=2><A 
+                  href="http://www.codeproject.com/script/comments/search_comments.asp?forumid=3829"><IMG 
+                  height=15 src="COptionTree_files/search.gif" width=16 
+                  border=0> Search comments</A> &nbsp;</TD>
+                <TD vAlign=top align=right><INPUT class=FormButton type=submit value="Set Options" name=submit></TD></TR>
+              <TR bgColor=#ff9900>
+                <TD width="100%">&nbsp;</TD>
+                <TD class=smalltext vAlign=top noWrap align=right>View <SELECT 
+                  class=smalltext size=1 name=expand><OPTION value=0>Normal 
+                    (slow)</OPTION> <OPTION value=2>Preview (slow)</OPTION> 
+                    <OPTION value=5 selected>Message View</OPTION> <OPTION 
+                    value=6>Topic View</OPTION> <OPTION value=1>Thread 
+                    View</OPTION> <OPTION value=3>Expanded (Supporters 
+                    only)</OPTION></SELECT>&nbsp;&nbsp;</TD>
+                <TD class=smalltext vAlign=top noWrap>Per page <SELECT 
+                  class=smalltext size=1 name=perpage><OPTION 
+                    value=10>10</OPTION> <OPTION value=25 selected>25</OPTION> 
+                    <OPTION value=50>50</OPTION></SELECT></TD>
+                <TD colSpan=2>&nbsp;</TD></TR></TBODY></TABLE></TD></TR></FORM>
+        <TR bgColor=#fbedbb>
+          <TD><A name=xx0xx></A>
+            <TABLE cellPadding=2 width="100%" bgColor=#fbedbb border=0>
+              <TBODY>
+              <TR>
+                <TD class=messagetitle><A class=HoverLink 
+                  title="Add a new message to the discussions" 
+                  href="http://www.codeproject.com/script/comments/user_new.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829" 
+                  target=_top name=HoverNL><B><IMG height=16 
+                  src="COptionTree_files/admin_modify.gif" width=16 align=top 
+                  border=0> New thread</B></A></TD>
+                <TD class=messagetitle>Msgs 1 to 25 of 371 (Total: 371) (<A 
+                  href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;forumid=3829">Refresh</A>)</TD>
+                <TD noWrap align=right><FONT class=messagetitle><SPAN 
+                  class=HoverLink>First</SPAN> <SPAN class=HoverLink>Prev</SPAN> 
+                  <A class=HoverLink 
+                  href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;forumid=3829&amp;fr=26" 
+                  name=HoverNL>Next</A> <A class=HoverLink 
+                  href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;forumid=3829&amp;fr=351" 
+                  name=HoverNL>Last</A> </FONT></TD></TR></TBODY></TABLE></TD></TR>
+        <TR bgColor=white>
+          <TD>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=2 bgColor=#fbedbb border=0>
+                    <TBODY>
+                    <TR>
+                      <TD class=messagetitle width="100%">Subject&nbsp;</TD>
+                      <TD class=messagetitle noWrap width=140>Author&nbsp;</TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT 
+                    class=messagetitle>Date&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="COptionTree_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR id=992305_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx992305xx></A><IMG 
+                        src="COptionTree_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;forumid=3829&amp;select=992305#xx992305xx" 
+                        name=992305><B>How to go through all items</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=1272980"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="COptionTree_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>tiebert</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>3:52 10 Dec 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=992305_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="COptionTree_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent>hi,<BR><BR>i have a tree 
+                                with 1 or 2 COptionTreeItem, these 1 or 2 
+                                contains several COptionTreeItemStatic and 
+                                COptionTreeItemComboBox. To make some things 
+                                better visual, i changed the background color. 
+                                now i have to check something, and to do this, i 
+                                have to go through all COptionTreeItemStatic or 
+                                COptionTreeItemComboBox on the COptionTreeItem, 
+                                that is expand.<BR>but how can i go through all 
+                                fields of the expanded item?<BR><BR>thx<BR>tie 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=992305">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=992305">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;tid=992305&amp;forumid=3829&amp;select=992305#xx992305xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?msg=992305#xx992305xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=992305"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=992305"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(1272980,992305);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="COptionTree_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="COptionTree_files/t.gif" width=1></TD></TR>
+              <TR id=981465_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx981465xx></A><IMG 
+                        src="COptionTree_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;forumid=3829&amp;select=981465#xx981465xx" 
+                        name=981465><B>two editable fields on the same 
+                        row</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=105995"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="COptionTree_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>d00_ape</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>15:47 25 Nov 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=981465_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="COptionTree_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Is it 
+                                easy to implement so that the left feeld also is 
+                                editable?<BR>If how? where to start? 
+                                <BR><BR>_____________________________<BR><BR>...and 
+                                justice for 
+                                all<BR><BR>APe<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=981465">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=981465">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;tid=981465&amp;forumid=3829&amp;select=981465#xx981465xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?msg=981465#xx981465xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=981465"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=981465"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(105995,981465);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="COptionTree_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="COptionTree_files/t.gif" width=1></TD></TR>
+              <TR id=976020_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx976020xx></A><IMG 
+                        src="COptionTree_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;forumid=3829&amp;select=976020#xx976020xx" 
+                        name=976020><B>You saved me</B></A></TD>
+                      <TD vAlign=bottom><IMG height=13 
+                        alt="Unconfirmed/Anonymous posting" 
+                        src="COptionTree_files/usersuss.gif" 
+                      width=15></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle><B>Tomas 
+                        Enderson</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>9:22 18 Nov 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=976020_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="COptionTree_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Thank 
+                                you very much. You're god <IMG 
+                                src="COptionTree_files/smiley_smile.gif" 
+                                align=absMiddle> <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=976020">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=976020">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;tid=976020&amp;forumid=3829&amp;select=976020#xx976020xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?msg=976020#xx976020xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=976020"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=976020"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(0,976020);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="COptionTree_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="COptionTree_files/t.gif" width=1></TD></TR>
+              <TR id=958706_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx958706xx></A><IMG 
+                        src="COptionTree_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;forumid=3829&amp;select=958706#xx958706xx" 
+                        name=958706><B>how to enable drag copy ?</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=556147"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="COptionTree_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>ali13058</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>17:08 27 Oct 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=958706_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="COptionTree_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Hi, I 
+                                want to have drag and copy to another tree 
+                                control. But I found I can not catch it, How can 
+                                I do ? <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=958706">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=958706">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;tid=958706&amp;forumid=3829&amp;select=958706#xx958706xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?msg=958706#xx958706xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=958706"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=958706"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(556147,958706);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="COptionTree_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="COptionTree_files/t.gif" width=1></TD></TR>
+              <TR id=914446_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx914446xx></A><IMG 
+                        src="COptionTree_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;forumid=3829&amp;select=914446#xx914446xx" 
+                        name=914446><B>Some elements don't work when 
+                      ..</B></A></TD>
+                      <TD vAlign=bottom><IMG height=13 
+                        alt="Unconfirmed/Anonymous posting" 
+                        src="COptionTree_files/usersuss.gif" 
+                      width=15></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>tie82</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>9:56 2 Sep 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=914446_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="COptionTree_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>.. a 
+                                scrollbar is shown.<BR>when my list is long 
+                                enough, that the scrollbar appears, the last 
+                                list-element can't be edited e.g.<BR>the focus 
+                                to the edit field oder combobox or ... get set 
+                                and killed immediately, but just in the last 
+                                element and just, if there is a 
+                                scrollbar.<BR>how can i fix 
+                                it?<BR><BR>thx<BR>tie 
+<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=914446">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=914446">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;tid=914446&amp;forumid=3829&amp;select=914446#xx914446xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?msg=914446#xx914446xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=914446"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=914446"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(0,914446);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="COptionTree_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR id=942533_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx942533xx></A><IMG height=1 
+                        src="COptionTree_files/ind.gif" width=18><IMG 
+                        src="COptionTree_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;forumid=3829&amp;select=942533#xx942533xx" 
+                        name=942533>Re: Some elements don't work when ..</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=872562"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="COptionTree_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle>Trevor 
+                        Larkum&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>12:26 7 Oct 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=942533_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="COptionTree_files/ind.gif" 
+                        width=18><IMG src="COptionTree_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>I think 
+                                I have a fix. In COptionTreeList::OnLButtonDown, 
+                                default, change as follows:<BR><BR>// -- Make 
+                                sure new item<BR>if (otiItem != 
+                                oliOldFocus)<BR>{<BR>m_otOption-&gt;SendNotify(OT_NOTIFY_SELCHANGE, 
+                                otiItem);<BR>}<BR>// -- Set focus 
+                                item<BR>m_otOption-&gt;SetFocusedItem(otiItem);<BR><BR>// 
+                                -- Send notify<BR>if (lHit == OT_HIT_ATTRIBUTE 
+                                &amp;&amp; 
+                                !otiItem-&gt;IsRootLevel())<BR>{<BR>if 
+                                (!m_otOption-&gt;SendNotify(OT_NOTIFY_PROPCLICK, 
+                                otiItem) &amp;&amp; 
+                                !otiItem-&gt;IsReadOnly())<BR>{<BR>otiItem-&gt;Activate();<BR>}<BR>}<BR><BR><BR>It 
+                                seems to be necessary to swap the order of the 
+                                items, otherwise SetFocusedItem (which calls 
+                                EnsureVisible which can cause the list to 
+                                scroll) can deactivate the item before it's been 
+                                edited.<BR><BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=942533">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=942533">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;tid=914446&amp;forumid=3829&amp;select=942533#xx942533xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?msg=942533#xx942533xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=942533"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=942533"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(872562,942533);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="COptionTree_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="COptionTree_files/t.gif" width=1></TD></TR>
+              <TR id=914147_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx914147xx></A><IMG 
+                        src="COptionTree_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;forumid=3829&amp;select=914147#xx914147xx" 
+                        name=914147><B>Scrolbars disappear</B></A></TD>
+                      <TD vAlign=bottom><IMG height=13 
+                        alt="Unconfirmed/Anonymous posting" 
+                        src="COptionTree_files/usersuss.gif" 
+                      width=15></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>tie82</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>4:00 2 Sep 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=914147_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="COptionTree_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent>hi,<BR><BR>at first - 
+                                excellent work.<BR>now my problem, i have a 
+                                CFormView containing a COptionTree. When i 
+                                minimize my App, and maximize it afterwards, the 
+                                scrollbars of the optiontree disappear. but when 
+                                i click there, where the scrollbars have to be, 
+                                they appear. <BR>how can i solve this 
+                                problem?<BR><BR>(and sorry for my 
+                                english)<BR><BR>thx<BR>tie 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=914147">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=914147">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;tid=914147&amp;forumid=3829&amp;select=914147#xx914147xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?msg=914147#xx914147xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=914147"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=914147"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(0,914147);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="COptionTree_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR id=914153_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx914153xx></A><IMG height=1 
+                        src="COptionTree_files/ind.gif" width=18><IMG 
+                        src="COptionTree_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;forumid=3829&amp;select=914153#xx914153xx" 
+                        name=914153>Re: Scrolbars disappear</A></TD>
+                      <TD vAlign=bottom><IMG height=13 
+                        alt="Unconfirmed/Anonymous posting" 
+                        src="COptionTree_files/usersuss.gif" 
+                      width=15></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>tie82&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>4:11 2 Sep 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=914153_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="COptionTree_files/ind.gif" 
+                        width=18><IMG src="COptionTree_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>oh 
+                                sorry for double-post.<BR>i found a suggestion 
+                                in another post, to delete all UpdateWindow() . 
+                                and now, all works fine. 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=914153">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=914153">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;tid=914147&amp;forumid=3829&amp;select=914153#xx914153xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?msg=914153#xx914153xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=914153"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=914153"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(0,914153);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="COptionTree_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="COptionTree_files/t.gif" width=1></TD></TR>
+              <TR id=914145_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx914145xx></A><IMG 
+                        src="COptionTree_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;forumid=3829&amp;select=914145#xx914145xx" 
+                        name=914145><B>Scrolbars disappear</B></A></TD>
+                      <TD vAlign=bottom><IMG height=13 
+                        alt="Unconfirmed/Anonymous posting" 
+                        src="COptionTree_files/usersuss.gif" 
+                      width=15></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>tie82</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>4:00 2 Sep 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=914145_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="COptionTree_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent>hi,<BR><BR>at first - 
+                                excellent work.<BR>now my problem, i have a 
+                                CFormView containing a COptionTree. When i 
+                                minimize my App, and maximize it afterwards, the 
+                                scrollbars of the optiontree disappear. but when 
+                                i click there, where the scrollbars have to be, 
+                                they appears. <BR>how can i solve this 
+                                problem?<BR><BR>(and sorry for my 
+                                english)<BR><BR>thx<BR>tie 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=914145">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=914145">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;tid=0&amp;forumid=3829&amp;select=914145#xx914145xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?msg=914145#xx914145xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=914145"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=914145"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(0,914145);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="COptionTree_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="COptionTree_files/t.gif" width=1></TD></TR>
+              <TR id=911764_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx911764xx></A><IMG 
+                        src="COptionTree_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;forumid=3829&amp;select=911764#xx911764xx" 
+                        name=911764><B>Editable ComboBox</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=458094"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="COptionTree_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle><B>The 
+                        Irix</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>17:46 30 Aug 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=911764_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="COptionTree_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Hello 
+                                all!<BR><BR>It's really great control, but one 
+                                little thing trouble me.<BR>How can I create 
+                                editable COptionTreeItemComboBox item with 
+                                CBS_DROPDOWN/CBS_SIMPLE style? Dropped listbox 
+                                dissapears after activating it.<BR>How it can be 
+                                fixed? <BR><BR>Thank 
+                                you,<BR>Eugeny<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=911764">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=911764">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;tid=911764&amp;forumid=3829&amp;select=911764#xx911764xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?msg=911764#xx911764xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=911764"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=911764"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(458094,911764);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="COptionTree_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR id=954079_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx954079xx></A><IMG height=1 
+                        src="COptionTree_files/ind.gif" width=18><IMG 
+                        src="COptionTree_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;forumid=3829&amp;select=954079#xx954079xx" 
+                        name=954079>Re: Editable ComboBox</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=598623"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="COptionTree_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>Thim&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>19:50 21 Oct 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=954079_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="COptionTree_files/ind.gif" 
+                        width=18><IMG src="COptionTree_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>To 
+                                create an editable ComboBox with COptionTree, 
+                                you must use 
+                                :<BR>ON_CONTROL_REFLECT(CBN_KILLFOCUS, 
+                                OnMyKillFocus)<BR><BR>rather 
+                                than<BR>ON_WM_KILLFOCUS()<BR><BR><BR>replace in 
+                                your .cpp :<BR><CODE>void 
+                                COptionTreeItemYourComboBox::OnKillFocus(CWnd* 
+                                pNewWnd) 
+                                <BR>{<BR>...<BR>}</CODE><BR><BR>with<BR><CODE>void 
+                                COptionTreeItemYourComboBox::OnMyKillFocus()<BR>{<BR><BR>m_bFocus 
+                                = 
+                                FALSE;<BR>CommitChanges();<BR>}</CODE><BR><BR>replace:<BR><CODE>ON_WM_KILLFOCUS()</CODE><BR><BR>with:<BR><CODE>ON_CONTROL_REFLECT(CBN_KILLFOCUS, 
+                                OnMyKillFocus)</CODE><BR><BR><BR><BR>in your .h 
+                                :<BR><CODE>afx_msg void OnKillFocus(CWnd* 
+                                pNewWnd);</CODE><BR><BR>with<BR><CODE>afx_msg 
+                                void OnMyKillFocus();</CODE><BR><BR>I use the 
+                                Chris Maunder's ComboBox "Implementing an 
+                                autocompleting Combobox : <A 
+                                href="http://www.codeproject.com/combobox/combocompletion.asp">http://www.codeproject.com/combobox/combocompletion.asp</A>[<A 
+                                title="New Window" 
+                                href="http://www.codeproject.com/combobox/combocompletion.asp" 
+                                target=_blank>^</A>]" and it works 
+                                perfectly.<BR><BR><IMG 
+                                src="COptionTree_files/smiley_wink.gif" 
+                                align=absMiddle> 
+                                <BR><BR>Thim<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=954079">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=954079">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;tid=911764&amp;forumid=3829&amp;select=954079#xx954079xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?msg=954079#xx954079xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=954079"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=954079"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(598623,954079);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="COptionTree_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR id=966845_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx966845xx></A><IMG height=1 
+                        src="COptionTree_files/ind.gif" width=36><IMG 
+                        src="COptionTree_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;forumid=3829&amp;select=966845#xx966845xx" 
+                        name=966845>Re: Editable ComboBox</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=458094"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="COptionTree_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle>The 
+                        Irix&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>16:29 6 Nov 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=966845_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="COptionTree_files/ind.gif" 
+                        width=36><IMG src="COptionTree_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Thank 
+                                you, this method works good! 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=966845">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=966845">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;tid=911764&amp;forumid=3829&amp;select=966845#xx966845xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?msg=966845#xx966845xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=966845"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=966845"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(458094,966845);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="COptionTree_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="COptionTree_files/t.gif" width=1></TD></TR>
+              <TR id=882212_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx882212xx></A><IMG 
+                        src="COptionTree_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;forumid=3829&amp;select=882212#xx882212xx" 
+                        name=882212><B>Where can I find the latest 
+                        version?</B></A></TD>
+                      <TD vAlign=bottom><IMG height=13 
+                        alt="Unconfirmed/Anonymous posting" 
+                        src="COptionTree_files/usersuss.gif" 
+                      width=15></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>Anonymous</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>16:55 23 Jul 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=882212_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="COptionTree_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>I have 
+                                downloaded the latest version and it has all 
+                                these notification problems. Several messages 
+                                mentioned that this problem had been fixed, but 
+                                I could not find the fixed version. 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=882212">Reply</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;tid=0&amp;forumid=3829&amp;select=882212#xx882212xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?msg=882212#xx882212xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=882212"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=882212"><I>Delete</I></A>]<BR>Score: 
+                                1.0 (1 vote).
+                                <SCRIPT language=Javascript>MsgVoteForm(0,882212);</SCRIPT>
+                                 
+                    </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="COptionTree_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="COptionTree_files/t.gif" width=1></TD></TR>
+              <TR id=840268_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx840268xx></A><IMG 
+                        src="COptionTree_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;forumid=3829&amp;select=840268#xx840268xx" 
+                        name=840268><B>VK_RETURN bug with the spinner 
+                        control</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=171638"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="COptionTree_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>barchange</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>4:52 3 Jun 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=840268_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="COptionTree_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent>Hello,<BR><BR>i have got a 
+                                little problem with the spinnner control. 
+                                Indeed, when i press enter key, the window is 
+                                kill !! :'(<BR><BR>I intend to implement the 
+                                PretranslateMessage method in 
+                                OptionTreeSpinnerButton but i don't catch 
+                                VK_RETURN message. <BR><BR>Strange ... <IMG 
+                                src="COptionTree_files/smiley_confused.gif" 
+                                align=absMiddle> <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=840268">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=840268">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;tid=840268&amp;forumid=3829&amp;select=840268#xx840268xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?msg=840268#xx840268xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=840268"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=840268"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(171638,840268);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="COptionTree_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="COptionTree_files/t.gif" width=1></TD></TR>
+              <TR id=840063_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx840063xx></A><IMG 
+                        src="COptionTree_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;forumid=3829&amp;select=840063#xx840063xx" 
+                        name=840063><B>how can add a new column?</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=1122673"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="COptionTree_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle><B>jerry 
+                        li</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>22:20 2 Jun 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=840063_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="COptionTree_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>there 
+                                only have two columns in the grids,so can i add 
+                                more ?thanks advances<IMG 
+                                src="COptionTree_files/smiley_doh.gif" 
+                                align=absMiddle> <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=840063">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=840063">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;tid=840063&amp;forumid=3829&amp;select=840063#xx840063xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?msg=840063#xx840063xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=840063"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=840063"><I>Delete</I></A>]<BR>Score: 
+                                2.0 (1 vote).
+                                <SCRIPT language=Javascript>MsgVoteForm(1122673,840063);</SCRIPT>
+                                 
+                    </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="COptionTree_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="COptionTree_files/t.gif" width=1></TD></TR>
+              <TR id=837526_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx837526xx></A><IMG 
+                        src="COptionTree_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;forumid=3829&amp;select=837526#xx837526xx" 
+                        name=837526><B>Pb in CView</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=1135549"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="COptionTree_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>gvillot</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>11:12 31 May 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=837526_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="COptionTree_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>The 
+                                control is great !<BR>However, I tried to use in 
+                                a CView with a splitter.<BR>I haven't found out 
+                                how to resize the control correctly.<BR><BR>Any 
+                                idea ?<BR><BR>thanks<BR>geo. 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=837526">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=837526">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;tid=837526&amp;forumid=3829&amp;select=837526#xx837526xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?msg=837526#xx837526xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=837526"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=837526"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(1135549,837526);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="COptionTree_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="COptionTree_files/t.gif" width=1></TD></TR>
+              <TR id=818755_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx818755xx></A><IMG 
+                        src="COptionTree_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;forumid=3829&amp;select=818755#xx818755xx" 
+                        name=818755><B>Also support cwebbrower</B></A></TD>
+                      <TD vAlign=bottom><IMG height=13 
+                        alt="Unconfirmed/Anonymous posting" 
+                        src="COptionTree_files/usersuss.gif" 
+                      width=15></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>Anonymous</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>22:59 11 May 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=818755_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="COptionTree_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>In your 
+                                next version may you also support cwebbrower in 
+                                your optional tree?thanks! 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=818755">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=818755">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;tid=818755&amp;forumid=3829&amp;select=818755#xx818755xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?msg=818755#xx818755xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=818755"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=818755"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(0,818755);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="COptionTree_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="COptionTree_files/t.gif" width=1></TD></TR>
+              <TR id=786494_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx786494xx></A><IMG 
+                        src="COptionTree_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;forumid=3829&amp;select=786494#xx786494xx" 
+                        name=786494><B>Bug?</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=103343"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="COptionTree_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>ArturSz</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>20:22 7 Apr 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=786494_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="COptionTree_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>When 
+                                trying to create a second control in the same 
+                                program, an exception occurs. 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=786494">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=786494">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;tid=786494&amp;forumid=3829&amp;select=786494#xx786494xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?msg=786494#xx786494xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=786494"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=786494"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(103343,786494);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="COptionTree_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR id=786499_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx786499xx></A><IMG height=1 
+                        src="COptionTree_files/ind.gif" width=18><IMG 
+                        src="COptionTree_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;forumid=3829&amp;select=786499#xx786499xx" 
+                        name=786499>Re: Bug?</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=103343"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="COptionTree_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>ArturSz&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>20:33 7 Apr 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=786499_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="COptionTree_files/ind.gif" 
+                        width=18><IMG src="COptionTree_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>I 
+                                removed: DeleteGlobalResources(); in 
+                                COptionTree::InitGlobalResources() and I have no 
+                                problems with exceptions 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=786499">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=786499">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;tid=786494&amp;forumid=3829&amp;select=786499#xx786499xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?msg=786499#xx786499xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=786499"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=786499"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(103343,786499);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="COptionTree_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR id=839437_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx839437xx></A><IMG height=1 
+                        src="COptionTree_files/ind.gif" width=36><IMG 
+                        src="COptionTree_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;forumid=3829&amp;select=839437#xx839437xx" 
+                        name=839437>Re: Bug?</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=543014"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="COptionTree_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>Manu1997&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>9:25 2 Jun 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=839437_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="COptionTree_files/ind.gif" 
+                        width=36><IMG src="COptionTree_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>try 
+                                this solution...<BR><BR>// Delete normal 
+                                font<BR>if (m_fNormalFont-&gt;GetSafeHandle() != 
+                                NULL)<BR>{<BR>m_fNormalFont-&gt;DeleteObject();<BR><BR>delete 
+                                m_fNormalFont;<BR>m_fNormalFont = NULL; // 
+                                Add<BR>}<BR><BR>// Delete bold font<BR>if 
+                                (m_fBoldFont-&gt;GetSafeHandle() != 
+                                NULL)<BR>{<BR>m_fBoldFont-&gt;DeleteObject();<BR><BR>delete 
+                                m_fBoldFont;<BR>m_fBoldFont = NULL; // Add<BR>} 
+                                <BR><BR>Manu<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=839437">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=839437">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;tid=786494&amp;forumid=3829&amp;select=839437#xx839437xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?msg=839437#xx839437xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=839437"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=839437"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(543014,839437);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="COptionTree_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="COptionTree_files/t.gif" width=1></TD></TR>
+              <TR id=781420_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx781420xx></A><IMG 
+                        src="COptionTree_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;forumid=3829&amp;select=781420#xx781420xx" 
+                        name=781420><B>What about ToolTips?</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=404673"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="COptionTree_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>thebug5</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>18:08 1 Apr 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=781420_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="COptionTree_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Is it 
+                                hard to add tooltips for text that do not fit 
+                                into the second colomn?<BR><BR>Do I have to go 
+                                thru the entire code and add CToolTipCtrl 
+                                everywhere as well as 
+                                m_pToolTip-&gt;RelayEvent(pMsg) 
+                                calls?<BR><BR>Anybody done this?<BR><BR>It would 
+                                be nive if it already was in that excellent 
+                                control...<BR><BR>Dan 
+<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=781420">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=781420">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;tid=781420&amp;forumid=3829&amp;select=781420#xx781420xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?msg=781420#xx781420xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=781420"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=781420"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(404673,781420);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="COptionTree_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="COptionTree_files/t.gif" width=1></TD></TR>
+              <TR id=779003_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx779003xx></A><IMG 
+                        src="COptionTree_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;forumid=3829&amp;select=779003#xx779003xx" 
+                        name=779003><B>Another PropertyGrid of 
+                      interest</B></A></TD>
+                      <TD vAlign=bottom><IMG height=13 
+                        alt="Unconfirmed/Anonymous posting" 
+                        src="COptionTree_files/usersuss.gif" 
+                      width=15></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>Anonymous</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>12:27 30 Mar 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=779003_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="COptionTree_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent>Hi,<BR><BR>first let me put 
+                                it clear. I am not working for a company doing a 
+                                PropertyGrid. But to be honest I am their 
+                                customer. In need of an MFC propertygrid, I 
+                                monitored this control in codeproject for a long 
+                                time now, and the author of this free one 
+                                deserves a reward for the excellent work he did. 
+                                But sometimes, me included, people are in need 
+                                of a commercial control, for more quality, more 
+                                support, and so on and so on <IMG 
+                                src="COptionTree_files/smiley_wink.gif" 
+                                align=absMiddle> I hope not to get flames, it's 
+                                just a message from a happy customer and I want 
+                                to reward the guy of the new control I 
+                                use.<BR><BR>I purchased GWCPropertiesCtrl 
+                                (strange name but uh !!) and it meets all my 
+                                expectations. It's cheap and the price should be 
+                                far more expensive. The quality is impressive. 
+                                Inplace controls are really "inplace" controls, 
+                                so for tooltips. And the design is so well done 
+                                (design patterns, creativity) that you can 
+                                invent your own extensions. But more important, 
+                                the support is 1st class. The guy even develops 
+                                extensions for you. I am excited by their 
+                                upcoming release 3.0. The author said me that it 
+                                will make it better than any competitor. I will 
+                                receive the beta in a few days.<BR><BR>The web 
+                                site is http://www.aircom.org (hummm ... the 
+                                design is really homely but happily has nothing 
+                                to do with the control itself <IMG 
+                                src="COptionTree_files/smiley_smile.gif" 
+                                align=absMiddle>) but release 3.0 comes with a 
+                                whole new site at 
+                                http://www.visualhint.com.<BR><BR>Cheers<BR><BR>Thomas<BR><BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=779003">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=779003">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;tid=779003&amp;forumid=3829&amp;select=779003#xx779003xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?msg=779003#xx779003xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=779003"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=779003"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(0,779003);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="COptionTree_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="COptionTree_files/t.gif" width=1></TD></TR>
+              <TR id=768792_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx768792xx></A><IMG 
+                        src="COptionTree_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;forumid=3829&amp;select=768792#xx768792xx" 
+                        name=768792><B>refresh problem : comboboxitem</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=171638"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="COptionTree_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>barchange</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>11:38 20 Mar 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=768792_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="COptionTree_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent>Hi,<BR>i have got a litte 
+                                problem with the comboboxitem ... when i put the 
+                                COptionTree in a CControlBar, if i open a 
+                                comboboxitem and select an object then the 
+                                combobox disappear (the refresh fail).<BR>With a 
+                                standard CDialog everything work well ... i don 
+                                t understand. <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=768792">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=768792">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;tid=768792&amp;forumid=3829&amp;select=768792#xx768792xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?msg=768792#xx768792xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=768792"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=768792"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(171638,768792);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="COptionTree_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR id=812612_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx812612xx></A><IMG height=1 
+                        src="COptionTree_files/ind.gif" width=18><IMG 
+                        src="COptionTree_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;forumid=3829&amp;select=812612#xx812612xx" 
+                        name=812612>Re: refresh problem : comboboxitem</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=18950"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="COptionTree_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle>Dieter 
+                        Hammer&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>9:19 5 May 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=812612_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="COptionTree_files/ind.gif" 
+                        width=18><IMG src="COptionTree_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>sorry, 
+                                I don't have a solution, but the same problem. 
+                                Did you find a solution?<BR>thanx<BR>Dieter 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=812612">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=812612">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;tid=768792&amp;forumid=3829&amp;select=812612#xx812612xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?msg=812612#xx812612xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=812612"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=812612"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(18950,812612);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="COptionTree_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR id=812660_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx812660xx></A><IMG height=1 
+                        src="COptionTree_files/ind.gif" width=36><IMG 
+                        src="COptionTree_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;forumid=3829&amp;select=812660#xx812660xx" 
+                        name=812660>Re: refresh problem : comboboxitem</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=171638"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="COptionTree_files/userinfo.gif" width=14 
+                        border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>barchange&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>9:47 5 May 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=812660_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="COptionTree_files/ind.gif" 
+                        width=36><IMG src="COptionTree_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>no .... 
+                                i have used a simple cdialog :'( 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=812660">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=812660">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;tid=768792&amp;forumid=3829&amp;select=812660#xx812660xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/treectrl/coptiontree.asp?msg=812660#xx812660xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=812660"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/treectrl/coptiontree.asp&amp;df=100&amp;forumid=3829&amp;select=812660"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(171638,812660);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="COptionTree_files/t.gif" width=1 
+                  border=0></TD></TR></TBODY></TABLE></TD></TR>
+        <TR bgColor=#fbedbb>
+          <TD>
+            <TABLE cellPadding=2 width="100%">
+              <TBODY>
+              <TR>
+                <TD class=messagetitle>Last Visit: 1:30 Sunday 19th December, 
+                  2004</TD>
+                <TD noWrap align=right><FONT class=messagetitle><SPAN 
+                  class=HoverLink>First</SPAN> <SPAN class=HoverLink>Prev</SPAN> 
+                  <A class=HoverLink 
+                  href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;forumid=3829&amp;fr=26" 
+                  name=HoverNL>Next</A> <A class=HoverLink 
+                  href="http://www.codeproject.com/treectrl/coptiontree.asp?df=100&amp;forumid=3829&amp;fr=351" 
+                  name=HoverNL>Last</A> 
+      </FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><BR>
+<TABLE cellSpacing=5 width="100%">
+  <TBODY>
+  <TR vAlign=top>
+    <TD><FONT style="FONT-SIZE: 7pt" size=1><A 
+      href="http://www.codeproject.com/?cat=1">All Topics</A>, <A 
+      href="http://www.codeproject.com/?cat=2">MFC / C++</A> &gt;&gt; <A 
+      href="http://www.codeproject.com/treectrl/">Tree Controls</A> &gt;&gt; <A 
+      href="http://www.codeproject.com/treectrl/#Custom+Tree+Controls">Custom 
+      Tree Controls</A> <BR>Updated: 20 Sep 2002 </FONT></TD>
+    <TD align=right><FONT style="FONT-SIZE: 7pt" size=1>Article content 
+      copyright Matthew R. Miller, 2002<BR>everything else Copyright © <A 
+      href="mailto:webmaster@codeproject.com">CodeProject</A>, 1999-2004</A>. 
+      <BR><A href="http://www.codeproject.com/info/MediaKit">Advertise on The 
+      Code Project</A> | <A 
+      href="http://www.codeproject.com/info/privacy.asp">Privacy</A> 
+  </FONT></TD></TR></TBODY></TABLE><BR>
+<CENTER>
+<TABLE cellSpacing=0 cellPadding=0 width="95%" border=0>
+  <TBODY>
+  <TR>
+    <TD bgColor=#ff9900 height=1><IMG height=1 
+      src="COptionTree_files/space.gif"></TD></TR>
+  <TR>
+    <TD align=middle><FONT size=1><A 
+      href="http://www.codeproject.com/redir.asp?id=235">MSDN Communities</A> | 
+      <A href="http://aspalliance.com/">ASPAlliance</A> • <A 
+      href="http://www.developerfusion.com/">Developer Fusion</A> • <A 
+      href="http://www.devguru.com/">DevGuru</A> • <A 
+      href="http://www.programmersheaven.com/">Programmers Heaven</A> • <A 
+      href="http://www.planet-source-code.com/">Planet Source Code</A> • <A 
+      href="http://www.resourceindex.com/">Resource Index</A> • <A 
+      href="http://www.tek-tips.com/">Tek-Tips Forums</A> • <A 
+      href="http://www.topxml.com/">What is XML?</A> • <A 
+      href="http://www.visualbuilder.com/">VisualBuilder</A> • <A 
+      href="http://www.zvon.org/">ZVON</A> • <A 
+      href="http://www.codeproject.com/redir.asp?id=169">Search Us!</A> 
+    </FONT></TD></TR></TBODY></TABLE></CENTER></BODY></HTML>

@@ -1,0 +1,1371 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0048)http://www.codeproject.com/miscctrl/xinfotip.asp -->
+<HTML><HEAD><TITLE>The Code Project - CXInfoTip - Information Tooltip - Miscellaneous Controls</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META http-equiv=Reply-to content=mailto:webmaster@codeproject.com>
+<META content="Free source code and tutorials for Windows developers." 
+name=Description>
+<META 
+content="Free source code, Miscellaneous Controls, Visual C++, MFC, Windows, CXInfoTip Tooltip Popup" 
+name=keywords>
+<META 
+content="Article content copyright Mark Bozeman, 2001, everthing else Copyright © CodeProject, 1999-2004, All Rights Reserved." 
+name=Copyright><LINK href="/favicon.ico" type=image/ico rel=icon><LINK 
+href="/favicon.ico" rel="SHORTCUT ICON"><LINK href="xinfotip_files/global.css" 
+type=text/css rel=stylesheet>
+<SCRIPT language=javascript src="xinfotip_files/oncopy.js"></SCRIPT>
+
+<META content="MSHTML 6.00.2600.0" name=GENERATOR></HEAD>
+<BODY oncopy="return copyCode();" text=black vLink=purple aLink=red link=blue 
+bgColor=white leftMargin=3 topMargin=3>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#ff9900 border=0>
+  <TBODY>
+  <TR>
+    <TD width="100%">
+      <TABLE cellSpacing=1 cellPadding=0 width="100%" bgColor=#ff9900 
+        border=0><TBODY>
+        <TR>
+          <TD vAlign=top><A href="http://www.codeproject.com/"><IMG height=72 
+            alt="The Code Project" src="xinfotip_files/logo225x72.gif" width=225 
+            border=0></A></TD>
+          <TD align=right><SPAN id=AdBanner4><A 
+            href="http://www.codeproject.com/script/admentor/ads.asp"><IMG 
+            height=60 alt="View our advertisers" 
+            src="xinfotip_files/sponsors.gif" width=20 border=1></A>
+            <SCRIPT language=javascript>document.write("<IFRAME src=\"/script/admentor/include/ServeAdHTML.aspx?C=False&id=768\" border=0 frameborder=0 scrolling=no width=468 height=60></IFRAME>");</SCRIPT>
+            <A href="http://www.codeproject.com/info/mediakit"><IMG height=60 
+            alt="Advertise on the CodeProject" 
+            src="xinfotip_files/advertise.gif" width=20 
+        border=1></A></SPAN></TD></TR>
+        <TR>
+          <TD bgColor=#fbedbb colSpan=2>
+            <TABLE cellPadding=3 width="100%" bgColor=#fbedbb border=0>
+              <TBODY>
+              <TR vAlign=top>
+                <TD width="100%"><FONT style="FONT-SIZE: 8pt"><A 
+                  href="http://www.codeproject.com/?cat=1">All Topics</A>, <A 
+                  href="http://www.codeproject.com/?cat=2">MFC / C++</A> 
+                  &gt;&gt; <A 
+                  href="http://www.codeproject.com/miscctrl/">Miscellaneous 
+                  Controls</A> &gt;&gt; <A 
+                  href="http://www.codeproject.com/miscctrl/#Tooltips">Tooltips</A></FONT><BR><BR><B><FONT 
+                  style="FONT-SIZE: 16pt" size=4>CXInfoTip - Information 
+                  Tooltip</FONT></B><BR><B>By <A 
+                  href="http://www.codeproject.com/script/profile/whos_who.asp?id=36546">Mark 
+                  Bozeman</A> </B><BR><BR><FONT style="FONT-SIZE: 9pt">CXInfoTip 
+                  is an enhanced information tooltip control.&nbsp;</FONT> </TD>
+                <TD vAlign=top align=right>
+                  <TABLE cellSpacing=0 cellPadding=1 width=200 border=0>
+                    <TBODY>
+                    <TR vAlign=top>
+                      <TD>&nbsp;</TD>
+                      <TD class=SmallText>C++ (VC6)<BR>Windows (Win95, Win98, 
+                        NT4, Win2K)<BR>MFC, Win32, VS<BR>Dev</TD></TR>
+                    <TR>
+                      <TD>&nbsp;</TD>
+                      <TD class=SmallText noWrap>Posted 22 Sep 2001</TD></TR>
+                    <TR vAlign=top>
+                      <TD><IMG height=16 src="xinfotip_files/hlp.gif" 
+                      width=16></TD>
+                      <TD class=SmallText noWrap><A 
+                        href="http://www.codeproject.com/script/Articles/list_articles.asp?userid=36546">Articles 
+                        by this author</A></TD></TR>
+                    <TR vAlign=top>
+                      <TD></TD>
+                      <TD class=SmallText noWrap><B>32,740</B> 
+                    views</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD colSpan=2>
+            <TABLE id=tblSiteToolbar cellSpacing=0 cellPadding=1 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <FORM name=Search action=/info/search.asp method=post>
+                <TD vAlign=top align=left width="100%">
+                  <TABLE cellSpacing=0 cellPadding=1 border=0>
+                    <TBODY>
+                    <TR vAlign=center>
+                      <TD class=smallText><B><FONT 
+                        color=white>Search:</FONT></B></TD>
+                      <TD class=navbar noWrap><INPUT class=smallText 
+                        maxLength=255 size=18 name=target></TD>
+                      <TD vAlign=top><SELECT class=smallText name=st> 
+                          <OPTION value=kw selected>Articles</OPTION> <OPTION 
+                          value=au>Authors</OPTION></SELECT></TD>
+                      <TD><INPUT class=formButton type=submit value=Go></TD></TR></TBODY></TABLE></TD></FORM>
+                <TD>
+                  <DIV id=MenuPos 
+                  style="WIDTH: 380px; POSITION: relative; HEIGHT: 20px">
+                  <TABLE height=20 cellSpacing=0 cellPadding=2 width=375>
+                    <TBODY>
+                    <TR>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/info/faq.asp">Help!</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/info/latest.asp">Articles</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/script/comments/forums.asp">Message 
+                        Boards</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/store/">StoreFront</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/lounge.asp">Lounge</A></TD></TR></TBODY></TABLE></DIV></TD></TR></TBODY></TABLE>
+            <SCRIPT type=text/javascript>function Go(){return}</SCRIPT>
+
+            <SCRIPT src="xinfotip_files/cpmenu_var.js" 
+            type=text/javascript></SCRIPT>
+
+            <SCRIPT src="xinfotip_files/menu10_com.js" 
+            type=text/javascript></SCRIPT>
+          </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=1 border=0>
+  <TBODY>
+  <TR vAlign=top>
+    <TD vAlign=top bgColor=#fbedbb rowSpan=2>
+      <TABLE cellSpacing=0 cellPadding=0 border=0>
+        <SCRIPT language=javascript>
+function ErrorHandle() {}
+window.onerror = ErrorHandle;
+
+function OnNLSubmit(option)
+{
+	if (option=="up")
+		document.subForm.action = "/script/profile/modify.asp?ct=%2Fmiscctrl%2Fxinfotip%2Easp";
+	else if (option=="in")
+		document.subForm.action = "/script/profile/process_logon.asp?ct=%2Fmiscctrl%2Fxinfotip%2Easp";
+	document.subForm.submit();
+	return true;
+}
+</SCRIPT>
+
+        <TBODY>
+        <TR>
+          <TD>
+            <TABLE cellSpacing=3 cellPadding=0>
+              <TBODY>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD class=InfoBarHeader>Toolbox</TD></TR>
+              <TR>
+                <TD bgColor=black colSpan=2><IMG height=1 
+                  src="xinfotip_files/space.gif" width=1></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="xinfotip_files/sitebuild_icon.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/submit/ReportProblem.asp?GUID=%2Fuseritems%2FXInfotip%2Easp%2D9%2F22%2F2001">Broken 
+                  Article?</A></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="xinfotip_files/support_icon.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/store/"><B>VS.NET 2003 from 
+                  $899</B></A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="xinfotip_files/support_icon.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/store/"><B>MSDN Univ. from 
+                  $1950</B></A></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="xinfotip_files/print.gif" width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/miscctrl/xinfotip.asp?print=true" 
+                  target=_print>Print version</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="xinfotip_files/link.gif" width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/add_bookmark.asp?t=0&amp;ct=%2Fmiscctrl%2Fxinfotip%2Easp&amp;guid=%2Fuseritems%2FXInfotip%2Easp%2D9%2F22%2F2001">Bookmark 
+                  this</A></TD></TR></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="xinfotip_files/mail.gif" width=16></TD>
+                <TD class=SmallText><A 
+                  href="http://www.codeproject.com/script/recommend/form.asp?guid=%2Fuseritems%2FXInfotip%2Easp%2D9%2F22%2F2001">Send 
+                  to a friend</A></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD class=InfoBarHeader>My Profile</TD></TR>
+              <TR>
+                <TD bgColor=black colSpan=2><IMG height=1 
+                  src="xinfotip_files/space.gif" width=1></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="xinfotip_files/profile_small.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/modify.asp?ct=/miscctrl/xinfotip.asp">My 
+                  Settings</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="xinfotip_files/submit_small.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/articles/list_articles.asp?userid=649009">My 
+                  Articles</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="xinfotip_files/bookmarks.gif" 
+                width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/bookmark_list.asp">My 
+                  Bookmarks</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 src="xinfotip_files/logoff_small.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/logoff.asp?ct=/miscctrl/xinfotip.asp">Sign 
+                  out</A></TD></TR>
+              <TR>
+                <TD bgColor=black colSpan=2><IMG height=1 
+                  src="xinfotip_files/space.gif" 
+        width=1></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD>&nbsp;</TD></TR>
+        <TR>
+          <TD>
+            <CENTER>
+            <SCRIPT language=javascript>document.write("<IFRAME src=\"/script/admentor/include/ServeAdHTML.aspx?C=False&id=801\" border=0 frameborder=0 scrolling=no width=120 height=600></IFRAME>");</SCRIPT>
+            <BR></CENTER><BR></TD></TR></TBODY></TABLE></TD>
+    <TD width=5 rowSpan=2><IMG height=1 src="xinfotip_files/space.gif" 
+      width=5> </TD>
+    <TD align=right width="100%" bgColor=white>
+      <TABLE width="100%">
+        <TBODY>
+        <TR vAlign=top>
+          <TD class=smallText vAlign=top noWrap></TD>
+          <TD noWrap align=right><A name=__top></A>
+            <TABLE>
+              <TBODY>
+              <TR>
+                <TD class=smallText align=right>16 members have rated this 
+                  article. Result:</TD>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=0 border=2>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=5 src="xinfotip_files/red.gif" width=20 
+                        border=0></TD>
+                      <TD><IMG height=5 src="xinfotip_files/red.gif" width=20 
+                        border=0></TD>
+                      <TD><IMG height=5 src="xinfotip_files/red.gif" width=20 
+                        border=0></TD>
+                      <TD><IMG height=5 src="xinfotip_files/red.gif" width=20 
+                        border=0></TD>
+                      <TD><IMG height=5 src="xinfotip_files/red.gif" width=7 
+                        border=0><IMG height=5 src="xinfotip_files/white.gif" 
+                        width=13 border=0></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD class=smallText align=right colSpan=2><A 
+                  title="Calculated as rating x Log10(# votes)" 
+                  href="http://www.codeproject.com/script/articles/top_articles.asp?st=2">Popularity: 
+                  5.26</A>. Rating: <B>4.37</B> out of 
+        5.</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD vAlign=top width="100%">
+      <DIV id=contentdiv><!-- Article Starts -->
+      <UL class=download>
+        <LI><A 
+        href="http://www.codeproject.com/miscctrl/XInfotip/XInfotip_demo.zip">Download 
+        demo project - 20.1 Kb</A> </LI></UL>
+      <P><IMG height=71 alt="Sample Image - XInfotip.jpg" 
+      src="xinfotip_files/XInfotip.jpg" width=183></P>
+      <H2>Introduction</H2>
+      <P>If you use Windows 2000, you may have noticed a special tooltip that is 
+      used in some instances. At least one spot where it is displayed is after 
+      making a dial-up network connection.</P>
+      <P><CODE>CXInfoTip</CODE> is a simple control that attempts to reproduce 
+      this tooltip. It supports multi-line text (separated with a '\n') and an 
+      icon. The control can be used as a normal tooltip for controls or as an 
+      immediate popup data tip. It is not a direct replacement for 
+      <CODE>CTooltip</CODE>. The control itself is in the source files: 
+      <I>CXInfoTip.h</I> and <I>CXInfoTip.cpp</I>.</P>
+      <P>To use the control, create it and either call the immediate 
+      <CODE>Show()</CODE> method or add tools using <CODE>AddTool()</CODE>. If 
+      <CODE>AddTool()</CODE> is used then the <CODE>RelayEvent()</CODE> method 
+      must be called from the parent window's overridden 
+      <CODE>PreTranslateMessage()</CODE>.</P>
+      <P>To use the control, add a <CODE>CXInfoTip</CODE> member variable to the 
+      class.</P><PRE>CXInfoTip m_Tip;</PRE>
+      <P>For dialogs, create it in <CODE>OnInitDialog()</CODE>. For other 
+      windows create it in <CODE>OnCreate()</CODE>.</P><PRE>m_Tip.Create(<SPAN class=cpp-keyword>this</SPAN>);</PRE>
+      <P>To show an immediate tooltip, call the <CODE>Show()</CODE> method.</P><PRE>m_Tip.Show(_T(<SPAN class=cpp-string>"This is a toolip!"</SPAN>), CPoint(<SPAN class=cpp-literal>100</SPAN>, <SPAN class=cpp-literal>100</SPAN>));</PRE>
+      <P>To show normal tooltips, use <CODE>AddTool()</CODE> for each control 
+      and call <CODE>RelayEvent()</CODE> from 
+      <CODE>PreTranslateMessage()</CODE>.</P><PRE>m_Tip.AddTool(GetDlgItem(IDOK), 
+        _T(<SPAN class=cpp-string>"This is the OK button!"</SPAN>), m_TooltipIcon);
+....
+BOOL CInfoTipTestDlg::PreTranslateMessage(MSG* pMsg) 
+{
+    m_Tip.RelayEvent(pMsg);
+    ...
+}</PRE>
+      <H2>Methods</H2>
+      <UL>
+        <LI>
+        <H3>CInfoTip::Create</H3>
+        <P><CODE>BOOL Create (CWnd * pParentWnd)</CODE></P>
+        <P>Creates the tooltip control.</P>
+        <H4>Return value</H4>
+        <P><CODE>TRUE</CODE> on success, <CODE>FALSE</CODE> otherwise</P>
+        <H4>Parameters</H4>
+        <UL>
+          <LI><CODE>pParentWnd</CODE> 
+          <P>Pointer to the parent window.</P></LI></UL>
+        <LI>
+        <H3>CInfoTip::AddTool</H3>
+        <P><CODE><SPAN class=cpp-keyword>void</SPAN> AddTool(CWnd *pWnd, LPCTSTR 
+        szTooltipText, HICON hIcon = NULL)</CODE></P>
+        <P>Adds a tool.</P>
+        <H4>Return value</H4>
+        <P>None</P>
+        <H4>Parameters</H4>
+        <UL>
+          <LI><CODE>pWnd</CODE> 
+          <P>Pointer to the tool window.</P>
+          <LI><CODE>szTooltipText</CODE> 
+          <P>Text to display in the tooltip for the window. Separate multiple 
+          lines with a '\n'.</P>
+          <LI><CODE>hIcon</CODE> 
+          <P>Icon to display in the tooltip or <CODE>NULL</CODE> for no 
+          icon.</P></LI></UL>
+        <LI>
+        <H3>CInfoTip::RemoveTool</H3>
+        <P><CODE><SPAN class=cpp-keyword>void</SPAN> RemoveTool(CWnd 
+        *pWnd)</CODE></P>
+        <P>Removes a tool.</P>
+        <H4>Return value</H4>
+        <P>None</P>
+        <H4>Parameters</H4>
+        <UL>
+          <LI><CODE>pWnd</CODE> 
+          <P>Pointer to the tool window to remove.</P></LI></UL>
+        <LI>
+        <H3>CInfoTip::SetIcon</H3>
+        <P><CODE><SPAN class=cpp-keyword>void</SPAN> SetIcon(HICON 
+        hIcon)</CODE></P>
+        <P>Sets the icon to show for immediate tooltips.</P>
+        <H4>Return value</H4>
+        <P>None</P>
+        <H4>Parameters</H4>
+        <UL>
+          <LI><CODE>hIcon</CODE> 
+          <P>Handle to the icon to display.</P></LI></UL>
+        <LI>
+        <H3>CInfoTip::SetShowDelay</H3>
+        <P><CODE><SPAN class=cpp-keyword>void</SPAN> SetShowDelay(<SPAN 
+        class=cpp-keyword>int</SPAN> nDelay)</CODE></P>
+        <P>Adjusts the delay before a tooltip is displayed.</P>
+        <H4>Return value</H4>
+        <P>None</P>
+        <H4>Parameters</H4>
+        <UL>
+          <LI><CODE>nDelay</CODE> 
+          <P>Delay in milliseconds.</P></LI></UL>
+        <LI>
+        <H3>CInfoTip::SetFont</H3>
+        <P><CODE><SPAN class=cpp-keyword>void</SPAN> SetFont(CFont 
+        *pFont)</CODE></P>
+        <P>Sets the tooltip text font.</P>
+        <H4>Return value</H4>
+        <P>None</P>
+        <H4>Parameters</H4>
+        <UL>
+          <LI><CODE>pFont</CODE> 
+          <P>Pointer to the font.</P></LI></UL>
+        <LI>
+        <H3>CInfoTip::RelayEvent</H3>
+        <P><CODE><SPAN class=cpp-keyword>void</SPAN> RelayEvent(LPMSG 
+        lpMsg)</CODE></P>
+        <P>Relays mouse events to the control. If <CODE>AddTool()</CODE> is 
+        used, then this method must be called from 
+        <CODE>PreTranslateMessage()</CODE>.</P>
+        <H4>Return value</H4>
+        <P>None</P>
+        <H4>Parameters</H4>
+        <UL>
+          <LI><CODE>lpMsg</CODE> 
+          <P>Pointer to the message structure.</P></LI></UL></LI></UL><!-- Article Ends --></DIV>
+      <H2>Mark Bozeman</H2>
+      <TABLE width="100%" border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD class=smallText noWrap><BR></TD>
+          <TD class=smallText width="100%">
+            <P class=smallText>Click <A 
+            href="http://www.codeproject.com/script/profile/whos_who.asp?vt=arts&amp;id=36546">here</A> 
+            to view Mark Bozeman's online profile.</P></TD></TR></TBODY></TABLE><BR>
+      <TABLE cellPadding=4 width="100%" border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD width="100%">
+            <H2>Other popular articles:</H2>
+            <UL>
+              <LI><A 
+              href="http://www.codeproject.com/miscctrl/gradient.asp">CGradient 
+              and CGradientCtrl</A><BR><SPAN class=smalltext>A pair of classes 
+              for rendering and editing colourful washes</SPAN>
+              <LI><A 
+              href="http://www.codeproject.com/miscctrl/formulactrl.asp">Formula 
+              Editor</A><BR><SPAN class=smalltext>Formula-editor for editing and 
+              exporting mathematical content</SPAN>
+              <LI><A 
+              href="http://www.codeproject.com/miscctrl/controltracker.asp">A 
+              Multiple Selection based Control Tracker</A><BR><SPAN 
+              class=smalltext>A CRectTracker derived class that is able to do 
+              much more</SPAN>
+              <LI><A 
+              href="http://www.codeproject.com/miscctrl/umleditor.asp">UMLEditor 
+              - revisiting the vector editor</A><BR><SPAN class=smalltext>An UML 
+              editor with code-generation capabilities derived from 
+              CDiagramEditor.</SPAN></LI></UL></TD></TR></TBODY></TABLE>
+      <FORM action=/script/rating/code/app/insert_vote.asp method=post><INPUT 
+      type=hidden value=/useritems/XInfotip.asp-9/22/2001 name=vote_name> <INPUT 
+      type=hidden value=/miscctrl/xinfotip.asp name=goal> 
+      <TABLE cellSpacing=0 cellPadding=1 width="100%" bgColor=#ff9900 
+        border=0><TBODY>
+        <TR>
+          <TD width="100%">
+            <TABLE cellSpacing=0 cellPadding=4 width="100%" bgColor=#fbedbb 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD class=smalltext vAlign=center>[<A 
+                  href="http://www.codeproject.com/miscctrl/xinfotip.asp#__top">Top</A>]</TD>
+                <TD vAlign=center noWrap align=right><I><B>Rate this Article 
+                  for us!</B></I>&nbsp;&nbsp;&nbsp;&nbsp; <I>Poor</I><INPUT 
+                  type=radio value=1 name=rate><INPUT type=radio value=2 
+                  name=rate><INPUT type=radio value=3 name=rate><INPUT 
+                  type=radio value=4 name=rate><INPUT type=radio value=5 
+                  name=rate><I>Excellent</I>&nbsp;&nbsp;<INPUT class=FormButton type=submit value=Vote> 
+                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></FORM>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD vAlign=top>
+            <CENTER>
+            <SCRIPT language=javascript>document.write("<a href=\"/script/admentor/admentorredir.asp?id=156&way=ban\" target=_blank><img src=\"/script/admentor/include/ServeAd.aspx?File=%2Fscript%2Fadmentor%2Fimages%2Fmsdn%5Fbutton%2Egif&C=False&id=156\" alt=\"MSDN Magazine - Your guide to Microsoft tools, development environments, and technologies for Windows and the Web.\" border=0 width=120 height=60></a>");</SCRIPT>
+            <BR><FONT size=1><A 
+            href="http://www.codeproject.com/info/MediaKit/">Premium 
+            Sponsor</A></FONT></CENTER><BR></TD>
+          <TD vAlign=top noWrap align=middle><SPAN id=AdBanner5>
+            <SCRIPT language=javascript>document.write("<a href=\"/script/admentor/admentorredir.asp?id=746&way=ban\" target=_blank><img src=\"/script/admentor/include/ServeAd.aspx?File=%2Fscript%2Fadmentor%2Fimages%2Fironspeed+banner+download+468x60Version17%2Egif&C=False&id=746\" alt=\"\" border=0 width=468 height=60></a>");</SCRIPT>
+            </SPAN></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><A 
+name=__comments></A>
+<SCRIPT language=JavaScript>
+function MsgVoteForm(UserID, MsgID)
+{
+	document.write("Rate this message: ");
+	for (var i=1; i<=5;i++)
+		document.write("<a href='#xx" + MsgID.toString() + "xx' title='give this message a vote of " + i.toString() + "' onclick='RateMsg(" + UserID.toString() + ", " + MsgID.toString() + ", " + i.toString() + ")'><b>" + i.toString() + "</b></a> ");
+	document.write(" (out of 5)");
+}
+
+function RateMsg(userid, msgid, score) 
+{ 
+	open("/script/comments/vote.asp?js=1&user="+userid.toString()+"&msg="+msgid.toString()+"&score="+score.toString() ,"helpful","toolbar=no,resizable=yes,scrollbars=yes,directories=no,menubar=no,width=300,height=200");
+	return false;
+}
+</SCRIPT>
+
+<SCRIPT language=JavaScript>
+var Selected = "";
+var AdTime = new Date();
+
+function SwitchMessage(elm)
+{
+	
+	var elmref;
+	if (Selected != "")
+	{
+		elmref = eval("document.getElementById('" + Selected + "_h1')");
+		if (elmref) elmref.style.display = 'none';
+		elmref = eval("document.getElementById('" + Selected + "_h0')");
+		if (elmref) elmref.bgColor = '#FEF9E7';
+	}
+	if (Selected != elm.name) 
+	{
+		Selected = elm.name;
+		elmref = eval("document.getElementById('" + Selected + "_h1')");
+		if (elmref) 
+		{
+			if (elmref.style.display=='none') elmref.style.display='';
+			else elmref.style.display = 'none';
+		}
+		elmref = eval("document.getElementById('" + Selected + "_h0')");
+		if (elmref) 
+			elmref.bgColor = '#99CCFF';
+	}
+	else
+		Selected="";
+		
+	window.location = "#xx" + Selected + "xx";
+
+	return false;
+}
+
+</SCRIPT>
+
+<SCRIPT language=javascript event=onclick for=DynMessLink>
+return SwitchMessage(this);
+</SCRIPT>
+
+<TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#ff9900 border=0>
+  <TBODY>
+  <TR>
+    <TD width="100%">
+      <TABLE id=ForumTable cellSpacing=1 cellPadding=0 width="100%" 
+      bgColor=#ff9900 border=0>
+        <FORM 
+        action=/script/comments/app/do_filtermessages.asp?main=/miscctrl/xinfotip.asp&amp;df=100&amp;forumid=2634 
+        method=post>
+        <TBODY>
+        <TR>
+          <TD>
+            <TABLE cellSpacing=0 cellPadding=3 width="100%" bgColor=white 
+            border=0>
+              <TBODY>
+              <TR bgColor=#fbedbb>
+                <TD class=smalltext noWrap><A 
+                  href="http://www.codeproject.com/script/comments/faq.asp"><IMG 
+                  height=16 src="xinfotip_files/info.gif" width=16 
+                  align=absMiddle border=0> <B>FAQ</B></A>&nbsp;</TD>
+                <TD class=smalltext vAlign=top noWrap align=right>Noise level 
+                  <SELECT class=smalltext size=1 name=noise><OPTION 
+                    value=1>Very High</OPTION> <OPTION value=2>High</OPTION> 
+                    <OPTION value=3 selected>Medium</OPTION> <OPTION 
+                    value=4>Low</OPTION> <OPTION value=5>Very 
+                  low</OPTION></SELECT>&nbsp;&nbsp;</TD>
+                <TD class=smalltext vAlign=center noWrap align=right 
+                  colSpan=2><A 
+                  href="http://www.codeproject.com/script/comments/search_comments.asp?forumid=2634"><IMG 
+                  height=15 src="xinfotip_files/search.gif" width=16 border=0> 
+                  Search comments</A> &nbsp;</TD>
+                <TD vAlign=top align=right><INPUT class=FormButton type=submit value="Set Options" name=submit></TD></TR>
+              <TR bgColor=#ff9900>
+                <TD width="100%">&nbsp;</TD>
+                <TD class=smalltext vAlign=top noWrap align=right>View <SELECT 
+                  class=smalltext size=1 name=expand><OPTION value=0>Normal 
+                    (slow)</OPTION> <OPTION value=2>Preview (slow)</OPTION> 
+                    <OPTION value=5 selected>Message View</OPTION> <OPTION 
+                    value=6>Topic View</OPTION> <OPTION value=1>Thread 
+                    View</OPTION> <OPTION value=3>Expanded (Supporters 
+                    only)</OPTION></SELECT>&nbsp;&nbsp;</TD>
+                <TD class=smalltext vAlign=top noWrap>Per page <SELECT 
+                  class=smalltext size=1 name=perpage><OPTION 
+                    value=10>10</OPTION> <OPTION value=25 selected>25</OPTION> 
+                    <OPTION value=50>50</OPTION></SELECT></TD>
+                <TD colSpan=2>&nbsp;</TD></TR></TBODY></TABLE></TD></TR></FORM>
+        <TR bgColor=#fbedbb>
+          <TD><A name=xx0xx></A>
+            <TABLE cellPadding=2 width="100%" bgColor=#fbedbb border=0>
+              <TBODY>
+              <TR>
+                <TD class=messagetitle><A class=HoverLink 
+                  title="Add a new message to the discussions" 
+                  href="http://www.codeproject.com/script/comments/user_new.asp?main=/miscctrl/xinfotip.asp&amp;df=100&amp;forumid=2634" 
+                  target=_top name=HoverNL><B><IMG height=16 
+                  src="xinfotip_files/admin_modify.gif" width=16 align=top 
+                  border=0> New thread</B></A></TD>
+                <TD class=messagetitle>Msgs 1 to 9 of 9 (Total: 9) (<A 
+                  href="http://www.codeproject.com/miscctrl/xinfotip.asp?df=100&amp;forumid=2634">Refresh</A>)</TD>
+                <TD noWrap align=right><FONT class=messagetitle><SPAN 
+                  class=HoverLink>First</SPAN> <SPAN class=HoverLink>Prev</SPAN> 
+                  <SPAN class=HoverLink>Next</SPAN> <SPAN 
+                  class=HoverLink>Last</SPAN> </FONT></TD></TR></TBODY></TABLE></TD></TR>
+        <TR bgColor=white>
+          <TD>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=2 bgColor=#fbedbb border=0>
+                    <TBODY>
+                    <TR>
+                      <TD class=messagetitle width="100%">Subject&nbsp;</TD>
+                      <TD class=messagetitle noWrap width=140>Author&nbsp;</TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT 
+                    class=messagetitle>Date&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="xinfotip_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR id=865328_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx865328xx></A><IMG 
+                        src="xinfotip_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/miscctrl/xinfotip.asp?df=100&amp;forumid=2634&amp;select=865328#xx865328xx" 
+                        name=865328><B>Really nice work</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=60363"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="xinfotip_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle><B>John 
+                        Norris</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>10:14 1 Jul 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=865328_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="xinfotip_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Just 
+                                what I needed. I wish more of the work in this 
+                                forum was so easy to use, and logical to 
+                                understand and extend. <BR><BR>John 
+                                Norris<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/miscctrl/xinfotip.asp&amp;df=100&amp;forumid=2634&amp;select=865328">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/miscctrl/xinfotip.asp&amp;df=100&amp;forumid=2634&amp;select=865328">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/miscctrl/xinfotip.asp?df=100&amp;tid=865328&amp;forumid=2634&amp;select=865328#xx865328xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/miscctrl/xinfotip.asp?msg=865328#xx865328xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/miscctrl/xinfotip.asp&amp;df=100&amp;forumid=2634&amp;select=865328"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/miscctrl/xinfotip.asp&amp;df=100&amp;forumid=2634&amp;select=865328"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(60363,865328);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="xinfotip_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 src="xinfotip_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=790197_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx790197xx></A><IMG 
+                        src="xinfotip_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/miscctrl/xinfotip.asp?df=100&amp;forumid=2634&amp;select=790197#xx790197xx" 
+                        name=790197><B>Update RelayEvent(LPMSG lpMsg)</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=294619"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="xinfotip_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>tpchen</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>3:20 13 Apr 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=790197_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="xinfotip_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent>CXInfoTip::RelayEvent(LPMSG 
+                                lpMsg)<BR>//before<BR>if (point != 
+                                m_ptOrigin)<BR>{<BR>// Find the tool<BR>pWindow 
+                                = WindowFromPoint(point);<BR>if (pWindow != 
+                                NULL)<BR>{<BR>if 
+                                (m_ToolMap.Lookup(pWindow-&gt;m_hWnd, 
+                                Info))<BR>{<BR>// Display the 
+                                tooltip<BR>m_ptOrigin = 
+                                point;<BR>SetIcon(Info.hIcon);<BR>Show(Info.szText, 
+                                &amp;point);<BR>}<BR>}<BR>}<BR><BR>// Hide the 
+                                tooltip<BR>if (point != m_ptOrigin) 
+                                <BR>Hide();<BR><BR>//After, I think this will 
+                                much better.<BR>// Hide the tooltip<BR>if (point 
+                                != m_ptOrigin) <BR>Hide();<BR><BR>if (point != 
+                                m_ptOrigin)<BR>{<BR>// Find the tool<BR>pWindow 
+                                = WindowFromPoint(point);<BR>if (pWindow != 
+                                NULL)<BR>{<BR>if 
+                                (m_ToolMap.Lookup(pWindow-&gt;m_hWnd, 
+                                Info))<BR>{<BR>// Display the 
+                                tooltip<BR>m_ptOrigin = 
+                                point;<BR>SetIcon(Info.hIcon);<BR>Show(Info.szText, 
+                                &amp;point);<BR>}<BR>}<BR>} 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/miscctrl/xinfotip.asp&amp;df=100&amp;forumid=2634&amp;select=790197">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/miscctrl/xinfotip.asp&amp;df=100&amp;forumid=2634&amp;select=790197">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/miscctrl/xinfotip.asp?df=100&amp;tid=790197&amp;forumid=2634&amp;select=790197#xx790197xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/miscctrl/xinfotip.asp?msg=790197#xx790197xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/miscctrl/xinfotip.asp&amp;df=100&amp;forumid=2634&amp;select=790197"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/miscctrl/xinfotip.asp&amp;df=100&amp;forumid=2634&amp;select=790197"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(294619,790197);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="xinfotip_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 src="xinfotip_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=567068_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx567068xx></A><IMG 
+                        src="xinfotip_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/miscctrl/xinfotip.asp?df=100&amp;forumid=2634&amp;select=567068#xx567068xx" 
+                        name=567068><B>How to make this work in ATL?</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=500400"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="xinfotip_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle><B>Arvind 
+                        Ganesan</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>10:40 30 Jul 
+                        '03</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=567068_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="xinfotip_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>I'm 
+                                trying to use this class to display a data-tip 
+                                in an ATL property page. When I call 
+                                m_Tip.Create(), it returns 0. The call to 
+                                CreateEx() in XInfoTip::Create() is failing. Any 
+                                thoughts on how this can be fixed? Thanks. 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/miscctrl/xinfotip.asp&amp;df=100&amp;forumid=2634&amp;select=567068">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/miscctrl/xinfotip.asp&amp;df=100&amp;forumid=2634&amp;select=567068">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/miscctrl/xinfotip.asp?df=100&amp;tid=567068&amp;forumid=2634&amp;select=567068#xx567068xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/miscctrl/xinfotip.asp?msg=567068#xx567068xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/miscctrl/xinfotip.asp&amp;df=100&amp;forumid=2634&amp;select=567068"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/miscctrl/xinfotip.asp&amp;df=100&amp;forumid=2634&amp;select=567068"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(500400,567068);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="xinfotip_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 src="xinfotip_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=290631_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx290631xx></A><IMG 
+                        src="xinfotip_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle style="COLOR: #aa0000" 
+                        width="100%"><A class=messagetitle id=DynMessLink 
+                        style="COLOR: #aa0000" 
+                        href="http://www.codeproject.com/miscctrl/xinfotip.asp?df=100&amp;forumid=2634&amp;select=290631#xx290631xx" 
+                        name=290631><B>Nice work and how to use on TrayIcon 
+                        tooptips</B></A></TD>
+                      <TD vAlign=bottom><IMG height=13 
+                        alt="Unconfirmed/Anonymous posting" 
+                        src="xinfotip_files/usersuss.gif" width=15></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle 
+                        style="COLOR: #aa0000"><B>Anonymous</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle 
+                        style="COLOR: #aa0000"><B>20:39 22 Sep 
+                        '02</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=290631_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="xinfotip_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Nice 
+                                work buddy!<BR><BR>Is there any way to use this 
+                                CXInfoTip with TrayIcon applications, ie 
+                                application that uses Shell_NotifyIcon to 
+                                process tooltips.<BR><BR>Thanks in advance. 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/miscctrl/xinfotip.asp&amp;df=100&amp;forumid=2634&amp;select=290631">Reply</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/miscctrl/xinfotip.asp?df=100&amp;tid=290631&amp;forumid=2634&amp;select=290631#xx290631xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/miscctrl/xinfotip.asp?msg=290631#xx290631xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/miscctrl/xinfotip.asp&amp;df=100&amp;forumid=2634&amp;select=290631"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/miscctrl/xinfotip.asp&amp;df=100&amp;forumid=2634&amp;select=290631"><I>Delete</I></A>]<BR>Score: 
+                                5.0 (1 vote).
+                                <SCRIPT language=Javascript>MsgVoteForm(0,290631);</SCRIPT>
+                                 
+                    </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="xinfotip_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 src="xinfotip_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=61317_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx61317xx></A><IMG 
+                        src="xinfotip_files/news_suss.gif" 
+                      align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/miscctrl/xinfotip.asp?df=100&amp;forumid=2634&amp;select=61317#xx61317xx" 
+                        name=61317><B>Nice work but small problem</B></A></TD>
+                      <TD vAlign=bottom><IMG height=13 
+                        alt="Unconfirmed/Anonymous posting" 
+                        src="xinfotip_files/usersuss.gif" width=15></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle 
+                        color=#707070><B>Anonymous</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle color=#707070><B>3:44 
+                        28 Sep '01</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=61317_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="xinfotip_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Nice 
+                                work.<BR><BR>One small problem with a 'balloon' 
+                                like infotip,<BR>is that when it pops up too 
+                                close to the edge of<BR>the screen it's 
+                                partially off-screen.<BR><BR>That's easy to fix 
+                                with a conventional tooltip,<BR>but I guess not 
+                                as simple with this one, because<BR>of it's lack 
+                                of symmetry.<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/miscctrl/xinfotip.asp&amp;df=100&amp;forumid=2634&amp;select=61317">Reply</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/miscctrl/xinfotip.asp?df=100&amp;tid=61317&amp;forumid=2634&amp;select=61317#xx61317xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/miscctrl/xinfotip.asp?msg=61317#xx61317xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/miscctrl/xinfotip.asp&amp;df=100&amp;forumid=2634&amp;select=61317"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/miscctrl/xinfotip.asp&amp;df=100&amp;forumid=2634&amp;select=61317"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(-1,61317);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="xinfotip_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR id=257688_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx257688xx></A><IMG height=1 
+                        src="xinfotip_files/ind.gif" width=18><IMG 
+                        src="xinfotip_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle style="COLOR: #aa0000" 
+                        width="100%"><A class=messagetitle id=DynMessLink 
+                        style="COLOR: #aa0000" 
+                        href="http://www.codeproject.com/miscctrl/xinfotip.asp?df=100&amp;forumid=2634&amp;select=257688#xx257688xx" 
+                        name=257688>Re: Nice work but small problem</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=34359"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="xinfotip_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle 
+                        style="COLOR: #aa0000">Kurt M. S.&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle 
+                        style="COLOR: #aa0000">15:28 12 Aug 
+                    '02&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=257688_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="xinfotip_files/ind.gif" 
+                        width=18><IMG src="xinfotip_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>First, 
+                                I would like to say that I have found this class 
+                                extremely useful, and a very simple and clear 
+                                example of drawing custom non-rectangular 
+                                windows.<BR><BR>Displaying the bubble to the 
+                                right when it would display off the screen is a 
+                                relatively easy fix. The only problem with the 
+                                solution I am giving is that you will see a 
+                                flicker of a left bubble before it is redrawn as 
+                                a right bubble since I use the results of the 
+                                initial region computation to determine whether 
+                                the bubble will be clipped. This was done for 
+                                efficiency, otherwise I would have to recompute 
+                                the window region with every mouse move. (My 
+                                application "floats" the bubble as the mouse 
+                                moves over the screen and I call Show() with 
+                                every mouse move to make the bubble follow the 
+                                cursor). You can re-arrange the code I have 
+                                given if this doesn't work for 
+                                you.<BR><BR>First, add two new data members to 
+                                CXInfoTip:<BR><BR>BOOL m_bLeftBubble;<BR>CSize 
+                                m_WindowSize;<BR><BR>Second, change the 
+                                references to the local variable WindowSize to 
+                                use the class variable m_WindowSize to store the 
+                                computed size of the window (in the Show() 
+                                method and the OnTimer() method).<BR><BR>Third, 
+                                after getting the cursor position in the Show() 
+                                method, determine whether the type of bubble. 
+                                Basically, we will draw a left bubble if the 
+                                origin offset by window size width yield a 
+                                positive x coordinate, otherwise draw a right 
+                                bubble.<BR><BR>m_bLeftBubble = m_ptOrigin.x - 
+                                m_WindowSize.cx &gt;= 0;<BR><BR>Fourth, change 
+                                the triangle leader based on whether we are 
+                                drawing a left or right bubble:<BR><BR>// 
+                                Calculate the leader triangle 
+                                coordinates<BR><BR>if ( m_bLeftBubble 
+                                )<BR>{<BR>ptLeader[0].x = rcWnd.Width() - 
+                                CX_ROUNDED;<BR>ptLeader[0].y = rcWnd.Height() - 
+                                CY_ROUNDED;<BR><BR>ptLeader[1].x = 
+                                ptLeader[0].x;<BR>ptLeader[1].y = ptLeader[0].y 
+                                + CY_LEADER;<BR><BR>ptLeader[2].x = 
+                                ptLeader[0].x - CX_LEADER;<BR>ptLeader[2].y = 
+                                rcWnd.Height() - 
+                                CY_ROUNDED;<BR>}<BR>else<BR>{<BR>ptLeader[0].x = 
+                                CX_ROUNDED;<BR>ptLeader[0].y = rcWnd.Height() - 
+                                CY_ROUNDED;<BR><BR>ptLeader[1].x = 
+                                ptLeader[0].x;<BR>ptLeader[1].y = ptLeader[0].y 
+                                + CY_LEADER;<BR><BR>ptLeader[2].x = 
+                                ptLeader[0].x + CX_LEADER;<BR>ptLeader[2].y = 
+                                rcWnd.Height() - 
+                                CY_ROUNDED;<BR>}<BR><BR>Finally, when showing 
+                                the bubble, set the window position based on 
+                                whether we are positioning the triangle leader 
+                                for a left or right bubble in the OnTimer() 
+                                function (replace the call to SetWindowPos to 
+                                the conditional call within the timerShow 
+                                case):<BR><BR>if ( m_bLeftBubble 
+                                )<BR>SetWindowPos(&amp;wndTop, m_ptOrigin.x - 
+                                m_WindowSize.cx + CX_ROUNDED, m_ptOrigin.y - 
+                                m_WindowSize.cy + CY_ROUNDED, m_WindowSize.cx, 
+                                m_WindowSize.cy, SWP_NOACTIVATE | 
+                                SWP_SHOWWINDOW);<BR>else<BR>SetWindowPos(&amp;wndTop, 
+                                m_ptOrigin.x - CX_ROUNDED, m_ptOrigin.y - 
+                                m_WindowSize.cy + CY_ROUNDED, m_WindowSize.cx, 
+                                m_WindowSize.cy, SWP_NOACTIVATE | 
+                                SWP_SHOWWINDOW);<BR><BR>That's it. It took me 
+                                all of 15 minutes to do this, testament to the 
+                                class author's good design. I am sure it would 
+                                be equally simple to check for the top-screen 
+                                clipping as well.<BR><BR>Regards,<BR>Kurt 
+                                <BR><BR>Kurt M. S.<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/miscctrl/xinfotip.asp&amp;df=100&amp;forumid=2634&amp;select=257688">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/miscctrl/xinfotip.asp&amp;df=100&amp;forumid=2634&amp;select=257688">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/miscctrl/xinfotip.asp?df=100&amp;tid=61317&amp;forumid=2634&amp;select=257688#xx257688xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/miscctrl/xinfotip.asp?msg=257688#xx257688xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/miscctrl/xinfotip.asp&amp;df=100&amp;forumid=2634&amp;select=257688"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/miscctrl/xinfotip.asp&amp;df=100&amp;forumid=2634&amp;select=257688"><I>Delete</I></A>]<BR>Score: 
+                                5.0 (2 votes).
+                                <SCRIPT language=Javascript>MsgVoteForm(34359,257688);</SCRIPT>
+                                 
+                    </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="xinfotip_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 src="xinfotip_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=60431_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx60431xx></A><IMG 
+                        src="xinfotip_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/miscctrl/xinfotip.asp?df=100&amp;forumid=2634&amp;select=60431#xx60431xx" 
+                        name=60431><B>Two minor bugs &amp; Fixes</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=2125"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="xinfotip_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle><B>Jason 
+                        De Arte</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>15:13 25 Sep 
+                        '01</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=60431_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="xinfotip_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>I realy 
+                                like your class <IMG 
+                                src="xinfotip_files/smiley_smile.gif" 
+                                align=absMiddle> , but I couldn't help but make 
+                                two minor improvements...<BR><BR>1) The tooltip 
+                                window tends to flicker when moving your mouse 
+                                cursor over the buttons. My quick fix was to use 
+                                Keith Rule's <A 
+                                href="http://www.codeproject.com/gdi/flickerfree.asp">CMemDC</A> 
+                                class in the "OnPaint()" call.<BR><BR>2) I 
+                                noticed that occasionaly the tooltip would 
+                                appear for a brief instant when moving my mouse 
+                                cursor off the dialog. I tracked it down to a 
+                                lagged "OnTimer(timerShow)" event that was still 
+                                active even though the window had been hidden. 
+                                My solution was two part (1) Add 
+                                "KillTimer(timerShow);" to the "Hide();" 
+                                function, and (2) replaced all the normal places 
+                                where "ShowWindow(SW_HIDE);" with 
+                                "Hide();"<BR><BR>Overall, this class was just 
+                                what I was looking for <IMG 
+                                src="xinfotip_files/smiley_smile.gif" 
+                                align=absMiddle> Thanks for posting 
+                                it.<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/miscctrl/xinfotip.asp&amp;df=100&amp;forumid=2634&amp;select=60431">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/miscctrl/xinfotip.asp&amp;df=100&amp;forumid=2634&amp;select=60431">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/miscctrl/xinfotip.asp?df=100&amp;tid=60431&amp;forumid=2634&amp;select=60431#xx60431xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/miscctrl/xinfotip.asp?msg=60431#xx60431xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/miscctrl/xinfotip.asp&amp;df=100&amp;forumid=2634&amp;select=60431"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/miscctrl/xinfotip.asp&amp;df=100&amp;forumid=2634&amp;select=60431"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(2125,60431);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="xinfotip_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 src="xinfotip_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=59811_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx59811xx></A><IMG 
+                        src="xinfotip_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/miscctrl/xinfotip.asp?df=100&amp;forumid=2634&amp;select=59811#xx59811xx" 
+                        name=59811><B>Compile falure on CMAP</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=11370"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="xinfotip_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle><B>Bob 
+                        Eastman</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>17:14 23 Sep 
+                        '01</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=59811_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG src="xinfotip_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>I tried 
+                                to incorporate the two source files into a 
+                                project, but get a compile error 
+                                on<BR><BR>CMap<HWND, TipToolInfo TipToolInfo, 
+                                HWND,> m_ToolMap; // Tools map<BR><BR>error 
+                                C2143: syntax error : missing ';' before 
+                                '&lt;'<BR>: error C2501: 'CMap' : missing 
+                                storage-class or type specifiers<BR>: error 
+                                C2059: syntax error : '&lt;'<BR>: error C2238: 
+                                unexpected token(s) preceding ';'<BR><BR>any 
+                                suggestions as to what might cause 
+                                this?<BR><BR>tia<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/miscctrl/xinfotip.asp&amp;df=100&amp;forumid=2634&amp;select=59811">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/miscctrl/xinfotip.asp&amp;df=100&amp;forumid=2634&amp;select=59811">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/miscctrl/xinfotip.asp?df=100&amp;tid=59811&amp;forumid=2634&amp;select=59811#xx59811xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/miscctrl/xinfotip.asp?msg=59811#xx59811xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/miscctrl/xinfotip.asp&amp;df=100&amp;forumid=2634&amp;select=59811"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/miscctrl/xinfotip.asp&amp;df=100&amp;forumid=2634&amp;select=59811"><I>Delete</I></A>]<BR>Score: 
+                                2.0 (2 votes).
+                                <SCRIPT language=Javascript>MsgVoteForm(11370,59811);</SCRIPT>
+                                 
+                    </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 src="xinfotip_files/t.gif" width=1 
+                border=0></TD></TR>
+              <TR id=59871_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx59871xx></A><IMG height=1 
+                        src="xinfotip_files/ind.gif" width=18><IMG 
+                        src="xinfotip_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/miscctrl/xinfotip.asp?df=100&amp;forumid=2634&amp;select=59871#xx59871xx" 
+                        name=59871>Re: Compile falure on CMAP</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=168"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="xinfotip_files/userinfo.gif" width=14 
+                      border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle>Paolo 
+                        Messina&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>21:29 23 Sep 
+                        '01&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=59871_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 src="xinfotip_files/ind.gif" 
+                        width=18><IMG src="xinfotip_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT 
+                                class=messagecontent>Hi,<BR><BR>Be sure to 
+                                <CODE>#include &lt;afxtempl.h&gt;</CODE> to use 
+                                MFC collection 
+                                templates.<BR><BR>Cheers,<BR>Paolo<BR><BR>------<BR>"airplane 
+                                is cool, but space shuttle is even better" (J. 
+                                Kaczorowski)<BR><BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/miscctrl/xinfotip.asp&amp;df=100&amp;forumid=2634&amp;select=59871">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/miscctrl/xinfotip.asp&amp;df=100&amp;forumid=2634&amp;select=59871">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/miscctrl/xinfotip.asp?df=100&amp;tid=59811&amp;forumid=2634&amp;select=59871#xx59871xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/miscctrl/xinfotip.asp?msg=59871#xx59871xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/miscctrl/xinfotip.asp&amp;df=100&amp;forumid=2634&amp;select=59871"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/miscctrl/xinfotip.asp&amp;df=100&amp;forumid=2634&amp;select=59871"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(168,59871);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 src="xinfotip_files/t.gif" width=1 
+                border=0></TD></TR></TBODY></TABLE></TD></TR>
+        <TR bgColor=#fbedbb>
+          <TD>
+            <TABLE cellPadding=2 width="100%">
+              <TBODY>
+              <TR>
+                <TD class=messagetitle>Last Visit: 7:18 Wednesday 13th 
+                  October, 2004</TD>
+                <TD noWrap align=right><FONT class=messagetitle><SPAN 
+                  class=HoverLink>First</SPAN> <SPAN class=HoverLink>Prev</SPAN> 
+                  <SPAN class=HoverLink>Next</SPAN> <SPAN 
+                  class=HoverLink>Last</SPAN> 
+        </FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><BR>
+<TABLE cellSpacing=5 width="100%">
+  <TBODY>
+  <TR vAlign=top>
+    <TD><FONT style="FONT-SIZE: 7pt" size=1><A 
+      href="http://www.codeproject.com/?cat=1">All Topics</A>, <A 
+      href="http://www.codeproject.com/?cat=2">MFC / C++</A> &gt;&gt; <A 
+      href="http://www.codeproject.com/miscctrl/">Miscellaneous Controls</A> 
+      &gt;&gt; <A 
+      href="http://www.codeproject.com/miscctrl/#Tooltips">Tooltips</A> 
+      <BR>Updated: 22 Sep 2001 </FONT></TD>
+    <TD align=right><FONT style="FONT-SIZE: 7pt" size=1>Article content 
+      copyright Mark Bozeman, 2001<BR>everything else Copyright © <A 
+      href="mailto:webmaster@codeproject.com">CodeProject</A>, 1999-2004</A>. 
+      <BR><A href="http://www.codeproject.com/info/MediaKit">Advertise on The 
+      Code Project</A> | <A 
+      href="http://www.codeproject.com/info/privacy.asp">Privacy</A> 
+  </FONT></TD></TR></TBODY></TABLE><BR>
+<CENTER>
+<TABLE cellSpacing=0 cellPadding=0 width="95%" border=0>
+  <TBODY>
+  <TR>
+    <TD bgColor=#ff9900 height=1><IMG height=1 
+    src="xinfotip_files/space.gif"></TD></TR>
+  <TR>
+    <TD align=middle><FONT size=1><A 
+      href="http://www.codeproject.com/redir.asp?id=235">MSDN Communities</A> | 
+      <A href="http://aspalliance.com/">ASPAlliance</A> • <A 
+      href="http://www.developerfusion.com/">Developer Fusion</A> • <A 
+      href="http://www.devguru.com/">DevGuru</A> • <A 
+      href="http://www.programmersheaven.com/">Programmers Heaven</A> • <A 
+      href="http://www.planet-source-code.com/">Planet Source Code</A> • <A 
+      href="http://www.resourceindex.com/">Resource Index</A> • <A 
+      href="http://www.tek-tips.com/">Tek-Tips Forums</A> • <A 
+      href="http://www.topxml.com/">What is XML?</A> • <A 
+      href="http://www.visualbuilder.com/">VisualBuilder</A> • <A 
+      href="http://www.zvon.org/">ZVON</A> • <A 
+      href="http://www.codeproject.com/redir.asp?id=169">Search Us!</A> 
+    </FONT></TD></TR></TBODY></TABLE></CENTER></BODY></HTML>

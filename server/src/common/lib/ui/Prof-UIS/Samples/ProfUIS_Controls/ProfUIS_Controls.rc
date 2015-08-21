@@ -1,0 +1,828 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\ProfUIS_Controls.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG_FOR_TAB_PAGE DIALOG DISCARDABLE  0, 0, 186, 90
+STYLE WS_CHILD | WS_CLIPSIBLINGS | WS_CLIPCHILDREN
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_EDIT_IN_TAB_PAGE_DIALOG,7,19,172,12,ES_AUTOHSCROLL
+    LTEXT           "Resizable dialog",IDC_STATIC_IN_TAB_PAGE_DIALOG,7,7,52,
+                    8
+END
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CLIPSIBLINGS | WS_CLIPCHILDREN | 
+    WS_CAPTION | WS_SYSMENU
+CAPTION "About Prof-UIS Controls Sample"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "Prof-UIS Controls",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,14,WS_GROUP
+    LTEXT           "Copyright © 2001-2004 FOSS Software, Inc.",IDC_STATIC,
+                    40,29,178,8
+END
+
+IDD_PROFUIS_CONTROLS_DIALOG DIALOG DISCARDABLE  0, 0, 428, 289
+STYLE WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | 
+    WS_CLIPSIBLINGS | WS_CLIPCHILDREN | WS_CAPTION | WS_SYSMENU | 
+    WS_THICKFRAME
+CAPTION "ProfUIS Controls"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_MAIN_MENUBAR,"ProfUIS-ControlBar",WS_DLGFRAME | 
+                    0x2034,5,0,417,13
+    LISTBOX         IDC_LIST,5,33,111,225,LBS_OWNERDRAWVARIABLE | 
+                    LBS_NOINTEGRALHEIGHT | NOT WS_BORDER | WS_VSCROLL | 
+                    WS_TABSTOP
+    GROUPBOX        "",IDC_STATIC_PAGES_RECT,122,33,300,225,NOT WS_VISIBLE
+    CONTROL         "",IDC_MAIN_TOOLBAR,"ProfUIS-ControlBar",WS_DLGFRAME | 
+                    0x2034,5,14,417,13
+    DEFPUSHBUTTON   "OK",IDOK,372,269,50,14
+    CONTROL         "",IDC_STATIC_DELIVER_FRAME,"Static",SS_ETCHEDHORZ,5,263,
+                    416,1
+    PUSHBUTTON      "<< Back",IDC_BACK,261,269,50,14
+    PUSHBUTTON      "Next >>",IDC_NEXT,311,269,50,14
+    COMBOBOX        IDC_COMBO_UI_LOOK,37,269,79,44,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "UI Look :",IDC_STATIC_COMBO_UI_LOOK,5,271,30,8
+END
+
+IDD_PAGE_TAB_WINDOW DIALOG DISCARDABLE  0, 0, 246, 172
+STYLE WS_CHILD | WS_CLIPSIBLINGS | WS_CLIPCHILDREN
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Show borders",IDC_CHECK_SHOW_BORDERS,"Button",
+                    BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,0,0,63,10
+    CONTROL         "Equal widths",IDC_CHECK_EQUAL_WIDTHS,"Button",
+                    BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,0,12,63,10
+    CONTROL         "Full row width",IDC_CHECK_FULL_WIDTHS,"Button",
+                    BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,0,25,63,10
+    CONTROL         "Center text",IDC_CHECK_CENTER_TEXT,"Button",
+                    BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,0,37,63,10
+    CONTROL         "Invert vert. font",IDC_CHECK_INVERT_VERT_FONT,"Button",
+                    BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,0,49,63,10
+    CONTROL         "Bold selection",IDC_CHECK_BOLD_SELECTION,"Button",
+                    BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,0,62,63,10
+    CONTROL         "Show ""X""",IDC_CHECK_SHOW_CLOSE,"Button",
+                    BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,0,75,73,10
+    CONTROL         "Enable ""X""",IDC_CHECK_ENABLE_CLOSE,"Button",
+                    BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,12,86,61,10
+    CONTROL         "Show ""?""",IDC_CHECK_SHOW_HELP,"Button",
+                    BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,0,99,73,10
+    CONTROL         "Enable ""?""",IDC_CHECK_ENABLE_HELP,"Button",
+                    BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,12,110,61,10
+    CONTROL         "Auto hide ""<"", "">""",IDC_CHECK_AUTOHIDE_SCROLL,
+                    "Button",BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,0,124,73,
+                    10
+    CONTROL         "Select on hover",IDC_CHECK_FOCUS_ON_HOVER,"Button",
+                    BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,0,137,73,10
+    PUSHBUTTON      "Empty all tab controls",IDC_BUTTON_CLEAR_TABS,170,154,
+                    76,18,WS_DISABLED
+    PUSHBUTTON      "+1",IDC_BUTTON_ADD_TAB_1,80,154,26,18
+    PUSHBUTTON      "+10",IDC_BUTTON_ADD_TAB_10,110,154,26,18
+    CONTROL         "",ID_TABCTRL_OUTER_TOP,"ProfUIS-TabWindow",0x0,80,0,165,
+                    16
+    CONTROL         "",ID_TABCTRL_OUTER_BOTTOM,"ProfUIS-TabWindow",0x0,80,
+                    129,164,16
+    CONTROL         "",ID_TABCTRL_OUTER_LEFT,"ProfUIS-TabWindow",0x0,80,22,
+                    20,102
+    CONTROL         "",ID_TABCTRL_OUTER_RIGHT,"ProfUIS-TabWindow",0x0,226,22,
+                    20,102
+    CONTROL         "",ID_TABCTRL_INNER_TOP,"ProfUIS-TabWindow",0x0,107,22,
+                    113,16
+    CONTROL         "",ID_TABCTRL_INNER_BOTTOM,"ProfUIS-TabWindow",0x0,107,
+                    108,113,16
+    CONTROL         "",ID_TABCTRL_INNER_LEFT,"ProfUIS-TabWindow",0x0,107,44,
+                    20,59
+    CONTROL         "",ID_TABCTRL_INNER_RIGHT,"ProfUIS-TabWindow",0x0,200,44,
+                    20,59
+END
+
+IDD_PAGE_NOT_AVAILABLE DIALOG DISCARDABLE  0, 0, 186, 49
+STYLE WS_CHILD | WS_CLIPSIBLINGS | WS_CLIPCHILDREN
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "This feature is not available in the freeware version",
+                    IDC_STATIC_NOT_AVAILABLE,0,0,160,8
+END
+
+IDD_PAGE_BUTTONS DIALOG DISCARDABLE  0, 0, 300, 225
+STYLE WS_CHILD | WS_CLIPSIBLINGS | WS_CLIPCHILDREN
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Text Align:",IDC_STATIC_TEXT_ALIGN1,225,10,19,8,NOT 
+                    WS_VISIBLE
+    COMBOBOX        IDC_TEXT_ALIGN1,248,9,48,30,CBS_DROPDOWNLIST | NOT 
+                    WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Cursor:",IDC_STATIC_CURSOR,6,16,23,8
+    COMBOBOX        IDC_CURSOR,44,14,48,93,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Tooltip :",IDC_STATIC_TOOLTIP,6,30,26,8
+    EDITTEXT        IDC_TOOLTIP,44,28,48,13,ES_AUTOHSCROLL
+    CONTROL         "Enable",IDC_CHECK_BUTTON_ENABLE,"Button",
+                    BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,6,65,38,10
+    CONTROL         "Flat",IDC_CHECK_FLAT,"Button",BS_AUTOCHECKBOX | BS_LEFT | 
+                    BS_FLAT | WS_TABSTOP,6,78,27,11
+    CONTROL         "Border (when ""Flat"")",IDC_CHECK_BORDER,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFT | BS_FLAT | WS_TABSTOP,6,91,77,
+                    11
+    CONTROL         "Show Focus Rect",IDC_CHECK_BUTTON_SHOW_FOCUS_RECT,
+                    "Button",BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,6,104,73,
+                    11
+    CONTROL         "Use separated buttons",IDC_CHECK_SEPARATED_BUTTONS,
+                    "Button",BS_AUTOCHECKBOX | BS_LEFT | BS_FLAT | 
+                    WS_TABSTOP,6,116,85,11
+    PUSHBUTTON      "CExtButton",IDC_PUSH_BUTTON,101,14,99,41
+    PUSHBUTTON      "With menu",IDC_BUTTON_WITH_MENU,101,61,99,24
+    PUSHBUTTON      "Color ...",IDC_BUTTON_COLOR1,101,90,65,16
+    PUSHBUTTON      "",IDC_BUTTON_COLOR2,172,90,28,16
+    CONTROL         "Push-Like",IDC_PUSH_LIKE_BUTTON,"Button",
+                    BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,101,112,65,14
+    GROUPBOX        "Push button",IDC_STATIC_PUSH_BUTTON,0,0,210,134
+    CONTROL         "CExtCheckBox",IDC_CHECK_BOX1,"Button",BS_AUTOCHECKBOX | 
+                    BS_LEFT | WS_TABSTOP,6,154,86,12
+    CONTROL         "Multiline\nCExtCheckBox",IDC_CHECK_BOX2,"Button",
+                    BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP,6,167,86,17
+    CONTROL         "CExtRadioButton",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,6,191,86,10
+    CONTROL         "Multiline\nCExtRadioButton",IDC_RADIO2,"Button",
+                    BS_AUTORADIOBUTTON | BS_MULTILINE,6,203,86,18
+    LTEXT           "Skin:",IDC_STATIC_SKIN,101,156,17,8
+    COMBOBOX        IDC_SKIN,140,154,60,63,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Text Align:",IDC_STATIC_TEXT_ALIGN2,101,170,34,8
+    COMBOBOX        IDC_TEXT_ALIGN2,139,168,61,30,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Enable",IDC_CHECK_BOX_ENABLE,"Button",BS_AUTOCHECKBOX | 
+                    BS_FLAT | WS_TABSTOP,102,186,38,10
+    CONTROL         "Left text",IDC_CHECK_LEFT_TEXT,"Button",BS_AUTOCHECKBOX | 
+                    BS_FLAT | WS_TABSTOP,152,186,48,11
+    CONTROL         "Tri-state",IDC_CHECK_TRISTATE,"Button",BS_AUTOCHECKBOX | 
+                    BS_FLAT | WS_TABSTOP,102,197,48,11
+    CONTROL         "Show Focus Rect",IDC_CHECK_BOX_SHOW_FOCUS_RECT,"Button",
+                    BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,152,198,73,10
+    GROUPBOX        "Check Box",IDC_STATIC_CHECK_BOX,0,140,231,85
+END
+
+IDD_PAGE_TAB_CONTAINERS DIALOG DISCARDABLE  0, 0, 300, 225
+STYLE WS_CHILD | WS_CLIPSIBLINGS | WS_CLIPCHILDREN
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Show borders",IDC_CHECK_SHOW_BORDERS,"Button",
+                    BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,0,94,63,10
+    CONTROL         "Equal widths",IDC_CHECK_EQUAL_WIDTHS,"Button",
+                    BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,0,105,63,10
+    CONTROL         "Full row width",IDC_CHECK_FULL_WIDTHS,"Button",
+                    BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,0,116,63,10
+    CONTROL         "Center text",IDC_CHECK_CENTER_TEXT,"Button",
+                    BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,0,127,63,10
+    CONTROL         "Invert vert. font",IDC_CHECK_INVERT_VERT_FONT,"Button",
+                    BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,0,138,63,10
+    CONTROL         "Bold selection",IDC_CHECK_BOLD_SELECTION,"Button",
+                    BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,0,149,63,10
+    CONTROL         "Show ""X""",IDC_CHECK_SHOW_CLOSE,"Button",
+                    BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,0,160,68,10
+    CONTROL         "Enable ""X""",IDC_CHECK_ENABLE_CLOSE,"Button",
+                    BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,14,170,51,10
+    CONTROL         "Show ""?""",IDC_CHECK_SHOW_HELP,"Button",
+                    BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,0,184,68,10
+    CONTROL         "Enable ""?""",IDC_CHECK_ENABLE_HELP,"Button",
+                    BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,14,193,52,10
+    CONTROL         "Auto hide ""<"", "">""",IDC_CHECK_AUTOHIDE_SCROLL,
+                    "Button",BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,0,204,68,
+                    10
+    CONTROL         "Select on hover",IDC_CHECK_FOCUS_ON_HOVER,"Button",
+                    BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,0,215,68,10
+    COMBOBOX        IDC_COMBO_ORIENTATION,0,9,66,60,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Incline Before",IDC_CHECK_INCLINE_BEFORE,"Button",
+                    BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,0,34,67,10
+    CONTROL         "Incline After",IDC_CHECK_INCLINE_AFTER,"Button",
+                    BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,0,44,67,10
+    LTEXT           "Orientation:",IDC_STATIC_ORIENTATION,0,0,68,9
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,0,28,67,1
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,0,87,67,1
+    EDITTEXT        IDC_EDIT_SHIFT,0,67,30,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_SHIFT,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,15,67,11,
+                    14
+    LTEXT           "Shift:",IDC_STATIC_SHIFT,1,57,17,8
+    EDITTEXT        IDC_EDIT_SIZE,38,67,28,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_SIZE,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,52,68,11,
+                    14
+    LTEXT           "Size:",IDC_STATIC_SIZE,39,57,16,8
+    CONTROL         "",ID_TABCTRL_FLAT,"ProfUIS-TabPageContainer",
+                    WS_CLIPSIBLINGS,76,0,223,106
+    CONTROL         "",ID_TABCTRL,"ProfUIS-TabPageContainer",WS_CLIPSIBLINGS,
+                    76,119,223,106
+END
+
+IDD_PAGE_POPUP_MENUS DIALOG DISCARDABLE  0, 0, 300, 225
+STYLE WS_CHILD | WS_CLIPSIBLINGS | WS_CLIPCHILDREN
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Animate menu when expanding",IDC_CHECK_MENU_ANIMATION,
+                    "Button",BS_AUTOCHECKBOX | BS_LEFT | BS_FLAT | 
+                    WS_TABSTOP,0,0,124,11
+    CONTROL         "Menu with shadows",IDC_CHECK_MENU_WITH_SHADOWS,"Button",
+                    BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,0,12,106,11
+    COMBOBOX        IDC_MENU_ANIMATION,6,38,122,146,CBS_DROPDOWNLIST | 
+                    CBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Select menu animation effect:",
+                    IDC_STATIC_MENU_ANIMATION,0,27,136,31
+    LTEXT           "Use right mouse click for display context popup menu",
+                    IDC_STATIC1,63,103,168,8
+END
+
+IDD_PAGE_STATUS_BAR DIALOG DISCARDABLE  0, 0, 300, 225
+STYLE WS_CHILD | WS_CLIPSIBLINGS | WS_CLIPCHILDREN
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_POSITION,32,0,24,12,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin1",IDC_SPIN_POSITION,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,58,0,11,14
+    PUSHBUTTON      "Add Pane",IDC_ADD_PANE,0,16,56,14
+    PUSHBUTTON      "Remove Pane",IDC_REMOVE_PANE,0,32,56,14
+    PUSHBUTTON      "Disable/Enable",IDC_DISABLE_PANE,0,49,56,14
+    CONTROL         "Text",IDC_RADIO_TYPE_TEXT,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,73,0,30,10
+    CONTROL         "Edit",IDC_RADIO_TYPE_EDIT,"Button",BS_AUTORADIOBUTTON,
+                    73,11,28,10
+    CONTROL         "Progress",IDC_RADIO_TYPE_PROGRESS,"Button",
+                    BS_AUTORADIOBUTTON,73,22,43,10
+    CONTROL         "Slider",IDC_RADIO_TYPE_SLIDER,"Button",
+                    BS_AUTORADIOBUTTON,73,33,33,10
+    CONTROL         "Button",IDC_RADIO_TYPE_BUTTON,"Button",
+                    BS_AUTORADIOBUTTON,73,44,37,10
+    CONTROL         "Animation",IDC_RADIO_TYPE_ANIM_CTRL,"Button",
+                    BS_AUTORADIOBUTTON,73,55,46,10
+    CONTROL         "Label",IDC_RADIO_TYPE_STATIC,"Button",
+                    BS_AUTORADIOBUTTON,73,66,52,10
+    LTEXT           "Position:",IDC_STATIC_POSITION,0,2,28,8
+    CONTROL         "Draw Separators Instead Of Borders",
+                    IDC_DRAW_PANE_SEPARATORS,"Button",BS_AUTOCHECKBOX | 
+                    WS_GROUP | WS_TABSTOP,0,94,149,10
+    CONTROL         "Border Around First Pane",IDC_OUTER_RECT_IN_FIRST_BAND,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,0,106,95,10
+    CONTROL         "Hide Text On Disabled Panes",
+                    IDC_HIDE_TEXT_ON_DISABLED_PANES,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,0,118,109,10
+END
+
+IDD_PAGE_TOOLBARS DIALOG DISCARDABLE  0, 0, 300, 225
+STYLE WS_CHILD | WS_CLIPSIBLINGS | WS_CLIPCHILDREN
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_MAIN_MENUBAR,"ProfUIS-ControlBar",WS_DLGFRAME | 
+                    0x2034,0,0,300,13
+    CONTROL         "",IDC_MAIN_TOOLBAR,"ProfUIS-ControlBar",WS_DLGFRAME | 
+                    0x2034,0,18,300,13
+    CONTROL         "",IDC_CONTROLS_TOOLBAR1,"ProfUIS-ControlBar",
+                    WS_DLGFRAME | 0x8234,22,212,278,13
+    CONTROL         "",IDC_COLOR_TOOLBAR,"ProfUIS-ControlBar",WS_DLGFRAME | 
+                    0x1014,0,35,15,190
+    CONTROL         "",IDC_CONTROLS_TOOLBAR2,"ProfUIS-ControlBar",
+                    WS_DLGFRAME | 0x8234,22,197,278,13
+    CONTROL         "Show Gripper",IDC_CHECK_SHOW_GRIPPER,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,32,44,89,12
+    CONTROL         "",IDC_PALETTE_TOOLBAR,"ProfUIS-ControlBar",WS_DLGFRAME | 
+                    0x4110,248,34,52,160
+END
+
+IDD_PAGE_CALENDAR DIALOG DISCARDABLE  0, 0, 300, 225
+STYLE WS_CHILD | WS_CLIPSIBLINGS | WS_CLIPCHILDREN
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_CALENDAR_ROWS_MIN,51,1,44,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_CALENDAR_ROWS_MIN_SPIN,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,88,0,11,12
+    EDITTEXT        IDC_CALENDAR_COLUMNS_MIN,51,14,44,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_CALENDAR_COLUMNS_MIN_SPIN,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,88,13,11,12
+    CONTROL         "Auto Dimension Mode",IDC_CHECK_AUTO_DIMENSIONS_MODE,
+                    "Button",BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,0,29,85,
+                    10
+    EDITTEXT        IDC_CALENDAR_ROWS_MAX,63,39,32,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_CALENDAR_ROWS_MAX_SPIN,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,87,38,11,12
+    EDITTEXT        IDC_CALENDAR_COLUMNS_MAX,63,52,32,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_CALENDAR_COLUMNS_MAX_SPIN,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,87,51,11,12
+    CONTROL         "Reserve Borders",IDC_CHECK_RESERVE_BORDERS,"Button",
+                    BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,0,73,69,10
+    CONTROL         "Show Borders",IDC_CHECK_SHOW_BORDERS,"Button",
+                    BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,10,84,60,10
+    CONTROL         "Today",IDC_CHECK_SHOW_BTN_TODAY,"Button",
+                    BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,0,99,36,10
+    CONTROL         "None",IDC_CHECK_SHOW_BTN_NONE,"Button",BS_AUTOCHECKBOX | 
+                    BS_FLAT | WS_TABSTOP,39,99,33,10
+    CONTROL         "Button's Horizontal Line",IDC_CHECK_SHOW_BTN_SEPARATOR,
+                    "Button",BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,10,110,
+                    90,10
+    CONTROL         "Bold Header",IDC_CHECK_BOLD_HEADER,"Button",
+                    BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,0,125,52,9
+    CONTROL         "Popup",IDC_CHECK_BOLD_POPUP,"Button",BS_AUTOCHECKBOX | 
+                    BS_FLAT | WS_TABSTOP,56,125,34,9
+    CONTROL         "Weeks",IDC_CHECK_BOLD_WEEK,"Button",BS_AUTOCHECKBOX | 
+                    BS_FLAT | WS_TABSTOP,10,136,38,9
+    CONTROL         "Days",IDC_CHECK_BOLD_CELL,"Button",BS_AUTOCHECKBOX | 
+                    BS_FLAT | WS_TABSTOP,51,136,41,9
+    CONTROL         "Show Non-Month Days",IDC_CHECK_SHOW_NON_MONTH_DAYS,
+                    "Button",BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,0,151,89,
+                    10
+    CONTROL         "Hide Inside",IDC_CHECK_HIDE_NON_MONTH_DAYS_INSIDE,
+                    "Button",BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,10,162,
+                    51,10
+    CONTROL         "No Header Background",IDC_CHECK_NO_HDR_BK,"Button",
+                    BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,0,176,89,9
+    CONTROL         "Highlight Today",IDC_CHECK_SHOW_TODAY_HIGHLIGHT,"Button",
+                    BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,0,189,65,10
+    CONTROL         "Show Popup Shadow",IDC_CHECK_SHOW_MONTH_LIST_SHADOW,
+                    "Button",BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,0,202,85,
+                    10
+    CONTROL         "Enable Multiple Selection",
+                    IDC_CHECK_ENABLE_MULTIPLE_SELECT,"Button",
+                    BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,0,214,95,10
+    EDITTEXT        IDC_NOTIFICATIONS,107,194,192,31,ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY | WS_VSCROLL
+    CONTROL         "",IDC_CALENDAR,"ProfUIS-DatePickerWnd",WS_TABSTOP,107,0,
+                    192,180
+    LTEXT           "Rows (min):",IDC_STATIC_R_MIN,0,3,38,8
+    LTEXT           "Columns (min):",IDC_STATIC_C_MIN,0,16,46,8
+    LTEXT           "Rows (max):",IDC_STATIC_R_MAX,12,41,40,8
+    LTEXT           "Columns (max):",IDC_STATIC_C_MAX,12,53,48,8
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,0,68,97,1
+    LTEXT           "Notifications:",IDC_STATIC_NOTIFICATIONS,107,184,42,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO MOVEABLE PURE 
+BEGIN
+    IDD_DIALOG_FOR_TAB_PAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 83
+    END
+
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_PROFUIS_CONTROLS_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 422
+        VERTGUIDE, 116
+        VERTGUIDE, 122
+        BOTTOMMARGIN, 283
+        HORZGUIDE, 33
+        HORZGUIDE, 258
+    END
+
+    IDD_PAGE_TAB_WINDOW, DIALOG
+    BEGIN
+        VERTGUIDE, 80
+        VERTGUIDE, 107
+        VERTGUIDE, 220
+        HORZGUIDE, 22
+        HORZGUIDE, 44
+        HORZGUIDE, 124
+    END
+
+    IDD_PAGE_BUTTONS, DIALOG
+    BEGIN
+        VERTGUIDE, 6
+        VERTGUIDE, 44
+        VERTGUIDE, 92
+        VERTGUIDE, 101
+        VERTGUIDE, 140
+        VERTGUIDE, 166
+        VERTGUIDE, 200
+        VERTGUIDE, 210
+        VERTGUIDE, 293
+    END
+
+    IDD_PAGE_TAB_CONTAINERS, DIALOG
+    BEGIN
+        VERTGUIDE, 66
+        VERTGUIDE, 76
+    END
+
+    IDD_PAGE_TOOLBARS, DIALOG
+    BEGIN
+        VERTGUIDE, 32
+        HORZGUIDE, 44
+    END
+
+    IDD_PAGE_CALENDAR, DIALOG
+    BEGIN
+        VERTGUIDE, 10
+        VERTGUIDE, 107
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BOX_IMAGES_XP       BITMAP  MOVEABLE PURE   "res\\checkbox_xp.bmp"
+IDB_BOX_IMAGES_XP_BLUE  BITMAP  MOVEABLE PURE   "res\\checkbox_xp_blue.bmp"
+IDB_BOX_IMAGES_XP_CROSS BITMAP  MOVEABLE PURE   "res\\checkbox_cross.bmp"
+IDR_MAIN_TOOLBAR        BITMAP  MOVEABLE PURE   "res\\IDR_MAIN_TOOLBAR.bmp"
+IDR_TAB_IMAGES          BITMAP  MOVEABLE PURE   "res\\tab_imag.bmp"
+IDR_EDIT                BITMAP  MOVEABLE PURE   "res\\IDR_EDIT.bmp"
+IDR_PALETTE_TOOLBAR     BITMAP  MOVEABLE PURE   "res\\IDR_TOOLBAR_PALETTE.bmp"
+IDB_RADIO_BOX_IMAGES_XP BITMAP  DISCARDABLE     "res\\radiobox_xp.bmp"
+IDB_RADIO_BOX_IMAGES_XP_CROSS BITMAP  DISCARDABLE     "res\\radiobox_xp_cross.bmp"
+IDB_RADIO_BOX_IMAGES_XP_BLUE BITMAP  DISCARDABLE     "res\\radiobox_xp_blue.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\ProfUIS_Controls.ico"
+IDI_TREE                ICON    DISCARDABLE     "res\\tree.ico"
+IDI_EDIT                ICON    DISCARDABLE     "res\\edit.ico"
+IDI_COLOR               ICON    DISCARDABLE     "res\\colorctrl.ico"
+IDI_NOTEPAD             ICON    DISCARDABLE     "res\\Notepad.ico"
+IDI_ICON_IN             ICON    DISCARDABLE     "res\\IconIn.ico"
+IDI_ICON_OUT            ICON    DISCARDABLE     "res\\IconOut.ico"
+IDI_LED_OFF             ICON    DISCARDABLE     "res\\LedOff.ico"
+IDI_LED_ON              ICON    DISCARDABLE     "res\\LedOn.ico"
+IDI_ICON_FOR_POPUP_MENU ICON    DISCARDABLE     "res\\IconForPopupMenu.ico"
+IDI_CALENDAR            ICON    DISCARDABLE     "res\\IDI_CALENDAR.ico"
+IDI_TAB_WINDOW          ICON    DISCARDABLE     "res\\IDI_TAB_WINDOW.ico"
+IDI_TAB_CONTAINER       ICON    DISCARDABLE     "res\\IDI_TAB_CONTAINER.ico"
+IDI_MENU_TOOLBAR        ICON    DISCARDABLE     "res\\IDI_MENU_TOOLBAR.ico"
+IDI_MENU                ICON    DISCARDABLE     "res\\IDI_MENU.ico"
+IDI_STATUS_BAR          ICON    DISCARDABLE     "res\\IDI_STATUS_BAR.ico"
+IDI_BUTTONS             ICON    DISCARDABLE     "res\\IDI_BUTTONS.ico"
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2,2,5,1
+ PRODUCTVERSION 2,2,5,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "This is part of the Professional User Interface Suite library (www.prof-uis.com)\0"
+            VALUE "CompanyName", "FOSS Software, Inc.\0"
+            VALUE "FileDescription", "ProfUIS_Controls MFC Application\0"
+            VALUE "FileVersion", "2, 2, 5, 1\0"
+            VALUE "InternalName", "ProfUIS_Controls\0"
+            VALUE "LegalCopyright", "Copyright © 2001-2004 FOSS Software, Inc.\0"
+            VALUE "OriginalFilename", "ProfUIS_Controls.EXE\0"
+            VALUE "ProductName", "ProfUIS_Controls Application\0"
+            VALUE "ProductVersion", "2, 2, 5, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAIN_MENU MENU DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Exit",                       ID_APP_EXIT
+    END
+    POPUP "&View"
+    BEGIN
+        POPUP "&UI theme"
+        BEGIN
+            MENUITEM "MS Office &2000",             IDC_THEME_2000
+            MENUITEM "MS Office &XP",               IDC_THEME_XP
+            MENUITEM "MS Office 200&3",             IDC_THEME_2003
+        END
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About ...",                  ID_APP_ABOUT
+    END
+END
+
+IDR_COLOR_MENU MENU DISCARDABLE 
+BEGIN
+    POPUP "__POPUP__"
+    BEGIN
+        MENUITEM "8 px",                        ID_HEIGHT_8PX
+        MENUITEM "10 px",                       ID_HEIGHT_10PX
+        MENUITEM "12 px",                       ID_HEIGHT_12PX
+        MENUITEM "14 px",                       ID_HEIGHT_14PX
+        MENUITEM "16 px",                       ID_HEIGHT_16PX
+        MENUITEM "18 px",                       ID_HEIGHT_18PX
+        MENUITEM "20 px",                       ID_HEIGHT_20PX
+        MENUITEM "22 px",                       ID_HEIGHT_22PX
+        MENUITEM "24 px",                       ID_HEIGHT_24PX
+        MENUITEM "26 px",                       ID_HEIGHT_26PX
+        MENUITEM "28 px",                       ID_HEIGHT_28PX
+        MENUITEM "30 px",                       ID_HEIGHT_30PX
+    END
+END
+
+IDR_MENU_PAGE_TOOLBARS MENU DISCARDABLE 
+BEGIN
+    POPUP "&Special Items"
+    BEGIN
+        MENUITEM "Color Control",               ID_COLOR_CTRL
+        MENUITEM "Date Picker Control",         ID_DATE_PICKER_CTRL
+    END
+END
+
+IDR_POPUP_MENU MENU DISCARDABLE 
+BEGIN
+    POPUP "__POPUP__"
+    BEGIN
+        MENUITEM "&About ...",                  ID_APP_ABOUT
+        MENUITEM SEPARATOR
+        MENUITEM "&Color Control",              ID_COLOR_CTRL
+        MENUITEM "&Date Picker Control",        ID_DATE_PICKER_CTRL
+        MENUITEM "Owner draw (disabled)",       ID_OWNERDRAW_ITEM
+        MENUITEM "MS Office &2000",             IDC_THEME_2000
+        MENUITEM "MS Office &XP",               IDC_THEME_XP
+        MENUITEM "MS Office 200&3",             IDC_THEME_2003
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAIN_TOOLBAR TOOLBAR MOVEABLE PURE  16, 15
+BEGIN
+    BUTTON      IDC_THEME_2003
+    BUTTON      IDC_THEME_XP
+    BUTTON      IDC_THEME_2000
+    SEPARATOR
+    BUTTON      ID_APP_ABOUT
+END
+
+IDR_EDIT TOOLBAR MOVEABLE PURE  16, 15
+BEGIN
+    BUTTON      ID_EDIT_CUT
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_PASTE
+END
+
+IDR_PALETTE_TOOLBAR TOOLBAR MOVEABLE PURE  16, 15
+BEGIN
+    BUTTON      ID_LINE_WIDTH_0
+    SEPARATOR
+    BUTTON      ID_LINE_WIDTH_OTHER
+    SEPARATOR
+    BUTTON      ID_LINE_WIDTH_1
+    BUTTON      ID_LINE_WIDTH_2
+    BUTTON      ID_LINE_WIDTH_3
+    BUTTON      ID_LINE_WIDTH_4
+    BUTTON      ID_LINE_WIDTH_5
+    BUTTON      ID_LINE_WIDTH_6
+    BUTTON      ID_LINE_WIDTH_7
+    BUTTON      ID_LINE_WIDTH_8
+    BUTTON      ID_LINE_WIDTH_9
+    BUTTON      ID_LINE_WIDTH_10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AVI
+//
+
+IDR_DOWNLOAD            AVI     MOVEABLE PURE   "res\\download.avi"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_PROFUIS_CONTROLS_DIALOG DLGINIT
+BEGIN
+    IDC_COMBO_UI_LOOK, 0x403, 15, 0
+0x534d, 0x4f20, 0x6666, 0x6369, 0x2065, 0x3032, 0x3030, "\000" 
+    IDC_COMBO_UI_LOOK, 0x403, 13, 0
+0x534d, 0x4f20, 0x6666, 0x6369, 0x2065, 0x5058, "\000" 
+    IDC_COMBO_UI_LOOK, 0x403, 15, 0
+0x534d, 0x4f20, 0x6666, 0x6369, 0x2065, 0x3032, 0x3330, "\000" 
+    0
+END
+
+IDD_PAGE_TAB_CONTAINERS DLGINIT
+BEGIN
+    IDC_COMBO_ORIENTATION, 0x403, 4, 0
+0x6f54, 0x0070, 
+    IDC_COMBO_ORIENTATION, 0x403, 7, 0
+0x6f42, 0x7474, 0x6d6f, "\000" 
+    IDC_COMBO_ORIENTATION, 0x403, 5, 0
+0x654c, 0x7466, "\000" 
+    IDC_COMBO_ORIENTATION, 0x403, 6, 0
+0x6952, 0x6867, 0x0074, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// 24
+//
+
+IDR_MANIFEST            24      DISCARDABLE     "res\\manifest.xml"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About Prof-UIS Controls ..."
+    ID_COLOR_BTN_HEIGHT     "Button height selector\nButton height selector"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "ProfUIS controls"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "About ...\nAbout ..."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PANE_PROGRESS       " "
+    IDS_PANE_ANIMATE        " "
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PANE_LABEL          " "
+    IDC_THEME_2000          "Switch to Microsoft Office 2000 theme\nSwitch to Microsoft Office 2000 theme"
+    IDC_THEME_XP            "Switch to Microsoft Office XP theme\nSwitch to Microsoft Office XP theme"
+    IDC_THEME_2003          "Switch to Microsoft Office 2003 theme\nSwitch to Microsoft Office 2003 theme"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PANE_TEXT           "Sample text"
+    IDS_PANE_EDIT           "         "
+    IDS_PANE_SLIDER_CTRL    "  "
+    IDS_PANE_BUTTON         " "
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\ProfUIS_Controls.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

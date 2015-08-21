@@ -1,0 +1,46 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: AGmagicIPUI - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\PHUOCL~1\LOCALS~1\Temp\RSP232.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "_MBCS" /D "JAS_WIN_MSVC_BUILD" /FR"../../../output/" /Fo"../../../output/" /Fd"../../../output/" /FD /GZ /c 
+"D:\temp\ag\agmagic\server\src\image\ipui\project\AGmagicIPUI_prj.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\PHUOCL~1\LOCALS~1\Temp\RSP232.tmp" 
+Creating temporary file "C:\DOCUME~1\PHUOCL~1\LOCALS~1\Temp\RSP233.tmp" with contents
+[
+/nologo /subsystem:windows /dll /incremental:yes /pdb:"../../../output/AGmagicIPUI.pdb" /debug /machine:I386 /out:"../../../../../../bin/AGmagicIPUI.dll" /implib:"../../../output/AGmagicIPUI.lib" /pdbtype:sept 
+\temp\ag\agmagic\server\src\image\ipui\output\AGimageRC.res
+\temp\ag\agmagic\server\src\image\ipui\output\AGimageUI2.obj
+\temp\ag\agmagic\server\src\image\ipui\output\AGimageUI.obj
+\temp\ag\agmagic\server\src\image\ipui\output\AGmagicIPUI_prj.obj
+\temp\ag\agmagic\server\src\image\ip\output\AGmagicIP.lib
+\temp\ag\agmagic\server\src\common\lib\agutil\output\AGmagicUtil.lib
+\temp\ag\agmagic\server\src\common\lib\agutilui\output\AGmagicUtilUI.lib
+]
+Creating command line "link.exe @C:\DOCUME~1\PHUOCL~1\LOCALS~1\Temp\RSP233.tmp"
+<h3>Output Window</h3>
+Compiling...
+AGmagicIPUI_prj.cpp
+Automatically linking with AGmagicUtil library
+Automatically linking with AGmagicUtilUI library
+Automatically linking with AGmagicIP library
+Automatically linking with wininet library
+Linking...
+   Creating library ../../../output/AGmagicIPUI.lib and object ../../../output/AGmagicIPUI.exp
+Creating command line "bscmake.exe /nologo /o"../../../output/AGmagicIPUI_VC600.bsc"  \temp\ag\agmagic\server\src\image\ipui\output\AGimageUI2.sbr \temp\ag\agmagic\server\src\image\ipui\output\AGimageUI.sbr \temp\ag\agmagic\server\src\image\ipui\output\AGmagicIPUI_prj.sbr"
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+AGmagicIPUI.dll - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

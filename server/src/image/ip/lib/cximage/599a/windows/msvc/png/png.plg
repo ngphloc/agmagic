@@ -1,0 +1,101 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: png - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP90.tmp" with contents
+[
+/nologo /MDd /W3 /GX /ZI /Od /I "..\zlib" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /D "_AFXDLL" /FR"Debug/" /Fo"Debug/" /Fd"Debug/" /FD /c 
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\png\png.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\png\pngerror.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\png\pngget.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\png\pngmem.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\png\pngpread.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\png\pngread.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\png\pngrio.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\png\pngrtran.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\png\pngrutil.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\png\pngset.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\png\pngtrans.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\png\pngvcrd.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\png\pngwio.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\png\pngwrite.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\png\pngwtran.c"
+"D:\part-001\software-me\ag\agmagic\server\src\image\ip\lib\cximage\599a\windows\msvc\png\pngwutil.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP90.tmp" 
+<h3>Output Window</h3>
+Compiling...
+png.c
+pngerror.c
+pngget.c
+pngmem.c
+pngpread.c
+pngread.c
+pngrio.c
+pngrtran.c
+pngrutil.c
+pngset.c
+pngtrans.c
+pngvcrd.c
+pngwio.c
+pngwrite.c
+pngwtran.c
+pngwutil.c
+Generating Code...
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP91.tmp" with contents
+[
+/nologo /out:"Debug\png.lib" 
+".\Debug\png.obj"
+".\Debug\pngerror.obj"
+".\Debug\pngget.obj"
+".\Debug\pngmem.obj"
+".\Debug\pngpread.obj"
+".\Debug\pngread.obj"
+".\Debug\pngrio.obj"
+".\Debug\pngrtran.obj"
+".\Debug\pngrutil.obj"
+".\Debug\pngset.obj"
+".\Debug\pngtrans.obj"
+".\Debug\pngvcrd.obj"
+".\Debug\pngwio.obj"
+".\Debug\pngwrite.obj"
+".\Debug\pngwtran.obj"
+".\Debug\pngwutil.obj"
+]
+Creating command line "link.exe -lib @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP91.tmp"
+<h3>Output Window</h3>
+Creating library...
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP92.tmp" with contents
+[
+/nologo /o"Debug/png.bsc" 
+".\Debug\png.sbr"
+".\Debug\pngerror.sbr"
+".\Debug\pngget.sbr"
+".\Debug\pngmem.sbr"
+".\Debug\pngpread.sbr"
+".\Debug\pngread.sbr"
+".\Debug\pngrio.sbr"
+".\Debug\pngrtran.sbr"
+".\Debug\pngrutil.sbr"
+".\Debug\pngset.sbr"
+".\Debug\pngtrans.sbr"
+".\Debug\pngvcrd.sbr"
+".\Debug\pngwio.sbr"
+".\Debug\pngwrite.sbr"
+".\Debug\pngwtran.sbr"
+".\Debug\pngwutil.sbr"]
+Creating command line "bscmake.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP92.tmp"
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+png.lib - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

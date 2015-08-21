@@ -1,0 +1,970 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0077)http://www.codeguru.com/Cpp/controls/treeview/misc-advanced/article.php/c735/ -->
+<HTML><HEAD><TITLE>CodeGuru: Adding Advanced Checkbox</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META content="Adding Advanced Checkbox By Zafir Anjum." name=description>
+<META content="Zafir Anjum" name=Author>
+<META content="" name=keywords>
+<META content=19980806 name=date><LINK 
+href="AddingAdvancedCheckbox_files/text.css" type=text/css rel=stylesheet>
+<SCRIPT language=JavaScript type=text/javascript>
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v3.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function HM_doPreload() { // dmr
+   MM_preloadImages('/img/visualc-but-on.gif',
+                    '/img/net-but-on.gif',
+                    '/img/vb-but-on.gif',
+                    '/img/forums-but-on.gif',
+                    '/img/reviews-but-on.gif',
+                    '/img/directory-but-on.gif',
+                    '/img/submit-but-on.gif',
+                    '/img/announcements-but-on.gif',
+                    '/img/guru-but-on.gif',
+                    '/img/guest-but-on.gif',
+                    '/img/about-but-on.gif',
+                    '/img/faq-but-on.gif')
+}
+window.onload=HM_doPreload;
+//-->
+</SCRIPT>
+
+<META content="MSHTML 6.00.3790.0" name=GENERATOR></HEAD>
+<BODY bgColor=#666666 leftMargin=0 topMargin=4 MARGINHEIGHT="4" MARGINWIDTH="0">
+<SCRIPT language=JavaScript1.2 src="AddingAdvancedCheckbox_files/HM_Loader.js" 
+type=text/javascript></SCRIPT>
+<MAP name=tabs_Map><AREA shape=RECT alt=Earthwebnews coords=709,0,765,17 
+  href="http://www.earthwebnews.com/"><AREA shape=RECT 
+  alt="Software Development" coords=559,0,707,17 
+  href="http://softwaredev.earthweb.com/"><AREA shape=RECT 
+  alt="Hardware and Systems" coords=423,0,558,17 
+  href="http://hardware.earthweb.com/"><AREA shape=RECT alt="Web Developer" 
+  coords=303,0,422,17 href="http://webdeveloper.earthweb.com/"><AREA shape=RECT 
+  alt="Networking and Communications" coords=106,0,301,17 
+  href="http://networking.earthweb.com/"><AREA shape=RECT alt="IT Management" 
+  coords=0,0,104,17 href="http://itmanagement.earthweb.com/"></MAP>
+<TABLE cellSpacing=0 cellPadding=4 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD align=middle><A 
+      href="http://www.codeguru.com/RealMedia/ads/click_lx.cgi/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c735/i/94036155/house_ribbon/OasDefault/DevX_IBM_Cloudscape_Portal_1w/cscape_ipod750x25-static.gif/63626132326333313431326165353530" 
+      target=_top><IMG alt="" 
+      src="AddingAdvancedCheckbox_files/cscape_ipod750x25-static.gif" 
+      border=0></A><IMG height=1 
+      src="AddingAdvancedCheckbox_files/63626132326333313431326165353530.gif" 
+      width=1 border=0></TD></TR>
+  <TR>
+    <TD align=middle><IMG height=100 alt="" hspace=0 
+      src="AddingAdvancedCheckbox_files/sp.gif" width=1 align=left border=0><A 
+      href="http://www.codeguru.com/RealMedia/ads/click_lx.cgi/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c735/i/2093372226/468x60-1/OasDefault/DevX_IBM_Cloudscape_Portal_1l/cscape_new728x90.gif/63626132326333313431326165353530" 
+      target=_top><IMG alt="" 
+      src="AddingAdvancedCheckbox_files/cscape_new728x90.gif" border=0></A><IMG 
+      height=1 
+      src="D:\temp\AdvancedCheckboxTree\doc\AddingAdvancedCheckbox_files\63626132326333313431326165353530(1).gif" 
+      width=1 border=0></TD></TR></TBODY></TABLE><!--Top Navigation-->
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD>
+      <TABLE cellSpacing=0 cellPadding=0 width=780 border=0>
+        <TBODY>
+        <TR>
+          <TD><IMG height=17 alt="Earthweb Tabs" hspace=0 
+            src="AddingAdvancedCheckbox_files/tabs.gif" width=780 
+            useMap=#tabs_Map border=0></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD background=AddingAdvancedCheckbox_files/top-bg.gif>
+      <TABLE cellSpacing=0 cellPadding=0 width=780 border=0>
+        <TBODY>
+        <TR>
+          <TD width=272><A href="http://www.codeguru.com/"><IMG height=82 
+            alt=CodeGuru hspace=0 src="AddingAdvancedCheckbox_files/logo.gif" 
+            width=272 border=0></A></TD>
+          <TD background=AddingAdvancedCheckbox_files/top-bg-2.gif>
+            <TABLE cellSpacing=0 cellPadding=0 width=508 
+            background=AddingAdvancedCheckbox_files/c735.htm border=0>
+              <TBODY>
+              <TR>
+                <TD width=508 colSpan=2><IMG height=1 alt="" hspace=0 
+                  src="AddingAdvancedCheckbox_files/sp.gif" width=508 
+                border=0></TD></TR>
+              <TR>
+                <FORM name=myform 
+                action=http://search.internet.com/www.codeguru.com method=post>
+                <TD width=1><IMG height=54 alt="" hspace=0 
+                  src="AddingAdvancedCheckbox_files/sp.gif" width=1 border=0></TD>
+                <TD><A href="http://www.earthweb.com/"><IMG height=20 
+                  alt=Earthweb src="AddingAdvancedCheckbox_files/eweb.gif" 
+                  width=135 align=right border=0></A> <INPUT type=hidden 
+                  name=starget> <INPUT type=hidden name=IC_QueryDatabase> <IMG 
+                  height=23 alt=Search 
+                  src="AddingAdvancedCheckbox_files/search.gif" width=50 
+                  align=absMiddle border=0> <SELECT 
+                  style="FONT-WEIGHT: normal; FONT-SIZE: 9pt; COLOR: #000000; FONT-FAMILY: verdana, arial, sans-serif; BACKGROUND-COLOR: #ffffff" 
+                  name=searchsite> <OPTION value=CodeGuru 
+                    selected>CodeGuru.com</OPTION> <OPTION 
+                    value=CodeGuru-Articles>---Articles</OPTION> <OPTION 
+                    value=CodeGuru-Comments>---Comments</OPTION> <OPTION 
+                    value=CodeGuru-Forums>---Forums</OPTION> <OPTION 
+                    value=Earthweb>Earthweb</OPTION></SELECT> <INPUT size=10 
+                  name=IC_QueryText> <INPUT type=image height=23 alt=Go width=40 
+                  src="AddingAdvancedCheckbox_files/go.gif" align=absMiddle 
+                  value=Go! border=0 name=submit> </TD></TR></FORM>
+              <TR>
+                <TD width=1><IMG height=27 alt="" hspace=0 
+                  src="AddingAdvancedCheckbox_files/sp.gif" width=1 border=0></TD>
+                <TD align=middle><IMG height=14 hspace=0 
+                  src="AddingAdvancedCheckbox_files/eweb-nav.gif" width=330 
+                  useMap=#eweb_nav_Map border=0> <MAP name=eweb_nav_Map><AREA 
+                    shape=RECT alt=Forums coords=253,0,330,14 
+                    href="http://www.codeguru.com/forum"><AREA shape=RECT 
+                    alt=Wireless coords=185,0,244,14 
+                    href="http://www.developer.com/ws/"><AREA shape=RECT 
+                    alt=Jars coords=145,0,176,14 
+                    href="http://www.jars.com/"><AREA shape=RECT alt=Gamelan 
+                    coords=77,0,136,14 
+                    href="http://www.developer.com/java/"><AREA shape=RECT 
+                    alt=Developer.com coords=0,0,69,14 
+                    href="http://www.developer.com/"></MAP></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><!--End Top-->
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top width="1%" 
+    background=AddingAdvancedCheckbox_files/leftnav-bg.gif><!--Left Navigation-->
+      <TABLE cellSpacing=0 cellPadding=0 width=146 bgColor=#999999 border=0>
+        <TBODY>
+        <TR>
+          <TD><A href="http://www.codeguru.com/"><IMG height=30 
+            alt="CodeGuru Navigation" 
+            src="AddingAdvancedCheckbox_files/leftnav-top.gif" width=146 
+            border=0></A></TD></TR>
+        <TR>
+          <TD><A onmouseover="HM_f_PopUp('HM_Menu1',event)" 
+            onmouseout="HM_f_PopDown('HM_Menu1')" 
+            href="http://www.codeguru.com/Cpp"><IMG height=25 
+            alt="Visual C++ / C++" hspace=0 
+            src="AddingAdvancedCheckbox_files/visualc-but-off.gif" width=146 
+            border=0 name=visualc></A></TD></TR>
+        <TR>
+          <TD><A onmouseover="HM_f_PopUp('HM_Menu2',event)" 
+            onmouseout="HM_f_PopDown('HM_Menu2')" 
+            href="http://www.codeguru.com/Csharp"><IMG height=25 alt=".Net / C#" 
+            hspace=0 src="AddingAdvancedCheckbox_files/net-but-off.gif" 
+            width=146 border=0 name=net></A></TD></TR>
+        <TR>
+          <TD><A onmouseover="HM_f_PopUp('HM_Menu3',event)" 
+            onmouseout="HM_f_PopDown('HM_Menu3')" 
+            href="http://www.codeguru.com/vb"><IMG height=25 alt="Visual Basic" 
+            hspace=0 src="AddingAdvancedCheckbox_files/vb-but-off.gif" width=146 
+            border=0 name=vb></A></TD></TR>
+        <TR>
+          <TD><A 
+            onmouseover="MM_swapImage('submit','','/img/submit-but-on.gif',1)" 
+            onmouseout=MM_swapImgRestore() 
+            href="http://www.codeguru.com/edit-article.php"><IMG height=25 
+            alt="Submit an Article" hspace=0 
+            src="AddingAdvancedCheckbox_files/submit-but-off.gif" width=146 
+            border=0 name=submit></A></TD></TR>
+        <TR>
+          <TD><A 
+            onmouseover="MM_swapImage('forums','','/img/forums-but-on.gif',1)" 
+            onmouseout=MM_swapImgRestore() 
+            href="http://www.codeguru.com/forum"><IMG height=25 
+            alt="Discussion Forums" hspace=0 
+            src="AddingAdvancedCheckbox_files/forums-but-off.gif" width=146 
+            border=0 name=forums></A></TD></TR>
+        <TR>
+          <TD><A 
+            onmouseover="MM_swapImage('directory','','/img/directory-but-on.gif',1)" 
+            onmouseout=MM_swapImgRestore() 
+            href="http://www.codeguru.com/resources"><IMG height=25 
+            alt="Resource Directory" hspace=0 
+            src="AddingAdvancedCheckbox_files/directory-but-off.gif" width=146 
+            border=0 name=directory></A></TD></TR>
+        <TR>
+          <TD><A 
+            onmouseover="MM_swapImage('announcements','','/img/announcements-but-on.gif',1)" 
+            onmouseout=MM_swapImgRestore() 
+            href="http://www.codeguru.com/announcements"><IMG height=25 
+            alt=Announcements hspace=0 
+            src="AddingAdvancedCheckbox_files/announcements-but-off.gif" 
+            width=146 border=0 name=announcements></A></TD></TR>
+        <TR>
+          <TD><A 
+            onmouseover="MM_swapImage('booklist','','/img/booklist-but-on.gif',1)" 
+            onmouseout=MM_swapImgRestore() 
+            href="http://extra.codeguru.com/bookList/booklist.asp"><IMG 
+            height=25 alt="Book List" hspace=0 
+            src="AddingAdvancedCheckbox_files/booklist-but-off.gif" width=146 
+            border=0 name=booklist></A></TD></TR>
+        <TR>
+          <TD><A 
+            onmouseover="MM_swapImage('reviews','','/img/reviews-but-on.gif',1)" 
+            onmouseout=MM_swapImgRestore() 
+            href="http://extra.codeguru.com/default.asp"><IMG height=25 
+            alt="Book Reviews" hspace=0 
+            src="AddingAdvancedCheckbox_files/reviews-but-off.gif" width=146 
+            border=0 name=reviews></A></TD></TR>
+        <TR>
+          <TD><A 
+            onmouseover="MM_swapImage('guru','','/img/guru-but-on.gif',1)" 
+            onmouseout=MM_swapImgRestore() 
+            href="http://www.codeguru.com/gurus.php"><IMG height=25 
+            alt="Guru Lists" hspace=0 
+            src="AddingAdvancedCheckbox_files/guru-but-off.gif" width=146 
+            border=0 name=guru></A></TD></TR>
+        <TR>
+          <TD><A 
+            onmouseover="MM_swapImage('guest','','/img/guest-but-on.gif',1)" 
+            onmouseout=MM_swapImgRestore() 
+            href="http://www.theguestbook.com/read.php/608196"><IMG height=25 
+            alt="Guest Book" hspace=0 
+            src="AddingAdvancedCheckbox_files/guest-but-off.gif" width=146 
+            border=0 name=guest></A></TD></TR>
+        <TR>
+          <TD><A 
+            onmouseover="MM_swapImage('about','','/img/about-but-on.gif',1)" 
+            onmouseout=MM_swapImgRestore() 
+            href="http://www.codeguru.com/about.php"><IMG height=25 
+            alt="About Us" hspace=0 
+            src="AddingAdvancedCheckbox_files/about-but-off.gif" width=146 
+            border=0 name=about></A></TD></TR>
+        <TR>
+          <TD><A onmouseover="MM_swapImage('faq','','/img/faq-but-on.gif',1)" 
+            onmouseout=MM_swapImgRestore() 
+            href="http://www.codeguru.com/faq.php"><IMG height=25 alt=FAQs 
+            hspace=0 src="AddingAdvancedCheckbox_files/faq-but-off.gif" 
+            width=146 border=0 name=faq></A></TD></TR>
+        <TR>
+          <TD><A 
+            onmouseover="MM_swapImage('sitemap','','/img/map-but-on.gif',1)" 
+            onmouseout=MM_swapImgRestore() 
+            href="http://www.codeguru.com/sitemap.php"><IMG height=25 
+            alt="Site Map" hspace=0 
+            src="AddingAdvancedCheckbox_files/map-but-off.gif" width=146 
+            border=0 name=sitemap></A></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=3 width=146 bgColor=#053061 border=0>
+        <TBODY>
+        <TR>
+          <FORM action=/login.php method=post><INPUT type=hidden value=login 
+          name=action> <INPUT type=hidden 
+          value=/Cpp/controls/treeview/misc-advanced/article.php/c735/ name=url> 
+
+          <TD align=middle colSpan=2><IMG height=13 alt="Member Sign In" 
+            src="AddingAdvancedCheckbox_files/member-top.gif" width=113 vspace=5 
+            border=0> </TD></TR>
+        <TR>
+          <TD align=right><SPAN class=bodycopy><FONT color=#ffffff>User 
+            ID:</FONT></SPAN></TD>
+          <TD><INPUT style="WIDTH: 60px" size=7 name=username></TD></TR>
+        <TR>
+          <TD align=right><SPAN class=bodycopy><FONT 
+            color=#ffffff>Password:</FONT></SPAN></TD>
+          <TD><INPUT style="WIDTH: 60px" type=password size=7 
+        name=password></TD></TR>
+        <TR>
+          <TD align=middle colSpan=2><SPAN class=bodycopy><FONT 
+            color=#ffffff>Remember Me:</FONT></SPAN> <INPUT type=checkbox 
+            value=1 name=perm></TD></TR>
+        <TR>
+          <TD align=middle colSpan=2><INPUT type=image height=23 width=73 
+            src="AddingAdvancedCheckbox_files/signin-blue.gif" align=absMiddle 
+            border=0 name=member></TD></TR></FORM>
+        <TR>
+          <TD align=middle colSpan=2><A class=moreinfo 
+            href="http://www.codeguru.com/forgotpw.php">Forgot 
+        Password?</A></TD></TR>
+        <TR>
+          <TD align=middle colSpan=2><A class=moreinfo 
+            href="http://www.codeguru.com/register.php?url=/Cpp/controls/treeview/misc-advanced/article.php/c735/">Not 
+            a member?<BR>Click here for more information and to 
+        register.</A></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width=146 bgColor=#999999 border=0>
+        <TBODY>
+        <TR>
+          <TD bgColor=#000000><IMG height=1 alt="" 
+            src="AddingAdvancedCheckbox_files/sp.gif" width=1 border=0></TD></TR>
+        <TR>
+          <TD bgColor=#999999><IMG height=1 alt="" 
+            src="AddingAdvancedCheckbox_files/sp.gif" width=1 
+        border=0></TD></TR></TBODY></TABLE><IMG height=10 alt="" 
+      src="AddingAdvancedCheckbox_files/sp.gif" width=151 border=0> 
+      <TABLE cellSpacing=0 cellPadding=0 width=146 border=0>
+        <TBODY>
+        <TR>
+          <TD align=middle><A 
+            href="http://www.codeguru.com/RealMedia/ads/click_lx.cgi/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c735/i/1649761893/125x125-1/OasDefault/DevX_IBM_Cloudscape_Portal_1n/cloudscape_new125x125.gif/63626132326333313431326165353530" 
+            target=_top><IMG alt="" 
+            src="AddingAdvancedCheckbox_files/cloudscape_new125x125.gif" 
+            border=0></A><IMG height=1 
+            src="D:\temp\AdvancedCheckboxTree\doc\AddingAdvancedCheckbox_files\63626132326333313431326165353530(2).gif" 
+            width=1 border=0> 
+            <P><A href="http://www.jobs.internet.com/"><IMG height=35 
+            alt=jobs.internet.com src="AddingAdvancedCheckbox_files/jobs.gif" 
+            width=120 border=0></A> 
+            <P>
+            <TABLE cellSpacing=0 cellPadding=3 width="100%" 
+            background=AddingAdvancedCheckbox_files/c735.htm border=0>
+              <TBODY>
+              <TR>
+                <TD class=bodycopy align=middle bgColor=#000000><FONT 
+                  color=#ffffff><B>internet.commerce</B></FONT></TD></TR>
+              <TR>
+                <TD class=bodycopy align=left bgColor=#cccccc><A 
+                  href="http://www.internet.com/partners/">Partners &amp; 
+                  Affiliates</A><BR><A href="http://www.databazaar.com/">Ink 
+                  Cartridges</A> <IMG height=1 
+                  src="D:\temp\AdvancedCheckboxTree\doc\AddingAdvancedCheckbox_files\63626132326333313431326165353530(3).gif" 
+                  width=1 border=0><BR><A 
+                  href="http://www.aim-center.com/">Cheap Auto Insurance</A> 
+                  <IMG height=1 
+                  src="D:\temp\AdvancedCheckboxTree\doc\AddingAdvancedCheckbox_files\63626132326333313431326165353530(4).gif" 
+                  width=1 border=0><BR><A 
+                  href="http://www.getafreelancer.com/">Custom Web Design</A> 
+                  <IMG height=1 
+                  src="D:\temp\AdvancedCheckboxTree\doc\AddingAdvancedCheckbox_files\63626132326333313431326165353530(5).gif" 
+                  width=1 border=0><BR><A href="http://www.fetchbook.info/">Used 
+                  Books</A> <IMG height=1 
+                  src="D:\temp\AdvancedCheckboxTree\doc\AddingAdvancedCheckbox_files\63626132326333313431326165353530(6).gif" 
+                  width=1 border=0><BR><A 
+                  href="http://shopping.yahoo.com/b:Cell%20Phones:89015929">Cell 
+                  Phone Plans</A> <IMG height=1 
+                  src="D:\temp\AdvancedCheckboxTree\doc\AddingAdvancedCheckbox_files\63626132326333313431326165353530(7).gif" 
+                  width=1 border=0><BR><A 
+                  href="http://www.reservetravel.com/">Discount Hotel Rooms</A> 
+                  <IMG height=1 
+                  src="D:\temp\AdvancedCheckboxTree\doc\AddingAdvancedCheckbox_files\63626132326333313431326165353530(8).gif" 
+                  width=1 border=0><BR><A 
+                  href="http://www.memoryxflash.com/">Flash Memory Card</A> <IMG 
+                  height=1 
+                  src="D:\temp\AdvancedCheckboxTree\doc\AddingAdvancedCheckbox_files\63626132326333313431326165353530(9).gif" 
+                  width=1 border=0><BR><A href="http://www.voip.net/">Voip - 
+                  Voice over IP</A> <IMG height=1 
+                  src="D:\temp\AdvancedCheckboxTree\doc\AddingAdvancedCheckbox_files\63626132326333313431326165353530(10).gif" 
+                  width=1 border=0><BR><A 
+                  href="http://www.marketingfind.com/">Internet Marketing</A> 
+                  <IMG height=1 
+                  src="D:\temp\AdvancedCheckboxTree\doc\AddingAdvancedCheckbox_files\63626132326333313431326165353530(11).gif" 
+                  width=1 border=0><BR><A 
+                  href="http://www.interland.com/website">Website Design</A> 
+                  <IMG height=1 
+                  src="D:\temp\AdvancedCheckboxTree\doc\AddingAdvancedCheckbox_files\63626132326333313431326165353530(12).gif" 
+                  width=1 border=0><BR><A 
+                  href="http://www.epromos.com/">Promotional Gifts</A> <IMG 
+                  height=1 
+                  src="D:\temp\AdvancedCheckboxTree\doc\AddingAdvancedCheckbox_files\63626132326333313431326165353530(13).gif" 
+                  width=1 border=0><BR><A href="http://www.dotster.com/">Web 
+                  Hosting</A> <IMG height=1 
+                  src="D:\temp\AdvancedCheckboxTree\doc\AddingAdvancedCheckbox_files\63626132326333313431326165353530(14).gif" 
+                  width=1 border=0><BR><A 
+                  href="http://www.codeguru.com/RealMedia/ads/click_lx.cgi/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c735/i/727065866/cp13/default/empty.gif/63626132326333313431326165353530" 
+                  target=_top><IMG height=2 alt="" 
+                  src="AddingAdvancedCheckbox_files/empty.gif" width=2 
+                  border=0></A><IMG height=1 
+                  src="D:\temp\AdvancedCheckboxTree\doc\AddingAdvancedCheckbox_files\63626132326333313431326165353530(15).gif" 
+                  width=1 
+      border=0><BR></TD></TR></TBODY></TABLE></P></TD></TR></TBODY></TABLE><BR><BR>
+      <TABLE cellPadding=4 width=146 bgColor=#053061>
+        <TBODY>
+        <TR>
+          <TD><FONT color=#cccc66><B>RSS Feeds</FONT></B>
+            <P><A 
+            href="http://www.codeguru.com/icom_includes/feeds/codeguru/rss-all.xml"><IMG 
+            height=14 hspace=5 src="AddingAdvancedCheckbox_files/xml.gif" 
+            width=36 align=absMiddle border=0><FONT color=#ffffff>All</FONT></A> 
+            <BR><IMG height=2 alt="" src="AddingAdvancedCheckbox_files/sp.gif" 
+            width=1 border=0><BR><A 
+            href="http://www.codeguru.com/icom_includes/feeds/codeguru/rss-cpp.xml"><IMG 
+            height=14 hspace=5 src="AddingAdvancedCheckbox_files/xml.gif" 
+            width=36 align=absMiddle border=0><FONT 
+            color=#ffffff>VC++/C++</FONT></A> <BR><IMG height=2 alt="" 
+            src="AddingAdvancedCheckbox_files/sp.gif" width=1 border=0><BR><A 
+            href="http://www.codeguru.com/icom_includes/feeds/codeguru/rss-csharp.xml"><IMG 
+            height=14 hspace=5 src="AddingAdvancedCheckbox_files/xml.gif" 
+            width=36 align=absMiddle border=0><FONT 
+            color=#ffffff>.NET/C#</FONT></A> <BR><IMG height=2 alt="" 
+            src="AddingAdvancedCheckbox_files/sp.gif" width=1 border=0><BR><A 
+            href="http://www.codeguru.com/icom_includes/feeds/codeguru/rss-vb.xml"><IMG 
+            height=14 hspace=5 src="AddingAdvancedCheckbox_files/xml.gif" 
+            width=36 align=absMiddle border=0><FONT color=#ffffff>VB</FONT></A> 
+            </P></TD></TR></TBODY></TABLE></TD>
+    <TD vAlign=top width="99%" background=AddingAdvancedCheckbox_files/c735.htm 
+    bgColor=#ffffff><IMG height=1 alt="" 
+      src="AddingAdvancedCheckbox_files/sp.gif" width=629 border=0> 
+      <TABLE cellSpacing=0 cellPadding=4 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD><SPAN class=bodycopy><B><A 
+            href="http://www.codeguru.com/">Home</A></B> &gt;&gt; <B><A 
+            href="http://www.codeguru.com/Cpp/">Visual C++ / C++</A></B> 
+            &gt;&gt; <B><A 
+            href="http://www.codeguru.com/Cpp/controls/">Controls</A></B> 
+            &gt;&gt; <B><A 
+            href="http://www.codeguru.com/Cpp/controls/treeview/">Treeview 
+            Control</A></B> &gt;&gt; <B><A 
+            href="http://www.codeguru.com/Cpp/controls/treeview/misc-advanced/">Misc 
+            - Advanced</A></B><BR><BR><!--content_start-->
+            <TABLE cellSpacing=0 cellPadding=1 bgColor=#000000 border=0>
+              <TBODY>
+              <TR>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=1 bgColor=#cccccc border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><FONT face="Verdana, Arial, Helvetica, sans-serif" 
+                        size=-2><A 
+                        href="http://www.codeguru.com/RealMedia/ads/click_lx.cgi/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c735/i/335816992/ciu/OasDefault/Oracle_BPEL_LeadGen_1b/DownloadOracleBPEL.html/63626132326333313431326165353530"><B>Download 
+                        Oracle BPEL Process Manager for Free.</B> Highlights 
+                        include: application server independence, quick 
+                        download, ramp-up, intuitive design-time (JDeveloper or 
+                        Eclipse), dual-source/visual editing, in-flight 
+                        monitoring, and more. 
+              </A></FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><IMG 
+            height=1 
+            src="D:\temp\AdvancedCheckboxTree\doc\AddingAdvancedCheckbox_files\63626132326333313431326165353530(16).gif" 
+            width=1><BR><FONT class=sectionhead>Adding Advanced 
+            Checkbox</FONT><BR><B>Rating:</B> <FONT 
+            color=#990000>none</FONT><BR><BR>
+            <TABLE cellSpacing=0 cellPadding=5 border=0>
+              <TBODY>
+              <TR>
+                <TD align=right></TD>
+                <TD class=bodycopy><B>Zafir Anjum</B> (<A 
+                  href="http://www.codeguru.com/member.php/417/">view 
+                  profile</A>)<BR>August 6, 1998 </TD></TR></TBODY></TABLE>
+            <P><SPAN class=bodycopy>
+            <P>
+            <CENTER>
+            <H3>
+            <HR>
+            </H3></CENTER>In the previous topic we covered how to implement a 
+            simple checkbox for each item in the tree control. In this topic we 
+            cover a slightly different implementation. The checkbox for each 
+            item will indicate whether the item is checked or not and it will 
+            also indicate whether any of its descendant is checked or not. The 
+            main reason for visually indicating whether a descendant is checked 
+            is that it is easier for the user to determine if there are checked 
+            items in the outline and if there is a checked item, it is easy to 
+            navigate to it. <BR>(continued)
+            <P>
+            <CENTER><A 
+            href="http://www.codeguru.com/RealMedia/ads/click_lx.cgi/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c735/i/855104430/336x280/default/empty.gif/63626132326333313431326165353530" 
+            target=_top><IMG height=2 alt="" 
+            src="AddingAdvancedCheckbox_files/empty.gif" width=2 
+            border=0></A><IMG height=1 
+            src="D:\temp\AdvancedCheckboxTree\doc\AddingAdvancedCheckbox_files\63626132326333313431326165353530(17).gif" 
+            width=1 border=0></CENTER>
+            <P><IMG height=131 
+            src="AddingAdvancedCheckbox_files/advanced_check.gif" width=213 
+            border=1></P>
+            <H4>Step 1: Create bitmap with checkbox images</H4>Create a bitmap 
+            that will provide the images needed for the checkbox. The images in 
+            the bitmap below are 13x13 pixels. The first image is blank since 
+            this bitmap is going to be used for the state image list. The next 
+            image indicates an unchecked item. The third image indicates a 
+            checked item. The fourth image indicates an unchecked item but 
+            conveys that at least one of the descendant item is checked. The 
+            fifth image indicates a checked item and also indicates that at 
+            least one of the descendant item is checked. 
+            <P><IMG height=15 
+            src="AddingAdvancedCheckbox_files/state_images.gif" width=75> <BR>
+            <H4>Step 2: Initialize the state image list</H4>Setting up state 
+            images has been covered in a previous topic. If the tree control 
+            class has a member variable m_imageState then here's how to set the 
+            image list. <PRE><TT><FONT color=#990000><PRE><TT><PRE><TT><PRE><TT><PRE><TT><PRE><TT><PRE><TT><PRE><TT><PRE><TT><PRE><TT>
+	m_tree.m_imageState.Create( IDB_STATE, 13, 1, RGB(255,255,255) );
+	m_tree.SetImageList( &amp;(m_tree.m_imageState), TVSIL_STATE );
+</TT></PRE></TT></PRE></TT></PRE></TT></PRE></TT></PRE></TT></PRE></TT></PRE></TT></PRE></TT></PRE></FONT></TT></PRE><BR>
+            <H4>Step 3: Insert items with the checkbox as a state image</H4>If 
+            you are using TV_INSERTSTRUCT to insert an item into the tree 
+            control, then specify the state and the stateMask in the TV_ITEM 
+            member. The index of the state image is specified by using the macro 
+            INDEXTOSTATEIMAGEMASK. You can also use the SetItemState() function. 
+
+            <P><PRE><TT><FONT color=#990000><PRE><TT><PRE><TT><PRE><TT><PRE><TT><PRE><TT><PRE><TT><PRE><TT><PRE><TT><PRE><TT>
+SetItemState( hItem, INDEXTOSTATEIMAGEMASK(1), TVIS_STATEIMAGEMASK );
+</TT></PRE></TT></PRE></TT></PRE></TT></PRE></TT></PRE></TT></PRE></TT></PRE></TT></PRE></TT></PRE></FONT></TT></PRE><BR>
+            <H4>Step 4: Add enumeration for check operation and state</H4>Since 
+            we are dealing with four different check states, it makes the code 
+            more readable if we define an enumeration for the different states. 
+            We also define an enumeration to list the different operations on 
+            the check state. <PRE><TT><FONT color=#990000><PRE><TT><PRE><TT><PRE><TT><PRE><TT><PRE><TT><PRE><TT><PRE><TT><PRE><TT><PRE><TT>
+<FONT color=#009900>// Attributes</FONT>
+<FONT color=#0000ff><SPAN class=codeKeyword>public</SPAN></FONT>:
+	<FONT color=#0000ff><SPAN class=codeKeyword>enum</SPAN></FONT> CheckState{ NOSTATE = 0, UNCHECKED, CHECKED, CHILD_CHECKED, 
+		SELF_AND_CHILD_CHECKED };
+	<FONT color=#0000ff><SPAN class=codeKeyword>enum</SPAN></FONT> CheckType{ CHECK, UNCHECK, TOGGLE, REFRESH };
+</TT></PRE></TT></PRE></TT></PRE></TT></PRE></TT></PRE></TT></PRE></TT></PRE></TT></PRE></TT></PRE></FONT></TT></PRE><BR>
+            <H4>Step 5: Define SetCheck() function</H4>When we check an item, 
+            the parent items are also updated to indicate that a descendant is 
+            checked. Similarly, when we uncheck an item, the parents item have 
+            to be updated again. We may also need to update the parents state if 
+            an item is moved. 
+            <P>Depending on the value of nCheck, the function determines what 
+            the new state of the item should be. If nCheck is REFRESH, only the 
+            immediate children items are scanned to determine if the checkbox 
+            should be red ( to indicate that a child is checked ). The function 
+            then updates the parent items. <PRE><TT><FONT color=#990000><PRE><TT><PRE><TT><PRE><TT><PRE><TT><PRE><TT><PRE><TT><PRE><TT><PRE><TT><PRE><TT>
+<FONT color=#009900>// SetCheck	- Check, uncheck, toggle or refresh an item</FONT>
+<FONT color=#009900>// hItem	- Item that <SPAN class=codeKeyword>is</SPAN> to be updated</FONT>
+<FONT color=#009900>// nCheck	- CHECK, UNCHECK, TOGGLE OR REFRESH </FONT>
+BOOL CTreeCtrlX::SetCheck( HTREEITEM hItem, CheckType nCheck )
+{
+	<FONT color=#0000ff><SPAN class=codeKeyword>if</SPAN></FONT>( hItem == <SPAN class=codeKeyword>NULL</SPAN> ) 
+		<FONT color=#0000ff><SPAN class=codeKeyword>return</SPAN></FONT> FALSE;
+
+	UINT nState = GetItemState( hItem, TVIS_STATEIMAGEMASK ) &gt;&gt; 12;
+
+	<FONT color=#009900>// Determine the <SPAN class=codeKeyword>new</SPAN> check state</FONT>
+	<FONT color=#0000ff><SPAN class=codeKeyword>if</SPAN></FONT> ( nCheck == CHECK )
+	{
+		<FONT color=#0000ff><SPAN class=codeKeyword>if</SPAN></FONT>( nState == CHECKED || nState == SELF_AND_CHILD_CHECKED )
+			<FONT color=#0000ff><SPAN class=codeKeyword>return</SPAN></FONT> TRUE;
+		<FONT color=#0000ff><SPAN class=codeKeyword>switch</SPAN></FONT>( nState )
+		{
+		<FONT color=#0000ff><SPAN class=codeKeyword>case</SPAN></FONT> UNCHECKED:		nState = CHECKED; <FONT color=#0000ff><SPAN class=codeKeyword>break</SPAN></FONT>;
+		<FONT color=#0000ff><SPAN class=codeKeyword>case</SPAN></FONT> CHILD_CHECKED:		nState = SELF_AND_CHILD_CHECKED; <FONT color=#0000ff><SPAN class=codeKeyword>break</SPAN></FONT>;
+		}
+	}
+	<FONT color=#0000ff><SPAN class=codeKeyword>else</SPAN></FONT> <FONT color=#0000ff><SPAN class=codeKeyword>if</SPAN></FONT>( nCheck == UNCHECK )
+	{
+		<FONT color=#0000ff><SPAN class=codeKeyword>if</SPAN></FONT>( nState == UNCHECKED || nState == CHILD_CHECKED )
+			<FONT color=#0000ff><SPAN class=codeKeyword>return</SPAN></FONT> TRUE;
+		<FONT color=#0000ff><SPAN class=codeKeyword>switch</SPAN></FONT>( nState )
+		{
+		<FONT color=#0000ff><SPAN class=codeKeyword>case</SPAN></FONT> CHECKED:			nState = UNCHECKED; <FONT color=#0000ff><SPAN class=codeKeyword>break</SPAN></FONT>;
+		<FONT color=#0000ff><SPAN class=codeKeyword>case</SPAN></FONT> SELF_AND_CHILD_CHECKED:	nState = CHILD_CHECKED; <FONT color=#0000ff><SPAN class=codeKeyword>break</SPAN></FONT>;
+		}
+	}
+	<FONT color=#0000ff><SPAN class=codeKeyword>else</SPAN></FONT> <FONT color=#0000ff><SPAN class=codeKeyword>if</SPAN></FONT>( nCheck == TOGGLE )
+	{
+		<FONT color=#0000ff><SPAN class=codeKeyword>switch</SPAN></FONT>( nState )
+		{
+		<FONT color=#0000ff><SPAN class=codeKeyword>case</SPAN></FONT> UNCHECKED:		nState = CHECKED; <FONT color=#0000ff><SPAN class=codeKeyword>break</SPAN></FONT>;
+		<FONT color=#0000ff><SPAN class=codeKeyword>case</SPAN></FONT> CHECKED:			nState = UNCHECKED; <FONT color=#0000ff><SPAN class=codeKeyword>break</SPAN></FONT>;
+		<FONT color=#0000ff><SPAN class=codeKeyword>case</SPAN></FONT> CHILD_CHECKED:		nState = SELF_AND_CHILD_CHECKED; <FONT color=#0000ff><SPAN class=codeKeyword>break</SPAN></FONT>;
+		<FONT color=#0000ff><SPAN class=codeKeyword>case</SPAN></FONT> SELF_AND_CHILD_CHECKED:	nState = CHILD_CHECKED; <FONT color=#0000ff><SPAN class=codeKeyword>break</SPAN></FONT>;
+		}
+	}
+	<FONT color=#0000ff><SPAN class=codeKeyword>else</SPAN></FONT> <FONT color=#0000ff><SPAN class=codeKeyword>if</SPAN></FONT>( nCheck == REFRESH )
+	{
+		<FONT color=#009900>// Scan children to determine <SPAN class=codeKeyword>new</SPAN> state</FONT>
+		BOOL bChildSelected = FALSE;
+		HTREEITEM htiChild = GetChildItem( hItem );
+
+		<FONT color=#009900>// Scan children</FONT>
+		<FONT color=#0000ff><SPAN class=codeKeyword>while</SPAN></FONT>( htiChild )
+		{
+			UINT nChildState = GetItemState( htiChild, 
+						TVIS_STATEIMAGEMASK ) &gt;&gt; 12;
+			<FONT color=#0000ff><SPAN class=codeKeyword>if</SPAN></FONT>( nChildState != UNCHECKED &amp;&amp; nChildState != NOSTATE )
+			{
+				bChildSelected = TRUE;
+				<FONT color=#0000ff><SPAN class=codeKeyword>break</SPAN></FONT>;
+			}
+			htiChild = GetNextItem( htiChild, TVGN_NEXT );
+		}
+		<FONT color=#0000ff><SPAN class=codeKeyword>if</SPAN></FONT>( bChildSelected )
+		{
+			<FONT color=#0000ff><SPAN class=codeKeyword>if</SPAN></FONT>( nState == CHECKED ) nState = SELF_AND_CHILD_CHECKED;
+			<FONT color=#0000ff><SPAN class=codeKeyword>else</SPAN></FONT> <FONT color=#0000ff><SPAN class=codeKeyword>if</SPAN></FONT>( nState == UNCHECKED ) nState = CHILD_CHECKED;
+		}
+		<FONT color=#0000ff><SPAN class=codeKeyword>else</SPAN></FONT>
+		{
+			<FONT color=#0000ff><SPAN class=codeKeyword>if</SPAN></FONT>( nState == SELF_AND_CHILD_CHECKED ) nState = CHECKED;
+			<FONT color=#0000ff><SPAN class=codeKeyword>else</SPAN></FONT> <FONT color=#0000ff><SPAN class=codeKeyword>if</SPAN></FONT>( nState == CHILD_CHECKED ) nState = UNCHECKED;
+		}
+	}
+
+	SetItemState( hItem, INDEXTOSTATEIMAGEMASK(nState), 
+					TVIS_STATEIMAGEMASK );
+
+	<FONT color=#0000ff><SPAN class=codeKeyword>if</SPAN></FONT>( nState == CHECKED 
+		|| ( REFRESH 
+			&amp;&amp; (nState == SELF_AND_CHILD_CHECKED 
+				|| nState == CHILD_CHECKED)
+			)
+		)
+	{
+		<FONT color=#009900>// Mark the parents to indicate that a child item <SPAN class=codeKeyword>is</SPAN> selected.</FONT>
+		<FONT color=#009900>// Use checkbox with red border.</FONT>
+		<FONT color=#0000ff><SPAN class=codeKeyword>while</SPAN></FONT>( (hItem = GetParentItem( hItem )) != <SPAN class=codeKeyword>NULL</SPAN> )
+		{
+			nState = GetItemState( hItem, TVIS_STATEIMAGEMASK ) &gt;&gt; 12;
+			<FONT color=#0000ff><SPAN class=codeKeyword>if</SPAN></FONT>( nState == UNCHECKED )
+				SetItemState( hItem, INDEXTOSTATEIMAGEMASK(CHILD_CHECKED), 
+						TVIS_STATEIMAGEMASK );
+			<FONT color=#0000ff><SPAN class=codeKeyword>else</SPAN></FONT> <FONT color=#0000ff><SPAN class=codeKeyword>if</SPAN></FONT> ( nState == CHECKED )
+				SetItemState( hItem,
+					INDEXTOSTATEIMAGEMASK(SELF_AND_CHILD_CHECKED), 
+					TVIS_STATEIMAGEMASK );
+		}
+	}
+	<FONT color=#0000ff><SPAN class=codeKeyword>else</SPAN></FONT> <FONT color=#0000ff><SPAN class=codeKeyword>if</SPAN></FONT>( nState == UNCHECKED )
+	{
+		<FONT color=#009900>// Maybe the parent ( ancestors ) state needs to be adjusted <SPAN class=codeKeyword>if</SPAN></FONT>
+		<FONT color=#009900>// no more children selected.</FONT>
+		<FONT color=#0000ff><SPAN class=codeKeyword>while</SPAN></FONT>( (hItem = GetParentItem( hItem )) != <SPAN class=codeKeyword>NULL</SPAN> )
+		{
+			BOOL bChildSelected = FALSE;
+			HTREEITEM htiChild = GetChildItem( hItem );
+
+			<FONT color=#009900>// Scan children</FONT>
+			<FONT color=#0000ff><SPAN class=codeKeyword>while</SPAN></FONT>( htiChild )
+			{
+				UINT nChildState = GetItemState( htiChild, 
+							TVIS_STATEIMAGEMASK ) &gt;&gt; 12;
+				<FONT color=#0000ff><SPAN class=codeKeyword>if</SPAN></FONT>( nChildState != UNCHECKED &amp;&amp; nChildState != NOSTATE )
+				{
+					bChildSelected = TRUE;
+					<FONT color=#0000ff><SPAN class=codeKeyword>break</SPAN></FONT>;
+				}
+				htiChild = GetNextItem( htiChild, TVGN_NEXT );
+			}
+			<FONT color=#0000ff><SPAN class=codeKeyword>if</SPAN></FONT>( bChildSelected )
+			{
+				<FONT color=#009900>// The parent does not need to be updated</FONT>
+				<FONT color=#009900>// since there are other children still selected</FONT>
+				<FONT color=#0000ff><SPAN class=codeKeyword>break</SPAN></FONT>;
+			}
+			<FONT color=#0000ff><SPAN class=codeKeyword>else</SPAN></FONT>
+			{
+				<FONT color=#009900>// The parent item has no more children selected. </FONT>
+				<FONT color=#009900>// Mark accordingly</FONT>
+				UINT nParentState = GetItemState( hItem, 
+							TVIS_STATEIMAGEMASK ) &gt;&gt; 12;
+				<FONT color=#0000ff><SPAN class=codeKeyword>if</SPAN></FONT>( nParentState == CHILD_CHECKED )
+					SetItemState( hItem, 
+							INDEXTOSTATEIMAGEMASK(UNCHECKED), 
+							TVIS_STATEIMAGEMASK );
+				<FONT color=#0000ff><SPAN class=codeKeyword>else</SPAN></FONT> <FONT color=#0000ff><SPAN class=codeKeyword>if</SPAN></FONT> ( nParentState == SELF_AND_CHILD_CHECKED )
+					SetItemState( hItem, INDEXTOSTATEIMAGEMASK(CHECKED), 
+							TVIS_STATEIMAGEMASK );
+			}
+		}
+ 	}                                                                                                              
+	<FONT color=#0000ff><SPAN class=codeKeyword>return</SPAN></FONT> TRUE;
+}
+</TT></PRE></TT></PRE></TT></PRE></TT></PRE></TT></PRE></TT></PRE></TT></PRE></TT></PRE></TT></PRE></FONT></TT></PRE><BR>
+            <H4>Step 6: Add code to OnLButtonDown to toggle checkbox</H4>When 
+            the user clicks on the checkbox, then the checkbox state has to be 
+            toggled. We use the HitTest() function to determine if the click was 
+            on the checkbox. <PRE><TT><FONT color=#990000><PRE><TT><PRE><TT><PRE><TT><PRE><TT><PRE><TT><PRE><TT><PRE><TT><PRE><TT><PRE><TT>
+<FONT color=#0000ff><SPAN class=codeKeyword>void</SPAN></FONT> CTreeCtrlX::OnLButtonDown(UINT nFlags, CPoint point) 
+{
+	UINT uFlags=0;
+	HTREEITEM hItem = HitTest(point,&amp;uFlags);
+
+	<FONT color=#0000ff><SPAN class=codeKeyword>if</SPAN></FONT>( uFlags &amp; TVHT_ONITEMSTATEICON )
+	{
+		SetCheck( hItem, TOGGLE );
+		<FONT color=#0000ff><SPAN class=codeKeyword>return</SPAN></FONT>;
+	}
+}
+</TT></PRE></TT></PRE></TT></PRE></TT></PRE></TT></PRE></TT></PRE></TT></PRE></TT></PRE></TT></PRE></FONT></TT></PRE><BR>
+            <H4>Step 7: Add code to OnKeyDown to toggle checkbox</H4>This step 
+            provides the keyboard interface for checking and unchecking an item. 
+            The key used is usually the space key, so we will use the space key. 
+            The code is nearly the same as in the previous step. Instead of 
+            using HitTest() to determine the item handle, we use the function 
+            GetSelectedItem(). <PRE><TT><FONT color=#990000><PRE><TT><PRE><TT><PRE><TT><PRE><TT><PRE><TT><PRE><TT><PRE><TT><PRE><TT><PRE><TT>
+<FONT color=#0000ff><SPAN class=codeKeyword>void</SPAN></FONT> CTreeCtrlX::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags) 
+{
+	<FONT color=#0000ff><SPAN class=codeKeyword>if</SPAN></FONT>( nChar == VK_SPACE )
+	{
+		HTREEITEM hItem = GetSelectedItem();
+		SetCheck( hItem, TOGGLE );
+		<FONT color=#0000ff><SPAN class=codeKeyword>return</SPAN></FONT>;
+	}
+}
+</TT></PRE></TT></PRE></TT></PRE></TT></PRE></TT></PRE></TT></PRE></TT></PRE></TT></PRE></TT></PRE></FONT></TT></PRE><BR>
+            <H4>Step 8: Define helper functions</H4>Define helper functions to 
+            determine whether an item is checked or not and to iterate through 
+            the checked items. The purpose of the functions is very clear from 
+            the function names. The GetFirstCheckedItem() and the 
+            GetNextCheckedItem() are optimized. They look at the item state 
+            before deciding whether it should search the children items. The 
+            GetPrevCheckedItem() function searches sequentially through all 
+            items. I leave it as an exercise to optimize this function. <PRE><TT><FONT color=#990000><PRE><TT><PRE><TT><PRE><TT><PRE><TT><PRE><TT><PRE><TT><PRE><TT><PRE><TT><PRE><TT>
+BOOL CTreeCtrlX::IsItemChecked(HTREEITEM hItem)
+{
+	<FONT color=#0000ff><SPAN class=codeKeyword>int</SPAN></FONT> iImage = GetItemState( hItem, TVIS_STATEIMAGEMASK )&gt;&gt;12;
+	<FONT color=#0000ff><SPAN class=codeKeyword>return</SPAN></FONT> iImage == CHECKED || iImage == SELF_AND_CHILD_CHECKED;
+}
+
+HTREEITEM CTreeCtrlX::GetFirstCheckedItem()
+{
+	<FONT color=#0000ff><SPAN class=codeKeyword>for</SPAN></FONT> ( HTREEITEM hItem = GetRootItem(); hItem!=<SPAN class=codeKeyword>NULL</SPAN>;  )
+	{
+		<FONT color=#0000ff><SPAN class=codeKeyword>int</SPAN></FONT> iImage = GetItemState( hItem, TVIS_STATEIMAGEMASK )&gt;&gt;12;
+		<FONT color=#0000ff><SPAN class=codeKeyword>if</SPAN></FONT> ( iImage == CHECKED || iImage == SELF_AND_CHILD_CHECKED )
+			<FONT color=#0000ff><SPAN class=codeKeyword>return</SPAN></FONT> hItem;
+		
+		<FONT color=#0000ff><SPAN class=codeKeyword>if</SPAN></FONT>( iImage != CHILD_CHECKED )
+		{
+			HTREEITEM hti = GetNextItem( hItem, TVGN_NEXT );
+			<FONT color=#0000ff><SPAN class=codeKeyword>if</SPAN></FONT>( hti == <SPAN class=codeKeyword>NULL</SPAN> )
+				hItem = GetNextItem( hItem );
+			<FONT color=#0000ff><SPAN class=codeKeyword>else</SPAN></FONT> 
+				hItem = hti;
+		}
+		<FONT color=#0000ff><SPAN class=codeKeyword>else</SPAN></FONT>
+			hItem = GetNextItem( hItem );
+	}
+
+	<FONT color=#0000ff><SPAN class=codeKeyword>return</SPAN></FONT> <SPAN class=codeKeyword>NULL</SPAN>;
+}
+
+HTREEITEM CTreeCtrlX::GetNextCheckedItem( HTREEITEM hItem )
+{
+	hItem = GetNextItem( hItem );
+	<FONT color=#0000ff><SPAN class=codeKeyword>while</SPAN></FONT>( hItem!=<SPAN class=codeKeyword>NULL</SPAN> )
+	{
+		<FONT color=#0000ff><SPAN class=codeKeyword>int</SPAN></FONT> iImage = GetItemState( hItem, TVIS_STATEIMAGEMASK )&gt;&gt;12;
+		<FONT color=#0000ff><SPAN class=codeKeyword>if</SPAN></FONT> ( iImage == CHECKED || iImage == SELF_AND_CHILD_CHECKED )
+			<FONT color=#0000ff><SPAN class=codeKeyword>return</SPAN></FONT> hItem;
+		
+		<FONT color=#0000ff><SPAN class=codeKeyword>if</SPAN></FONT>( iImage != CHILD_CHECKED )
+		{
+			HTREEITEM hti = GetNextItem( hItem, TVGN_NEXT );
+			<FONT color=#0000ff><SPAN class=codeKeyword>if</SPAN></FONT>( hti == <SPAN class=codeKeyword>NULL</SPAN> )
+				hItem = GetNextItem( hItem );
+			<FONT color=#0000ff><SPAN class=codeKeyword>else</SPAN></FONT> 
+				hItem = hti;
+		}
+		<FONT color=#0000ff><SPAN class=codeKeyword>else</SPAN></FONT>
+			hItem = GetNextItem( hItem );
+	}
+
+	<FONT color=#0000ff><SPAN class=codeKeyword>return</SPAN></FONT> <SPAN class=codeKeyword>NULL</SPAN>;
+}
+
+HTREEITEM CTreeCtrlX::GetPrevCheckedItem( HTREEITEM hItem )
+{
+	<FONT color=#0000ff><SPAN class=codeKeyword>for</SPAN></FONT> ( hItem = GetPrevItem( hItem ); hItem!=<SPAN class=codeKeyword>NULL</SPAN>; hItem = GetPrevItem( hItem ) )
+		<FONT color=#0000ff><SPAN class=codeKeyword>if</SPAN></FONT> ( IsItemChecked(hItem) )
+			<FONT color=#0000ff><SPAN class=codeKeyword>return</SPAN></FONT> hItem;
+
+	<FONT color=#0000ff><SPAN class=codeKeyword>return</SPAN></FONT> <SPAN class=codeKeyword>NULL</SPAN>;
+}
+
+</TT></PRE></TT></PRE></TT></PRE></TT></PRE></TT></PRE></TT></PRE></TT></PRE></TT></PRE></TT></PRE></FONT></TT></PRE><BR>
+            <P>The GetNextItem() function with single argument and the 
+            GetPrevItem() function have been defined earlier in the <A 
+            href="http://www.codeguru.com/Cpp/controls/treeview/misc-advanced/article.php/c735/get_next.shtml">Get 
+            next item in outline</A> and the <A 
+            href="http://www.codeguru.com/Cpp/controls/treeview/misc-advanced/article.php/c735/get_prev.shtml">Get 
+            previous item in outline</A> topics. 
+            <P>
+            <P></SPAN><!--content_stop-->
+            <TABLE cellPadding=3 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD vAlign=top align=left><BR><A 
+                  href="http://www.codeguru.com/Cpp/controls/treeview/misc-advanced/email.php/c735/"><IMG 
+                  src="AddingAdvancedCheckbox_files/emailicon.gif" border=0></A> 
+                  <A 
+                  href="http://www.codeguru.com/Cpp/controls/treeview/misc-advanced/print.php/c735/"><IMG 
+                  src="AddingAdvancedCheckbox_files/printicon.gif" border=0></A> 
+                </TD></TR></TBODY></TABLE></P></SPAN></TD></TR>
+        <TR>
+          <TD><A name=rating></A>
+            <TABLE cellSpacing=0 cellPadding=4 width="100%" bgColor=#cccccc 
+            border=1>
+              <TBODY>
+              <TR><INPUT type=hidden 
+                value=/Cpp/controls/treeview/misc-advanced/article.php/c735/ 
+                name=url> 
+                <TD class=bodycopy><FONT color=#cc0000><B>RATE THIS 
+                  ARTICLE:</B></FONT>&nbsp;&nbsp; <INPUT type=radio value=5 
+                  name=vote>Excellent&nbsp;&nbsp;<INPUT type=radio value=4 
+                  name=vote>Very Good&nbsp;&nbsp;<INPUT type=radio value=3 
+                  name=vote>Average&nbsp;&nbsp;<INPUT type=radio value=2 
+                  name=vote>Below Average&nbsp;&nbsp;<INPUT type=radio value=1 
+                  name=vote>Poor&nbsp;&nbsp;<INPUT type=image height=23 width=73 
+                  src="AddingAdvancedCheckbox_files/rate.gif" align=absMiddle 
+                  border=0> <BR><BR><B>(You must be signed in to rank an 
+                  article. Not a member? <A 
+                  href="http://www.codeguru.com/register.php?url=/Cpp/controls/treeview/misc-advanced/article.php/c735/">Click 
+                  here</A> to register)</B> </TD></TR></FORM></TBODY></TABLE><BR><!--COMMENTS-->
+            <TABLE cellSpacing=0 cellPadding=4 width="100%" bgColor=#cccccc 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD class=bodycopy colSpan=2><FONT class=title>Latest 
+                  Comments: </FONT></TD></TR>
+              <TR>
+                <TD class=bodycopy>• <A 
+                  href="http://www.codeguru.com/Cpp/controls/treeview/misc-advanced/comments.php/c735/?thread=8376">Thanks! 
+                  but I need Demo Project! Send me a project. Please</A> - 
+                  Legacy CodeGuru (12/30/2003)<BR>• <A 
+                  href="http://www.codeguru.com/Cpp/controls/treeview/misc-advanced/comments.php/c735/?thread=8378">IS 
+                  it possible to add check to for each tree items instead of 
+                  all.</A> - Legacy CodeGuru (11/18/2003)<BR>• <A 
+                  href="http://www.codeguru.com/Cpp/controls/treeview/misc-advanced/comments.php/c735/?thread=8380">No 
+                  Sound please</A> - Legacy CodeGuru (08/08/2003)<BR>• <A 
+                  href="http://www.codeguru.com/Cpp/controls/treeview/misc-advanced/comments.php/c735/?thread=8382">don't 
+                  work</A> - Legacy CodeGuru (06/30/2003)<BR>• <A 
+                  href="http://www.codeguru.com/Cpp/controls/treeview/misc-advanced/comments.php/c735/?thread=8384">Give 
+                  it a go</A> - Legacy CodeGuru (04/23/2003)<BR><BR><A 
+                  href="http://www.codeguru.com/Cpp/controls/treeview/misc-advanced/comments.php/c735/"><B>View 
+                  All Comments</B></A> 
+                  <HR>
+                </TD></TR>
+              <TR>
+                <TD class=bodycopy colSpan=2><FONT class=title>Add a Comment: 
+                  </FONT></TD></TR>
+              <TR>
+                <TD class=bodycopy><INPUT type=hidden value=add name=action> 
+                  <CENTER>
+                  <TABLE class=bodycopy>
+                    <TBODY>
+                    <TR vAlign=top>
+                      <TD class=bodycopy align=right><STRONG>Title: 
+                      </STRONG></TD>
+                      <TD><INPUT maxLength=256 size=60 name=title></TD></TR>
+                    <TR vAlign=top>
+                      <TD class=bodycopy align=right><STRONG>Comment: 
+                      </STRONG></TD>
+                      <TD><TEXTAREA name=subject rows=5 wrap=physical cols=60></TEXTAREA></TD></TR>
+                    <TR vAlign=top>
+                      <TD class=bodycopy align=right><STRONG>Pre-Formatted: 
+                        </STRONG></TD>
+                      <TD><INPUT type=checkbox value=on 
+                        name=preformatted>Check this if you want the text to 
+                        display with the formatting as typed (good for source 
+                        code)</TD></TR></TBODY></TABLE><BR><INPUT type=image height=23 
+                  width=73 src="AddingAdvancedCheckbox_files/submit.gif" 
+                  value="Add Comment" border=0 name=AddComment> 
+                  </CENTER><BR><BR><B>(You must be signed in to comment on an 
+                  article. Not a member? <A 
+                  href="http://www.codeguru.com/register.php?url=/Cpp/controls/treeview/misc-advanced/article.php/c735/">Click 
+                  here</A> to register)</B> 
+        </TD></FORM></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD bgColor=#666666 colSpan=2><IMG height=2 alt="" 
+      src="AddingAdvancedCheckbox_files/sp.gif" width=1 
+border=0></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=10 width="100%" bgColor=#ffffff border=0>
+  <TBODY>
+  <TR>
+    <TD align=middle>
+      <META content="MSHTML 6.00.2800.1106" name=GENERATOR>
+      <TABLE cellSpacing=0 cellPadding=3 rules=none width=728 bgColor=#ffffff 
+      border=1>
+        <TBODY>
+        <TR>
+          <TD bgColor=#ffe48e colSpan=2><A 
+            href="http://www.codeguru.com/RealMedia/ads/click_lx.cgi/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c735/i/1111685479/468x60-2/OasDefault/Unify_WhitePaperLeadGen_1b/unify.html/63626132326333313431326165353530"><FONT 
+            style="FONT-SIZE: 12px" face="Arial, Helvetica" color=#000000 
+            size=1><B>Free Whitepaper: Breakthrough Development Speed for 
+            "Action Applications" </B></FONT></A></TD></TR>
+        <TR>
+          <TD colSpan=2><FONT class=smallfont face="Arial, Helvetica" 
+            size=1>Develop and deploy enterprise-class web applications with 
+            breakthrough speed. This white paper discusses the three keys that 
+            enable you to:</FONT></TD></TR>
+        <TR>
+          <TD><FONT class=smallfont face="Arial, Helvetica" size=1>
+            <LI>Dramatically reduce total coding and testing time and effort 
+            <LI>Greatly accelerate any coding that may be required 
+            <LI>Enable a broader set of developers to work on a project 
+            <BR></FONT></LI></TD>
+          <TD><FONT class=smallfont face="Arial, Helvetica" size=1>
+            <LI>Eliminate re-work (i.e., "Do it right the first time") 
+            <LI>Maximize agility: applications must be quick-to-change<BR><A 
+            href="http://www.codeguru.com/RealMedia/ads/click_lx.cgi/ew/ewsoftware/www.codeguru.com/Cpp/controls/treeview/misc-advanced/article/c735/i/1111685479/468x60-2/OasDefault/Unify_WhitePaperLeadGen_1b/unify.html/63626132326333313431326165353530"><B>Click 
+            here to download.</B></A></FONT> </LI></TD></TR></TBODY></TABLE><IMG 
+      height=1 
+      src="D:\temp\AdvancedCheckboxTree\doc\AddingAdvancedCheckbox_files\63626132326333313431326165353530(18).gif" 
+      width=1></TD></TR>
+  <TR>
+    <TD class=bodycopy align=middle>
+      <CENTER><BR clear=all>
+      <CENTER>
+      <TABLE cellSpacing=0 cellPadding=5 border=0>
+        <TBODY>
+        <TR>
+          <FORM action=http://search.internet.com/www.jupiterweb.com 
+method=post>
+          <TD align=middle><FONT face="verdana, arial, helvetica" 
+            size=-2><B>JupiterWeb networks:</B></FONT> 
+            <P><A class=foot href="http://www.internet.com/"><IMG height=15 
+            alt=internet.com hspace=0 
+            src="AddingAdvancedCheckbox_files/icom_foot.gif" width=97 
+            align=absMiddle border=0></A><IMG height=25 alt="" hspace=10 
+            src="AddingAdvancedCheckbox_files/ruledivide_foot.gif" width=1 
+            align=absMiddle border=0><A href="http://www.earthweb.com/"><IMG 
+            height=12 alt=earthweb.com hspace=5 
+            src="AddingAdvancedCheckbox_files/earthweb_foot2.gif" width=93 
+            align=absMiddle border=0></A><IMG height=25 alt="" hspace=10 
+            src="AddingAdvancedCheckbox_files/ruledivide_foot.gif" width=1 
+            align=absMiddle border=0><A href="http://www.devx.com/"><IMG 
+            height=30 alt=Devx.com hspace=0 
+            src="AddingAdvancedCheckbox_files/devx_foot2.gif" width=35 
+            align=absMiddle border=0></A><IMG height=25 alt="" hspace=10 
+            src="AddingAdvancedCheckbox_files/ruledivide_foot.gif" width=1 
+            align=absMiddle border=0><A href="http://www.clickz.com/"><IMG 
+            height=24 alt=ClickZ hspace=0 
+            src="AddingAdvancedCheckbox_files/clickz_foot2.gif" width=55 
+            align=absMiddle border=0></A> 
+            <P><FONT face="verdana, arial, helvetica" size=-2><B>Search 
+            JupiterWeb:</B> <INPUT type=hidden value=1 name=IC_Summary> <INPUT 
+            type=hidden value=0 name=IC_StartNumber> <INPUT type=hidden value=10 
+            name=IC_BatchSize> <INPUT type=hidden value=50 
+            name=IC_RelevanceThreshold> <INPUT type=hidden value=all 
+            name=IC_QueryDatabase> <INPUT size=50 name=IC_QueryText> <INPUT 
+            type=image height=20 width=41 
+            src="AddingAdvancedCheckbox_files/but_find.gif" align=absMiddle 
+            value=Find border=0 name=SUBMIT> </FONT>
+            <P><FONT face="verdana, arial, helvetica" size=-2><A class=foot 
+            href="http://www.jupitermedia.com/">Jupitermedia Corporation</A> has 
+            four divisions: <BR><A class=foot 
+            href="http://www.jupiterweb.com/">JupiterWeb</A>, <A class=foot 
+            href="http://www.jupiterresearch.com/">JupiterResearch</A>, <A 
+            class=foot href="http://www.jupiterevents.com/">JupiterEvents</A> 
+            and <A class=foot 
+            href="http://www.jupiterimages.com/">JupiterImages</A> 
+            <P>
+            <DIV class=foot>Copyright <!--YEAR-->2004 Jupitermedia Corporation 
+            All Rights Reserved.<BR><A class=foot 
+            href="http://www.jupitermedia.com/corporate/legal.html">Legal 
+            Notices</A>, <A class=foot 
+            href="http://www.jupitermedia.com/corporate/reprints.html#Licensing1">Licensing</A>, 
+            <A class=foot 
+            href="http://www.jupitermedia.com/corporate/reprints.html#Reprints1">Reprints</A>, 
+            &amp; <A class=foot 
+            href="http://www.jupitermedia.com/corporate/reprints.html#Permissions">Permissions</A>, 
+            <A class=foot 
+            href="http://www.jupitermedia.com/corporate/privacy/privacypolicy.html">Privacy 
+            Policy</A>. </FONT>
+            <P><FONT face="verdana, arial, helvetica" size=-2><A class=foot 
+            href="http://www.jupitermedia.com/corporate/">Jupitermedia Corporate 
+            Info</A> | <A class=foot 
+            href="http://e-newsletters.internet.com/">Newsletters</A> | <A 
+            class=foot href="http://jobs.internet.com/">Tech Jobs</A> | <A 
+            class=foot 
+            href="http://e-newsletters.internet.com/mailinglists.html">E-mail 
+            Offers</A></P></DIV></FONT></TD></FORM></TR></TBODY></TABLE></CENTER></CENTER></TD></TR></TBODY></TABLE></BODY></HTML>

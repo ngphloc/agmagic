@@ -1,0 +1,58 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: MDI - Win32 ANSI Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x409 /fo"..\..\Bin_600\AnsiRelease\MDI/MDI.res" /d "NDEBUG" /d "_AFXDLL" "D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Samples\MDI\MDI.rc"" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP15B.tmp" with contents
+[
+/nologo /MD /W4 /GX /O2 /I "..\..\include" /D "NDEBUG" /D "_AFXDLL" /D "WIN32" /D "_WINDOWS" /D _WIN32_WINNT=0x0400 /D _WIN32_IE=0x0400 /Fp"..\..\Bin_600\AnsiRelease\MDI/MDI_600.pch" /Yu"stdafx.h" /Fo"..\..\Bin_600\AnsiRelease\MDI/" /Fd"..\..\Bin_600\AnsiRelease\MDI/" /FD /c 
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Samples\MDI\ChildFrm.cpp"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Samples\MDI\ChildView.cpp"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Samples\MDI\MainFrm.cpp"
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Samples\MDI\MDI.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP15B.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP15C.tmp" with contents
+[
+/nologo /MD /W4 /GX /O2 /I "..\..\include" /D "NDEBUG" /D "_AFXDLL" /D "WIN32" /D "_WINDOWS" /D _WIN32_WINNT=0x0400 /D _WIN32_IE=0x0400 /Fp"..\..\Bin_600\AnsiRelease\MDI/MDI_600.pch" /Yc"stdafx.h" /Fo"..\..\Bin_600\AnsiRelease\MDI/" /Fd"..\..\Bin_600\AnsiRelease\MDI/" /FD /c 
+"D:\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Samples\MDI\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP15C.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP15D.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:no /pdb:"..\..\Bin_600/MDI-n.pdb" /machine:I386 /out:"..\..\Bin_600/MDI-n.exe" /libpath:"..\..\Bin_600" 
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\MDI\ChildFrm.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\MDI\ChildView.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\MDI\MainFrm.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\MDI\MDI.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\MDI\StdAfx.obj"
+"\luanvan\program\agmagic\windows\src\common\lib\ui\Prof-UIS\Bin_600\AnsiRelease\MDI\MDI.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP15D.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+   Prof-UIS multiply monitor support:
+      built-in
+   Automatically linking with ProfUIS225 library
+      (Professional User Interface Suite)
+Compiling...
+ChildFrm.cpp
+ChildView.cpp
+MainFrm.cpp
+MDI.cpp
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+MDI-n.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

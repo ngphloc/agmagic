@@ -1,0 +1,409 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "AGmagicISDemoUIRC.h"
+
+#if AGMAGIC_SUPPORT_MFC
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\AGmagicISDemo.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#include ""afxprint.rc""       // printing/print preview resources\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO MOVEABLE PURE 
+BEGIN
+    IDD_SEARCH_CONTROL_BAR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 75
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 210
+    END
+
+    IDD_ISDEMO_SERVER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 231
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 138
+    END
+
+    IDD_SEARCH_RESULT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 325
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 234
+    END
+
+    IDD_IMAGE_PROPERTY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 164
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 122
+    END
+
+    IDD_INSERT_TREE_ITEM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 245
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 58
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SEARCH_CONTROL_BAR DIALOG DISCARDABLE  0, 0, 82, 217
+STYLE DS_FIXEDSYS | WS_CHILD
+FONT 8, "MS Shell Dlg"
+BEGIN
+    CONTROL         "Search Model",IDC_SEARCH_MODEL_STATIC,"Static",WS_GROUP | 
+                    0x20,7,3,67,8
+    COMBOBOX        IDC_SEARCH_MODEL,7,13,67,12,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "&Config Server",IDC_CONFIG_SERVER,7,28,67,14
+    PUSHBUTTON      "Create &DB",IDC_CREATE_DB,7,44,67,14
+    PUSHBUTTON      "",IDC_STOP_SERVER,15,62,48,35
+    PUSHBUTTON      "",IDC_BROWSE,18,108,48,35
+    PUSHBUTTON      "",IDC_START_SERVER,19,61,48,35
+    PUSHBUTTON      "",IDC_SEARCH,22,147,39,18
+    PUSHBUTTON      "",IDC_FEEDBACK,19,165,48,35
+END
+
+IDD_ISDEMO_SERVER DIALOGEX 0, 0, 240, 147
+STYLE WS_POPUP | WS_VISIBLE
+EXSTYLE WS_EX_APPWINDOW
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "Clock",IDC_CLOCKST,68,54,95,36
+    LTEXT           "Search System running ...",IDC_SEARCHINGSYSTEM_NOTICE,
+                    68,33,154,10
+    LTEXT           "Training System running ...",IDC_TRAININGSYSTEM_NOTICE,
+                    68,109,154,10
+    LTEXT           "Static",IDC_AMINATE_NOTICE,201,7,30,29,0,
+                    WS_EX_TRANSPARENT
+END
+
+IDD_SEARCH_RESULT DIALOGEX 0, 0, 332, 241
+STYLE DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | 
+    WS_THICKFRAME
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Search Result"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "Search",IDC_SEARCH_RESULT_LISTCTRL,"SysListView32",
+                    WS_BORDER | WS_TABSTOP,7,35,318,172
+    LTEXT           "Static",IDC_IMAGE_INFO,7,212,318,9
+    PUSHBUTTON      "&Find",IDC_FIND_IMAGE,7,225,63,15
+    LTEXT           "Static",IDC_LISTCTRL_INFO,7,23,318,8
+END
+
+IDD_IMAGE_PROPERTY DIALOG DISCARDABLE  0, 0, 171, 129
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Property"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,61,108,50,14
+    LTEXT           "File Name",IDC_STATIC,7,9,34,10
+    EDITTEXT        IDC_PROP_FILENAME,47,7,66,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "File Path",IDC_STATIC,7,29,34,10
+    EDITTEXT        IDC_PROP_FILEPATH,47,26,117,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "ID",IDC_STATIC,7,47,34,10
+    EDITTEXT        IDC_PROP_ID,47,45,49,12,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Features",IDC_STATIC,7,66,34,10
+    EDITTEXT        IDC_PROP_FEATURES,47,64,117,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "Similarity",IDC_STATIC,7,84,34,10
+    EDITTEXT        IDC_PROP_SIMILARITY,47,84,67,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+END
+
+IDD_SEMANTICS_OPTIONS DIALOGEX 0, 0, 333, 314
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Semantic Option Tree"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Choose Image Type",IDC_STATIC,7,280,69,11
+    COMBOBOX        IDC_IMAGETYPE,80,279,62,63,CBS_DROPDOWNLIST | 
+                    CBS_AUTOHSCROLL | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "&OK",IDOK,158,277,49,14
+    PUSHBUTTON      "&Cancel",IDCANCEL,279,277,49,14
+    PUSHBUTTON      "OK &NUS",IDC_OKNUS,219,277,49,14
+    LTEXT           "Number of Candidate",IDC_STATIC,7,300,72,8
+    EDITTEXT        IDC_NUMBER_CANDIDATE,80,298,61,13,ES_RIGHT | ES_NUMBER
+    LTEXT           "<---  You only need enter not zero Number, System do All",
+                    IDC_STATIC,144,300,183,9
+END
+
+IDD_INSERT_TREE_ITEM DIALOG DISCARDABLE  0, 0, 252, 65
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Insert Semantic Tree Item"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,66,44,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,134,44,50,14
+    LTEXT           "Name :",IDC_STATIC,7,17,23,10
+    EDITTEXT        IDC_NAME_ITEM,34,14,39,13,ES_AUTOHSCROLL
+    LTEXT           "Description :",IDC_STATIC,93,17,41,10
+    EDITTEXT        IDC_DESC_ITEM,137,14,108,13,ES_AUTOHSCROLL
+END
+
+IDD_SEMANTIC_CHECKED_TREE DIALOG DISCARDABLE  0, 0, 221, 201
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Semantic Checked Tree"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,51,180,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,120,180,50,14
+END
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_LDOWN               BITMAP  MOVEABLE PURE   "res\\skinbutton\\ldown.bmp"
+IDB_LGRAY               BITMAP  MOVEABLE PURE   "res\\skinbutton\\lgray.bmp"
+IDB_LMASK               BITMAP  MOVEABLE PURE   "res\\skinbutton\\lmask.bmp"
+IDB_LNORM               BITMAP  MOVEABLE PURE   "res\\skinbutton\\lnorm.bmp"
+IDB_LOVER               BITMAP  MOVEABLE PURE   "res\\skinbutton\\lover.bmp"
+IDB_RDOWN               BITMAP  MOVEABLE PURE   "res\\skinbutton\\rdown.bmp"
+IDB_RGRAY               BITMAP  MOVEABLE PURE   "res\\skinbutton\\rgray.bmp"
+IDB_RMASK               BITMAP  MOVEABLE PURE   "res\\skinbutton\\rmask.bmp"
+IDB_RNORM               BITMAP  MOVEABLE PURE   "res\\skinbutton\\rnorm.bmp"
+IDB_ROVER               BITMAP  MOVEABLE PURE   "res\\skinbutton\\rover.bmp"
+IDB_EYEBLUE             BITMAP  MOVEABLE PURE   "res\\skinbutton\\eyeblue.bmp"
+IDB_EYECLOSED           BITMAP  MOVEABLE PURE   "res\\skinbutton\\eyeclosed.bmp"
+IDB_EYECLOSED_FOCUS     BITMAP  MOVEABLE PURE   "res\\skinbutton\\eyeclosed_focus.bmp"
+IDB_EYEGRAY             BITMAP  MOVEABLE PURE   "res\\skinbutton\\eyegray.bmp"
+IDB_EYEGREEN            BITMAP  MOVEABLE PURE   "res\\skinbutton\\eyegreen.bmp"
+IDB_EYEMASK             BITMAP  MOVEABLE PURE   "res\\skinbutton\\eyemask.bmp"
+IDB_EYERED              BITMAP  MOVEABLE PURE   "res\\skinbutton\\eyered.bmp"
+IDB_ISDEMO_SERVER     BITMAP  MOVEABLE PURE   "res\\dialogsk\\clk.bmp"
+IDB_CLOCKST_PANE        BITMAP  MOVEABLE PURE   "res\\clockst\\ClockST_pane.bmp"
+IDB_CLOCKST_BIG         BITMAP  MOVEABLE PURE   "res\\clockst\\ClockST_big.bmp"
+IDB_CLOCKST_SMALL       BITMAP  MOVEABLE PURE   "res\\clockst\\ClockST_small.bmp"
+IDB_BROWSE_DOWN         BITMAP  MOVEABLE PURE   "res\\skinbutton\\browse_down.bmp"
+IDB_BROWSE_GRAY         BITMAP  MOVEABLE PURE   "res\\skinbutton\\browse_gray.bmp"
+IDB_BROWSE_MASK         BITMAP  MOVEABLE PURE   "res\\skinbutton\\browse_mask.bmp"
+IDB_BROWSE_NORM         BITMAP  MOVEABLE PURE   "res\\skinbutton\\browse_norm.bmp"
+IDB_BROWSE_OVER         BITMAP  MOVEABLE PURE   "res\\skinbutton\\browse_over.bmp"
+IDB_FEEDBACK_DOWN       BITMAP  MOVEABLE PURE   "res\\skinbutton\\feedback_down.bmp"
+IDB_FEEDBACK_GRAY       BITMAP  MOVEABLE PURE   "res\\skinbutton\\feedback_gray.bmp"
+IDB_FEEDBACK_MASK       BITMAP  MOVEABLE PURE   "res\\skinbutton\\feedback_mask.bmp"
+IDB_FEEDBACK_NORM       BITMAP  MOVEABLE PURE   "res\\skinbutton\\feedback_norm.bmp"
+IDB_FEEDBACK_OVER       BITMAP  MOVEABLE PURE   "res\\skinbutton\\feedback_over.bmp"
+IDR_SEARCH_RESULT_TOOLBAR BITMAP  DISCARDABLE     "res\\searchresulttoolbar\\move_number.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_DEFAULT_TIP         ICON    DISCARDABLE     "res\\xinfotip\\default_tip.ico"
+IDI_INFO_TIP            ICON    DISCARDABLE     "res\\xinfotip\\info_tip.ico"
+IDI_QUESTION_TIP        ICON    DISCARDABLE     "res\\xinfotip\\question_tip.ico"
+IDI_SEARCH_RESULT_MOVE_FIRST ICON    DISCARDABLE     "res\\searchresulttoolbar\\movefirst.ico"
+IDI_SEARCH_RESULT_MOVE_PREVIOUS ICON    DISCARDABLE     "res\\searchresulttoolbar\\moveprevious.ico"
+IDI_SEARCH_RESULT_MOVE_NEXT ICON    DISCARDABLE     "res\\searchresulttoolbar\\movenext.ico"
+IDI_SEARCH_RESULT_MOVE_LAST ICON    DISCARDABLE     "res\\searchresulttoolbar\\movelast.ico"
+IDI_SEARCH_RESULT_PAGE1 ICON    DISCARDABLE     "res\\searchresulttoolbar\\number01.ico"
+IDI_SEARCH_RESULT_PAGE2 ICON    DISCARDABLE     "res\\searchresulttoolbar\\number02.ico"
+IDI_SEARCH_RESULT_PAGE3 ICON    DISCARDABLE     "res\\searchresulttoolbar\\number03.ico"
+IDI_SEARCH_RESULT_PAGE4 ICON    DISCARDABLE     "res\\searchresulttoolbar\\number04.ico"
+IDI_SEARCH_RESULT_PAGE5 ICON    DISCARDABLE     "res\\searchresulttoolbar\\number05.ico"
+IDI_SEARCH_RESULT_PAGE6 ICON    DISCARDABLE     "res\\searchresulttoolbar\\number06.ico"
+IDI_SEARCH_RESULT_PAGE7 ICON    DISCARDABLE     "res\\searchresulttoolbar\\number07.ico"
+IDI_SEARCH_RESULT_PAGE8 ICON    DISCARDABLE     "res\\searchresulttoolbar\\number08.ico"
+IDI_SEARCH_RESULT_PAGE9 ICON    DISCARDABLE     "res\\searchresulttoolbar\\number09.ico"
+IDI_SEARCH_RESULT_PAGE10 ICON    DISCARDABLE     "res\\searchresulttoolbar\\number10.ico"
+IDI_ISDEMO_MAIN       ICON    DISCARDABLE     "res\\isdemo_main.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// GIF
+//
+
+IDG_ANIMATE_NOTICE      GIF     MOVEABLE PURE   "res\\pictureex\\eyes.gif"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// JPG
+//
+
+IDJ_SEARCH_CONTROL_BAR  JPG     MOVEABLE PURE   "res\\searchcontrolbar\\bg2.jpg"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDM_SEARCH_RESULT_CONTEXT MENU DISCARDABLE 
+BEGIN
+    POPUP "&User"
+    BEGIN
+        MENUITEM "&Feedback",                   ID_SEARCH_RESULT_USER_FEEDBACK
+        MENUITEM "Feedback &Advanced",          ID_SEARCH_RESULT_USER_FEEDBACK_ADVANCED
+
+        MENUITEM SEPARATOR
+        MENUITEM "&Open",                       ID_SEARCH_RESULT_USER_OPEN
+        MENUITEM "Open &Dialog",                ID_SEARCH_RESULT_USER_OPEN_DIALOG
+
+        MENUITEM SEPARATOR
+        MENUITEM "&Properties",                 ID_SEARCH_RESULT_USER_PROPERTIES
+
+    END
+END
+
+IDM_MAINFRAME_SHOW_CONTROL_CONTEXT MENU DISCARDABLE 
+BEGIN
+    POPUP "&Show"
+    BEGIN
+        MENUITEM "&Server",                     ID_MAINFRAME_SHOW_SERVER
+        MENUITEM "&Output",                     ID_MAINFRAME_SHOW_OUTPUT
+        MENUITEM "Search &Results",             ID_MAINFRAME_SHOW_RESULT
+    END
+END
+
+IDM_OPTIONS_TREE_ITEM_CONTEXT MENU DISCARDABLE 
+BEGIN
+    POPUP "&Item"
+    BEGIN
+        MENUITEM "In&sert",                     ID_INSERT_OPTIONS_TREE_ITEM
+        MENUITEM "&Delete",                     ID_DELETE_OPTIONS_TREE_ITEM
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_SEARCH_RESULT_TOOLBAR TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON      ID_SEARCH_RESULT_MOVE_FIRST
+    BUTTON      ID_SEARCH_RESULT_MOVE_PREVIOUS
+    BUTTON      ID_SEARCH_RESULT_MOVE_NEXT
+    BUTTON      ID_SEARCH_RESULT_MOVE_LAST
+    SEPARATOR
+    BUTTON      ID_SEARCH_RESULT_PAGE1
+    BUTTON      ID_SEARCH_RESULT_PAGE2
+    BUTTON      ID_SEARCH_RESULT_PAGE3
+    BUTTON      ID_SEARCH_RESULT_PAGE4
+    BUTTON      ID_SEARCH_RESULT_PAGE5
+    BUTTON      ID_SEARCH_RESULT_PAGE6
+    BUTTON      ID_SEARCH_RESULT_PAGE7
+    BUTTON      ID_SEARCH_RESULT_PAGE8
+    BUTTON      ID_SEARCH_RESULT_PAGE9
+    BUTTON      ID_SEARCH_RESULT_PAGE10
+    BUTTON      ID_SEARCH_RESULT_PAGE11
+    BUTTON      ID_SEARCH_RESULT_PAGE12
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDCUR_HAND_P            CURSOR  DISCARDABLE     "res\\searchcontrolbar\\hand_p.cur"
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\AGmagicISDemoUIRC.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#include "afxprint.rc"       // printing/print preview resources
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
+#endif //AGMAGIC_SUPPORT_MFC
