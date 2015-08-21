@@ -1,0 +1,23 @@
+animal:OS50003.JPG -> feedback : animal\OS50006, 105.JPG
+flower:rose-476058.jpg
+flower:orchid-115095.jpg
+rodeo: 24_193.JPG, 03_193.JPG, 01_193.JPG, 02_193.JPG, 11_193.JPG, 030_172.JPG
+waterfall: 057_165.JPG, 078_177.JPG
+sunset: 095_170.JG, 046_145.JPG
+plant: CAY-CAU1.JPG, CAY2.JPG
+papers: 291 copy.jpg, 1 copy.jpg
+
+////////////////////////////////////////////////////
+
+cay ngu nghia : animal:OS50003.JPG : 8
+
+////////////////////////////////////////////////////
+
+papers: 291 copy.jpg
+plant:  CAY-CAU1.JPG
+sunset: 095_170.JG
+waterfall: 057_165.JPG
+rodeo: 24_193.JPG, 03_193.JPG
+flower:orchid-115095.jpg
+flower:rose-476058.jpg
+animal:OS50003.JPG -> feedback : animal\OS50006

@@ -1,0 +1,1703 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0041)http://www.casaxps.com/FactorAnalysis.htm -->
+<HTML><HEAD><TITLE>Principal Component Analysis</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2800.1106" name=GENERATOR></HEAD>
+<BODY vLink=#800080 link=#0000ff><FONT size=2>
+<P><A name=_Toc465852276><A name=_Toc466005191><A name=_Toc466094115><A 
+name=_Toc468170730><A name=_Toc468422053><A name=_Toc468590094><A 
+name=_Toc469118916><A name=_Toc469716847>Principal Component Analysis </FONT><A 
+href="http://www.casaxps.com/FactorAnalysis.htm#_Toc472045501">*</A>
+<DIR><FONT size=2>
+<P>Introduction </FONT><A 
+href="http://www.casaxps.com/FactorAnalysis.htm#_Toc472045502">*</A></P><FONT 
+size=2>
+<P>Theory Behind Principal Component Analysis </FONT><A 
+href="http://www.casaxps.com/FactorAnalysis.htm#_Toc472045503">*</A></P><FONT 
+size=2>
+<P>Residual Standard Deviation (RSD or Real Error RE) </FONT><A 
+href="http://www.casaxps.com/FactorAnalysis.htm#_Toc472045504">*</A></P><FONT 
+size=2>
+<P>Chi-square </FONT><A 
+href="http://www.casaxps.com/FactorAnalysis.htm#_Toc472045505">*</A></P><FONT 
+size=2>
+<P>Target Factor Analysis </FONT><A 
+href="http://www.casaxps.com/FactorAnalysis.htm#_Toc472045506">*</A></P><FONT 
+size=2>
+<P>Target Testing </FONT><A 
+href="http://www.casaxps.com/FactorAnalysis.htm#_Toc472045507">*</A></P><FONT 
+size=2>
+<P>Principal Component Analysis by Example </FONT><A 
+href="http://www.casaxps.com/FactorAnalysis.htm#_Toc472045508">*</A></P><FONT 
+size=2>
+<P>Principal Component Analysis and Real Data </FONT><A 
+href="http://www.casaxps.com/FactorAnalysis.htm#_Toc472045509">*</A></P><FONT 
+size=2>
+<P>PCA and CasaXPS </FONT><A 
+href="http://www.casaxps.com/FactorAnalysis.htm#_Toc472045510">*</A></P><FONT 
+size=2>
+<P>Viewing the Data in Factor Space </FONT><A 
+href="http://www.casaxps.com/FactorAnalysis.htm#_Toc472045511">*</A></P><B><FONT 
+face=Arial size=4></DIR><A name=_Toc472045501></FONT><FONT size=5>Principal 
+Component Analysis</A></A></A></A></A></A></A></A></A>
+<P></P></B></FONT><FONT face=Arial size=2>
+<P>&nbsp;</P></FONT><B><I><FONT face=Arial size=4>
+<P><A name=_Toc465852277><A name=_Toc466005192><A name=_Toc466094116><A 
+name=_Toc468170731><A name=_Toc468422054><A name=_Toc468590095><A 
+name=_Toc469118917><A name=_Toc469716848><A 
+name=_Toc472045502>Introduction</A></A></A></A></A></A></A></A></A></P></B></I></FONT><FONT 
+size=2></FONT>
+<P>XPS is a technique that provides chemical information about a sample that 
+sets it apart from other analytical tools. However, the key information sought 
+by the analyst is locked into a data envelope and as a consequence the need for 
+powerful algorithms is paramount when reducing the data to chemically meaningful 
+quantities. Two approaches have been employed on XPS data:</P>
+<UL>
+  <LI>Curve synthesis and fitting (see Section on Quantification). 
+  <LI>Techniques from multivariate statistical analysis of which Principal 
+  Component Analysis (PCA) is the most common form.</LI></UL>
+<P>Curve synthesis is probably the most widely used method for data analysis 
+practised by XPS researchers. Unfortunately, statistically good curve fits are 
+not always physically meaningful and, in many cases, great care must be 
+exercised when choosing the model to describe the data. Any assistance in 
+understanding the model is therefore of great value and it is with this end that 
+Principal Component Analysis is offered as a supplementary tool.</P>
+<P>Factor analysis is a field that is as broad as it is deep. It is a 
+mathematically challenging tool that requires knowledge of matrix algebra 
+coupled with a feel for a statistical approach to data interpretation. A true 
+understanding for the subject can only be obtained by studying the literature 
+and through practical experience. Therefore the material presented here is only 
+an introduction rather than a complete set of works.</P>
+<P>&nbsp;</P><B><I><FONT face=Arial size=4>
+<P><A name=_Toc465852278><A name=_Toc466005193><A name=_Toc466094117><A 
+name=_Toc468170732><A name=_Toc468422055><A name=_Toc468590096><A 
+name=_Toc469118918><A name=_Toc469716849><A name=_Toc472045503>Theory Behind 
+Principal</FONT><FONT face=Arial> </FONT><FONT face=Arial 
+size=4>Component</FONT><FONT face=Arial> </FONT><FONT face=Arial 
+size=4>Analysis</A></A></A></A></A></A></A></A></A></P></B></I></FONT><FONT 
+size=2></FONT>
+<P>Factor analysis is a multivariate technique for reducing matrices of data to 
+their lowest dimensionality by use of orthogonal factor space. The challenge is 
+to identify the number of significant factors (principal components) and use 
+this information to model the data using techniques such as Target 
+Transformations or curve fitting.</P>
+<P>In XPS the data matrix is composed of spectra where each acquisition channel 
+is viewed as a co-ordinate in an r-dimensional space; r is equal to the number 
+of acquisition channels per spectrum. The problem addressed by PCA is that of 
+determining the number of distinct spectroscopic features present in a 
+particular set of c spectra.</P>
+<P>The following example tries to illustrate the nature of the problem. Consider 
+a set of three spectra; each spectrum has three acquisition channels:</P>
+<P align=center>
+<CENTER>
+<TABLE cellSpacing=1 cellPadding=9 width=366 border=1>
+  <TBODY>
+  <TR>
+    <TD vAlign=top height=24><B>
+      <P>s1 = ( </B>4, 3, 6<B>) , s2 = (</B>2, 3, 2<B>) , s3 = (</B>2, 0, 
+      4<B>)</B></P></TD></TR></TBODY></TABLE></CENTER>
+<P></P>
+<P></P>
+<P>The data matrix is given by </P>
+<P align=center>
+<CENTER>
+<TABLE cellSpacing=1 cellPadding=9 width=189 border=1>
+  <TBODY>
+  <TR>
+    <TD vAlign=top height=105>
+      <P><IMG height=93 src="Principal Component Analysis_files/Image27.gif" 
+      width=128></P></TD></TR></TBODY></TABLE></CENTER>
+<P></P>
+<P>These three vectors belong to a 3-dimensional space, however they do not span 
+3-dimensional space for the following reason. If a linear combination of the 
+vectors <B>s1</B>, <B>s2</B> and <B>s3</B> is used to construct a new vector 
+<B>v</B>, then <B>v</B> always lies in a plane (a 2-dimensional sub-space of 
+3-dimensional space). The fact that <B>v</B> lies in a plane is a consequence of 
+the following relationships between the three spectra.</P>
+<P align=center>
+<CENTER>
+<TABLE cellSpacing=1 cellPadding=9 width=295 border=1>
+  <TBODY>
+  <TR>
+    <TD vAlign=top height=126><B>
+      <P>s3</B> = <B>s1</B> – <B>s2</B>, </P>
+      <P>so <B>v</B> = a <B>s1</B> + b <B>s2</B> + c <B>s3</B> </P>
+      <P>= a <B>s1</B> + b <B>s2</B> + c (<B>s1</B> – <B>s2</B>) </P>
+      <P>= (a + c) <B>s1</B> + (b – c) 
+<B>s2.</B></P></TD></TR></TBODY></TABLE></CENTER>
+<P></P>
+<P>Thus, two principal components exist for the set of three spectra.</P>
+<P>The analysis of the data matrix in the above simple example has been 
+performed by observation. Unfortunately real spectra are not so simple and 
+spotting the linear relationships between the columns of the data matrix 
+requires a more sophisticated approach.</P>
+<P>PCA, also known as Eigenanalysis, provides a method for identifying the 
+underlying spectra that form the building blocks for the entire set of spectra. 
+The data matrix is transformed into a new set of r-dimensional vectors. These 
+new vectors span the same subspace as the original columns of the data matrix, 
+however they are now characterised by a set of eigenvalues and eigenvectors. The 
+eigenvalues provide a measure for the significance of the abstract factors with 
+respect to the original data. Various statistics can be computed from these 
+values that aid in identifying the dimensionality of the subspace spanned by the 
+spectra.</P>
+<P>The procedure for calculating the abstract factors has its roots in linear 
+least square theory. In fact the preferred method is to form a Singular Value 
+Decomposition (SVD) for the data matrix.</P>
+<P align=center>
+<CENTER>
+<TABLE cellSpacing=1 cellPadding=9 width=106 border=1>
+  <TBODY>
+  <TR>
+    <TD vAlign=top height=30>
+      <P><IMG height=23 src="Principal Component Analysis_files/Image28.gif" 
+      width=86></P></TD></TR></TBODY></TABLE></CENTER>
+<P></P>
+<P>Where <I>D </I>is<I> </I>the<I> </I>data matrix formed from c spectra, each 
+containing r channels. <I>U</I> is the same dimension as <I>D</I>, while 
+<I>S</I> and <I>V</I> are c by c matrices. <I>S</I> is a diagonal matrix; the 
+diagonal elements are the square root of the eigenvalues of the correlation 
+matrix</P>
+<P align=center>
+<CENTER>
+<TABLE cellSpacing=1 cellPadding=9 width=106 border=1>
+  <TBODY>
+  <TR>
+    <TD vAlign=top height=25>
+      <P><IMG height=21 src="Principal Component Analysis_files/Image49.gif" 
+      width=76></P></TD></TR></TBODY></TABLE></CENTER>
+<P></P>
+<P>The abstract factors are computed from <I>US. </I>The rows of <I>V</I> are 
+the corresponding eigenvectors of <I>Z</I>; the co-ordinates of the eigenvectors 
+represent the loading for the abstract factors and specify how linear 
+combinations of these factors can be used to reproduce the original data. 
+Including all of the abstract factors with the appropriate loading enables the 
+data to be reproduced to an accuracy only limited by the precision 
+characteristic of the Eigenanalysis procedure.</P>
+<P>The essential feature of the SVD procedure is to compute the abstract factors 
+so that the factor corresponding to the largest eigenvalue accounts for a 
+maximum of the variation in the data. Subsequent abstract factors are generated 
+such that 1) as much variance as possible is accounted for by each new factor 
+and 2) the newest axis is mutually orthogonal to the set of axes already 
+located. The procedure therefore computes an orthogonal basis set for the 
+subspace spanned by the original data matrix that is oriented with respect to 
+the data in a linear least square sense.</P>
+<P>In principle, the number of non-zero eigenvalues is equal to the number of 
+linearly independent vectors in the original data matrix. This is true for well 
+posed problems, but even the presence of errors due to numerical operations will 
+result in small eigenvalues that theoretically should be zero. Numerical errors 
+are an insignificant problem compared to the one presented by the inclusion of 
+experimental error in the calculation. Noise in the data changes the underlying 
+vectors so that almost every data matrix of c spectra with r acquisition 
+channels, where c &lt;= r, will span a c-dimensional subspace. This is true even 
+though the underlying vectors should only span fewer than c dimensions.</P>
+<P>Various statistics are available for identifying the mostly likely 
+dimensionality of a data matrix. These statistics are designed to aid 
+partitioning the abstract factors into primary and secondary factors. The 
+primary factors are those corresponding to the largest n eigenvalues and 
+represent the set of abstract factors that span the true subspace for the data. 
+The secondary factors are those factors that can be associated with the noise 
+and, in principle, can be omitted from subsequent calculations. It is not 
+possible to completely disassociate the true data from the error within the 
+measured data, however the statistics guide the analyst in choosing the most 
+appropriate number of abstract factors that describe the data and therefore the 
+"best guess" dimensionality for the data matrix.</P>
+<P>In the case of XPS spectra the experimental error is known to be the square 
+root of the number of counts in an acquisition channel. Under these 
+circumstances where the experimental error is known, a number of statistics have 
+been proposed for determining the size of the true factor space.</P>
+<P>&nbsp;</P><B><I><FONT face=Arial size=4>
+<P><A name=_Toc465852279><A name=_Toc466005194><A name=_Toc466094118><A 
+name=_Toc468170733><A name=_Toc468422056><A name=_Toc468590097><A 
+name=_Toc469118919><A name=_Toc469716850><A name=_Toc472045504>Residual Standard 
+Deviation (RSD or Real Error 
+RE)</A></A></A></A></A></A></A></A></A></P></B></I></FONT><FONT size=2></FONT>
+<P>An alternative name for the RSD (used by Malinowski) is the Real Error 
+(RE).</P><FONT size=2></FONT>
+<P>The RSD is defined to be:</P>
+<P align=center>
+<CENTER>
+<TABLE cellSpacing=1 cellPadding=9 width=224 border=1>
+  <TBODY>
+  <TR>
+    <TD vAlign=top height=100>
+      <P><IMG height=91 src="Principal Component Analysis_files/Image50.gif" 
+      width=155></P></TD></TR></TBODY></TABLE></CENTER>
+<P></P>
+<P>where <I>E<SUB>j </I></SUB>is the j<SUP>th</SUP> largest eigenvalue, n is the 
+number of abstract factors used to reproduce the data; c spectra each with r 
+channels are used to construct the data matrix.</P>
+<P>RSD<SUB>n</SUB> must be compared against the estimated experimental error. If 
+the value computed for RSD<SUB>n</SUB> is approximately equal to the estimated 
+error then the first n abstract factors span the factor space. The 
+dimensionality of the original data matrix is therefore n.</P>
+<P>Two further statistics may be derived from RSD<SUB>n</SUB>, namely, 
+IE<SUB>n</SUB> (Imbedded Error) and IND<SUB>n </SUB>(Indicator Function) given 
+by:</P>
+<P align=center>
+<CENTER>
+<TABLE cellSpacing=1 cellPadding=9 width=189 border=1>
+  <TBODY>
+  <TR>
+    <TD vAlign=top height=80>
+      <P><IMG height=63 src="Principal Component Analysis_files/Image51.gif" 
+      width=148></P></TD></TR></TBODY></TABLE></CENTER>
+<P></P>
+<P>And</P>
+<P align=center>
+<CENTER>
+<TABLE cellSpacing=1 cellPadding=9 width=189 border=1>
+  <TBODY>
+  <TR>
+    <TD vAlign=top height=68>
+      <P><IMG height=54 src="Principal Component Analysis_files/Image52.gif" 
+      width=136></P></TD></TR></TBODY></TABLE></CENTER>
+<P></P>
+<P>IE<SUB>n</SUB> and IND<SUB>n</SUB> are statistics that should decrease as the 
+number of primary abstract factors is increased. Once all the primary factors 
+have been included, these statistics should begin to increase since at this 
+point factors from the noise subspace start to interfere with the accuracy of 
+the data description. This minimum is therefore an indicator of the 
+dimensionality of the data subspace.</P>
+<P>&nbsp;</P><B><I><FONT face=Arial size=4>
+<P><A name=_Toc465852280><A name=_Toc466005195><A name=_Toc466094119><A 
+name=_Toc468170734><A name=_Toc468422057><A name=_Toc468590098><A 
+name=_Toc469118920><A name=_Toc469716851><A 
+name=_Toc472045505>Chi-square</A></A></A></A></A></A></A></A></A></P></B></I></FONT><FONT 
+size=2></FONT>
+<P>Bartlett proposed using the chi-square criterion for situations similar to 
+XPS data, where the standard deviation varies from one data channel to the 
+next.</P>
+<P>The procedure involves reproducing the data matrix using the abstract 
+factors. Each abstract factor is progressively included in a linear combination 
+in the order defined by the size of the eigenvalues and weighted by the 
+co-ordinates of the corresponding eigenvectors. The chi-square value for a set 
+of n abstract factors is computed using:</P>
+<P align=center>
+<CENTER>
+<TABLE cellSpacing=1 cellPadding=9 width=212 border=1>
+  <TBODY>
+  <TR>
+    <TD vAlign=top height=75>
+      <P><IMG height=65 src="Principal Component Analysis_files/Image53.gif" 
+      width=188></P></TD></TR></TBODY></TABLE></CENTER>
+<P></P>
+<P>where <I>d<SUB>ij</I></SUB> is an element of the data matrix, 
+<I><U>d</U><SUB>ij</I></SUB> is the corresponding approximation to the data 
+point constructed from the first n abstract factors with the largest 
+eigenvalues. The standard deviation for XPS data <FONT 
+face=Symbol>s</FONT><SUB>ij</SUB> is the square root of 
+<I>d<SUB>ij</I></SUB>.</P>
+<P>The expected value for each n is given by <FONT 
+face=Symbol>c</FONT><SUB>n</SUB><SUP>2</SUP> (expected) = (r-n)(c-n). A 
+comparison between the expected value and the computed value is the basis for 
+determining the number of principal components. Both <FONT 
+face=Symbol>c</FONT><SUB>n</SUB><SUP>2</SUP> and its expected value decrease as 
+n increases. <FONT face=Symbol>c</FONT><SUB>n</SUB><SUP>2</SUP> initially is 
+larger than <FONT face=Symbol>c</FONT><SUB>n</SUB><SUP>2</SUP> (expected) but as 
+n increases a crossover occurs. The true dimensionality of the data matrix is 
+chosen to be the value of n for which <FONT 
+face=Symbol>c</FONT><SUB>n</SUB><SUP>2</SUP> is closest to its expected value. 
+</P>
+<P>Note that smoothing the data will alter the characteristics of the noise. 
+Performing such pre-processing therefore invalidates the <FONT 
+face=Symbol>c</FONT><SUB>n</SUB><SUP>2</SUP> statistic.</P>
+<P>&nbsp;</P><B><I><FONT face=Arial size=4>
+<P><A name=_Toc468170735><A name=_Toc468422058><A name=_Toc468590099><A 
+name=_Toc469118921><A name=_Toc469716852><A name=_Toc472045506>Target Factor 
+Analysis</A></A></A></A></A></A></P></B></I></FONT><FONT size=2></FONT>
+<P>Principal Component Analysis provides a set of basis vectors that describe 
+the original set of spectra. Although useful as a means of characterising the 
+data, these abstract factors are in general not physically meaningful. Target 
+Factor Analysis is concerned with identifying vectors that can also describe the 
+data, but with the additional property that they are recognisable as spectra 
+rather than simply abstract vectors in an r-dimensional space.</P>
+<P>There are numerous methods for transforming the PCA abstract factors to 
+provide vectors that are more open to chemical interpretation. These involve 
+constructing abstract rotation transformations that map the abstract factors 
+into one of the infinite number of alternative basis sets for the factor space. 
+Fortunately there is a technique which when coupled with curve synthesis, lends 
+itself to the analysis of XPS data, namely, Target Testing.</P>
+<P>&nbsp;</P><B><I><FONT face=Arial size=4>
+<P><A name=_Toc468170736><A name=_Toc468422059><A name=_Toc468590100><A 
+name=_Toc469118922><A name=_Toc469716853><A name=_Toc472045507>Target 
+Testing</A></A></A></A></A></A></P></B></I></FONT><FONT size=2></FONT>
+<P>Once a Principal Component Analysis has been performed, the mathematical 
+bridge between abstract and real solutions is Target Testing. Individual spectra 
+can be evaluated to assess whether the corresponding vector lies in the subspace 
+spanned by the chosen primary abstract factors. The essential feature of Target 
+Testing is to form the projection of the target vector onto the subspace spanned 
+by the primary factors, then compute the predicted target vector using this 
+projection. Statistical tests applied to the predicted and test vectors 
+determine whether these two vectors are one and the same. These tests serve as a 
+mean of accepting or rejecting possible fundamental components of the sample. 
+</P>
+<P>Ultimately, the goal of target testing is to identify a set of spectra that 
+span the same subspace as the primary abstract factors. Complete models of real 
+factors are tested in the target-combination step. In the combination step the 
+data matrix is reproduced from the real factors (spectra) rather than from 
+abstract factors and by comparing the results for different sets of real 
+factors, the best TFA solution to a problem can be determined.</P>
+<P>Testing a target vector <B>x </B>with respect to the chosen set of primary 
+abstract factors involves forming the projection <B>t </B>onto the subspace 
+spanned by the PCA primary abstract factors. The predicted vector 
+<B><U>x,</B></U> calculated using the co-ordinate values of <B>t</B> to load the 
+corresponding abstract factors, is compared to the original target vector. A 
+target vector that belongs to the subspace spanned by the primary abstract 
+factors should result in a predicted vector that is identical to the initial 
+target vector. Errors in the original data matrix and similar errors in the 
+measured target vector mean that the predicted and target vector differ form 
+each other as well as from the pure target vector <B>x<SUP>*</B></SUP> (<B>x</B> 
+but without error). Estimates for these differences allow a comparison to be 
+made between the predicted and target vector and a decision as to which targets 
+to include in the target combination step.</P>
+<P>The apparent error in the test vector (AET) measures the difference between 
+the test and predicted vectors in a root mean square (RMS) sense. Similarly two 
+other RMS quantities estimate the real error in the target vector (RET) and the 
+real error in the predicted vector (REP). These error estimates form the basis 
+for the SPOIL function defined to be approximately equal to the ratio 
+RET/REP.</P><B><I><FONT face=Arial size=4>
+<P><A name=_Toc465852281><A name=_Toc466005196><A name=_Toc466094120><A 
+name=_Toc468170737><A name=_Toc468422060><A name=_Toc468590101><A 
+name=_Toc469118923><A name=_Toc469716854><A name=_Toc472045508>Principal 
+Component Analysis by 
+Example</A></A></A></A></A></A></A></A></A></P></B></I></FONT><FONT 
+size=2></FONT>
+<P>The first example illustrating the characteristics of PCA uses a set of 
+artificial data.</P>
+<P>Three sets of spectra prepared from synthetic components are used in the PCA. 
+The structure of the artificial data derives from Carbon 1s states within three 
+compounds, namely, PMMA, PVA and PVC (Figure 1.). The proportion of each 
+compound varies throughout each set of ten VAMAS blocks. The data is located in 
+the files c1stest1.vms, c1stest2.vms and c1stest3.vms. The underlying trends 
+introduced into each file are as follows: peaks corresponding to PMMA and PVC 
+obey quadratic adjustments in intensity over the set of ten spectra (PMMA 
+decreases while PVC increases). The difference between the three files is the 
+proportion of PVA in each data envelope. The first file (c1test1.vms) has a 
+constant level of PVA (Figure 2); the second file (c1stest2.vms) varies 
+linearly, first increasing then decreasing; the third file (c1stest3.vms) 
+includes a linear increase in the level of PVA.</P>
+<P>The objective is to show how the statistics used in PCA behave for a known 
+problem. Data matrices constructed from the three sets of spectra should have a 
+dimensionality of three.</P>
+<P align=center>
+<CENTER>
+<TABLE cellSpacing=1 cellPadding=9 width=437 border=1>
+  <TBODY>
+  <TR>
+    <TD vAlign=top height=914>
+      <P>Figure 1: Artificial C 1s Data</P>
+      <P><IMG height=266 src="Principal Component Analysis_files/Image54.gif" 
+      width=401></P>
+      <P><IMG height=266 src="Principal Component Analysis_files/Image55.gif" 
+      width=401></P>
+      <P><IMG height=266 src="Principal Component Analysis_files/Image56.gif" 
+      width=401></P></TD></TR></TBODY></TABLE></CENTER>
+<P></P>
+<P>Note that, although each compound is constructed from a number of C 1s peaks 
+(PMMA 4, PVA 4 and PVC 2), the stoichiometry of these compounds masks the true 
+number of synthetic components actually present in the data. Hence the 
+dimensionality of the data should be three not ten (4+4+2). An additional twist 
+to this example is that two of the underlying envelopes are similar in shape to 
+each other, though not identical (see Figure 1).</P>
+<P>The trend throughout the first data set may be seen in Figure 2.</P>
+<P align=center>
+<CENTER>
+<TABLE cellSpacing=1 cellPadding=9 width=425 border=1>
+  <TBODY>
+  <TR>
+    <TD vAlign=top height=322>
+      <P>Figure 2: c1s_test1.vms C 1s Spectra</P>
+      <P><IMG height=317 src="Principal Component Analysis_files/Image57.gif" 
+      width=394></P></TD></TR></TBODY></TABLE></CENTER>
+<P></P>
+<P>No noise is present in the data; therefore eigenvalues belonging to the 
+primary set of three abstract factors should be non-zero, while the remaining 
+seven eigenvalues should be zero. The results of applying PCA to these data sets 
+(Table 1) illustrate the uncertainty associated in estimating the dimensionality 
+of the data matrix from the statistics. The fourth largest eigenvalue in each 
+case is small but non-zero. Also the statistics for IE and IND indicate a 
+minimum at eigenvalues other than the expected result. Chi-square is not a valid 
+statistic since no noise is present in the data, however it does show that three 
+abstract factors are sufficient to reproduce the data to within reason.</P>
+<P>Table 1: PCA report for file c1stest.vms</P>
+<P align=left>
+<TABLE cellSpacing=1 cellPadding=2 width=649 border=1>
+  <TBODY>
+  <TR>
+    <TD vAlign=top width="13%" colSpan=2 height=20></TD>
+    <TD vAlign=top width="13%" height=20></TD>
+    <TD vAlign=top width="13%" height=20></TD>
+    <TD vAlign=top width="13%" height=20></TD>
+    <TD vAlign=top width="13%" colSpan=2 height=20></TD>
+    <TD vAlign=top width="13%" height=20></TD>
+    <TD vAlign=top width="11%" height=20></TD>
+    <TD width="13%" colSpan=2 height=20></TD></TR>
+  <TR>
+    <TD vAlign=top width="13%" height=20><B><FONT face=Arial size=1>
+      <P align=center>FactorC 1s/1</B></FONT></P></TD>
+    <TD vAlign=top width="13%" colSpan=2 height=20><B><FONT face=Arial size=1>
+      <P align=center>10861690000</B></FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><B><FONT face=Arial size=1>
+      <P align=center>266.7944</B></FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><B><FONT face=Arial size=1>
+      <P align=center>615.8053</B></FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><B><FONT face=Arial size=1>
+      <P align=center>194.7347</B></FONT></P></TD>
+    <TD vAlign=top width="13%" colSpan=2 height=20><B><FONT face=Arial size=1>
+      <P align=center>7602.534</B></FONT></P></TD>
+    <TD vAlign=top width="13%" colSpan=2 height=20><B><FONT face=Arial size=1>
+      <P align=center>29055.89</B></FONT></P></TD>
+    <TD vAlign=top width="11%" height=20><B><FONT face=Arial size=1>
+      <P align=center>1800</B></FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="13%" height=20><B><FONT face=Arial size=1>
+      <P align=center>C 1s/2</B></FONT></P></TD>
+    <TD vAlign=top width="13%" colSpan=2 height=20><B><FONT face=Arial size=1>
+      <P align=center>684568100</B></FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><B><FONT face=Arial size=1>
+      <P align=center>13.0963</B></FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><B><FONT face=Arial size=1>
+      <P align=center>29.86145</B></FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><B><FONT face=Arial size=1>
+      <P align=center>13.35445</B></FONT></P></TD>
+    <TD vAlign=top width="13%" colSpan=2 height=20><B><FONT face=Arial size=1>
+      <P align=center>466.5852</B></FONT></P></TD>
+    <TD vAlign=top width="13%" colSpan=2 height=20><B><FONT face=Arial size=1>
+      <P align=center>172.5176</B></FONT></P></TD>
+    <TD vAlign=top width="11%" height=20><B><FONT face=Arial size=1>
+      <P align=center>1592</B></FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="13%" height=20><B><FONT face=Arial size=1>
+      <P align=center>C 1s/3</B></FONT></P></TD>
+    <TD vAlign=top width="13%" colSpan=2 height=20><B><FONT face=Arial size=1>
+      <P align=center>1433862</B></FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><B><FONT face=Arial size=1>
+      <P align=center>0.01064209</B></FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><B><FONT face=Arial size=1>
+      <P align=center>0.02964045</B></FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><B><FONT face=Arial size=1>
+      <P align=center>0.01623474</B></FONT></P></TD>
+    <TD vAlign=top width="13%" colSpan=2 height=20><B><FONT face=Arial size=1>
+      <P align=center>0.6049071</B></FONT></P></TD>
+    <TD vAlign=top width="13%" colSpan=2 height=20><B><FONT face=Arial size=1>
+      <P align=center>0.000190564</B></FONT></P></TD>
+    <TD vAlign=top width="11%" height=20><B><FONT face=Arial size=1>
+      <P align=center>1386</B></FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="13%" height=20><B><FONT face=Arial size=1>
+      <P align=center>C 1s/4</B></FONT></P></TD>
+    <TD vAlign=top width="13%" colSpan=2 height=20><B><FONT face=Arial size=1>
+      <P align=center>1.230771</B></FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><B><FONT face=Arial size=1>
+      <P align=center>0.000391784</B></FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><B><FONT face=Arial size=1>
+      <P align=center>0.002107629</B></FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><B><FONT face=Arial size=1>
+      <P align=center>0.001332982</B></FONT></P></TD>
+    <TD vAlign=top width="13%" colSpan=2 height=20><B><FONT face=Arial size=1>
+      <P align=center>0.05854525</B></FONT></P></TD>
+    <TD vAlign=top width="13%" colSpan=2 height=20><B><FONT face=Arial size=1>
+      <P align=center>9.86356E-08</B></FONT></P></TD>
+    <TD vAlign=top width="11%" height=20><B><FONT face=Arial size=1>
+      <P align=center>1182</B></FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="13%" height=20><B><FONT face=Arial size=1>
+      <P align=center>C 1s/5</B></FONT></P></TD>
+    <TD vAlign=top width="13%" colSpan=2 height=20><B><FONT face=Arial size=1>
+      <P align=center>0.003712633</B></FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><B><FONT face=Arial size=1>
+      <P align=center>0.000385433</B></FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><B><FONT face=Arial size=1>
+      <P align=center>0.001279202</B></FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><B><FONT face=Arial size=1>
+      <P align=center>0.000904532</B></FONT></P></TD>
+    <TD vAlign=top width="13%" colSpan=2 height=20><B><FONT face=Arial size=1>
+      <P align=center>0.05116807</B></FONT></P></TD>
+    <TD vAlign=top width="13%" colSpan=2 height=20><B><FONT face=Arial size=1>
+      <P align=center>1.20367E-07</B></FONT></P></TD>
+    <TD vAlign=top width="11%" height=20><B><FONT face=Arial size=1>
+      <P align=center>980</B></FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="13%" height=20><B><FONT face=Arial size=1>
+      <P align=center>C 1s/6</B></FONT></P></TD>
+    <TD vAlign=top width="13%" colSpan=2 height=20><B><FONT face=Arial size=1>
+      <P align=center>0.000545838</B></FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><B><FONT face=Arial size=1>
+      <P align=center>0.000230365</B></FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><B><FONT face=Arial size=1>
+      <P align=center>0.001168993</B></FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><B><FONT face=Arial size=1>
+      <P align=center>0.000905498</B></FONT></P></TD>
+    <TD vAlign=top width="13%" colSpan=2 height=20><B><FONT face=Arial size=1>
+      <P align=center>0.07306205</B></FONT></P></TD>
+    <TD vAlign=top width="13%" colSpan=2 height=20><B><FONT face=Arial size=1>
+      <P align=center>4.86336E-08</B></FONT></P></TD>
+    <TD vAlign=top width="11%" height=20><B><FONT face=Arial size=1>
+      <P align=center>780</B></FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="13%" height=20><B><FONT face=Arial size=1>
+      <P align=center>C 1s/7</B></FONT></P></TD>
+    <TD vAlign=top width="13%" colSpan=2 height=20><B><FONT face=Arial size=1>
+      <P align=center>0.000473059</B></FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><B><FONT face=Arial size=1>
+      <P align=center>0.000240069</B></FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><B><FONT face=Arial size=1>
+      <P align=center>0.001018602</B></FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><B><FONT face=Arial size=1>
+      <P align=center>0.000852223</B></FONT></P></TD>
+    <TD vAlign=top width="13%" colSpan=2 height=20><B><FONT face=Arial size=1>
+      <P align=center>0.113178</B></FONT></P></TD>
+    <TD vAlign=top width="13%" colSpan=2 height=20><B><FONT face=Arial size=1>
+      <P align=center>5.18512E-08</B></FONT></P></TD>
+    <TD vAlign=top width="11%" height=20><B><FONT face=Arial size=1>
+      <P align=center>582</B></FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="13%" height=20><B><FONT face=Arial size=1>
+      <P align=center>C 1s/8</B></FONT></P></TD>
+    <TD vAlign=top width="13%" colSpan=2 height=20><B><FONT face=Arial size=1>
+      <P align=center>0.000306354</B></FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><B><FONT face=Arial size=1>
+      <P align=center>0.000155331</B></FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><B><FONT face=Arial size=1>
+      <P align=center>0.000891207</B></FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><B><FONT face=Arial size=1>
+      <P align=center>0.000797119</B></FONT></P></TD>
+    <TD vAlign=top width="13%" colSpan=2 height=20><B><FONT face=Arial size=1>
+      <P align=center>0.2228016</B></FONT></P></TD>
+    <TD vAlign=top width="13%" colSpan=2 height=20><B><FONT face=Arial size=1>
+      <P align=center>2.20338E-08</B></FONT></P></TD>
+    <TD vAlign=top width="11%" height=20><B><FONT face=Arial size=1>
+      <P align=center>386</B></FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="13%" height=20><B><FONT face=Arial size=1>
+      <P align=center>C 1s/9</B></FONT></P></TD>
+    <TD vAlign=top width="13%" colSpan=2 height=20><B><FONT face=Arial size=1>
+      <P align=center>0.000200465</B></FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><B><FONT face=Arial size=1>
+      <P align=center>0.00012725</B></FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><B><FONT face=Arial size=1>
+      <P align=center>0.00076887</B></FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><B><FONT face=Arial size=1>
+      <P align=center>0.000729414</B></FONT></P></TD>
+    <TD vAlign=top width="13%" colSpan=2 height=20><B><FONT face=Arial size=1>
+      <P align=center>0.7688698</B></FONT></P></TD>
+    <TD vAlign=top width="13%" colSpan=2 height=20><B><FONT face=Arial size=1>
+      <P align=center>1.91008E-08</B></FONT></P></TD>
+    <TD vAlign=top width="11%" height=20><B><FONT face=Arial size=1>
+      <P align=center>192</B></FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="13%" height=20><B><FONT face=Arial size=1>
+      <P align=center>C 1s/10</B></FONT></P></TD>
+    <TD vAlign=top width="13%" colSpan=2 height=20><B><FONT face=Arial size=1>
+      <P align=center>0.000118823</B></FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><B><FONT face=Arial size=1>
+      <P align=center>4.68061E-13</B></FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><B><FONT face=Arial size=1>
+      <P align=center>0</B></FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><B><FONT face=Arial size=1>
+      <P align=center>0</B></FONT></P></TD>
+    <TD vAlign=top width="13%" colSpan=2 height=20><B><FONT face=Arial size=1>
+      <P align=center>0</B></FONT></P></TD>
+    <TD vAlign=top width="13%" colSpan=2 height=20><B><FONT face=Arial size=1>
+      <P align=center>6.13259E-23</B></FONT></P></TD>
+    <TD vAlign=top width="11%" height=20><B><FONT face=Arial size=1>
+      <P align=center>0</B></FONT></P></TD></TR></TBODY></TABLE></P>
+<P>It is interesting to see how the eigenvalues change with respect to the three 
+data sets (Figure 3 and Figure 4). The same spectra varied in different ways 
+results in slightly different orientations for the principal component axes and 
+hence different eigenvalues.</P>
+<P>The PCA statistics IE and IND have implied a dimensionality other than three 
+(Table 1). The clue to the correct dimensionality of the data lies in the 
+relative size of the eigenvalues. The fourth eigenvalue is in two cases better 
+than five orders of magnitude smaller than the third eigenvalue. This statement 
+has been made with the benefit of a good understanding of what is present in the 
+data. In real situations such statements are themselves suspect and so require 
+support from other data reduction techniques. For example curve fitting using 
+three sets of synthetic peaks all linked with the appropriate stoichiometric 
+relationships would lend support to the hypothesis. Curve fitting such 
+structures is not an exact science and such fits themselves should be supported 
+by statistics gathered from the fitting parameters.</P>
+<P align=center>
+<CENTER>
+<TABLE cellSpacing=1 cellPadding=9 width=497 border=1>
+  <TBODY>
+  <TR>
+    <TD vAlign=top height=507>
+      <P>&nbsp;</P>
+      <P><IMG height=443 src="Principal Component Analysis_files/Image58.gif" 
+      width=418></P>
+      <P>Figure 3: Abstract Factors and Eigenvalues. 
+</P></TD></TR></TBODY></TABLE></CENTER>
+<P></P>
+<P align=center>
+<CENTER>
+<TABLE cellSpacing=1 cellPadding=9 width=496 border=1>
+  <TBODY>
+  <TR>
+    <TD vAlign=top height=502>
+      <P>&nbsp;</P>
+      <P><IMG height=443 src="Principal Component Analysis_files/Image59.gif" 
+      width=408></P>
+      <P>Figure 4. Eigenvalues for c1s_test2.vms Abstract 
+  Factors</P></TD></TR></TBODY></TABLE></CENTER>
+<P></P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>The second example illustrates the effects of experimental error on a PCA 
+calculation.</P>
+<P>Table 2: PCA Applied to Artificial Data with Simulated Noise.</P>
+<P align=center>
+<CENTER>
+<TABLE cellSpacing=1 cellPadding=2 width=621 border=1>
+  <TBODY>
+  <TR>
+    <TD vAlign=top width="15%" height=20><FONT face=Arial size=1>
+      <P align=center>Factor</FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><FONT face=Arial size=1>
+      <P align=center>Eigenvalue</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>RMS</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>RE (RSD)</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>IE</FONT></P></TD>
+    <TD vAlign=top width="10%" height=20><FONT face=Arial size=1>
+      <P align=center>IND * 1000</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>Chi-sq Calc.</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>Chi-sq Expected</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="15%" height=20><FONT face=Arial size=1>
+      <P align=center>C 1s/1</FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><FONT face=Arial size=1>
+      <P align=center>10883620000</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>267.626</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>617.9728</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>195.4202</FONT></P></TD>
+    <TD vAlign=top width="10%" height=20><FONT face=Arial size=1>
+      <P align=center>7629.294</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>50489.63</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>1800</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="15%" height=20><FONT face=Arial size=1>
+      <P align=center>C 1s/2</FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><FONT face=Arial size=1>
+      <P align=center>687172800</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>18.93302</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>47.75373</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>21.35612</FONT></P></TD>
+    <TD vAlign=top width="10%" height=20><FONT face=Arial size=1>
+      <P align=center>746.152</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>3572.687</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>1592</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="15%" height=20><FONT face=Arial size=1>
+      <P align=center>C 1s/3</FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><FONT face=Arial size=1>
+      <P align=center>2714766</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>6.90718</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>26.01386</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>14.24838</FONT></P></TD>
+    <TD vAlign=top width="10%" height=20><FONT face=Arial size=1>
+      <P align=center>530.8951</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>483.7729</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>1386</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="15%" height=20><FONT face=Arial size=1>
+      <P align=center>C 1s/4</FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><FONT face=Arial size=1>
+      <P align=center>946794.7</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>0.1649431</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>2.106561</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>1.332306</FONT></P></TD>
+    <TD vAlign=top width="10%" height=20><FONT face=Arial size=1>
+      <P align=center>58.51557</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>0.5688374</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>1182</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="15%" height=20><FONT face=Arial size=1>
+      <P align=center>C 1s/5</FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><FONT face=Arial size=1>
+      <P align=center>5095.574</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>0.0622169</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>0.5048702</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>0.3569971</FONT></P></TD>
+    <TD vAlign=top width="10%" height=20><FONT face=Arial size=1>
+      <P align=center>20.19481</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>1.247441</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>980</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="15%" height=20><FONT face=Arial size=1>
+      <P align=center>C 1s/6</FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><FONT face=Arial size=1>
+      <P align=center>226.9936</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>0.01656361</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>0.1904914</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>0.147554</FONT></P></TD>
+    <TD vAlign=top width="10%" height=20><FONT face=Arial size=1>
+      <P align=center>11.90571</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>0.002773735</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>780</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="15%" height=20><FONT face=Arial size=1>
+      <P align=center>C 1s/7</FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><FONT face=Arial size=1>
+      <P align=center>29.13143</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>0.002688086</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>0.00847462</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>0.007090376</FONT></P></TD>
+    <TD vAlign=top width="10%" height=20><FONT face=Arial size=1>
+      <P align=center>0.9416245</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>5.0833E-05</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>582</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="15%" height=20><FONT face=Arial size=1>
+      <P align=center>C 1s/8</FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><FONT face=Arial size=1>
+      <P align=center>0.03943089</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>0.000339289</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>0.003105158</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>0.002777337</FONT></P></TD>
+    <TD vAlign=top width="10%" height=20><FONT face=Arial size=1>
+      <P align=center>0.7762894</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>3.05649E-07</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>386</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="15%" height=20><FONT face=Arial size=1>
+      <P align=center>C 1s/9</FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><FONT face=Arial size=1>
+      <P align=center>0.003409306</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>0.000206314</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>0.001523904</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>0.001445703</FONT></P></TD>
+    <TD vAlign=top width="10%" height=20><FONT face=Arial size=1>
+      <P align=center>1.523904</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>9.22657E-08</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>192</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="15%" height=20><FONT face=Arial size=1>
+      <P align=center>C 1s/10</FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><FONT face=Arial size=1>
+      <P align=center>0.000466779</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>1.26006E-12</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>0</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>0</FONT></P></TD>
+    <TD vAlign=top width="10%" height=20><FONT face=Arial size=1>
+      <P align=center>0</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>7.4912E-22</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>0</FONT></P></TD></TR></TBODY></TABLE></CENTER>
+<P></P>
+<P>Real data includes noise. The effect of noise on a PCA calculation can be see 
+from Figure 5 together with the report in Table 2. The data in the file 
+c1stest1.vms has been used together with a pseudorandom number generator to 
+simulate noise that would typically be found in XPS data. The consequence of 
+including a random element in the data is that the eigenvalues increase in size 
+and lead to further uncertainty with regard to which eigenvalues belong to the 
+set of primary abstract factors. Note that the abstract factors in Figure 5 are 
+plotted in the reverse order to the ones in Figure 3 and Figure 4.</P>
+<P align=center>
+<CENTER>
+<TABLE cellSpacing=1 cellPadding=9 width=496 border=1>
+  <TBODY>
+  <TR>
+    <TD vAlign=top height=473>
+      <P>&nbsp;</P>
+      <P><IMG height=415 src="Principal Component Analysis_files/Image60.gif" 
+      width=398></P>
+      <P>Figure 5: c1stest1.vms data plus artificial 
+noise.</P></TD></TR></TBODY></TABLE></CENTER>
+<P></P>
+<P>Fortunately, the chi-square statistic becomes more meaningful when noise is 
+introduced into the problem. A comparison between the computed chi-square and 
+its expected values do seem to point to a 3-dimensional subspace. The crossover 
+between the two quantities suggests the need for three abstract factors when 
+approximating the data matrix using the results of PCA.</P>
+<P>&nbsp;</P><B><I><FONT face=Arial size=4>
+<P><A name=_Toc468170738><A name=_Toc468422061><A name=_Toc468590102><A 
+name=_Toc469118924><A name=_Toc469716855><A name=_Toc472045509>Principal 
+Component Analysis and Real Data</A></A></A></A></A></A></P></B></I></FONT>
+<P>XPS depth profiles generate sets of spectra that are idea for examination via 
+PCA. The spectra are produced by repeatedly performing etch cycles followed by 
+measuring the count rate over an identical energy region. The resulting data set 
+therefore varies in chemical composition with respect to etch time and the 
+common acquisition conditions provide data in a form that is well suited to 
+PCA.</P>
+<P>An aluminium foil, when profiled using a Kratos Analytical Axis Ultra, 
+provides a good example of a data set that can be analysed using some of the 
+features on offer in CasaXPS. The data is not chemically or structurally 
+interesting, but does show how trends can be identified and anomalies 
+isolated.</P>
+<P align=center>
+<CENTER>
+<TABLE cellSpacing=1 cellPadding=9 width=401 border=1>
+  <TBODY>
+  <TR>
+    <TD vAlign=top height=262>
+      <P><IMG height=243 src="Principal Component Analysis_files/Image34.gif" 
+      width=347></P></TD></TR></TBODY></TABLE></CENTER>
+<P></P>
+<P>Figure 6 shows a plot of the Al 2p energy-region profiled against etch time. 
+The data envelopes change in shape as the surface oxide layer is removed by the 
+etch cycles to reveal the homogeneous bulk aluminium metal. </P>
+<P>It should also be noted from Figure 6 that the data contains an imperfection. 
+One of the energy scans includes data acquired during an instrumental event. 
+Noise spikes are superimposed on the true data and these should be removed 
+before techniques such as curve synthesis are applied. In this case the spikes 
+appear in the background and are therefore obvious to the eye, however similar 
+non-physical structure that occurs on the side of a peak is less obvious and 
+could be missed.</P>
+<P><A name=_Toc466005197><A name=_Toc466094121>The first step in performing the 
+Principal Component Analysis is to define a quantification region for each of 
+the spectra to be used in the analysis. These regions specify the acquisition 
+channels that will be used in the data matrix. Also any shifts in the data due 
+to charging can be removed from the calculation by using an offset in the energy 
+region for those spectra affected.</P>
+<P>Next, select the set of spectra in the Browser View and display the data in 
+the active tile. The processing property page labelled "PCA" offers a button 
+labelled "PCA Apply". On pressing this button, those spectra displayed in the 
+active tile are transformed into abstract factors. Figure 7 displays the spectra 
+before the PCA transformation while Figure 8 shows the abstract factors 
+generated from the eigenanalysis. </P>
+<P>Note that the abstract factors are truly abstract. The first factor (Figure 
+8) looks like an Al 2p metal doublet, however this is because the Al 2p metal 
+envelope dominates the data set and therefore a vector having a similar shape 
+accounts for most of the variation in the overall set of spectra. A more even 
+weighting between the underlying line-shapes would produce abstract factors that 
+are less physically meaningful in appearance. </P>
+<P align=center>
+<CENTER>
+<TABLE cellSpacing=1 cellPadding=9 width=366 border=1>
+  <TBODY>
+  <TR>
+    <TD vAlign=top height=284>
+      <P>&nbsp;</P>
+      <P><IMG height=243 src="Principal Component Analysis_files/Image35.gif" 
+      width=347></P></TD></TR></TBODY></TABLE></CENTER>
+<P></P>
+<P>The only real use for the abstract factors is judging their significance with 
+respect to the original data. Abstract vectors that derive from noise look like 
+noise, factors that contribute to the description of the data contain structure. 
+The dividing line between the primary and secondary abstract factors can 
+sometimes be assessed based on the appearance of the abstract factors.</P>
+<P align=center>
+<CENTER>
+<TABLE cellSpacing=1 cellPadding=9 width=396 border=1>
+  <TBODY>
+  <TR>
+    <TD vAlign=top height=254>
+      <P><IMG height=243 src="Principal Component Analysis_files/Image36.gif" 
+      width=347></P></TD></TR></TBODY></TABLE></CENTER>
+<P></P>
+<P>Analysing the Al 2p spectra generates abstract factors and eigenvalues that 
+represent the PCA fingerprint for the data. Table 3 is a report of the Al 2p 
+data set generated by CasaXPS and formatted using a spreadsheet program. Each 
+row of the report is labelled by the VAMAS block name that contains the abstract 
+factor corresponding to the listed eigenvalue. </P>
+<P>&nbsp;</P>
+<P>Table 3: Report generated by a PCA for Al 2p Profile.</P>
+<TABLE cellSpacing=1 cellPadding=2 width=613 border=1>
+  <TBODY>
+  <TR>
+    <TD vAlign=top width="12%" height=20><B><FONT face=Arial size=1>
+      <P align=center>Factors</B></FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><B><FONT face=Arial size=1>
+      <P align=center>Eigenvalue</B></FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><B><FONT face=Arial size=1>
+      <P align=center>RMS</B></FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><B><FONT face=Arial size=1>
+      <P align=center>RE (RSD)</B></FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><B><FONT face=Arial size=1>
+      <P align=center>IE</B></FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><B><FONT face=Arial size=1>
+      <P align=center>IND * 1000</B></FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><B><FONT face=Arial size=1>
+      <P align=center>Chi-sq </P>
+      <P align=center>Calc.</B></FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><B><FONT face=Arial size=1>
+      <P align=center>Chi-sq</P>
+      <P align=center>Expected</B></FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>Al 2p/3</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>4727872000</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>82.5236</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>159.3106</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>34.76442</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>398.2765</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>26032.99</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>2600</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>Al 2p/8</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>65086870</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>3.784555</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>23.78739</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>7.340948</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>65.89305</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>136.4193</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>2451</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>Al 2p/13</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>393178.7</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>5.875731</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>20.74929</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>7.842494</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>64.04102</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>133.7949</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>2304</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>Al 2p/18</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>305001.5</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>3.48073</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>17.85783</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>7.793798</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>61.79182</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>78.0949</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>2159</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>Al 2p/23</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>156694.8</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>3.249367</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>16.25038</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>7.929371</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>63.47803</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>59.6866</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>2016</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>Al 2p/28</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>98359.06</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>2.757161</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>15.2192</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>8.135007</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>67.64091</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>51.1035</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>1875</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>Al 2p/33</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>86168.29</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>2.48836</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>14.18397</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>8.189118</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>72.36718</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>41.82519</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>1736</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>Al 2p/38</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>65267.54</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>2.22333</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>13.35424</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>8.242415</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>79.01916</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>37.98182</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>1599</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>Al 2p/43</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>53613.14</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>2.247765</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>12.61316</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>8.257255</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>87.59142</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>42.46731</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>1464</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>Al 2p/48</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>43569.08</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>0.1744253</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>11.97161</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>8.261198</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>98.93895</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>0.1869893</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>1331</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>Al 2p/53</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>32387.23</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>1.710532</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>11.52946</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>8.344409</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>115.2946</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>29.01139</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>1200</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>Al 2p/58</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>28174.98</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>2.021671</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>11.12658</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>8.410907</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>137.3652</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>33.42906</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>1071</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>Al 2p/63</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>24742</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>1.261896</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>10.75487</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>8.461885</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>168.0448</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>15.17705</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>944</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>Al 2p/68</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>23980.27</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>0.40768</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>10.29759</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>8.407944</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>210.1548</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>1.649807</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>819</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>Al 2p/73</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>20710.42</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>1.113217</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>9.867347</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>8.33943</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>274.093</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>10.69842</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>696</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>Al 2p/78</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>18345.12</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>1.155456</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>9.424948</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>8.226769</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>376.9979</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>15.75993</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>575</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>Al 2p/83</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>16109.71</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>0.7358818</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>8.960655</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>8.062218</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>560.0409</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>5.605129</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>456</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>Al 2p/88</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>13003.76</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>0.7303461</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>8.600543</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>7.962556</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>955.6159</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>5.882052</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>339</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>Al 2p/93</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>12307.15</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>0.7049177</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>7.99876</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>7.608339</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>1999.69</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>6.193881</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>224</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>Al 2p/98</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>9285.948</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>0.000443667</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>7.554815</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>7.372745</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>7554.815</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>2.12747E-06</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>111</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>Al 2p/103</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>7476.855</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>1.90305E-13</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>0</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>0</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>0</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>2.03675E-25</FONT></P></TD>
+    <TD vAlign=top width="13%" height=20><FONT face=Arial size=1>
+      <P align=center>0</FONT></P></TD></TR></TBODY></TABLE>
+<P>The chi-square indicates that the data matrix can be reproduced to within 
+experimental error using two abstract factors. This is a result that is 
+consistent with the physical nature of the sample. It is also interesting (from 
+a mathematical standpoint) to note that using all the abstract factors to 
+reproduce the data matrix returns a chi-square of zero (allowing for round-off 
+errors in the computation). This should always be the case and provides an easy 
+check to see that the calculation has been performed correctly. </P>
+<P>All the statistics expect the Indicator Function point to two abstract 
+factors being sufficient to span the factor space for the data matrix. </P>
+<P align=center>
+<CENTER>
+<TABLE cellSpacing=1 cellPadding=9 width=389 border=1>
+  <TBODY>
+  <TR>
+    <TD vAlign=top height=263>
+      <P><IMG height=243 src="Principal Component Analysis_files/Image37.gif" 
+      width=350></P></TD></TR></TBODY></TABLE></CENTER>
+<P></P>
+<P>It is worth examining the data set using a subset of the spectra and Target 
+Testing the spectra not used in the PCA. This allows anomalies to be identified 
+such as spikes in the data. Selecting a representative subset of spectra for the 
+PCA then target testing the remainder is particularly useful for large sets of 
+data.</P>
+<P>Table 4: Target Test Report for a Subset of Al 2p Data Set.</P>
+<P align=left>
+<TABLE cellSpacing=1 cellPadding=2 width=578 border=1>
+  <TBODY>
+  <TR>
+    <TD vAlign=top width="12%" height=20><B><FONT face=Arial size=1>
+      <P align=center>Target</B></FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><B><FONT face=Arial size=1>
+      <P align=center>AET</B></FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><B><FONT face=Arial size=1>
+      <P align=center>REP</B></FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><B><FONT face=Arial size=1>
+      <P align=center>RET</B></FONT></P></TD>
+    <TD vAlign=top width="16%" height=20><B><FONT face=Arial size=1>
+      <P align=center>SPOIL</B></FONT></P></TD>
+    <TD vAlign=top width="16%" height=20><B><FONT face=Arial size=1>
+      <P align=center>Al 2p/3</B></FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><B><FONT face=Arial size=1>
+      <P align=center>Al 2p/8</B></FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>Al 2p/23</FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><FONT face=Arial size=1>
+      <P align=center>20.93032</FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><FONT face=Arial size=1>
+      <P align=center>10.38374</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>18.17295</FONT></P></TD>
+    <TD vAlign=top width="16%" height=20><FONT face=Arial size=1>
+      <P align=center>1.750135</FONT></P></TD>
+    <TD vAlign=top width="16%" height=20><FONT face=Arial size=1>
+      <P align=center>0.39033</FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><FONT face=Arial size=1>
+      <P align=center>-0.04947</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>Al 2p/28</FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><FONT face=Arial size=1>
+      <P align=center>23.83028</FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><FONT face=Arial size=1>
+      <P align=center>11.05117</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>21.11288</FONT></P></TD>
+    <TD vAlign=top width="16%" height=20><FONT face=Arial size=1>
+      <P align=center>1.910467</FONT></P></TD>
+    <TD vAlign=top width="16%" height=20><FONT face=Arial size=1>
+      <P align=center>0.41839</FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><FONT face=Arial size=1>
+      <P align=center>0.017257</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>Al 2p/33</FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><FONT face=Arial size=1>
+      <P align=center>19.83736</FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><FONT face=Arial size=1>
+      <P align=center>11.47927</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>16.17861</FONT></P></TD>
+    <TD vAlign=top width="16%" height=20><FONT face=Arial size=1>
+      <P align=center>1.409376</FONT></P></TD>
+    <TD vAlign=top width="16%" height=20><FONT face=Arial size=1>
+      <P align=center>0.42997</FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><FONT face=Arial size=1>
+      <P align=center>0.065749</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>Al 2p/38</FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><FONT face=Arial size=1>
+      <P align=center>19.8507</FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><FONT face=Arial size=1>
+      <P align=center>12.01348</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>15.80274</FONT></P></TD>
+    <TD vAlign=top width="16%" height=20><FONT face=Arial size=1>
+      <P align=center>1.315418</FONT></P></TD>
+    <TD vAlign=top width="16%" height=20><FONT face=Arial size=1>
+      <P align=center>0.44268</FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><FONT face=Arial size=1>
+      <P align=center>0.10609</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>Al 2p/43</FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><FONT face=Arial size=1>
+      <P align=center>19.9069</FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><FONT face=Arial size=1>
+      <P align=center>12.46508</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>15.52116</FONT></P></TD>
+    <TD vAlign=top width="16%" height=20><FONT face=Arial size=1>
+      <P align=center>1.245171</FONT></P></TD>
+    <TD vAlign=top width="16%" height=20><FONT face=Arial size=1>
+      <P align=center>0.4531</FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><FONT face=Arial size=1>
+      <P align=center>0.133366</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="12%" bgColor=#ffffff height=20><FONT face=Arial 
+      size=1>
+      <P align=center>Al 2p/48</FONT></P></TD>
+    <TD vAlign=top width="14%" bgColor=#ffffff height=20><FONT face=Arial 
+      size=1>
+      <P align=center>57.16561</FONT></P></TD>
+    <TD vAlign=top width="14%" bgColor=#ffffff height=20><FONT face=Arial 
+      size=1>
+      <P align=center>12.70691</FONT></P></TD>
+    <TD vAlign=top width="12%" bgColor=#ffffff height=20><FONT face=Arial 
+      size=1>
+      <P align=center>55.73546</FONT></P></TD>
+    <TD vAlign=top width="16%" bgColor=#ffffff height=20><FONT face=Arial 
+      size=1>
+      <P align=center>4.386233</FONT></P></TD>
+    <TD vAlign=top width="16%" bgColor=#ffffff height=20><FONT face=Arial 
+      size=1>
+      <P align=center>0.45854</FONT></P></TD>
+    <TD vAlign=top width="14%" bgColor=#ffffff height=20><FONT face=Arial 
+      size=1>
+      <P align=center>0.14688</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>Al 2p/53</FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><FONT face=Arial size=1>
+      <P align=center>15.37333</FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><FONT face=Arial size=1>
+      <P align=center>13.18052</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>7.912861</FONT></P></TD>
+    <TD vAlign=top width="16%" height=20><FONT face=Arial size=1>
+      <P align=center>0.600345</FONT></P></TD>
+    <TD vAlign=top width="16%" height=20><FONT face=Arial size=1>
+      <P align=center>0.46791</FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><FONT face=Arial size=1>
+      <P align=center>0.174614</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>Al 2p/58</FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><FONT face=Arial size=1>
+      <P align=center>21.39836</FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><FONT face=Arial size=1>
+      <P align=center>13.30379</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>16.76004</FONT></P></TD>
+    <TD vAlign=top width="16%" height=20><FONT face=Arial size=1>
+      <P align=center>1.259795</FONT></P></TD>
+    <TD vAlign=top width="16%" height=20><FONT face=Arial size=1>
+      <P align=center>0.46901</FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><FONT face=Arial size=1>
+      <P align=center>0.184805</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>Al 2p/63</FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><FONT face=Arial size=1>
+      <P align=center>19.92528</FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><FONT face=Arial size=1>
+      <P align=center>13.5238</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>14.63296</FONT></P></TD>
+    <TD vAlign=top width="16%" height=20><FONT face=Arial size=1>
+      <P align=center>1.082016</FONT></P></TD>
+    <TD vAlign=top width="16%" height=20><FONT face=Arial size=1>
+      <P align=center>0.47386</FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><FONT face=Arial size=1>
+      <P align=center>0.195062</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>Al 2p/68</FONT></P></TD>
+    <TD vAlign=top width="14%" bgColor=#ffffff height=20><FONT face=Arial 
+      size=1>
+      <P align=center>27.73522</FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><FONT face=Arial size=1>
+      <P align=center>13.78354</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>24.06775</FONT></P></TD>
+    <TD vAlign=top width="16%" height=20><FONT face=Arial size=1>
+      <P align=center>1.746122</FONT></P></TD>
+    <TD vAlign=top width="16%" height=20><FONT face=Arial size=1>
+      <P align=center>0.48087</FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><FONT face=Arial size=1>
+      <P align=center>0.203826</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>Al 2p/73</FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><FONT face=Arial size=1>
+      <P align=center>19.10189</FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><FONT face=Arial size=1>
+      <P align=center>13.88023</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>13.12332</FONT></P></TD>
+    <TD vAlign=top width="16%" height=20><FONT face=Arial size=1>
+      <P align=center>0.945469</FONT></P></TD>
+    <TD vAlign=top width="16%" height=20><FONT face=Arial size=1>
+      <P align=center>0.48192</FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><FONT face=Arial size=1>
+      <P align=center>0.210646</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>Al 2p/78</FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><FONT face=Arial size=1>
+      <P align=center>20.9575</FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><FONT face=Arial size=1>
+      <P align=center>13.98145</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>15.61204</FONT></P></TD>
+    <TD vAlign=top width="16%" height=20><FONT face=Arial size=1>
+      <P align=center>1.116625</FONT></P></TD>
+    <TD vAlign=top width="16%" height=20><FONT face=Arial size=1>
+      <P align=center>0.48264</FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><FONT face=Arial size=1>
+      <P align=center>0.218455</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>Al 2p/83</FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><FONT face=Arial size=1>
+      <P align=center>19.03813</FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><FONT face=Arial size=1>
+      <P align=center>14.15492</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>12.7314</FONT></P></TD>
+    <TD vAlign=top width="16%" height=20><FONT face=Arial size=1>
+      <P align=center>0.899433</FONT></P></TD>
+    <TD vAlign=top width="16%" height=20><FONT face=Arial size=1>
+      <P align=center>0.48483</FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><FONT face=Arial size=1>
+      <P align=center>0.229382</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>Al 2p/88</FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><FONT face=Arial size=1>
+      <P align=center>18.38591</FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><FONT face=Arial size=1>
+      <P align=center>14.11378</FONT></P></TD>
+    <TD vAlign=top width="12%" height=20><FONT face=Arial size=1>
+      <P align=center>11.78317</FONT></P></TD>
+    <TD vAlign=top width="16%" height=20><FONT face=Arial size=1>
+      <P align=center>0.83487</FONT></P></TD>
+    <TD vAlign=top width="16%" height=20><FONT face=Arial size=1>
+      <P align=center>0.48374</FONT></P></TD>
+    <TD vAlign=top width="14%" height=20><FONT face=Arial size=1>
+      <P align=center>0.228046</FONT></P></TD></TR></TBODY></TABLE></P>
+<P>The SPOIL function and AET statistics (Table 4) show that Al 2p/48 differs in 
+some respect from the other spectra in the list tested. The spectrum in question 
+corresponds to the trace displaying the spikes seen in Figure 6. Also, another 
+spectrum that could be looked at is Al 2p/68. The AET value is high compared to 
+the other spectra. Such spectra may highlight interfaces where either new 
+chemical states appear (either directly from features in the data or indirectly 
+through changes in the background due features outside the acquisition region) 
+or energy shifts due to sample charging have altered the characteristics of the 
+data.</P>
+<P>The PCA report in Table 3 includes the spectrum labelled Al 2p/48 in the data 
+matrix. The consequence of not removing the spikes is apparent in the 3-D factor 
+space shown in Figure 9, where the abstract factor with third largest eigenvalue 
+clearly contains spikes and the projection point number 10 derived from the Al 
+2p/48 spectrum is obviously a statistical outlier.</P><B><I><FONT face=Arial 
+size=4>
+<P><A name=_Toc468170739><A name=_Toc468422062><A name=_Toc468590103><A 
+name=_Toc469118925><A name=_Toc469716856><A name=_Toc472045510>PCA and 
+CasaXPS</A></A></A></A></A></A></A></A></P></B></I></FONT><FONT size=2></FONT>
+<P>Principal Component Analysis is offered on the "processing" window. The 
+options on the property page labelled "PCA" allow spectra to be transformed into 
+abstract factors according to a number of regimes. These include covariance 
+about the origin and correlation about the origin. Each of these pre-processing 
+methods may be applied with and without background subtraction.</P>
+<P>Quantification regions must be defined for each spectrum included in the 
+factor analysis. In addition, each spectrum must have the same number of 
+acquisition channels as the others in the set of spectra to be analysed. The 
+first step in the calculation replaces the values in each spectrum by the result 
+of interpolating the data within the defined quantification region for the 
+spectrum. This is designed to allow energy shifts to be removed from the data 
+used in the factor analysis.</P>
+<P>The quantification region also provides the type of background to the 
+spectrum. Performing the analysis on background subtracted data attempts to 
+remove artifacts in the spectrum that derive from other peaks within the 
+vicinity of the energy region. Background contributions can be significant in 
+PCA. Additional primary abstract factors are often introduced as a consequence 
+of changes in the background rather than the underlying peaks within the region 
+of interest. The presence of such abstract factors can be viewed as information 
+extracted from the data, although in many circumstances they can lead to 
+incorrect synthetic models if background contributions are misunderstood.</P>
+<P>A factor analysis is performed on the set of spectra displayed in the active 
+tile. Although PCA is offered as a processing option, it is the only processing 
+option that acts on a collection of spectra. Any other option from the 
+processing window would only act upon the first VAMAS block in a selection when 
+that selection is displayed in a single tile. </P>
+<P>The principal component analysis is performed when the "Apply" button is 
+pressed. Each spectrum displayed in the active tile is replaced by the computed 
+abstract factors. The order of the VAMAS blocks containing the spectra is used 
+as the order for the abstract factors. The factor corresponding to the largest 
+eigenvalue is entered first. Subsequent blocks receive the abstract factors in 
+descending order defined by the size of the corresponding eigenvalues. A report 
+showing the statistics for understanding the dimensionality of the factor space 
+appears in a dialog window.</P>
+<P>A button labelled "PCA Report" allows the current PCA report to be 
+re-displayed. Care should be exercised since the values are subject to any 
+additional processing (including PCA) that may subsequently be applied to any of 
+the spectra included in the original analysis.</P>
+<P>The PCA property page includes a button to reset the processing operations 
+for every spectrum displayed in the active tile. This allows a PCA calculation 
+to be undone in one stroke. It will also undo any processing previously 
+performed on the data. PCA is aimed at the raw data; the chi-square statistic is 
+referenced to the raw data and has an undefined meaning when the data have been 
+processed prior to performing factor analysis.</P>
+<P>Target Factor Analysis in the form of target testing is also available on the 
+PCA property page. Following a PCA, candidates for the physically meaningful 
+components may be assessed individually or collectively. Choose an abstract 
+factor from the PCA and entering this factor into the active tile. Then select 
+the number of primary abstract factors for use in the target test procedure. A 
+text field is offered on the PCA property page for this purpose and is found in 
+the section headed "Target FA". Next, select the target test spectra in the 
+Browser view and press the button labelled "TFA Apply". A report detailing the 
+statistics calculated from the TFA procedure will appear in a dialog window. 
+</P>
+<P>The TFA report may be written to file in an ASCII format with TAB separated 
+columns. When pressed, any of the buttons above the columns on the report will 
+display a file dialog window from which the output text-file can be specified. 
+This method for saving a report to file is used by the PCA report (above) and 
+the Linear Regression Report described below.</P>
+<P>Once a set of target spectra has been identified, these spectra can be used 
+to reproduce the original set of spectra through a linear regression step. Enter 
+the set of target spectra into the active tile; then select the original spectra 
+in the Browser view. Press the button labelled "Linear Regression". A report 
+shows the RMS differences between each of the original spectra and the predicted 
+spectra calculated from a linear combination of the set of target spectra 
+displayed in the active tile. The loading used to compute the predicted spectra 
+are listed in the report. The report may be written to file using a similar 
+procedure to the TFA report described above.</P><B><I><FONT face=Arial size=4>
+<P><A name=_Toc466005198><A name=_Toc466094122><A name=_Toc468170740><A 
+name=_Toc468422063><A name=_Toc468590104><A name=_Toc469118926><A 
+name=_Toc469716857><A name=_Toc472045511>Viewing the Data in Factor 
+Space</A></A></A></A></A></A></A></A></P></B></I></FONT><FONT size=2></FONT>
+<P>CasaXPS offers an option on the "Geometry" property page on the "Tile 
+Display" dialog window labelled "Factor Space". If selected, the VAMAS blocks 
+displayed in a tile are used to define the axes for a subspace and the original 
+data are plotted, if possible, as a set of co-ordinates with respect to these 
+axes. The plot represents a projection of the data space onto the subspace 
+defined by a set of two or three abstract factors.</P>
+<P align=center>
+<CENTER>
+<TABLE cellSpacing=1 cellPadding=9 width=389 border=1>
+  <TBODY>
+  <TR>
+    <TD vAlign=top height=258>
+      <P><IMG height=243 src="Principal Component Analysis_files/Image38.gif" 
+      width=350></P></TD></TR></TBODY></TABLE></CENTER>
+<P></P>
+<P>The abstract factors defining the axes are graphed together with a list of 
+the co-ordinate values for each of the spectra projected onto the subspace 
+spanned by the chosen abstract factors (Figure 9). A 3-dimensional plot provides 
+a visual interpretation for the spectra. Patterns formed by the spectra 
+highlight trends within the data set and the relative importance of the abstract 
+factors can be examined. A plot in which the axes are defined by unimportant 
+factors generally appear random, while factors that are significant when 
+describing the data typically produce plots containing recognisable 
+structure.</P></BODY></HTML>

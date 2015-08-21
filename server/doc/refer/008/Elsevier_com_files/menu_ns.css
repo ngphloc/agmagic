@@ -1,0 +1,33 @@
+.itemTextMain {
+	PADDING-LEFT: 3px; FONT-WEIGHT: bold; FONT-SIZE: 11px; CURSOR: hand; COLOR: #ffffff; FONT-FAMILY: verdana, arial; BACKGROUND-COLOR: #34587f
+}
+.itemTextMain A {
+	PADDING-LEFT: 3px; FONT-WEIGHT: bold; FONT-SIZE: 11px; CURSOR: hand; COLOR: #ffffff; FONT-FAMILY: verdana, arial; BACKGROUND-COLOR: #34587f; TEXT-DECORATION: none
+}
+TD.subItemLine {
+	BACKGROUND-COLOR: #666666
+}
+TD.itemLine {
+	BACKGROUND-COLOR: #8293a3
+}
+TD.subItemLineBottom {
+	BACKGROUND-COLOR: #1f354c
+}
+.headerBorder {
+	BACKGROUND-COLOR: #1f354c
+}
+.menuItem {
+	PADDING-LEFT: 5px; FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #ffffff; FONT-FAMILY: verdana, arial
+}
+.menuSubItem {
+	PADDING-LEFT: 6px; FONT-SIZE: 11px; COLOR: #ffffff; FONT-FAMILY: verdana, arial
+}
+.menuSubItem A {
+	PADDING-LEFT: 6px; FONT-SIZE: 11px; COLOR: #ffffff; FONT-FAMILY: verdana, arial; TEXT-DECORATION: none
+}
+.headerText {
+	PADDING-LEFT: 2px; FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #1f354c; FONT-FAMILY: verdana, arial
+}
+.headerText A {
+	PADDING-LEFT: 2px; FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #1f354c; FONT-FAMILY: verdana, arial; TEXT-DECORATION: none
+}

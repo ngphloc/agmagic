@@ -1,0 +1,2151 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0050)http://www.elsevier.com/wps/find/homepage.cws_home -->
+<HTML><HEAD><TITLE>Elsevier.com</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8"><NOSCRIPT>
+<META http-equiv=Refresh content=0;URL=/framework_home/NoScript.html></NOSCRIPT>
+<META http-equiv=imagetoolbar content=no>
+<META http-equiv=Content-Style-Type content=text/css>
+<SCRIPT language=JavaScript type=text/javascript>
+	<!--
+		javascriptLoaderVersion = 5
+	// --> 
+	</SCRIPT>
+<LINK href="Elsevier_com_files/elsevier.css" type=text/css rel=stylesheet><LINK 
+href="Elsevier_com_files/elsevier2.css" type=text/css rel=stylesheet><LINK 
+href="Elsevier_com_files/menu_ns.css" type=text/css rel=stylesheet><LINK 
+href="/authored_framework/include/css/v5/menu_ns2.css" type=text/css 
+rel=stylesheet>
+<SCRIPT language=JavaScript src="Elsevier_com_files/javascriptLoader.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT language=JavaScript type=text/javascript>
+	<!--
+		onload_add(initTopBar)
+		if(is.ns4)
+			onresize = netscapeRefresh
+		else
+			onresize = replaceTopBar
+
+		function initTopBar() {
+			DynLayerInit();
+			replaceTopBar()
+		}
+
+		function replaceTopBar() {
+			var winWidth = (is.ns)? window.innerWidth:document.body.clientWidth
+			if(is.ns5) {
+				var xTagLine = winWidth - 530
+				var xSearchBox = winWidth - 332
+			}
+			else if(is.ns4) {
+				var xTagLine = winWidth - 530
+				var xSearchBox = winWidth - 335
+			}
+			else {
+				var xTagLine = winWidth - 515
+				var xSearchBox = winWidth - 318
+			}
+
+			if(xTagLine <= 419) xTagLine = 419
+			tagLine.moveTo(xTagLine,null)
+			topSearchBox.moveTo(xSearchBox,null)
+			topSearchBox.show()
+		}
+
+		function netscapeRefresh() {
+			location.href = location.href
+		}
+	//-->
+	</SCRIPT>
+
+<META content="MSHTML 6.00.3790.0" name=GENERATOR></HEAD>
+<BODY bgColor=#ffffff leftMargin=0 topMargin=0 marginheight="0" marginwidth="0"><!-- start of banner -->
+<SCRIPT language=JavaScript type=text/javascript>
+<!--
+/*
+function changeSearchRadioButtons(form, action) {
+	
+	form.action.value = action;
+}
+*/
+function submitSearchForm(form) {
+
+	form.submit()
+
+}
+
+function picswapper(name, images, ms) {
+// don't attempt DOM based stuff if the browser isn't DOM compliant. This specifically excludes IE4.
+		if (document.getElementById) {
+			var name_i = name + '_i'
+			var name_images = name + '_images'
+			eval(name_i + ' = 0')
+			eval(name_images + ' = images')
+			eval('document.getElementById("' + name + '").src = ' + name_images + '[0]')
+			var code = 'document.getElementById("' + name + '").src = ' + name_images + '[' + name_i + '++ % ' + name_images + '.length]'
+			window.setInterval(code, ms)
+	}
+}
+// --> 
+
+var dom = (document.getElementById) ? true : false; 
+var ns5 = ((navigator.userAgent.indexOf("Gecko")>-1) && dom) ? true: false; 
+var ie5 = ((navigator.userAgent.indexOf("MSIE")>-1) && dom) ? true : false; 
+var ns4 = (document.layers && !dom) ? true : false; 
+var ie4 = (document.all && !dom) ? true : false; 
+var nodyn = (!ns5 && !ns4 && !ie4 && !ie5) ? true : false; 
+
+
+var origWidth, origHeight; 
+if (ns4) { 
+ origWidth = window.innerWidth; origHeight = window.innerHeight; 
+ window.onresize = function() { if (window.innerWidth != origWidth || window.innerHeight != origHeight) history.go(0); } 
+} 
+
+if (nodyn) { event = "nope" } 
+
+var tipFollowMouse= true;
+var tipWidth= 360; 
+var offX= 20; // how far from mouse to show tip 
+var offY= 12; 
+//var tipFontFamily= "Verdana, arial, helvetica, sans-serif"; 
+var tipFontFamily= "arial"; 
+var tipFontSize= "8pt"; 
+var tipFontColor= "#000000"; 
+var tipBgColor= "#FFFFCC"; 
+var tipBorderColor= "#666666"; 
+var tipBorderWidth= 1; 
+var tipBorderStyle= "outset"; 
+var tipPadding= 4; 
+var messages = new Array();
+
+
+messages[0] = new Array('','<B>Mission</B><br> Elsevier is an integral partner with the scientific, technical and health communities, delivering superior information products and services that foster communication, build insights, and enable individual and collective advancement in scientific research and health care.<br>Elsevier. Building Insights. Breaking Boundaries',"#FFFFEE"); 
+
+
+var startStr = '<table width="' + tipWidth + '"><tr><td align="center" width="100%">'; 
+var midStr = '</td></tr><tr><td valign="top">'; 
+var endStr = '</td></tr></table>'; 
+
+var tooltip, tipcss; 
+function initMiss() { 
+
+
+ if (nodyn) return; 
+ tooltip = (ns4)? document.tipDiv.document: (ie4)? document.all['tipDiv']: (ie5||ns5)? document.getElementById('tipDiv'): null; 
+tipcss = (ns4)? document.tipDiv: tooltip.style; 
+if (ie4||ie5||ns5) { 
+  tipcss.width = tipWidth+"px"; 
+  tipcss.fontFamily = tipFontFamily; 
+  tipcss.fontSize = tipFontSize; 
+  tipcss.color = tipFontColor; 
+  tipcss.backgroundColor = tipBgColor; 
+  tipcss.borderColor = tipBorderColor; 
+  tipcss.borderWidth = tipBorderWidth+"px"; 
+  tipcss.padding = tipPadding+"px"; 
+  tipcss.borderStyle = tipBorderStyle; 
+ } 
+if (tooltip&&tipFollowMouse) { 
+  if (ns4) document.captureEvents(Event.MOUSEMOVE); 
+ // document.onmousemove = trackMouse; 
+ // document.images["mission"].onmousemove = trackMouse; 
+ // document.images["mission_two"].onmousemove = trackMouse; 
+ } 
+} 
+
+//window.onload = initMiss; 
+
+var t1,t2;
+var tipOn = false;
+function doTooltip(evt,num) { 
+
+ initMiss();
+ if (!tooltip) return; 
+ if (t1) clearTimeout(t1); if (t2) clearTimeout(t2); 
+ tipOn = true; 
+ // set colors if included in messages array 
+ if (messages[num][2]) var curBgColor = messages[num][2]; 
+ else curBgColor = tipBgColor; 
+ if (messages[num][3]) var curFontColor = messages[num][3]; 
+ else curFontColor = tipFontColor; 
+ if (ns4) { 
+  var tip = '<table bgcolor="' + tipBorderColor + '" width="' + tipWidth + '" cellspacing="0" cellpadding="' + tipBorderWidth + '" border="0"><tr><td><table bgcolor="' + curBgColor + '" width="100%" cellspacing="0" cellpadding="' + tipPadding + '" border="0"><tr><td>'+ startStr +  midStr + '<span style="font-family:' + tipFontFamily + '; font-size:' + tipFontSize + '; color:' + curFontColor + ';">' + messages[num][1] + '</span>' + endStr + '</td></tr></table></td></tr></table>'; 
+  tooltip.write(tip); 
+  tooltip.close(); 
+ } else if (ie4||ie5||ns5) { 
+  var tip = startStr  + midStr + '<span style="font-family:' + tipFontFamily + '; font-size:' + tipFontSize + '; color:' + curFontColor + ';">' + messages[num][1] + '</span>' + endStr; 
+  tipcss.backgroundColor = curBgColor; 
+   tooltip.innerHTML = tip; 
+ } 
+ //if (!tipFollowMouse) 
+ positionTip(evt); 
+ //else
+ //t1=setTimeout("tipcss.visibility='visible'",100); 
+} 
+
+var mouseX, mouseY; 
+function trackMouse(evt) { 
+
+	mouseX = (ns4||ns5)? evt.pageX: window.event.clientX + document.body.scrollLeft; 
+ 	mouseY = (ns4||ns5)? evt.pageY: window.event.clientY + document.body.scrollTop; 
+ 	if (tipOn) positionTip(evt); 
+
+} 
+
+function positionTip(evt) { 
+ //if (!tipFollowMouse) { 
+  mouseX = (ns4||ns5)? evt.pageX: window.event.clientX + document.body.scrollLeft; 
+  mouseY = (ns4||ns5)? evt.pageY: window.event.clientY + document.body.scrollTop; 
+// } 
+ 
+ // tooltip width and height 
+ var tpWd = (ns4)? tooltip.width: (ie4||ie5)? tooltip.clientWidth: tooltip.offsetWidth; 
+ var tpHt = (ns4)? tooltip.height: (ie4||ie5)? tooltip.clientHeight: tooltip.offsetHeight; 
+ // document area in view (subtract scrollbar width for ns) 
+ var winWd = (ns4||ns5)? window.innerWidth-20+window.pageXOffset: document.body.clientWidth+document.body.scrollLeft; 
+ var winHt = (ns4||ns5)? window.innerHeight-20+window.pageYOffset: document.body.clientHeight+document.body.scrollTop; 
+ // check mouse position against tip and window dimensions 
+ // and position the tooltip 
+ if ((mouseX+offX+tpWd)>winWd) 
+  //tipcss.left = (ns4)? mouseX-(tpWd+offX): mouseX-(tpWd+offX)+"px"; 
+   tipcss.left = (ns4)? 179: 179+"px"; 
+ else 
+ 	//tipcss.left = (ns4)? mouseX+offX: mouseX+offX+"px"; 
+ 	 tipcss.left = (ns4)? 179: 179+"px"; 
+ if ((mouseY+offY+tpHt)>winHt) 
+   //tipcss.top = (ns4)? winHt-(tpHt+offY): winHt-(tpHt+offY)+"px"; 
+   tipcss.top = (ns4)? 125: 125+"px"; 
+ else 
+   // tipcss.top = (ns4)? mouseY+offY: mouseY+offY+"px"; 
+   tipcss.top = (ns4)? 125: 125+"px"; 
+ 
+ //if (!tipFollowMouse)
+  t1=setTimeout("tipcss.visibility='visible'",100); 
+} 
+
+function hideTip() { 
+ if (!tooltip) return; 
+ 
+ t2=setTimeout("tipcss.visibility='hidden'",100); 
+ tipOn = false; 
+
+} 
+
+
+</SCRIPT>
+
+<DIV id=tipDiv 
+style="Z-INDEX: 100; VISIBILITY: hidden; POSITION: absolute"></DIV>
+<DIV id=logoDiv>
+<DIV class=verdana10White id=logoDivInner 
+style="Z-INDEX: 1; LEFT: 0px; WIDTH: 200px; POSITION: absolute; TOP: 105px; HEIGHT: 18px">&nbsp;<A 
+href="http://www.elsevier.com/wps/find/homepage.cws_home">Home</A> | <A 
+href="http://www.elsevier.com/wps/find/sitemap.cws_home/sitemap">Site map</A> 
+</DIV><IMG onmouseover=doTooltip(event,0) onmouseout=hideTip() height=121 
+src="Elsevier_com_files/bg_logo.gif" width=441 border=0 name=mission> </DIV>
+<DIV id=tagLineDiv><IMG onmouseover=doTooltip(event,0) onmouseout=hideTip() 
+height=38 src="Elsevier_com_files/tagLine.gif" width=192 border=0 
+name=mission_two> </DIV>
+<DIV id=topSearchBoxDiv>
+<TABLE cellSpacing=0 cellPadding=0 width=316 border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=5 height=1></TD></TR>
+  <TR>
+    <TD bgColor=#ffffff><IMG height=121 alt="" 
+      src="Elsevier_com_files/empty.gif" width=1 border=0></TD>
+    <TD><IMG id=picswap height=121 alt=Elsevier 
+      src="Elsevier_com_files/topbar_1.jpg" width=157 border=0>
+      <SCRIPT>picswapper("picswap", [/authored_framework/ + "images/topbar_1.jpg", /authored_framework/ + "images/topbar_2.jpg", /authored_framework/ + "images/topbar_3.jpg", /authored_framework/ + "images/topbar_4.jpg", /authored_framework/ + "images/topbar_5.jpg", /authored_framework/ + "images/topbar_6.jpg"], 180000)</SCRIPT>
+       </TD>
+    <TD bgColor=#ffffff><IMG height=121 alt="" 
+      src="Elsevier_com_files/empty.gif" width=1 border=0></TD>
+    <TD bgColor=#ff9933><!-- start of search -->
+      <TABLE cellSpacing=0 cellPadding=0 width=157 border=0>
+        <FORM name=searchForm 
+        onsubmit="submitSearchForm(document.forms['searchForm']);return false;" 
+        action=/wps/find/simple_search.cws_home method=get><!--<INPUT TYPE="HIDDEN" NAME="action" VALUE="product_search"/>--><INPUT 
+        type=hidden value=Any name=pubtype> <INPUT type=hidden value=true 
+        name=boost> <INPUT type=hidden value=true name=needs_keyword> <INPUT 
+        type=hidden value=false name=adv> 
+        <TBODY>
+        <TR>
+          <TD colSpan=3><IMG height=2 alt="" 
+            src="Elsevier_com_files/empty.gif" width=1 border=0></TD></TR>
+        <TR>
+          <TD noWrap align=middle colSpan=3><!-- <img src="/authored_framework/images/empty.gif" width="4" height="1" border="0" alt="" /> --><INPUT 
+            class=searchBox2 tabIndex=500 size=15 name=keywords></TD><!-- <td><img src="/authored_framework/images/empty.gif" width="6" height="1" border="0" alt="" /></td> --></TR>
+        <TR>
+          <TD colSpan=3><IMG height=5 alt="" 
+            src="Elsevier_com_files/empty.gif" width=1 border=0></TD></TR>
+        <TR>
+          <TD><INPUT type=radio CHECKED value=product_search name=action></TD>
+          <TD><IMG height=9 alt="Product information search" 
+            src="Elsevier_com_files/product_info_search.gif" width=110 
+          border=0></TD>
+          <TD><IMG height=1 alt="" src="Elsevier_com_files/empty.gif" width=6 
+            border=0></TD></TR><!--
+<tr>
+<td colspan="3"><img src="/authored_framework/images/empty.gif" width="1" height="3" border="0" alt="" /></td>
+</tr>
+-->
+        <TR>
+          <TD vAlign=top><INPUT type=radio value=simple_search name=action></TD>
+          <TD><IMG height=9 alt="Search all Elsevier sites" 
+            src="Elsevier_com_files/all_elsevier_sites_search.gif" width=91 
+            border=0></TD>
+          <TD><IMG height=1 alt="" src="Elsevier_com_files/empty.gif" width=6 
+            border=0></TD></TR>
+        <TR>
+          <TD colSpan=3><IMG height=5 alt="" 
+            src="Elsevier_com_files/empty.gif" width=1 border=0></TD></TR>
+        <TR>
+          <TD align=left colSpan=2><IMG height=1 alt="" 
+            src="Elsevier_com_files/empty.gif" width=3 border=0> <A 
+            href="javascript:submitSearchForm(document.forms['searchForm'])"><IMG 
+            height=18 alt=Search 
+            src="Elsevier_com_files/banner_search_button.gif" width=58 
+            border=0></A></TD>
+          <TD><IMG height=1 alt="" src="Elsevier_com_files/empty.gif" width=6 
+            border=0></TD></TR>
+        <TR>
+          <TD colSpan=3><IMG height=1 alt="" 
+            src="Elsevier_com_files/empty.gif" width=3 border=0> <A 
+            class=verdana10DarkGrey 
+            href="http://www.elsevier.com/wps/find/advproductsearch.cws_home?action=product_search&amp;search=no">Advanced 
+            Product Search</A> 
+    </TD></TR></FORM></TBODY></TABLE><!-- end of search --></TD>
+    <TD bgColor=#ffffff><IMG height=121 alt="" 
+      src="Elsevier_com_files/empty.gif" width=2 
+border=0></TD></TR></TBODY></TABLE></DIV>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" 
+background=Elsevier_com_files/bg.gif border=0>
+  <TBODY>
+  <TR>
+    <TD style="WIDTH: 178px; HEIGHT: 122px"><A 
+      href="http://www.elsevier.com/wps/find/homepage.cws_home"><IMG height=121 
+      alt="Go to Elsevier home page" src="Elsevier_com_files/logo_tree.gif" 
+      width=178 border=0></A></TD></TR></TBODY></TABLE><!-- end of banner -->
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" align=center border=0>
+        <TBODY>
+        <TR height="100%">
+          <TD vAlign=top width=155>
+            <TABLE height="100%" cellSpacing=0 cellPadding=0 width="100%" 
+            align=center border=0>
+              <TBODY>
+              <TR>
+                <TD vAlign=top width="100%"><!--<a name="2343"></a>-->
+                  <TABLE class=wpsPortletBody height="100%" cellSpacing=0 
+                  cellPadding=0 width="100%" align=center border=0>
+                    <TBODY>
+                    <TR height="100%">
+                      <TD vAlign=top width="100%">
+                        <SCRIPT language=JavaScript>
+<!--
+var selectedSubitem = -1
+//-->
+</SCRIPT>
+
+                        <TABLE cellSpacing=0 cellPadding=0 width=155 border=0>
+                          <TBODY>
+                          <TR>
+                            <TD><IMG height=19 alt="" 
+                              src="Elsevier_com_files/empty.gif" width=155 
+                              border=0></TD></TR></TBODY></TABLE>
+                        <TABLE cellSpacing=0 cellPadding=0 border=0>
+                          <TBODY>
+                          <TR>
+                            <TD width=1><IMG height=1 alt="" 
+                              src="Elsevier_com_files/empty.gif" width=1 
+                              border=0></TD>
+                            <TD>
+                              <TABLE class=tableTextHeader 
+                              onmouseover="headerOver('Products')" 
+                              onclick="window.location.href='/wps/find/subject_area_browse.cws_home/?sh1State=-null-SAR-SAA-SAC-SAD-SAF-SA1-SAI-SAJ-SAK-SAQ-SAP-SAB-SAE-SAL-SAN-SAO-SAG-SAH-SAM&amp;sh2State=&amp;allParents=y&amp;showAll=y'" 
+                              onmouseout=headerOut() cellSpacing=0 cellPadding=0 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD class=textHeader colSpan=3><IMG height=2 
+                                alt="" src="Elsevier_com_files/empty.gif" 
+                                width=1 border=0></A></TD></TR>
+                                <TR>
+                                <TD class=textHeader width=5><IMG height=1 
+                                alt="" src="Elsevier_com_files/empty.gif" 
+                                width=5 border=0></A></TD>
+                                <TD class=textHeader><A 
+                                href="http://www.elsevier.com/wps/find/subject_area_browse.cws_home/?sh1State=-null-SAR-SAA-SAC-SAD-SAF-SA1-SAI-SAJ-SAK-SAQ-SAP-SAB-SAE-SAL-SAN-SAO-SAG-SAH-SAM&amp;sh2State=&amp;allParents=y&amp;showAll=y">Products</A></TD>
+                                <TD class=textHeader width=5><IMG height=1 
+                                alt="" src="Elsevier_com_files/empty.gif" 
+                                width=5 border=0></A></TD></TR>
+                                <TR>
+                                <TD class=textHeader colSpan=3><IMG height=2 
+                                alt="" src="Elsevier_com_files/empty.gif" 
+                                width=1 border=0></A></TD></TR></TBODY></TABLE>
+                              <TABLE cellSpacing=0 cellPadding=0 border=0>
+                                <TBODY>
+                                <TR>
+                                <TD class=item width=153 height=14>
+                                <TABLE cellSpacing=0 cellPadding=0 border=0>
+                                <TBODY>
+                                <TR>
+                                <TD><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=5 
+                                border=0></TD>
+                                <TD class=itemText>Browse by 
+                                subject</TD></TR></TBODY></TABLE></TD></TR>
+                                <TR>
+                                <TD class=itemLine><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=153 
+                                border=0></TD></TR>
+                                <TR>
+                                <TD class=subItem id=subItem2 
+                                onmouseover="subItemOver2(this, 2, 'All subjects', '#6699CC')" 
+                                onclick='window.location.href="/wps/find/subject_area_browse.cws_home/?sh1State=-null-SAR-SAA-SAC-SAD-SAF-SA1-SAI-SAJ-SAK-SAQ-SAP-SAB-SAE-SAL-SAN-SAO-SAG-SAH-SAM&amp;sh2State=&amp;allParents=y&amp;showAll=y"' 
+                                onmouseout=subItemOut2(this) height=14>
+                                <TABLE cellSpacing=0 cellPadding=0 width=153 
+                                border=0>
+                                <TBODY>
+                                <TR>
+                                <TD width=10><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=10 
+                                border=0></TD>
+                                <TD class=subItemText><A 
+                                href="http://www.elsevier.com/wps/find/subject_area_browse.cws_home/?sh1State=-null-SAR-SAA-SAC-SAD-SAF-SA1-SAI-SAJ-SAK-SAQ-SAP-SAB-SAE-SAL-SAN-SAO-SAG-SAH-SAM&amp;sh2State=&amp;allParents=y&amp;showAll=y">All 
+                                subjects</A></TD>
+                                <TD width=6><IMG id=arrow2 height=7 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=3 
+                                border=0></TD></TR></TBODY></TABLE></TD></TR>
+                                <TR>
+                                <TD class=subItemLine id=line2><IMG height=1 
+                                alt="" src="Elsevier_com_files/empty.gif" 
+                                width=153 border=0></TD></TR>
+                                <TR>
+                                <TD class=subItem id=subItem3 
+                                onmouseover="subItemOver2(this, 3, 'Physical sciences', '#6699CC')" 
+                                onclick='window.location.href="/wps/find/subject_area_browse.cws_home/?sh1State=-null-SAR-SAA-SAC-SAD-SAF-SA1-SAI-SAJ-SAK-SAQ-SAP-SAB-SAE-SAL-SAN-SAO-SAG-SAH-SAM-null&amp;sh2State=&amp;SH0Only=PS"' 
+                                onmouseout=subItemOut2(this) height=14>
+                                <TABLE cellSpacing=0 cellPadding=0 width=153 
+                                border=0>
+                                <TBODY>
+                                <TR>
+                                <TD width=10><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=10 
+                                border=0></TD>
+                                <TD class=subItemText><A 
+                                href="http://www.elsevier.com/wps/find/subject_area_browse.cws_home/?sh1State=-null-SAR-SAA-SAC-SAD-SAF-SA1-SAI-SAJ-SAK-SAQ-SAP-SAB-SAE-SAL-SAN-SAO-SAG-SAH-SAM-null&amp;sh2State=&amp;SH0Only=PS">Physical 
+                                sciences</A></TD>
+                                <TD width=6><IMG id=arrow3 height=7 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=3 
+                                border=0></TD></TR></TBODY></TABLE></TD></TR>
+                                <TR>
+                                <TD class=subItemLine id=line3><IMG height=1 
+                                alt="" src="Elsevier_com_files/empty.gif" 
+                                width=153 border=0></TD></TR>
+                                <TR>
+                                <TD class=subItem id=subItem4 
+                                onmouseover="subItemOver2(this, 4, 'Health sciences', '#6699CC')" 
+                                onclick='window.location.href="/wps/find/subject_area_browse.cws_home/?sh1State=-null-SAR-SAA-SAC-SAD-SAF-SA1-SAI-SAJ-SAK-SAQ-SAP-SAB-SAE-SAL-SAN-SAO-SAG-SAH-SAM-null&amp;sh2State=&amp;SH0Only=HS"' 
+                                onmouseout=subItemOut2(this) height=14>
+                                <TABLE cellSpacing=0 cellPadding=0 width=153 
+                                border=0>
+                                <TBODY>
+                                <TR>
+                                <TD width=10><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=10 
+                                border=0></TD>
+                                <TD class=subItemText><A 
+                                href="http://www.elsevier.com/wps/find/subject_area_browse.cws_home/?sh1State=-null-SAR-SAA-SAC-SAD-SAF-SA1-SAI-SAJ-SAK-SAQ-SAP-SAB-SAE-SAL-SAN-SAO-SAG-SAH-SAM-null&amp;sh2State=&amp;SH0Only=HS">Health 
+                                sciences</A></TD>
+                                <TD width=6><IMG id=arrow4 height=7 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=3 
+                                border=0></TD></TR></TBODY></TABLE></TD></TR>
+                                <TR>
+                                <TD class=subItemLine id=line4><IMG height=1 
+                                alt="" src="Elsevier_com_files/empty.gif" 
+                                width=153 border=0></TD></TR>
+                                <TR>
+                                <TD class=subItem id=subItem5 
+                                onmouseover="subItemOver2(this, 5, 'Social sciences', '#6699CC')" 
+                                onclick='window.location.href="/wps/find/subject_area_browse.cws_home/?sh1State=-null-SAR-SAA-SAC-SAD-SAF-SA1-SAI-SAJ-SAK-SAQ-SAP-SAB-SAE-SAL-SAN-SAO-SAG-SAH-SAM-null&amp;sh2State=&amp;SH0Only=SS"' 
+                                onmouseout=subItemOut2(this) height=14>
+                                <TABLE cellSpacing=0 cellPadding=0 width=153 
+                                border=0>
+                                <TBODY>
+                                <TR>
+                                <TD width=10><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=10 
+                                border=0></TD>
+                                <TD class=subItemText><A 
+                                href="http://www.elsevier.com/wps/find/subject_area_browse.cws_home/?sh1State=-null-SAR-SAA-SAC-SAD-SAF-SA1-SAI-SAJ-SAK-SAQ-SAP-SAB-SAE-SAL-SAN-SAO-SAG-SAH-SAM-null&amp;sh2State=&amp;SH0Only=SS">Social 
+                                sciences</A></TD>
+                                <TD width=6><IMG id=arrow5 height=7 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=3 
+                                border=0></TD></TR></TBODY></TABLE></TD></TR>
+                                <TR>
+                                <TD class=subItemLine id=line5><IMG height=1 
+                                alt="" src="Elsevier_com_files/empty.gif" 
+                                width=153 border=0></TD></TR>
+                                <TR>
+                                <TD class=subItem id=subItem6 
+                                onmouseover="subItemOver2(this, 6, 'Life sciences', '#6699CC')" 
+                                onclick='window.location.href="/wps/find/subject_area_browse.cws_home/?sh1State=-null-SAR-SAA-SAC-SAD-SAF-SA1-SAI-SAJ-SAK-SAQ-SAP-SAB-SAE-SAL-SAN-SAO-SAG-SAH-SAM-null&amp;sh2State=&amp;SH0Only=LS"' 
+                                onmouseout=subItemOut2(this) height=14>
+                                <TABLE cellSpacing=0 cellPadding=0 width=153 
+                                border=0>
+                                <TBODY>
+                                <TR>
+                                <TD width=10><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=10 
+                                border=0></TD>
+                                <TD class=subItemText><A 
+                                href="http://www.elsevier.com/wps/find/subject_area_browse.cws_home/?sh1State=-null-SAR-SAA-SAC-SAD-SAF-SA1-SAI-SAJ-SAK-SAQ-SAP-SAB-SAE-SAL-SAN-SAO-SAG-SAH-SAM-null&amp;sh2State=&amp;SH0Only=LS">Life 
+                                sciences</A></TD>
+                                <TD width=6><IMG id=arrow6 height=7 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=3 
+                                border=0></TD></TR></TBODY></TABLE></TD></TR>
+                                <TR>
+                                <TD class=subItemLine id=line6><IMG height=1 
+                                alt="" src="Elsevier_com_files/empty.gif" 
+                                width=153 border=0></TD></TR>
+                                <TR>
+                                <TD class=item width=153 height=14>
+                                <TABLE cellSpacing=0 cellPadding=0 border=0>
+                                <TBODY>
+                                <TR>
+                                <TD><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=5 
+                                border=0></TD>
+                                <TD class=itemText>Browse by product 
+                                type</TD></TR></TBODY></TABLE></TD></TR>
+                                <TR>
+                                <TD class=itemLine><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=153 
+                                border=0></TD></TR>
+                                <TR>
+                                <TD class=subItem id=subItem8 
+                                onmouseover="subItemOver2(this, 8, 'Books', '#6699CC')" 
+                                onclick='window.location.href="/wps/find/books_browse.cws_home"' 
+                                onmouseout=subItemOut2(this) height=14>
+                                <TABLE cellSpacing=0 cellPadding=0 width=153 
+                                border=0>
+                                <TBODY>
+                                <TR>
+                                <TD width=10><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=10 
+                                border=0></TD>
+                                <TD class=subItemText><A 
+                                href="http://www.elsevier.com/wps/find/books_browse.cws_home">Books</A></TD>
+                                <TD width=6><IMG id=arrow8 height=7 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=3 
+                                border=0></TD></TR></TBODY></TABLE></TD></TR>
+                                <TR>
+                                <TD class=subItemLine id=line8><IMG height=1 
+                                alt="" src="Elsevier_com_files/empty.gif" 
+                                width=153 border=0></TD></TR>
+                                <TR>
+                                <TD class=subItem id=subItem9 
+                                onmouseover="subItemOver2(this, 9, 'Journals', '#6699CC')" 
+                                onclick='window.location.href="/wps/find/journal_browse.cws_home"' 
+                                onmouseout=subItemOut2(this) height=14>
+                                <TABLE cellSpacing=0 cellPadding=0 width=153 
+                                border=0>
+                                <TBODY>
+                                <TR>
+                                <TD width=10><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=10 
+                                border=0></TD>
+                                <TD class=subItemText><A 
+                                href="http://www.elsevier.com/wps/find/journal_browse.cws_home">Journals</A></TD>
+                                <TD width=6><IMG id=arrow9 height=7 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=3 
+                                border=0></TD></TR></TBODY></TABLE></TD></TR>
+                                <TR>
+                                <TD class=subItemLine id=line9><IMG height=1 
+                                alt="" src="Elsevier_com_files/empty.gif" 
+                                width=153 border=0></TD></TR>
+                                <TR>
+                                <TD class=subItem id=subItem10 
+                                onmouseover="subItemOver2(this, 10, 'Electronic products', '#6699CC')" 
+                                onclick='window.location.href="/wps/find/electronic_browse.cws_home"' 
+                                onmouseout=subItemOut2(this) height=14>
+                                <TABLE cellSpacing=0 cellPadding=0 width=153 
+                                border=0>
+                                <TBODY>
+                                <TR>
+                                <TD width=10><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=10 
+                                border=0></TD>
+                                <TD class=subItemText><A 
+                                href="http://www.elsevier.com/wps/find/electronic_browse.cws_home">Electronic 
+                                products</A></TD>
+                                <TD width=6><IMG id=arrow10 height=7 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=3 
+                                border=0></TD></TR></TBODY></TABLE></TD></TR>
+                                <TR>
+                                <TD class=subItemLine id=line10><IMG height=1 
+                                alt="" src="Elsevier_com_files/empty.gif" 
+                                width=153 border=0></TD></TR>
+                                <TR>
+                                <TD class=subItem id=subItem11 
+                                onmouseover="subItemOver2(this, 11, 'Bibliographic databases', '#6699CC')" 
+                                onclick='window.location.href="/wps/find/bibliographic_browse.cws_home"' 
+                                onmouseout=subItemOut2(this) height=14>
+                                <TABLE cellSpacing=0 cellPadding=0 width=153 
+                                border=0>
+                                <TBODY>
+                                <TR>
+                                <TD width=10><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=10 
+                                border=0></TD>
+                                <TD class=subItemText><A 
+                                href="http://www.elsevier.com/wps/find/bibliographic_browse.cws_home">Bibliographic 
+                                databases</A></TD>
+                                <TD width=6><IMG id=arrow11 height=7 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=3 
+                                border=0></TD></TR></TBODY></TABLE></TD></TR>
+                                <TR>
+                                <TD class=subItemLine id=line11><IMG height=1 
+                                alt="" src="Elsevier_com_files/empty.gif" 
+                                width=153 border=0></TD></TR>
+                                <TR>
+                                <TD class=subItem id=subItem12 
+                                onmouseover="subItemOver2(this, 12, 'Newsletters and other product types', '#6699CC')" 
+                                onclick='window.location.href="/wps/find/newsletter_browse.cws_home"' 
+                                onmouseout=subItemOut2(this) height=14>
+                                <TABLE cellSpacing=0 cellPadding=0 width=153 
+                                border=0>
+                                <TBODY>
+                                <TR>
+                                <TD width=10><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=10 
+                                border=0></TD>
+                                <TD class=subItemText><A 
+                                href="http://www.elsevier.com/wps/find/newsletter_browse.cws_home">Newsletters 
+                                and other product types</A></TD>
+                                <TD width=6><IMG id=arrow12 height=7 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=3 
+                                border=0></TD></TR></TBODY></TABLE></TD></TR>
+                                <TR>
+                                <TD class=subItemLine id=line12><IMG height=1 
+                                alt="" src="Elsevier_com_files/empty.gif" 
+                                width=153 border=0></TD></TR>
+                                <TR>
+                                <TD class=subItem id=subItem13 
+                                onmouseover="subItemOver2(this, 13, 'All product types', '#6699CC')" 
+                                onclick='window.location.href="/wps/find/all_products_browse.cws_home"' 
+                                onmouseout=subItemOut2(this) height=14>
+                                <TABLE cellSpacing=0 cellPadding=0 width=153 
+                                border=0>
+                                <TBODY>
+                                <TR>
+                                <TD width=10><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=10 
+                                border=0></TD>
+                                <TD class=subItemText><A 
+                                href="http://www.elsevier.com/wps/find/all_products_browse.cws_home">All 
+                                product types</A></TD>
+                                <TD width=6><IMG id=arrow13 height=7 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=3 
+                                border=0></TD></TR></TBODY></TABLE></TD></TR>
+                                <TR>
+                                <TD class=subItemLine id=line13><IMG height=1 
+                                alt="" src="Elsevier_com_files/empty.gif" 
+                                width=153 border=0></TD></TR>
+                                <TR>
+                                <TD class=itemLink id=subItem14 
+                                onmouseover="subItemOver2(this, 14, 'Advanced product search ', '#336699')" 
+                                onclick='window.location.href="/wps/find/advproductsearch.cws_home?action=product_search&amp;search=no"' 
+                                onmouseout=subItemOut2(this) height=14>
+                                <TABLE cellSpacing=0 cellPadding=0 width=153 
+                                border=0>
+                                <TBODY>
+                                <TR>
+                                <TD width=5><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=5 
+                                border=0></TD>
+                                <TD class=itemLinkText><A 
+                                href="http://www.elsevier.com/wps/find/advproductsearch.cws_home?action=product_search&amp;search=no">Advanced 
+                                product search </A></TD>
+                                <TD width=6><IMG id=arrow14 height=7 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=3 
+                                border=0></TD></TR></TBODY></TABLE></TD></TR>
+                                <TR>
+                                <TD class=subItemLine id=line14><IMG height=1 
+                                alt="" src="Elsevier_com_files/empty.gif" 
+                                width=153 border=0></TD></TR>
+                                <TR>
+                                <TD class=item width=153 height=14>
+                                <TABLE cellSpacing=0 cellPadding=0 border=0>
+                                <TBODY>
+                                <TR>
+                                <TD><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=5 
+                                border=0></TD>
+                                <TD 
+                                class=itemText>Catalogs</TD></TR></TBODY></TABLE></TD></TR>
+                                <TR>
+                                <TD class=itemLine><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=153 
+                                border=0></TD></TR>
+                                <TR>
+                                <TD class=subItem id=subItem17 
+                                onmouseover="subItemOver2(this, 17, 'Books price list', '#6699CC')" 
+                                onclick='window.location.href="/wps/find/bookspricelist.cws_home/bookspricelist/description"' 
+                                onmouseout=subItemOut2(this) height=14>
+                                <TABLE cellSpacing=0 cellPadding=0 width=153 
+                                border=0>
+                                <TBODY>
+                                <TR>
+                                <TD width=10><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=10 
+                                border=0></TD>
+                                <TD class=subItemText><A 
+                                href="http://www.elsevier.com/wps/find/bookspricelist.cws_home/bookspricelist/description">Books 
+                                price list</A></TD>
+                                <TD width=6><IMG id=arrow17 height=7 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=3 
+                                border=0></TD></TR></TBODY></TABLE></TD></TR>
+                                <TR>
+                                <TD class=subItemLine id=line17><IMG height=1 
+                                alt="" src="Elsevier_com_files/empty.gif" 
+                                width=153 border=0></TD></TR>
+                                <TR>
+                                <TD class=subItem id=subItem18 
+                                onmouseover="subItemOver2(this, 18, 'Subscription price list', '#6699CC')" 
+                                onclick='window.location.href="/wps/find/subscriptionpricelist.cws_home/subscriptionpricelist/description"' 
+                                onmouseout=subItemOut2(this) height=14>
+                                <TABLE cellSpacing=0 cellPadding=0 width=153 
+                                border=0>
+                                <TBODY>
+                                <TR>
+                                <TD width=10><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=10 
+                                border=0></TD>
+                                <TD class=subItemText><A 
+                                href="http://www.elsevier.com/wps/find/subscriptionpricelist.cws_home/subscriptionpricelist/description">Subscription 
+                                price list</A></TD>
+                                <TD width=6><IMG id=arrow18 height=7 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=3 
+                                border=0></TD></TR></TBODY></TABLE></TD></TR>
+                                <TR>
+                                <TD class=subItemLine id=line18><IMG height=1 
+                                alt="" src="Elsevier_com_files/empty.gif" 
+                                width=153 border=0></TD></TR>
+                                <TR>
+                                <TD class=subItem id=subItem19 
+                                onmouseover="subItemOver2(this, 19, 'New and forthcoming publications', '#6699CC')" 
+                                onclick='window.location.href="/wps/find/nfp.cws_home/nfp"' 
+                                onmouseout=subItemOut2(this) height=14>
+                                <TABLE cellSpacing=0 cellPadding=0 width=153 
+                                border=0>
+                                <TBODY>
+                                <TR>
+                                <TD width=10><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=10 
+                                border=0></TD>
+                                <TD class=subItemText><A 
+                                href="http://www.elsevier.com/wps/find/nfp.cws_home/nfp">New 
+                                and forthcoming publications</A></TD>
+                                <TD width=6><IMG id=arrow19 height=7 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=3 
+                                border=0></TD></TR></TBODY></TABLE></TD></TR>
+                                <TR>
+                                <TD class=subItemLine id=line19><IMG height=1 
+                                alt="" src="Elsevier_com_files/empty.gif" 
+                                width=153 border=0></TD></TR>
+                                <TR>
+                                <TD class=itemLink id=subItem20 
+                                onmouseover="subItemOver2(this, 20, 'Product news', '#336699')" 
+                                onclick='window.location.href="/wps/find/productrelatednews.cws_home/?action=news_search&amp;doctype=NA&amp;newstype=product&amp;newsjsp=product&amp;sort_by=pubdate"' 
+                                onmouseout=subItemOut2(this) height=14>
+                                <TABLE cellSpacing=0 cellPadding=0 width=153 
+                                border=0>
+                                <TBODY>
+                                <TR>
+                                <TD width=5><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=5 
+                                border=0></TD>
+                                <TD class=itemLinkText><A 
+                                href="http://www.elsevier.com/wps/find/productrelatednews.cws_home/?action=news_search&amp;doctype=NA&amp;newstype=product&amp;newsjsp=product&amp;sort_by=pubdate">Product 
+                                news</A></TD>
+                                <TD width=6><IMG id=arrow20 height=7 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=3 
+                                border=0></TD></TR></TBODY></TABLE></TD></TR>
+                                <TR>
+                                <TD class=subItemLine id=line20><IMG height=1 
+                                alt="" src="Elsevier_com_files/empty.gif" 
+                                width=153 border=0></TD></TR>
+                                <TR>
+                                <TD class=item width=153 height=14>
+                                <TABLE cellSpacing=0 cellPadding=0 border=0>
+                                <TBODY>
+                                <TR>
+                                <TD><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=5 
+                                border=0></TD>
+                                <TD class=itemText>Product 
+                                support</TD></TR></TBODY></TABLE></TD></TR>
+                                <TR>
+                                <TD class=itemLine><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=153 
+                                border=0></TD></TR>
+                                <TR>
+                                <TD class=subItem id=subItem23 
+                                onmouseover="subItemOver2(this, 23, 'Help and FAQ', '#6699CC')" 
+                                onclick='window.location.href="/wps/find/productsupportfaq.cws_home/overview"' 
+                                onmouseout=subItemOut2(this) height=14>
+                                <TABLE cellSpacing=0 cellPadding=0 width=153 
+                                border=0>
+                                <TBODY>
+                                <TR>
+                                <TD width=10><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=10 
+                                border=0></TD>
+                                <TD class=subItemText><A 
+                                href="http://www.elsevier.com/wps/find/productsupportfaq.cws_home/overview">Help 
+                                and FAQ</A></TD>
+                                <TD width=6><IMG id=arrow23 height=7 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=3 
+                                border=0></TD></TR></TBODY></TABLE></TD></TR>
+                                <TR>
+                                <TD class=subItemLine id=line23><IMG height=1 
+                                alt="" src="Elsevier_com_files/empty.gif" 
+                                width=153 border=0></TD></TR>
+                                <TR>
+                                <TD class=subItem id=subItem24 
+                                onmouseover="subItemOver2(this, 24, 'Support &amp; sales offices', '#6699CC')" 
+                                onclick='window.location.href="/wps/find/productcontact.cws_home/regional"' 
+                                onmouseout=subItemOut2(this) height=14>
+                                <TABLE cellSpacing=0 cellPadding=0 width=153 
+                                border=0>
+                                <TBODY>
+                                <TR>
+                                <TD width=10><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=10 
+                                border=0></TD>
+                                <TD class=subItemText><A 
+                                href="http://www.elsevier.com/wps/find/productcontact.cws_home/regional">Support 
+                                &amp; sales offices</A></TD>
+                                <TD width=6><IMG id=arrow24 height=7 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=3 
+                                border=0></TD></TR></TBODY></TABLE></TD></TR>
+                                <TR>
+                                <TD class=subItemLine id=line24><IMG height=1 
+                                alt="" src="Elsevier_com_files/empty.gif" 
+                                width=153 border=0></TD></TR>
+                                <TR>
+                                <TD class=subItemLineBottom><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=153 
+                                border=0></TD></TR></TBODY></TABLE>
+                              <TABLE cellSpacing=0 cellPadding=0 border=0>
+                                <TBODY>
+                                <TR>
+                                <TD><IMG height=8 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=1 
+                                border=0></A></TD></TR></TBODY></TABLE>
+                              <TABLE class=tableTextHeader 
+                              onmouseover="headerOver('Support &amp; contact')" 
+                              onclick="window.location.href='/wps/find/supportfaq.cws_home/overview'" 
+                              onmouseout=headerOut() cellSpacing=0 cellPadding=0 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD class=textHeader colSpan=3><IMG height=2 
+                                alt="" src="Elsevier_com_files/empty.gif" 
+                                width=1 border=0></A></TD></TR>
+                                <TR>
+                                <TD class=textHeader width=5><IMG height=1 
+                                alt="" src="Elsevier_com_files/empty.gif" 
+                                width=5 border=0></A></TD>
+                                <TD class=textHeader><A 
+                                href="http://www.elsevier.com/wps/find/supportfaq.cws_home/overview">Support 
+                                &amp; contact</A></TD>
+                                <TD class=textHeader width=5><IMG height=1 
+                                alt="" src="Elsevier_com_files/empty.gif" 
+                                width=5 border=0></A></TD></TR>
+                                <TR>
+                                <TD class=textHeader colSpan=3><IMG height=2 
+                                alt="" src="Elsevier_com_files/empty.gif" 
+                                width=1 border=0></A></TD></TR></TBODY></TABLE>
+                              <TABLE cellSpacing=0 cellPadding=0 border=0>
+                                <TBODY>
+                                <TR>
+                                <TD></TD></TR></TBODY></TABLE>
+                              <TABLE cellSpacing=0 cellPadding=0 border=0>
+                                <TBODY>
+                                <TR>
+                                <TD><IMG height=8 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=1 
+                                border=0></A></TD></TR></TBODY></TABLE>
+                              <TABLE class=tableTextHeader 
+                              onmouseover="headerOver('About Elsevier')" 
+                              onclick="window.location.href='/wps/find/intro.cws_home/intro'" 
+                              onmouseout=headerOut() cellSpacing=0 cellPadding=0 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD class=textHeader colSpan=3><IMG height=2 
+                                alt="" src="Elsevier_com_files/empty.gif" 
+                                width=1 border=0></A></TD></TR>
+                                <TR>
+                                <TD class=textHeader width=5><IMG height=1 
+                                alt="" src="Elsevier_com_files/empty.gif" 
+                                width=5 border=0></A></TD>
+                                <TD class=textHeader><A 
+                                href="http://www.elsevier.com/wps/find/intro.cws_home/intro">About 
+                                Elsevier</A></TD>
+                                <TD class=textHeader width=5><IMG height=1 
+                                alt="" src="Elsevier_com_files/empty.gif" 
+                                width=5 border=0></A></TD></TR>
+                                <TR>
+                                <TD class=textHeader colSpan=3><IMG height=2 
+                                alt="" src="Elsevier_com_files/empty.gif" 
+                                width=1 border=0></A></TD></TR></TBODY></TABLE>
+                              <TABLE cellSpacing=0 cellPadding=0 border=0>
+                                <TBODY>
+                                <TR>
+                                <TD></TD></TR></TBODY></TABLE>
+                              <TABLE cellSpacing=0 cellPadding=0 border=0>
+                                <TBODY>
+                                <TR>
+                                <TD><IMG height=8 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=1 
+                                border=0></A></TD></TR></TBODY></TABLE>
+                              <TABLE class=tableTextHeader 
+                              onmouseover="headerOver('Select your view')" 
+                              onclick="window.location.href='/wps/find/homepage.cws_home?navopenmenu=3'" 
+                              onmouseout=headerOut() cellSpacing=0 cellPadding=0 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD class=textHeader colSpan=3><IMG height=2 
+                                alt="" src="Elsevier_com_files/empty.gif" 
+                                width=1 border=0></A></TD></TR>
+                                <TR>
+                                <TD class=textHeader width=5><IMG height=1 
+                                alt="" src="Elsevier_com_files/empty.gif" 
+                                width=5 border=0></A></TD>
+                                <TD class=textHeader><A 
+                                href="http://www.elsevier.com/wps/find/homepage.cws_home?navopenmenu=3">Select 
+                                your view</A></TD>
+                                <TD class=textHeader width=5><IMG height=1 
+                                alt="" src="Elsevier_com_files/empty.gif" 
+                                width=5 border=0></A></TD></TR>
+                                <TR>
+                                <TD class=textHeader colSpan=3><IMG height=2 
+                                alt="" src="Elsevier_com_files/empty.gif" 
+                                width=1 border=0></A></TD></TR></TBODY></TABLE>
+                              <TABLE cellSpacing=0 cellPadding=0 border=0>
+                                <TBODY>
+                                <TR>
+                                <TD></TD></TR></TBODY></TABLE>
+                              <TABLE cellSpacing=0 cellPadding=0 border=0>
+                                <TBODY>
+                                <TR>
+                                <TD><IMG height=8 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=1 
+                                border=0></A></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD>
+          <TD vAlign=top>
+            <TABLE height="100%" cellSpacing=0 cellPadding=0 width="100%" 
+            align=center border=0>
+              <TBODY>
+              <TR>
+                <TD vAlign=top width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" align=center 
+                  border=0>
+                    <TBODY>
+                    <TR height="100%">
+                      <TD vAlign=top>
+                        <TABLE height="100%" cellSpacing=0 cellPadding=0 
+                        width="100%" align=center border=0>
+                          <TBODY>
+                          <TR>
+                            <TD vAlign=top width="100%"><!--<a name="2347"></a>-->
+                              <TABLE class=wpsPortletBody height="100%" 
+                              cellSpacing=0 cellPadding=0 width="100%" 
+                              align=center border=0>
+                                <TBODY>
+                                <TR height="100%">
+                                <TD vAlign=top width="100%">
+                                <META content="IBM WebSphere Studio" 
+                                name=GENERATOR><!-- Begin Sitestat4 code -->
+                                <SCRIPT language=JavaScript1.1>
+<!--
+function sitestat(ns_l){ns_l+="&ns__t="+(new Date()).getTime();ns_pixelUrl=ns_l;
+if(document.images){ns_1=new Image();ns_1.src=ns_l;}else
+document.write("<img src="+ns_l+" width='1' height='1'>");}
+sitestat("http://nl.sitestat.com/elsevier/elsevier-com/s?general_info.homepage&category=cws_home");
+//-->
+</SCRIPT>
+                                <NOSCRIPT><IMG height=1 
+                                src="Elsevier_com_files/s.gif" width=1> 
+                                </NOSCRIPT><!-- End Sitestat4 code --></TD></TR></TBODY></TABLE></TD></TR>
+                          <TR>
+                            <TD vAlign=top width="100%"><!--<a name="2348"></a>-->
+                              <TABLE class=wpsPortletBody height="100%" 
+                              cellSpacing=0 cellPadding=0 width="100%" 
+                              align=center border=0>
+                                <TBODY>
+                                <TR height="100%">
+                                <TD vAlign=top width="100%">
+                                <SCRIPT language=JavaScript 
+type=text/javascript>
+	<!--
+		totalLoad = false
+		initMouseEvents();
+
+		function hideTheOne() {
+			if(!totalLoad) return;
+			//showOver.moveTo(-1100, -1100)
+			showOver.hide()
+		}
+
+		function showTheOne(division) {
+			if(!totalLoad) return;
+			if(is.ie)
+				html = '<div id="showOverBgDiv"><img style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=\'/authored_framework/images/home/bg_'+division+'.png\');" src="/authored_framework/images/empty.gif" width="231" height="87" border="0"></div>'
+			else
+				html = '<div id="showOverBgDiv"><img src="/authored_framework/images/home/bg_'+division+'.gif" width="223" height="79" border="0"></div>'
+			html += '<div id="showOverContentDiv" class="verdana10DarkGrey"></div>'
+			showOver.write(html)
+			eval('showOverContentDiv.innerHTML = ' + division + 'Text')
+			showOver.show()
+		}
+
+		function DynMouseMove(x,y) {
+			if(!totalLoad) return;
+			var WinMaxWidth =	((is.ns)? window.innerWidth:document.body.clientWidth) - 250
+			if(x>WinMaxWidth) x=WinMaxWidth
+			if(y>600) y=400
+			showOver.moveTo(x+10, y+15)
+		}
+
+		authorsText = 'Information for book and journal authors and services for submission of articles to Elsevier journals and tracking of your paper in the publication process'
+		editorsText = 'General information about Elsevier`s support for editors'
+		librariansText = 'For information about publications, pricing, training material, initiatives, projects and support'
+		jobseekersText = 'For information on careers at Elsevier and online application for international positions'
+		newsroomText = 'Elsevier contacts for journalists'
+	//-->
+	</SCRIPT>
+
+                                <STYLE type=text/css>#showOverDiv {
+	LEFT: -1100px; VISIBILITY: hidden; WIDTH: 231px; CLIP: rect(0px 231px 87px 0px); POSITION: absolute; TOP: -1100px; HEIGHT: 87px
+}
+#showOverBgDiv {
+	LEFT: 0px; WIDTH: 231px; CLIP: rect(0px 231px 87px 0px); POSITION: absolute; TOP: 0px; HEIGHT: 87px
+}
+#showOverContentDiv {
+	LEFT: 18px; WIDTH: 200px; CLIP: rect(0px 200px 68px 0px); POSITION: absolute; TOP: 15px; HEIGHT: 68px
+}
+</STYLE>
+
+                                <DIV id=showOverDiv></DIV>
+                                <SCRIPT language=JavaScript 
+type=text/javascript>
+			DynLayerInit();
+			totalLoad = true;
+</SCRIPT>
+<!-- From here the content starts and this part is ready to be templated --><!--<table cellpadding="0" cellspacing="0" border="0" width="100%">-->
+                                <TABLE cellSpacing=0 cellPadding=0 width=640 
+                                border=0>
+                                <TBODY>
+                                <TR>
+                                <TD style="BACKGROUND-COLOR: #ffffff" 
+vAlign=top><!-- sas - new content --><!--	<TABLE cellspacing=0 cellpadding=0 border=0 width="757">-->
+                                <TABLE cellSpacing=0 cellPadding=0 width=640 
+                                border=0>
+                                <TBODY>
+                                <TR>
+                                <TD width=755 colSpan=2><IMG height=21 
+                                src="Elsevier_com_files/empty.gif" width=1 
+                                border=0><BR></TD></TR>
+                                <TR>
+                                <TD width=32><IMG height=8 
+                                src="Elsevier_com_files/empty.gif" width=29 
+                                border=0><BR></TD>
+                                <TD width=721><IMG height=14 
+                                alt="Select your view" 
+                                src="Elsevier_com_files/header_selectyourview.gif" 
+                                width=216></TD></TR>
+                                <TR>
+                                <TD width=32><IMG height=1 
+                                src="Elsevier_com_files/empty.gif" width=29 
+                                border=0></TD>
+                                <TD style="BACKGROUND-COLOR: #000000" width=640 
+                                height=1><IMG height=1 
+                                src="Elsevier_com_files/empty.gif" width=640 
+                                border=0></TD></TR>
+                                <TR>
+                                <TD width=32><IMG height=11 
+                                src="Elsevier_com_files/empty.gif" width=29 
+                                border=0></TD></TR>
+                                <TR>
+                                <TD width=32><IMG height=8 
+                                src="Elsevier_com_files/empty.gif" width=29 
+                                border=0><BR></TD>
+                                <TD vAlign=top width=721>
+                                <TABLE cellSpacing=0 cellPadding=0 width=640 
+                                border=0>
+                                <TBODY>
+                                <TR>
+                                <TD vAlign=top>
+                                <TABLE cellSpacing=0 cellPadding=0 border=0>
+                                <TBODY>
+                                <TR>
+                                <TD vAlign=top><IMG height=2 
+                                src="Elsevier_com_files/empty.gif" width=1 
+                                border=0><BR><A 
+                                href="http://www.elsevier.com/wps/find/authorshome.authors"><IMG 
+                                height=9 alt="For authors" 
+                                src="Elsevier_com_files/authors.gif" width=9 
+                                border=0></A><BR></TD>
+                                <TD vAlign=center><IMG height=1 
+                                src="Elsevier_com_files/empty.gif" width=5 
+                                border=0><BR></TD>
+                                <TD class=homeList vAlign=center><A 
+                                onmouseover="showTheOne('authors')" 
+                                onmouseout=hideTheOne() 
+                                href="http://www.elsevier.com/wps/find/authorshome.authors">For 
+                                authors</A></TD>
+                                <TD vAlign=center><IMG height=1 
+                                src="Elsevier_com_files/empty.gif" width=5 
+                                border=0><BR></TD>
+                                <TD vAlign=center><IMG height=2 
+                                src="Elsevier_com_files/empty.gif" width=1 
+                                border=0><BR><BR></TD></TR></TBODY></TABLE></TD>
+                                <TD><IMG height=1 
+                                src="Elsevier_com_files/empty.gif" width=30 
+                                border=0><BR></TD>
+                                <TD vAlign=top>
+                                <TABLE cellSpacing=0 cellPadding=0 border=0>
+                                <TBODY>
+                                <TR>
+                                <TD vAlign=top><IMG height=2 
+                                src="Elsevier_com_files/empty.gif" width=1 
+                                border=0><BR><A 
+                                href="http://www.elsevier.com/wps/find/editorshome.editors"><IMG 
+                                height=9 alt="For editors" 
+                                src="Elsevier_com_files/editors.gif" width=9 
+                                border=0></A><BR></TD>
+                                <TD vAlign=center><IMG height=1 
+                                src="Elsevier_com_files/empty.gif" width=5 
+                                border=0><BR></TD>
+                                <TD class=homeList vAlign=center><A 
+                                onmouseover="showTheOne('editors')" 
+                                onmouseout=hideTheOne() 
+                                href="http://www.elsevier.com/wps/find/editorshome.editors">For 
+                                editors</A></TD></TR></TBODY></TABLE></TD>
+                                <TD><IMG height=1 
+                                src="Elsevier_com_files/empty.gif" width=30 
+                                border=0><BR></TD>
+                                <TD vAlign=top>
+                                <TABLE cellSpacing=0 cellPadding=0 border=0>
+                                <TBODY>
+                                <TR>
+                                <TD vAlign=top><IMG height=2 
+                                src="Elsevier_com_files/empty.gif" width=1 
+                                border=0><BR><A 
+                                href="http://www.elsevier.com/wps/find/librarianshome.librarians"><IMG 
+                                height=9 alt="For librarians" 
+                                src="Elsevier_com_files/librarians.gif" width=9 
+                                border=0></A><BR></TD>
+                                <TD vAlign=center><IMG height=1 
+                                src="Elsevier_com_files/empty.gif" width=5 
+                                border=0><BR></TD>
+                                <TD class=homeList vAlign=center><A 
+                                onmouseover="showTheOne('librarians')" 
+                                onmouseout=hideTheOne() 
+                                href="http://www.elsevier.com/wps/find/librarianshome.librarians">For 
+                                librarians</A></TD></TR></TBODY></TABLE></TD>
+                                <TD><IMG height=1 
+                                src="Elsevier_com_files/empty.gif" width=30 
+                                border=0><BR></TD>
+                                <TD vAlign=top>
+                                <TABLE cellSpacing=0 cellPadding=0 border=0>
+                                <TBODY>
+                                <TR>
+                                <TD vAlign=top><IMG height=2 
+                                src="Elsevier_com_files/empty.gif" width=1 
+                                border=0><BR><A 
+                                href="http://www.elsevier.com/wps/find/jobseekershome.careers"><IMG 
+                                height=9 alt="For jobseekers" 
+                                src="Elsevier_com_files/jobseekers.gif" width=9 
+                                border=0></A><BR></TD>
+                                <TD vAlign=center><IMG height=1 
+                                src="Elsevier_com_files/empty.gif" width=5 
+                                border=0><BR></TD>
+                                <TD class=homeList vAlign=center><A 
+                                onmouseover="showTheOne('jobseekers')" 
+                                onmouseout=hideTheOne() 
+                                href="http://www.elsevier.com/wps/find/jobseekershome.careers">Careers</A></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+                                <TR>
+                                <TD width=32><IMG height=12 
+                                src="Elsevier_com_files/empty.gif" width=29 
+                                border=0></TD></TR>
+                                <TR>
+                                <TD width=32><IMG height=1 
+                                src="Elsevier_com_files/empty.gif" width=30 
+                                border=0> <BR></TD>
+                                <TD vAlign=top width=721>
+                                <TABLE cellSpacing=0 cellPadding=0 border=0>
+                                <TBODY>
+                                <TR>
+                                <TD vAlign=top><IMG height=2 
+                                src="Elsevier_com_files/empty.gif" width=1 
+                                border=0><BR><A 
+                                href="http://www.elsevier.com/wps/find/contactpublicrelations.librarians/contactpublic"><IMG 
+                                height=9 alt=Newsroom 
+                                src="Elsevier_com_files/arrow_forPress.gif" 
+                                width=9 border=0></A><BR></TD>
+                                <TD vAlign=center><IMG height=1 
+                                src="Elsevier_com_files/empty.gif" width=5 
+                                border=0><BR></TD>
+                                <TD class=homeList vAlign=center><A 
+                                onmouseover="showTheOne('newsroom')" 
+                                onmouseout=hideTheOne() 
+                                href="http://www.elsevier.com/wps/find/contactpublicrelations.librarians/contactpublic">Newsroom</A></TD></TR></TBODY></TABLE></TD></TR><!--	<TR>
+		<TD colSpan=2 width="755">
+			<IMG height=28 src="/authored_framework/images/empty.gif" width=1	border=0>
+		</TD>
+	</TR>
+--><!--	<TR>
+		<TD style="WIDTH: 29px"><IMG height=8 src="/authored_framework/images/empty.gif" width=29 border=0><BR></TD>
+		<TD colSpan=3><img src="/authored_framework/images/headers/header_mission.gif" width="216" height="14" alt="mission"></TD>
+	</TR>
+
+				
+	<TR>
+		<TD><IMG height=1 src="/authored_framework/images/empty.gif" width=29 border=0></TD>
+		<td style="BACKGROUND-COLOR: #000000" height="1"><IMG height=1 src="/authored_framework/images/empty.gif" width=100% border=0></td>
+	</TR>
+--><!--		
+	<TR>
+		<TD><IMG height=12 src="/authored_framework/images/empty.gif" width=29 border=0></TD>
+	</TR>
+-->
+                                <TR>
+                                <TD width=32><IMG height=1 
+                                src="Elsevier_com_files/empty.gif" width=29 
+                                border=0> <BR></TD></TR></TBODY></TABLE><!-- End of middle content --><!-- sas -end of new content --></TD></TR></TBODY></TABLE></TD></TR>
+                                <TR>
+                                <TD vAlign=top width="100%"><!--<a name="2349"></a>-->
+                                <TABLE class=wpsPortletBody height="100%" 
+                                cellSpacing=0 cellPadding=0 width="100%" 
+                                align=center border=0>
+                                <TBODY>
+                                <TR height="100%">
+                                <TD vAlign=top width="100%">
+                                <TABLE cellSpacing=0 cellPadding=0 border=0>
+                                <TBODY>
+                                <TR>
+                                <TD style="WIDTH: 25px"><IMG height=1 
+                                src="Elsevier_com_files/empty.gif" width=25 
+                                border=0><BR></TD>
+                                <TD width="100%">
+                                <TABLE cellSpacing=0 cellPadding=0 border=0>
+                                <TBODY>
+                                <TR>
+                                <TD vAlign=top width="36%"><IMG height=21 
+                                src="Elsevier_com_files/empty.gif" width=1 
+                                border=0> <!-- edited with XML Spy v4.2 U (http://www.xmlspy.com) by jdaniel (Rubus UK Ltd) --><?xml-stylesheet type="text/xsl">
+                                <STYLE type=text/css>.dottedtable {
+	BACKGROUND-IMAGE: url(/framework_home/images/dot_x.gif); BACKGROUND-REPEAT: repeat
+}
+.innertable {
+	BACKGROUND-IMAGE: url(/framework_home/images/dot.gif); BACKGROUND-REPEAT: repeat
+}
+</STYLE>
+
+                                <TABLE class=dottedtable cellSpacing=1 
+                                cellPadding=0 border=0>
+                                <TBODY>
+                                <TR>
+                                <TD>
+                                <TABLE cellSpacing=0 cellPadding=0 border=0>
+                                <TBODY>
+                                <TR>
+                                <TD class=innertable colSpan=3><IMG height=7 
+                                src="Elsevier_com_files/empty.gif" width=1 
+                                border=0></TD>
+                                <TD style="WIDTH: 1px"><IMG height=1 
+                                src="Elsevier_com_files/empty.gif" width=1 
+                                border=0></TD></TR>
+                                <TR>
+                                <TD class=innertable><IMG height=1 
+                                src="Elsevier_com_files/empty.gif" 
+width=12></TD>
+                                <TD class=innertable>
+                                <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                                border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=3><IMG height=14 
+                                src="Elsevier_com_files/empty.gif" 
+                                width=1></TD></TR>
+                                <TR>
+                                <TD class=verdana11DarkGrey colSpan=3>
+                                <P><FONT size=3>Elsevier supports high school 
+                                program</FONT> </P></TD></TR>
+                                <TR>
+                                <TD colSpan=3><IMG height=14 
+                                src="Elsevier_com_files/empty.gif" 
+                                width=1></TD></TR>
+                                <TR>
+                                <TD align=left><IMG alt="" 
+                                src="Elsevier_com_files/ROENTGEN_blue_web3.gif" 
+                                border=0></TD>
+                                <TD><IMG height=1 
+                                src="Elsevier_com_files/empty.gif" 
+width=11></TD>
+                                <TD><SPAN 
+                                class=verdana11DarkGrey></SPAN></TD></TR>
+                                <TR>
+                                <TD class=verdana11DarkGrey colSpan=3><BR>
+                                <P>
+                                <P>A total of 35 high school juniors, 
+                                representing all five boroughs of New York City, 
+                                were asked to participate in the Radiology: 
+                                Giving Back to New York program, where they 
+                                listened to short presentations by some of the 
+                                country’s most accomplished radiologists. (<IMG 
+                                height=12 alt="External link" 
+                                src="Elsevier_com_files/externalLink_3.gif" 
+                                width=14 border=0> &nbsp;<SPAN 
+                                class=verdana11Orange><A 
+                                href="http://www.elsevier.com/wps/find/intro.cws_home/madelena" 
+                                target=_blank>full text</A></SPAN>)</P>
+                                <P></P>
+                                <P>
+                                <P><B>--------------------------------<BR>The 
+                                2004 Nobel Prize laureates -</B> See our <IMG 
+                                height=12 alt="External link" 
+                                src="Elsevier_com_files/externalLink_3.gif" 
+                                width=14 border=0> &nbsp;<SPAN 
+                                class=verdana11Orange><A 
+                                href="http://www.elsevier.com/wps/find/intro.cws_home/2004nobelprizes" 
+                                target=_blank><B><FONT 
+                                color=#ff6600>tribute</FONT></B></A></SPAN> </P>
+                                <P></P></TD></TR></TBODY></TABLE></TD>
+                                <TD class=innertable><IMG height=1 
+                                src="Elsevier_com_files/empty.gif" width=9></TD>
+                                <TD style="WIDTH: 1px"></TD></TR>
+                                <TR>
+                                <TD class=innertable colSpan=3><IMG height=11 
+                                src="Elsevier_com_files/empty.gif" width=1></TD>
+                                <TD style="WIDTH: 1px"></TD></TR>
+                                <TR>
+                                <TD colSpan=3><IMG height=2 
+                                src="Elsevier_com_files/empty.gif" width=1></TD>
+                                <TD 
+                                style="WIDTH: 1px"></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD>
+                                <TD style="WIDTH: 20px" vAlign=top><IMG height=1 
+                                src="Elsevier_com_files/empty.gif" width=20 
+                                border=0><BR></TD>
+                                <TD vAlign=top width="64%"><IMG height=30 
+                                src="Elsevier_com_files/empty.gif" width=1 
+                                border=0> 
+                                <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                                border=0>
+                                <TBODY>
+                                <TR>
+                                <TD style="WIDTH: 4px"><IMG height=1 
+                                src="Elsevier_com_files/empty.gif" width=4 
+                                border=0><BR></TD>
+                                <TD><IMG height=14 alt="Elsevier news" 
+                                src="Elsevier_com_files/elsevierNews.gif" 
+                                width=195 border=0><BR></TD></TR>
+                                <TR>
+                                <TD style="BACKGROUND-COLOR: #000000" 
+                                colSpan=2><IMG height=1 
+                                src="Elsevier_com_files/empty.gif" width=139 
+                                border=0><BR></TD></TR>
+                                <TR>
+                                <TD colSpan=2><IMG height=10 
+                                src="Elsevier_com_files/empty.gif" width=139 
+                                border=0><BR></TD></TR><!-- begin item -->
+                                <TR>
+                                <TD style="WIDTH: 4px"><IMG height=1 
+                                src="Elsevier_com_files/empty.gif" width=4 
+                                border=0><BR></TD>
+                                <TD class=verdana11DarkGrey><B>05 Jul 
+                                2005</B></TD></TR>
+                                <TR>
+                                <TD style="WIDTH: 4px"><IMG height=1 
+                                src="Elsevier_com_files/empty.gif" width=4 
+                                border=0><BR></TD>
+                                <TD class=verdana11DarkGrey><B>Industry experts 
+                                in the Life Sciences partner with 
+                                Elsevier</B></TD></TR>
+                                <TR>
+                                <TD style="WIDTH: 4px"><IMG height=1 
+                                src="Elsevier_com_files/empty.gif" width=4 
+                                border=0><BR></TD>
+                                <TD class=verdana11Grey>Elsevier convenes 
+                                Corporate Advisory Board. <SPAN 
+                                class=verdana11Orange><NOBR>&gt; <A 
+                                class=verdana11Orange 
+                                href="http://www.elsevier.com/wps/find/authored_newsitem.cws_home/companynews05_00277">more</A></NOBR></SPAN></TD></TR>
+                                <TR>
+                                <TD colSpan=2><IMG height=10 
+                                src="Elsevier_com_files/empty.gif" width=139 
+                                border=0><BR></TD></TR>
+                                <TR>
+                                <TD 
+                                style="BACKGROUND-IMAGE: url(/authored_framework/images/dot_line.gif)" 
+                                colSpan=2><IMG height=1 
+                                src="Elsevier_com_files/empty.gif" width=139 
+                                border=0><BR></TD></TR>
+                                <TR>
+                                <TD colSpan=2><IMG height=10 
+                                src="Elsevier_com_files/empty.gif" width=139 
+                                border=0><BR></TD></TR><!-- end item --><!-- begin item -->
+                                <TR>
+                                <TD style="WIDTH: 4px"><IMG height=1 
+                                src="Elsevier_com_files/empty.gif" width=4 
+                                border=0><BR></TD>
+                                <TD class=verdana11DarkGrey><B>28 Jun 
+                                2005</B></TD></TR>
+                                <TR>
+                                <TD style="WIDTH: 4px"><IMG height=1 
+                                src="Elsevier_com_files/empty.gif" width=4 
+                                border=0><BR></TD>
+                                <TD class=verdana11DarkGrey><B>Elsevier and 
+                                Dalian Institute of Chemical Physics/Chinese 
+                                Academy of Sciences close publishing 
+                                agreement</B></TD></TR>
+                                <TR>
+                                <TD style="WIDTH: 4px"><IMG height=1 
+                                src="Elsevier_com_files/empty.gif" width=4 
+                                border=0><BR></TD>
+                                <TD class=verdana11Grey>The Journal of Natural 
+                                Gas Chemistry to be published by Elsevier. <SPAN 
+                                class=verdana11Orange><NOBR>&gt; <A 
+                                class=verdana11Orange 
+                                href="http://www.elsevier.com/wps/find/authored_newsitem.cws_home/companynews05_00276">more</A></NOBR></SPAN></TD></TR>
+                                <TR>
+                                <TD colSpan=2><IMG height=10 
+                                src="Elsevier_com_files/empty.gif" width=139 
+                                border=0><BR></TD></TR>
+                                <TR>
+                                <TD 
+                                style="BACKGROUND-IMAGE: url(/authored_framework/images/dot_line.gif)" 
+                                colSpan=2><IMG height=1 
+                                src="Elsevier_com_files/empty.gif" width=139 
+                                border=0><BR></TD></TR>
+                                <TR>
+                                <TD colSpan=2><IMG height=10 
+                                src="Elsevier_com_files/empty.gif" width=139 
+                                border=0><BR></TD></TR><!-- end item --><!-- begin item -->
+                                <TR>
+                                <TD style="WIDTH: 4px"><IMG height=1 
+                                src="Elsevier_com_files/empty.gif" width=4 
+                                border=0><BR></TD>
+                                <TD class=verdana11DarkGrey><B>25 Jun 
+                                2005</B></TD></TR>
+                                <TR>
+                                <TD style="WIDTH: 4px"><IMG height=1 
+                                src="Elsevier_com_files/empty.gif" width=4 
+                                border=0><BR></TD>
+                                <TD class=verdana11DarkGrey><B>Elsevier 
+                                introduces affordable ScienceDirect College 
+                                Edition</B></TD></TR>
+                                <TR>
+                                <TD style="WIDTH: 4px"><IMG height=1 
+                                src="Elsevier_com_files/empty.gif" width=4 
+                                border=0><BR></TD>
+                                <TD class=verdana11Grey>Quality content now 
+                                available for tomorrow’s innovators. <SPAN 
+                                class=verdana11Orange><NOBR>&gt; <A 
+                                class=verdana11Orange 
+                                href="http://www.elsevier.com/wps/find/authored_newsitem.cws_home/companynews05_00275">more</A></NOBR></SPAN></TD></TR>
+                                <TR>
+                                <TD colSpan=2><IMG height=10 
+                                src="Elsevier_com_files/empty.gif" width=139 
+                                border=0><BR></TD></TR>
+                                <TR>
+                                <TD 
+                                style="BACKGROUND-IMAGE: url(/authored_framework/images/dot_line.gif)" 
+                                colSpan=2><IMG height=1 
+                                src="Elsevier_com_files/empty.gif" width=139 
+                                border=0><BR></TD></TR>
+                                <TR>
+                                <TD colSpan=2><IMG height=10 
+                                src="Elsevier_com_files/empty.gif" width=139 
+                                border=0><BR></TD></TR><!-- end item -->
+                                <TR>
+                                <TD style="WIDTH: 4px"><IMG height=1 
+                                src="Elsevier_com_files/empty.gif" width=4 
+                                border=0><BR></TD>
+                                <TD class=verdana11Orange align=right><NOBR>&gt; 
+                                <A class=verdana11Orange 
+                                href="http://www.elsevier.com/wps/find/about_companynews.cws_home?action=news_search&amp;doctype=na&amp;newstype=company&amp;newsjsp=company&amp;sort_by=pubdate">more 
+                                news</NOBR></A></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD>
+                                <TD style="WIDTH: 22px"><IMG height=1 
+                                src="Elsevier_com_files/empty.gif" width=22 
+                                border=0><BR></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD>
+                <TD vAlign=top width=157>
+                  <TABLE height="100%" cellSpacing=0 cellPadding=0 width="100%" 
+                  align=center border=0>
+                    <TBODY>
+                    <TR>
+                      <TD vAlign=top width="100%"><!--<a name="2351"></a>-->
+                        <TABLE class=wpsPortletBody height="100%" cellSpacing=0 
+                        cellPadding=0 width="100%" align=center border=0>
+                          <TBODY>
+                          <TR height="100%">
+                            <TD vAlign=top width="100%">
+                              <TABLE cellSpacing=0 cellPadding=0 border=0>
+                                <TBODY>
+                                <TR>
+                                <TD><!-- Start of right content -->
+                                <TABLE cellSpacing=0 cellPadding=0 width=157 
+                                border=0>
+                                <TBODY>
+                                <TR>
+                                <TD 
+                                style="WIDTH: 157px; BACKGROUND-COLOR: #ffffff" 
+                                colSpan=3><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=157 
+                                border=0></TD></TR>
+                                <TR>
+                                <TD style="WIDTH: 78px" vAlign=top><IMG 
+                                height=120 alt=Elsevier 
+                                src="Elsevier_com_files/rhs_image1.jpg" width=78 
+                                border=0><BR></TD>
+                                <TD style="WIDTH: 1px" vAlign=top><IMG height=1 
+                                alt="" src="Elsevier_com_files/empty.gif" 
+                                width=1 border=0></TD>
+                                <TD style="WIDTH: 78px" vAlign=top><IMG 
+                                height=120 alt=Elsevier 
+                                src="Elsevier_com_files/rhs_image2.jpg" width=78 
+                                border=0><BR></TD></TR></TBODY></TABLE>
+                                <TABLE style="BACKGROUND-COLOR: #fafafa" 
+                                cellSpacing=0 cellPadding=0 width=157 border=0>
+                                <TBODY>
+                                <TR>
+                                <TD style="WIDTH: 1px" vAlign=top><IMG height=15 
+                                alt="" src="Elsevier_com_files/empty.gif" 
+                                width=1 border=0></TD></TR></TBODY></TABLE>
+                                <TABLE style="BACKGROUND-COLOR: #fafafa" 
+                                cellSpacing=0 cellPadding=0 width=157 border=0>
+                                <TBODY>
+                                <TR>
+                                <TD style="WIDTH: 157px" vAlign=top 
+                                colSpan=3><IMG height=32 
+                                alt="Other Elsevier websites" 
+                                src="Elsevier_com_files/Other_Elsevier_sites.gif" 
+                                width=157 border=0><BR></TD></TR>
+                                <TR>
+                                <TD 
+                                style="WIDTH: 157px; BACKGROUND-COLOR: #f5f5f5" 
+                                vAlign=top colSpan=3><IMG height=7 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=1 
+                                border=0></TD></TR>
+                                <TR>
+                                <TD 
+                                style="WIDTH: 6px; BACKGROUND-COLOR: #f5f5f5" 
+                                vAlign=top><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=6 
+                                border=0></TD>
+                                <TD><IMG height=7 alt="External link" 
+                                src="Elsevier_com_files/externalLink.gif" 
+                                width=14 border=0></TD>
+                                <TD 
+                                style="WIDTH: 137px; BACKGROUND-COLOR: #f5f5f5" 
+                                vAlign=top><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=137 
+                                border=0></TD></TR>
+                                <TR>
+                                <TD 
+                                style="WIDTH: 157px; BACKGROUND-COLOR: #f5f5f5" 
+                                vAlign=top colSpan=3><IMG height=7 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=1 
+                                border=0></TD></TR>
+                                <TR>
+                                <FORM name=siteSelect 
+                                action=/wps/find/homepage.cws_home>
+                                <TD 
+                                style="WIDTH: 4px; BACKGROUND-COLOR: #f5f5f5" 
+                                vAlign=top><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=4 
+                                border=0></TD>
+                                <TD 
+                                style="WIDTH: 153px; BACKGROUND-COLOR: #f5f5f5" 
+                                vAlign=top colSpan=2><SELECT 
+                                class=locationSelect style="WIDTH: 150px" 
+                                onchange="openWindow(document.siteSelect.site[document.siteSelect.site.selectedIndex].value, '_blank')" 
+                                size=1 name=site> <OPTION value="" 
+                                selected>Choose a site</OPTION> <OPTION 
+                                value=http://books.elsevier.com>Academic 
+                                Press</OPTION> <OPTION 
+                                value=http://www.elsmediakits.com>Advertising 
+                                Health US</OPTION> <OPTION 
+                                value=http://authors.elsevier.com>Author 
+                                Gateway</OPTION> <OPTION 
+                                value=http://intl.elsevierhealth.com/bt/>Bailliere 
+                                Tindall</OPTION> <OPTION 
+                                value=http://intl.elsevierhealth.com/bcdecker/default.cfm>B.C. 
+                                Decker</OPTION> <OPTION 
+                                value=http://www.elsevier.com/homepage/sah/spd/site/index.html>Bibliographic 
+                                Databases</OPTION> <OPTION 
+                                value=http://www.boardcertifieddocs.com>BoardCertifiedDocs</OPTION> 
+                                <OPTION 
+                                value=http://books.elsevier.com>Butterworth-Heinemann</OPTION> 
+                                <OPTION 
+                                value=http://www.cardiosource.com>Cardiosource</OPTION> 
+                                <OPTION value=http://www.cellpress.com>Cell 
+                                Press</OPTION> <OPTION 
+                                value=http://www.elsevierhealth.com>Churchill 
+                                Livingstone</OPTION> <OPTION 
+                                value=http://www.cip-elsevier.com>Conference 
+                                Information Publishing</OPTION> <OPTION 
+                                value=http://www.elseviereconomics.com>ElsevierEconomics</OPTION> 
+                                <OPTION 
+                                value=http://www.elsevierfoundation.org>Elsevier 
+                                Foundation</OPTION> <OPTION 
+                                value=http://www.elsevierhealth.com>Elsevier 
+                                Health</OPTION> <OPTION 
+                                value=http://www.mdl.com>Elsevier MDL</OPTION> 
+                                <OPTION value=http://www.elsevier.nl>Elsevier 
+                                Newsweekly</OPTION> <OPTION 
+                                value=http://www.embase.com>Embase.com</OPTION> 
+                                <OPTION 
+                                value=http://www.endinfosys.com>Endeavor</OPTION> 
+                                <OPTION value=http://www.ei.org>Engineering 
+                                Information</OPTION> <OPTION 
+                                value=http://www.escardiocontent.org>EscardioContent</OPTION> 
+                                <OPTION 
+                                value=http://evolve.elsevier.com>Evolve</OPTION> 
+                                <OPTION 
+                                value=http://www.excerptamedica.com>Excerpta 
+                                Medica</OPTION> <OPTION 
+                                value=http://www.fdcreports.com>FDC 
+                                Reports</OPTION> <OPTION 
+                                value=http://www.FIRSTconsult.com>FIRSTConsult</OPTION> 
+                                <OPTION value=http://www.fleshandbones.com>Flesh 
+                                and Bones</OPTION> <OPTION 
+                                value=http://intl.elsevierhealth.com/gw/default.cfm>G.W. 
+                                Medical Publishing</OPTION> <OPTION 
+                                value=http://www.elsevierhealth.com/>Hanley and 
+                                Belfus</OPTION> <OPTION 
+                                value=http://www.imng.com>IMNG</OPTION> <OPTION 
+                                value=http://www.jems.com>Jems</OPTION> <OPTION 
+                                value=http://www.lancet.com>The Lancet</OPTION> 
+                                <OPTION 
+                                value=http://www.mathpreprints.com>Mathematics 
+                                Preprints</OPTION> <OPTION 
+                                value=http://www.mdconsult.com/>MDConsult</OPTION> 
+                                <OPTION 
+                                value=http://books.elsevier.com/mk>Morgan 
+                                Kaufmann</OPTION> <OPTION 
+                                value=http://www.elsevierhealth.com>Mosby</OPTION> 
+                                <OPTION 
+                                value=http://www.elseviernano.com>Nano-Science 
+                                &amp; Technology</OPTION> <OPTION 
+                                value=http://www.physicsoflife.com>Physics of 
+                                Life</OPTION> <OPTION 
+                                value=http://www.rothacker.de>Rothacker</OPTION> 
+                                <OPTION 
+                                value=http://www.elsevierhealth.com>Saunders</OPTION> 
+                                <OPTION 
+                                value=http://www.sciencedirect.com>ScienceDirect</OPTION> 
+                                <OPTION 
+                                value=http://www.sciencejobs.com>ScienceJobs.com</OPTION> 
+                                <OPTION 
+                                value=http://www.scirus.com>Scirus</OPTION> 
+                                <OPTION 
+                                value=http://www.scopus.com>Scopus</OPTION> 
+                                <OPTION value=http://www.s-f-g.com>Servicecenter 
+                                Fachverlage</OPTION> <OPTION 
+                                value=http://germany.elsevier.com>Spektrum</OPTION> 
+                                <OPTION value=http://books.elsevier.com>S&amp;T 
+                                Books</OPTION> <OPTION 
+                                value=http://germany.elsevier.com>Urban &amp; 
+                                Fischer</OPTION> <OPTION 
+                                value=http://virtualE.elsevier.com>VirtualE</OPTION> 
+                                <OPTION 
+                                value=http://virtualrep.elsevier.com>VirtualRep</OPTION> 
+                                <OPTION value="">&nbsp;</OPTION> <OPTION 
+                                value="">Regional sites:</OPTION> <OPTION 
+                                value="">----------------------------</OPTION> 
+                                <OPTION value=http://asia.elsevier.com>Asia 
+                                Pacific S&amp;T</OPTION> <OPTION 
+                                value=http://asia.elsevierhealth.com>Asia 
+                                Health</OPTION> <OPTION 
+                                value=http://www.harcourt.com.au>Australia</OPTION> 
+                                <OPTION 
+                                value=http://france.elsevier.com>France</OPTION> 
+                                <OPTION 
+                                value=http://germany.elsevier.com>Germany</OPTION> 
+                                <OPTION value=http://www.elsevier.com.br>Lat. 
+                                Am. - Portuguese</OPTION></SELECT> 
+                                </TD></FORM></TR>
+                                <TR>
+                                <TD 
+                                style="WIDTH: 157px; BACKGROUND-COLOR: #f5f5f5" 
+                                vAlign=top colSpan=3><IMG height=7 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=1 
+                                border=0></TD></TR></TBODY></TABLE>
+                                <TABLE style="BACKGROUND-COLOR: #f9f9f9" 
+                                cellSpacing=0 cellPadding=0 width=157 border=0>
+                                <TBODY>
+                                <TR>
+                                <TD 
+                                style="BACKGROUND-IMAGE: url(/authored_framework/images/dot_line.gif); WIDTH: 157px" 
+                                vAlign=top colSpan=3><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=1 
+                                border=0></TD></TR>
+                                <TR>
+                                <TD 
+                                style="WIDTH: 157px; BACKGROUND-COLOR: #f9f9f9" 
+                                vAlign=top colSpan=3><IMG height=5 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=1 
+                                border=0></TD></TR>
+                                <TR>
+                                <TD 
+                                style="WIDTH: 157px; BACKGROUND-COLOR: #f9f9f9" 
+                                vAlign=top colSpan=3><IMG height=25 
+                                alt="Science Direct" 
+                                src="Elsevier_com_files/banner_scienceDirect.gif" 
+                                width=157 border=0><BR></TD></TR>
+                                <TR>
+                                <TD 
+                                style="WIDTH: 6px; BACKGROUND-COLOR: #f9f9f9" 
+                                vAlign=top><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=6 
+                                border=0></TD>
+                                <TD class=verdana10DarkGrey 
+                                style="WIDTH: 147px; BACKGROUND-COLOR: #f9f9f9" 
+                                vAlign=top>The ultimate scientific, technical 
+                                &amp; medical resource:</TD>
+                                <TD 
+                                style="WIDTH: 4px; BACKGROUND-COLOR: #f9f9f9" 
+                                vAlign=top><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=4 
+                                border=0></TD></TR>
+                                <TR>
+                                <TD 
+                                style="WIDTH: 6px; BACKGROUND-COLOR: #f9f9f9" 
+                                vAlign=top><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=6 
+                                border=0></TD>
+                                <TD class=verdana10DarkGrey 
+                                style="WIDTH: 147px; BACKGROUND-COLOR: #f9f9f9" 
+                                vAlign=top>
+                                <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                                border=0>
+                                <TBODY>
+                                <TR>
+                                <TD><IMG height=7 alt="External link" 
+                                src="Elsevier_com_files/externalLink.gif" 
+                                width=14 border=0></TD>
+                                <TD><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=4 
+                                border=0></TD>
+                                <TD class=verdana10Orange><A 
+                                href="http://www.sciencedirect.com/" 
+                                target=sciencedirect>http://www.sciencedirect.com/</A></TD></TR></TBODY></TABLE></TD>
+                                <TD 
+                                style="WIDTH: 4px; BACKGROUND-COLOR: #f9f9f9" 
+                                vAlign=top><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=4 
+                                border=0></TD></TR>
+                                <TR>
+                                <TD 
+                                style="WIDTH: 157px; BACKGROUND-COLOR: #f9f9f9" 
+                                vAlign=top colSpan=3><IMG height=10 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=1 
+                                border=0></TD></TR>
+                                <TR>
+                                <TD 
+                                style="BACKGROUND-IMAGE: url(/authored_framework/images/dot_line.gif); WIDTH: 157px" 
+                                vAlign=top colSpan=3><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=1 
+                                border=0></TD></TR></TBODY></TABLE>
+                                <TABLE style="BACKGROUND-COLOR: #f3f3f3" 
+                                cellSpacing=0 cellPadding=0 width=157 border=0>
+                                <TBODY>
+                                <TR>
+                                <TD 
+                                style="WIDTH: 157px; BACKGROUND-COLOR: #f3f3f3" 
+                                vAlign=top colSpan=3><IMG height=10 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=1 
+                                border=0></TD></TR>
+                                <TR>
+                                <TD 
+                                style="WIDTH: 157px; BACKGROUND-COLOR: #f3f3f3" 
+                                vAlign=top colSpan=3><IMG height=27 
+                                alt=MDConsult 
+                                src="Elsevier_com_files/banner_MDConsult.gif" 
+                                width=157 border=0><BR></TD></TR>
+                                <TR>
+                                <TD 
+                                style="WIDTH: 6px; BACKGROUND-COLOR: #f3f3f3" 
+                                vAlign=top><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=6 
+                                border=0></TD>
+                                <TD class=verdana10DarkGrey 
+                                style="WIDTH: 147px; BACKGROUND-COLOR: #f3f3f3" 
+                                vAlign=top>What makes doctors click:</TD>
+                                <TD 
+                                style="WIDTH: 4px; BACKGROUND-COLOR: #f3f3f3" 
+                                vAlign=top><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=4 
+                                border=0></TD></TR>
+                                <TR>
+                                <TD 
+                                style="WIDTH: 6px; BACKGROUND-COLOR: #f3f3f3" 
+                                vAlign=top><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=6 
+                                border=0></TD>
+                                <TD class=verdana10DarkGrey 
+                                style="WIDTH: 147px; BACKGROUND-COLOR: #f3f3f3" 
+                                vAlign=top>
+                                <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                                border=0>
+                                <TBODY>
+                                <TR>
+                                <TD><IMG height=7 alt="External link" 
+                                src="Elsevier_com_files/externalLink.gif" 
+                                width=14 border=0></TD>
+                                <TD><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=4 
+                                border=0></TD>
+                                <TD class=verdana10Orange><A 
+                                href="http://www.mdconsult.com/" 
+                                target=MDConsult>http://www.mdconsult.com/</A></TD></TR></TBODY></TABLE></TD>
+                                <TD 
+                                style="WIDTH: 4px; BACKGROUND-COLOR: #f3f3f3" 
+                                vAlign=top><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=4 
+                                border=0></TD></TR>
+                                <TR>
+                                <TD 
+                                style="WIDTH: 157px; BACKGROUND-COLOR: #f3f3f3" 
+                                vAlign=top colSpan=3><IMG height=10 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=1 
+                                border=0></TD></TR>
+                                <TR>
+                                <TD 
+                                style="BACKGROUND-IMAGE: url(/authored_framework/images/dot_line.gif); WIDTH: 157px" 
+                                vAlign=top colSpan=3><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=1 
+                                border=0></TD></TR></TBODY></TABLE>
+                                <TABLE style="BACKGROUND-COLOR: #f3f3f3" 
+                                cellSpacing=0 cellPadding=0 width=157 border=0>
+                                <TBODY>
+                                <TR>
+                                <TD 
+                                style="WIDTH: 157px; BACKGROUND-COLOR: #f3f3f3" 
+                                vAlign=top colSpan=3><IMG height=10 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=1 
+                                border=0></TD></TR>
+                                <TR>
+                                <TD 
+                                style="WIDTH: 157px; BACKGROUND-COLOR: #f3f3f3" 
+                                vAlign=top colSpan=3><IMG height=27 
+                                alt=FIRSTConsult 
+                                src="Elsevier_com_files/banner_firstconsult.gif" 
+                                width=157 border=0><BR></TD></TR>
+                                <TR>
+                                <TD 
+                                style="WIDTH: 6px; BACKGROUND-COLOR: #f3f3f3" 
+                                vAlign=top><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=6 
+                                border=0></TD>
+                                <TD class=verdana10DarkGrey 
+                                style="WIDTH: 147px; BACKGROUND-COLOR: #f3f3f3" 
+                                vAlign=top>Support your clinical decisions with 
+                                evidence-based medicine:</TD>
+                                <TD 
+                                style="WIDTH: 4px; BACKGROUND-COLOR: #f3f3f3" 
+                                vAlign=top><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=4 
+                                border=0></TD></TR>
+                                <TR>
+                                <TD 
+                                style="WIDTH: 6px; BACKGROUND-COLOR: #f3f3f3" 
+                                vAlign=top><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=6 
+                                border=0></TD>
+                                <TD class=verdana10DarkGrey 
+                                style="WIDTH: 147px; BACKGROUND-COLOR: #f3f3f3" 
+                                vAlign=top>
+                                <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                                border=0>
+                                <TBODY>
+                                <TR>
+                                <TD><IMG height=7 alt="External link" 
+                                src="Elsevier_com_files/externalLink.gif" 
+                                width=14 border=0></TD>
+                                <TD><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=4 
+                                border=0></TD>
+                                <TD class=verdana10Orange><A 
+                                href="http://www.firstconsult.com/" 
+                                target=FIRSTConsult>http://www.firstconsult.com/</A></TD></TR></TBODY></TABLE></TD>
+                                <TD 
+                                style="WIDTH: 4px; BACKGROUND-COLOR: #f9f9f9" 
+                                vAlign=top><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=4 
+                                border=0></TD></TR>
+                                <TR>
+                                <TD 
+                                style="WIDTH: 157px; BACKGROUND-COLOR: #f9f9f9" 
+                                vAlign=top colSpan=3><IMG height=10 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=1 
+                                border=0></TD></TR>
+                                <TR>
+                                <TD 
+                                style="BACKGROUND-IMAGE: url(/authored_framework/images/dot_line.gif); WIDTH: 157px" 
+                                vAlign=top colSpan=3><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=1 
+                                border=0></TD></TR></TBODY></TABLE><!-- Scopus -->
+                                <TABLE style="BACKGROUND-COLOR: #f3f3f3" 
+                                cellSpacing=0 cellPadding=0 width=157 border=0>
+                                <TBODY>
+                                <TR>
+                                <TD 
+                                style="WIDTH: 157px; BACKGROUND-COLOR: #f3f3f3" 
+                                vAlign=top colSpan=3><IMG height=10 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=1 
+                                border=0></TD></TR>
+                                <TR>
+                                <TD 
+                                style="WIDTH: 157px; BACKGROUND-COLOR: #f3f3f3" 
+                                vAlign=top colSpan=3><IMG height=23 alt=SCOPUS 
+                                src="Elsevier_com_files/scopusnew.jpg" width=157 
+                                border=0><BR></TD></TR>
+                                <TR>
+                                <TD 
+                                style="WIDTH: 6px; BACKGROUND-COLOR: #f3f3f3" 
+                                vAlign=top><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=6 
+                                border=0></TD>
+                                <TD class=verdana10DarkGrey 
+                                style="WIDTH: 147px; BACKGROUND-COLOR: #f3f3f3" 
+                                vAlign=top>Now launched! The world's largest 
+                                single abstract database:</TD>
+                                <TD 
+                                style="WIDTH: 4px; BACKGROUND-COLOR: #f3f3f3" 
+                                vAlign=top><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=4 
+                                border=0></TD></TR>
+                                <TR>
+                                <TD 
+                                style="WIDTH: 6px; BACKGROUND-COLOR: #f3f3f3" 
+                                vAlign=top><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=6 
+                                border=0></TD>
+                                <TD class=verdana10DarkGrey 
+                                style="WIDTH: 147px; BACKGROUND-COLOR: #f3f3f3" 
+                                vAlign=top>
+                                <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                                border=0>
+                                <TBODY>
+                                <TR>
+                                <TD><IMG height=7 alt="External link" 
+                                src="Elsevier_com_files/externalLink.gif" 
+                                width=14 border=0></TD>
+                                <TD><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=4 
+                                border=0></TD>
+                                <TD class=verdana10Orange><A 
+                                href="http://www.scopus.com/" 
+                                target=SCOPUS>http://www.scopus.com/</A></TD></TR></TBODY></TABLE></TD>
+                                <TD 
+                                style="WIDTH: 4px; BACKGROUND-COLOR: #f9f9f9" 
+                                vAlign=top><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=4 
+                                border=0></TD></TR>
+                                <TR>
+                                <TD 
+                                style="WIDTH: 157px; BACKGROUND-COLOR: #f9f9f9" 
+                                vAlign=top colSpan=3><IMG height=10 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=1 
+                                border=0></TD></TR>
+                                <TR>
+                                <TD 
+                                style="BACKGROUND-IMAGE: url(/authored_framework/images/dot_line.gif); WIDTH: 157px" 
+                                vAlign=top colSpan=3><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=1 
+                                border=0></TD></TR></TBODY></TABLE><!-- End of right content --></TD>
+                                <TD 
+                                style="WIDTH: 2px; BACKGROUND-COLOR: #ffffff" 
+                                vAlign=top><IMG height=1 alt="" 
+                                src="Elsevier_com_files/empty.gif" width=2 
+                                border=0></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><!-- Start of page functions bar -->
+      <SCRIPT language=JavaScript type=text/javascript>
+<!--
+function openPrinterFriendlyPage() {
+	if (location.href.indexOf("/wps/find/") > -1) {
+		var urlToSplit = location.href		
+		var qryStr = ""
+		if (location.href.indexOf("?") > -1) {
+			//qryStr = location.href.substring(location.href.indexOf("?"))
+			urlToSplit = location.href.substring(0, location.href.indexOf("?"))
+		}
+		var pieces = urlToSplit.split("/")
+		var prvPiece = ""
+		var printUrl = ""
+		/***************Temp Fix for cws_home print theme ***************/
+		var home = ""
+		/***************End of Temp Fix for cws_home print theme ***************/
+		
+		for (var i = 0; i < pieces.length; i++) {
+			if (i > 0) {
+				printUrl += "/"
+			}
+			if (prvPiece == "find") {
+				if (pieces[i].indexOf(".") > -1) {
+					dotPos = pieces[i].indexOf(".")
+					/***************Temp Fix for cws_home print theme ***************/
+					if (pieces[i].substring(dotPos).indexOf("cws_home") > -1) {
+						home = "cws_home"
+					}
+					/***************End of Temp Fix for cws_home print theme ***************/
+					printUrl += pieces[i].substring(0, dotPos) + ".print"
+				} else {
+					alert("This page does not have a printer-friendly version")
+					return
+				}
+			} else {
+				printUrl += pieces[i]
+			}
+			prvPiece = pieces[i]
+		}
+
+		
+
+		var isTheirParams = "false"
+		var qpString = ""		
+		if(qpString.length > 0) {
+			isTheirParams = "true"
+		}
+		
+		qryStr = "?avoidEmail=true"
+
+		/***************Temp Fix for cws_home print theme ***************/
+		if (home == "cws_home") {
+		
+			qryStr += "&" + "printHome=" + home			
+			home = ""
+		}
+		/***************End of Temp Fix for cws_home print theme ***************/	
+		
+		if(isTheirParams == "true") {			
+			qryStr += "&" + qpString
+		}
+
+		
+				
+		printUrl += qryStr
+		//alert("The URL:" + printUrl + ":")
+		window.open(printUrl, "print", "height=470,left=20,menubar=1,scrollbars=1,status=0,top=20,resizable=1,width=670");
+	} else {
+		alert("This page does not have a printer-friendly version")
+	}
+}
+// --> 
+</SCRIPT>
+
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD style="WIDTH: 1px; BACKGROUND-COLOR: #ffffff"><IMG height=1 
+            alt="" src="Elsevier_com_files/empty.gif" width=1 border=0></TD>
+          <TD style="WIDTH: 154px; BACKGROUND-COLOR: #ffffff"><IMG height=1 
+            alt="" src="Elsevier_com_files/empty.gif" width=154 border=0></TD>
+          <TD style="BACKGROUND-COLOR: #ffffff" vAlign=top>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD colSpan=3><IMG height=15 alt="" 
+                  src="Elsevier_com_files/empty.gif" width=1 border=0></TD></TR>
+              <TR>
+                <TD style="WIDTH: 25px"><IMG height=1 alt="" 
+                  src="Elsevier_com_files/empty.gif" width=25 border=0></TD>
+                <TD align=right>
+                  <TABLE cellSpacing=0 cellPadding=0 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><A href="javascript:openPrinterFriendlyPage()"><IMG 
+                        height=19 alt="Printer-friendly version" 
+                        src="Elsevier_com_files/print.gif" width=20 
+                        border=0></A> </TD>
+                      <TD>&nbsp;&nbsp;<A class=verdana10DarkGrey 
+                        href="javascript:openPrinterFriendlyPage()">Printer-friendly 
+                        version</A> </TD></TR></TBODY></TABLE></TD>
+                <TD style="WIDTH: 25px"><IMG height=1 alt="" 
+                  src="Elsevier_com_files/empty.gif" width=25 
+              border=0></TD></TR></TBODY></TABLE></TD>
+          <TD style="WIDTH: 157px; BACKGROUND-COLOR: #ffffff"><IMG height=1 
+            alt="" src="Elsevier_com_files/empty.gif" width=157 border=0></TD>
+          <TD style="WIDTH: 2px; BACKGROUND-COLOR: #ffffff"><IMG height=1 
+            alt="" src="Elsevier_com_files/empty.gif" width=2 
+        border=0></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD style="HEIGHT: 30px; BACKGROUND-COLOR: #ffffff"><IMG height=30 
+            alt="" src="Elsevier_com_files/empty.gif" width=1 
+        border=0></TD></TR></TBODY></TABLE><!-- End of page functions bar --><!-- Start of bottom bar -->
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD style="WIDTH: 1px; BACKGROUND-COLOR: #ffffff"><IMG height=1 
+            alt="" src="Elsevier_com_files/empty.gif" width=1 border=0></TD>
+          <TD style="WIDTH: 154px; BACKGROUND-COLOR: #ffffff"><IMG height=1 
+            alt="" src="Elsevier_com_files/empty.gif" width=154 border=0></TD>
+          <TD style="HEIGHT: 27px; BACKGROUND-COLOR: #ff9933">
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD style="WIDTH: 25px; BACKGROUND-COLOR: #ffffff"><IMG 
+                  height=1 alt="" src="Elsevier_com_files/empty.gif" width=25 
+                  border=0></TD>
+                <TD style="BACKGROUND-COLOR: #ffffff" align=right><IMG 
+                  height=10 alt="" src="Elsevier_com_files/empty.gif" width=1 
+                  border=0></TD></TR>
+              <TR>
+                <TD style="WIDTH: 25px; BACKGROUND-COLOR: #ffffff"><IMG 
+                  height=1 alt="" src="Elsevier_com_files/empty.gif" width=25 
+                  border=0></TD>
+                <TD style="HEIGHT: 17px; BACKGROUND-COLOR: #ff9933" 
+                  align=right><TABLE cellSpacing=0 cellPadding=1 width="100%" 
+                  border=0>
+                    <TBODY>
+                    <TR>
+                      <TD class=verdana10White align=left>&nbsp;<A 
+                        href="http://www.elsevier.com/wps/find/homepage.cws_home">Home</A> 
+                        | <A 
+                        href="http://www.elsevier.com/wps/find/sitemap.cws_home/sitemap">Site 
+                        map</A> | <A 
+                        href="http://www.elsevier.com/wps/find/privacypolicy.cws_home/privacypolicy">Privacy 
+                        policy</A> | <A 
+                        href="http://www.elsevier.com/wps/find/termsconditions.cws_home/termsconditions">Terms 
+                        and Conditions</A> | <A 
+                        href="http://www.elsevier.com/wps/find/feedbackform.cws_home">Feedback</A> 
+                        | <NOBR>A <A href="http://www.reed-elsevier.com/" 
+                        target=reed_elsevier>Reed Elsevier</A> company</NOBR></TD>
+                      <TD style="WIDTH: 5px" align=right><IMG height=1 alt="" 
+                        src="Elsevier_com_files/empty.gif" width=5 
+                    border=0></TD></TR>
+                    <TR>
+                      <TD bgColor=#ffffff colSpan=2><IMG height=1 
+                        src="Elsevier_com_files/empty.gif" width=1></TD></TR>
+                    <TR>
+                      <TD style="FONT-SIZE: 10px" align=left bgColor=#ffffff 
+                      colSpan=2>&nbsp;Copyright © 2005 <A 
+                        style="FONT-SIZE: 10px; CURSOR: default; COLOR: #ff9933; FONT-FAMILY: verdana, arial, sans-serif" 
+                        href="http://www.elsevier.com/wps/find/homepage.cws_home">Elsevier 
+                        B.V.</A> All rights reserved. 
+              </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD>
+          <TD style="WIDTH: 2px; BACKGROUND-COLOR: #ffffff"><IMG height=1 
+            alt="" src="Elsevier_com_files/empty.gif" width=2 
+        border=0></TD></TR></TBODY></TABLE><!-- End of bottom bar --></TR></TBODY></TABLE></BODY></HTML>

@@ -1,0 +1,1265 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0027)http://www.codeproject.com/ -->
+<HTML><HEAD><TITLE>The Code Project - Free Source Code and Tutorials</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META 
+content="Free source code and tutorials for Windows developers. Programming help for Visual C++, Windows, MFC, C++, GUI, ASP, XML, UML, SOAP, ATL, VB, ADO, SQL, DCOM, COM, Windows DNA, CToolBar, CMenu, CDockBar, CButton, CEdit, CStatic, CListCtrl, CTreeCtrl, CTreeView, CListView, CListBox, CFrameWnd, CMDIFrameWnd, CStatusBar, CTabCtrl" 
+name=Description>
+<META 
+content="Free source code, Visual C++, C#, C Sharp, .NET, ASP.NET, ADO.NET, COM+, Windows, libraries, MFC, development tools, C++, GUI, Microsoft Foundation Class, MFC, C++, GUI, ASP, XML, UML, SOAP, ATL, VB, ADO, SQL, DCOM, COM, Windows DNA, CToolBar, CMenu, CDockBar, CButton, CEdit, CStatic, CListCtrl, CTreeCtrl, CTreeView, CListView, CListBox, CFrameWnd, CMDIFrameWnd, CStatusBar, CTabCtrl" 
+name=Keywords>
+<META http-equiv=Reply-to content=mailto:webmaster@codeproject.com>
+<META content="Copyright © CodeProject, 1999-2004, All Rights Reserved." 
+name=Copyright><LINK href="/favicon.ico" type=image/ico rel=icon><LINK 
+href="/favicon.ico" rel="SHORTCUT ICON"><LINK 
+href="The Code Project - Free Source Code and Tutorials_files/global.css" 
+type=text/css rel=stylesheet><LINK 
+href="The Code Project - Free Source Code and Tutorials_files/ie6.css" 
+type=text/css rel=stylesheet>
+<META content="MSHTML 6.00.3790.0" name=GENERATOR></HEAD>
+<BODY text=black vLink=navy aLink=red link=blue bgColor=white leftMargin=0 
+topMargin=0 rightMargin=0>
+<SCRIPT language=javascript>
+if (top != self) top.location.href = location.href;
+</SCRIPT>
+<MAP name=LogoTop><AREA shape=RECT alt=Home coords=13,15,53,74 
+  href="http://www.codeproject.com/index.asp"></MAP><MAP name=LogoBottom><AREA 
+  shape=RECT alt=Home coords=0,0,64,25 
+  href="http://www.codeproject.com/index.asp"><AREA shape=RECT alt=Home 
+  coords=77,4,365,23 href="http://www.codeproject.com/index.asp"></MAP>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR vAlign=top>
+    <TD 
+    style="PADDING-RIGHT: 3px; PADDING-LEFT: 3px; PADDING-BOTTOM: 3px; PADDING-TOP: 3px" 
+    vAlign=top width=125 bgColor=#ff9900>
+      <SCRIPT language=JavaScript>
+function ErrorHandle() {}
+window.onerror = ErrorHandle;
+
+
+function HL(element, on) 
+{
+	if (!on)
+	{ 
+		element.style.backgroundColor = '#ffcc99';
+		element.style.color = 'black';
+		element.style.borderColor = '#ffcc99';
+	} else { 
+		element.style.backgroundColor = '#FBEDBB';
+		element.style.color = 'blue';
+		element.style.borderColor  = 'purple';
+	}
+	return false;
+}
+</SCRIPT>
+
+      <SCRIPT language=JavaScript event=onmouseover for=HLLink>
+	return HL( this, true );
+</SCRIPT>
+
+      <SCRIPT language=JavaScript event=onfocus for=HLLink>
+	return HL( this, true );
+</SCRIPT>
+
+      <SCRIPT language=JavaScript event=onmouseout for=HLLink>
+	return HL( this, false );
+</SCRIPT>
+
+      <SCRIPT language=JavaScript event=onblur for=HLLink>
+	return HL( this, false );
+
+</SCRIPT>
+      <IMG alt=Options 
+      src="The Code Project - Free Source Code and Tutorials_files/options.gif">
+      <DIV class=MenuGroup>
+      <DIV><A class=MI 
+      href="http://www.codeproject.com/script/profile/modify.asp?ct=/index.asp" 
+      name=HLLink><B>My Settings</B></A></DIV>
+      <DIV><A class=MI 
+      href="http://www.codeproject.com/script/profile/bookmark_list.asp" 
+      name=HLLink><B>My Bookmarks</B></A></DIV>
+      <DIV><A class=MI 
+      href="http://www.codeproject.com/script/articles/list_articles.asp?userid=649009" 
+      name=HLLink>My Articles</A></DIV>
+      <DIV><A class=MI 
+      href="http://www.codeproject.com/script/profile/logoff.asp?ct=/index.asp" 
+      name=HLLink>Sign out</A></DIV>
+      <DIV><A class=MI 
+      href="http://www.codeproject.com/script/newsletter/newsletters/" 
+      name=HLLink>Newsletter Archive</A></DIV></DIV>
+      <TABLE style="MARGIN-TOP: 3pt" cellSpacing=1 cellPadding=0 width="100%" 
+      bgColor=white>
+        <TBODY>
+        <TR>
+          <TD>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" bgColor=#ff9900>
+              <TBODY>
+              <TR>
+                <TD class=sidebar align=middle><A style="COLOR: white" 
+                  href="http://www.codeproject.com/script/profile/whos_who.asp?id=649009">ng_phloc 
+                  </A></TD></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD>
+    <TD colSpan=3>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD vAlign=bottom><IMG 
+            src="The Code Project - Free Source Code and Tutorials_files/logotop.gif" 
+            useMap=#LogoTop border=0></TD>
+          <TD vAlign=bottom align=right><SPAN id=AdBanner4><A 
+            href="http://www.codeproject.com/script/admentor/ads.asp"><IMG 
+            height=60 alt="View our advertisers" 
+            src="The Code Project - Free Source Code and Tutorials_files/sponsors.gif" 
+            width=20 border=1></A>
+            <SCRIPT language=javascript>document.write("<IFRAME src=\"/script/admentor/include/ServeAdHTML.aspx?C=False&id=872\" border=0 frameborder=0 scrolling=no width=468 height=60></IFRAME>");</SCRIPT>
+            <A href="http://www.codeproject.com/info/mediakit"><IMG height=60 
+            alt="Advertise on the CodeProject" 
+            src="The Code Project - Free Source Code and Tutorials_files/advertise.gif" 
+            width=20 border=1></A></SPAN></TD></TR>
+        <TR>
+          <TD colSpan=2><IMG 
+            src="The Code Project - Free Source Code and Tutorials_files/logobottom.gif" 
+            useMap=#LogoBottom border=0></TD></TR>
+        <TR>
+          <TD bgColor=#ff9900 colSpan=2>
+            <TABLE id=tblSiteToolbar cellSpacing=0 cellPadding=1 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <FORM name=Search action=/info/search.asp method=post>
+                <TD vAlign=top align=left width="100%">
+                  <TABLE cellSpacing=0 cellPadding=1 border=0>
+                    <TBODY>
+                    <TR vAlign=center>
+                      <TD class=smallText><B><FONT 
+                        color=white>Search:</FONT></B></TD>
+                      <TD class=navbar noWrap><INPUT class=smallText 
+                        maxLength=255 size=18 name=target></TD>
+                      <TD vAlign=top><SELECT class=smallText name=st> 
+                          <OPTION value=kw selected>Articles</OPTION> <OPTION 
+                          value=au>Authors</OPTION></SELECT></TD>
+                      <TD><INPUT class=formButton type=submit value=Go></TD></TR></TBODY></TABLE></TD></FORM>
+                <TD>
+                  <DIV id=MenuPos 
+                  style="WIDTH: 380px; POSITION: relative; HEIGHT: 20px">
+                  <TABLE height=20 cellSpacing=0 cellPadding=2 width=375>
+                    <TBODY>
+                    <TR>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/info/faq.asp">Help!</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/info/latest.asp">Articles</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/script/comments/forums.asp">Message 
+                        Boards</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/store/">StoreFront</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/lounge.asp">Lounge</A></TD></TR></TBODY></TABLE></DIV></TD></TR></TBODY></TABLE>
+            <SCRIPT type=text/javascript>function Go(){return}</SCRIPT>
+
+            <SCRIPT 
+            src="The Code Project - Free Source Code and Tutorials_files/cpmenu_var.js" 
+            type=text/javascript></SCRIPT>
+
+            <SCRIPT 
+            src="The Code Project - Free Source Code and Tutorials_files/menu10_com.js" 
+            type=text/javascript></SCRIPT>
+          </TD></TR></TBODY></TABLE></TD></TR>
+  <TR vAlign=top>
+    <TD 
+    style="PADDING-RIGHT: 3px; PADDING-LEFT: 3px; PADDING-BOTTOM: 3px; PADDING-TOP: 3px" 
+    vAlign=top width=125 bgColor=#ff9900>
+      <CENTER>
+      <SCRIPT language=javascript>document.write("<a href=\"/script/admentor/admentorredir.asp?id=544&way=ban\" target=_blank><img src=\"/script/admentor/include/ServeAd.aspx?File=%2Fscript%2Fadmentor%2Fimages%2Fdundas%5FbluelogoCP%2Egif&C=False&id=544\" alt=\"\" border=0 width=120 height=60></a>");</SCRIPT>
+      <BR><FONT size=1><A 
+      href="http://www.codeproject.com/info/MediaKit/">Premium 
+      Sponsor</A></FONT></CENTER><BR>
+      <FORM style="MARGIN-TOP: 0pt; MARGIN-BOTTOM: 3pt" action=/ 
+      method=get><SELECT class=smallText size=1 name=cat> <OPTION value=1>All 
+        Topics</OPTION> <OPTION value=2 selected>MFC / C++</OPTION> <OPTION 
+        value=3>C#</OPTION> <OPTION value=4>ASP.NET</OPTION> <OPTION 
+        value=5>.NET</OPTION></SELECT><INPUT class=formButton type=submit value=Filter></FORM><IMG 
+      alt=Community 
+      src="The Code Project - Free Source Code and Tutorials_files/community.gif">
+      <DIV class=MenuGroup>
+      <DIV><A class=MI 
+      href="http://www.codeproject.com/script/articles/sections.asp" 
+      name=HLLink><B>Site Map</B></A></DIV>
+      <DIV><A class=MI title="Add this page to your Favorites" 
+      onclick="window.external.AddFavorite(document.location.href,document.title);return false;" 
+      href="http://www.codeproject.com/#" name=HLLink>Add To Favorites</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/info/cpstuff.asp" 
+      name=HLLink>CodeProject Stuff</A></DIV>
+      <DIV><A class=MI 
+      href="http://www.codeproject.com/script/profile/whos_who.asp" 
+      name=HLLink>Who's Who</A></DIV>
+      <DIV><A class=MI 
+      href="http://www.codeproject.com/script/common/mailform.asp?option=TellFriend" 
+      name=HLLink>Tell a friend</A></DIV>
+      <DIV><A class=MI 
+      href="http://www.codeproject.com/script/industry/industry.asp" 
+      name=HLLink>Industry Contacts</A></DIV></DIV><A 
+      href="http://www.codeproject.com/script/articles/subcat.asp?id=10"><IMG 
+      alt=".NET - MFC/C++" 
+      src="The Code Project - Free Source Code and Tutorials_files/net.gif" 
+      border=0></A>
+      <DIV class=MenuGroup>
+      <DIV><A class=MI href="http://www.codeproject.com/managedcpp/" 
+      name=HLLink>Managed C++</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/soap/" name=HLLink>SOAP 
+      and XML</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/webservices/" 
+      name=HLLink>C++ Web Services</A></DIV></DIV><A 
+      href="http://www.codeproject.com/script/articles/subcat.asp?id=3"><IMG 
+      alt="MFC Controls" 
+      src="The Code Project - Free Source Code and Tutorials_files/controls.gif" 
+      border=0></A>
+      <DIV class=MenuGroup>
+      <DIV><A class=MI href="http://www.codeproject.com/buttonctrl/" 
+      name=HLLink>Button Controls</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/dialog/" 
+      name=HLLink>Dialog and Windows</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/combobox/" 
+      name=HLLink>Combo and List Boxes</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/menu/" 
+      name=HLLink>Menus</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/docking/" 
+      name=HLLink>Toolbars / Docking Windows</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/statusbar/" 
+      name=HLLink>Status Bar</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/editctrl/" 
+      name=HLLink>Edit Controls</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/listctrl/" 
+      name=HLLink>List Controls</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/treectrl/" 
+      name=HLLink>Tree Controls</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/tabctrl/" 
+      name=HLLink>Tab Controls</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/property/" 
+      name=HLLink>Property Sheets</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/richedit/" 
+      name=HLLink>Rich Edit Control</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/splitter/" 
+      name=HLLink>Splitter Windows</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/staticctrl/" 
+      name=HLLink>Static Controls</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/miscctrl/" 
+      name=HLLink>Miscellaneous Controls</A></DIV></DIV><A 
+      href="http://www.codeproject.com/script/articles/subcat.asp?id=4"><IMG 
+      alt="General C++" 
+      src="The Code Project - Free Source Code and Tutorials_files/general.gif" 
+      border=0></A>
+      <DIV class=MenuGroup>
+      <DIV><A class=MI href="http://www.codeproject.com/com/" 
+      name=HLLink>COM/DCOM/COM+</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/cpp/" name=HLLink>C++ / 
+      MFC</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/clipboard/" 
+      name=HLLink>Clipboard</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/docview/" 
+      name=HLLink>Doc / View</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/debug/" 
+      name=HLLink>Debug tips</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/database/" 
+      name=HLLink>Database</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/dll/" 
+      name=HLLink>DLLs</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/file/" name=HLLink>Files 
+      and Folders</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/internet/" 
+      name=HLLink>Internet &amp; Network</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/macro/" 
+      name=HLLink>Macros and Add-ins</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/printing/" 
+      name=HLLink>Printing</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/samples/" 
+      name=HLLink>Samples</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/string/" 
+      name=HLLink>String</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/system/" 
+      name=HLLink>System</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/threads/" 
+      name=HLLink>Threads, Processes &amp; IPC</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/tips/" 
+      name=HLLink>Programming Tips</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/tools/" name=HLLink>Free 
+      Tools</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/shell/" 
+      name=HLLink>Shell Programming</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/datetime/" 
+      name=HLLink>Date / Time</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/winhelp/" 
+      name=HLLink>WinHelp/HTMLHelp</A></DIV></DIV><A 
+      href="http://www.codeproject.com/script/articles/subcat.asp?id=5"><IMG 
+      alt="C++ Libraries" 
+      src="The Code Project - Free Source Code and Tutorials_files/library.gif" 
+      border=0></A>
+      <DIV class=MenuGroup>
+      <DIV><A class=MI href="http://www.codeproject.com/atl/" 
+      name=HLLink>ATL</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/wtl/" 
+      name=HLLink>WTL</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/vcpp/stl/" 
+      name=HLLink>STL</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/library/" 
+      name=HLLink>Libraries &amp; Projects</A></DIV></DIV><A 
+      href="http://www.codeproject.com/script/articles/subcat.asp?id=6"><IMG 
+      alt="C++ Multimedia" 
+      src="The Code Project - Free Source Code and Tutorials_files/multimedia.gif" 
+      border=0></A>
+      <DIV class=MenuGroup>
+      <DIV><A class=MI href="http://www.codeproject.com/bitmap/" 
+      name=HLLink>Bitmaps &amp; Palettes</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/audio/" 
+      name=HLLink>Audio and Video</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/directx/" 
+      name=HLLink>DirectX</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/opengl/" 
+      name=HLLink>OpenGL</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/gdi/" name=HLLink>Fonts 
+      &amp; GDI</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/vcpp/gdiplus/" 
+      name=HLLink>GDI+</A></DIV></DIV><A 
+      href="http://www.codeproject.com/script/articles/subcat.asp?id=11"><IMG 
+      alt="Platforms - C++" 
+      src="The Code Project - Free Source Code and Tutorials_files/platforms.gif" 
+      border=0></A>
+      <DIV class=MenuGroup>
+      <DIV><A class=MI href="http://www.codeproject.com/win32/" 
+      name=HLLink>Win32 / SDK</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/w2k/" 
+      name=HLLink>Windows 2000 / XP</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/ce/" name=HLLink>Mobile 
+      / Embedded</A></DIV></DIV><A 
+      href="http://www.codeproject.com/script/articles/subcat.asp?id=12"><IMG 
+      alt="C++ Web" 
+      src="The Code Project - Free Source Code and Tutorials_files/web.gif" 
+      border=0></A>
+      <DIV class=MenuGroup>
+      <DIV><A class=MI href="http://www.codeproject.com/isapi/" 
+      name=HLLink>ISAPI</A></DIV></DIV><A 
+      href="http://www.codeproject.com/script/articles/subcat.asp?id=15"><IMG 
+      alt="General Reading" 
+      src="The Code Project - Free Source Code and Tutorials_files/genreading.gif" 
+      border=0></A>
+      <DIV class=MenuGroup>
+      <DIV><A class=MI href="http://www.codeproject.com/books/" name=HLLink>Book 
+      Chapters</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/gen/bookreview/" 
+      name=HLLink>Book Reviews</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/buglist/" 
+      name=HLLink>Bugs and Workarounds</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/gen/design/" 
+      name=HLLink>Design and Strategy</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/interview/" 
+      name=HLLink>Interviews</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/scrapbook/" 
+      name=HLLink>The Scrapbook</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/useritems/" 
+      name=HLLink>Unedited Reader Contributions</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/gen/work/" 
+      name=HLLink>Work Issues</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/purgatory/" 
+      name=HLLink>Purgatory</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/showcase/" 
+      name=HLLink>Product Showcase</A></DIV></DIV><IMG alt=Miscellany 
+      src="The Code Project - Free Source Code and Tutorials_files/Miscellany.gif">
+      <DIV class=MenuGroup>
+      <DIV><A class=MI href="http://www.codeproject.com/awards/awards.asp" 
+      name=HLLink>Awards</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/info/about.asp" 
+      name=HLLink>About Us</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/info/MediaKit" 
+      name=HLLink>Advertise</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/script/jobs/jobs.asp" 
+      name=HLLink>Jobs</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/info/latest.asp" 
+      name=HLLink>Latest</A></DIV>
+      <DIV><A class=MI 
+      href="http://www.codeproject.com/script/newsletter/newsletters/" 
+      name=HLLink>Newsletter Archive</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/script/survey/list.asp" 
+      name=HLLink>Surveys</A></DIV>
+      <DIV><A class=MI 
+      href="http://www.codeproject.com/script/PressRelease/pr.asp" 
+      name=HLLink>Press Releases</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/script/rumor/list.asp" 
+      name=HLLink>News</A></DIV>
+      <DIV><A class=MI href="http://www.codeproject.com/info/submit.asp" 
+      name=HLLink>Submit Code</A></DIV></DIV></TD>
+    <TD width=5>&nbsp;</TD>
+    <TD vAlign=top width="100%"><!-- Main Page Contents Start -->
+      <SCRIPT language=javascript>
+<!--
+function OnForumSelectChange()
+{
+    var forum_index = document.ForumSelectForm.forumid.selectedIndex;
+    var forum_id = document.ForumSelectForm.forumid.options[forum_index].value;
+    if (forum_id > 0)
+    {
+		var baseURL= "/script/comments/forums.asp?forumid=" + forum_id;
+		top.location.href = baseURL;
+	}		
+}
+//-->
+</SCRIPT>
+
+      <TABLE cellSpacing=0 cellPadding=3 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD vAlign=top>
+            <DIV 
+            style="MARGIN-TOP: 7px; FONT-SIZE: 13pt; COLOR: #ff9900"><B>Welcome 
+            to The Code Project.</B></DIV>
+            <DIV>Your place for <A 
+            href="http://www.codeproject.com/script/articles/sections.asp"><B>7,692</B></A> 
+            free C++, C# and .NET articles, code snippets, discussions, news and 
+            the best bunch of developers on the net.</DIV>
+            <FORM id=ForumSelectForm name=ForumSelectForm 
+            action=/script/comments/forums.asp method=get>
+            <TABLE style="MARGIN-TOP: 3pt" cellSpacing=0 cellPadding=0 
+            width="100%" border=0>
+              <TBODY>
+              <TR vAlign=top>
+                <TD style="FONT-SIZE: 13pt; MARGIN-BOTTOM: 3pt"><B><A 
+                  href="http://www.codeproject.com/script/profile/modify.asp">Join 
+                  Code Project Today</A></B></TD>
+                <TD width=10 rowSpan=2>&nbsp;</TD>
+                <TD style="FONT-SIZE: 13pt; MARGIN-BOTTOM: 6pt" noWrap 
+                  colSpan=2><B><A href="http://www.codeproject.com/store/">Shop 
+                  at The Code Project</A></B></TD></TR>
+              <TR>
+                <TD noWrap>&nbsp;• <A 
+                  href="http://www.codeproject.com/script/profile/whos_who.asp"><B>1,412,586</B> 
+                  members and growing!</A><BR>&nbsp;• <A 
+                  href="http://www.codeproject.com/info/guide.asp">What is The 
+                  Code Project?</A><BR>&nbsp;• <A 
+                  href="http://www.codeproject.com/script/competitions/monthly">Monthly 
+                  Programming competition</A><BR>&nbsp;• <SELECT id=forumid 
+                  style="FONT-SIZE: 10pt" onchange=OnForumSelectChange(); size=1 
+                  name=forumid> <OPTION value=0 selected>Got Programming 
+                    Questions?</OPTION> <OPTION value=1647>Visual C++</OPTION> 
+                    <OPTION value=4486>ATL / WTL / STL</OPTION> <OPTION 
+                    value=1648>COM</OPTION> <OPTION value=3785>Managed 
+                    C++</OPTION> <OPTION value=1649>C#</OPTION> <OPTION 
+                    value=12076>ASP.NET</OPTION> <OPTION value=1646>Visual 
+                    Basic/VB.NET</OPTION> <OPTION value=1640>Web 
+                    Development</OPTION> <OPTION value=1650>.NET 
+                    Framework</OPTION> <OPTION value=1725>SQL / ADO / 
+                    ADO.NET</OPTION> <OPTION value=3421>XML / XSL</OPTION> 
+                    <OPTION value=1644>Operating Systems / SysAdmin</OPTION> 
+                    <OPTION value=3304>Work Issues</OPTION> <OPTION 
+                    value=1641>Article Requests</OPTION> <OPTION 
+                    value=1651>Collaboration / Testing</OPTION> <OPTION 
+                    value=1642>General Discussions</OPTION> <OPTION 
+                    value=1645>Suggestions</OPTION> <OPTION value=2605>The 
+                    Soapbox (Unmoderated)</OPTION></SELECT><INPUT class=FormButton type=submit value=Go> 
+                </TD>
+                <TD vAlign=center align=middle><A 
+                  href="https://secure.codeproject.com/store/order.asp?st=33549796"><IMG 
+                  height=65 
+                  src="The Code Project - Free Source Code and Tutorials_files/vsnet2003_sm.jpg" 
+                  width=75 border=0></A></TD>
+                <TD noWrap>&nbsp;• <A 
+                  href="https://secure.codeproject.com/store/order.asp?st=33549796">MSDN 
+                  Universal from <B>$1950</B></A><BR>&nbsp;• <A 
+                  href="https://secure.codeproject.com/store/order.asp?st=33549796">MSDN 
+                  Enterprise from <B>$1500</B></A><BR>&nbsp;• <A 
+                  href="https://secure.codeproject.com/store/order.asp?st=33549796">Visual 
+                  Studio .NET 2003 
+<B>$899</B></A><BR></TD></TR></TBODY></TABLE></FORM><!-- include file="script/rumor/newsflash.inc" --><MAP 
+            name=Tabstrip><AREA shape=RECT alt=MFC/C++ coords=1,2,69,25 
+              href="http://www.codeproject.com/index.asp?cat=2"><AREA shape=RECT 
+              alt=C# coords=70,2,113,25 
+              href="http://www.codeproject.com/index.asp?cat=3"><AREA shape=RECT 
+              alt="ASP/ASP .NET" coords=114,2,181,25 
+              href="http://www.codeproject.com/index.asp?cat=4"><AREA shape=RECT 
+              alt=.NET coords=182,2,234,25 
+              href="http://www.codeproject.com/index.asp?cat=5"><AREA shape=RECT 
+              alt="All Topics" coords=235,1,308,24 
+              href="http://www.codeproject.com/index.asp?cat=1"><AREA shape=RECT 
+              alt="All CodeProject Settings" coords=309,1,388,24 
+              href="http://www.codeproject.com/script/profile/modify.asp"></MAP>
+            <TABLE cellSpacing=0 cellPadding=0>
+              <TBODY>
+              <TR>
+                <TD><IMG 
+                  src="The Code Project - Free Source Code and Tutorials_files/tabMFC.gif" 
+                  useMap=#Tabstrip border=0></A></TD></TR></TBODY></TABLE>
+            <TABLE cellSpacing=0 cellPadding=1 width="100%" bgColor=#ff9900 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=white 
+                  border=0>
+                    <TBODY>
+                    <TR>
+                      <TD>
+                        <TABLE cellPadding=0 width="100%" border=0>
+                          <TBODY>
+                          <TR>
+                            <TD colSpan=3>
+                              <TABLE cellSpacing=0 cellPadding=2 width="100%" 
+                              bgColor=white border=0>
+                                <TBODY>
+                                <TR bgColor=#ff9900>
+                                <TD colSpan=2><FONT color=white><B>Feature 
+                                Article</B></FONT></TD></TR>
+                                <TR>
+                                <TD width="100%">
+                                <DIV class=smallText><A 
+                                href="http://www.codeproject.com/listctrl/listcheckbox.asp">Adding 
+                                Checkboxes to a list control</A><BR>by <B>Eran 
+                                Yariv</B><BR>Using the updated list control in 
+                                IE3 and above to add check boxes to your list 
+                                controls</DIV></TD></TR></TBODY></TABLE><BR></TD></TR>
+                          <TR vAlign=top>
+                            <TD width="50%" bgColor=white>
+                              <TABLE cellSpacing=0 cellPadding=2 width="100%" 
+                              bgColor=white border=0>
+                                <TBODY>
+                                <TR bgColor=#ff9900>
+                                <TD><B><A style="COLOR: white" 
+                                href="http://www.codeproject.com/script/articles/top_articles.asp?st=0">Latest 
+                                Best Picks</A></B></TD></TR>
+                                <TR>
+                                <TD class=smallText width="100%"><A 
+                                href="http://www.codeproject.com/vcpp/stl/boostsmartptr.asp">Smart 
+                                Pointers to boost your code</A><BR>by 
+                                <B>peterchen</B> &nbsp;&nbsp;4.95/5 (35 
+                                votes)</TD>
+                                <TR>
+                                <TD class=smallText>A beginner's introduction to 
+                                the smart pointers provided by the boost 
+                                library.</FONT><BR><BR></TD></TR>
+                                <TR>
+                                <TD class=smallText width="100%"><A 
+                                href="http://www.codeproject.com/property/TreePropSheetEx.asp">CTreePropSheetEx 
+                                – an extended version of 
+                                CTreePropSheet</A><BR>by <B>Yves Tkaczyk</B> 
+                                &nbsp;&nbsp;4.73/5 (43 votes)</TD>
+                                <TR>
+                                <TD class=smallText>CTreePropSheetEx is an 
+                                extension of CTreePropSheet offering new 
+                                features such as resizing, skipping empty pages, 
+                                and new ...</FONT><BR><BR></TD></TR>
+                                <TR>
+                                <TD class=smallText width="100%"><A 
+                                href="http://www.codeproject.com/tools/ToDoList2.asp">ToDoList 
+                                3.8.4 - A simple and effective way to keep on 
+                                top of your programming tasks</A><BR>by 
+                                <B>.dan.g.</B> &nbsp;&nbsp;4.72/5 (841 
+                                votes)</TD>
+                                <TR>
+                                <TD class=smallText>A tree-based task manager 
+                                with native XML support for easy web site 
+                                integration</FONT><BR><BR></TD></TR>
+                                <TR>
+                                <TD class=smallText width="100%"><A 
+                                href="http://www.codeproject.com/vcpp/gdiplus/emfexplorer.asp">Presenting 
+                                EMFexplorer, a GDI+ experiment</A><BR>by 
+                                <B></B>&nbsp;&nbsp;4.71/5 (8 votes)</TD>
+                                <TR>
+                                <TD class=smallText>High quality EMF rendering, 
+                                using GDI+</FONT><BR><BR></TD></TR>
+                                <TR>
+                                <TD class=smallText width="100%"><A 
+                                href="http://www.codeproject.com/useritems/XScrollBar.asp">XScrollBar 
+                                - Scroll bar like Windows Media 
+                                Player's</A><BR>by <B>Hans Dietrich</B> 
+                                &nbsp;&nbsp;4.68/5 (53 votes)</TD>
+                                <TR>
+                                <TD class=smallText>XScrollBar is a scroll bar 
+                                that may be displayed with optional thumb color, 
+                                thumb gripper, and channel 
+                                color</FONT><BR><BR></TD></TR></TBODY></TABLE></TD>
+                            <TD>&nbsp;</TD>
+                            <TD width="50%">
+                              <TABLE cellSpacing=0 cellPadding=2 width="100%" 
+                              bgColor=white border=0>
+                                <TBODY>
+                                <TR bgColor=#ff9900>
+                                <TD><B><A style="COLOR: white" 
+                                href="http://www.codeproject.com/showcase/">Product 
+                                Showcase</A></B></TD></TR>
+                                <TR>
+                                <TD width="100%"><FONT class=links size=1><A 
+                                href="http://www.codeproject.com/showcase/RedGateSMT.asp">SMT 
+                                saves time, unifies environment by moving 
+                                design/engineering codes to C#</A><BR>by <B>Red 
+                                Gate Software</B><BR><FONT color=black>Using 
+                                ANTS Profiler to switchapplications to C# for 
+                                greater speed, better compatibility, and easier 
+                                maintenance.</FONT><BR><BR></FONT></TD></TR>
+                                <TR>
+                                <TD width="100%"><FONT class=links size=1><A 
+                                href="http://www.codeproject.com/showcase/CrystalReports10.asp">Crystal 
+                                Reports 10</A><BR>by <B>Business 
+                                Objects</B><BR><FONT color=black>Simplify your 
+                                workload. Spend less time reporting, and more 
+                                time on core application 
+                                development.</FONT><BR><BR></FONT></TD></TR>
+                                <TR>
+                                <TD width="100%"><FONT class=links size=1><A 
+                                href="http://www.codeproject.com/showcase/RedGateANTS.asp">Load 
+                                testing for .NET Developers and 
+                                testers</A><BR>by <B>Red Gate 
+                                Software</B><BR><FONT color=black>If you are 
+                                involved in developing .NET web applications, 
+                                either websites or web services, you need to be 
+                                sure that the 
+...</FONT><BR><BR></FONT></TD></TR>
+                                <TR>
+                                <TD width="100%"><FONT class=links size=1><A 
+                                href="http://www.codeproject.com/showcase/RedGate_packager.asp">SQL 
+                                Packager</A><BR>by <B>Red Gate 
+                                Software</B><BR><FONT color=black>SQL Packager 
+                                packages up the schema and contents of Microsoft 
+                                SQL Server databases so that installing a 
+                                database is much 
+                                ...</FONT><BR><BR></FONT></TD></TR>
+                                <TR>
+                                <TD width="100%"><FONT class=links size=1><A 
+                                href="http://www.codeproject.com/showcase/infragistics2.asp">ASP.NET 
+                                Expense reference application</A><BR>by 
+                                <B>Infragistics</B><BR><FONT color=black>The 
+                                Expense reference application demonstrates rich 
+                                client features in a thin-client application 
+                                using Infragistics 
+                                ...</FONT><BR><BR></FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+                        <TABLE cellSpacing=0 cellPadding=4 width="100%">
+                          <TBODY>
+                          <TR bgColor=#ff9900>
+                            <TD><B><A style="COLOR: white" 
+                              href="http://www.codeproject.com/info/latest.asp">Last 
+                              10 updates</A></B> <SPAN 
+                              style="FONT-SIZE: 9pt; COLOR: white">(category: 
+                              MFC / C++)</SPAN> <A 
+                              href="http://www.codeproject.com/webservices/articlerss.aspx?cat=2"><IMG 
+                              height=14 alt="RSS Feed" 
+                              src="The Code Project - Free Source Code and Tutorials_files/rss.gif" 
+                              width=30 border=0></A></TD>
+                            <TD vAlign=texttop align=right><FONT 
+                              color=white><A title="Latest Additions" 
+                              href="http://www.codeproject.com/info/latest.asp"><IMG 
+                              height=15 
+                              src="The Code Project - Free Source Code and Tutorials_files/more.gif" 
+                              width=15 border=0></A></FONT></TD></TR>
+                          <TR>
+                            <TD vAlign=top colSpan=2>
+                              <TABLE width="100%">
+                                <TBODY>
+                                <TR>
+                                <TD vAlign=top noWrap><FONT class=links size=1>4 
+                                Oct 2004&nbsp;&nbsp;<BR><FONT color=darkorange 
+                                size=1>(updated)</FONT></FONT></TD>
+                                <TD width="100%"><FONT class=links size=1><A 
+                                title="An article on WTL edit control with Icon" 
+                                href="http://www.codeproject.com/wtl/JaeWTLIconEdit.asp">WTL 
+                                Icon Edit</A><BR><B>JaeWook 
+                                Choi</B></FONT></TD></TR>
+                                <TR>
+                                <TD vAlign=top noWrap><FONT class=links size=1>4 
+                                Oct 2004&nbsp;&nbsp;<BR><FONT color=darkorange 
+                                size=1>(updated)</FONT></FONT></TD>
+                                <TD width="100%"><FONT class=links size=1><A 
+                                title="How to place pictures in Excel programmatically" 
+                                href="http://www.codeproject.com/com/ComExcelImages.asp">Placing 
+                                images in Excel using automation</A><BR><B>Keith 
+                                Thoresz</B></FONT></TD></TR>
+                                <TR>
+                                <TD vAlign=top noWrap><FONT class=links size=1>4 
+                                Oct 2004&nbsp;&nbsp;<BR><FONT color=green 
+                                size=1>(new)</FONT></FONT></TD>
+                                <TD width="100%"><FONT class=links size=1><A 
+                                title="Adding Memory Leak Detection in your applications" 
+                                href="http://www.codeproject.com/cpp/MemLeakDetect.asp">Memory 
+                                Leak Detection</A><BR><B>David A. 
+                                Jones</B></FONT></TD></TR>
+                                <TR>
+                                <TD vAlign=top noWrap><FONT class=links size=1>3 
+                                Oct 2004&nbsp;&nbsp;<BR><FONT color=green 
+                                size=1>(new)</FONT></FONT></TD>
+                                <TD width="100%"><FONT class=links size=1><A 
+                                title="Record your voice using Microphone" 
+                                href="http://www.codeproject.com/audio/Voice_Recording.asp">A 
+                                Simple Voice Recording Application Using 
+                                MCI</A><BR><B>chakkaradeepcc</B></FONT></TD></TR>
+                                <TR>
+                                <TD vAlign=top noWrap><FONT class=links size=1>3 
+                                Oct 2004&nbsp;&nbsp;<BR><FONT color=green 
+                                size=1>(new)</FONT></FONT></TD>
+                                <TD width="100%"><FONT class=links size=1><A 
+                                title="A Simple Speech Application Using SAPI 5.1 SDK" 
+                                href="http://www.codeproject.com/useritems/SAPI.asp">A 
+                                Simple Speech Application Using SAPI 5.1 
+                                SDK</A><BR><B>chakkaradeepcc</B> 
+                                [unedited]</FONT></TD></TR>
+                                <TR>
+                                <TD vAlign=top noWrap><FONT class=links size=1>3 
+                                Oct 2004&nbsp;&nbsp;<BR><FONT color=green 
+                                size=1>(new)</FONT></FONT></TD>
+                                <TD width="100%"><FONT class=links size=1><A 
+                                title="A beginner" 
+                                href="http://www.codeproject.com/useritems/Fast_Data_Transfer.asp" 
+                                method.? optimisation the of one to introduction 
+                                s>Using SSE/SSE2 for 
+                                optimisation</A><BR><B>f2</B> 
+                                [unedited]</FONT></TD></TR>
+                                <TR>
+                                <TD vAlign=top noWrap><FONT class=links size=1>1 
+                                Oct 2004&nbsp;&nbsp;<BR><FONT color=green 
+                                size=1>(new)</FONT></FONT></TD>
+                                <TD width="100%"><FONT class=links size=1><A 
+                                title="This sample program shows how to create a thumbnail view in ListView control." 
+                                href="http://www.codeproject.com/listctrl/Simple_Thumbnail_Listview.asp">Showing 
+                                the Image file thumbnail view in ListView 
+                                control using VC++ 6.0</A><BR><B>Karpaga 
+                                Rajan</B></FONT></TD></TR>
+                                <TR>
+                                <TD vAlign=top noWrap><FONT class=links 
+                                size=1>30 Sep 2004&nbsp;&nbsp;<BR><FONT 
+                                color=green size=1>(new)</FONT></FONT></TD>
+                                <TD width="100%"><FONT class=links size=1><A 
+                                title="A small wizard application to create and edit Natural Docs batch files." 
+                                href="http://www.codeproject.com/tools/NaturalDocsWizard.asp">Natural 
+                                Docs Wizard</A><BR><B>Todd 
+                                Davis</B></FONT></TD></TR>
+                                <TR>
+                                <TD vAlign=top noWrap><FONT class=links 
+                                size=1>30 Sep 2004&nbsp;&nbsp;<BR><FONT 
+                                color=green size=1>(new)</FONT></FONT></TD>
+                                <TD width="100%"><FONT class=links size=1><A 
+                                title="This article describes how to create a DLL with .DEF file and use it" 
+                                href="http://www.codeproject.com/dll/SimpleDllP3.asp">DLLs 
+                                are Simple! Part 3</A><BR><B>Mahmood 
+                                Komeily</B></FONT></TD></TR>
+                                <TR>
+                                <TD vAlign=top noWrap><FONT class=links 
+                                size=1>30 Sep 2004&nbsp;&nbsp;<BR><FONT 
+                                color=green size=1>(new)</FONT></FONT></TD>
+                                <TD width="100%"><FONT class=links size=1><A 
+                                title="High quality EMF rendering, using GDI+" 
+                                href="http://www.codeproject.com/vcpp/gdiplus/emfexplorer.asp">Presenting 
+                                EMFexplorer, a GDI+ 
+                                experiment</A><BR><B></B></FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+                        <P>
+                        <TABLE cellSpacing=0 cellPadding=2 width="100%" 
+                        bgColor=white border=0>
+                          <TBODY>
+                          <TR bgColor=#ff9900>
+                            <TD><FONT color=white><B>Latest 
+                              Tutorials</B></FONT></TD>
+                            <TD align=right><A title="View all tutorials" 
+                              href="http://www.codeproject.com/script/articles/beginners.asp"><IMG 
+                              height=15 
+                              src="The Code Project - Free Source Code and Tutorials_files/more.gif" 
+                              width=15 border=0> </A></TD></TR>
+                          <TR vAlign=top>
+                            <TD class=smallText width="100%"><A 
+                              href="http://www.codeproject.com/dll/SimpleDllP3.asp">DLLs 
+                              are Simple! Part 3</A><BR><B>Mahmood 
+Komeily</B></TD>
+                            <TD class=smallText noWrap><I><A 
+                              href="http://www.codeproject.com/dll/">DLLs</A><I></I></I></TD></TR>
+                          <TR vAlign=top>
+                            <TD class=smallText width="100%"><A 
+                              href="http://www.codeproject.com/vcpp/stl/boostsmartptr.asp">Smart 
+                              Pointers to boost your 
+                            code</A><BR><B>peterchen</B></TD>
+                            <TD class=smallText noWrap><I><A 
+                              href="http://www.codeproject.com/vcpp/stl/">STL</A><I></I></I></TD></TR>
+                          <TR vAlign=top>
+                            <TD class=smallText width="100%"><A 
+                              href="http://www.codeproject.com/com/mfc_autom.asp">Adding 
+                              automation to MFC 
+                              applications</A><BR><B>roel_v2</B></TD>
+                            <TD class=smallText noWrap><I><A 
+                              href="http://www.codeproject.com/com/">COM/DCOM/COM+</A><I></I></I></TD></TR>
+                          <TR vAlign=top>
+                            <TD class=smallText width="100%"><A 
+                              href="http://www.codeproject.com/managedcpp/hellocli_part1.asp">Hello 
+                              C++/CLI - Part 1</A><BR><B>Antti Keskinen</B></TD>
+                            <TD class=smallText noWrap><I><A 
+                              href="http://www.codeproject.com/managedcpp/">Managed 
+                              C++</A><I></I></I></TD></TR>
+                          <TR vAlign=top>
+                            <TD class=smallText width="100%"><A 
+                              href="http://www.codeproject.com/managedcpp/hellocli_part2.asp">Hello 
+                              C++/CLI - Part 2</A><BR><B>Antti Keskinen</B></TD>
+                            <TD class=smallText noWrap><I><A 
+                              href="http://www.codeproject.com/managedcpp/">Managed 
+                              C++</A><I></I></I></TD></TR></TBODY></TABLE></P></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><BR><!--include file="script/rumor/SiteList.inc" -->
+            <TABLE cellSpacing=0 cellPadding=4 width="100%">
+              <TBODY>
+              <TR bgColor=#ff9900>
+                <TD bgColor=#ff9900><FONT color=white><B>Industry 
+                  News</B></FONT></TD>
+                <TD vAlign=texttop align=right><FONT color=white><A 
+                  title="Other news stories" 
+                  href="http://www.codeproject.com/script/rumor/list.asp?news=0"><IMG 
+                  height=15 
+                  src="The Code Project - Free Source Code and Tutorials_files/more.gif" 
+                  width=15 border=0></A></FONT></TD></TR></TBODY></TABLE><BR><FONT 
+            class=DevNewsHeading size=3><A 
+            href="http://www.codeproject.com/script/rumor/article.asp?id=309"><B>Windows 
+            'Longhorn' Update</B></A></FONT> <BR><FONT style="FONT-SIZE: 7pt" 
+            size=1><B>27 Aug 2004</B></FONT> &nbsp;&nbsp;<FONT 
+            class=messagetitle><B>23</B> comments</FONT> 
+            <P class=newsflash>Microsoft is today making three announcements 
+            regarding Longhorn: A Longhorn client will be available in 2006, 
+            elements of WinFX will be available for WinXP and Win2003, and WinFS 
+            will be available after the initial release of the Longhorn client. 
+            <BR><BR><FONT class=DevNewsHeading size=3><A 
+            href="http://www.codeproject.com/script/rumor/article.asp?id=308"><B>Send 
+            us a postcard of your hometown.</B></A></FONT> <BR><FONT 
+            style="FONT-SIZE: 7pt" size=1><B>16 Aug 2004</B></FONT> <FONT 
+            class=messagetitle>&nbsp;&nbsp;<B>Source: </B><A 
+            href="http://www.codeproject.com/" 
+            target=_blank>CodeProject</A></FONT> &nbsp;&nbsp;<FONT 
+            class=messagetitle><B>34</B> comments</FONT> 
+            <P class=newsflash>The CodeProject team would love to travel to all 
+            the countries<BR>and cities of CodeProject members, but obviously 
+            the time and money<BR>to make this possible simply isn't going to 
+            happen. So we figured we'd ask you all to help us with a worthy 
+            substitute: <B>POSTCARDS</B>! <BR><BR>
+            <TABLE cellSpacing=0 cellPadding=1 width="100%" bgColor=#ff9900 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=4 width="100%" bgColor=white 
+                  border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=#ff9900><B><FONT color=white>Poll - What 
+                        types of applications are you working 
+                        on?</FONT></B><BR><FONT class=smallText color=black 
+                        size=1>A quick straw poll to see who's working on 
+                        what.</FONT></TD></TR>
+                    <FORM name=SurveyForm 
+                    action=/script/survey/app/store_vote.asp?survey=408 
+                    method=post>
+                    <TR>
+                      <TD></TD></TR>
+                    <TR>
+                      <TD>
+                        <TABLE>
+                          <TBODY>
+                          <TR>
+                            <TD vAlign=center><INPUT id=SE_1391_10199 
+                              type=checkbox name=SE_1391_10199></TD>
+                            <TD class=smallText>Native Windows applications 
+                              and components.</TD></TR>
+                          <TR>
+                            <TD vAlign=center><INPUT id=SE_1391_10200 
+                              type=checkbox name=SE_1391_10200></TD>
+                            <TD class=smallText>Windows Forms 
+                          applications.</TD></TR>
+                          <TR>
+                            <TD vAlign=center><INPUT id=SE_1391_10201 
+                              type=checkbox name=SE_1391_10201></TD>
+                            <TD class=smallText>COM / ISAPI components.</TD></TR>
+                          <TR>
+                            <TD vAlign=center><INPUT id=SE_1391_10202 
+                              type=checkbox name=SE_1391_10202></TD>
+                            <TD class=smallText>.NET Components.</TD></TR>
+                          <TR>
+                            <TD vAlign=center><INPUT id=SE_1391_10203 
+                              type=checkbox name=SE_1391_10203></TD>
+                            <TD class=smallText>Non-.NET Web 
+                          applications.</TD></TR>
+                          <TR>
+                            <TD vAlign=center><INPUT id=SE_1391_10204 
+                              type=checkbox name=SE_1391_10204></TD>
+                            <TD class=smallText>.NET Web applications.</TD></TR>
+                          <TR>
+                            <TD vAlign=center><INPUT id=SE_1391_10205 
+                              type=checkbox name=SE_1391_10205></TD>
+                            <TD class=smallText>Web Services.</TD></TR>
+                          <TR>
+                            <TD vAlign=center><INPUT id=SE_1391_10206 
+                              type=checkbox name=SE_1391_10206></TD>
+                            <TD class=smallText>Smart device (Pocket PC / 
+                              embedded etc).</TD></TR>
+                          <TR>
+                            <TD vAlign=center><INPUT id=SE_1391_10207 
+                              type=checkbox name=SE_1391_10207></TD>
+                            <TD class=smallText>Unix / Linux / etc 
+                              applications.</TD></TR></TBODY></TABLE><SPAN 
+                        class=smallText>Other: </SPAN><INPUT class=smallText 
+                        id=Text1391 size=40 name=Text1391></TD></TR>
+                    <TR>
+                      <TD bgColor=#85bc4c>
+                        <TABLE cellSpacing=0 cellPadding=0 border=0>
+                          <TBODY>
+                          <TR>
+                            <TD class=smallText><INPUT class=formButton onclick="return Submit();" type=submit value=Vote></TD>
+                            <TD class=smallText><B>&nbsp;&nbsp;<A 
+                              href="http://www.codeproject.com/script/survey/detail.asp?survey=408">View 
+                              Results</A></B> | <B 
+                              style="COLOR: white">Votes</B>: <B>59</B> | <B 
+                              style="COLOR: white">Comments</B>: 
+                          <B>1</B></TD></TR></TBODY></TABLE></TD></TR></FORM></TBODY></TABLE></TD></TR></TBODY></TABLE>
+            <SCRIPT language=JavaScript>
+<!--
+function Submit() {
+var IsOKSE_1391 = false;
+IsOKSE_1391 = (IsOKSE_1391 || document.SurveyForm.SE_1391_10199.checked);
+IsOKSE_1391 = (IsOKSE_1391 || document.SurveyForm.SE_1391_10200.checked);
+IsOKSE_1391 = (IsOKSE_1391 || document.SurveyForm.SE_1391_10201.checked);
+IsOKSE_1391 = (IsOKSE_1391 || document.SurveyForm.SE_1391_10202.checked);
+IsOKSE_1391 = (IsOKSE_1391 || document.SurveyForm.SE_1391_10203.checked);
+IsOKSE_1391 = (IsOKSE_1391 || document.SurveyForm.SE_1391_10204.checked);
+IsOKSE_1391 = (IsOKSE_1391 || document.SurveyForm.SE_1391_10205.checked);
+IsOKSE_1391 = (IsOKSE_1391 || document.SurveyForm.SE_1391_10206.checked);
+IsOKSE_1391 = (IsOKSE_1391 || document.SurveyForm.SE_1391_10207.checked);
+IsOKSE_1391 = (IsOKSE_1391 || document.SurveyForm.Text1391.value.length>0);
+if (!IsOKSE_1391) { alert("You have not answered 'What types of applications are you working on?'"); return false; }
+
+return true; }
+//-->
+</SCRIPT>
+            </P></TD>
+          <TD width=5></TD>
+          <TD style="max-width: 150pt" vAlign=top width=150 bgColor=#ffcc99>
+            <SCRIPT language=javascript>document.write("<a href=\"/script/admentor/admentorredir.asp?id=202&way=ban\" target=_blank><img src=\"/script/admentor/include/ServeAd.aspx?File=%2Fscript%2Fadmentor%2Fimages%2Fcp%5Fvsnet%5F15080%2Egif&C=False&id=202\" alt=\"Support Code Project and purchase Visual Studio .NET from $899\" border=0 width=150 height=80></a>");</SCRIPT>
+            <BR><BR>
+            <TABLE cellSpacing=0 cellPadding=1 width="100%" bgColor=#ff9900 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=2 width="100%" 
+                  bgColor=#ffcc99 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=#fbedbb colSpan=2>
+                        <TABLE width="100%">
+                          <TBODY>
+                          <TR>
+                            <TD><A class=InfobarHeader 
+                              href="http://www.codeproject.com/lounge.asp">The 
+                              Lounge</A></TD>
+                            <TD align=right><A title="Visit the Lounge" 
+                              href="http://www.codeproject.com/lounge.asp"><IMG 
+                              height=15 
+                              src="The Code Project - Free Source Code and Tutorials_files/more.gif" 
+                              width=15 border=0></A></TD></TR></TBODY></TABLE></TD></TR>
+                    <TR>
+                      <TD class=smallText vAlign=top>(3) </TD>
+                      <TD class=infobar><A 
+                        title="Posted by Toasty0 at 10/4/2004 2:05:00 AM" 
+                        href="http://www.codeproject.com/lounge.asp?select=939304&amp;exp=5&amp;fr=1#xx939304xx">Richard 
+                        Avedon dies</A></TD></TR>
+                    <TR>
+                      <TD class=smallText vAlign=top>(4) </TD>
+                      <TD class=infobar><A 
+                        title="Posted by Steve Mayfield at 10/4/2004 12:41:00 AM" 
+                        href="http://www.codeproject.com/lounge.asp?select=939261&amp;exp=5&amp;fr=4#xx939261xx">Less 
+                        than 10 hours to go</A></TD></TR>
+                    <TR>
+                      <TD class=smallText vAlign=top>(9) </TD>
+                      <TD class=infobar><A 
+                        title="Posted by Steve Mayfield at 10/3/2004 8:23:00 PM" 
+                        href="http://www.codeproject.com/lounge.asp?select=939195&amp;exp=5&amp;fr=8#xx939195xx">Melbourne 
+                        honors AC/DC</A></TD></TR>
+                    <TR>
+                      <TD class=smallText vAlign=top>(1) </TD>
+                      <TD class=infobar><A 
+                        title="Posted by vprashu at 10/3/2004 7:53:00 PM" 
+                        href="http://www.codeproject.com/lounge.asp?select=939185&amp;exp=5&amp;fr=17#xx939185xx">Netgear 
+                        Wireless USB adapter</A></TD></TR>
+                    <TR>
+                      <TD class=smallText vAlign=top>(9) </TD>
+                      <TD class=infobar><A 
+                        title="Posted by Polite Programmer at 10/3/2004 6:13:00 PM" 
+                        href="http://www.codeproject.com/lounge.asp?select=939143&amp;exp=5&amp;fr=18#xx939143xx">Why 
+                        I am not...</A></TD></TR>
+                    <TR>
+                      <TD class=smallText vAlign=top>(11) </TD>
+                      <TD class=infobar><A 
+                        title="Posted by Polite Programmer at 10/3/2004 5:54:00 PM" 
+                        href="http://www.codeproject.com/lounge.asp?select=939139&amp;exp=5&amp;fr=27#xx939139xx">Where 
+                        should I go...?:sigh:</A></TD></TR>
+                    <TR>
+                      <TD class=smallText vAlign=top>(11) </TD>
+                      <TD class=infobar><A 
+                        title="Posted by Anon E. Mouse at 10/3/2004 3:54:00 PM" 
+                        href="http://www.codeproject.com/lounge.asp?select=939103&amp;exp=5&amp;fr=38#xx939103xx">Volcano 
+                        cam</A></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><BR>
+            <TABLE cellSpacing=0 cellPadding=1 width="100%" bgColor=#ff9900 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=2 width="100%" 
+                  bgColor=#ffcc99 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=#fbedbb colSpan=2>
+                        <TABLE width="100%">
+                          <TBODY>
+                          <TR>
+                            <TD><A class=InfobarHeader 
+                              href="http://www.codeproject.com/script/comments/all_comments.asp">Question 
+                              Time</A></TD>
+                            <TD align=right><A title="View all Comments" 
+                              href="http://www.codeproject.com/script/comments/all_comments.asp"><IMG 
+                              height=15 
+                              src="The Code Project - Free Source Code and Tutorials_files/more.gif" 
+                              width=15 border=0></A></TD></TR></TBODY></TABLE></TD></TR>
+                    <TR>
+                      <TD vAlign=top>•</TD>
+                      <TD class=infobar><A 
+                        title="Posted by Patje at 10/4/2004 3:48:00 AM" 
+                        href="http://www.codeproject.com/cpp/MemLeakDetect.asp?msg=939361#xx939361xx">Great 
+                        start, some suggestions</A><BR>(<I>Memory Leak 
+                        Detection</I>) </TD></TR>
+                    <TR>
+                      <TD vAlign=top>•</TD>
+                      <TD class=infobar><A 
+                        title="Posted by tsung_yu at 10/4/2004 3:45:00 AM" 
+                        href="http://www.codeproject.com/system/EnumDeviceProperties.asp?msg=939359#xx939359xx">How 
+                        to declare the cfgmgr32.h?</A><BR>(<I>Enumerate 
+                        Properties of an Installed...</I>) </TD></TR>
+                    <TR>
+                      <TD vAlign=top>•</TD>
+                      <TD class=infobar><A 
+                        title="Posted by M.Kailasam at 10/4/2004 3:45:00 AM" 
+                        href="http://www.codeproject.com/script/comments/forums.asp?msg=939358&amp;forumid=1647#xx939358xx">echo 
+                        &amp; noise problem in voice chat</A><BR>(<I>Visual 
+                        C++</I>) </TD></TR>
+                    <TR>
+                      <TD vAlign=top>•</TD>
+                      <TD class=infobar><A 
+                        title="Posted by dipeka at 10/4/2004 3:28:00 AM" 
+                        href="http://www.codeproject.com/script/comments/forums.asp?msg=939351&amp;forumid=1647#xx939351xx">memory 
+                        leak detection</A><BR>(<I>Visual C++</I>) </TD></TR>
+                    <TR>
+                      <TD vAlign=top>•</TD>
+                      <TD class=infobar><A 
+                        title="Posted by elvisvn at 10/4/2004 3:19:00 AM" 
+                        href="http://www.codeproject.com/tools/PSExplorer.asp?msg=939349#xx939349xx">how 
+                        to manage autocomplete list?</A><BR>(<I>Protected 
+                        Storage Explorer</I>) 
+            </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><BR>
+            <TABLE cellSpacing=0 cellPadding=1 width="100%" bgColor=#ff9900 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=2 width="100%" 
+                  bgColor=#ffcc99 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=#fbedbb colSpan=2>
+                        <TABLE width="100%">
+                          <TBODY>
+                          <TR>
+                            <TD><A class=InfobarHeader 
+                              href="http://www.codeproject.com/script/articles/top_articles.asp?st=2">Most 
+                              Popular</A></TD>
+                            <TD align=right><A title="View the full list" 
+                              href="http://www.codeproject.com/script/articles/top_articles.asp?st=2"><IMG 
+                              height=15 
+                              src="The Code Project - Free Source Code and Tutorials_files/more.gif" 
+                              width=15 border=0></A></TD></TR></TBODY></TABLE></TD></TR>
+                    <TR>
+                      <TD vAlign=top>•</TD>
+                      <TD class=infobar><A 
+                        title="A tree-based task manager with native XML support for easy web site integration" 
+                        href="http://www.codeproject.com/tools/ToDoList2.asp">ToDoList 
+                        3.8.4 - A simple and effective...</A></TD></TR>
+                    <TR>
+                      <TD vAlign=top>•</TD>
+                      <TD class=infobar><A 
+                        title="A fully featured MFC grid control for displaying tabular data. The grid is a custom control derived from CWnd" 
+                        href="http://www.codeproject.com/miscctrl/gridctrl.asp">MFC 
+                        Grid control 2.25</A></TD></TR>
+                    <TR>
+                      <TD vAlign=top>•</TD>
+                      <TD class=infobar><A 
+                        title="CxImage is a C++ class to load, save, display, transform BMP, JPEG, GIF, PNG, TIFF, MNG, ICO, PCX, TGA, WMF, WBMP, JBG, J2K images." 
+                        href="http://www.codeproject.com/bitmap/cximage.asp">CxImage</A></TD></TR>
+                    <TR>
+                      <TD vAlign=top>•</TD>
+                      <TD class=infobar><A 
+                        title="Make your MFC, VB and other Windows programs behave like NT services." 
+                        href="http://www.codeproject.com/system/xyntservice.asp">Start 
+                        Your Windows Programs From An NT...</A></TD></TR>
+                    <TR>
+                      <TD vAlign=top>•</TD>
+                      <TD class=infobar><A 
+                        title="How to inject code into another processes address space, and then execute it in the context of this process." 
+                        href="http://www.codeproject.com/threads/winspy.asp">Three 
+                        Ways to Inject Your Code 
+                into...</A></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><BR>
+            <P>
+            <TABLE cellSpacing=0 cellPadding=1 width="100%" bgColor=#ff9900 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=2 width="100%" 
+                  bgColor=#ffcc99 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=#fbedbb colSpan=2>
+                        <TABLE width="100%">
+                          <TBODY>
+                          <TR>
+                            <TD><A class=InfobarHeader 
+                              href="http://www.codeproject.com/script/profile/whos_who.asp">New 
+                              Members</A></TD>
+                            <TD align=right><A 
+                              title="View all CodeProject Members" 
+                              href="http://www.codeproject.com/script/profile/whos_who.asp"><IMG 
+                              height=15 
+                              src="The Code Project - Free Source Code and Tutorials_files/more.gif" 
+                              width=15 border=0> </A></TD></TR></TBODY></TABLE></TD></TR>
+                    <TR>
+                      <TD vAlign=top>•</TD>
+                      <TD class=infobar><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=1413872">thilantha</A><BR>United 
+                        States</TD></TR>
+                    <TR>
+                      <TD vAlign=top>•</TD>
+                      <TD class=infobar><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=1413871">vijaytoleti</A><BR>United 
+                        States</TD></TR>
+                    <TR>
+                      <TD vAlign=top>•</TD>
+                      <TD class=infobar><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=1413869">atingle</A><BR>United 
+                        States</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></P>
+            <P>
+            <TABLE cellSpacing=0 cellPadding=1 width="100%" bgColor=#ff9900 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=2 width="100%" 
+                  bgColor=#ffcc99 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=#fbedbb colSpan=2>
+                        <TABLE width="100%">
+                          <TBODY>
+                          <TR>
+                            <TD 
+                        class=InfobarHeader>Partners</TD></TR></TBODY></TABLE></TD></TR>
+                    <TR>
+                      <TD vAlign=top>•</TD>
+                      <TD class=infobar><A 
+                        href="http://www.codeproject.com/redir.asp?id=235">MSDN 
+                        Communities</A></TD></TR>
+                    <TR>
+                      <TD align=middle colSpan=2>
+                        <HR style="MARGIN-TOP: -2pt" width="80%" color=#666666 
+                        noShade SIZE=1>
+                      </TD></TR>
+                    <TR>
+                      <TD vAlign=top>•</TD>
+                      <TD class=infobar><A 
+                        href="http://aspalliance.com/">ASPAlliance</A></TD></TR>
+                    <TR>
+                      <TD vAlign=top>•</TD>
+                      <TD class=infobar><A 
+                        href="http://www.developerfusion.com/">Developer 
+                        Fusion</A></TD></TR>
+                    <TR>
+                      <TD vAlign=top>•</TD>
+                      <TD class=infobar><A 
+                        href="http://www.devguru.com/">DevGuru</A></TD></TR>
+                    <TR>
+                      <TD vAlign=top>•</TD>
+                      <TD class=infobar><A 
+                        href="http://www.planet-source-code.com/">Planet Source 
+                        Code</A></TD></TR>
+                    <TR>
+                      <TD vAlign=top>•</TD>
+                      <TD class=infobar><A 
+                        href="http://www.programmersheaven.com/">Programmers 
+                        Heaven</A></TD></TR>
+                    <TR>
+                      <TD vAlign=top>•</TD>
+                      <TD class=infobar><A 
+                        href="http://www.resourceindex.com/">Resource 
+                      Index</A></TD></TR>
+                    <TR>
+                      <TD vAlign=top>•</TD>
+                      <TD class=infobar><A 
+                        href="http://www.tek-tips.com/">Tek-Tips 
+Forums</A></TD></TR>
+                    <TR>
+                      <TD vAlign=top>•</TD>
+                      <TD class=infobar><A href="http://www.topxml.com/">What 
+                        is XML?</A></TD></TR>
+                    <TR>
+                      <TD vAlign=top>•</TD>
+                      <TD class=infobar><A 
+                        href="http://www.visualbuilder.com/">VisualBuilder</A></TD></TR>
+                    <TR>
+                      <TD vAlign=top>•</TD>
+                      <TD class=infobar><A 
+                      href="http://www.zvon.org/">ZVON</A></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></P>
+            <P>
+            <TABLE cellSpacing=0 cellPadding=1 width="100%" bgColor=#ff9900 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=2 width="100%" 
+                  bgColor=#ffcc99 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=#fbedbb colSpan=2>
+                        <TABLE width="100%">
+                          <TBODY>
+                          <TR>
+                            <TD><A class=InfobarHeader 
+                              href="http://www.codeproject.com/info/sponsors.asp">Premium 
+                              Sponsors</A></TD></TR></TBODY></TABLE></TD></TR>
+                    <TR>
+                      <TD vAlign=top>• </TD>
+                      <TD class=infobar><A 
+                        href="http://www.dundas.com/">Dundas Software</A></TD></TR>
+                    <TR>
+                      <TD vAlign=top>• </TD>
+                      <TD class=infobar><A 
+                        href="http://msdn.microsoft.com/msdnmag/subscribe.asp">MSDN 
+                        Magazine</A></TD></TR>
+                    <TR>
+                      <TD vAlign=top>• </TD>
+                      <TD class=infobar><A 
+                        href="http://ad.doubleclick.net/click;h=v2|341B|0|0|*|x;9372467;0-0;0;9671499;31-1|1;6022443|6040339|1;;?http://vs03-us.protier.com/Admin/Skins/VS03-US/vssignup.aspx?source=print_ad">Visual 
+                        Studio .NET</A></TD></TR>
+                    <TR>
+                      <TD vAlign=top>• </TD>
+                      <TD class=infobar><A 
+                        href="http://www.microsoft.com/windowsserver2003">Windows 
+                        Server 2003</A></TD></TR>
+                    <TR>
+                      <TD vAlign=top>• </TD>
+                      <TD class=infobar><A 
+                        href="http://www.codeproject.com/redir.asp?id=509">Infragistics</A></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></P></TD></TR></TBODY></TABLE><!-- Main Page Contents End --><BR>
+      <CENTER>
+      <TABLE cellSpacing=1 cellPadding=0 width=520 border=0>
+        <TBODY>
+        <TR bgColor=white>
+          <TD align=middle colSpan=2><SPAN id=AdBanner5>
+            <SCRIPT language=javascript>document.write("<a href=\"/script/admentor/admentorredir.asp?id=411&way=ban\" target=_blank><img src=\"/script/admentor/include/ServeAd.aspx?File=%2Fscript%2Fadmentor%2Fimages%2Fbanner%2D468x60%2Dpdfkit%2Egif&C=False&id=411\" alt=\"The power of a complete PDF toolkit combined in one handy component\" border=0 width=486 height=60></a>");</SCRIPT>
+            </SPAN></TD></TR>
+        <TR vAlign=top>
+          <TD><FONT style="FONT-SIZE: 7pt" size=1>last updated 4 Oct 2004 
+            <BR><A href="http://www.codeproject.com/info/MediaKit">Advertise</A> 
+            | <A href="http://www.codeproject.com/info/privacy.asp">Privacy</A> 
+            </FONT></TD>
+          <TD align=right><FONT style="FONT-SIZE: 7pt" size=1>Copyright © <A 
+            href="mailto:webmaster@codeproject.com">CodeProject</A>, 
+            1999-2004.<BR>All Rights Reserved. 
+      </FONT></TD></TR></TBODY></TABLE></CENTER>
+    <TD width=5>&nbsp;</TD></TR></TBODY></TABLE></BODY></HTML>

@@ -1,0 +1,18 @@
+﻿ACM      : http://www.acm.org
+IEEE     : http://www.ieee.org
+SPIE     : http://www.spie.org , http://spie.org/Conferences
+IS&T     : http://www.imaging.org , http://www.imaging.org/conferences
+          (The Society for Imaging Science and Technology)
+ICIP     : http://www.icip2002.com
+           (IEEE International Conference on Image Processing 2002)
+           http://www.icip2003.com
+           (IEEE International Conference on Image Processing 2003)
+           http://www.icip2004.com
+           (IEEE International Conference on Image Processing 2004)
+VLDB     : http://www.vldb.org
+           http://www.vldb.org/dblp/db/conf/vldb/index.html
+           (Very Large Database)
+DMS      : http://dsonline.computer.org
+           http://dsonline.computer.org/multimedia/Multimediaevents.htm
+           http://dsonline.computer.org/multimedia/Multimediareferences.htm
+           (International Conference on Distributed Multimedia Systems)

@@ -1,0 +1,224 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0053)http://www.okstate.edu/artsci/botany/ordinate/PCA.htm -->
+<HTML><HEAD><TITLE>Principal Components Analysis</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2800.1106" name=GENERATOR>
+<META content="C:\PROGRAM FILES\MICROSOFT OFFICE\OFFICE\html.dot" 
+name=Template></HEAD>
+<BODY vLink=#800080 link=#0000ff><FONT size=6>
+<P align=center>Principal Components Analysis</P></FONT>
+<P>Suppose you have samples located in environmental space or in species space 
+(See <A 
+href="http://www.okstate.edu/artsci/botany/ordinate/distsim.htm">Similarity, 
+Difference and Distance</A>). If you could simultaneously envision all 
+environmental variables or all species, then there would be little need for <A 
+href="http://www.okstate.edu/artsci/botany/ordinate/glossary.htm#ordination">ordination 
+methods</A>. However, with more than three dimensions, we usually need a little 
+help. What <A 
+href="http://www.okstate.edu/artsci/botany/ordinate/glossary.htm#PCA">PCA</A> 
+does is that it takes your cloud of data points, and rotates it such that the 
+maximum variability is visible. Another way of saying this is that it identifies 
+your most important gradients. </P>
+<P>Let us take a hypothetical example where you have measured three different 
+species, X1, X2, and X3: </P>
+<P><IMG height=511 src="PCA_files/3vars.jpg" width=577></P>
+<P>In this example, it is possible (though it might be difficult) to tell that 
+X1 and X2 are related to each other, and it is less clear whether X3 is related 
+to either X1 or X2. Our job is to determine whether there is/are a hidden <A 
+href="http://www.okstate.edu/artsci/botany/ordinate/glossary.htm#factor"><I>factor(s)</I> 
+</A>or <I>component(s)</I> (or in the case of community ecology, <A 
+href="http://www.okstate.edu/artsci/botany/ordinate/glossary.htm#envgrad"><I>gradient(s) 
+</I></A>) along which our samples vary with respect to species composition. </P>
+<P>The first stage in rotating the data cloud is to <A 
+href="http://www.okstate.edu/artsci/botany/ordinate/glossary.htm#standardize">standardize</A> 
+the data by subtracting the mean and dividing by the standard deviation. Thus, 
+the <A 
+href="http://www.okstate.edu/artsci/botany/ordinate/glossary.htm#centroid">centroid 
+</A>of the whole data set is zero. We label these standardized axes S1, S2, and 
+S3. The relative location of points remains the same: </P>
+<P><IMG height=419 src="PCA_files/3varsstd.jpg" width=376></P>
+<UL>
+  <LI>A footnote: it may be argued that we should not divide by the standard 
+  deviation - we would want a species which varies from, say, 8 to 10000 
+  individuals to be considered more variable than a species which varies from 
+  100 to 102 individuals. By standardizing, we are giving all species the same 
+  variation, i.e. a standard deviation of 1. We actually can have it both ways: 
+  a PCA without dividing by the standard deviation is an <A 
+  href="http://www.okstate.edu/artsci/botany/ordinate/glossary.htm#eigenanalysis">eigenanalysis</A> 
+  of the covariance matrix, and a PCA in which you do indeed divide by the 
+  standard deviation is an eigenanalysis of the <A 
+  href="http://www.okstate.edu/artsci/botany/ordinate/glossary.htm#corrmat">correlation 
+  matrix</A>. (to do the latter in CANOCO, you need to specify "center and 
+  standardize" your species - recall that the covariance of standardized 
+  variables equals the correlation!). When using species/variables measured in 
+  different units, you <I>must</I> use a correlation matrix. </LI></UL>
+<P>From looking at the last two figures, one can already identify a gradient: 
+from the lower left front to the upper right back. In other words, there appears 
+to be an underlying gradient along which species 1 and species 2 both increase 
+(In the language of <A 
+href="http://www.okstate.edu/artsci/botany/ordinate/glossary.htm#gauch">Gauch</A> 
+(1982), species 1 and 2 both contain some "redundant" information. Let us now 
+draw a line along this gradient: </P>
+<P><IMG height=419 src="PCA_files/3varpca.jpg" width=376></P>
+<P>Principal Components Analysis chooses the first PCA axis as that line that 
+goes through the <A 
+href="http://www.okstate.edu/artsci/botany/ordinate/glossary.htm#centroid">centroid</A>, 
+but also minimizes the square of the distance of each point to that line. Thus, 
+in some sense, the line is as close to all of the data as possible. 
+Equivalently, the line goes through the maximum variation in the data. </P>
+<P>The second PCA axis also must go through the centroid, and also goes through 
+the maximum variation in the data, but with a certain constraint: It must be 
+completely uncorrelated (i.e. at right angles, or "<A 
+href="http://www.okstate.edu/artsci/botany/ordinate/glossary.htm#orthogonal">orthogonal</A>") 
+to PCA axis 1. </P>
+<P>If we rotate the coordinate frame of PCA Axis 1 to be on the X-axis, and PCA 
+Axis 2 to be on the Y-axis, then we get the following diagram: </P>
+<P><IMG height=501 src="PCA_files/3varPCA2.jpg" width=500></P>
+<P>We can see that samples a, b, c, and d are at one extreme of species 
+composition, and samples t, w, x, y, and z are at the other extreme. But there 
+is a secondary gradient of species composition, from samples b, m, n, u, r and t 
+up to samples l, q, w, and y. What is the underlying biology behind such a 
+gradient? PCA, and any other <A 
+href="http://www.okstate.edu/artsci/botany/ordinate/glossary.htm#indirect">indirect 
+gradient analysis, </A>is silent with respect to this question. This is where 
+the biological interpretation comes in. The scientist needs to ask, what is 
+special about the samples on the right which make them fundamentally different 
+from those samples on the left? What is it about the biology of species 1 that 
+makes it occur in the same locations as species 2? </P>
+<P>We have only plotted two PCA Axes. However, there exist three axes in the 
+data set (because there are three species). Why did we not plot the third? This 
+is for two reasons: </P>
+<UL>
+  <LI>If we were going to plot three axes, then why even bother to perform PCA 
+  in the first place? We end up with just as complicated a diagram as we start 
+  out with (i.e. samples in 3-dimensional species space. 
+  <LI>The third axis is much, much less important than the first two, as 
+  described below. </LI></UL>
+<P>How do we determine how many axes are worth interpreting? Ultimately, this is 
+left up to the reasons for the investigation. But a big hint can be found with 
+the eigenvalues. Every axis has an <A 
+href="http://www.okstate.edu/artsci/botany/ordinate/glossary.htm#eigenvalue">eigenvalue</A> 
+(also called latent root) associated with it, and they are ranked from the 
+highest to the lowest. The first through the third eigenvalues for the first 
+three axes in the above example are 1.8907, 0.9951, and 0.1142 respectively. 
+These are related to the amount of variation explained by the axis. Note that 
+the sum of the eigenvalues is 3, which is also the number of variables. It is 
+usually typical to express the eigenvalues as a percentage of the total: </P><PRE>PCA Axis 1: 63% 
+PCA Axis 2: 33% 
+PCA Axis 3:  4% </PRE>
+<P>In other words, our first axis explained or "extracted" almost 2/3 of the 
+variation in the entire data set, and the second axis explained almost all of 
+the remaining variation. Axis 3 only explained a trivial amount, and might not 
+be worth interpreting. </P>
+<P>How do we know which species contribute to which axes? We look at the 
+component loadings (or "factor loadings"): </P>
+<TABLE cellSpacing=0 width=592 border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=center width="25%">
+      <P><B>Species</B></P></TD>
+    <TD vAlign=center width="25%"><B>
+      <P>PCA 1&nbsp;</B></P></TD>
+    <TD vAlign=center width="25%"><B>
+      <P>PCA 2</B></P></TD>
+    <TD vAlign=center width="25%"><B>
+      <P>PCA 3&nbsp;</B></P></TD></TR>
+  <TR>
+    <TD vAlign=center width="25%">
+      <P>S1</P></TD>
+    <TD vAlign=center width="25%">
+      <P>0.9688&nbsp;</P></TD>
+    <TD vAlign=center width="25%">
+      <P>0.0664</P></TD>
+    <TD vAlign=center width="25%">
+      <P>-0.2387&nbsp;</P></TD></TR>
+  <TR>
+    <TD vAlign=center width="25%">
+      <P>S2</P></TD>
+    <TD vAlign=center width="25%">
+      <P>0.9701&nbsp;</P></TD>
+    <TD vAlign=center width="25%">
+      <P>0.0408</P></TD>
+    <TD vAlign=center width="25%">
+      <P>0.2391&nbsp;</P></TD></TR>
+  <TR>
+    <TD vAlign=center width="25%">
+      <P>S3</P></TD>
+    <TD vAlign=center width="25%">
+      <P>-0.1045&nbsp;</P></TD>
+    <TD vAlign=center width="25%">
+      <P>0.9945</P></TD>
+    <TD vAlign=center width="25%">
+      <P>0.0061&nbsp;</P></TD></TR></TBODY></TABLE>
+<P>This means that the value of a sample along the first axis of PCA is 0.9688 
+times the standardized abundance of species 1 PLUS 0.9701 times the standardized 
+abundance of species 2 PLUS -0.1045 times the standardized abundance of species 
+3. </P>
+<P>We can interpret Axis 1 as being highly positively related to the abundances 
+of species 1 and 2, and weekly negatively related to the abundance of species 3. 
+Axis 2, on the other hand, is positively related to (and therefore correlated 
+with) the abundance of all species, but mostly species 3. So the "gradient" 
+reflected by Axis 2 is something which benefits species 3. </P>
+<P>PCA is extremely useful when we expect species to be linearly (or even 
+monotonically) related to each other. Unfortunately, we rarely encounter such a 
+situation in nature. It is much more likely that species have a <A 
+href="http://www.okstate.edu/artsci/botany/ordinate/glossary.htm#unimodal">unimodal</A> 
+<A href="http://www.okstate.edu/artsci/botany/ordinate/glossary.htm#src">species 
+response curve</A>. That is, species usually peak in abundance at some 
+intermediate part of environmental gradients (see also <A 
+href="http://www.okstate.edu/artsci/botany/ordinate/COENOSPA.htm">Explorations 
+in Coenospace</A>). Here is a hypothetical <A 
+href="http://www.okstate.edu/artsci/botany/ordinate/glossary.htm#coenocline">coenocline</A>: 
+</P>
+<DIR>
+<P><IMG height=421 src="PCA_files/3Gauss.jpg" width=570></P></DIR>
+<P>This means that species are non linearly related to each other. Let us now 
+plot the abundance of the above three hypothetical species in species space: 
+</P>
+<P><IMG height=500 src="PCA_files/3gauss3d.jpg" width=551></P>
+<P>However you describe the above cloud of points, it is certainly not a simple 
+line or a plane. PCA would fail miserably with such a data set. In particular, 
+PCA produces an artifact known as the Horseshoe Effect (similar to <A 
+href="http://www.okstate.edu/artsci/botany/ordinate/glossary.htm#arch">the Arch 
+Effect</A>), in which the second axis is curved and twisted relative to the 
+first, and does not represent a true secondary gradient. Do note, however, that 
+if we only sampled a small enough section of the gradient the data might be 
+linear enough to allow the use of PCA. </P>
+<P>For the Boomer Lake example given in <A 
+href="http://www.okstate.edu/artsci/botany/ordinate/COENOSPA.htm">Explorations 
+in Coenospace</A>, we have belt transects established along a lake shore, and a 
+fairly well-defined zonation of plant species occurs as a function of distance 
+from the water. When we perform a PCA on this data set, we get the following 
+diagram: </P>
+<P><IMG height=517 src="PCA_files/pcaboom.jpg" width=511></P>
+<P>This illustrates the horseshoe effect. The second axis is a curved distortion 
+of the first axis. The second axis also has no easily understood biological 
+meaning: there is no obvious reasons why samples 6, 7, and 8 should be at 
+opposite ends of a gradient from samples 1, 2, and 9 through 12. </P>
+<P>However, do recall that there was one predominant gradient: that of sample 1 
+through 12 (being a wetland to dryland gradient). However, PCA distorts this 
+relationship with some incurving. Instead of going from sample 1 to 12 (as it 
+should), the most extreme samples along PCA Axis 1 are samples 3 and 10. </P>
+<P>The "toe" of the horseshoe can either be up or down; in this case it just 
+happens to be up. </P>
+<P>In this particular example, we are able to see the arch, and therefore might 
+be able to conclude that the "real" extremes are quadrats 1 and 10,11, or 12. 
+This is because there is only one clear gradient and the gradient is so strong. 
+However, in many data sets, there may be more and weaker gradients, as well as 
+more noise. Therefore, it would be very difficult to make sense of PCA. </P>
+<P>Although PCA is often useful for the analysis of samples in species space, it 
+is still quite appropriate for the analysis of samples in environmental space. 
+This is because it is likely for most environmental variables to be 
+monotonically related to underlying factors, and to each other. Also, PCA allows 
+the use of variables which are not measured in the same units (e.g. elevation, 
+concentration of nutrients, temperature, pH, etc.). </P>
+<P align=center>
+<HR>
+
+<P></P><FONT size=4>
+<P>This page was created and is maintained by Michael Palmer.</P></FONT>
+<P><A href="http://www.okstate.edu/artsci/botany/ordinate"><IMG height=95 
+src="PCA_files/ordico.jpg" width=95 border=0><FONT size=4>To the ordination web 
+page</FONT></A></P>
+<P>&nbsp;</P>
+<P>&nbsp;</P></BODY></HTML>

@@ -1,0 +1,93 @@
+UNKNOWN {
+	FONT-SIZE: 11px; FONT-FAMILY: Verdana, Arial, sans-serif
+}
+BODY {
+	FONT-SIZE: 11px; FONT-FAMILY: Verdana, Arial, sans-serif
+}
+P {
+	FONT-SIZE: 11px; FONT-FAMILY: Verdana, Arial, sans-serif
+}
+TH {
+	FONT-SIZE: 11px; FONT-FAMILY: Verdana, Arial, sans-serif
+}
+TD {
+	FONT-SIZE: 11px; FONT-FAMILY: Verdana, Arial, sans-serif
+}
+H1 {
+	FONT-SIZE: 18px; FONT-FAMILY: Verdana, Arial, sans-serif
+}
+H2 {
+	FONT-SIZE: 16px; FONT-FAMILY: Verdana, Arial, sans-serif
+}
+H3 {
+	FONT-SIZE: 14px; FONT-FAMILY: Verdana, Arial, sans-serif
+}
+H4 {
+	FONT-SIZE: 12px; FONT-FAMILY: Verdana, Arial, sans-serif
+}
+A:link {
+	COLOR: #003399; FONT-FAMILY: Verdana, Arial, sans-serif
+}
+A:active {
+	COLOR: #cccccc; FONT-FAMILY: Verdana, Arial, sans-serif
+}
+A:visited {
+	COLOR: #666666; FONT-FAMILY: Verdana, Arial, sans-serif
+}
+INPUT.SPIE {
+	FONT-SIZE: 11px; FONT-FAMILY: Verdana, Arial, sans-serif
+}
+FONT.GeneralHdr {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; FONT-FAMILY: Verdana, Arial, sans-serif
+}
+FONT.PageHdr {
+	FONT-WEIGHT: bold; FONT-SIZE: 22px; COLOR: #990000; FONT-FAMILY: Verdana, Arial, sans-serif
+}
+FONT.SmallPageHdr {
+	FONT-WEIGHT: bold; FONT-SIZE: 16px; COLOR: #990000; FONT-FAMILY: Verdana, Arial, sans-serif
+}
+FONT.ExhibitionPageHdr {
+	FONT-WEIGHT: bold; FONT-SIZE: 22px; COLOR: #669999; FONT-FAMILY: Verdana, Arial, sans-serif
+}
+FONT.SubSectionHdr {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; TEXT-TRANSFORM: uppercase; COLOR: #990000; FONT-FAMILY: Verdana, Arial, sans-serif
+}
+FONT.DatesAndVenue {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #990000; FONT-FAMILY: Verdana, Arial, sans-serif
+}
+FONT.BlueHdr {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #336699; FONT-FAMILY: Verdana, Arial, sans-serif
+}
+FONT.RedHdr {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #990000; FONT-FAMILY: Verdana, Arial, sans-serif
+}
+FONT.MeetingHdr {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; FONT-FAMILY: Verdana, Arial, sans-serif
+}
+FONT.SPIEFormLabel {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; FONT-FAMILY: Verdana, Arial, sans-serif
+}
+FONT.Body {
+	FONT-SIZE: 11px; FONT-FAMILY: Verdana, Arial, sans-serif
+}
+OL {
+	MARGIN-TOP: 0px; FONT-SIZE: 11px; MARGIN-BOTTOM: 0px; FONT-FAMILY: Verdana, Arial, sans-serif
+}
+UL {
+	MARGIN-TOP: 0px; FONT-SIZE: 11px; MARGIN-BOTTOM: 0px; FONT-FAMILY: Verdana, Arial, sans-serif
+}
+DL {
+	MARGIN-TOP: 0px; FONT-SIZE: 11px; MARGIN-BOTTOM: 0px; FONT-FAMILY: Verdana, Arial, sans-serif
+}
+FORM {
+	MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px
+}
+TD.homeFeature {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 7px; MARGIN: 5px 5px 3px; PADDING-TOP: 5px
+}
+.homefeat {
+	FONT-SIZE: 12px; FONT-FAMILY: Verdana, Arial, sans-serif
+}
+UNKNOWN {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}

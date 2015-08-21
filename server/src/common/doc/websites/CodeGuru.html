@@ -1,0 +1,1751 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0024)http://www.codeguru.com/ -->
+<HTML><HEAD><TITLE>CodeGuru</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META 
+content="Number one developer Web site on in the Internet specializing in Windows and .NET development using Visual C++, C# and Visual Basic" 
+name=description>
+<META content="" name=Author>
+<META content="" name=keywords><LINK href="CodeGuru_files/text.css" 
+type=text/css rel=stylesheet>
+<SCRIPT language=JavaScript type=text/javascript>
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v3.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function HM_doPreload() { // dmr
+   MM_preloadImages('/img/visualc-but-on.gif',
+                    '/img/net-but-on.gif',
+                    '/img/vb-but-on.gif',
+                    '/img/forums-but-on.gif',
+                    '/img/reviews-but-on.gif',
+                    '/img/directory-but-on.gif',
+                    '/img/submit-but-on.gif',
+                    '/img/announcements-but-on.gif',
+                    '/img/guru-but-on.gif',
+                    '/img/guest-but-on.gif',
+                    '/img/about-but-on.gif',
+                    '/img/faq-but-on.gif')
+}
+window.onload=HM_doPreload;
+//-->
+</SCRIPT>
+
+<SCRIPT language=JavaScript>
+<!--
+var image1;
+function InviteUserInformative(){
+var strURL ="http://invite.ke2.informative.com/i.dll?s=199894&c=i&i=P&CLOSE=1";
+window.open ( strURL, "", "toolbar=no,toolbar=0,location=no,location=0,status=no,status=0,menubar=no,menubar=0,scrollbars=yes,scrollbars=1,resizable=yes,resizable=1,width=1,height=1,top=3000,left=3000,alwaysRaised=1" ); 
+}
+function checkImageInformative(){
+if (image1.complete){
+InviteUserInformative() ;
+}
+}
+function preLoadInformative() {
+if (document.images) {
+image1 = new Image();
+image1.src = "http://invite.ke2.informative.com/images/invite.gif";
+if (image1.complete){
+InviteUserInformative() ;
+}else{
+setTimeout('checkImageInformative()',1000);
+}
+}
+}
+preLoadInformative();
+//-->
+// Copyright 1997-2002 Informative, Inc</SCRIPT>
+
+<META content="MSHTML 6.00.3790.0" name=GENERATOR></HEAD>
+<BODY link=#003366 bgColor=#666666 leftMargin=0 topMargin=4 MARGINHEIGHT="4" 
+MARGINWIDTH="0" VISITED="#003366">
+<SCRIPT language=JavaScript1.2 src="CodeGuru_files/HM_Loader.js" 
+type=text/javascript></SCRIPT>
+<MAP name=tabs_Map><AREA shape=RECT alt=Earthwebnews coords=709,0,765,17 
+  href="http://www.earthwebnews.com/"><AREA shape=RECT 
+  alt="Software Development" coords=559,0,707,17 
+  href="http://softwaredev.earthweb.com/"><AREA shape=RECT 
+  alt="Hardware and Systems" coords=423,0,558,17 
+  href="http://hardware.earthweb.com/"><AREA shape=RECT alt="Web Developer" 
+  coords=303,0,422,17 href="http://webdeveloper.earthweb.com/"><AREA shape=RECT 
+  alt="Networking and Communications" coords=106,0,301,17 
+  href="http://networking.earthweb.com/"><AREA shape=RECT alt="IT Management" 
+  coords=0,0,104,17 href="http://itmanagement.earthweb.com/"></MAP>
+<TABLE cellSpacing=0 cellPadding=4 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD align=middle><IMG height=100 alt="" hspace=0 
+      src="CodeGuru_files/sp.gif" width=1 align=left border=0>
+      <SCRIPT language=JavaScript>
+<!--
+var plugin = 0;
+if (navigator.mimeTypes && navigator.mimeTypes["application/x-shockwave-flash"] && navigator.mimeTypes["application/x-shockwave-flash"].enabledPlugin)
+{
+if (navigator.plugins && navigator.plugins["Shockwave Flash"])plugin = 1;
+}
+else if (navigator.userAgent && navigator.userAgent.indexOf("MSIE")>=0
+&& (navigator.userAgent.indexOf("Windows 95")>=0 || navigator.userAgent.indexOf("Windows 98")>=0 || navigator.userAgent.indexOf("Windows NT")>=0)) {
+document.write('<SCRIPT LANGUAGE=VBScript>\n');
+document.write('on error resume next \n');
+document.write('plugin = ( IsObject(CreateObject("ShockwaveFlash.ShockwaveFlash.3")))\n');
+document.write('if ( plugin <= 0 ) then plugin = ( IsObject(CreateObject("ShockwaveFlash.ShockwaveFlash.4")))\n');
+document.write('if ( plugin <= 0 ) then plugin = ( IsObject(CreateObject("ShockwaveFlash.ShockwaveFlash.5")))\n');
+document.write('if ( plugin <= 0 ) then plugin = ( IsObject(CreateObject("ShockwaveFlash.ShockwaveFlash.6")))\n');
+document.write('</' + 'SCRIPT> \n');
+}
+if ( plugin )
+{
+document.write('<OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"');
+document.write('  codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=3,0,0,0" ');
+document.write(' ID=webinar-11-4-04-750.swf WIDTH=750 HEIGHT=100>');
+document.write(' <PARAM NAME=movie VALUE="http://www.codeguru.com/RealMedia/ads/Creatives/OasDefault/House_BalancingPaidandOrganic_1d/webinar-11-4-04-750.swf?clickTAG=http://www.codeguru.com/RealMedia/ads/click_lx.ads/ew/ewsoftware/www.codeguru.com/index/397586845/468x60-1/OasDefault/House_BalancingPaidandOrganic_1d/webinar-11-4-04-750.html/63626132326333313431326165353530?http://www.jupiterwebevents.com/webinars/0411list/"><PARAM NAME=menu VALUE=false> <PARAM NAME=quality VALUE=high> <PARAM NAME=bgcolor VALUE=WHITE>  ');
+document.write(' <EMBED src="http://www.codeguru.com/RealMedia/ads/Creatives/OasDefault/House_BalancingPaidandOrganic_1d/webinar-11-4-04-750.swf?clickTAG=http://www.codeguru.com/RealMedia/ads/click_lx.ads/ew/ewsoftware/www.codeguru.com/index/397586845/468x60-1/OasDefault/House_BalancingPaidandOrganic_1d/webinar-11-4-04-750.html/63626132326333313431326165353530?http://www.jupiterwebevents.com/webinars/0411list/" menu=false quality=high bgcolor=WHITE  ');
+document.write(' swLiveConnect=FALSE WIDTH=750 HEIGHT=100');document.write(' TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash">');document.write(' </EMBED>');
+document.write(' </OBJECT>');
+}
+else if (!(navigator.appName && navigator.appName.indexOf("Netscape")>=0 && navigator.appVersion.indexOf("2.")>=0))
+{document.write('<a href="http://www.codeguru.com/RealMedia/ads/click_lx.ads/ew/ewsoftware/www.codeguru.com/index/397586845/468x60-1/OasDefault/House_BalancingPaidandOrganic_1d/webinar-11-4-04-750.html/63626132326333313431326165353530?http://www.jupiterwebevents.com/webinars/0411list/"><IMG SRC="http://www.codeguru.com/RealMedia/ads/Creatives/OasDefault/House_BalancingPaidandOrganic_1d/webinar-11-4-04-750.gif" WIDTH=750 HEIGHT=100 BORDER=0></a>');
+}
+//-->
+</SCRIPT>
+       <NOSCRIPT><A 
+      href="http://www.codeguru.com/RealMedia/ads/click_lx.ads/ew/ewsoftware/www.codeguru.com/index/397586845/468x60-1/OasDefault/House_BalancingPaidandOrganic_1d/webinar-11-4-04-750.html/63626132326333313431326165353530?http://www.jupiterwebevents.com/webinars/0411list/"><IMG 
+      height=100 src="CodeGuru_files/webinar-11-4-04-750.gif" width=750 
+      border=0></A> </NOSCRIPT><IMG height=1 
+      src="CodeGuru_files/63626132326333313431326165353530.gif" 
+  width=1></TD></TR></TBODY></TABLE><!--Top Navigation-->
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD>
+      <TABLE cellSpacing=0 cellPadding=0 width=780 border=0>
+        <TBODY>
+        <TR>
+          <TD><IMG height=17 alt="Earthweb Tabs" hspace=0 
+            src="CodeGuru_files/tabs.gif" width=780 useMap=#tabs_Map 
+        border=0></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD background=CodeGuru_files/top-bg.gif>
+      <TABLE cellSpacing=0 cellPadding=0 width=780 border=0>
+        <TBODY>
+        <TR>
+          <TD width=272><A href="CodeGuru_files/codeguru.htm"><IMG height=82 
+            alt=CodeGuru hspace=0 src="CodeGuru_files/logo.gif" width=272 
+            border=0></A></TD>
+          <TD background=CodeGuru_files/top-bg-2.gif>
+            <TABLE cellSpacing=0 cellPadding=0 width=508 
+            background=CodeGuru_files/codeguru.htm border=0>
+              <TBODY>
+              <TR>
+                <TD width=508 colSpan=2><IMG height=1 alt="" hspace=0 
+                  src="CodeGuru_files/sp.gif" width=508 border=0></TD></TR>
+              <TR>
+                <FORM name=myform 
+                action=http://search.internet.com/www.codeguru.com method=post>
+                <TD width=1><IMG height=54 alt="" hspace=0 
+                  src="CodeGuru_files/sp.gif" width=1 border=0></TD>
+                <TD><A href="http://www.earthweb.com/"><IMG height=20 
+                  alt=Earthweb src="CodeGuru_files/eweb.gif" width=135 
+                  align=right border=0></A> <INPUT type=hidden name=starget> 
+                  <INPUT type=hidden name=IC_QueryDatabase> <IMG height=23 
+                  alt=Search src="CodeGuru_files/search.gif" width=50 
+                  align=absMiddle border=0> <SELECT 
+                  style="FONT-WEIGHT: normal; FONT-SIZE: 9pt; COLOR: #000000; FONT-FAMILY: verdana, arial, sans-serif; BACKGROUND-COLOR: #ffffff" 
+                  name=searchsite> <OPTION value=CodeGuru 
+                    selected>CodeGuru.com</OPTION> <OPTION 
+                    value=CodeGuru-Articles>---Articles</OPTION> <OPTION 
+                    value=CodeGuru-Comments>---Comments</OPTION> <OPTION 
+                    value=CodeGuru-Forums>---Forums</OPTION> <OPTION 
+                    value=Earthweb>Earthweb</OPTION></SELECT> <INPUT size=10 
+                  name=IC_QueryText> <INPUT type=image height=23 alt=Go width=40 
+                  src="CodeGuru_files/go.gif" align=absMiddle value=Go! border=0 
+                  name=submit> </TD></TR></FORM>
+              <TR>
+                <TD width=1><IMG height=27 alt="" hspace=0 
+                  src="CodeGuru_files/sp.gif" width=1 border=0></TD>
+                <TD align=middle><IMG height=14 hspace=0 
+                  src="CodeGuru_files/eweb-nav.gif" width=330 
+                  useMap=#eweb_nav_Map border=0> <MAP name=eweb_nav_Map><AREA 
+                    shape=RECT alt=Forums coords=253,0,330,14 
+                    href="http://www.codeguru.com/forum"><AREA shape=RECT 
+                    alt=Wireless coords=185,0,244,14 
+                    href="http://www.developer.com/ws/"><AREA shape=RECT 
+                    alt=Jars coords=145,0,176,14 
+                    href="http://www.jars.com/"><AREA shape=RECT alt=Gamelan 
+                    coords=77,0,136,14 
+                    href="http://www.developer.com/java/"><AREA shape=RECT 
+                    alt=Developer.com coords=0,0,69,14 
+                    href="http://www.developer.com/"></MAP></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><!--End Top-->
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top width="1%" background=CodeGuru_files/leftnav-bg.gif><!--Left Navigation-->
+      <TABLE cellSpacing=0 cellPadding=0 width=146 bgColor=#999999 border=0>
+        <TBODY>
+        <TR>
+          <TD><A href="CodeGuru_files/codeguru.htm"><IMG height=30 
+            alt="CodeGuru Navigation" src="CodeGuru_files/leftnav-top.gif" 
+            width=146 border=0></A></TD></TR>
+        <TR>
+          <TD><A onmouseover="HM_f_PopUp('HM_Menu1',event)" 
+            onmouseout="HM_f_PopDown('HM_Menu1')" 
+            href="http://www.codeguru.com/Cpp"><IMG height=25 
+            alt="Visual C++ / C++" hspace=0 
+            src="CodeGuru_files/visualc-but-off.gif" width=146 border=0 
+            name=visualc></A></TD></TR>
+        <TR>
+          <TD><A onmouseover="HM_f_PopUp('HM_Menu2',event)" 
+            onmouseout="HM_f_PopDown('HM_Menu2')" 
+            href="http://www.codeguru.com/Csharp"><IMG height=25 alt=".Net / C#" 
+            hspace=0 src="CodeGuru_files/net-but-off.gif" width=146 border=0 
+            name=net></A></TD></TR>
+        <TR>
+          <TD><A onmouseover="HM_f_PopUp('HM_Menu3',event)" 
+            onmouseout="HM_f_PopDown('HM_Menu3')" 
+            href="http://www.codeguru.com/vb"><IMG height=25 alt="Visual Basic" 
+            hspace=0 src="CodeGuru_files/vb-but-off.gif" width=146 border=0 
+            name=vb></A></TD></TR>
+        <TR>
+          <TD><A 
+            onmouseover="MM_swapImage('submit','','/img/submit-but-on.gif',1)" 
+            onmouseout=MM_swapImgRestore() 
+            href="http://www.codeguru.com/edit-article.php"><IMG height=25 
+            alt="Submit an Article" hspace=0 
+            src="CodeGuru_files/submit-but-off.gif" width=146 border=0 
+            name=submit></A></TD></TR>
+        <TR>
+          <TD><A 
+            onmouseover="MM_swapImage('forums','','/img/forums-but-on.gif',1)" 
+            onmouseout=MM_swapImgRestore() 
+            href="http://www.codeguru.com/forum"><IMG height=25 
+            alt="Discussion Forums" hspace=0 
+            src="CodeGuru_files/forums-but-off.gif" width=146 border=0 
+            name=forums></A></TD></TR>
+        <TR>
+          <TD><A 
+            onmouseover="MM_swapImage('directory','','/img/directory-but-on.gif',1)" 
+            onmouseout=MM_swapImgRestore() 
+            href="http://www.codeguru.com/resources"><IMG height=25 
+            alt="Resource Directory" hspace=0 
+            src="CodeGuru_files/directory-but-off.gif" width=146 border=0 
+            name=directory></A></TD></TR>
+        <TR>
+          <TD><A 
+            onmouseover="MM_swapImage('announcements','','/img/announcements-but-on.gif',1)" 
+            onmouseout=MM_swapImgRestore() 
+            href="http://www.codeguru.com/announcements"><IMG height=25 
+            alt=Announcements hspace=0 
+            src="CodeGuru_files/announcements-but-off.gif" width=146 border=0 
+            name=announcements></A></TD></TR>
+        <TR>
+          <TD><A 
+            onmouseover="MM_swapImage('booklist','','/img/booklist-but-on.gif',1)" 
+            onmouseout=MM_swapImgRestore() 
+            href="http://extra.codeguru.com/bookList/booklist.asp"><IMG 
+            height=25 alt="Book List" hspace=0 
+            src="CodeGuru_files/booklist-but-off.gif" width=146 border=0 
+            name=booklist></A></TD></TR>
+        <TR>
+          <TD><A 
+            onmouseover="MM_swapImage('reviews','','/img/reviews-but-on.gif',1)" 
+            onmouseout=MM_swapImgRestore() 
+            href="http://extra.codeguru.com/default.asp"><IMG height=25 
+            alt="Book Reviews" hspace=0 src="CodeGuru_files/reviews-but-off.gif" 
+            width=146 border=0 name=reviews></A></TD></TR>
+        <TR>
+          <TD><A 
+            onmouseover="MM_swapImage('guru','','/img/guru-but-on.gif',1)" 
+            onmouseout=MM_swapImgRestore() 
+            href="http://www.codeguru.com/gurus.php"><IMG height=25 
+            alt="Guru Lists" hspace=0 src="CodeGuru_files/guru-but-off.gif" 
+            width=146 border=0 name=guru></A></TD></TR>
+        <TR>
+          <TD><A 
+            onmouseover="MM_swapImage('guest','','/img/guest-but-on.gif',1)" 
+            onmouseout=MM_swapImgRestore() 
+            href="http://www.theguestbook.com/read.php/608196"><IMG height=25 
+            alt="Guest Book" hspace=0 src="CodeGuru_files/guest-but-off.gif" 
+            width=146 border=0 name=guest></A></TD></TR>
+        <TR>
+          <TD><A 
+            onmouseover="MM_swapImage('about','','/img/about-but-on.gif',1)" 
+            onmouseout=MM_swapImgRestore() 
+            href="http://www.codeguru.com/about.php"><IMG height=25 
+            alt="About Us" hspace=0 src="CodeGuru_files/about-but-off.gif" 
+            width=146 border=0 name=about></A></TD></TR>
+        <TR>
+          <TD><A onmouseover="MM_swapImage('faq','','/img/faq-but-on.gif',1)" 
+            onmouseout=MM_swapImgRestore() 
+            href="http://www.codeguru.com/faq.php"><IMG height=25 alt=FAQs 
+            hspace=0 src="CodeGuru_files/faq-but-off.gif" width=146 border=0 
+            name=faq></A></TD></TR>
+        <TR>
+          <TD><A 
+            onmouseover="MM_swapImage('sitemap','','/img/map-but-on.gif',1)" 
+            onmouseout=MM_swapImgRestore() 
+            href="http://www.codeguru.com/sitemap.php"><IMG height=25 
+            alt="Site Map" hspace=0 src="CodeGuru_files/map-but-off.gif" 
+            width=146 border=0 name=sitemap></A></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=3 width=146 bgColor=#053061 border=0>
+        <TBODY>
+        <TR>
+          <FORM action=/login.php method=post><INPUT type=hidden value=login 
+          name=action> <INPUT type=hidden value=/ name=url> 
+          <TD align=middle colSpan=2><IMG height=13 alt="Member Sign In" 
+            src="CodeGuru_files/member-top.gif" width=113 vspace=5 border=0> 
+        </TD></TR>
+        <TR>
+          <TD align=right><SPAN class=bodycopy><FONT color=#ffffff>User 
+            ID:</FONT></SPAN></TD>
+          <TD><INPUT style="WIDTH: 60px" size=7 name=username></TD></TR>
+        <TR>
+          <TD align=right><SPAN class=bodycopy><FONT 
+            color=#ffffff>Password:</FONT></SPAN></TD>
+          <TD><INPUT style="WIDTH: 60px" type=password size=7 
+        name=password></TD></TR>
+        <TR>
+          <TD align=middle colSpan=2><SPAN class=bodycopy><FONT 
+            color=#ffffff>Remember Me:</FONT></SPAN> <INPUT type=checkbox 
+            value=1 name=perm></TD></TR>
+        <TR>
+          <TD align=middle colSpan=2><INPUT type=image height=23 width=73 
+            src="CodeGuru_files/signin-blue.gif" align=absMiddle border=0 
+            name=member></TD></TR></FORM>
+        <TR>
+          <TD align=middle colSpan=2><A class=moreinfo 
+            href="http://www.codeguru.com/forgotpw.php">Forgot 
+        Password?</A></TD></TR>
+        <TR>
+          <TD align=middle colSpan=2><A class=moreinfo 
+            href="http://www.codeguru.com/register.php?url=/">Not a 
+            member?<BR>Click here for more information and to 
+        register.</A></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width=146 bgColor=#999999 border=0>
+        <TBODY>
+        <TR>
+          <TD bgColor=#000000><IMG height=1 alt="" src="CodeGuru_files/sp.gif" 
+            width=1 border=0></TD></TR>
+        <TR>
+          <TD bgColor=#999999><IMG height=1 alt="" src="CodeGuru_files/sp.gif" 
+            width=1 border=0></TD></TR></TBODY></TABLE><IMG height=10 alt="" 
+      src="CodeGuru_files/sp.gif" width=151 border=0> 
+      <TABLE cellSpacing=0 cellPadding=0 width=146 border=0>
+        <TBODY>
+        <TR>
+          <TD align=middle>
+            <SCRIPT language=javascript> 
+function SetFormAction2() {
+newLocation = "http://hardwarecentral.dealtime.com/xGS-" + document.frmGSRequest2.keyword.value + "~NS-1~linkin_id-3013120";
+document.location.href = newLocation;
+return;
+}
+</SCRIPT>
+
+            <TABLE cellSpacing=0 cellPadding=0 width=120 border=0>
+              <FORM name=frmGSRequest2 
+              onsubmit="javascript:SetFormAction2();return false;" method=get>
+              <TBODY>
+              <TR>
+                <TD width=120 colSpan=2><IMG height=15 
+                  src="CodeGuru_files/compare.gif" width=120></TD></TR>
+              <TR bgColor=#ffcc00 height=25>
+                <TD align=right width=85><INPUT style="WIDTH: 80px" size=6 
+                  name=keyword></TD>
+                <TD width=35><INPUT type=image height=18 width=32 
+                  src="D:\luanvan\program\agmagic\windows\src\common\doc\websites\CodeGuru_files\go(1).gif" 
+                  border=0></TD></TR>
+              <TR bgColor=#ffcc00>
+                <TD vAlign=bottom width=120 colSpan=2><IMG height=23 
+                  src="CodeGuru_files/hc_logo.gif" 
+              width=120></TD></TR></FORM></TBODY></TABLE><IMG height=1 
+            src="D:\luanvan\program\agmagic\windows\src\common\doc\websites\CodeGuru_files\63626132326333313431326165353530(1).gif" 
+            width=1 border=0> 
+            <P><A href="http://www.jobs.internet.com/"><IMG height=35 
+            alt=jobs.internet.com src="CodeGuru_files/jobs.gif" width=120 
+            border=0></A> 
+            <P>
+            <TABLE cellSpacing=0 cellPadding=3 width="100%" 
+            background=CodeGuru_files/codeguru.htm border=0>
+              <TBODY>
+              <TR>
+                <TD class=bodycopy align=middle bgColor=#000000><FONT 
+                  color=#ffffff><B>internet.commerce</B></FONT></TD></TR>
+              <TR>
+                <TD class=bodycopy align=left bgColor=#cccccc><A 
+                  href="http://www.internet.com/partners/">Partners &amp; 
+                  Affiliates</A><BR><A href="http://www.heater-home.com/">Garage 
+                  Heater</A> <IMG height=1 
+                  src="D:\luanvan\program\agmagic\windows\src\common\doc\websites\CodeGuru_files\63626132326333313431326165353530(2).gif" 
+                  width=1 border=0><BR><A href="http://www.mydomain.com/">Domain 
+                  Registration</A> <IMG height=1 
+                  src="D:\luanvan\program\agmagic\windows\src\common\doc\websites\CodeGuru_files\63626132326333313431326165353530(3).gif" 
+                  width=1 border=0><BR><A 
+                  href="http://www.valueweb.com/">eCommerce Web Hosting</A> <IMG 
+                  height=1 
+                  src="D:\luanvan\program\agmagic\windows\src\common\doc\websites\CodeGuru_files\63626132326333313431326165353530(4).gif" 
+                  width=1 border=0><BR><A 
+                  href="http://www.aim-center.com/">Cheap Auto Insurance</A> 
+                  <IMG height=1 
+                  src="D:\luanvan\program\agmagic\windows\src\common\doc\websites\CodeGuru_files\63626132326333313431326165353530(5).gif" 
+                  width=1 border=0><BR><A 
+                  href="http://shopping.yahoo.com/b:DVD%20Players:20350767">DVD 
+                  Players</A> <IMG height=1 
+                  src="D:\luanvan\program\agmagic\windows\src\common\doc\websites\CodeGuru_files\63626132326333313431326165353530(6).gif" 
+                  width=1 border=0><BR><A 
+                  href="http://www.reservetravel.com/">Discount Hotel Rooms</A> 
+                  <IMG height=1 
+                  src="D:\luanvan\program\agmagic\windows\src\common\doc\websites\CodeGuru_files\63626132326333313431326165353530(7).gif" 
+                  width=1 border=0><BR><A href="http://www.fetchbook.info/">Used 
+                  Books</A> <IMG height=1 
+                  src="D:\luanvan\program\agmagic\windows\src\common\doc\websites\CodeGuru_files\63626132326333313431326165353530(8).gif" 
+                  width=1 border=0><BR><A 
+                  href="http://www.roses-nationwide.com/">Send Flowers</A> <IMG 
+                  height=1 
+                  src="D:\luanvan\program\agmagic\windows\src\common\doc\websites\CodeGuru_files\63626132326333313431326165353530(9).gif" 
+                  width=1 border=0><BR><A 
+                  href="http://www.gmacinsurance.com/">Auto Insurance</A> <IMG 
+                  height=1 
+                  src="D:\luanvan\program\agmagic\windows\src\common\doc\websites\CodeGuru_files\63626132326333313431326165353530(10).gif" 
+                  width=1 border=0><BR><A 
+                  href="http://www.valueweb.com/dedicated/dedicated-hosting.htm">Dedicated 
+                  Servers</A> <IMG height=1 
+                  src="D:\luanvan\program\agmagic\windows\src\common\doc\websites\CodeGuru_files\63626132326333313431326165353530(11).gif" 
+                  width=1 border=0><BR><A href="http://www.bluefind.com/">Web 
+                  directory</A> <IMG height=1 
+                  src="D:\luanvan\program\agmagic\windows\src\common\doc\websites\CodeGuru_files\63626132326333313431326165353530(12).gif" 
+                  width=1 border=0><BR><A 
+                  href="http://edit.travel.yahoo.com/flights.html">Cheap 
+                  Flights</A> <IMG height=1 
+                  src="D:\luanvan\program\agmagic\windows\src\common\doc\websites\CodeGuru_files\63626132326333313431326165353530(13).gif" 
+                  width=1 border=0><BR><A 
+                  href="http://www.verticalwarfare.com/">Industrial 
+                  Marketing</A> <IMG height=1 
+                  src="D:\luanvan\program\agmagic\windows\src\common\doc\websites\CodeGuru_files\63626132326333313431326165353530(14).gif" 
+                  width=1 
+      border=0><BR></TD></TR></TBODY></TABLE></P></TD></TR></TBODY></TABLE><BR><BR>
+      <TABLE cellPadding=4 width=146 bgColor=#053061>
+        <TBODY>
+        <TR>
+          <TD><FONT color=#cccc66><B>RSS Feeds</FONT></B>
+            <P><A 
+            href="http://www.codeguru.com/icom_includes/feeds/codeguru/rss-all.xml"><IMG 
+            height=14 hspace=5 src="CodeGuru_files/xml.gif" width=36 
+            align=absMiddle border=0><FONT color=#ffffff>All</FONT></A> <BR><IMG 
+            height=2 alt="" src="CodeGuru_files/sp.gif" width=1 border=0><BR><A 
+            href="http://www.codeguru.com/icom_includes/feeds/codeguru/rss-cpp.xml"><IMG 
+            height=14 hspace=5 src="CodeGuru_files/xml.gif" width=36 
+            align=absMiddle border=0><FONT color=#ffffff>VC++/C++</FONT></A> 
+            <BR><IMG height=2 alt="" src="CodeGuru_files/sp.gif" width=1 
+            border=0><BR><A 
+            href="http://www.codeguru.com/icom_includes/feeds/codeguru/rss-csharp.xml"><IMG 
+            height=14 hspace=5 src="CodeGuru_files/xml.gif" width=36 
+            align=absMiddle border=0><FONT color=#ffffff>.NET/C#</FONT></A> 
+            <BR><IMG height=2 alt="" src="CodeGuru_files/sp.gif" width=1 
+            border=0><BR><A 
+            href="http://www.codeguru.com/icom_includes/feeds/codeguru/rss-vb.xml"><IMG 
+            height=14 hspace=5 src="CodeGuru_files/xml.gif" width=36 
+            align=absMiddle border=0><FONT color=#ffffff>VB</FONT></A> 
+        </P></TD></TR></TBODY></TABLE></TD>
+    <TD vAlign=top width="99%" background=CodeGuru_files/codeguru.htm 
+    bgColor=#ffffff><IMG height=1 alt="" src="CodeGuru_files/sp.gif" width=629 
+      border=0> 
+      <TABLE cellSpacing=0 cellPadding=4 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD><!--Right Aligned Table--><!--Bob Position-->
+            <TABLE cellSpacing=0 cellPadding=5 width=135 align=right border=0>
+              <TBODY>
+              <TR>
+                <TD align=middle>
+                  <SCRIPT language=javascript> 
+function SetFormAction7() {
+ newLocation = "http://hardwarecentral.dealtime.com/xKW-" + document.frmGSRequest7.keyword.value + "/NS-1/linkin_id-3011678/GS.html";
+ document.location.href = newLocation;
+ return;
+}
+</SCRIPT>
+
+                  <TABLE 
+                  style="BORDER-RIGHT: #1f3983 1px solid; BORDER-TOP: #1f3983 1px solid; BORDER-LEFT: #1f3983 1px solid; BORDER-BOTTOM: #1f3983 1px solid" 
+                  cellSpacing=0 cellPadding=0 width=125 bgColor=#ffffff 
+border=0>
+                    <TBODY>
+                    <TR>
+                      <TD align=middle><A 
+                        href="http://hardwarecentral.dealtime.com/"><IMG 
+                        height=12 alt=HardwareCentral hspace=1 
+                        src="CodeGuru_files/dt_hardwarecentral_logo.gif" 
+                        width=121 vspace=8 border=0></A></TD></TR>
+                    <TR>
+                      <TD bgColor=#f9f604 height=3><IMG height=3 alt="" 
+                        src="CodeGuru_files/dt_blank.gif" width=1 
+border=0></TD></TR>
+                    <TR>
+                      <TD bgColor=#f91813 height=9><IMG height=9 alt="" 
+                        src="CodeGuru_files/dt_blank.gif" width=1 
+border=0></TD></TR>
+                    <TR>
+                      <TD align=middle bgColor=#1f3983 height=90>
+                        <TABLE cellSpacing=0 cellPadding=8 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <FORM name=frmGSRequest7 
+                            onsubmit="javascript:SetFormAction7();return false;" 
+                            method=get>
+                            <TD align=middle><A 
+                              href="http://hardwarecentral.dealtime.com/"><FONT 
+                              face=verdana,arial,helvetica color=#ffffff 
+                              size=-2><B>Compare products, prices, and stores at 
+                              Hardware Central!</B></FONT></A> <BR><INPUT size=9 
+                              name=keyword><BR><INPUT type=image 
+                              src="CodeGuru_files/dt_search_but.gif" vspace=2 
+                              value=Search 
+                      border=0></TD></FORM></TR></TBODY></TABLE></TD></TR>
+                    <TR>
+                      <TD>
+                        <SCRIPT 
+                        src="CodeGuru_files/Keyword-portable+dvd+players.htm"></SCRIPT>
+                      </TD></TR></TBODY></TABLE><IMG height=1 
+                  src="D:\luanvan\program\agmagic\windows\src\common\doc\websites\CodeGuru_files\63626132326333313431326165353530(15).gif" 
+                  width=1> </TD></TR><!--Earthweb Newsletters-->
+              <TR>
+                <FORM name=newsletterform 
+                action=http://e-newsletters.internet.com/cgi-bin/subscribe 
+                method=post>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD width=15 background=CodeGuru_files/blue-bg.gif><IMG 
+                        height=27 alt="" src="CodeGuru_files/blue-left.gif" 
+                        width=15 border=0></TD>
+                      <TD background=CodeGuru_files/blue-bg.gif><IMG height=15 
+                        alt="Free Tech Newsletters" 
+                        src="CodeGuru_files/nl-hdr.gif" width=159 border=0></TD>
+                      <TD align=right width=15 
+                      background=CodeGuru_files/blue-bg.gif><IMG height=27 
+                        alt="" src="CodeGuru_files/blue-right.gif" width=15 
+                        border=0></TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=1 width="100%" 
+                  bgColor=#000000 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD>
+                        <TABLE cellSpacing=0 cellPadding=1 width="100%" 
+                        bgColor=#cccccc border=0>
+                          <TBODY>
+                          <TR>
+                            <TD class=bodycopy><SELECT 
+                              style="FONT-WEIGHT: normal; FONT-SIZE: 9pt; COLOR: #000000; FONT-FAMILY: verdana, arial, sans-serif; BACKGROUND-COLOR: #ffffff" 
+                              name=list_name> <OPTION 
+                                value=earthweb-developer-1-text>Developer.com 
+                                Update</OPTION> <OPTION 
+                                value=earthweb-code-guru-update-text 
+                                selected>Codeguru.com Update</OPTION> <OPTION 
+                                value=earthweb-jars-java-update-text>Jars.com 
+                                Update</OPTION> <OPTION 
+                                value=earthweb-gamelan-java-text>Gamelan.com 
+                                Update</OPTION> <OPTION 
+                                value=15seconds-html>15Seconds HTML</OPTION> 
+                                <OPTION value=15seconds-text>15Seconds 
+                                Text</OPTION> <OPTION 
+                                value=4guysfromrolla-text>4 Guys from 
+                                Rolla</OPTION> <OPTION value=aspwire-text>ASP 
+                                Wire</OPTION> <OPTION value=asp101-text>ASP 
+                                101</OPTION> <OPTION value=sqlwire-text>Database 
+                                Journal</OPTION> <OPTION 
+                                value=dba-support-text>DBASupport</OPTION> 
+                                <OPTION value=javaboutique-jnews-text>Java 
+                                Boutique JNews</OPTION> <OPTION 
+                                value=it-career-source-text>IT Career 
+                                Source</OPTION> <OPTION 
+                                value=techeventslist-text>Tech Events 
+                                List</OPTION> <OPTION value=vbwire-text>VB 
+                                Wire</OPTION> <OPTION 
+                                value=webdeveloper-weekly-text>WebDeveloper.com</OPTION> 
+                                <OPTION 
+                                value=webreference-update-html>WebReference 
+                                HTML</OPTION> <OPTION 
+                                value=webreference-update-text>WebReference 
+                                Text</OPTION> <OPTION 
+                                value=virtualdr-text>Virtual Dr. 
+                              Text</OPTION></SELECT> </TD></TR>
+                          <TR>
+                            <TD><INPUT type=hidden 
+                              value=http://e-newsletters.internet.com/earthweb_opt-in.html 
+                              name=redirect_ok> <INPUT onfocus="this.value='';" 
+                              value="Your E-mail" name=email> <INPUT type=image 
+                              height=23 width=73 src="CodeGuru_files/signup.gif" 
+                              align=absMiddle border=0 name=imageField2> 
+                          </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></FORM><!--Most Popular Headlines-->
+              <TR>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD width=15 background=CodeGuru_files/gold-bg2.gif><IMG 
+                        height=27 alt="" src="CodeGuru_files/gold-left2.gif" 
+                        width=15 border=0></TD>
+                      <TD background=CodeGuru_files/gold-bg2.gif><IMG 
+                        height=17 alt="Free Tech Newsletters" 
+                        src="CodeGuru_files/pop-headlines.gif" width=226 
+                        border=0></TD>
+                      <TD align=right width=15 
+                      background=CodeGuru_files/gold-bg2.gif><IMG height=27 
+                        alt="" src="CodeGuru_files/gold-right2.gif" width=15 
+                        border=0></TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=1 width="100%" 
+                  bgColor=#000000 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD>
+                        <TABLE cellSpacing=0 cellPadding=3 width="100%" 
+                        bgColor=#cccccc border=0>
+                          <TBODY>
+                          <TR>
+                            <TD><SPAN 
+                        class=bodycopy></SPAN></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR><!--Developer Headlines-->
+              <TR>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD width=15 background=CodeGuru_files/gold-bg2.gif><IMG 
+                        height=27 alt="" src="CodeGuru_files/gold-left2.gif" 
+                        width=15 border=0></TD>
+                      <TD background=CodeGuru_files/gold-bg2.gif><IMG 
+                        height=17 alt="Free Tech Newsletters" 
+                        src="CodeGuru_files/d-headlines.gif" width=226 
+                      border=0></TD>
+                      <TD align=right width=15 
+                      background=CodeGuru_files/gold-bg2.gif><IMG height=27 
+                        alt="" src="CodeGuru_files/gold-right2.gif" width=15 
+                        border=0></TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=1 width="100%" 
+                  bgColor=#000000 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD>
+                        <TABLE cellSpacing=0 cellPadding=3 width="100%" 
+                        bgColor=#cccccc border=0>
+                          <TBODY>
+                          <TR>
+                            <TD><SPAN class=bodycopy><A 
+                              href="http://www.developer.com/xml/article.php/3416091"><B>A 
+                              Flexible, Compile Time, Configurable XML 
+                              Parser</B></A><BR>Discover a simple XML parser 
+                              fully configurable at compile time. Type safe 
+                              techniques for selecting properties and enforcing 
+                              behavior are presented as part of the policies 
+                              support.<BR><A 
+                              href="http://www.developer.com/java/other/article.php/3415831"><B>The 
+                              Release of the Tiger and Introduction of 
+                              Mustang</B></A><BR>Sun releases the final version 
+                              of J2SE 5.0 and mentions news on Mustang, the 
+                              release of 6.0 expected in the Spring of 
+                              2006.<BR><A 
+                              href="http://www.developer.com/ws/pc/article.php/3415521"><B>IP 
+                              Helper API: ARP, Routing, and Network 
+                              Statistics</B></A><BR>Manage routing tables and 
+                              display network statisics on different network 
+                              protocols.<BR><A 
+                              href="http://www.developer.com/net/csharp/article.php/3415421"><B>How 
+                              to Secure Your Assemblies</B></A><BR>What is 
+                              really stopping people from using any .NET 
+                              assemblies you've created?<BR><A 
+                              href="http://www.developer.com/net/asp/article.php/3415091"><B>ASP.NET 
+                              2.0's Sophisticated Site Navigation 
+                              Features</B></A><BR>ASP.NET 2.0 provides excellent 
+                              site-navigation features for storing and 
+                              displaying site-navigation data in your Web 
+                              applications. Learn how to leverage them in your 
+                              Web 
+                    development.<BR></SPAN></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><!--End Bob-->
+            <TABLE cellSpacing=0 cellPadding=1 bgColor=#000000 border=0>
+              <TBODY>
+              <TR>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=1 bgColor=#cccccc border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><FONT face="Verdana, Arial, Helvetica, sans-serif" 
+                        size=-2><A 
+                        href="http://www.codeguru.com/RealMedia/ads/click_lx.cgi/ew/ewsoftware/www.codeguru.com/index/1806616219/ciu/OasDefault/Information_Builders_1c/Free.html/63626132326333313431326165353530">FREE 
+                        Information Builders' Whitepaper: Delivering on the 
+                        Enterprise Business Intelligence Mandate--Success 
+                        Factors for a Standardized Solution Click here to 
+                        download your whitepaper now! 
+                  </A></FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><IMG 
+            height=1 
+            src="D:\luanvan\program\agmagic\windows\src\common\doc\websites\CodeGuru_files\63626132326333313431326165353530(16).gif" 
+            width=1> <BR><!--Content start--><IMG height=25 
+            alt="Latest Articles" hspace=0 src="CodeGuru_files/articles-hdr.gif" 
+            width=240 vspace=5 border=0><BR><SPAN class=bodycopy><!-- List articles --><IMG 
+            src="CodeGuru_files/new-sm.gif" border=0> <A class=mainheadline 
+            href="http://www.codeguru.com/Cpp/Cpp/cpp_mfc/serial/article.php/c8083/">Defining 
+            XML Serializable Objects Using Macros</A><I> 
+            (unedited)</I><BR><B>Aliaksei Sanko - 10/01/2004</B><BR>The 
+            prototype presented allows defining XML serializable objects using 
+            macros in an attributes-like manner.
+            <P><IMG src="CodeGuru_files/new-sm.gif" border=0> <A 
+            class=mainheadline 
+            href="http://www.codeguru.com/Csharp/Csharp/cs_misc/userinterface/article.php/c8199/">Binding 
+            Business Objects to WinForms</A><BR><B>Eduard Liebenberger - 
+            10/01/2004</B><BR>Simplify the creation of a user interface for 
+            business objects while providing a consistent mechanism for handling 
+            IsDirty and IsValid in the UI.
+            <P><A class=mainheadline 
+            href="http://www.codeguru.com/announcements/article.php/3415751/">CodeGuru 
+            Update eNewsletter - September 28th, 2004</A><BR><B>Bradley L. Jones 
+            - 09/30/2004</B><BR>Catch up on the latest from CodeGuru.
+            <P><IMG src="CodeGuru_files/new-sm.gif" border=0> <A 
+            class=mainheadline 
+            href="http://www.codeguru.com/columns/VB/article.php/c8323/">Create 
+            a Shaped 3D Control with GDI+</A><BR><B>Paul Kimmel - 
+            09/30/2004</B><BR>Want to create non-rectilinear controls for custom 
+            Windows software development? Learn how to convert a custom 
+            three-dimensional shape primitive into a shaped control with .NET 
+            and GDI+.
+            <P><IMG src="CodeGuru_files/new-sm.gif" border=0> <A 
+            class=mainheadline 
+            href="http://www.codeguru.com/Csharp/Csharp/cs_misc/security/article.php/c8329/">How 
+            to Secure Your Assemblies</A><BR><B>darwen - 09/30/2004</B><BR>What 
+            is really stopping people from using any .NET assemblies you've 
+            created?
+            <P><IMG src="CodeGuru_files/new-sm.gif" border=0> <A 
+            class=mainheadline 
+            href="http://www.codeguru.com/Csharp/.NET/net_asp/webforms/article.php/c8327/">ASP.NET 
+            2.0's Sophisticated Site Navigation 
+            Features</A><BR><B>arasu_tt@yahoo.com - 09/30/2004</B><BR>ASP.NET 
+            2.0 provides excellent site-navigation features for storing and 
+            displaying site-navigation data in your Web applications. Learn how 
+            to leverage them in your Web development.
+            <P><A href="http://www.codeguru.com/latest.php">(See all Latest 
+            Articles)</A>
+            <P>
+            <TABLE cellSpacing=0 cellPadding=0 width=250 bgColor=#797b58 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width=15 background=CodeGuru_files/gold-bg.gif><IMG 
+                  height=15 alt="" src="CodeGuru_files/gold-left-top.gif" 
+                  width=15 border=0></TD>
+                <TD background=CodeGuru_files/gold-bg.gif><IMG height=15 
+                  alt="" src="CodeGuru_files/gold-bg.gif" width=1 border=0></TD>
+                <TD align=right width=15 
+                  background=CodeGuru_files/gold-bg.gif><IMG height=15 alt="" 
+                  src="CodeGuru_files/gold-right-top.gif" width=15 
+              border=0></TD></TR>
+              <TR>
+                <TD width=15 background=CodeGuru_files/gold-left.gif><IMG 
+                  height=1 alt="" src="CodeGuru_files/gold-left.gif" width=15 
+                  border=0></TD>
+                <TD class=bodycopy><IMG height=40 alt=pencil hspace=4 
+                  src="CodeGuru_files/pencil.gif" width=40 align=left border=0> 
+                  <FONT color=#ffffff><FONT size=3><B>C</B></FONT>odeGuru is all 
+                  about sharing. If you have some unique code or an article, 
+                  we'd love to hear from you. Please read the <A class=moreinfo 
+                  href="http://www.codeguru.com/submission-guidelines.php"><B><I>Submission 
+                  Guidelines</I></B></A> to see how to submit. We are always 
+                  after great new articles to post!</FONT> </TD>
+                <TD width=15 background=CodeGuru_files/gold-right.gif><IMG 
+                  height=1 alt="" src="CodeGuru_files/gold-right.gif" width=15 
+                  border=0></TD></TR>
+              <TR>
+                <TD width=15 background=CodeGuru_files/gold-bg.gif><IMG 
+                  height=15 alt="" src="CodeGuru_files/gold-left-btm.gif" 
+                  width=15 border=0></TD>
+                <TD background=CodeGuru_files/gold-bg-btm.gif><IMG height=15 
+                  alt="" src="CodeGuru_files/gold-bg-btm.gif" width=1 
+                border=0></TD>
+                <TD align=right width=15 
+                  background=CodeGuru_files/gold-bg.gif><IMG height=15 alt="" 
+                  src="CodeGuru_files/gold-right-btm.gif" width=15 
+              border=0></TD></TR></TBODY></TABLE><!-- Columns --><IMG height=25 
+            alt="Latest Columns" hspace=0 src="CodeGuru_files/columns-hdr.gif" 
+            width=240 vspace=5 border=0><BR><!-- VC++ -->
+            <TABLE cellSpacing=1 cellPadding=3 width=240 bgColor=#666666 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width=1><IMG height=40 alt="Using VC++ .NET" 
+                  src="CodeGuru_files/vcnet-icon.gif" width=40 border=0></TD>
+                <TD bgColor=#ffffff><A class=columnhead 
+                  href="http://www.codeguru.com/columns/Kate/">USING VC++ 
+                  .NET</A></TD></TR></TBODY></TABLE>
+            <P><A class=mainheadline 
+            href="http://www.codeguru.com/columns/Kate/article.php/c7437/">Controlling 
+            Project and File Properties with C++ Macros</A><BR><B>Kate Gregory - 
+            06/16/2004</B><BR>Examine a C++ macro that changes a file (within a 
+            managed project) from managed (/clr) to unmanaged—a task you may 
+            need it to perform for performance reasons, creating a mixed 
+            executable.
+            <P><!-- Nuts & Bolts -->
+            <TABLE cellSpacing=1 cellPadding=3 width=240 bgColor=#666666 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width=1><IMG height=40 alt="Nuts &amp; Bolts" 
+                  src="CodeGuru_files/bolts-icon.gif" width=40 border=0></TD>
+                <TD bgColor=#ffffff><A class=columnhead 
+                  href="http://www.codeguru.com/columns/DotNet/">.NET NUTS &amp; 
+                  BOLTS</A></TD></TR></TBODY></TABLE>
+            <P><IMG src="CodeGuru_files/new-sm.gif" border=0> <A 
+            class=mainheadline 
+            href="http://www.codeguru.com/columns/DotNet/article.php/c8111/">Using 
+            Lists and Collections in .NET</A><BR><B>Mark Strawmyer - 
+            09/03/2004</B><BR>The .NET Framework provides native support for 
+            lists and collections. Learn the concept behind these classes and 
+            why they are especially important with the planned inclusion of 
+            generics in version 2.0 of the .NET Framework.
+            <P><!-- Visual Basic Today -->
+            <TABLE cellSpacing=1 cellPadding=3 width=240 bgColor=#666666 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width=1><IMG height=40 alt="VB Today" 
+                  src="CodeGuru_files/vb-icon.gif" width=40 border=0></TD>
+                <TD bgColor=#ffffff><A class=columnhead 
+                  href="http://www.codeguru.com/columns/VB/">VISUAL BASIC 
+                  TODAY</A></TD></TR></TBODY></TABLE>
+            <P><IMG src="CodeGuru_files/new-sm.gif" border=0> <A 
+            class=mainheadline 
+            href="http://www.codeguru.com/columns/VB/article.php/c8323/">Create 
+            a Shaped 3D Control with GDI+</A><BR><B>Paul Kimmel - 
+            09/30/2004</B><BR>Want to create non-rectilinear controls for custom 
+            Windows software development? Learn how to convert a custom 
+            three-dimensional shape primitive into a shaped control with .NET 
+            and GDI+.
+            <P><!-- Programming Insights -->
+            <TABLE cellSpacing=1 cellPadding=3 width=240 bgColor=#666666 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width=1><IMG height=40 alt=Insights 
+                  src="CodeGuru_files/insights-icon.gif" width=40 border=0></TD>
+                <TD bgColor=#ffffff><A class=columnhead 
+                  href="http://www.codeguru.com/columns/Experts/">PROGRAMMING 
+                  INSIGHTS</A></TD></TR></TBODY></TABLE>
+            <P><IMG src="CodeGuru_files/new-sm.gif" border=0> <A 
+            class=mainheadline 
+            href="http://www.codeguru.com/columns/Experts/article.php/c8193/">Working 
+            With Asynchronous .NET Web Service Clients</A><BR><B>Kenn Scribner - 
+            09/16/2004</B><BR>Having trouble using the asynchronous call 
+            mechanisms built into .NET? Let Kenn Scribner clarify it for you and 
+            make your programming tasks (at least as related to asynchronous 
+            processing) a little easier.
+            <P><IMG height=25 alt="Announcements and News" hspace=0 
+            src="CodeGuru_files/announcements-hdr.gif" width=240 vspace=5 
+            border=0><BR><A class=mainheadline 
+            href="http://www.codeguru.com/announcements/article.php/3415471/">Nine 
+            Years Later — The Next Major Release of Java</A><BR>Sun Microsystems 
+            released J2SE 5.0 (previously known as 'Tiger') today!
+            <P><A class=mainheadline 
+            href="http://www.codeguru.com/announcements/article.php/3415751/">CodeGuru 
+            Update eNewsletter - September 28th, 2004</A><BR>Catch up on the 
+            latest from CodeGuru.
+            <P><A class=mainheadline 
+            href="http://www.codeguru.com/announcements/article.php/3411611/">CodeGuru 
+            Update eNewsletter - September 21, 2004</A><BR>Check out the latest 
+            winners of the CodeGuru Goodies book and get information on the 
+            lastest postings form the site.
+            <P><A class=mainheadline 
+            href="http://www.codeguru.com/announcements/article.php/3311581/">Winnners 
+            of the CodeGuru.com Visual C++ Goodies Book</A><BR>See the latest 
+            winners of the CodeGuru.com Goodies book. 
+            <P><A href="http://www.codeguru.com/announcements">(See all 
+            Announcements)</A> 
+            <P><A class=columnhead href="http://www.internetnews.com/">Currently 
+            in the News...</A><BR>The following are current developer-related 
+            stories from <A class=smheadline 
+            href="http://www.internetnews.com/">InternetNews.com</A> :<BR><FONT 
+            face="Verdana, Helvetica, sans-serif" size=2><B><SPAN><A 
+            href="http://www.internetnews.com/dev-news/article.php/3415481">Red 
+            Hat Takes Netscape Enterprise</A><BR><A 
+            href="http://www.internetnews.com/dev-news/article.php/3415331">Tackling 
+            the RSS Bandwidth Bugbear</A><BR><A 
+            href="http://www.internetnews.com/dev-news/article.php/3415121">New 
+            Standard Java Spec Emerges</A><BR></SPAN></B></FONT>
+            <P><!--BEGIN DEVX HEADLINE BOX-->
+            <TABLE cellSpacing=0 cellPadding=0 bgColor=#ffffff border=0>
+              <TBODY>
+              <TR>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD background=CodeGuru_files/boxtop-bg.gif><IMG 
+                        height=60 alt="DevX Headlines" hspace=0 
+                        src="CodeGuru_files/devxlogo.gif" width=200 border=0></TD>
+                      <TD align=right 
+                        background=CodeGuru_files/boxtop-bg.gif><IMG height=60 
+                        alt="" hspace=0 src="CodeGuru_files/topcorner.gif" 
+                        width=13 border=0></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD width=10 background=CodeGuru_files/leftline.gif><IMG 
+                        height=3 alt="" hspace=0 
+                        src="CodeGuru_files/leftline.gif" width=10 border=0></TD>
+                      <TD><FONT face=Verdana,Arial,Helvetica size=1>
+                        <DT>• <B><A 
+                        href="http://www.devx.com/dbzone/Article/22093?trk=DXRSS_LATEST">Fast, 
+                        Easy Database Access with Python</A></B>
+                        <DT>• <B><A 
+                        href="http://www.devx.com/dotnet/Article/22079?trk=DXRSS_LATEST">Go 
+                        Picture Crazy: Resize Images Using GDI+</A></B>
+                        <DT>• <B><A 
+                        href="http://www.devx.com/codemag/Article/22076?trk=DXRSS_LATEST">Climbing 
+                        Hills and Making Rules</A></B>
+                        <DT>• <B><A 
+                        href="http://www.devx.com/codemag/Article/22029?trk=DXRSS_LATEST">Ask 
+                        the Doc Detective: Read from the Registry of VB .NET 
+                        Applications and More</A></B>
+                        <DT>• <B><A 
+                        href="http://www.devx.com/codemag/Article/22039?trk=DXRSS_LATEST">Heard 
+                        on .NET Rocks!: SQL Reporting Services</A></B></FONT> 
+                        </DT></TD>
+                      <TD align=right width=10 
+                      background=CodeGuru_files/rightline.gif><IMG height=3 
+                        alt="" hspace=0 src="CodeGuru_files/rightline.gif" 
+                        width=10 border=0></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD background=CodeGuru_files/bottomline-bg.gif><IMG 
+                        height=13 alt="" hspace=0 
+                        src="CodeGuru_files/bottomcorner-left.gif" width=13 
+                        border=0></TD>
+                      <TD align=right 
+                      background=CodeGuru_files/bottomline-bg.gif><IMG 
+                        height=13 alt="" hspace=0 
+                        src="CodeGuru_files/bottomcorner-right.gif" width=13 
+                        border=0></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+            <P><!-- OBJECT:index.body.navbox(forum) -->
+            <TABLE cellSpacing=0 bgColor=#ffffff border=0>
+              <TBODY>
+              <TR>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD width=15 background=CodeGuru_files/blue-bg.gif><IMG 
+                        height=27 alt="" src="CodeGuru_files/blue-left.gif" 
+                        width=15 border=0></TD>
+                      <TD background=CodeGuru_files/blue-bg.gif><IMG height=16 
+                        alt="CodeGuru Forum Threads" 
+                        src="CodeGuru_files/forum-hdr.gif" width=229 
+border=0></TD>
+                      <TD align=right width=15 
+                      background=CodeGuru_files/blue-bg.gif><IMG height=27 
+                        alt="" src="CodeGuru_files/blue-right.gif" width=15 
+                        border=0></TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=3 width="100%" 
+                  bgColor=#797b58 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><A class=moreinfo 
+                        href="http://www.codeguru.com/forum/"><B>Latest CodeGuru 
+                        Threads</B></A></TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=#dedfdf>
+                        <TABLE cellSpacing=1 cellPadding=2 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD bgColor=#ffffff><FONT face="Verdana, Arial" 
+                              color=#000080 size=1><B>
+                              <CENTER>Topic</CENTER></B></FONT></TD>
+                            <TD bgColor=#ffffff><FONT face="Verdana, Arial" 
+                              color=#000080 size=1><B>
+                              <CENTER>By</CENTER></B></FONT></TD>
+                            <TD bgColor=#ffffff><FONT face="Verdana, Arial" 
+                              color=#000080 size=1><B>
+                              <CENTER>Replies</CENTER></B></FONT></TD>
+                            <TD width="17%" bgColor=#ffffff><FONT 
+                              face="Verdana, Arial" color=#000080 size=1><B>
+                              <CENTER>Updated</CENTER></B></FONT></TD></TR>
+                          <TR>
+                            <TD bgColor=#f7f7f7><FONT face=arial size=2><A 
+                              href="http://www.codeguru.com/forum/showthread.php?threadid=312582">MFC 
+                              to Windows APPlication</A></FONT></TD>
+                            <TD bgColor=#dedfdf><FONT face=arial size=2>
+                              <CENTER>arulnayagam</CENTER></FONT></TD>
+                            <TD bgColor=#f7f7f7><FONT face=arial size=2>
+                              <CENTER>1</CENTER></FONT></TD>
+                            <TD bgColor=#dedfdf><FONT face=arial size=1>
+                              <CENTER>October 4th, 03:43 
+AM</CENTER></FONT></TD></TR>
+                          <TR>
+                            <TD bgColor=#f7f7f7><FONT face=arial size=2><A 
+                              href="http://www.codeguru.com/forum/showthread.php?threadid=142118">Problem 
+                              with DialogBar</A></FONT></TD>
+                            <TD bgColor=#dedfdf><FONT face=arial size=2>
+                              <CENTER>DrOetker</CENTER></FONT></TD>
+                            <TD bgColor=#f7f7f7><FONT face=arial size=2>
+                              <CENTER>5</CENTER></FONT></TD>
+                            <TD bgColor=#dedfdf><FONT face=arial size=1>
+                              <CENTER>October 4th, 03:42 
+AM</CENTER></FONT></TD></TR>
+                          <TR>
+                            <TD bgColor=#f7f7f7><FONT face=arial size=2><A 
+                              href="http://www.codeguru.com/forum/showthread.php?threadid=312589">To 
+                              Get the Emulator DeskTopWindow and Tv 
+                              DeskTop</A></FONT></TD>
+                            <TD bgColor=#dedfdf><FONT face=arial size=2>
+                              <CENTER>S.DARWIN</CENTER></FONT></TD>
+                            <TD bgColor=#f7f7f7><FONT face=arial size=2>
+                              <CENTER>0</CENTER></FONT></TD>
+                            <TD bgColor=#dedfdf><FONT face=arial size=1>
+                              <CENTER>October 4th, 03:39 
+AM</CENTER></FONT></TD></TR>
+                          <TR>
+                            <TD bgColor=#f7f7f7><FONT face=arial size=2><A 
+                              href="http://www.codeguru.com/forum/showthread.php?threadid=312510">SDI/MDI/Dialog-based</A></FONT></TD>
+                            <TD bgColor=#dedfdf><FONT face=arial size=2>
+                              <CENTER>micknustiunimik</CENTER></FONT></TD>
+                            <TD bgColor=#f7f7f7><FONT face=arial size=2>
+                              <CENTER>1</CENTER></FONT></TD>
+                            <TD bgColor=#dedfdf><FONT face=arial size=1>
+                              <CENTER>October 4th, 03:37 
+AM</CENTER></FONT></TD></TR>
+                          <TR>
+                            <TD bgColor=#f7f7f7><FONT face=arial size=2><A 
+                              href="http://www.codeguru.com/forum/showthread.php?threadid=312571">Networking 
+                              Host/Client Questions</A></FONT></TD>
+                            <TD bgColor=#dedfdf><FONT face=arial size=2>
+                              <CENTER>Demonpants Software</CENTER></FONT></TD>
+                            <TD bgColor=#f7f7f7><FONT face=arial size=2>
+                              <CENTER>2</CENTER></FONT></TD>
+                            <TD bgColor=#dedfdf><FONT face=arial size=1>
+                              <CENTER>October 4th, 03:26 
+AM</CENTER></FONT></TD></TR>
+                          <TR>
+                            <TD bgColor=#f7f7f7><FONT face=arial size=2><A 
+                              href="http://www.codeguru.com/forum/showthread.php?threadid=300992">members 
+                              hierachy</A></FONT></TD>
+                            <TD bgColor=#dedfdf><FONT face=arial size=2>
+                              <CENTER>cilu</CENTER></FONT></TD>
+                            <TD bgColor=#f7f7f7><FONT face=arial size=2>
+                              <CENTER>2</CENTER></FONT></TD>
+                            <TD bgColor=#dedfdf><FONT face=arial size=1>
+                              <CENTER>October 4th, 03:25 
+AM</CENTER></FONT></TD></TR>
+                          <TR>
+                            <TD bgColor=#f7f7f7><FONT face=arial size=2><A 
+                              href="http://www.codeguru.com/forum/showthread.php?threadid=312530">Screenshot 
+                              from dialog without controls</A></FONT></TD>
+                            <TD bgColor=#dedfdf><FONT face=arial size=2>
+                              <CENTER>GreatGenius</CENTER></FONT></TD>
+                            <TD bgColor=#f7f7f7><FONT face=arial size=2>
+                              <CENTER>1</CENTER></FONT></TD>
+                            <TD bgColor=#dedfdf><FONT face=arial size=1>
+                              <CENTER>October 4th, 03:24 
+AM</CENTER></FONT></TD></TR>
+                          <TR>
+                            <TD bgColor=#f7f7f7><FONT face=arial size=2><A 
+                              href="http://www.codeguru.com/forum/showthread.php?threadid=312585">ftp 
+                              connection</A></FONT></TD>
+                            <TD bgColor=#dedfdf><FONT face=arial size=2>
+                              <CENTER>pow</CENTER></FONT></TD>
+                            <TD bgColor=#f7f7f7><FONT face=arial size=2>
+                              <CENTER>1</CENTER></FONT></TD>
+                            <TD bgColor=#dedfdf><FONT face=arial size=1>
+                              <CENTER>October 4th, 03:21 
+AM</CENTER></FONT></TD></TR>
+                          <TR>
+                            <TD bgColor=#f7f7f7><FONT face=arial size=2><A 
+                              href="http://www.codeguru.com/forum/showthread.php?threadid=312574">Disabling 
+                              Items in a Combo Box</A></FONT></TD>
+                            <TD bgColor=#dedfdf><FONT face=arial size=2>
+                              <CENTER>deepakgupta007</CENTER></FONT></TD>
+                            <TD bgColor=#f7f7f7><FONT face=arial size=2>
+                              <CENTER>2</CENTER></FONT></TD>
+                            <TD bgColor=#dedfdf><FONT face=arial size=1>
+                              <CENTER>October 4th, 03:17 
+AM</CENTER></FONT></TD></TR>
+                          <TR>
+                            <TD bgColor=#f7f7f7><FONT face=arial size=2><A 
+                              href="http://www.codeguru.com/forum/showthread.php?threadid=312588">String 
+                              to Char conversion involving Unicode 
+                              characters</A></FONT></TD>
+                            <TD bgColor=#dedfdf><FONT face=arial size=2>
+                              <CENTER>suhaib</CENTER></FONT></TD>
+                            <TD bgColor=#f7f7f7><FONT face=arial size=2>
+                              <CENTER>0</CENTER></FONT></TD>
+                            <TD bgColor=#dedfdf><FONT face=arial size=1>
+                              <CENTER>October 4th, 03:17 
+AM</CENTER></FONT></TD></TR>
+                          <TR>
+                            <TD bgColor=#797b58 colSpan=4><A class=moreinfo 
+                              href="http://www.codeguru.com/forum/"><B>Hottest 
+                              CodeGuru Threads</B></A></TD></TR>
+                          <TR>
+                            <TD bgColor=#ffffff><FONT face="Verdana, Arial" 
+                              color=#000080 size=1><B>
+                              <CENTER>Topic</CENTER></B></FONT></TD>
+                            <TD bgColor=#ffffff><FONT face="Verdana, Arial" 
+                              color=#000080 size=1><B>
+                              <CENTER>By</CENTER></B></FONT></TD>
+                            <TD bgColor=#ffffff><FONT face="Verdana, Arial" 
+                              color=#000080 size=1><B>
+                              <CENTER>Replies</CENTER></B></FONT></TD>
+                            <TD width="17%" bgColor=#ffffff><FONT 
+                              face="Verdana, Arial" color=#000080 size=1><B>
+                              <CENTER>Updated</CENTER></B></FONT></TD></TR>
+                          <TR>
+                            <TD bgColor=#f7f7f7><FONT face=arial size=2><A 
+                              href="http://www.codeguru.com/forum/showthread.php?threadid=311965">Sqrt</A></FONT></TD>
+                            <TD bgColor=#dedfdf><FONT face=arial size=2>
+                              <CENTER>PiyuNewe</CENTER></FONT></TD>
+                            <TD bgColor=#f7f7f7><FONT face=arial size=2>
+                              <CENTER>41</CENTER></FONT></TD>
+                            <TD bgColor=#dedfdf><FONT face=arial size=1>
+                              <CENTER>October 3rd, 11:41 
+PM</CENTER></FONT></TD></TR>
+                          <TR>
+                            <TD bgColor=#f7f7f7><FONT face=arial size=2><A 
+                              href="http://www.codeguru.com/forum/showthread.php?threadid=309349">debug 
+                              assertion failure</A></FONT></TD>
+                            <TD bgColor=#dedfdf><FONT face=arial size=2>
+                              <CENTER>fuzzypeach</CENTER></FONT></TD>
+                            <TD bgColor=#f7f7f7><FONT face=arial size=2>
+                              <CENTER>26</CENTER></FONT></TD>
+                            <TD bgColor=#dedfdf><FONT face=arial size=1>
+                              <CENTER>October 3rd, 10:52 
+AM</CENTER></FONT></TD></TR>
+                          <TR>
+                            <TD bgColor=#f7f7f7><FONT face=arial size=2><A 
+                              href="http://www.codeguru.com/forum/showthread.php?threadid=311958">Question 
+                              about Serializable.</A></FONT></TD>
+                            <TD bgColor=#dedfdf><FONT face=arial size=2>
+                              <CENTER>George2</CENTER></FONT></TD>
+                            <TD bgColor=#f7f7f7><FONT face=arial size=2>
+                              <CENTER>22</CENTER></FONT></TD>
+                            <TD bgColor=#dedfdf><FONT face=arial size=1>
+                              <CENTER>October 3rd, 08:03 
+AM</CENTER></FONT></TD></TR>
+                          <TR>
+                            <TD bgColor=#f7f7f7><FONT face=arial size=2><A 
+                              href="http://www.codeguru.com/forum/showthread.php?threadid=312416">Can 
+                              a class's constructors call each 
+                            other?</A></FONT></TD>
+                            <TD bgColor=#dedfdf><FONT face=arial size=2>
+                              <CENTER>John E</CENTER></FONT></TD>
+                            <TD bgColor=#f7f7f7><FONT face=arial size=2>
+                              <CENTER>20</CENTER></FONT></TD>
+                            <TD bgColor=#dedfdf><FONT face=arial size=1>
+                              <CENTER>October 3rd, 02:32 
+PM</CENTER></FONT></TD></TR>
+                          <TR>
+                            <TD bgColor=#f7f7f7><FONT face=arial size=2><A 
+                              href="http://www.codeguru.com/forum/showthread.php?threadid=312357">Resetting 
+                              the rand() function sequence</A></FONT></TD>
+                            <TD bgColor=#dedfdf><FONT face=arial size=2>
+                              <CENTER>Last Cetra</CENTER></FONT></TD>
+                            <TD bgColor=#f7f7f7><FONT face=arial size=2>
+                              <CENTER>16</CENTER></FONT></TD>
+                            <TD bgColor=#dedfdf><FONT face=arial size=1>
+                              <CENTER>October 3rd, 03:09 
+PM</CENTER></FONT></TD></TR>
+                          <TR>
+                            <TD bgColor=#f7f7f7><FONT face=arial size=2><A 
+                              href="http://www.codeguru.com/forum/showthread.php?threadid=312537">am 
+                              i'm loosing my mind ?</A></FONT></TD>
+                            <TD bgColor=#dedfdf><FONT face=arial size=2>
+                              <CENTER>BabyGuru</CENTER></FONT></TD>
+                            <TD bgColor=#f7f7f7><FONT face=arial size=2>
+                              <CENTER>13</CENTER></FONT></TD>
+                            <TD bgColor=#dedfdf><FONT face=arial size=1>
+                              <CENTER>October 3rd, 06:11 
+PM</CENTER></FONT></TD></TR>
+                          <TR>
+                            <TD bgColor=#f7f7f7><FONT face=arial size=2><A 
+                              href="http://www.codeguru.com/forum/showthread.php?threadid=311898">Using 
+                              Key Events to move an object around</A></FONT></TD>
+                            <TD bgColor=#dedfdf><FONT face=arial size=2>
+                              <CENTER>Psytherium</CENTER></FONT></TD>
+                            <TD bgColor=#f7f7f7><FONT face=arial size=2>
+                              <CENTER>11</CENTER></FONT></TD>
+                            <TD bgColor=#dedfdf><FONT face=arial size=1>
+                              <CENTER>October 3rd, 06:29 
+AM</CENTER></FONT></TD></TR>
+                          <TR>
+                            <TD bgColor=#f7f7f7><FONT face=arial size=2><A 
+                              href="http://www.codeguru.com/forum/showthread.php?threadid=312303">Images 
+                              in Button Control</A></FONT></TD>
+                            <TD bgColor=#dedfdf><FONT face=arial size=2>
+                              <CENTER>Kohinoor24</CENTER></FONT></TD>
+                            <TD bgColor=#f7f7f7><FONT face=arial size=2>
+                              <CENTER>11</CENTER></FONT></TD>
+                            <TD bgColor=#dedfdf><FONT face=arial size=1>
+                              <CENTER>October 3rd, 10:17 
+AM</CENTER></FONT></TD></TR>
+                          <TR>
+                            <TD bgColor=#f7f7f7><FONT face=arial size=2><A 
+                              href="http://www.codeguru.com/forum/showthread.php?threadid=312529">Borland 
+                              C++ builder(help)</A></FONT></TD>
+                            <TD bgColor=#dedfdf><FONT face=arial size=2>
+                              <CENTER>morphman</CENTER></FONT></TD>
+                            <TD bgColor=#f7f7f7><FONT face=arial size=2>
+                              <CENTER>11</CENTER></FONT></TD>
+                            <TD bgColor=#dedfdf><FONT face=arial size=1>
+                              <CENTER>October 3rd, 03:56 
+PM</CENTER></FONT></TD></TR>
+                          <TR>
+                            <TD bgColor=#f7f7f7><FONT face=arial size=2><A 
+                              href="http://www.codeguru.com/forum/showthread.php?threadid=312511">dialog 
+                              and graph!!!</A></FONT></TD>
+                            <TD bgColor=#dedfdf><FONT face=arial size=2>
+                              <CENTER>Ninja</CENTER></FONT></TD>
+                            <TD bgColor=#f7f7f7><FONT face=arial size=2>
+                              <CENTER>11</CENTER></FONT></TD>
+                            <TD bgColor=#dedfdf><FONT face=arial size=1>
+                              <CENTER>October 4th, 03:04 
+                          AM</CENTER></FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+            <P>
+            <TABLE cellSpacing=0 cellPadding=0 width=600 bgColor=#ffffff 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width=8 rowSpan=2></TD>
+                <TD><A href="http://www.codeguru.com/Cpp/"><IMG height=30 
+                  alt="Visual C++/C++" src="CodeGuru_files/visualc-sitemap.gif" 
+                  width=180 border=0></A></TD>
+                <TD width=15 rowSpan=2></TD>
+                <TD><A href="http://www.codeguru.com/Csharp/"><IMG height=30 
+                  alt=.NET/C# src="CodeGuru_files/net-sitemap.gif" width=180 
+                  border=0></A></TD>
+                <TD width=15 rowSpan=2></TD>
+                <TD><A href="http://www.codeguru.com/vb/"><IMG height=30 
+                  alt="Visual Basic" src="CodeGuru_files/vb-sitemap.gif" 
+                  width=180 border=0></A></TD></TR>
+              <TR>
+                <TD vAlign=top>
+                  <TABLE cellSpacing=0 cellPadding=4 width=180 bgColor=#ccd6e0 
+                  border=0>
+                    <TBODY>
+                    <TR>
+                      <TD>
+                        <P><A class=smheadline 
+                        href="http://www.codeguru.com/Cpp/Cpp">C++</A><BR>
+                        <UL>
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/Cpp/algorithms">Algorithms 
+                          &amp; Formulas</A> 
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/Cpp/cpp_mfc">C++ 
+                          &amp; MFC</A> 
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/Cpp/date_time">Date 
+                          &amp; Time</A> 
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/Cpp/cpp_managed">Managed 
+                          C++</A> 
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/Cpp/string">String 
+                          Programming</A> </LI></UL>
+                        <P></P>
+                        <P><A class=smheadline 
+                        href="http://www.codeguru.com/Cpp/COM-Tech">COM-based 
+                        Technologies</A><BR>
+                        <UL>
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/COM-Tech/atl">ATL 
+                          &amp; WTL Programming</A> 
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/COM-Tech/activex">ActiveX 
+                          Programming</A> 
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/COM-Tech/complus">COM+</A> 
+
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/COM-Tech/shell">Shell 
+                          Programming</A> </LI></UL>
+                        <P></P>
+                        <P><A class=smheadline 
+                        href="http://www.codeguru.com/Cpp/controls">Controls</A><BR>
+                        <UL>
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/controls/buttonctrl">Button 
+                          Control</A> 
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/controls/combobox">ComboBox</A> 
+
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/controls/editctrl">Edit 
+                          Control</A> 
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/controls/imagelist">ImageList 
+                          Control</A> 
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/controls/listbox">ListBox 
+                          Control</A> 
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/controls/listview">ListView 
+                          Control</A> 
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/controls/menu">Menu</A> 
+
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/controls/controls">Other 
+                          Controls</A> 
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/controls/propertysheet">Property 
+                          Sheet</A> 
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/controls/richedit">Rich 
+                          Edit Control</A> 
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/controls/staticctrl">Static 
+                          Control</A> 
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/controls/statusbar">Status 
+                          Bar</A> 
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/controls/toolbar">Toolbar</A> 
+
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/controls/treeview">Treeview 
+                          Control</A> </LI></UL>
+                        <P></P>
+                        <P><A class=smheadline 
+                        href="http://www.codeguru.com/Cpp/data">Data</A><BR>
+                        <UL>
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/data/mfc_database">Database</A> 
+
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/data/data-misc">Miscellaneous</A> 
+                          </LI></UL>
+                        <P></P>
+                        <P><A class=smheadline 
+                        href="http://www.codeguru.com/Cpp/frameworks">Frameworks</A><BR>
+                        <UL>
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/frameworks/advancedui">UI 
+                          &amp; Printing Frameworks</A> </LI></UL>
+                        <P></P>
+                        <P><A class=smheadline 
+                        href="http://www.codeguru.com/Cpp/G-M">Graphics &amp; 
+                        Multimedia</A><BR>
+                        <UL>
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/G-M/bitmap">Bitmaps 
+                          &amp; Palettes</A> 
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/G-M/directx">DirectX</A> 
+
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/G-M/gdi">GDI</A> 
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/G-M/multimedia">Multimedia</A> 
+
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/G-M/opengl">OpenGL</A> 
+                          </LI></UL>
+                        <P></P>
+                        <P><A class=smheadline 
+                        href="http://www.codeguru.com/Cpp/I-N">Internet &amp; 
+                        Networking</A><BR>
+                        <UL>
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/I-N/ieprogram">IE 
+                          Programming</A> 
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/I-N/isapi">ISAPI</A> 
+
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/I-N/internet">Internet 
+                          Protocols</A> 
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/I-N/network">Network 
+                          Protocols</A> </LI></UL>
+                        <P></P>
+                        <P><A class=smheadline 
+                        href="http://www.codeguru.com/Cpp/misc">Miscellaneous</A><BR>
+                        <UL>
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/misc/misc">Miscellaneous</A> 
+
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/misc/samples">Samples</A> 
+                          </LI></UL>
+                        <P></P>
+                        <P><A class=smheadline 
+                        href="http://www.codeguru.com/Cpp/V-S">Visual 
+                        Studio</A><BR>
+                        <UL>
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/V-S/devstudio_macros">Add-ins 
+                          &amp; Macros</A> 
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/V-S/debug">Debugging</A> 
+
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/V-S/tips">Editor 
+                          Tips</A> </LI></UL>
+                        <P></P>
+                        <P><A class=smheadline 
+                        href="http://www.codeguru.com/Cpp/W-D">Windows &amp; 
+                        Dialogs</A><BR>
+                        <UL>
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/W-D/console">Console</A> 
+
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/W-D/dislog">Dialog</A> 
+
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/W-D/doc_view">Doc/View</A> 
+
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/W-D/docking">Docking 
+                          Window</A> 
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/W-D/splitter">Splitter</A> 
+                          </LI></UL>
+                        <P></P>
+                        <P><A class=smheadline 
+                        href="http://www.codeguru.com/Cpp/W-P">Windows 
+                        Programming</A><BR>
+                        <UL>
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/W-P/ce">CE</A> 
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/W-P/clipboard">Clipboard</A> 
+
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/W-P/dll">DLL</A> 
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/W-P/files">File 
+                          &amp; Folder</A> 
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/W-P/help">Help 
+                          Systems</A> 
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/W-P/printing">Printing</A> 
+
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/W-P/system">System</A> 
+
+                          <LI><A 
+                          href="http://www.codeguru.com/Cpp/W-P/win32">Win32</A> 
+                          </LI></UL>
+                        <P></P></TD></TR></TBODY></TABLE><IMG height=29 alt="" 
+                  src="CodeGuru_files/sitemap-blue-btm.gif" width=180 border=0> 
+                </TD>
+                <TD vAlign=top>
+                  <TABLE cellSpacing=0 cellPadding=4 width=180 bgColor=#e4e5de 
+                  border=0>
+                    <TBODY>
+                    <TR>
+                      <TD>
+                        <P><A class=smheadline 
+                        href="http://www.codeguru.com/Csharp/.NET">.NET</A><BR>
+                        <UL>
+                          <LI><A 
+                          href="http://www.codeguru.com/Csharp/.NET/net_data">Data 
+                          &amp; Databases</A> 
+                          <LI><A 
+                          href="http://www.codeguru.com/Csharp/.NET/net_debugging">Debugging</A> 
+
+                          <LI><A 
+                          href="http://www.codeguru.com/Csharp/.NET/net_framework">Framework</A> 
+
+                          <LI><A 
+                          href="http://www.codeguru.com/Csharp/.NET/net_general">General</A> 
+
+                          <LI><A 
+                          href="http://www.codeguru.com/Csharp/.NET/net_asp">General 
+                          ASP.NET</A> 
+                          <LI><A 
+                          href="http://www.codeguru.com/Csharp/.NET/jscript">JScript 
+                          .NET</A> 
+                          <LI><A 
+                          href="http://www.codeguru.com/Csharp/.NET/cpp_managed">Managed 
+                          C++</A> 
+                          <LI><A 
+                          href="http://www.codeguru.com/Csharp/.NET/net_security">Net 
+                          Security</A> 
+                          <LI><A 
+                          href="http://www.codeguru.com/Csharp/.NET/net_vs_addins">VS 
+                          Add-Ins</A> </LI></UL>
+                        <P></P>
+                        <P><A class=smheadline 
+                        href="http://www.codeguru.com/Csharp/Csharp">C#</A><BR>
+                        <UL>
+                          <LI><A 
+                          href="http://www.codeguru.com/Csharp/Csharp/cs_syntax">Basic 
+                          Syntax</A> 
+                          <LI><A 
+                          href="http://www.codeguru.com/Csharp/Csharp/cs_collections">Collections</A> 
+
+                          <LI><A 
+                          href="http://www.codeguru.com/Csharp/Csharp/cs_controls">Controls</A> 
+
+                          <LI><A 
+                          href="http://www.codeguru.com/Csharp/Csharp/cs_data">Data 
+                          &amp; I/O</A> 
+                          <LI><A 
+                          href="http://www.codeguru.com/Csharp/Csharp/cs_date_time">Date 
+                          &amp; Time</A> 
+                          <LI><A 
+                          href="http://www.codeguru.com/Csharp/Csharp/cs_delegates">Delegates</A> 
+
+                          <LI><A 
+                          href="http://www.codeguru.com/Csharp/Csharp/cs_graphics">Graphics 
+                          &amp; Multimedia</A> 
+                          <LI><A 
+                          href="http://www.codeguru.com/Csharp/Csharp/cs_internet">Internet</A> 
+
+                          <LI><A 
+                          href="http://www.codeguru.com/Csharp/Csharp/cs_misc">Miscellaneous</A> 
+
+                          <LI><A 
+                          href="http://www.codeguru.com/Csharp/Csharp/cs_network">Network 
+                          &amp; Systems</A> 
+                          <LI><A 
+                          href="http://www.codeguru.com/Csharp/Csharp/cs_webservices">Web 
+                          Services</A> </LI></UL>
+                        <P></P></TD></TR></TBODY></TABLE><IMG height=29 alt="" 
+                  src="CodeGuru_files/sitemap-yellow-btm.gif" width=180 
+                  border=0> </TD>
+                <TD vAlign=top>
+                  <TABLE cellSpacing=0 cellPadding=4 width=180 bgColor=#ccd6e0 
+                  border=0>
+                    <TBODY>
+                    <TR>
+                      <TD>
+                        <P><A class=smheadline 
+                        href="http://www.codeguru.com/vb/gen">General</A> 
+                        <UL>
+                          <LI><A 
+                          href="http://www.codeguru.com/vb/gen/vb_database">Database</A> 
+
+                          <LI><A 
+                          href="http://www.codeguru.com/vb/gen/vb_forms">Forms 
+                          &amp; Controls</A> 
+                          <LI><A 
+                          href="http://www.codeguru.com/vb/gen/vb_general">IDE 
+                          &amp; Language</A> 
+                          <LI><A 
+                          href="http://www.codeguru.com/vb/gen/vb_misc">Misc</A> 
+
+                          <LI><A 
+                          href="http://www.codeguru.com/vb/gen/vb_system">System</A> 
+
+                          <LI><A 
+                          href="http://www.codeguru.com/vb/gen/vb_graphics">VB 
+                          Graphics</A> 
+                          <LI><A 
+                          href="http://www.codeguru.com/vb/gen/vb_multimedia">VB 
+                          Multimedia</A> </LI></UL>
+                        <P></P>
+                        <P><A class=smheadline 
+                        href="http://www.codeguru.com/vb/vb_internet">Internet</A> 
+
+                        <UL>
+                          <LI><A 
+                          href="http://www.codeguru.com/vb/vb_internet/aspnet">ASP 
+                          .NET</A> 
+                          <LI><A 
+                          href="http://www.codeguru.com/vb/vb_internet/database">Database</A> 
+
+                          <LI><A 
+                          href="http://www.codeguru.com/vb/vb_internet/html">HTML</A> 
+
+                          <LI><A 
+                          href="http://www.codeguru.com/vb/vb_internet/indexing">Indexing</A> 
+
+                          <LI><A 
+                          href="http://www.codeguru.com/vb/vb_internet/smtpemail">SMTP 
+                          / eMail</A> 
+                          <LI><A 
+                          href="http://www.codeguru.com/vb/vb_internet/webservices">Web 
+                          Services</A> </LI></UL>
+                        <P></P>
+                        <P><A class=smheadline 
+                        href="http://www.codeguru.com/vb/mobile">Mobile/Wireless</A> 
+
+                        <UL>
+                          <LI><A 
+                          href="http://www.codeguru.com/vb/mobile/mobileinternettoolkit">Mobile 
+                          Internet Toolkit</A> 
+                          <LI><A 
+                          href="http://www.codeguru.com/vb/mobile/pocketpc">Pocket 
+                          PC</A> </LI></UL>
+                        <P></P>
+                        <P><A class=smheadline 
+                        href="http://www.codeguru.com/vb/controls">VB 
+                        Controls</A> 
+                        <UL>
+                          <LI><A 
+                          href="http://www.codeguru.com/vb/controls/vbnet_controls">.NET 
+                          Controls</A> 
+                          <LI><A 
+                          href="http://www.codeguru.com/vb/controls/vb_activex">VB 
+                          ActiveX</A> 
+                          <LI><A 
+                          href="http://www.codeguru.com/vb/controls/vb_combobox">VB 
+                          ComboBox</A> 
+                          <LI><A 
+                          href="http://www.codeguru.com/vb/controls/vb_file">VB 
+                          Files</A> 
+                          <LI><A 
+                          href="http://www.codeguru.com/vb/controls/vb_listbox">VB 
+                          ListBox</A> 
+                          <LI><A 
+                          href="http://www.codeguru.com/vb/controls/vb_listview">VB 
+                          ListView</A> 
+                          <LI><A 
+                          href="http://www.codeguru.com/vb/controls/vb_othctrl">VB 
+                          Other Controls</A> 
+                          <LI><A 
+                          href="http://www.codeguru.com/vb/controls/vb_shell">VB 
+                          Shell</A> </LI></UL>
+                        <P></P></TD></TR></TBODY></TABLE><IMG height=29 alt="" 
+                  src="CodeGuru_files/sitemap-blue-btm.gif" width=180 border=0> 
+                </TD></TR></TBODY></TABLE></SPAN><!--Content end--></P></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD bgColor=#666666 colSpan=2><IMG height=2 alt="" 
+      src="CodeGuru_files/sp.gif" width=1 border=0></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=10 width="100%" bgColor=#ffffff border=0>
+  <TBODY>
+  <TR>
+    <TD align=middle>
+      <SCRIPT language=JavaScript>
+<!--
+var plugin = 0;
+if (navigator.mimeTypes && navigator.mimeTypes["application/x-shockwave-flash"] && navigator.mimeTypes["application/x-shockwave-flash"].enabledPlugin)
+{
+if (navigator.plugins && navigator.plugins["Shockwave Flash"])plugin = 1;
+}
+else if (navigator.userAgent && navigator.userAgent.indexOf("MSIE")>=0
+&& (navigator.userAgent.indexOf("Windows 95")>=0 || navigator.userAgent.indexOf("Windows 98")>=0 || navigator.userAgent.indexOf("Windows NT")>=0)) {
+document.write('<SCRIPT LANGUAGE=VBScript>\n');
+document.write('on error resume next \n');
+document.write('plugin = ( IsObject(CreateObject("ShockwaveFlash.ShockwaveFlash.3")))\n');
+document.write('if ( plugin <= 0 ) then plugin = ( IsObject(CreateObject("ShockwaveFlash.ShockwaveFlash.4")))\n');
+document.write('if ( plugin <= 0 ) then plugin = ( IsObject(CreateObject("ShockwaveFlash.ShockwaveFlash.5")))\n');
+document.write('if ( plugin <= 0 ) then plugin = ( IsObject(CreateObject("ShockwaveFlash.ShockwaveFlash.6")))\n');
+document.write('</' + 'SCRIPT> \n');
+}
+if ( plugin )
+{
+document.write('<OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"');
+document.write('  codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=3,0,0,0" ');
+document.write(' ID=outsourcing-it.swf WIDTH=750 HEIGHT=100>');
+document.write(' <PARAM NAME=movie VALUE="http://www.codeguru.com/RealMedia/ads/Creatives/OasDefault/House_Jupiter_Research_5a/outsourcing-it.swf?clickTAG=http://www.codeguru.com/RealMedia/ads/click_lx.ads/ew/ewsoftware/www.codeguru.com/index/665507164/468x60-2/OasDefault/House_Jupiter_Research_5a/outsourcing-it.html/63626132326333313431326165353530?http://www.jupiterdirect.com/bin/report.pl/94195/1015"><PARAM NAME=menu VALUE=false> <PARAM NAME=quality VALUE=high> <PARAM NAME=bgcolor VALUE=WHITE>  ');
+document.write(' <EMBED src="http://www.codeguru.com/RealMedia/ads/Creatives/OasDefault/House_Jupiter_Research_5a/outsourcing-it.swf?clickTAG=http://www.codeguru.com/RealMedia/ads/click_lx.ads/ew/ewsoftware/www.codeguru.com/index/665507164/468x60-2/OasDefault/House_Jupiter_Research_5a/outsourcing-it.html/63626132326333313431326165353530?http://www.jupiterdirect.com/bin/report.pl/94195/1015" menu=false quality=high bgcolor=WHITE  ');
+document.write(' swLiveConnect=FALSE WIDTH=750 HEIGHT=100');document.write(' TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash">');document.write(' </EMBED>');
+document.write(' </OBJECT>');
+}
+else if (!(navigator.appName && navigator.appName.indexOf("Netscape")>=0 && navigator.appVersion.indexOf("2.")>=0))
+{document.write('<a href="http://www.codeguru.com/RealMedia/ads/click_lx.ads/ew/ewsoftware/www.codeguru.com/index/665507164/468x60-2/OasDefault/House_Jupiter_Research_5a/outsourcing-it.html/63626132326333313431326165353530?http://www.jupiterdirect.com/bin/report.pl/94195/1015"><IMG SRC="http://www.codeguru.com/RealMedia/ads/Creatives/OasDefault/House_Jupiter_Research_5a/outsourcing-it.gif" WIDTH=750 HEIGHT=100 BORDER=0></a>');
+}
+//-->
+</SCRIPT>
+      <NOEMBED><A 
+      href="http://www.codeguru.com/RealMedia/ads/click_lx.ads/ew/ewsoftware/www.codeguru.com/index/665507164/468x60-2/OasDefault/House_Jupiter_Research_5a/outsourcing-it.html/63626132326333313431326165353530?http://www.jupiterdirect.com/bin/report.pl/94195/1015"><IMG 
+      height=100 src="CodeGuru_files/outsourcing-it.gif" width=750 border=0></A> 
+      </NOEMBED><NOSCRIPT><A 
+      href="http://www.codeguru.com/RealMedia/ads/click_lx.ads/ew/ewsoftware/www.codeguru.com/index/665507164/468x60-2/OasDefault/House_Jupiter_Research_5a/outsourcing-it.html/63626132326333313431326165353530?http://www.jupiterdirect.com/bin/report.pl/94195/1015"><IMG 
+      height=100 src="CodeGuru_files/outsourcing-it.gif" width=750 border=0></A> 
+      </NOSCRIPT><IMG height=1 
+      src="D:\luanvan\program\agmagic\windows\src\common\doc\websites\CodeGuru_files\63626132326333313431326165353530(17).gif" 
+      width=1> </TD></TR>
+  <TR>
+    <TD class=bodycopy align=middle>
+      <CENTER><BR clear=all>
+      <CENTER>
+      <TABLE cellSpacing=0 cellPadding=5 bgColor=#ffffff border=0>
+        <TBODY>
+        <TR>
+          <FORM action=http://search.internet.com/www.jupiterweb.com 
+method=post>
+          <TD align=middle><FONT face="verdana, arial, helvetica" 
+            size=-2><B>JupiterWeb networks:</B></FONT> 
+            <P><A class=foot href="http://www.internet.com/"><IMG height=15 
+            alt=internet.com hspace=0 src="CodeGuru_files/icom_foot.gif" 
+            width=97 align=absMiddle border=0></A><IMG height=25 alt="" 
+            hspace=10 src="CodeGuru_files/ruledivide_foot.gif" width=1 
+            align=absMiddle border=0><A href="http://www.earthweb.com/"><IMG 
+            height=12 alt=earthweb.com hspace=5 
+            src="CodeGuru_files/earthweb_foot2.gif" width=93 align=absMiddle 
+            border=0></A><IMG height=25 alt="" hspace=10 
+            src="CodeGuru_files/ruledivide_foot.gif" width=1 align=absMiddle 
+            border=0><A href="http://www.devx.com/"><IMG height=30 alt=Devx.com 
+            hspace=0 src="CodeGuru_files/devx_foot2.gif" width=35 
+            align=absMiddle border=0></A><IMG height=25 alt="" hspace=10 
+            src="CodeGuru_files/ruledivide_foot.gif" width=1 align=absMiddle 
+            border=0><A href="http://www.clickz.com/"><IMG height=24 alt=ClickZ 
+            hspace=0 src="CodeGuru_files/clickz_foot2.gif" width=55 
+            align=absMiddle border=0></A> 
+            <P><FONT face="verdana, arial, helvetica" size=-2><B>Search 
+            JupiterWeb:</B> <INPUT type=hidden value=1 name=IC_Summary> <INPUT 
+            type=hidden value=0 name=IC_StartNumber> <INPUT type=hidden value=10 
+            name=IC_BatchSize> <INPUT type=hidden value=50 
+            name=IC_RelevanceThreshold> <INPUT type=hidden value=all 
+            name=IC_QueryDatabase> <INPUT size=50 name=IC_QueryText> <INPUT 
+            type=image height=20 width=41 src="CodeGuru_files/but_find.gif" 
+            align=absMiddle value=Find border=0 name=SUBMIT> </FONT>
+            <P><FONT face="verdana, arial, helvetica" size=-2><A class=foot 
+            href="http://www.jupitermedia.com/">Jupitermedia Corporation</A> has 
+            four divisions: <BR><A class=foot 
+            href="http://www.jupiterweb.com/">JupiterWeb</A>, <A class=foot 
+            href="http://www.jupiterresearch.com/">JupiterResearch</A>, <A 
+            class=foot href="http://www.jupiterevents.com/">JupiterEvents</A> 
+            and <A class=foot 
+            href="http://www.jupiterimages.com/">JupiterImages</A> 
+            <P><SPAN class=foot>Copyright <!--YEAR-->2004 Jupitermedia 
+            Corporation All Rights Reserved.<BR><A class=foot 
+            href="http://www.jupitermedia.com/corporate/legal.html">Legal 
+            Notices</A>, <A class=foot 
+            href="http://www.jupitermedia.com/corporate/reprints.html#Licensing1">Licensing</A>, 
+            <A class=foot 
+            href="http://www.jupitermedia.com/corporate/reprints.html#Reprints1">Reprints</A>, 
+            &amp; <A class=foot 
+            href="http://www.jupitermedia.com/corporate/reprints.html#Permissions">Permissions</A>, 
+            <A class=foot 
+            href="http://www.jupitermedia.com/corporate/privacy/privacypolicy.html">Privacy 
+            Policy</A>. </FONT>
+            <P><FONT face="verdana, arial, helvetica" size=-2><A class=foot 
+            href="http://www.jupitermedia.com/corporate/">Jupitermedia Corporate 
+            Info</A> | <A class=foot 
+            href="http://e-newsletters.internet.com/">Newsletters</A> | <A 
+            class=foot href="http://jobs.internet.com/">Tech Jobs</A> | <A 
+            class=foot 
+            href="http://e-newsletters.internet.com/mailinglists.html">E-mail 
+            Offers</A></SPAN></FONT> 
+      </P></TD></FORM></TR></TBODY></TABLE></CENTER></CENTER></TD></TR></TBODY></TABLE></BODY></HTML>

@@ -1,0 +1,84 @@
+BODY {
+	MARGIN: 0px
+}
+PRE {
+	FONT-SIZE: 10pt; COLOR: #802000; FONT-FAMILY: "Courier New", monospace
+}
+CODE {
+	FONT-SIZE: 10pt; COLOR: #802000; FONT-FAMILY: "Courier New", monospace
+}
+A:link {
+	COLOR: #006600
+}
+A:visited {
+	COLOR: #006600
+}
+A:active {
+	COLOR: #40a000
+}
+A:hover {
+	TEXT-DECORATION: none
+}
+TD.nav1 {
+	BACKGROUND-COLOR: #e8e8d8
+}
+TD.nav2 {
+	BACKGROUND-COLOR: #e8e8d8
+}
+TD.nav1a {
+	BACKGROUND-COLOR: white
+}
+TD.nav2a {
+	BACKGROUND-COLOR: white
+}
+TD.nav1 {
+	PADDING-LEFT: 5px
+}
+TD.nav1a {
+	PADDING-LEFT: 5px
+}
+TD.nav2 {
+	PADDING-LEFT: 15px
+}
+TD.nav2a {
+	PADDING-LEFT: 15px
+}
+TABLE.nav A:link {
+	FONT-SIZE: 9pt; COLOR: #666600; TEXT-DECORATION: none
+}
+TABLE.nav A:visited {
+	FONT-SIZE: 9pt; COLOR: #666600; TEXT-DECORATION: none
+}
+TABLE.nav A:active {
+	FONT-SIZE: 9pt; COLOR: #666600; TEXT-DECORATION: none
+}
+P {
+	FONT-SIZE: 10pt; FONT-FAMILY: Arial, sans-serif
+}
+TD {
+	FONT-SIZE: 10pt; FONT-FAMILY: Arial, sans-serif
+}
+P.news {
+	FONT-SIZE: 8pt; COLOR: #000000; FONT-FAMILY: Tahoma, sans-serif
+}
+P.small {
+	FONT-SIZE: 8pt; COLOR: #808080; FONT-FAMILY: Tahoma, sans-serif
+}
+H3 {
+	FONT-SIZE: 13pt; FONT-FAMILY: Verdana, sans-serif
+}
+H4 {
+	FONT-SIZE: 13pt; FONT-FAMILY: Verdana, sans-serif
+}
+H3 {
+	COLOR: #cc3300
+}
+H4 {
+	COLOR: #cc9900
+}
+UL LI {
+	LIST-STYLE-IMAGE: url(/shared/b1.gif)
+}
+SUP {
+	FONT-SIZE: x-small
+}

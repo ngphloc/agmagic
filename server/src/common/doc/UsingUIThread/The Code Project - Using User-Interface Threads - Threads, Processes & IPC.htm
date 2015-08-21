@@ -1,0 +1,2828 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0053)http://www.codeproject.com/threads/usinguithreads.asp -->
+<HTML><HEAD><TITLE>The Code Project - Using User-Interface Threads - Threads, Processes & IPC</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META http-equiv=Reply-to content=mailto:webmaster@codeproject.com>
+<META content="Free source code and tutorials for Windows developers." 
+name=Description>
+<META 
+content="Free source code, Threads, Processes &amp; IPC, Visual C++, MFC, Windows, threads, UI, user interface, apartment threading" 
+name=keywords>
+<META 
+content="Article content copyright Joseph M. Newcomer, 2000, everthing else Copyright © CodeProject, 1999-2004, All Rights Reserved." 
+name=Copyright><LINK href="/favicon.ico" type=image/ico rel=icon><LINK 
+href="/favicon.ico" rel="SHORTCUT ICON"><LINK 
+href="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/global.css" 
+type=text/css rel=stylesheet>
+<SCRIPT language=javascript 
+src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/oncopy.js"></SCRIPT>
+
+<META content="MSHTML 6.00.3790.0" name=GENERATOR></HEAD>
+<BODY oncopy="return copyCode();" text=black vLink=purple aLink=red link=blue 
+bgColor=white leftMargin=3 topMargin=3>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#ff9900 border=0>
+  <TBODY>
+  <TR>
+    <TD width="100%">
+      <TABLE cellSpacing=1 cellPadding=0 width="100%" bgColor=#ff9900 
+        border=0><TBODY>
+        <TR>
+          <TD vAlign=top><A href="http://www.codeproject.com/"><IMG height=72 
+            alt="The Code Project" 
+            src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/logo225x72.gif" 
+            width=225 border=0></A></TD>
+          <TD align=right><SPAN id=AdBanner4><A 
+            href="http://www.codeproject.com/script/admentor/ads.asp"><IMG 
+            height=60 alt="View our advertisers" 
+            src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/sponsors.gif" 
+            width=20 border=1></A>
+            <SCRIPT language=javascript>document.write("<a href=\"/script/admentor/admentorredir.asp?id=460&way=ban\" target=_blank><img src=\"/script/admentor/include/ServeAd.aspx?File=%2Fscript%2Fadmentor%2Fimages%2FSQL468x60Sticker%28i%29%2Egif&C=False&id=460\" alt=\"Compare & synchronize SQL Server database schema - 100 times faster!\" border=0 width=468 height=60></a>");</SCRIPT>
+            <A href="http://www.codeproject.com/info/mediakit"><IMG height=60 
+            alt="Advertise on the CodeProject" 
+            src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/advertise.gif" 
+            width=20 border=1></A></SPAN></TD></TR>
+        <TR>
+          <TD bgColor=#fbedbb colSpan=2>
+            <TABLE cellPadding=3 width="100%" bgColor=#fbedbb border=0>
+              <TBODY>
+              <TR vAlign=top>
+                <TD width="100%"><FONT style="FONT-SIZE: 8pt"><A 
+                  href="http://www.codeproject.com/?cat=1">All Topics</A>, <A 
+                  href="http://www.codeproject.com/?cat=2">MFC / C++</A> 
+                  &gt;&gt; <A 
+                  href="http://www.codeproject.com/threads/">Threads, Processes 
+                  &amp; IPC</A> &gt;&gt; <A 
+                  href="http://www.codeproject.com/threads/#Threads">Threads</A></FONT><BR><BR><B><FONT 
+                  style="FONT-SIZE: 16pt" size=4>Using User-Interface 
+                  Threads</FONT></B><BR><B>By <A 
+                  href="http://www.codeproject.com/script/profile/whos_who.asp?id=117">Joseph 
+                  M. Newcomer</A> </B><BR><BR><FONT style="FONT-SIZE: 9pt">Learn 
+                  tricks on how to create and use a User-Interface 
+                  thread.&nbsp;</FONT> </TD>
+                <TD vAlign=top align=right>
+                  <TABLE cellSpacing=0 cellPadding=1 width=200 border=0>
+                    <TBODY>
+                    <TR vAlign=top>
+                      <TD>&nbsp;</TD>
+                      <TD class=SmallText>C++ (VC6)<BR>Windows (Win95, Win98, 
+                        WinME, NT4)<BR>MFC, Win32, VS<BR>Dev</TD></TR>
+                    <TR>
+                      <TD>&nbsp;</TD>
+                      <TD class=SmallText noWrap>Posted 17 May 2000</TD></TR>
+                    <TR vAlign=top>
+                      <TD><IMG height=16 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/hlp.gif" 
+                        width=16></TD>
+                      <TD class=SmallText noWrap><A 
+                        href="http://www.codeproject.com/script/Articles/list_articles.asp?userid=117">Articles 
+                        by this author</A></TD></TR>
+                    <TR vAlign=top>
+                      <TD></TD>
+                      <TD class=SmallText noWrap><B>102,613</B> 
+                    views</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD colSpan=2>
+            <TABLE id=tblSiteToolbar cellSpacing=0 cellPadding=1 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <FORM name=Search action=/info/search.asp method=post>
+                <TD vAlign=top align=left width="100%">
+                  <TABLE cellSpacing=0 cellPadding=1 border=0>
+                    <TBODY>
+                    <TR vAlign=center>
+                      <TD class=smallText><B><FONT 
+                        color=white>Search:</FONT></B></TD>
+                      <TD class=navbar noWrap><INPUT class=smallText 
+                        maxLength=255 size=18 name=target></TD>
+                      <TD vAlign=top><SELECT class=smallText name=st> 
+                          <OPTION value=kw selected>Articles</OPTION> <OPTION 
+                          value=au>Authors</OPTION></SELECT></TD>
+                      <TD><INPUT class=formButton type=submit value=Go></TD></TR></TBODY></TABLE></TD></FORM>
+                <TD>
+                  <DIV id=MenuPos 
+                  style="WIDTH: 380px; POSITION: relative; HEIGHT: 20px">
+                  <TABLE height=20 cellSpacing=0 cellPadding=2 width=375>
+                    <TBODY>
+                    <TR>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/info/faq.asp">Help!</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/info/latest.asp">Articles</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/script/comments/forums.asp">Message 
+                        Boards</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/store/">StoreFront</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.codeproject.com/lounge.asp">Lounge</A></TD></TR></TBODY></TABLE></DIV></TD></TR></TBODY></TABLE>
+            <SCRIPT type=text/javascript>function Go(){return}</SCRIPT>
+
+            <SCRIPT 
+            src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/cpmenu_var.js" 
+            type=text/javascript></SCRIPT>
+
+            <SCRIPT 
+            src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/menu10_com.js" 
+            type=text/javascript></SCRIPT>
+          </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=1 border=0>
+  <TBODY>
+  <TR vAlign=top>
+    <TD vAlign=top bgColor=#fbedbb rowSpan=2>
+      <TABLE cellSpacing=0 cellPadding=0 border=0>
+        <SCRIPT language=javascript>
+function ErrorHandle() {}
+window.onerror = ErrorHandle;
+
+function OnNLSubmit(option)
+{
+	if (option=="up")
+		document.subForm.action = "/script/profile/modify.asp?ct=%2Fthreads%2Fusinguithreads%2Easp";
+	else if (option=="in")
+		document.subForm.action = "/script/profile/process_logon.asp?ct=%2Fthreads%2Fusinguithreads%2Easp";
+	document.subForm.submit();
+	return true;
+}
+</SCRIPT>
+
+        <TBODY>
+        <TR>
+          <TD>
+            <TABLE cellSpacing=3 cellPadding=0>
+              <TBODY>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD class=InfoBarHeader>Toolbox</TD></TR>
+              <TR>
+                <TD bgColor=black colSpan=2><IMG height=1 
+                  src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/space.gif" 
+                  width=1></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/sitebuild_icon.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/submit/ReportProblem.asp?GUID=%2Fthreads%2FUsingUIThreads%2Easp">Broken 
+                  Article?</A></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/support_icon.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/store/"><B>VS.NET 2003 from 
+                  $899</B></A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/support_icon.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/store/"><B>MSDN Univ. from 
+                  $1950</B></A></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/print.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/threads/usinguithreads.asp?print=true" 
+                  target=_print>Print version</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/link.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/add_bookmark.asp?t=0&amp;ct=%2Fthreads%2Fusinguithreads%2Easp&amp;guid=%2Fthreads%2FUsingUIThreads%2Easp">Bookmark 
+                  this</A></TD></TR></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/mail.gif" 
+                  width=16></TD>
+                <TD class=SmallText><A 
+                  href="http://www.codeproject.com/script/recommend/form.asp?guid=%2Fthreads%2FUsingUIThreads%2Easp">Send 
+                  to a friend</A></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD class=InfoBarHeader>My Profile</TD></TR>
+              <TR>
+                <TD bgColor=black colSpan=2><IMG height=1 
+                  src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/space.gif" 
+                  width=1></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/profile_small.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/modify.asp?ct=/threads/usinguithreads.asp">My 
+                  Settings</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/submit_small.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/articles/list_articles.asp?userid=649009">My 
+                  Articles</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/bookmarks.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/bookmark_list.asp">My 
+                  Bookmarks</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/logoff_small.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.codeproject.com/script/profile/logoff.asp?ct=/threads/usinguithreads.asp">Sign 
+                  out</A></TD></TR>
+              <TR>
+                <TD bgColor=black colSpan=2><IMG height=1 
+                  src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/space.gif" 
+                  width=1></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD>&nbsp;</TD></TR>
+        <TR>
+          <TD>
+            <CENTER>
+            <SCRIPT language=javascript>document.write("<IFRAME src=\"/script/admentor/include/ServeAdHTML.aspx?C=False&id=801\" border=0 frameborder=0 scrolling=no width=120 height=600></IFRAME>");</SCRIPT>
+            <BR></CENTER><BR></TD></TR></TBODY></TABLE></TD>
+    <TD width=5 rowSpan=2><IMG height=1 
+      src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/space.gif" 
+      width=5> </TD>
+    <TD align=right width="100%" bgColor=white>
+      <TABLE width="100%">
+        <TBODY>
+        <TR vAlign=top>
+          <TD class=smallText vAlign=top noWrap></TD>
+          <TD noWrap align=right><A name=__top></A>
+            <TABLE>
+              <TBODY>
+              <TR>
+                <TD class=smallText align=right>31 members have rated this 
+                  article. Result:</TD>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=0 border=2>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=5 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/red.gif" 
+                        width=20 border=0></TD>
+                      <TD><IMG height=5 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/red.gif" 
+                        width=20 border=0></TD>
+                      <TD><IMG height=5 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/red.gif" 
+                        width=20 border=0></TD>
+                      <TD><IMG height=5 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/red.gif" 
+                        width=20 border=0></TD>
+                      <TD><IMG height=5 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/red.gif" 
+                        width=3 border=0><IMG height=5 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/white.gif" 
+                        width=17 border=0></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD class=smallText align=right colSpan=2><A 
+                  title="Calculated as rating x Log10(# votes)" 
+                  href="http://www.codeproject.com/script/articles/top_articles.asp?st=2">Popularity: 
+                  6.2</A>. Rating: <B>4.16</B> out of 
+        5.</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD vAlign=top width="100%">
+      <DIV id=contentdiv><!-- Article Starts -->
+      <P>
+      <P>I've never done a user-interface thread that has windows or controls. 
+      On the other hand, the complement of a worker thread is not necessarily a 
+      thread that has user-interface objects. The complement of a worker thread 
+      is a thread that has a message pump. This is a subtle but important 
+      distinction, but one that I have either needed or exploited, depending on 
+      circumstances.</P><BR>
+      <H2>Apartment Threading</H2>
+      <P>I don't pretend to be an expert on "apartment threading".&nbsp; I fell 
+      into it because I needed to know a small number of things about it, 
+      specifically, how to get an SAPI-enabled application to run.</P>
+      <P>The key to "Apartment threading" is that an object which is initialized 
+      should be initialized in a particular thread and all operations on that 
+      object must be performed from that same thread. Trying to do operations on 
+      the same object from other threads is not guaranteed to work correctly. 
+      The point of this being that the object can be then written without 
+      worrying about incorporating thread-safe operations, because only one 
+      thread ever accesses it.</P><BR>
+      <H2>The Message Pump</H2>
+      <P>What I needed to run SAPI in a separate thread was not a worker thread, 
+      but a thread with a <I>message pump</I>. The thread does not have to have 
+      GUI objects, and hence the name "User-Interface Thread" is a serious 
+      misnomer. The user interface may not even be relevant.</P>
+      <P>What SAPI requires is a message pump. So I had to start a 
+      "user-interface" thread. There were a couple problems, so this essay tries 
+      to capture my experience.</P><BR>
+      <H2>Creating a User-Interface Thread</H2>
+      <P>First, there is the question about how to create the thread. What you 
+      first need is a <CODE>CWinThread</CODE>-derived class, which is then 
+      necessarily a <CODE>CCmdTarget</CODE>-derived object. Use the ClassWizard 
+      to create it, and you will get all the correct declarations. For purposes 
+      of this essay, it will be called <CODE>CMyThread</CODE>.</P>
+      <P>Now, you would expect to use <CODE>AfxBeginThread</CODE>, in the 
+      approved fashion, doing</P><PRE>CMyThread * thread = AfxBeginThread(RUNTIME_CLASS(CMyThread));
+</PRE>
+      <P>Well, it isn't quite that easy. It should be, but it isn't. What's 
+      missing here is a way to pass initial parameters in to the 
+      thread!&nbsp;</P>
+      <P>Consider a couple cases: you don't have a <CODE>CMyThread</CODE> object 
+      until the <CODE>AfxBeginThread</CODE> completes. But by the time you get 
+      control, the thread may already be running, and therefore it may be too 
+      late to set any values.</P>
+      <P>There are a couple solutions to this. One is to create the thread 
+      suspended, by providing the <CODE>CREATE_SUSPENDED</CODE> flag. Note that 
+      because this does not default we have to provide the intermediate 
+      parameters, the thread priority and the call stack size, so provide the 
+      values which are the defaults:</P><PRE>CMyThread * thread = AfxBeginThread(RUNTIME_CLASS(CMyThread),
+                                    THREAD_PRIORITY_NORMAL,
+                                    <SPAN class=cpp-literal>0</SPAN>, <SPAN class=cpp-comment>// stack size</SPAN>
+                                    CREATE_SUSPENDED);
+</PRE>
+      <P>And upon completion, you can then set any member variables in the 
+      class, and explicitly resume the thread:</P><PRE>thread-&gt;m_Whatever = ...;
+thread-&gt;m_OtherThing = ...;
+thread-&gt;ResumeThread();
+</PRE>
+      <P>I chose to do the two-step method suggested in the 
+      <CODE>AfxBeginThread</CODE> documentation:</P><PRE>CMyThread * thread = <SPAN class=cpp-keyword>new</SPAN> CMyThread();
+thread-&gt;m_Whatever = ...;
+thread-&gt;m_OtherThing = ...;
+thread-&gt;CreateThread();
+</PRE>
+      <P>I did this just because I did not like to explicitly specify the 
+      defaults.</P><BR>
+      <H2>The Thread Function</H2>
+      <P>OK, you've already done worker threads. You know that you provide a 
+      function that is called to execute the thread body, and the thread 
+      terminates when this function terminates, the thread ends. But what about 
+      a user-interface thread? Where is your function?</P>
+      <P>The answer is that it is <CODE>CWinThread::Run</CODE> is the thread 
+      function. This is the message pump. When it exits, your thread 
+      terminates.</P><BR>
+      <H2>Using the Thread Function</H2>
+      <P>The key methods you might be interested in are virtual methods of your 
+      class. You can create these using ClassWizard:</P>
+      <P><CODE>BOOL PreTranlsateMessage(LPMSG msg)</CODE> allows you to process 
+      messages before letting them be handled by the usual message dispatch. If 
+      you process the message at this point and do <I>not</I> want it 
+      dispatched, you must return <CODE>TRUE</CODE>. If you have processed it 
+      and want normal processing to continue for it, or you don't want to 
+      process it yourself, you return <CODE>FALSE</CODE>.</P>
+      <P><CODE>BOOL OnIdle(LONG count)</CODE> is called as long as you have 
+      "idle tasks" to do and there are no other messages. The first time it is 
+      called for idle processing the count is 1, and the count is incremented on 
+      each subsequent call. If you return <CODE>TRUE</CODE> you will be called 
+      again, and again, until you return <CODE>FALSE</CODE>. Any time there is a 
+      new message to be processed, the counter is reset to 0. If you return 
+      <CODE>FALSE</CODE>, the message loop blocks until a message comes in.</P>
+      <P><CODE>BOOL InitInstance()</CODE> is where you can do any setup for your 
+      class. For example, this is where I call <CODE>CoInitialize(NULL)</CODE> 
+      to initialize the COM subsystem to support the SAPI objects I'm calling. 
+      Note that <CODE>CoInitialize</CODE> is thread-specific and must be called 
+      for each thread that is calling ActiveX objects. If 
+      <CODE>InitInstance</CODE> fails, you should return <CODE>FALSE</CODE>. 
+      This will cause the thread to terminate.</P>
+      <P><CODE><SPAN class=cpp-keyword>void</SPAN> ExitInstance()</CODE> is 
+      where you do any cleanup for your class. It is called after the message 
+      pump terminates. This is where I do <CODE>CoUninitialize()</CODE> to clean 
+      up the COM resources allocated for the thread.</P>
+      <P><CODE>BOOL PostThreadMessage(UINT msg, WPARAM wParam, LPARAM 
+      lParam)</CODE> allows you to post a message to the thread. It returns 
+      <CODE>TRUE</CODE> if successful and <CODE>FALSE</CODE> if error.</P><BR>
+      <H2>Using the Message Map</H2>
+      <P>The Message Map for a <CODE>CWinThread</CODE> does not support all 
+      messages, although it won't complain if you try to put something 
+      unsuitable in it. You need to use the macros</P><PRE>ON_THREAD_MESSAGE(UINT msg, LRESULT (handler *)(WPARAM, LPARAM))
+ON_REGISTERED_THREAD_MESSAGE(UINT msg, LRESULT (handler *)(WPARAM, LPARAM))
+</PRE>
+      <P>The <CODE>ON_THREAD_MESSAGE</CODE> macro requires that the <I>msg</I> 
+      parameter be a constant, typically a <CODE>(WM_APP+n)</CODE> value. The 
+      <CODE>ON_REGISTERED_THREAD_MESSAGE</CODE> macro requires that the 
+      <I>msg</I> parameter be the name of a <CODE>UINT</CODE> variable that 
+      holds the Registered Window Message. If you need to understand more about 
+      how to form these messages, read my <A 
+      href="http://www.codeproject.com/dialog/MessageMgmt.asp">essay on Message 
+      Management</A>.</P>
+      <P>The message handler is a function whose signature is as shown. The 
+      WPARAM and LPARAM of the PostThreadMessage are passed to the handler 
+      method. The return value is always ignored, and is traditionally 
+0.</P><BR>
+      <H2>General Queuing</H2>
+      <P>You can queue messages up for processing simply by using 
+      <CODE>PostThreadMessage</CODE>. You don't need a queue, interlocks, or any 
+      other mechanism to handle queuing. However, because you are doing 
+      <CODE>PostThreadMessage</CODE>, you must make sure that the object you are 
+      passing is still in existence at the time you process the message. This 
+      means that if you are not passing simple integer values as 
+      <CODE>WPARAM</CODE> or <CODE>LPARAM</CODE>, for example, if you want to 
+      pass a <CODE>CString</CODE>, you must pass a pointer to an object on the 
+      heap and delete it when you've processed the message. You cannot pass a 
+      pointer to anything on the stack.</P>
+      <P>However, this also suggests that a "user-interface" thread can also be 
+      thought of as a "queued event thread", where you use PostThreadMessage to 
+      add entries to the queue, and dispatch the dequeuing via the 
+      <CODE>MESSAGE_MAP</CODE>.</P><BR>
+      <H2>Terminating the loop</H2>
+      <P>So we know how to start the thread, and initialize the thread, but how 
+      do we stop the thread? Just like any other message pump, as it turns out. 
+      Just post a <CODE>WM_QUIT</CODE> message. It is unfortunate that Microsoft 
+      has not chosen to be consistent, but they actually require in the 
+      PostThreadMessage that you explicitly provide the <CODE>WPARAM</CODE> and 
+      <CODE>LPARAM</CODE> values, which are, in this case, 0. So when you get to 
+      the point where you are read to shut down the thread, just do</P><PRE>thread-&gt;PostThreadMessage(WM_QUIT, <SPAN class=cpp-literal>0</SPAN>, <SPAN class=cpp-literal>0</SPAN>);
+</PRE>
+      <P>and the thread shuts down.</P><BR>
+      <H2>Hazards</H2>
+      <P>It is a bad idea to mix thread control using 
+      <CODE>PostThreadMessage</CODE> and UI objects such as message boxes and 
+      dialog boxes. When a thread message is received by 
+      <CODE>GetMessage</CODE>, it has a <CODE>NULL</CODE> window handle. This 
+      means that it cannot be dispatched via <CODE>DispatchMessage</CODE>. 
+      Special handling is required for thread messages, which is built into the 
+      message pump of <CODE>CWinThread::Run</CODE>. What this means is that if 
+      you call <CODE>DoModal</CODE> or <CODE>AfxMessageBox</CODE>, 
+      <CODE>MessageBox</CODE>, or any similar function that spawns a new message 
+      loop any posted thread messages will be lost. Microsoft suggests using a 
+      message hook function to intercept messages under these conditions. 
+      Consequently, if you are going to use <CODE>PostThreadMessage</CODE> to a 
+      UI thread, you should follow the advice given in my <A 
+      href="http://www.codeproject.com/threads/UsingWorkerThreads.asp">essay 
+      about worker threads</A> and treat the UI thread as if it were a worker 
+      thread insofar as spawning child dialogs.</P>
+      <HR>
+
+      <P>The views expressed in these essays are those of the author, and in no 
+      way represent, nor are they endorsed by, Microsoft.</P>
+      <H5>Send mail to <A 
+      href="mailto:newcomer@flounder.com">newcomer@flounder.com</A> with 
+      questions or comments about this article.<BR>Copyright © 1999 The Joseph 
+      M. Newcomer Co. All Rights Reserved.<BR><A 
+      href="http://www.pgh.net/~newcomer/mvp_tips.htm">http://www.pgh.net/~newcomer/mvp_tips.htm</A> 
+
+      <P></H5><!-- Article Ends --></P></DIV>
+      <H2>Joseph M. Newcomer</H2>
+      <TABLE width="100%" border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD class=smallText noWrap><BR></TD>
+          <TD class=smallText width="100%">
+            <P class=smallText>Click <A 
+            href="http://www.codeproject.com/script/profile/whos_who.asp?vt=arts&amp;id=117">here</A> 
+            to view Joseph M. Newcomer's online 
+      profile.</P></TD></TR></TBODY></TABLE><BR>
+      <TABLE cellPadding=4 width="100%" border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD width="100%">
+            <H2>Other popular Threads, Processes &amp; IPC articles:</H2>
+            <UL>
+              <LI><A 
+              href="http://www.codeproject.com/threads/threadlibrary.asp">An 
+              exception safe OO thread-pool framework</A><BR><SPAN 
+              class=smalltext>Provides a plug in multithreaded environment, 
+              using an exception safe thread-pool and functors.</SPAN>
+              <LI><A 
+              href="http://www.codeproject.com/threads/bridgewinjava.asp">Bridge 
+              Between Java And Windows</A><BR><SPAN class=smalltext>Make your 
+              windows programs communicate with java programs easily</SPAN>
+              <LI><A 
+              href="http://www.codeproject.com/threads/procmon.asp">Detecting 
+              Windows NT/2K process execution</A><BR><SPAN class=smalltext>An 
+              article on how to get notification from the OS when a process 
+              starts</SPAN>
+              <LI><A href="http://www.codeproject.com/threads/winspy.asp">Three 
+              Ways to Inject Your Code into Another Process</A><BR><SPAN 
+              class=smalltext>How to inject code into another processes address 
+              space, and then execute it in the context of this 
+              process.</SPAN></LI></UL></TD>
+          <TD width=360>
+            <SCRIPT language=javascript>document.write("<IFRAME src=\"/script/admentor/include/ServeAdHTML.aspx?C=False&id=786\" border=0 frameborder=0 scrolling=no width=300 height=250></IFRAME>");</SCRIPT>
+          </TD>
+          <FORM action=/script/rating/code/app/insert_vote.asp 
+          method=post><INPUT type=hidden value=/threads/UsingUIThreads.asp 
+          name=vote_name> <INPUT type=hidden value=/threads/usinguithreads.asp 
+          name=goal> </TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=1 width="100%" bgColor=#ff9900 
+        border=0><TBODY>
+        <TR>
+          <TD width="100%">
+            <TABLE cellSpacing=0 cellPadding=4 width="100%" bgColor=#fbedbb 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD class=smalltext vAlign=center>[<A 
+                  href="http://www.codeproject.com/threads/usinguithreads.asp#__top">Top</A>]</TD>
+                <TD vAlign=center noWrap align=right><I><B>Rate this Article 
+                  for us!</B></I>&nbsp;&nbsp;&nbsp;&nbsp; <I>Poor</I><INPUT 
+                  type=radio value=1 name=rate><INPUT type=radio value=2 
+                  name=rate><INPUT type=radio value=3 name=rate><INPUT 
+                  type=radio value=4 name=rate><INPUT type=radio value=5 
+                  name=rate><I>Excellent</I>&nbsp;&nbsp;<INPUT class=FormButton type=submit value=Vote> 
+                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></FORM>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD vAlign=top>
+            <CENTER>
+            <SCRIPT language=javascript>document.write("<a href=\"/script/admentor/admentorredir.asp?id=156&way=ban\" target=_blank><img src=\"/script/admentor/include/ServeAd.aspx?File=%2Fscript%2Fadmentor%2Fimages%2Fmsdn%5Fbutton%2Egif&C=False&id=156\" alt=\"MSDN Magazine - Your guide to Microsoft tools, development environments, and technologies for Windows and the Web.\" border=0 width=120 height=60></a>");</SCRIPT>
+            <BR><FONT size=1><A 
+            href="http://www.codeproject.com/info/MediaKit/">Premium 
+            Sponsor</A></FONT></CENTER><BR></TD>
+          <TD vAlign=top noWrap align=middle><SPAN id=AdBanner5>
+            <SCRIPT language=javascript>document.write("<a href=\"/script/admentor/admentorredir.asp?id=749&way=ban\" target=_blank><img src=\"/script/admentor/include/ServeAd.aspx?File=%2Fscript%2Fadmentor%2Fimages%2Fironspeedbanner%5Fcheetah%5F468x60Version17082004%2Egif&C=False&id=749\" alt=\"\" border=0 width=468 height=60></a>");</SCRIPT>
+            </SPAN></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><A 
+name=__comments></A>
+<SCRIPT language=JavaScript>
+function MsgVoteForm(UserID, MsgID)
+{
+	document.write("Rate this message: ");
+	for (var i=1; i<=5;i++)
+		document.write("<a href='#xx" + MsgID.toString() + "xx' title='give this message a vote of " + i.toString() + "' onclick='RateMsg(" + UserID.toString() + ", " + MsgID.toString() + ", " + i.toString() + ")'><b>" + i.toString() + "</b></a> ");
+	document.write(" (out of 5)");
+}
+
+function RateMsg(userid, msgid, score) 
+{ 
+	open("/script/comments/vote.asp?js=1&user="+userid.toString()+"&msg="+msgid.toString()+"&score="+score.toString() ,"helpful","toolbar=no,resizable=yes,scrollbars=yes,directories=no,menubar=no,width=300,height=200");
+	return false;
+}
+</SCRIPT>
+
+<SCRIPT language=JavaScript>
+var Selected = "";
+var AdTime = new Date();
+document.writeln("<iframe name=AdFrame width=0 height=0 frameborder=0></IFRAME>");
+function SwitchMessage(elm)
+{
+
+	var now = new Date();
+	if (Number(now.getTime() - AdTime.getTime()) > Number(5000))
+	{
+		AdTime = now;
+		var loc = window.frames["AdFrame"];
+		if (loc) loc = loc.document;
+		if (loc) loc = loc.location;
+		if (loc) loc.replace('/script/comments/fetchAd.asp?cat=1');
+	}
+	
+	var elmref;
+	if (Selected != "")
+	{
+		elmref = eval("document.getElementById('" + Selected + "_h1')");
+		if (elmref) elmref.style.display = 'none';
+		elmref = eval("document.getElementById('" + Selected + "_h0')");
+		if (elmref) elmref.bgColor = '#FEF9E7';
+	}
+	if (Selected != elm.name) 
+	{
+		Selected = elm.name;
+		elmref = eval("document.getElementById('" + Selected + "_h1')");
+		if (elmref) 
+		{
+			if (elmref.style.display=='none') elmref.style.display='';
+			else elmref.style.display = 'none';
+		}
+		elmref = eval("document.getElementById('" + Selected + "_h0')");
+		if (elmref) 
+			elmref.bgColor = '#99CCFF';
+	}
+	else
+		Selected="";
+		
+	window.location = "#xx" + Selected + "xx";
+
+	return false;
+}
+
+</SCRIPT>
+
+<SCRIPT language=javascript event=onclick for=DynMessLink>
+return SwitchMessage(this);
+</SCRIPT>
+
+<TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#ff9900 border=0>
+  <TBODY>
+  <TR>
+    <TD width="100%">
+      <TABLE id=ForumTable cellSpacing=1 cellPadding=0 width="100%" 
+      bgColor=#ff9900 border=0>
+        <FORM 
+        action=/script/comments/app/do_filtermessages.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687 
+        method=post>
+        <TBODY>
+        <TR>
+          <TD>
+            <TABLE cellSpacing=0 cellPadding=3 width="100%" bgColor=white 
+            border=0>
+              <TBODY>
+              <TR bgColor=#fbedbb>
+                <TD class=smalltext noWrap><A 
+                  href="http://www.codeproject.com/script/comments/faq.asp"><IMG 
+                  height=16 
+                  src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/info.gif" 
+                  width=16 align=absMiddle border=0> <B>FAQ</B></A>&nbsp;</TD>
+                <TD class=smalltext vAlign=top noWrap align=right>Noise level 
+                  <SELECT class=smalltext size=1 name=noise><OPTION 
+                    value=1>Very High</OPTION> <OPTION value=2>High</OPTION> 
+                    <OPTION value=3 selected>Medium</OPTION> <OPTION 
+                    value=4>Low</OPTION> <OPTION value=5>Very 
+                  low</OPTION></SELECT>&nbsp;&nbsp;</TD>
+                <TD class=smalltext vAlign=center noWrap align=right 
+                  colSpan=2><A 
+                  href="http://www.codeproject.com/script/comments/search_comments.asp?forumid=687"><IMG 
+                  height=15 
+                  src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/search.gif" 
+                  width=16 border=0> Search comments</A> &nbsp;</TD>
+                <TD vAlign=top align=right><INPUT class=FormButton type=submit value="Set Options" name=submit></TD></TR>
+              <TR bgColor=#ff9900>
+                <TD width="100%">&nbsp;</TD>
+                <TD class=smalltext vAlign=top noWrap align=right>View <SELECT 
+                  class=smalltext size=1 name=expand><OPTION value=0>Normal 
+                    (slow)</OPTION> <OPTION value=2>Preview (slow)</OPTION> 
+                    <OPTION value=5 selected>Message View</OPTION> <OPTION 
+                    value=6>Topic View</OPTION> <OPTION value=1>Thread 
+                    View</OPTION> <OPTION value=3>Expanded (Supporters 
+                    only)</OPTION></SELECT>&nbsp;&nbsp;</TD>
+                <TD class=smalltext vAlign=top noWrap>Per page <SELECT 
+                  class=smalltext size=1 name=perpage><OPTION 
+                    value=10>10</OPTION> <OPTION value=25 selected>25</OPTION> 
+                    <OPTION value=50>50</OPTION></SELECT></TD>
+                <TD colSpan=2>&nbsp;</TD></TR></TBODY></TABLE></TD></TR></FORM>
+        <TR bgColor=#fbedbb>
+          <TD><A name=xx0xx></A>
+            <TABLE cellPadding=2 width="100%" bgColor=#fbedbb border=0>
+              <TBODY>
+              <TR>
+                <TD class=messagetitle><A class=HoverLink 
+                  title="Add a new message to the discussions" 
+                  href="http://www.codeproject.com/script/comments/user_new.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687" 
+                  target=_top name=HoverNL><B><IMG height=16 
+                  src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/admin_modify.gif" 
+                  width=16 align=top border=0> New thread</B></A></TD>
+                <TD class=messagetitle>Msgs 1 to 25 of 87 (Total: 87) (<A 
+                  href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;forumid=687">Refresh</A>)</TD>
+                <TD noWrap align=right><FONT class=messagetitle><SPAN 
+                  class=HoverLink>First</SPAN> <SPAN class=HoverLink>Prev</SPAN> 
+                  <A class=HoverLink 
+                  href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;forumid=687&amp;fr=26" 
+                  name=HoverNL>Next</A> <A class=HoverLink 
+                  href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;forumid=687&amp;fr=76" 
+                  name=HoverNL>Last</A> </FONT></TD></TR></TBODY></TABLE></TD></TR>
+        <TR bgColor=white>
+          <TD>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=2 bgColor=#fbedbb border=0>
+                    <TBODY>
+                    <TR>
+                      <TD class=messagetitle width="100%">Subject&nbsp;</TD>
+                      <TD class=messagetitle noWrap width=140>Author&nbsp;</TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT 
+                    class=messagetitle>Date&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 
+                  src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=880313_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx880313xx></A><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;forumid=687&amp;select=880313#xx880313xx" 
+                        name=880313><B>Sockets Multithreading</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=879504"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>AshutoshSolanki</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>2:52 21 Jul 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=880313_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>I am 
+                                trying to develop an application which creates a 
+                                UI thread when the listening socket accepts a 
+                                new connection. The sequence is as 
+                                follows<BR><BR>1.Accept the connection in 
+                                CAsyscsocket object<BR>2.Detach the accepted 
+                                socket and assign to CwinThread derived class's 
+                                SOCKET member.<BR>3.Resume Thread<BR>4. In the 
+                                InitInstance attach the local AsyncSocket Member 
+                                to the SOCKET..<BR><BR>All this is working 
+                                fine.. But my thread is not receiving any data.. 
+                                Or may be I dont know the correct procedure from 
+                                here on..<BR>How do I receive the data in 
+                                Thread<BR>Plz. 
+                                help..<BR><BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=880313">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=880313">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;tid=880313&amp;forumid=687&amp;select=880313#xx880313xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?msg=880313#xx880313xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=880313"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=880313"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(879504,880313);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 
+                  src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=775642_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx775642xx></A><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;forumid=687&amp;select=775642#xx775642xx" 
+                        name=775642><B>ocx with a non-modal dialog</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=386724"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>conchi</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>8:27 26 Mar 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=775642_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Hello, 
+                                Joseph. I'm a newby in Visual C programming I 
+                                read your very useful article and I have a 
+                                doubt.<BR><BR>I have programmed a ActiveX 
+                                control that implements a non-modal 
+                                dialog.<BR>First, I tried with a 
+                                CreateWindow()to create the dialog inside the 
+                                OCX and that works, but <BR>my dialog does not 
+                                capture any keypressed. Seems as if the 
+                                PreTranslateMessage()of the dialog does not 
+                                execute never. The key presed are going to the 
+                                parent of the dialog, but this was not the Ctrl 
+                                of the OCX, it seems to be the application demo 
+                                where you insert the OCX.<BR><BR>So, I tried to 
+                                do an CWinThread with a modal dialog inside 
+                                (with DoModal()) and it seems to work prefectly 
+                                since now. The modal dialog capture keys and 
+                                from the methods of the ActiveX I send 
+                                PostThreadMessages to the WinThread. But you 
+                                don't recommend this.<BR><BR>can you give any 
+                                advice of how making this in the best 
+                                way?<BR><BR><BR><BR>Sorry for my bad English . I 
+                                hope that you will be able to understand 
+                                me.<BR><BR>Thanks<BR><BR>, 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=775642">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=775642">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;tid=775642&amp;forumid=687&amp;select=775642#xx775642xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?msg=775642#xx775642xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=775642"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=775642"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(386724,775642);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 
+                  src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=775787_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx775787xx></A><IMG height=1 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/ind.gif" 
+                        width=18><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;forumid=687&amp;select=775787#xx775787xx" 
+                        name=775787>Re: ocx with a non-modal dialog</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=117"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle>Joseph M. 
+                        Newcomer&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>10:39 26 Mar 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=775787_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/ind.gif" 
+                        width=18><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>I don't 
+                                do ActiveX. However, CreateWindow would be 
+                                incorrect...did you mean CreateDialog?<BR><BR>If 
+                                a modeless dialog is active, the hosting app has 
+                                to call IsDialogMessage(dlg) to pass all 
+                                messages to the modeless dialog.<BR><BR>Do NOT 
+                                use PostThreadMessage to send messages to 
+                                anything that has GUI components. If you should 
+                                pop up a MessageBox, the message will be lost. 
+                                Use PostMessage to the window.<BR><BR>If the 
+                                dialog has a parent, putting in a separate 
+                                thread is extremely risky.<BR><BR>But since I 
+                                don't do ActiveX, I don't have any insights on 
+                                why this actually fails or how it could be made 
+                                to work. <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=775787">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=775787">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;tid=775642&amp;forumid=687&amp;select=775787#xx775787xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?msg=775787#xx775787xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=775787"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=775787"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(117,775787);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 
+                  src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=777415_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx777415xx></A><IMG height=1 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/ind.gif" 
+                        width=36><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;forumid=687&amp;select=777415#xx777415xx" 
+                        name=777415>Re: ocx with a non-modal dialog</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=386724"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>conchi&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>2:35 29 Mar 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=777415_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/ind.gif" 
+                        width=36><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Thanks 
+                                very much for your quick response.<BR><BR>I 
+                                meant CreateDialog() of course, sorry.<BR>Don't 
+                                worry about OCXs. Look this scenario:<BR><BR>You 
+                                have two CWinThreads one of them with a modal 
+                                dialog and the other one without window. How do 
+                                you pass messages between them in a safely way? 
+                                <BR><BR>Now we use for this Registered Messages 
+                                and using a hook 
+                                SetWindowsHookEx(WH_GETMESSAGE....);<BR>Aparentely 
+                                in this way there is not lost messages, but we 
+                                don't know if this is the best 
+                                way.<BR><BR><BR>Thank you very 
+                                much.<BR><BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=777415">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=777415">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;tid=775642&amp;forumid=687&amp;select=777415#xx777415xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?msg=777415#xx777415xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=777415"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=777415"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(386724,777415);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 
+                  src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=777431_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx777431xx></A><IMG height=1 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/ind.gif" 
+                        width=54><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;forumid=687&amp;select=777431#xx777431xx" 
+                        name=777431>Re: ocx with a non-modal dialog</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=117"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle>Joseph M. 
+                        Newcomer&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>2:58 29 Mar 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=777431_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/ind.gif" 
+                        width=54><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>I 
+                                presume that the "other" thread is a UI thread. 
+                                In that case, you have a message map, so you 
+                                read my essay on interthread messaging, and out 
+                                an<BR>ON_THREAD_MESSAGE<BR>or<BR>ON_REGISTERED_THREAD_MESSAGE<BR>handler 
+                                in the receiving thread, and do 
+                                PostThreadMessage from your main GUI thread to 
+                                the worker thread. Or you read my essay, and use 
+                                PostMessage to post a user-defined message from 
+                                a worker thread to your main UI thread, and do 
+                                an 
+                                <BR>ON_MESSAGE<BR>or<BR>ON_REGISTERED_MESSAGE<BR>handler 
+                                in the message map of the receiving window. 
+                                There is no reason to even consider a hook as 
+                                part of the solution. In fact, it is probably a 
+                                very bad way. <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=777431">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=777431">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;tid=775642&amp;forumid=687&amp;select=777431#xx777431xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?msg=777431#xx777431xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=777431"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=777431"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(117,777431);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 
+                  src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=777458_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx777458xx></A><IMG height=1 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/ind.gif" 
+                        width=72><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;forumid=687&amp;select=777458#xx777458xx" 
+                        name=777458>Re: ocx with a non-modal dialog</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=386724"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>conchi&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>3:40 29 Mar 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=777458_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/ind.gif" 
+                        width=72><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>I have 
+                                read the Messages Management essay from you but 
+                                I have some doubts.<BR><BR>It seems that I can't 
+                                explain the problem correctly (bad english). I 
+                                will try again.<BR><BR>I have one CWinThread 
+                                with a modaless dialog and this thread creates 
+                                another CWinThread with a window (not a dialog, 
+                                but it does not matter). We call them Thread1 
+                                the main thread, Thread2 the second thread. 
+                                There are not worker threads.<BR>Sometimes (not 
+                                always), if I make PostThreadMessage() from 
+                                Thread2 to Thread1 the message is 
+                                lost.<BR><BR>Really, the PostThreadMessage() 
+                                does not return any error, so it seems to be 
+                                sent. But Thread1 does not receive it. We can 
+                                see with the Spy++ that the message does not 
+                                received.<BR>I do this with registered messages 
+                                and without them (with ON_MESSAGE) and the 
+                                problem is the same<BR><BR>Instead of this, if I 
+                                make a hook in Thread1 the problem seems to be 
+                                solved. 
+                                <BR><BR><BR>Thanks.<BR><BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=777458">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=777458">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;tid=775642&amp;forumid=687&amp;select=777458#xx777458xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?msg=777458#xx777458xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=777458"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=777458"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(386724,777458);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 
+                  src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=723620_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx723620xx></A><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;forumid=687&amp;select=723620#xx723620xx" 
+                        name=723620><B>Thread Termination</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=54919"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>Acreff</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>15:32 26 Jan 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=723620_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>I wish 
+                                to terminate the UI thread but I do not wish to 
+                                use the WM_QUIT message. The reason is that I 
+                                would like to do some clean up in the thread to 
+                                avoid memory leaks. To the best of my knowledge 
+                                WM_QUIT will quit unconditionally, right. Which 
+                                is best approach to a situation like this one ? 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=723620">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=723620">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;tid=723620&amp;forumid=687&amp;select=723620#xx723620xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?msg=723620#xx723620xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=723620"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=723620"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(54919,723620);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 
+                  src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=723736_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx723736xx></A><IMG height=1 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/ind.gif" 
+                        width=18><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;forumid=687&amp;select=723736#xx723736xx" 
+                        name=723736>Re: Thread Termination</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=54919"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>Acreff&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>17:52 26 Jan 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=723736_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/ind.gif" 
+                        width=18><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>I think 
+                                I am getting closer to a solution. Please 
+                                correct me is I am on the wrong track. The way I 
+                                am dealing with the situation is to post a 
+                                message to the thread, process it in 
+                                PreTranslate and prepare the thread for shutdown 
+                                by doing some cleaning. I have however the 
+                                following problem.<BR><BR>I am using the 
+                                WaitForSingleObject for waiting the thread to 
+                                finish before proceeding (e.g. to exit the 
+                                application) in a similar way that Joseph has 
+                                explained in his "Working Threads" article. 
+                                After some reading in the MSDN I found that if 
+                                the CoInitialize function is used in the thread 
+                                (which is true in my case) then the 
+                                WaitForSingleObject is not suitable for the task 
+                                and that I should use MsgWaitForMultipleObjects 
+                                or MsgWaitForMultipleObjectsEx, rather than 
+                                WaitForSingleObject.<BR><BR>However I could not 
+                                find anything that will help me use the 
+                                MsgWaitForMultipleObjects.<BR><BR>I would 
+                                appreciate (first of all) some one to tell me if 
+                                I am on the correct track and if so, how to use 
+                                the MsgWaitForMultipleObjects<BR><BR><BR>Thank 
+                                you in advance<BR><BR>Pothitos M. Baikas 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=723736">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=723736">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;tid=723620&amp;forumid=687&amp;select=723736#xx723736xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?msg=723736#xx723736xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=723736"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=723736"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(54919,723736);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 
+                  src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=724083_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx724083xx></A><IMG height=1 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/ind.gif" 
+                        width=36><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;forumid=687&amp;select=724083#xx724083xx" 
+                        name=724083>Re: Thread Termination</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=117"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle>Joseph M. 
+                        Newcomer&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>6:17 27 Jan 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=724083_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/ind.gif" 
+                        width=36><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>You are 
+                                definitely on the wrong track! This is a 
+                                horrible misuse of PreTranslateMessage. I can't 
+                                imagine why this would make more sense than 
+                                simply adding a message handler in the message 
+                                map! That's what message maps are 
+                                for.<BR><BR>First rule of using 
+                                PreTranslateMessage: you are almost certainly 
+                                wrong.<BR>Second rule of using 
+                                PretranslateMessage: if you still think you need 
+                                it, you are still wrong.<BR>Third rule of using 
+                                PreTranslateMessage: maybe, just maybe, it makes 
+                                sense. But probably not.<BR>Fourth rule of using 
+                                PreTranslateMessage: there is a slight chance 
+                                you are right.<BR><BR>You have fallen into the 
+                                first rule. It makes no sense. <BR><BR>In cases 
+                                where you think you need to wait for a thread to 
+                                finish, it often makes more sense to simply have 
+                                the thread send a notification of its completion 
+                                to the main GUI thread, and not wait at all. As 
+                                long as you don't set the m_bAutoDelete to 
+                                FALSE, everything works fine. Saves all possible 
+                                hassles of bizarre solutions involving 
+                                MsgWaitForMultipleObjects. Just kill the thread 
+                                and go away. When you receive the notification 
+                                of the thread completion via the PostMessage to 
+                                your main GUI thread, you enable anything that 
+                                you had disabled, etc. 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=724083">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=724083">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;tid=723620&amp;forumid=687&amp;select=724083#xx724083xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?msg=724083#xx724083xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=724083"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=724083"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(117,724083);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 
+                  src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=724243_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx724243xx></A><IMG height=1 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/ind.gif" 
+                        width=54><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;forumid=687&amp;select=724243#xx724243xx" 
+                        name=724243>Re: Thread Termination</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=54919"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>Acreff&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>10:24 27 Jan 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=724243_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/ind.gif" 
+                        width=54><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>OK 
+                                then. I am totally on the wrong track. Let's 
+                                just confirm it (and let's hope that some one 
+                                will find a couple of minutes to explain what is 
+                                wrong). That's what I am doing:<BR><BR>-I have 
+                                created a CWinThread object using 
+                                ClassWizard.<BR>-All my code for the thread is 
+                                in the Run() function.<BR>-I declare a volatile 
+                                BOOL as m_bContinueRunning and I initialise it 
+                                to TRUE as soon as the thread begins its 
+                                execution.<BR>-In the main loop of the thread, I 
+                                check this variable and if it continues to be 
+                                TRUE the thread continues running.<BR>-In the 
+                                calling thread now, I at some point in time 
+                                decide that I would like the thread to be 
+                                notified that it should stop running (more 
+                                specifically in the OnClose() of my 
+                                MainFrame.<BR>-I then check if the thread is 
+                                still running, and I set the threads 
+                                m_bAutoDelete to FALSE.<BR>-I then post a 
+                                message to the thread 
+                                (MyThread-&gt;PostThreadMessage(WM_TERMINATE_THREAD_MESSAGE, 
+                                0 , 0))<BR>-and tell the calling thread to wait 
+                                till MyThread ends :<BR>result = 
+                                WaitForSingleObject(MyThread-&gt;m_hThread, 
+                                INFINITE)<BR>-When this happens (theoretically) 
+                                I delete MyThread 
+                                (MyThread-&gt;Delete())<BR>-From the point of 
+                                MyThread now. I process the message sent by the 
+                                calling thread with 
+                                ON_THREAD_MESSAGE(WM_TERMINATE_THREAD_MESSAGE,OnTerminate). 
+                                (I stopped using the Pretranslate as Joseph 
+                                indicated)<BR>-In OnTerminate I change the 
+                                variable m_bContinueRunning to FALSE (I have 
+                                checked that and it works)<BR>-At this point I 
+                                expect (perhaps wrongly) for the thread's loop 
+                                to see that the variable has turned to FALSE 
+                                (since I check it continuously), start the 
+                                clean-up and then exit.<BR>-Furthermore I would 
+                                expect the main application thread to continue 
+                                from the point it has stopped and waited and 
+                                continue with the deletion of the thread and 
+                                then gracefully close the 
+                                application.<BR><BR><BR>The approach above does 
+                                not work. <BR>-The variable is never 
+                                checked<BR>-The calling thread just not waits 
+                                for my thread to finish (by the way the result 
+                                code from WaitForSingleObject is 0)...<BR>-and 
+                                since I am checking in the OnClose(), it 
+                                continues and exit the main application 
+                                thread.<BR>Further more MyThread continues 
+                                running, even if the main application thread has 
+                                exited (and I get a lot of memory leaks that do 
+                                not appear if the application exits with 
+                                MyThread NOT running.<BR><BR>I know that I am 
+                                doing something wrong (easy to understand isn't 
+                                it ???)<BR>I also know that Joseph will start 
+                                yelling at me that no matter how much time he 
+                                has spent explaining everything, I am too 
+                                thick-headed to understand (Joseph, I am only 
+                                joking..) but I still cannot find the 
+                                error.<BR><BR>I only hope that someone will find 
+                                the time to help me a little bit on 
+                                this<BR><BR>Warm 
+                                regards<BR><BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=724243">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=724243">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;tid=723620&amp;forumid=687&amp;select=724243#xx724243xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?msg=724243#xx724243xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=724243"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=724243"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(54919,724243);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 
+                  src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=724498_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx724498xx></A><IMG height=1 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/ind.gif" 
+                        width=72><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;forumid=687&amp;select=724498#xx724498xx" 
+                        name=724498>Re: Thread Termination</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=117"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle>Joseph M. 
+                        Newcomer&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>14:08 27 Jan 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=724498_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/ind.gif" 
+                        width=72><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Yes, 
+                                several things wrong here.<BR><BR>First, don't 
+                                touch the Run() function. If you have a UI 
+                                thread, the purpose is to be able to handle 
+                                messages. So you let the default Run() function 
+                                run. I have never written a Run() function for 
+                                any thread, because there is no need 
+                                to.<BR><BR>Initializing the run value to TRUE as 
+                                soon as the thread starts running is much too 
+                                late; the thread that created this thread could 
+                                have already set it to FALSE, and therefore you 
+                                would never terminate.<BR><BR>You have defeated 
+                                the entire purpose of UI threads, which is to 
+                                have a message pump. You should be using a 
+                                worker thread. <BR><BR>Cleanup as you describe 
+                                should be done in ExitInstance.<BR><BR>The way I 
+                                handle close in this case is what I don't set 
+                                m_bAutoDelete to FALSE, but just let the thread 
+                                delete itself. The OnClose handler consists of 
+                                setting the thread boolean to FALSE and 
+                                returning (and not calling the superclass 
+                                OnClose() handler, which would close the app). 
+                                When I get the notification message from the 
+                                thread that it has completed, I respond to that 
+                                message by calling my superclass OnClose() and 
+                                letting the close proceed normally.<BR><BR>Key 
+                                question: why do you think you need a UI thread? 
+                                (There are lots of good reasons, but by building 
+                                one in which you do all the work in Run() you 
+                                have defeated most of the advantages of doing 
+                                so). Note that if you need a UI thread to handle 
+                                sockets, SAPI, or something like that, putting 
+                                other computations there is probably a bad idea. 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=724498">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=724498">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;tid=723620&amp;forumid=687&amp;select=724498#xx724498xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?msg=724498#xx724498xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=724498"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=724498"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(117,724498);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 
+                  src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=730771_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx730771xx></A><IMG height=1 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/ind.gif" 
+                        width=90><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;forumid=687&amp;select=730771#xx730771xx" 
+                        name=730771>Re: Thread Termination</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=54919"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>Acreff&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>12:52 3 Feb 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=730771_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/ind.gif" 
+                        width=90><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Reading 
+                                through these messages, I realised that you are 
+                                right. The UI thread is not the way to go (for 
+                                my purposes). Keeping that in mind, I re-read 
+                                both articles and my code is in a much better 
+                                shape. Thanks for your time.<BR><BR>Regards 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=730771">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=730771">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;tid=723620&amp;forumid=687&amp;select=730771#xx730771xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?msg=730771#xx730771xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=730771"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=730771"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(54919,730771);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 
+                  src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=723819_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx723819xx></A><IMG height=1 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/ind.gif" 
+                        width=18><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;forumid=687&amp;select=723819#xx723819xx" 
+                        name=723819>Re: Thread Termination</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=117"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle>Joseph M. 
+                        Newcomer&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>20:12 26 Jan 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=723819_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/ind.gif" 
+                        width=18><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Yes, 
+                                but control then goes to the ExitInstance 
+                                handler, which can do any cleanup. Or, you can 
+                                PostThreadMessage to it a UWM_CLEAN_STUFF_UP 
+                                message of your own, which does the cleanup and 
+                                then does a PostQuitMessage. 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=723819">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=723819">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;tid=723620&amp;forumid=687&amp;select=723819#xx723819xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?msg=723819#xx723819xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=723819"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=723819"><I>Delete</I></A>]<BR>Score: 
+                                2.0 (1 vote).
+                                <SCRIPT language=Javascript>MsgVoteForm(117,723819);</SCRIPT>
+                                 
+                    </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 
+                  src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=591840_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx591840xx></A><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;forumid=687&amp;select=591840#xx591840xx" 
+                        name=591840><B>Terminating Threads</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=434508"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>bgsewell</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>17:10 25 Aug 
+                        '03</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=591840_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>I am 
+                                trying to write a package that allows multiple 
+                                TCP/IP connections. In some cases, the local 
+                                machine is the server, but at the same time, the 
+                                local machine may also connect as a client to 
+                                another machine. I want each of the connections 
+                                to run in its own thread. I am creating a user 
+                                interface thread using AfxBeginThread for each 
+                                connection. I have a class, MyConnection, which 
+                                inherits from CWinThread and represents a single 
+                                TCP/IP connection. I want to terminate the 
+                                thread and delete the instance of MyConnection 
+                                when the connection is closed. A couple of 
+                                questions...<BR>1. When the instance of 
+                                MyConnection is destroyed, does the thread 
+                                automatically terminate?<BR>2. The 
+                                CAsyncSocket::AssertValid always fails. Any 
+                                ideas why?<BR><BR>Thanks for any comments! 
+                                <BR><BR>brenda<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=591840">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=591840">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;tid=591840&amp;forumid=687&amp;select=591840#xx591840xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?msg=591840#xx591840xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=591840"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=591840"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(434508,591840);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 
+                  src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=591863_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx591863xx></A><IMG height=1 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/ind.gif" 
+                        width=18><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;forumid=687&amp;select=591863#xx591863xx" 
+                        name=591863>Re: Terminating Threads</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=117"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle>Joseph M. 
+                        Newcomer&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>17:24 25 Aug 
+                        '03&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=591863_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/ind.gif" 
+                        width=18><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>1. 
+                                Unless you choose, in the handler for where the 
+                                connection is terminated, to terminate the 
+                                thread yourself, it will not terminate. There is 
+                                no reason for the operating system to couple the 
+                                existence of the connection with the the 
+                                existence of the thread. In the handler for the 
+                                disconnect event, do a PostQuitMessage<BR><BR>2. 
+                                In what thread context is the AssertValid 
+                                issued? In what context is the socket created? 
+                                How is it passed to the thread (see my essay 
+                                here on CodeProject on UI threads). If you 
+                                create the socket via an Accept statement in the 
+                                main thread, you must Detach it from the socket 
+                                object in the main thread and Attach it to the 
+                                socket object in the worker thread, or the 
+                                socket cannot work. My essay discusses how to do 
+                                this. <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=591863">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=591863">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;tid=591840&amp;forumid=687&amp;select=591863#xx591863xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?msg=591863#xx591863xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=591863"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=591863"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(117,591863);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 
+                  src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=574818_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx574818xx></A><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;forumid=687&amp;select=574818#xx574818xx" 
+                        name=574818><B>Threads and Sockets</B></A></TD>
+                      <TD vAlign=bottom><IMG height=13 
+                        alt="Unconfirmed/Anonymous posting" 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/usersuss.gif" 
+                        width=15></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>Oscarins</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>20:16 6 Aug 
+                        '03</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=574818_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Hello, 
+                                i'm working with an application that uses 
+                                threads. The main application must create some 
+                                threads when you click on a button. The class 
+                                what implements threads, inherit from 
+                                CWinThread, and in the InitInstance method it 
+                                constructs a socket connection to server. The 
+                                connection is ok, but when the server needs 
+                                answer the thread, it can´t (the thread doesn´t 
+                                receive message). I think that the problem could 
+                                be because threads can´t communicate with other 
+                                remote applications, but i don't understand why 
+                                the conection is correct with the server if it 
+                                can't respond to the thread. <BR><BR>Speech for 
+                                Visual C++<BR>OpenGL in Visual 
+                                C++<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=574818">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=574818">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;tid=574818&amp;forumid=687&amp;select=574818#xx574818xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?msg=574818#xx574818xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=574818"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=574818"><I>Delete</I></A>]<BR>Score: 
+                                2.0 (1 vote).
+                                <SCRIPT language=Javascript>MsgVoteForm(0,574818);</SCRIPT>
+                                 
+                    </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 
+                  src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=582215_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx582215xx></A><IMG height=1 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/ind.gif" 
+                        width=18><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;forumid=687&amp;select=582215#xx582215xx" 
+                        name=582215>Re: Threads and Sockets</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=117"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle>Joseph M. 
+                        Newcomer&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>12:28 14 Aug 
+                        '03&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=582215_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/ind.gif" 
+                        width=18><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>You 
+                                must create UI threads. Sockets require UI 
+                                threads. So you must use the form of 
+                                AfxBeginThread that uses a RUNTIME_CLASS 
+                                parameter. <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=582215">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=582215">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;tid=574818&amp;forumid=687&amp;select=582215#xx582215xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?msg=582215#xx582215xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=582215"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=582215"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(117,582215);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 
+                  src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/t.gif" 
+                  width=1></TD></TR>
+              <TR id=316083_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx316083xx></A><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;forumid=687&amp;select=316083#xx316083xx" 
+                        name=316083><B>need window handle in the UI 
+                        thread</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=51625"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle><B>hillxy</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>1:44 23 Oct 
+                        '02</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=316083_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>I am 
+                                writing a background thread which runs voice 
+                                recognition. But IBM VR need a <BR>window handle 
+                                to start thr engine. Also the HWND are required 
+                                for the engine to send message back to the main 
+                                application. <BR><BR>So I need the new thread to 
+                                create a hidden window which will dispatch 
+                                engine messages<BR>and the new thread to post 
+                                recognized messages to the main window.<BR>It is 
+                                not hard to use createWindow ( instead of 
+                                dlg.DOModel() which will show the<BR>dialog ) 
+                                somewhere in the threadm but how to manage the 
+                                message loop of this created<BR>new hidden 
+                                window. 
+                                <BR><BR>Thanks<BR>Hillxy<BR><BR><BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=316083">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=316083">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;tid=316083&amp;forumid=687&amp;select=316083#xx316083xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?msg=316083#xx316083xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=316083"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=316083"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(51625,316083);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 
+                  src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=316184_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx316184xx></A><IMG height=1 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/ind.gif" 
+                        width=18><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;forumid=687&amp;select=316184#xx316184xx" 
+                        name=316184>Re: need window handle in the UI 
+                      thread</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=117"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle>Joseph M. 
+                        Newcomer&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>5:34 23 Oct 
+                        '02&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=316184_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/ind.gif" 
+                        width=18><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>You are 
+                                in a UI thread. The handler is free: you use a 
+                                message map entry. For example, if the speech 
+                                engine sends a message IBM_SOMETHING_HERE you 
+                                would add<BR><BR>ON_MESSAGE(IBM_SOMETHING_HERE, 
+                                OnIBMSomething)<BR>or<BR>ON_REGISTERED_MESSAGE(IBM_SOMETHING_HEAR, 
+                                OnIBMSomething)<BR><BR>and your handler would 
+                                be<BR><BR>LRESULT 
+                                CMyThread::OnIBMSomething(WPARAM wParam, LPARAM 
+                                lParam)<BR>{<BR>...whatever you want 
+                                here<BR>return ...appropriate value 
+                                here<BR>}<BR><BR>If you want to take that as an 
+                                opportunity to PostMessage to the main GUI loop, 
+                                that's fine. <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=316184">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=316184">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;tid=316083&amp;forumid=687&amp;select=316184#xx316184xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?msg=316184#xx316184xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=316184"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=316184"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(117,316184);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 
+                  src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=316427_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx316427xx></A><IMG height=1 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/ind.gif" 
+                        width=36><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;forumid=687&amp;select=316427#xx316427xx" 
+                        name=316427>Re: need window handle in the UI 
+                      thread</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=51625"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>hillxy&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>10:02 23 Oct 
+                        '02&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=316427_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/ind.gif" 
+                        width=36><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>hi, 
+                                Thanks for you prompt response first!<BR><BR>I 
+                                understand what you mean. I am still not so 
+                                sure<BR>whether the IBM engine could send 
+                                correctly to<BR>the message queue of this 
+                                thread. <BR><BR>When start the engine, a HWND 
+                                parameter is<BR>required by the engine API, 
+                                therefore<BR>the engine could send message to 
+                                this HWND.<BR>I assume there is no HWND, or sth 
+                                could be <BR>casted as HWND without create a new 
+                                window<BR>in the new thread, am i 
+                                right?<BR><BR>If So, Create a sub window with 
+                                thread or <BR>a thread with window, which is 
+                                more stable?<BR><BR>I have more coming up 
+                                questions<BR><BR>Thanks,<BR>Hillxy<BR><BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=316427">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=316427">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;tid=316083&amp;forumid=687&amp;select=316427#xx316427xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?msg=316427#xx316427xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=316427"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=316427"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(51625,316427);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 
+                  src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=318981_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx318981xx></A><IMG height=1 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/ind.gif" 
+                        width=54><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;forumid=687&amp;select=318981#xx318981xx" 
+                        name=318981>Re: need window handle in the UI 
+                      thread</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=117"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle>Joseph M. 
+                        Newcomer&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>13:14 25 Oct 
+                        '02&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=318981_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/ind.gif" 
+                        width=54><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Create 
+                                an invisible window in the UI thread and pass 
+                                its handle to the IBM engine. Typically you 
+                                would create this in the InitInstance of the 
+                                thread.<BR><BR>I have no idea what you mean by 
+                                "create a sub window with thread or a thread 
+                                with window". The language of the query makes no 
+                                sense. <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=318981">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=318981">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;tid=316083&amp;forumid=687&amp;select=318981#xx318981xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?msg=318981#xx318981xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=318981"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=318981"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(117,318981);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 
+                  src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=319365_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx319365xx></A><IMG height=1 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/ind.gif" 
+                        width=72><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;forumid=687&amp;select=319365#xx319365xx" 
+                        name=319365>Re: need window handle in the UI 
+                      thread</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=51625"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>hillxy&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>22:48 25 Oct 
+                        '02&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=319365_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/ind.gif" 
+                        width=72><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Thanks, 
+                                <BR><BR>You gave me the answer ,although my 
+                                question is not so clear.<BR>I meant " Create a 
+                                Window within a Thread or Create a thread within 
+                                a window"<BR><BR>By the way where can I find any 
+                                sample on how to create an invisible 
+                                Window<BR>and handle its WM_COMMAND message(the 
+                                Engine will send WM_COMMAND to the 
+                                window)?<BR><BR>Hillxy 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=319365">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=319365">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;tid=316083&amp;forumid=687&amp;select=319365#xx319365xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?msg=319365#xx319365xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=319365"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=319365"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(51625,319365);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 
+                  src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=319379_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx319379xx></A><IMG height=1 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/ind.gif" 
+                        width=90><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;forumid=687&amp;select=319379#xx319379xx" 
+                        name=319379>Re: need window handle in the UI 
+                      thread</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=117"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle>Joseph M. 
+                        Newcomer&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>23:43 25 Oct 
+                        '02&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=319379_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/ind.gif" 
+                        width=90><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>There 
+                                is no concept of "creating a thread within a 
+                                window". Threads own windows; windows don't own 
+                                threads.<BR><BR>In the case of a UI thread, 
+                                there is no magic. Create a subclass of generic 
+                                CWnd in the InitInstance of the thread. If the 
+                                engine is sending WM_COMMAND messages you must 
+                                have a spec on them (this is actually an 
+                                mind-bogglingly poor design; a good design would 
+                                send a Registered Window Message to a window! 
+                                But you did say it was from IBM...). Write an 
+                                OnCommand handler. Or tell me what the spec is 
+                                and I might be able to suggest a better 
+                                approach, e.g., ON_CONTROL 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=319379">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=319379">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;tid=316083&amp;forumid=687&amp;select=319379#xx319379xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?msg=319379#xx319379xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=319379"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=319379"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(117,319379);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 
+                  src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=322148_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx322148xx></A><IMG height=1 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/ind.gif" 
+                        width=36><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;forumid=687&amp;select=322148#xx322148xx" 
+                        name=322148>Re: need window handle in the UI 
+                      thread</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=36222"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT 
+                        class=messagetitle>kokie&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>13:27 29 Oct 
+                        '02&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=322148_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/ind.gif" 
+                        width=36><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Hey 
+                                Joseph.<BR>Would you have any idea why something 
+                                like 
+                                this:<BR><BR><CODE><BR>OnChar(...)<BR>{<BR>PostThreadMessage(id,msg,0,0);<BR>}<BR></CODE><BR><BR>would 
+                                cause a deadlock?. When ever i type too fast a 
+                                deadlock in the primary thread occurs and 
+                                freezes the entire app.<BR><BR>Thanks. 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=322148">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=322148">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;tid=316083&amp;forumid=687&amp;select=322148#xx322148xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?msg=322148#xx322148xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=322148"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=322148"><I>Delete</I></A>]<BR>
+                                <SCRIPT language=Javascript>MsgVoteForm(36222,322148);</SCRIPT>
+                                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 
+                  src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/t.gif" 
+                  width=1 border=0></TD></TR>
+              <TR id=326392_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx326392xx></A><IMG height=1 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/ind.gif" 
+                        width=54><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;forumid=687&amp;select=326392#xx326392xx" 
+                        name=326392>Re: need window handle in the UI 
+                      thread</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.codeproject.com/script/profile/whos_who.asp?id=117"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle>Joseph M. 
+                        Newcomer&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>16:29 2 Nov 
+                        '02&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=326392_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/ind.gif" 
+                        width=54><IMG 
+                        src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>I 
+                                presume that the OnChar is occurring in a 
+                                thread. How is this getting to the thread? A UI 
+                                thread normally would not be able to receive an 
+                                OnChar because it normally wouldn't have a 
+                                visible user window. If it does, and it is a 
+                                child window, what is the parent of the child? 
+                                <BR><BR>If the parent of the child window 
+                                belongs to any other thread than the thread 
+                                which holds the window which is receiving the 
+                                characters, deadlock wouldn't surprise me in the 
+                                slightest.<BR><BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.codeproject.com/script/comments/user_reply.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=326392">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.codeproject.com/script/comments/user_mail.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=326392">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;tid=316083&amp;forumid=687&amp;select=326392#xx326392xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.codeproject.com/threads/usinguithreads.asp?msg=326392#xx326392xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=326392"><I>Modify</I></A>|<A 
+                                href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/threads/usinguithreads.asp&amp;df=100&amp;forumid=687&amp;select=326392"><I>Delete</I></A>]<BR>Score: 
+                                4.0 (1 vote).
+                                <SCRIPT language=Javascript>MsgVoteForm(117,326392);</SCRIPT>
+                                 
+                    </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 
+                  src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/t.gif" 
+                  width=1 border=0></TD></TR></TBODY></TABLE></TD></TR>
+        <TR bgColor=#fbedbb>
+          <TD>
+            <TABLE cellPadding=2 width="100%">
+              <TBODY>
+              <TR>
+                <TD class=messagetitle>Last Visit: 0:41 Wednesday 22nd 
+                  September, 2004</TD>
+                <TD noWrap align=right><FONT class=messagetitle><SPAN 
+                  class=HoverLink>First</SPAN> <SPAN class=HoverLink>Prev</SPAN> 
+                  <A class=HoverLink 
+                  href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;forumid=687&amp;fr=26" 
+                  name=HoverNL>Next</A> <A class=HoverLink 
+                  href="http://www.codeproject.com/threads/usinguithreads.asp?df=100&amp;forumid=687&amp;fr=76" 
+                  name=HoverNL>Last</A> 
+      </FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><BR>
+<TABLE cellSpacing=5 width="100%">
+  <TBODY>
+  <TR vAlign=top>
+    <TD><FONT style="FONT-SIZE: 7pt" size=1><A 
+      href="http://www.codeproject.com/?cat=1">All Topics</A>, <A 
+      href="http://www.codeproject.com/?cat=2">MFC / C++</A> &gt;&gt; <A 
+      href="http://www.codeproject.com/threads/">Threads, Processes &amp; 
+      IPC</A> &gt;&gt; <A 
+      href="http://www.codeproject.com/threads/#Threads">Threads</A> 
+      <BR>Updated: 17 May 2000 </FONT></TD>
+    <TD align=right><FONT style="FONT-SIZE: 7pt" size=1>Article content 
+      copyright Joseph M. Newcomer, 2000<BR>everything else Copyright © <A 
+      href="mailto:webmaster@codeproject.com">CodeProject</A>, 1999-2004</A>. 
+      <BR><A href="http://www.codeproject.com/info/MediaKit">Advertise on The 
+      Code Project</A> | <A 
+      href="http://www.codeproject.com/info/privacy.asp">Privacy</A> 
+  </FONT></TD></TR></TBODY></TABLE><BR>
+<CENTER>
+<TABLE cellSpacing=0 cellPadding=0 width="95%" border=0>
+  <TBODY>
+  <TR>
+    <TD bgColor=#ff9900 height=1><IMG height=1 
+      src="The Code Project - Using User-Interface Threads - Threads, Processes &amp; IPC_files/space.gif"></TD></TR>
+  <TR>
+    <TD align=middle><FONT size=1><A 
+      href="http://www.codeproject.com/redir.asp?id=235">MSDN Communities</A> | 
+      <A href="http://aspalliance.com/">ASPAlliance</A> • <A 
+      href="http://www.developerfusion.com/">Developer Fusion</A> • <A 
+      href="http://www.devguru.com/">DevGuru</A> • <A 
+      href="http://www.programmersheaven.com/">Programmers Heaven</A> • <A 
+      href="http://www.planet-source-code.com/">Planet Source Code</A> • <A 
+      href="http://www.resourceindex.com/">Resource Index</A> • <A 
+      href="http://www.tek-tips.com/">Tek-Tips Forums</A> • <A 
+      href="http://www.topxml.com/">What is XML?</A> • <A 
+      href="http://www.visualbuilder.com/">VisualBuilder</A> • <A 
+      href="http://www.zvon.org/">ZVON</A> • <A 
+      href="http://www.codeproject.com/redir.asp?id=169">Search Us!</A> 
+    </FONT></TD></TR></TBODY></TABLE></CENTER></BODY></HTML>

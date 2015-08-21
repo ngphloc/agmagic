@@ -1,0 +1,201 @@
+#logoDiv {
+	Z-INDEX: 1; LEFT: 179px; WIDTH: 439px; POSITION: absolute; TOP: 1px; HEIGHT: 121px
+}
+#tagLineDiv {
+	Z-INDEX: 2; LEFT: 419px; WIDTH: 192px; POSITION: absolute; TOP: 53px; HEIGHT: 38px
+}
+#topSearchBoxDiv {
+	LEFT: 0px; VISIBILITY: hidden; WIDTH: 316px; CLIP: rect(0px 318px 122px 0px); POSITION: absolute; TOP: 0px; HEIGHT: 122px
+}
+.verdana11Grey {
+	FONT-SIZE: 11px; CURSOR: default; COLOR: #797979; FONT-FAMILY: verdana, arial, sans-serif
+}
+.verdana11Grey A {
+	FONT-SIZE: 11px; COLOR: #797979; FONT-FAMILY: verdana, arial, sans-serif
+}
+.verdana10Grey {
+	FONT-SIZE: 10px; CURSOR: default; COLOR: #8c8c8c; FONT-FAMILY: verdana, arial, sans-serif
+}
+.verdana10Grey A {
+	FONT-SIZE: 10px; COLOR: #8c8c8c; FONT-FAMILY: verdana, arial, sans-serif
+}
+.verdana11DarkGrey {
+	FONT-SIZE: 11px; CURSOR: default; COLOR: #2b3244; FONT-FAMILY: verdana, arial, sans-serif
+}
+.verdana11DarkGrey A {
+	FONT-SIZE: 11px; COLOR: #2b3244; FONT-FAMILY: verdana, arial, sans-serif
+}
+.sitemapHeader {
+	FONT-SIZE: 11px; CURSOR: default; COLOR: #ff9933; FONT-FAMILY: verdana, arial, sans-serif
+}
+.sitemapHeader A {
+	FONT-SIZE: 11px; CURSOR: default; COLOR: #ff9933; FONT-FAMILY: verdana, arial, sans-serif; TEXT-DECORATION: none
+}
+.sitemapHeader A:hover {
+	TEXT-DECORATION: underline
+}
+.sitemapSubHeader {
+	FONT-SIZE: 11px; CURSOR: default; COLOR: #797979; FONT-FAMILY: verdana, arial, sans-serif
+}
+.sitemapSubHeader A {
+	FONT-SIZE: 11px; CURSOR: hand; COLOR: #797979; FONT-FAMILY: verdana, arial, sans-serif; TEXT-DECORATION: none
+}
+.sitemapSubHeader A:hover {
+	TEXT-DECORATION: underline
+}
+.sitemapItem {
+	FONT-SIZE: 11px; CURSOR: default; COLOR: #8c8c8c; FONT-FAMILY: verdana, arial, sans-serif
+}
+.sitemapItem A {
+	FONT-SIZE: 11px; CURSOR: hand; COLOR: #8c8c8c; FONT-FAMILY: verdana, arial, sans-serif; TEXT-DECORATION: none
+}
+.sitemapItem A:hover {
+	TEXT-DECORATION: underline
+}
+.verdana11Blue {
+	FONT-SIZE: 11px; COLOR: #34587f; FONT-FAMILY: verdana, arial, sans-serif
+}
+.verdana11Blue A {
+	FONT-SIZE: 11px; COLOR: #34587f; FONT-FAMILY: verdana, arial, sans-serif
+}
+.verdana11Timeline {
+	FONT-SIZE: 11px; CURSOR: default; COLOR: #34587f; FONT-FAMILY: verdana, arial, sans-serif
+}
+.verdana11Timeline A {
+	FONT-SIZE: 11px; COLOR: #34587f; FONT-FAMILY: verdana, arial, sans-serif
+}
+.verdana11Timeline A:hover {
+	COLOR: #ff9933
+}
+.verdana11Green {
+	FONT-SIZE: 11px; CURSOR: default; COLOR: #68951c; FONT-FAMILY: verdana, arial, sans-serif
+}
+.verdana11Green A {
+	FONT-SIZE: 11px; COLOR: #68951c; FONT-FAMILY: verdana, arial, sans-serif
+}
+.verdana13Blue {
+	FONT-SIZE: 13px; CURSOR: default; COLOR: #34587f; FONT-FAMILY: verdana, arial, sans-serif
+}
+.verdana13Blue A {
+	FONT-SIZE: 13px; COLOR: #34587f; FONT-FAMILY: verdana, arial, sans-serif
+}
+.verdana10DarkGrey {
+	FONT-SIZE: 10px; COLOR: #2b3244; FONT-FAMILY: verdana, arial, sans-serif
+}
+.verdana10DarkGrey A {
+	FONT-SIZE: 10px; COLOR: #2b3244; FONT-FAMILY: verdana, arial, sans-serif
+}
+.verdana11DarkGreyNoLine {
+	FONT-SIZE: 11px; CURSOR: default; COLOR: #2b3244; FONT-FAMILY: verdana, arial, sans-serif
+}
+.verdana11DarkGreyNoLine A {
+	FONT-SIZE: 11px; COLOR: #2b3244; FONT-FAMILY: verdana, arial, sans-serif; TEXT-DECORATION: none
+}
+.verdana11SearchTabs {
+	FONT-SIZE: 11px; CURSOR: default; COLOR: #ffffff; FONT-FAMILY: verdana, arial, sans-serif
+}
+.verdana11SearchTabs A {
+	FONT-SIZE: 11px; COLOR: #ffffff; FONT-FAMILY: verdana, arial, sans-serif; TEXT-DECORATION: none
+}
+.verdana11SearchTabs A:hover {
+	COLOR: #fa7607
+}
+.verdana10White {
+	FONT-SIZE: 10px; CURSOR: default; COLOR: #ffffff; FONT-FAMILY: verdana, arial, sans-serif
+}
+.verdana10White A {
+	FONT-SIZE: 10px; COLOR: #ffffff; FONT-FAMILY: verdana, arial, sans-serif
+}
+.verdana11PurpleLink {
+	FONT-SIZE: 11px; COLOR: #180068; FONT-FAMILY: verdana, arial, sans-serif
+}
+.verdana11Purple {
+	FONT-SIZE: 11px; CURSOR: default; COLOR: #180068; FONT-FAMILY: verdana, arial, sans-serif
+}
+.verdana11Purple A {
+	FONT-SIZE: 11px; COLOR: #180068; FONT-FAMILY: verdana, arial, sans-serif
+}
+.verdana10PurpleHover {
+	FONT-SIZE: 10px; CURSOR: default; COLOR: #180068; FONT-FAMILY: verdana, arial, sans-serif
+}
+.verdana10PurpleHover A {
+	FONT-SIZE: 10px; COLOR: #180068; FONT-FAMILY: verdana, arial, sans-serif
+}
+.verdana10PurpleHover A:hover {
+	COLOR: #797979
+}
+.verdana11PurpleHover {
+	FONT-SIZE: 11px; CURSOR: default; COLOR: #180068; FONT-FAMILY: verdana, arial, sans-serif
+}
+.verdana11PurpleHover A {
+	FONT-SIZE: 11px; COLOR: #180068; FONT-FAMILY: verdana, arial, sans-serif
+}
+.verdana11PurpleHover A:hover {
+	COLOR: #797979
+}
+.verdana11Orange {
+	FONT-SIZE: 11px; CURSOR: default; COLOR: #ff9933; FONT-FAMILY: verdana, arial, sans-serif
+}
+.verdana11Orange A {
+	FONT-SIZE: 11px; CURSOR: hand; COLOR: #ff9933; FONT-FAMILY: verdana, arial, sans-serif
+}
+.verdana11White {
+	FONT-SIZE: 11px; CURSOR: default; COLOR: #ffffff; FONT-FAMILY: verdana, arial, sans-serif
+}
+.verdana11White A {
+	FONT-SIZE: 11px; COLOR: #ffffff; FONT-FAMILY: verdana, arial, sans-serif
+}
+.verdana11OrangeNoLine {
+	FONT-SIZE: 11px; CURSOR: default; COLOR: #fa7607; FONT-FAMILY: verdana, arial, sans-serif
+}
+.verdana11OrangeNoLine A {
+	FONT-SIZE: 11px; COLOR: #fa7607; FONT-FAMILY: verdana, arial, sans-serif; TEXT-DECORATION: none
+}
+.verdana10Orange {
+	FONT-SIZE: 10px; CURSOR: default; COLOR: #fa7607; FONT-FAMILY: verdana, arial, sans-serif
+}
+.verdana10Orange A {
+	FONT-SIZE: 10px; COLOR: #fa7607; FONT-FAMILY: verdana, arial, sans-serif
+}
+.searchBox {
+	FONT-SIZE: 11px; WIDTH: 142px; COLOR: #2b3244; FONT-FAMILY: verdana, arial, sans-serif
+}
+.searchBoxScirus {
+	FONT-SIZE: 11px; WIDTH: 132px; COLOR: #2b3244; FONT-FAMILY: verdana, arial, sans-serif
+}
+.applyforJobBox {
+	FONT-SIZE: 11px; WIDTH: 175px; COLOR: #2b3244; FONT-FAMILY: verdana, arial, sans-serif
+}
+.buyProductBox {
+	FONT-SIZE: 11px; WIDTH: 175px; COLOR: #2b3244; FONT-FAMILY: verdana, arial, sans-serif
+}
+.pagesBox {
+	FONT-SIZE: 11px; WIDTH: 75px; COLOR: #2b3244; FONT-FAMILY: verdana, arial, sans-serif
+}
+.buyProductArea {
+	FONT-SIZE: 11px; WIDTH: 200px; COLOR: #2b3244; FONT-FAMILY: verdana, arial, sans-serif; HEIGHT: 50px
+}
+.reviewFormArea {
+	FONT-SIZE: 11px; WIDTH: 380px; COLOR: #2b3244; FONT-FAMILY: verdana, arial, sans-serif; HEIGHT: 75px
+}
+.keywordBox {
+	FONT-SIZE: 12px; WIDTH: 136px; COLOR: #2b3244; FONT-FAMILY: verdana, arial, sans-serif
+}
+.locationSelect {
+	FONT-SIZE: 11px; COLOR: #2b3244; FONT-FAMILY: verdana, arial, sans-serif
+}
+.narrowLocationSelect {
+	FONT-SIZE: 11px; WIDTH: 136px; COLOR: #2b3244; FONT-FAMILY: verdana, arial, sans-serif
+}
+.countrySelect {
+	FONT-SIZE: 11px; COLOR: #2b3244; FONT-FAMILY: verdana, arial, sans-serif
+}
+.homeList {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #1a314a; FONT-FAMILY: verdana, arial
+}
+.homeList A {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #1a314a; FONT-FAMILY: verdana, arial; TEXT-DECORATION: none
+}
+.homeList A:hover {
+	COLOR: #7d7b7b
+}

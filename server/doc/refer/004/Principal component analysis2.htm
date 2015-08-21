@@ -1,0 +1,234 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0049)http://www.cis.hut.fi/~jhollmen/dippa/node30.html -->
+<!--Converted with LaTeX2HTML 96.1 (Feb 5, 1996) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds --><HTML><HEAD><TITLE>Principal component analysis2</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="Principal component analysis" name=description>
+<META content=dippa name=keywords>
+<META content=document name=resource-type>
+<META content=global name=distribution><LINK 
+href="Principal component analysis2_files/dippa.css" rel=STYLESHEET>
+<META content="MSHTML 6.00.2800.1106" name=GENERATOR></HEAD>
+<BODY lang=EN><A href="http://www.cis.hut.fi/~jhollmen/dippa/node31.html" 
+name=tex2html488><IMG height=24 alt=next src="" width=37 align=bottom></A> <A 
+href="http://www.cis.hut.fi/~jhollmen/dippa/node29.html" name=tex2html486><IMG 
+height=24 alt=up src="" width=26 align=bottom></A> <A 
+href="http://www.cis.hut.fi/~jhollmen/dippa/node29.html" name=tex2html482><IMG 
+height=24 alt=previous src="" width=63 align=bottom></A> <A 
+href="http://www.cis.hut.fi/~jhollmen/dippa/node1.html" name=tex2html490><IMG 
+height=24 alt=contents src="" width=65 align=bottom></A> <BR><B>Next:</B> <A 
+href="http://www.cis.hut.fi/~jhollmen/dippa/node31.html" 
+name=tex2html489>Models</A> <B>Up:</B> <A 
+href="http://www.cis.hut.fi/~jhollmen/dippa/node29.html" 
+name=tex2html487>Principal component analysis</A> <B>Previous:</B> <A 
+href="http://www.cis.hut.fi/~jhollmen/dippa/node29.html" 
+name=tex2html483>Principal component analysis</A> <BR>
+<P>
+<H1><A name=SECTION00610000000000000000>Principal component analysis</A></H1>
+<P>Principal component analysis (PCA) is a classical statistical method. This 
+linear transform has been widely used in data analysis and compression. The 
+following presentation is adapted from [<A 
+href="http://www.cis.hut.fi/~jhollmen/dippa/node47.html#Gonzalez92">9</A>]. Some 
+of the texts on the subject also include [<A 
+href="http://www.cis.hut.fi/~jhollmen/dippa/node47.html#Oja83">30</A>], [<A 
+href="http://www.cis.hut.fi/~jhollmen/dippa/node47.html#Oja89">31</A>]. 
+Principal component analysis is based on the statistical representation of a 
+random variable. Suppose we have a random vector population <B>x</B>, where 
+<P><IMG height=22 alt=displaymath2085 
+src="Principal component analysis2_files/img37.gif" width=315 align=bottom> 
+<P>and the mean of that population is denoted by 
+<P><IMG height=20 alt=displaymath2087 
+src="Principal component analysis2_files/img38.gif" width=295 align=bottom> 
+<P>and the covariance matrix of the same data set is 
+<P><IMG height=22 alt=displaymath2089 
+src="Principal component analysis2_files/img39.gif" width=365 align=bottom> 
+<P>The components of <IMG height=27 alt=tex2html_wrap_inline2091 
+src="Principal component analysis2_files/img40.gif" width=22 align=middle> , 
+denoted by <IMG height=19 alt=tex2html_wrap_inline2093 
+src="Principal component analysis2_files/img41.gif" width=17 align=middle> , 
+represent the covariances between the random variable components <IMG height=18 
+alt=tex2html_wrap_inline2095 src="Principal component analysis2_files/img42.gif" 
+width=15 align=middle> and <IMG height=19 alt=tex2html_wrap_inline2097 
+src="Principal component analysis2_files/img43.gif" width=16 align=middle> . The 
+component <IMG height=18 alt=tex2html_wrap_inline2099 
+src="Principal component analysis2_files/img44.gif" width=16 align=middle> is the 
+variance of the component <IMG height=18 alt=tex2html_wrap_inline2095 
+src="Principal component analysis2_files/img42.gif" width=15 align=middle> . The 
+variance of a component indicates the spread of the component values around its 
+mean value. If two components <IMG height=18 alt=tex2html_wrap_inline2095 
+src="Principal component analysis2_files/img42.gif" width=15 align=middle> and 
+<IMG height=19 alt=tex2html_wrap_inline2097 
+src="Principal component analysis2_files/img43.gif" width=16 align=middle> of the 
+data are uncorrelated, their covariance is zero <IMG height=31 
+alt=tex2html_wrap_inline2107 src="Principal component analysis2_files/img45.gif" 
+width=110 align=middle> . The covariance matrix is, by definition, always 
+symmetric. 
+<P>From a sample of vectors <IMG height=19 alt=tex2html_wrap_inline2109 
+src="Principal component analysis2_files/img46.gif" width=87 align=middle> , we 
+can calculate the sample mean and the sample covariance matrix as the estimates 
+of the mean and the covariance matrix. 
+<P>From a symmetric matrix such as the covariance matrix, we can calculate an 
+orthogonal basis by finding its eigenvalues and eigenvectors. The eigenvectors 
+<IMG height=18 alt=tex2html_wrap_inline2111 
+src="Principal component analysis2_files/img47.gif" width=14 align=middle> and 
+the corresponding eigenvalues <IMG height=27 alt=tex2html_wrap_inline2113 
+src="Principal component analysis2_files/img48.gif" width=14 align=middle> are 
+the solutions of the equation 
+<P><IMG height=17 alt=displaymath2115 
+src="Principal component analysis2_files/img49.gif" width=344 align=bottom> 
+<P>For simplicity we assume that the <IMG height=27 alt=tex2html_wrap_inline2113 
+src="Principal component analysis2_files/img48.gif" width=14 align=middle> are 
+distinct. These values can be found, for example, by finding the solutions of 
+the characteristic equation 
+<P><IMG height=20 alt=displaymath2119 
+src="Principal component analysis2_files/img50.gif" width=304 align=bottom> 
+<P>where the <IMG height=13 alt=tex2html_wrap_inline2121 
+src="Principal component analysis2_files/img51.gif" width=8 align=bottom> is the 
+identity matrix having the same order than <IMG height=27 
+alt=tex2html_wrap_inline2091 src="Principal component analysis2_files/img40.gif" 
+width=22 align=middle> and the |.| denotes the determinant of the matrix. If the 
+data vector has <I>n</I> components, the characteristic equation becomes of 
+order <I>n</I>. This is easy to solve only if <I>n</I> is small. Solving 
+eigenvalues and corresponding eigenvectors is a non-trivial task, and many 
+methods exist. One way to solve the eigenvalue problem is to use a neural 
+solution to the problem [<A 
+href="http://www.cis.hut.fi/~jhollmen/dippa/node47.html#Oja83">30</A>]. The data 
+is fed as the input, and the network converges to the wanted solution. 
+<P>By ordering the eigenvectors in the order of descending eigenvalues (largest 
+first), one can create an ordered orthogonal basis with the first eigenvector 
+having the direction of largest variance of the data. In this way, we can find 
+directions in which the data set has the most significant amounts of energy. 
+<P>Suppose one has a data set of which the sample mean and the covariance matrix 
+have been calculated. Let <IMG height=13 alt=tex2html_wrap_inline2133 
+src="Principal component analysis2_files/img52.gif" width=15 align=bottom> be a 
+matrix consisting of eigenvectors of the covariance matrix as the row vectors. 
+<P>By transforming a data vector <B>x</B>, we get 
+<P><IMG height=20 alt=displaymath2135 
+src="Principal component analysis2_files/img53.gif" width=310 align=bottom> 
+<P>which is a point in the orthogonal coordinate system defined by the 
+eigenvectors. Components of <B>y</B> can be seen as the coordinates in the 
+orthogonal base. We can reconstruct the original data vector <IMG height=9 
+alt=tex2html_wrap_inline1951 src="Principal component analysis2_files/img14.gif" 
+width=11 align=bottom> from <IMG height=19 alt=tex2html_wrap_inline2139 
+src="Principal component analysis2_files/img54.gif" width=11 align=middle> by 
+<P><IMG height=21 alt=displaymath2141 
+src="Principal component analysis2_files/img55.gif" width=308 align=bottom> 
+<P>using the property of an orthogonal matrix <IMG height=16 
+alt=tex2html_wrap_inline2143 src="Principal component analysis2_files/img56.gif" 
+width=85 align=bottom> . The <IMG height=16 alt=tex2html_wrap_inline2145 
+src="Principal component analysis2_files/img57.gif" width=26 align=bottom> is the 
+transpose of a matrix <IMG height=13 alt=tex2html_wrap_inline2133 
+src="Principal component analysis2_files/img52.gif" width=15 align=bottom> . The 
+original vector <IMG height=9 alt=tex2html_wrap_inline1951 
+src="Principal component analysis2_files/img14.gif" width=11 align=bottom> was 
+projected on the coordinate axes defined by the orthogonal basis. The original 
+vector was then reconstructed by a linear combination of the orthogonal basis 
+vectors. 
+<P>Instead of using all the eigenvectors of the covariance matrix, we may 
+represent the data in terms of only a few basis vectors of the orthogonal basis. 
+If we denote the matrix having the K first eigenvectors as rows by <IMG 
+height=27 alt=tex2html_wrap_inline2151 
+src="Principal component analysis2_files/img58.gif" width=28 align=middle> , we 
+can create a similar transformation as seen above 
+<P><IMG height=20 alt=displaymath2153 
+src="Principal component analysis2_files/img59.gif" width=316 align=bottom> 
+<P>and 
+<P><IMG height=21 alt=displaymath2155 
+src="Principal component analysis2_files/img60.gif" width=315 align=bottom> 
+<P>
+<P>This means that we project the original data vector on the coordinate axes 
+having the dimension <I>K</I> and transforming the vector back by a linear 
+combination of the basis vectors. This minimizes the mean-square error between 
+the data and this representation with given number of eigenvectors. 
+<P>If the data is concentrated in a linear subspace, this provides a way to 
+compress data without losing much information and simplifying the 
+representation. By picking the eigenvectors having the largest eigenvalues we 
+lose as little information as possible in the mean-square sense. One can e.g. 
+choose a fixed number of eigenvectors and their respective eigenvalues and get a 
+consistent representation, or abstraction of the data. This preserves a varying 
+amount of energy of the original data. Alternatively, we can choose 
+approximately the same amount of energy and a varying amount of eigenvectors and 
+their respective eigenvalues. This would in turn give approximately consistent 
+amount of information in the expense of varying representations with regard to 
+the dimension of the subspace. 
+<P>We are here faced with contradictory goals: On one hand, we should simplify 
+the problem by reducing the dimension of the representation. On the other hand 
+we want to preserve as much as possible of the original information content. PCA 
+offers a convenient way to control the trade-off between loosing information and 
+simplifying the problem at hand. 
+<P>As it will be noted later, it may be possible to create piecewise linear 
+models by dividing the input data to smaller regions and fitting linear models 
+locally to the data. 
+<P>Now, consider a small example showing the characteristics of the 
+eigenvectors. Some artificial data has been generated, which is illustrated in 
+the Figure <A 
+href="http://www.cis.hut.fi/~jhollmen/dippa/node30.html#figpcaexample">3.1</A>. 
+The small dots are the points in the data set. 
+<P>
+<P><A name=814>&nbsp;</A><A name=figpcaexample>&nbsp;</A> <IMG height=220 
+alt=figure810 src="Principal component analysis2_files/img61.gif" width=282 
+align=bottom> <BR><STRONG>Figure 3.1:</STRONG> Eigenvectors of the artificially 
+created data<BR>
+<P>
+<P>Sample mean and sample covariance matrix can easily be calculated from the 
+data. Eigenvectors and eigenvalues can be calculated from the covariance matrix. 
+The directions of eigenvectors are drawn in the Figure as lines. The first 
+eigenvector having the largest eigenvalue points to the direction of largest 
+variance (right and upwards) whereas the second eigenvector is orthogonal to the 
+first one (pointing to left and upwards). In this example the first eigenvalue 
+corresponding to the first eigenvector is <IMG height=27 
+alt=tex2html_wrap_inline2159 src="Principal component analysis2_files/img62.gif" 
+width=95 align=middle> while the other eigenvalue is <IMG height=27 
+alt=tex2html_wrap_inline2161 src="Principal component analysis2_files/img63.gif" 
+width=94 align=middle> . By comparing the values of eigenvalues to the total sum 
+of eigenvalues, we can get an idea how much of the energy is concentrated along 
+the particular eigenvector. In this case, the first eigenvector contains almost 
+all the energy. The data could be well approximated with a one-dimensional 
+representation. 
+<P>Sometimes it is desirable to investigate the behavior of the system under 
+small changes. Assume that this system, or phenomenon is constrained to a 
+<I>n</I>-dimensional manifold and can be approximated with a linear manifold. 
+Suppose one has a small change along one of the coordinate axes in the original 
+coordinate system. If the data from the phenomenon is concentrated in a 
+subspace, we can project this small change <IMG height=28 
+alt=tex2html_wrap_inline2165 src="Principal component analysis2_files/img64.gif" 
+width=15 align=middle> to the approximative subspace built with PCA by 
+projecting <IMG height=28 alt=tex2html_wrap_inline2165 
+src="Principal component analysis2_files/img64.gif" width=15 align=middle> on all 
+the basis vectors in the linear subspace by 
+<P><IMG height=20 alt=displaymath2169 
+src="Principal component analysis2_files/img65.gif" width=292 align=bottom> 
+<P>where the matrix <IMG height=27 alt=tex2html_wrap_inline2151 
+src="Principal component analysis2_files/img58.gif" width=28 align=middle> has 
+the K first eigenvectors as rows. Subspace has then a dimension of K. <IMG 
+height=29 alt=tex2html_wrap_inline2173 
+src="Principal component analysis2_files/img66.gif" width=15 align=middle> 
+represents the change caused by the original small change. This can be 
+transformed back with a change of basis by taking a linear combination of the 
+basis vectors by 
+<P><IMG height=23 alt=displaymath2175 
+src="Principal component analysis2_files/img67.gif" width=298 align=bottom> 
+<P>
+<P>Then, we get the typical change in the real-world coordinate system caused by 
+a small change <IMG height=28 alt=tex2html_wrap_inline2165 
+src="Principal component analysis2_files/img64.gif" width=15 align=middle> by 
+assuming that the phenomenon constrains the system to have values in the limited 
+subspace only. 
+<P>
+<HR>
+<A href="http://www.cis.hut.fi/~jhollmen/dippa/node31.html" 
+name=tex2html488><IMG height=24 alt=next src="" width=37 align=bottom></A> <A 
+href="http://www.cis.hut.fi/~jhollmen/dippa/node29.html" name=tex2html486><IMG 
+height=24 alt=up src="" width=26 align=bottom></A> <A 
+href="http://www.cis.hut.fi/~jhollmen/dippa/node29.html" name=tex2html482><IMG 
+height=24 alt=previous src="" width=63 align=bottom></A> <A 
+href="http://www.cis.hut.fi/~jhollmen/dippa/node1.html" name=tex2html490><IMG 
+height=24 alt=contents src="" width=65 align=bottom></A> <BR><B>Next:</B> <A 
+href="http://www.cis.hut.fi/~jhollmen/dippa/node31.html" 
+name=tex2html489>Models</A> <B>Up:</B> <A 
+href="http://www.cis.hut.fi/~jhollmen/dippa/node29.html" 
+name=tex2html487>Principal component analysis</A> <B>Previous:</B> <A 
+href="http://www.cis.hut.fi/~jhollmen/dippa/node29.html" 
+name=tex2html483>Principal component analysis</A> 
+<P>
+<ADDRESS><I>Jaakko Hollmen <BR>Fri Mar 8 13:44:32 EET 1996</I> 
+</ADDRESS></BODY></HTML>

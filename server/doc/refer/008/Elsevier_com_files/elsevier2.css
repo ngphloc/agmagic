@@ -1,0 +1,42 @@
+TD {
+	FONT-SIZE: 11px; COLOR: #2b3244; FONT-FAMILY: verdana, arial, sans-serif
+}
+CAPTION {
+	FONT-SIZE: 11px; COLOR: #2b3244; FONT-FAMILY: verdana, arial, sans-serif
+}
+TABLE {
+	BORDER-COLLAPSE: collapse
+}
+.verdana18DarkGrey {
+	FONT-SIZE: 18px; CURSOR: default; COLOR: #2b3244; FONT-FAMILY: verdana, arial, sans-serif
+}
+.verdana18DarkGrey A {
+	FONT-SIZE: 18px; COLOR: #2b3244; FONT-FAMILY: verdana, arial, sans-serif
+}
+.verdana12DarkGrey A {
+	FONT-SIZE: 12px; COLOR: #2b3244; FONT-FAMILY: verdana, arial, sans-serif
+}
+.verdana12DarkGrey {
+	FONT-SIZE: 12px; CURSOR: default; COLOR: #2b3244; FONT-FAMILY: verdana, arial, sans-serif
+}
+.verdana12Black A {
+	FONT-SIZE: 12px; COLOR: #000000; FONT-FAMILY: verdana, arial, sans-serif
+}
+.verdana12Black {
+	FONT-SIZE: 12px; CURSOR: default; COLOR: #000000; FONT-FAMILY: verdana, arial, sans-serif
+}
+.subjectSelect {
+	FONT-SIZE: 11px; COLOR: #2b3244; FONT-FAMILY: verdana, arial, sans-serif
+}
+.imprintSelect {
+	FONT-SIZE: 11px; COLOR: #2b3244; FONT-FAMILY: verdana, arial, sans-serif
+}
+.searchBox2 {
+	FONT-SIZE: 11px; WIDTH: 142px; COLOR: #2b3244
+}
+LI {
+	LIST-STYLE-IMAGE: url(/authored_framework/images/box_grey.gif)
+}
+UL {
+	MARGIN-LEFT: 20px
+}

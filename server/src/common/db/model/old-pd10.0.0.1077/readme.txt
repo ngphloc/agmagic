@@ -1,0 +1,1 @@
+﻿Mô hình cũ, chưa sửa cụm chữ "Std" thành "Norm", nhưng mô hình này lại sử dụng Power Designer phien ban : 10.0.0.1077

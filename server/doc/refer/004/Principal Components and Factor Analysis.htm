@@ -1,0 +1,530 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0048)http://www.statsoftinc.com/textbook/stfacan.html -->
+<HTML><HEAD><TITLE>Principal Components and Factor Analysis</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META content="MSHTML 6.00.2800.1106" name=GENERATOR></HEAD>
+<BODY 
+background="Principal Components and Factor Analysis_files/tile1.gif"><FONT 
+size=1>© Copyright StatSoft, Inc., 1984-2003<BR></FONT>
+<CENTER><FONT color=#aa0000 size=5><B>Principal Components and Factor 
+Analysis</B></FONT></CENTER>
+<HR SIZE=1>
+
+<UL><A name=index></A>
+  <LI><A href="http://www.statsoftinc.com/textbook/stfacan.html#general">General 
+  Purpose</A> 
+  <LI><A href="http://www.statsoftinc.com/textbook/stfacan.html#basic">Basic 
+  Idea of Factor Analysis as a Data Reduction Method</A> 
+  <LI><A href="http://www.statsoftinc.com/textbook/stfacan.html#factor">Factor 
+  Analysis as a Classification Method</A> 
+  <LI><A 
+  href="http://www.statsoftinc.com/textbook/stfacan.html#sundries">Miscellaneous 
+  Other Issues and Statistics</A> </LI></UL>
+<HR SIZE=1>
+<A name=general></A><FONT color=navy size=4>General Purpose </FONT>
+<P>The main applications of factor analytic techniques are: (1) to <I>reduce</I> 
+the number of variables and (2) to <I>detect structure</I> in the relationships 
+between variables, that is to <I>classify variables</I>. Therefore, factor 
+analysis is applied as a data reduction or structure detection method (the term 
+<I>factor analysis</I> was first introduced by Thurstone, 1931). The topics 
+listed below will describe the principles of factor analysis, and how it can be 
+applied towards these two purposes. We will assume that you are familiar with 
+the basic logic of statistical reasoning as described in <A 
+href="http://www.statsoftinc.com/textbook/esc.html"><I>Elementary 
+Concepts</I></A>. Moreover, we will also assume that you are familiar with the 
+concepts of variance and correlation; if not, we advise that you read the <A 
+href="http://www.statsoftinc.com/textbook/stbasic.html"><I>Basic 
+Statistics</I></A> chapter at this point. 
+<P>There are many excellent books on factor analysis. For example, a hands-on 
+how-to approach can be found in Stevens (1986); more detailed technical 
+descriptions are provided in Cooley and Lohnes (1971); Harman (1976); Kim and 
+Mueller, (1978a, 1978b); Lawley and Maxwell (1971); Lindeman, Merenda, and Gold 
+(1980); Morrison (1967); or Mulaik (1972). The interpretation of secondary 
+factors in hierarchical factor analysis, as an alternative to traditional 
+oblique rotational strategies, is explained in detail by Wherry (1984). 
+<P><B>Confirmatory factor analysis. </B><A 
+href="http://www.statsoftinc.com/textbook/stsepath.html"><I>Structural Equation 
+Modeling</I> (<I>SEPATH</I>)</A> allows you to test specific hypotheses about 
+the factor structure for a set of variables, in one or several samples (e.g., 
+you can compare factor structures across samples). 
+<P><B>Correspondence analysis. </B><A 
+href="http://www.statsoftinc.com/textbook/stcoran.html">Correspondence 
+analysis</A> is a descriptive/exploratory technique designed to analyze two-way 
+and multi-way tables containing some measure of correspondence between the rows 
+and columns. The results provide information which is similar in nature to those 
+produced by factor analysis techniques, and they allow one to explore the 
+structure of categorical variables included in the table. For more information 
+regarding these methods, refer to <A 
+href="http://www.statsoftinc.com/textbook/stcoran.html"><I>Correspondence 
+Analysis</I></A>. 
+<TABLE align=right>
+  <TBODY>
+  <TR>
+    <TD><A href="http://www.statsoftinc.com/textbook/stfacan.html#index"><FONT 
+      size=1>To index</FONT></A> </TD></TR></TBODY></TABLE><BR clear=right><A 
+name=basic></A>
+<P><FONT color=navy size=4>Basic Idea of Factor Analysis as a Data Reduction 
+Method </FONT>
+<P>Suppose we conducted a (rather "silly") study in which we measure 100 
+people's height in inches and centimeters. Thus, we would have two variables 
+that measure height. If in future studies, we want to research, for example, the 
+effect of different nutritional food supplements on height, would we continue to 
+use both measures? Probably not; height is one characteristic of a person, 
+regardless of how it is measured. 
+<P>Let us now extrapolate from this "silly" study to something that one might 
+actually do as a researcher. Suppose we want to measure people's satisfaction 
+with their lives. We design a satisfaction questionnaire with various items; 
+among other things we ask our subjects how satisfied they are with their hobbies 
+(item 1) and how intensely they are pursuing a hobby (item 2). Most likely, the 
+responses to the two items are highly correlated with each other. (If you are 
+not familiar with the correlation coefficient, we recommend that you read the 
+description in <A 
+href="http://www.statsoftinc.com/textbook/stbasic.html#Correlations">Basic 
+Statistics - Correlations</A>) Given a high correlation between the two items, 
+we can conclude that they are quite redundant. 
+<P><B>Combining Two Variables into a Single Factor. </B>One can summarize the 
+correlation between two variables in a <A 
+href="http://www.statsoftinc.com/textbook/gloss.html#Scatterplot, 2D">scatterplot</A>. 
+A regression line can then be fitted that represents the "best" summary of the 
+linear relationship between the variables. If we could define a variable that 
+would approximate the regression line in such a plot, then that variable would 
+capture most of the "essence" of the two items. Subjects' single scores on that 
+new factor, represented by the regression line, could then be used in future 
+data analyses to represent that essence of the two items. In a sense we have 
+reduced the two variables to one factor. Note that the new factor is actually a 
+linear combination of the two variables. 
+<P><B>Principal Components Analysis. </B>The example described above, combining 
+two correlated variables into one factor, illustrates the basic idea of factor 
+analysis, or of principal components analysis to be precise (we will return to 
+this later). If we extend the two-variable example to multiple variables, then 
+the computations become more involved, but the basic principle of expressing two 
+or more variables by a single factor remains the same. 
+<P><B>Extracting Principal Components. </B>We do not want to go into the details 
+about the computational aspects of principal components analysis here, which can 
+be found elsewhere (references were provided at the beginning of this section). 
+However, basically, the extraction of principal components amounts to a 
+<I>variance maximizing (varimax) rotation</I> of the original variable space. 
+For example, in a scatterplot we can think of the regression line as the 
+original <I>X</I> axis, rotated so that it approximates the regression line. 
+This type of rotation is called <I>variance maximizing</I> because the criterion 
+for (goal of) the rotation is to maximize the variance (variability) of the 
+"new" variable (factor), while minimizing the variance around the new variable 
+(see <I>Rotational Strategies</I>). 
+<P><B>Generalizing to the Case of Multiple Variables.</B> When there are more 
+than two variables, we can think of them as defining a "space," just as two 
+variables defined a plane. Thus, when we have three variables, we could plot a 
+three- dimensional scatterplot, and, again we could fit a plane through the 
+data. 
+<P><IMG height=218 
+src="Principal Components and Factor Analysis_files/popup14.gif" width=306 
+border=0> 
+<P>With more than three variables it becomes impossible to illustrate the points 
+in a scatterplot, however, the logic of rotating the axes so as to maximize the 
+variance of the new factor remains the same. 
+<P><B>Multiple orthogonal factors.</B> After we have found the line on which the 
+variance is maximal, there remains some variability around this line. In 
+principal components analysis, after the first factor has been extracted, that 
+is, after the first line has been drawn through the data, we continue and define 
+another line that maximizes the remaining variability, and so on. In this 
+manner, consecutive factors are extracted. Because each consecutive factor is 
+defined to maximize the variability that is not captured by the preceding 
+factor, consecutive factors are independent of each other. Put another way, 
+consecutive factors are uncorrelated or <I>orthogonal</I> to each other. 
+<P><B>How many Factors to Extract? </B>Remember that, so far, we are considering 
+principal components analysis as a data reduction method, that is, as a method 
+for reducing the number of variables. The question then is, how many factors do 
+we want to extract? Note that as we extract consecutive factors, they account 
+for less and less variability. The decision of when to stop extracting factors 
+basically depends on when there is only very little "random" variability left. 
+The nature of this decision is arbitrary; however, various guidelines have been 
+developed, and they are reviewed in <I>Reviewing the Results of a Principal 
+Components Analysis</I> under <I>Eigenvalues and the Number-of- Factors 
+Problem</I>. <A name=results></A>
+<P><B>Reviewing the Results of a Principal Components Analysis. </B>Without 
+further ado, let us now look at some of the standard results from a principal 
+components analysis. To reiterate, we are extracting factors that account for 
+less and less variance. To simplify matters, one usually starts with the 
+correlation matrix, where the variances of all variables are equal to 1.0. 
+Therefore, the total variance in that matrix is equal to the number of 
+variables. For example, if we have 10 variables each with a variance of 1 then 
+the total variability that can potentially be extracted is equal to 10 times 1. 
+Suppose that in the satisfaction study introduced earlier we included 10 items 
+to measure different aspects of satisfaction at home and at work. The variance 
+accounted for by successive factors would be summarized as follows: 
+<P>
+<TABLE border=1>
+  <TBODY>
+  <TR>
+    <TH align=left><FONT color=blue 
+      size=2>STATISTICA<BR>FACTOR<BR>ANALYSIS</FONT></TH>
+    <TH align=middle colSpan=4><FONT color=blue size=2>Eigenvalues 
+      (factor.sta)<BR>Extraction: Principal components<BR>&nbsp;</FONT></TH></TR>
+  <TR>
+    <TH align=middle><FONT color=blue size=2>&nbsp;<BR>Value</FONT></TH>
+    <TH align=right><FONT color=blue size=2>&nbsp;<BR>Eigenval</FONT></TH>
+    <TH align=right><FONT color=blue size=2>% total<BR>Variance</FONT></TH>
+    <TH align=right><FONT color=blue size=2>Cumul.<BR>Eigenval</FONT></TH>
+    <TH align=right><FONT color=blue size=2>Cumul.<BR>%</FONT></TH></TR>
+  <TR>
+    <TD align=right><FONT color=blue 
+      size=2>1<BR>2<BR>3<BR>4<BR>5<BR>6<BR>7<BR>8<BR>9<BR>10</FONT></TD>
+    <TD align=right><FONT color=blue 
+      size=2>6.118369<BR>1.800682<BR>.472888<BR>.407996<BR>.317222<BR>.293300<BR>.195808<BR>.170431<BR>.137970<BR>.085334</FONT></TD>
+    <TD align=right><FONT color=blue 
+      size=2>61.18369<BR>18.00682<BR>4.72888<BR>4.07996<BR>3.17222<BR>2.93300<BR>1.95808<BR>1.70431<BR>1.37970<BR>.85334</FONT></TD>
+    <TD align=right><FONT color=blue 
+      size=2>6.11837<BR>7.91905<BR>8.39194<BR>8.79993<BR>9.11716<BR>9.41046<BR>9.60626<BR>9.77670<BR>9.91467<BR>10.00000</FONT></TD>
+    <TD align=right><FONT color=blue 
+      size=2>61.1837<BR>79.1905<BR>83.9194<BR>87.9993<BR>91.1716<BR>94.1046<BR>96.0626<BR>97.7670<BR>99.1467<BR>100.0000</FONT></TD></TR></TBODY></TABLE><BR 
+clear=all>
+<P><B>Eigenvalues</B><BR>In the second column (<I>Eigenvalue</I>) above, we find 
+the variance on the new factors that were successively extracted. In the third 
+column, these values are expressed as a percent of the total variance (in this 
+example, 10). As we can see, factor 1 accounts for 61 percent of the variance, 
+factor 2 for 18 percent, and so on. As expected, the sum of the eigenvalues is 
+equal to the number of variables. The third column contains the cumulative 
+variance extracted. The variances extracted by the factors are called the 
+<I>eigenvalues</I>. This name derives from the computational issues involved. 
+<P><B>Eigenvalues and the Number-of-Factors Problem</B><BR>Now that we have a 
+measure of how much variance each successive factor extracts, we can return to 
+the question of how many factors to retain. As mentioned earlier, by its nature 
+this is an arbitrary decision. However, there are some guidelines that are 
+commonly used, and that, in practice, seem to yield the best results. 
+<P><B>The Kaiser criterion.</B> First, we can retain only factors with 
+eigenvalues greater than 1. In essence this is like saying that, unless a factor 
+extracts at least as much as the equivalent of one original variable, we drop 
+it. This criterion was proposed by Kaiser (1960), and is probably the one most 
+widely used. In our example above, using this criterion, we would retain 2 
+factors (principal components). 
+<P><B>The scree test. </B>A graphical method is the <I>scree</I> test first 
+proposed by Cattell (1966). We can plot the eigenvalues shown above in a simple 
+line plot. 
+<P><IMG height=218 
+src="Principal Components and Factor Analysis_files/popup15.gif" width=306 
+border=0> 
+<P>Cattell suggests to find the place where the smooth decrease of eigenvalues 
+appears to level off to the right of the plot. To the right of this point, 
+presumably, one finds only "factorial scree" -- "scree" is the geological term 
+referring to the debris which collects on the lower part of a rocky slope. 
+According to this criterion, we would probably retain 2 or 3 factors in our 
+example. 
+<P><B>Which criterion to use. </B>Both criteria have been studied in detail 
+(Browne, 1968; Cattell &amp; Jaspers, 1967; Hakstian, Rogers, &amp; Cattell, 
+1982; Linn, 1968; Tucker, Koopman &amp; Linn, 1969). Theoretically, one can 
+evaluate those criteria by generating random data based on a particular number 
+of factors. One can then see whether the number of factors is accurately 
+detected by those criteria. Using this general technique, the first method 
+(<I>Kaiser criterion</I>) sometimes retains too many factors, while the second 
+technique (scree test) sometimes retains too few; however, both do quite well 
+under normal conditions, that is, when there are relatively few factors and many 
+cases. In practice, an additional important aspect is the extent to which a 
+solution is interpretable. Therefore, one usually examines several solutions 
+with more or fewer factors, and chooses the one that makes the best "sense." We 
+will discuss this issue in the context of factor rotations below. 
+<P><B>Principal Factors Analysis</B><BR>Before we continue to examine the 
+different aspects of the typical output from a principal components analysis, 
+let us now introduce principal factors analysis. Let us return to our 
+satisfaction questionnaire example to conceive of another "mental model" for 
+factor analysis. We can think of subjects' responses as being dependent on two 
+components. First, there are some underlying common factors, such as the 
+"satisfaction-with-hobbies" factor we looked at before. Each item measures some 
+part of this common aspect of satisfaction. Second, each item also captures a 
+unique aspect of satisfaction that is not addressed by any other item. 
+<P><B>Communalities. </B>If this model is correct, then we should not expect 
+that the factors will extract all variance from our items; rather, only that 
+proportion that is due to the common factors and shared by several items. In the 
+language of factor analysis, the proportion of variance of a particular item 
+that is due to common factors (shared with other items) is called 
+<I>communality.</I> Therefore, an additional task facing us when applying this 
+model is to estimate the communalities for each variable, that is, the 
+proportion of variance that each item has in common with other items. The 
+proportion of variance that is unique to each item is then the respective item's 
+total variance minus the communality. A common starting point is to use the 
+squared multiple correlation of an item with all other items as an estimate of 
+the communality (refer to <I>Multiple Regression</I> for details about multiple 
+regression). Some authors have suggested various iterative "post-solution 
+improvements" to the initial multiple regression communality estimate; for 
+example, the so-called MINRES method (minimum residual factor method; Harman 
+&amp; Jones, 1966) will try various modifications to the factor loadings with 
+the goal to minimize the residual (unexplained) sums of squares. 
+<P><B>Principal factors vs. principal components. </B>The defining 
+characteristic then that distinguishes between the two factor analytic models is 
+that in principal components analysis we assume that <I>all</I> variability in 
+an item should be used in the analysis, while in principal factors analysis we 
+only use the variability in an item that it has in common with the other items. 
+A detailed discussion of the pros and cons of each approach is beyond the scope 
+of this introduction (refer to the general references provided in <A 
+href="http://www.statsoftinc.com/textbook/stfacan.html#index"><I>Principal 
+components and Factor Analysis - Introductory Overview</I></A>). In most cases, 
+these two methods usually yield very similar results. However, principal 
+components analysis is often preferred as a method for data reduction, while 
+principal factors analysis is often preferred when the goal of the analysis is 
+to detect structure (see <I>Factor Analysis as a Classification Method</I>). 
+<TABLE align=right>
+  <TBODY>
+  <TR>
+    <TD><A href="http://www.statsoftinc.com/textbook/stfacan.html#index"><FONT 
+      size=1>To index</FONT></A> </TD></TR></TBODY></TABLE><BR clear=right><A 
+name=factor></A>
+<P><FONT color=navy size=4>Factor Analysis as a Classification Method </FONT>
+<P>Let us now return to the interpretation of the standard results from a factor 
+analysis. We will henceforth use the term <I>factor analysis</I> generically to 
+encompass both principal components and principal factors analysis. Let us 
+assume that we are at the point in our analysis where we basically know how many 
+factors to extract. We may now want to know the meaning of the factors, that is, 
+whether and how we can interpret them in a meaningful manner. To illustrate how 
+this can be accomplished, let us work "backwards," that is, begin with a 
+meaningful structure and then see how it is reflected in the results of a factor 
+analysis. Let us return to our satisfaction example; shown below is the 
+correlation matrix for items pertaining to satisfaction at work and items 
+pertaining to satisfaction at home. 
+<P>
+<TABLE border=1>
+  <TBODY>
+  <TR>
+    <TH align=left><FONT color=blue 
+      size=2>STATISTICA<BR>FACTOR<BR>ANALYSIS</FONT></TH>
+    <TH align=middle colSpan=6><FONT color=blue size=2>Correlations 
+      (factor.sta)<BR>Casewise deletion of MD<BR>n=100</FONT></TH></TR>
+  <TR>
+    <TH align=left><FONT color=blue size=2>Variable</FONT></TH>
+    <TH align=left><FONT color=blue size=2>WORK_1</FONT></TH>
+    <TH align=left><FONT color=blue size=2>WORK_2</FONT></TH>
+    <TH align=left><FONT color=blue size=2>WORK_3</FONT></TH>
+    <TH align=left><FONT color=blue size=2>HOME_1</FONT></TH>
+    <TH align=left><FONT color=blue size=2>HOME_2</FONT></TH>
+    <TH align=left><FONT color=blue size=2>HOME_3</FONT></TH></TR>
+  <TR>
+    <TD align=left><FONT color=blue 
+      size=2>WORK_1<BR>WORK_2<BR>WORK_3<BR>HOME_1<BR>HOME_2<BR>HOME_3</FONT></TD>
+    <TD align=right><FONT color=blue 
+      size=2>1.00<BR>.65<BR>.65<BR>.14<BR>.15<BR>.14</FONT></TD>
+    <TD align=right><FONT color=blue 
+      size=2>.65<BR>1.00<BR>.73<BR>.14<BR>.18<BR>.24</FONT></TD>
+    <TD align=right><FONT color=blue 
+      size=2>.65<BR>.73<BR>1.00<BR>.16<BR>.24<BR>.25</FONT></TD>
+    <TD align=right><FONT color=blue 
+      size=2>.14<BR>.14<BR>.16<BR>1.00<BR>.66<BR>.59</FONT></TD>
+    <TD align=right><FONT color=blue 
+      size=2>.15<BR>.18<BR>.24<BR>.66<BR>1.00<BR>.73</FONT></TD>
+    <TD align=right><FONT color=blue 
+      size=2>.14<BR>.24<BR>.25<BR>.59<BR>.73<BR>1.00</FONT></TD></TR></TBODY></TABLE><BR 
+clear=all>The work satisfaction items are highly correlated amongst themselves, 
+and the home satisfaction items are highly intercorrelated amongst themselves. 
+The correlations across these two types of items (work satisfaction items with 
+home satisfaction items) is comparatively small. It thus seems that there are 
+two relatively independent factors reflected in the correlation matrix, one 
+related to satisfaction at work, the other related to satisfaction at home. 
+<P><B>Factor Loadings.</B> Let us now perform a principal components analysis 
+and look at the two-factor solution. Specifically, let us look at the 
+correlations between the variables and the two factors (or "new" variables), as 
+they are extracted by default; these correlations are also called factor 
+<I>loadings</I>. 
+<P>
+<TABLE border=1>
+  <TBODY>
+  <TR>
+    <TH align=left><FONT color=blue 
+      size=2>STATISTICA<BR>FACTOR<BR>ANALYSIS</FONT></TH>
+    <TH align=middle colSpan=2><FONT color=blue size=2>Factor Loadings 
+      (Unrotated)<BR>Principal components<BR>&nbsp;</FONT></TH></TR>
+  <TR>
+    <TH align=left><FONT color=blue size=2>Variable</FONT></TH>
+    <TH align=right><FONT color=blue size=2>Factor 1</FONT></TH>
+    <TH align=right><FONT color=blue size=2>Factor 2</FONT></TH></TR>
+  <TR>
+    <TD align=left><FONT color=blue 
+      size=2>WORK_1<BR>WORK_2<BR>WORK_3<BR>HOME_1<BR>HOME_2<BR>HOME_3</FONT></TD>
+    <TD align=right><FONT color=blue 
+      size=2>.654384<BR>.715256<BR>.741688<BR>.634120<BR>.706267<BR>.707446</FONT></TD>
+    <TD align=right><FONT color=blue 
+      size=2>.564143<BR>.541444<BR>.508212<BR>-.563123<BR>-.572658<BR>-.525602</FONT></TD></TR>
+  <TR>
+    <TD align=left><FONT color=blue size=2>Expl.Var<BR>Prp.Totl</FONT></TD>
+    <TD align=right><FONT color=blue size=2>2.891313<BR>.481885</FONT></TD>
+    <TD align=right><FONT color=blue 
+  size=2>1.791000<BR>.298500</FONT></TD></TR></TBODY></TABLE><BR 
+clear=all>Apparently, the first factor is generally more highly correlated with 
+the variables than the second factor. This is to be expected because, as 
+previously described, these factors are extracted successively and will account 
+for less and less variance overall. 
+<P><B>Rotating the Factor Structure.</B> We could plot the factor loadings shown 
+above in a <A 
+href="http://www.statsoftinc.com/textbook/gloss.html#Scatterplot, 2D">scatterplot</A>. 
+In that plot, each variable is represented as a point. In this plot we could 
+rotate the axes in any direction without changing the <I>relative</I> locations 
+of the points to each other; however, the actual coordinates of the points, that 
+is, the factor loadings would of course change. In this example, if you produce 
+the plot it will be evident that if we were to rotate the axes by about 45 
+degrees we might attain a clear pattern of loadings identifying the work 
+satisfaction items and the home satisfaction items. 
+<P><B>Rotational strategies.</B> There are various rotational strategies that 
+have been proposed. The goal of all of these strategies is to obtain a clear 
+pattern of loadings, that is, factors that are somehow clearly marked by high 
+loadings for some variables and low loadings for others. This general pattern is 
+also sometimes referred to as <I>simple structure</I> (a more formalized 
+definition can be found in most standard textbooks). Typical rotational 
+strategies are <I>varimax</I>, <I>quartimax</I>, and <I>equamax</I>. 
+<P>We have described the idea of the varimax rotation before (see <A 
+href="http://www.statsoftinc.com/textbook/stfacan.html#basic"><I>Extracting 
+Principal Components</I></A>), and it can be applied to this problem as well. As 
+before, we want to find a rotation that maximizes the variance on the new axes; 
+put another way, we want to obtain a pattern of loadings on each factor that is 
+as diverse as possible, lending itself to easier interpretation. Below is the 
+table of rotated factor loadings. 
+<P>
+<TABLE border=1>
+  <TBODY>
+  <TR>
+    <TH align=left><FONT color=blue 
+      size=2>STATISTICA<BR>FACTOR<BR>ANALYSIS</FONT></TH>
+    <TH align=middle colSpan=2><FONT color=blue size=2>Factor Loadings 
+      (Varimax normalized)<BR>Extraction: Principal 
+    components<BR>&nbsp;</FONT></TH></TR>
+  <TR>
+    <TH align=left><FONT color=blue size=2>Variable</FONT></TH>
+    <TH align=right><FONT color=blue size=2>Factor 1</FONT></TH>
+    <TH align=right><FONT color=blue size=2>Factor 2</FONT></TH></TR>
+  <TR>
+    <TD align=left><FONT color=blue 
+      size=2>WORK_1<BR>WORK_2<BR>WORK_3<BR>HOME_1<BR>HOME_2<BR>HOME_3</FONT></TD>
+    <TD align=right><FONT color=blue 
+      size=2>.862443<BR>.890267<BR>.886055<BR>.062145<BR>.107230<BR>.140876</FONT></TD>
+    <TD align=right><FONT color=blue 
+      size=2>.051643<BR>.110351<BR>.152603<BR>.845786<BR>.902913<BR>.869995</FONT></TD></TR>
+  <TR>
+    <TD align=left><FONT color=blue size=2>Expl.Var<BR>Prp.Totl</FONT></TD>
+    <TD align=right><FONT color=blue size=2>2.356684<BR>.392781</FONT></TD>
+    <TD align=right><FONT color=blue 
+  size=2>2.325629<BR>.387605</FONT></TD></TR></TBODY></TABLE><BR clear=all>
+<P><B>Interpreting the Factor Structure. </B>Now the pattern is much clearer. As 
+expected, the first factor is marked by high loadings on the work satisfaction 
+items, the second factor is marked by high loadings on the home satisfaction 
+items. We would thus conclude that satisfaction, as measured by our 
+questionnaire, is composed of those two aspects; hence we have arrived at a 
+<I>classification</I> of the variables.
+<P>Consider another example, this time with four additional Hobby/Misc variables 
+added to our earlier example. 
+<P><IMG height=239 
+src="Principal Components and Factor Analysis_files/an_factor.gif" width=330 
+border=0>
+<P>In the plot of factor loadings above, 10 variables were reduced to three 
+specific factors, a work factor, a home factor and a hobby/misc. factor. Note 
+that factor loadings for each factor are spread out over the values of the other 
+two factors but are high for its own values. For example, the factor loadings 
+for the hobby/misc variables (in green) have both high and low "work" and "home" 
+values, but all four of these variables have high factor loadings on the 
+"hobby/misc" factor. 
+<P><B>Oblique Factors. </B>Some authors (e.g., Catell &amp; Khanna; Harman, 
+1976; Jennrich &amp; Sampson, 1966; Clarkson &amp; Jennrich, 1988) have 
+discussed in some detail the concept of <I>oblique</I> (non-orthogonal) factors, 
+in order to achieve more interpretable simple structure. Specifically, 
+computational strategies have been developed to rotate factors so as to best 
+represent "clusters" of variables, without the constraint of orthogonality of 
+factors. However, the oblique factors produced by such rotations are often not 
+easily interpreted. To return to the example discussed above, suppose we would 
+have included in the satisfaction questionnaire above four items that measured 
+other, "miscellaneous" types of satisfaction. Let us assume that people's 
+responses to those items were affected about equally by their satisfaction at 
+home (<I>Factor 1</I>) and at work (<I>Factor 2</I>). An oblique rotation will 
+likely produce two correlated factors with less-than- obvious meaning, that is, 
+with many cross-loadings. 
+<P><B>Hierarchical Factor Analysis. </B>Instead of computing loadings for often 
+difficult to interpret oblique factors, you can use a strategy first proposed by 
+Thompson (1951) and Schmid and Leiman (1957), which has been elaborated and 
+popularized in the detailed discussions by Wherry (1959, 1975, 1984). In this 
+strategy, you first identify clusters of items and rotate axes through those 
+clusters; next the correlations between those (oblique) factors is computed, and 
+that correlation matrix of oblique factors is further factor-analyzed to yield a 
+set of orthogonal factors that divide the variability in the items into that due 
+to shared or common variance (secondary factors), and unique variance due to the 
+clusters of similar variables (items) in the analysis (primary factors). To 
+return to the example above, such a hierarchical analysis might yield the 
+following factor loadings: 
+<P>
+<TABLE border=1>
+  <TBODY>
+  <TR>
+    <TH align=left><FONT color=blue 
+      size=2>STATISTICA<BR>FACTOR<BR>ANALYSIS</FONT></TH>
+    <TH align=middle colSpan=3><FONT color=blue size=2>Secondary &amp; Primary 
+      Factor Loadings<BR>&nbsp;<BR>&nbsp;</FONT></TH></TR>
+  <TR>
+    <TH align=left><FONT color=blue size=2>Factor</FONT></TH>
+    <TH align=right><FONT color=blue size=2>Second. 1</FONT></TH>
+    <TH align=right><FONT color=blue size=2>Primary 1</FONT></TH>
+    <TH align=right><FONT color=blue size=2>Primary 2</FONT></TH></TR>
+  <TR>
+    <TD align=left><FONT color=blue 
+      size=2>WORK_1<BR>WORK_2<BR>WORK_3<BR>HOME_1<BR>HOME_2<BR>HOME_3<BR>MISCEL_1<BR>MISCEL_2<BR>MISCEL_3<BR>MISCEL_4</FONT></TD>
+    <TD align=right><FONT color=blue 
+      size=2>.483178<BR>.570953<BR>.565624<BR>.535812<BR>.615403<BR>.586405<BR>.780488<BR>.734854<BR>.776013<BR>.714183</FONT></TD>
+    <TD align=right><FONT color=blue 
+      size=2>.649499<BR>.687056<BR>.656790<BR>.117278<BR>.079910<BR>.065512<BR>.466823<BR>.464779<BR>.439010<BR>.455157</FONT></TD>
+    <TD align=right><FONT color=blue 
+      size=2>.187074<BR>.140627<BR>.115461<BR>.630076 
+      <BR>.668880<BR>.626730<BR>.280141<BR>.238512<BR>.303672<BR>.228351</FONT></TD></TR></TBODY></TABLE><BR 
+clear=all>
+<P>Careful examination of these loadings would lead to the following 
+conclusions: 
+<OL>
+  <LI>There is a general (secondary) satisfaction factor that likely affects all 
+  types of satisfaction measured by the 10 items; 
+  <LI>There appear to be two primary unique areas of satisfaction that can best 
+  be described as satisfaction with work and satisfaction with home life. 
+</LI></OL>Wherry (1984) discusses in great detail examples of such hierarchical 
+analyses, and how meaningful and interpretable secondary factors can be derived. 
+
+<P><B>Confirmatory Factor Analysis. </B>Over the past 15 years, so-called 
+confirmatory methods have become increasingly popular (e.g., see J?kog and S?m, 
+1979). In general, one can specify <I>a priori</I>, a pattern of factor loadings 
+for a particular number of orthogonal or oblique factors, and then test whether 
+the observed correlation matrix can be reproduced given these specifications. 
+Confirmatory factor analyses can be performed via <A 
+href="http://www.statsoftinc.com/textbook/stsepath.html"><I>Structural Equation 
+Modeling</I> (<I>SEPATH</I>)</A>. 
+<TABLE align=right>
+  <TBODY>
+  <TR>
+    <TD><A href="http://www.statsoftinc.com/textbook/stfacan.html#index"><FONT 
+      size=1>To index</FONT></A> </TD></TR></TBODY></TABLE><BR clear=right><A 
+name=sundries></A>
+<P><FONT color=navy size=4>Miscellaneous Other Issues and Statistics </FONT>
+<P><B>Factor Scores.</B> We can estimate the actual values of individual cases 
+(observations) for the factors. These factor scores are particularly useful when 
+one wants to perform further analyses involving the factors that one has 
+identified in the factor analysis. 
+<P><B>Reproduced and Residual Correlations. </B>An additional check for the 
+appropriateness of the respective number of factors that were extracted is to 
+compute the correlation matrix that would result if those were indeed the only 
+factors. That matrix is called the <I>reproduced</I> correlation matrix. To see 
+how this matrix deviates from the observed correlation matrix, one can compute 
+the difference between the two; that matrix is called the matrix of 
+<I>residual</I> correlations. The residual matrix may point to "misfits," that 
+is, to particular correlation coefficients that cannot be reproduced 
+appropriately by the current number of factors. 
+<P><B>Matrix Ill-conditioning. </B>If, in the correlation matrix there are 
+variables that are 100% redundant, then the inverse of the matrix cannot be 
+computed. For example, if a variable is the sum of two other variables selected 
+for the analysis, then the correlation matrix of those variables cannot be 
+inverted, and the factor analysis can basically not be performed. In practice 
+this happens when you are attempting to factor analyze a set of highly 
+intercorrelated variables, as it, for example, sometimes occurs in correlational 
+research with questionnaires. Then you can artificially lower all correlations 
+in the correlation matrix by adding a small constant to the diagonal of the 
+matrix, and then restandardizing it. This procedure will usually yield a matrix 
+that now can be inverted and thus factor-analyzed; moreover, the factor patterns 
+should not be affected by this procedure. However, note that the resulting 
+estimates are not exact. 
+<TABLE align=right>
+  <TBODY>
+  <TR>
+    <TD><A href="http://www.statsoftinc.com/textbook/stfacan.html#index"><FONT 
+      size=1>To index</FONT></A> </TD></TR></TBODY></TABLE><BR clear=right><BR><BR>
+<HR SIZE=1>
+<BR><IMG src="Principal Components and Factor Analysis_files/stathoms.jpg" 
+align=left> <BR clear=all>
+<CENTER><FONT size=1>© Copyright StatSoft, Inc., 1984-2003<BR>STATISTICA is a 
+trademark of StatSoft, Inc. </FONT></CENTER>
+<HR SIZE=1>
+</BODY></HTML>
